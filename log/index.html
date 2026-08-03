@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build Log — Moonoi Monsoon</title>
+<meta name="description" content="Moonoi Monsoon の開発ノート。何を決め、どう作り、どこで詰まったかの記録。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --lime:#9FD92A;
+    --lime-hi:#cdeb5f;
+    --lime-lo:#7cb518;
+    --olive:#17220a;
+    --olive-2:#1c2908;
+    --olive-card:#162005;
+    --cream:#eef6d4;
+    --cream-dim:#b9c98e;
+    --ring:rgba(159,217,42,.5);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth;background:#0a0f04}
+  body{
+    font-family:'Prompt','Hiragino Sans','Noto Sans JP',system-ui,sans-serif;
+    background:
+      radial-gradient(120% 80% at 50% -10%, rgba(170,210,80,.07) 0%, transparent 42%),
+      linear-gradient(180deg, #17220a 0%, #131c08 38%, #0d1406 78%, #0a0f04 100%);
+    background-color:#0a0f04;
+    color:var(--cream);
+    min-height:100dvh;
+    overflow-x:hidden;
+    line-height:1.75;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:repeating-linear-gradient(0deg,rgba(159,217,42,.022) 0 2px,transparent 2px 4px);
+    mix-blend-mode:screen;opacity:.5;
+  }
+  .wrap{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:38px 20px 60px}
+
+  /* ===== Header ===== */
+  .back{
+    display:inline-flex;align-items:center;gap:7px;text-decoration:none;
+    font-family:'Silkscreen',monospace;font-size:10px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--cream-dim);
+    padding:8px 12px;border-radius:10px;
+    border:1px solid rgba(159,217,42,.16);background:rgba(0,0,0,.22);
+    transition:color .15s,border-color .15s;
+  }
+  .back:hover{color:var(--lime-hi);border-color:var(--ring)}
+  .back:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+
+  .page-head{margin:26px 0 0}
+  .page-title{
+    font-family:'Silkscreen',monospace;font-weight:700;
+    font-size:clamp(24px,6.5vw,34px);line-height:1.1;
+    color:var(--lime);text-shadow:0 0 18px rgba(159,217,42,.3);
+  }
+  .page-lead{
+    margin-top:16px;font-size:14px;font-weight:300;color:var(--cream-dim);
+  }
+  .page-lead b{color:var(--cream);font-weight:500}
+
+  .px-rule{display:flex;gap:5px;margin:22px 0 28px}
+  .px-rule i{width:7px;height:7px;background:var(--lime);opacity:.85;border-radius:1px}
+  .px-rule i:nth-child(even){background:var(--lime-lo);opacity:.6}
+
+  /* ===== Entries ===== */
+  .entries{display:flex;flex-direction:column;gap:18px}
+  .entry{
+    background:linear-gradient(180deg,var(--olive-2),var(--olive-card));
+    border:1px solid rgba(159,217,42,.14);
+    border-radius:20px;padding:22px 20px;
+  }
+  .entry-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+  .entry-no{
+    font-family:'Silkscreen',monospace;font-size:10px;letter-spacing:.1em;
+    color:var(--olive);background:var(--lime);
+    padding:3px 8px;border-radius:6px;
+  }
+  .entry-date{
+    font-family:'Silkscreen',monospace;font-size:10px;letter-spacing:.08em;
+    color:var(--cream-dim);
+  }
+  .entry h2{
+    font-family:'Prompt','Hiragino Sans','Noto Sans JP',sans-serif;
+    font-weight:600;font-size:18px;line-height:1.45;color:var(--cream);
+    margin-bottom:12px;
+  }
+  .entry p{font-size:14px;font-weight:300;margin-bottom:12px}
+  .entry p:last-child{margin-bottom:0}
+  .entry h3{
+    font-family:'Silkscreen',monospace;font-size:10px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--lime);opacity:.9;
+    margin:20px 0 8px;
+  }
+  .entry ul{margin:0 0 12px;padding-left:1.15em}
+  .entry li{font-size:14px;font-weight:300;margin-bottom:6px}
+  .entry li::marker{color:var(--lime-lo)}
+  .entry code{
+    font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;
+    background:rgba(0,0,0,.32);color:var(--lime-hi);
+    padding:1px 5px;border-radius:5px;
+    word-break:break-all;
+  }
+  .entry a{color:var(--lime-hi);text-underline-offset:2px}
+  .entry a:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+  .entry blockquote{
+    border-left:2px solid rgba(159,217,42,.35);
+    padding:2px 0 2px 14px;margin:0 0 12px;
+    color:var(--cream-dim);font-size:14px;font-weight:300;font-style:italic;
+  }
+  .entry-tags{margin-top:16px;display:flex;gap:6px;flex-wrap:wrap}
+  .tag{
+    font-family:'Silkscreen',monospace;font-size:9px;letter-spacing:.05em;
+    text-transform:uppercase;padding:4px 7px;border-radius:6px;
+    background:rgba(159,217,42,.12);color:var(--lime-hi);
+    border:1px solid rgba(159,217,42,.2);
+  }
+
+  /* ===== Footer ===== */
+  footer{
+    margin-top:42px;text-align:center;
+    font-size:12px;color:var(--cream-dim);font-weight:300;line-height:1.7;
+  }
+  footer a{color:var(--cream-dim);text-decoration:underline;text-underline-offset:2px}
+  footer .made{
+    font-family:'Silkscreen',monospace;font-size:10px;letter-spacing:.1em;
+    color:var(--lime);opacity:.8;margin-bottom:8px;
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;animation:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back" href="../">&larr; Apps</a>
+
+  <header class="page-head">
+    <h1 class="page-title">Build Log</h1>
+    <p class="page-lead">Moonoi Monsoon の開発ノート。<b>何を決め、どう作り、どこで詰まったか</b>の記録。うまくいったことだけを書かない。</p>
+  </header>
+
+  <div class="px-rule" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+
+  <main class="entries">
+
+    <!-- ===== #001 ===== -->
+    <article class="entry">
+      <div class="entry-meta">
+        <span class="entry-no">#001</span>
+        <span class="entry-date">2026-08-03</span>
+      </div>
+      <h2>「作る」より先に「決める」を置く運用に切り替えた</h2>
+
+      <p>これまでは、まとまった時間ができたときに何を作るか考え始めていた。それだと、考えているうちに時間が終わる。順番が逆だった。</p>
+
+      <p>時間を2種類に分けることにした。<strong>細切れの時間は考えて言語化するために使い、まとまった時間は実装させて確認するために使う。</strong> 考える作業に PC は要らない。移動中でも待ち時間でも、スマホから GitHub の Web エディタで仕様書は書ける。</p>
+
+      <h3>やったこと</h3>
+      <ul>
+        <li><code>CLAUDE.md</code> — この PJ の前提・デザイン規約・やらないこと・確認工程を明文化。AI に毎回説明し直す手間をなくす</li>
+        <li><code>docs/specs/</code> — 仕様書置き場。テンプレートと運用ルール</li>
+        <li><code>docs/specs/001-hub-site.md</code> — 既に動いているトップページを、後から仕様書に起こした</li>
+        <li><code>log/</code> — このページ</li>
+      </ul>
+
+      <h3>決めたこと</h3>
+      <ul>
+        <li>AI への指示は「◯◯を作って」ではなく「<code>docs/specs/00X-*.md</code> を読んで、この通りに実装して」から始める</li>
+        <li>仕様に書いていない判断が必要になったら、AI に埋めさせず質問させる。空白を勝手に埋められると、後で「なぜこうなっているか」を自分で説明できなくなる</li>
+        <li>実装が仕様とずれたら、コードではなく<strong>仕様書を先に直す</strong></li>
+        <li>完成後に必ずセキュリティレビューをかける。さらに同じ成果物を別の AI にもレビューさせる — 指摘がずれた箇所こそ読む価値がある</li>
+      </ul>
+
+      <h3>気づき</h3>
+      <p>既存のトップページを仕様書に起こす作業（001）が、思っていたより効いた。動いているものを言葉にしようとすると、自分でも決めていなかった箇所が出てくる。「TH のアプリが0件のとき何を出すのが正しいのか」「PWA でリンクを乗っ取ると <code>target="_blank"</code> はどうなるのか」——コードには答えが書いてあったが、意図は書いていなかった。</p>
+
+      <blockquote>作れるかどうかより、何を作りたいか・どう動いてほしいかを具体的に言葉にできるかどうか。</blockquote>
+
+      <h3>次にやること</h3>
+      <ul>
+        <li>次の成果物は「人からデータを受け取って、保存して、集計する」もの。今のアプリは全部その手前で止まっている</li>
+        <li>手を動かして詰まった箇所を特定してから、その領域だけ学び直す。順番を逆にしない</li>
+      </ul>
+
+      <div class="entry-tags">
+        <span class="tag">Setup</span>
+        <span class="tag">Spec-first</span>
+        <span class="tag">Workflow</span>
+      </div>
+    </article>
+
+  </main>
+
+  <footer>
+    <div class="made">หมูน้อย · little pig</div>
+    Made by Moonoi Monsoon · Thai reading, one tiny app at a time.<br>
+    <a href="../">moonoimonsoon.github.io</a>
+  </footer>
+
+</div>
+</body>
+</html>
