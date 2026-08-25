@@ -235,6 +235,7 @@ var btn=null;
 function paint(){ if(btn){ btn.textContent=bgmOn?'♪':'♪̸'; btn.style.opacity=bgmOn?'.85':'.4';
   btn.setAttribute('aria-label',bgmOn?'BGMを止める':'BGMを鳴らす'); } }
 function makeBtn(){
+  if(window.MM_BGM_NO_BUTTON) return; /* 自前の音メニューを持つページはボタンを出さない */
   if(btn||!document.body) return;
   btn=document.createElement('button');
   btn.type='button';
@@ -267,6 +268,14 @@ window.MMBGM={
     if(kind==='game'){ started=true; play(nextGame()); return; }
     started=true; play('menu');
   },
-  isOn:function(){ return bgmOn; }
+  isOn:function(){ return bgmOn; },
+  /* ページ側の音メニューからON/OFFするためのAPI(タイピングマスターが使う) */
+  setOn:function(v){
+    v=!!v;
+    if(v===bgmOn){ paint(); return; }
+    bgmOn=v; saveOn(); paint();
+    if(!bgmOn) stopCur();
+    else play(cur?cur.name:'menu');
+  }
 };
 })();
