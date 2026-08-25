@@ -951,6 +951,8 @@ function show(scr){
   [startScreen,gameScreen,resultScreen].forEach(s=>s.classList.add('hidden'));
   scr.classList.remove('hidden');
   window.scrollTo({top:0,behavior:'auto'});
+  /* 共有BGM: プレイ中は曲替わり、それ以外はメニューの音へ */
+  if(window.MMBGM) MMBGM.scene(scr===gameScreen ? 'game' : 'menu');
 }
 
 function startGame(){
@@ -1146,5 +1148,8 @@ el('quitBtn').addEventListener('click', ()=>{ show(startScreen); });
 })();
 
 </script>
+
+<!-- 共有BGM（ハブと全アプリ共通） -->
+<script src="/assets/mm-bgm.js" defer></script>
 </body>
 </html>

@@ -111,7 +111,7 @@
     text-transform:uppercase;color:var(--lime);opacity:.9;
     text-align:center;margin-bottom:16px;
   }
-  .demo{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:14px}
+  .demo{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:14px;flex-wrap:wrap}
   .demo-col{text-align:center}
   .demo-glyph{
     font-family:'Sarabun',sans-serif;font-weight:600;
@@ -397,16 +397,21 @@
       <div class="explain-label">▸ ループなしの罠</div>
       <div class="demo" aria-hidden="true">
         <div class="demo-col">
-          <div class="demo-glyph">บ</div>
-          <div class="demo-cap">ループあり</div>
+          <div class="demo-glyph">น</div>
+          <div class="demo-cap">น ループあり</div>
         </div>
         <div class="demo-arrow">→</div>
         <div class="demo-col">
           <div class="demo-glyph loopless">น</div>
-          <div class="demo-cap">そっくりに見える</div>
+          <div class="demo-cap">น ループなし</div>
+        </div>
+        <div class="demo-arrow">≈</div>
+        <div class="demo-col">
+          <div class="demo-glyph loopless">บ</div>
+          <div class="demo-cap">บ ループなし</div>
         </div>
       </div>
-      <p class="explain-text">ループなしフォントでは บ ป น ผ พ などがそっくりな双子になります。単語を読んで正しい発音を選び、見分ける目を育てましょう。</p>
+      <p class="explain-text">タイ文字を見分ける最大の手がかりは、字の頭についた小さな輪（หัว ホア）です。看板や見出しのフォントはこの輪を落とすので、輪を失った น は บ とほとんど同じ形になります。ป ผ ฝ พ ฟ でも同じことが起きます。単語を読んで正しい発音を選び、そっくりな字を見分ける目を育てましょう。</p>
     </div>
 
     <button class="start-btn" id="startBtn">▸ START</button>
@@ -681,6 +686,7 @@ function showResult(){
   $('resultScreen').classList.remove('hidden');
   $('bar').style.width='100%';
   window.scrollTo(0,0);
+  if(window.MMBGM) MMBGM.scene('menu');/* 共有BGM: 結果画面はメニューの音へ */
   const pct=Math.round(score/N_Q*100);
   $('finalScore').textContent=`${score} / ${N_Q}`;
   $('finalPct').textContent=`正解率 ${pct}%`;
@@ -731,6 +737,7 @@ function startGame(){
   $('resultScreen').classList.add('hidden');
   $('quiz').classList.remove('hidden');
   window.scrollTo(0,0);
+  if(window.MMBGM) MMBGM.scene('game');/* 共有BGM: プレイ中は曲替わり */
   buildQuiz(); renderQ();
 }
 function toMenu(){
@@ -738,6 +745,7 @@ function toMenu(){
   $('resultScreen').classList.add('hidden');
   $('startScreen').classList.remove('hidden');
   window.scrollTo(0,0);
+  if(window.MMBGM) MMBGM.scene('menu');
 }
 
 $('startBtn').onclick = startGame;
@@ -762,5 +770,8 @@ $('menuBtn').onclick = toMenu;
   }
 })();
 </script>
+
+<!-- 共有BGM（ハブと全アプリ共通） -->
+<script src="/assets/mm-bgm.js" defer></script>
 </body>
 </html>
