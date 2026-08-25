@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>LOOPLESS FONT MASTER — Moonoi Monsoon</title>
+<meta name="description" content="ループなし(ไม่มีหัว)のタイ文字を読む目を鍛える。Moonoi Monsoon制作。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --lime:#9FD92A;
+    --lime-hi:#cdeb5f;
+    --lime-lo:#7cb518;
+    --olive:#17220a;
+    --olive-2:#1c2908;
+    --olive-card:#162005;
+    --cream:#eef6d4;
+    --cream-dim:#b9c98e;
+    --ring:rgba(159,217,42,.5);
+    --good:#9FD92A;
+    --good-hi:#cdeb5f;
+    --bad:#e0533a;
+    --bad-hi:#ff6a4d;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth;background:#0a0f04}
+  body{
+    font-family:'Prompt',system-ui,sans-serif;
+    background:
+      radial-gradient(120% 80% at 50% -10%, rgba(170,210,80,.07) 0%, transparent 42%),
+      radial-gradient(70% 50% at 22% 8%, rgba(159,217,42,.05) 0%, transparent 55%),
+      radial-gradient(60% 45% at 82% 4%, rgba(159,217,42,.035) 0%, transparent 55%),
+      linear-gradient(180deg, #17220a 0%, #131c08 38%, #0d1406 78%, #0a0f04 100%);
+    background-color:#0a0f04;
+    color:var(--cream);
+    min-height:100dvh;
+    overflow-x:hidden;
+  }
+  body::after{
+    content:"";position:fixed;left:50%;bottom:-8%;transform:translateX(-50%);
+    width:120%;height:42%;pointer-events:none;z-index:0;
+    background:radial-gradient(60% 100% at 50% 100%, rgba(255,138,38,.10) 0%, rgba(255,96,30,.05) 40%, transparent 72%);
+    mix-blend-mode:screen;
+    animation:forgeBreathe 7s ease-in-out infinite;
+  }
+  @keyframes forgeBreathe{0%,100%{opacity:.55}50%{opacity:.9}}
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:repeating-linear-gradient(0deg,rgba(159,217,42,.022) 0 2px,transparent 2px 4px);
+    mix-blend-mode:screen;opacity:.5;
+  }
+  .embers{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  .ember{
+    position:absolute;bottom:-12px;width:3px;height:3px;border-radius:50%;
+    background:#ffb347;box-shadow:0 0 6px 1px rgba(255,150,50,.7);
+    opacity:0;animation:rise linear infinite;
+  }
+  .ember.spark{width:2px;height:2px;background:#ffe08a;box-shadow:0 0 7px 2px rgba(255,210,120,.8);}
+  @keyframes rise{
+    0%{transform:translateY(0) translateX(0) scale(1);opacity:0}
+    8%{opacity:.9}70%{opacity:.7}
+    100%{transform:translateY(-104vh) translateX(var(--drift,14px)) scale(.5);opacity:0}
+  }
+  @media (prefers-reduced-motion:reduce){
+    body::after{animation:none;opacity:.6}
+    .embers{display:none}
+  }
+  .wrap{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:28px 18px 56px}
+
+  .px{font-family:'Silkscreen',monospace}
+  .hidden{display:none!important}
+
+  /* ===== Hero / brand ===== */
+  .brand{text-align:center;margin-bottom:8px}
+  .brand .mark{
+    width:72px;height:72px;margin:0 auto 14px;border-radius:20px;
+    background:var(--olive-2);display:grid;place-items:center;
+    box-shadow:0 0 0 1px rgba(159,217,42,.18), 0 12px 30px rgba(0,0,0,.45);
+  }
+  .brand .mark svg{width:44px;height:44px}
+  .brand-name{
+    font-family:'Silkscreen',monospace;font-weight:700;
+    font-size:13px;letter-spacing:.14em;color:var(--lime);opacity:.85;
+    text-transform:uppercase;
+  }
+  .title{
+    font-family:'Silkscreen',monospace;font-weight:700;
+    font-size:clamp(20px,5.6vw,28px);line-height:1.12;color:var(--lime-hi);
+    text-shadow:0 0 18px rgba(159,217,42,.35);
+    text-align:center;margin:14px 0 4px;
+  }
+  .subtitle{
+    text-align:center;color:var(--cream-dim);font-weight:300;font-size:14px;
+    line-height:1.55;max-width:34ch;margin:6px auto 0;
+  }
+  .px-rule{display:flex;gap:5px;justify-content:center;margin:24px 0}
+  .px-rule i{width:7px;height:7px;background:var(--lime);opacity:.85;border-radius:1px}
+  .px-rule i:nth-child(even){background:var(--lime-lo);opacity:.6}
+
+  /* ===== Start screen explainer ===== */
+  .explain{
+    background:linear-gradient(180deg,var(--olive-2),var(--olive-card));
+    border:1px solid rgba(159,217,42,.18);
+    border-radius:18px;padding:20px 20px 22px;margin-bottom:18px;
+  }
+  .explain-label{
+    font-family:'Silkscreen',monospace;font-size:10px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--lime);opacity:.9;
+    text-align:center;margin-bottom:16px;
+  }
+  .demo{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:14px}
+  .demo-col{text-align:center}
+  .demo-glyph{
+    font-family:'Sarabun',sans-serif;font-weight:600;
+    font-size:46px;line-height:1;color:var(--cream);
+  }
+  .demo-glyph.loopless{color:var(--lime-hi);font-family:'Prompt',sans-serif;font-weight:500}
+  .demo-cap{
+    font-family:'Silkscreen',monospace;font-size:7px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--cream-dim);margin-top:8px;opacity:.8;
+  }
+  .demo-arrow{font-size:20px;color:var(--lime);opacity:.7}
+  .explain-text{
+    font-family:'Prompt',sans-serif;font-weight:300;font-size:13px;
+    color:var(--cream-dim);line-height:1.6;text-align:center;max-width:32ch;margin:0 auto;
+  }
+
+  /* start button */
+  .start-btn{
+    display:block;width:100%;
+    font-family:'Silkscreen',monospace;font-size:15px;letter-spacing:.08em;
+    color:var(--olive);background:var(--lime);border:none;border-radius:14px;
+    padding:18px;cursor:pointer;margin-top:4px;
+    box-shadow:0 6px 20px rgba(159,217,42,.3);
+    transition:background .14s,transform .1s,box-shadow .14s;
+  }
+  .start-btn:hover{background:var(--lime-hi);transform:translateY(-2px);box-shadow:0 10px 26px rgba(159,217,42,.38)}
+  .start-btn:active{transform:translateY(0)}
+  .start-btn:focus-visible{outline:3px solid var(--ring);outline-offset:3px}
+
+  /* ===== coffee button (shared) ===== */
+  .coffee-divider{display:flex;align-items:center;gap:10px;margin:22px 0 0}
+  .coffee-divider i{flex:1;height:1px;background:rgba(159,217,42,.14);display:block}
+  .coffee-divider span{
+    font-family:'Silkscreen',monospace;font-size:8px;letter-spacing:.14em;
+    color:var(--cream-dim);opacity:.6;text-transform:uppercase;
+  }
+  .coffee-btn{
+    display:flex;align-items:center;justify-content:center;gap:9px;
+    width:100%;margin-top:14px;text-decoration:none;box-sizing:border-box;
+    font-family:'Prompt',sans-serif;font-weight:500;font-size:13px;
+    color:var(--lime-hi);background:rgba(159,217,42,.06);
+    border:1px solid rgba(159,217,42,.35);border-radius:14px;padding:14px;
+    transition:background .14s,transform .1s;
+  }
+  .coffee-btn .cup{font-size:17px;line-height:1}
+  .coffee-btn:active{transform:translateY(1px)}
+  .coffee-btn:focus-visible{outline:3px solid var(--ring);outline-offset:3px}
+  @media (hover:hover){
+    .coffee-btn:hover{background:rgba(159,217,42,.12);border-color:rgba(159,217,42,.5)}
+  }
+
+  /* ===== Game header ===== */
+  .game-header{
+    display:flex;align-items:center;gap:8px;margin-bottom:16px;
+    padding-bottom:12px;border-bottom:1px solid rgba(159,217,42,.12);
+  }
+  .hdr-mark{width:22px;height:22px;flex:0 0 auto}
+  .hdr-name{
+    font-family:'Silkscreen',monospace;font-size:11px;letter-spacing:.06em;
+    color:var(--lime);opacity:.9;
+  }
+  .hdr-tag{
+    margin-left:auto;font-family:'Silkscreen',monospace;font-size:9px;letter-spacing:.1em;
+    color:var(--olive);background:var(--lime);border-radius:6px;
+    padding:4px 9px;text-transform:uppercase;
+  }
+
+  /* ===== Stat bar ===== */
+  .statbar{display:flex;justify-content:space-between;gap:8px;margin-bottom:14px}
+  .stat{
+    flex:1;text-align:center;background:rgba(0,0,0,.25);
+    border:1px solid rgba(159,217,42,.12);border-radius:11px;padding:9px 4px;
+  }
+  .stat .k{font-family:'Silkscreen',monospace;font-size:8px;letter-spacing:.1em;color:var(--cream-dim);text-transform:uppercase}
+  .stat .v{font-family:'Silkscreen',monospace;font-size:16px;margin-top:3px}
+  #qStat .v{color:var(--cream)}
+  #streakStat .v{color:var(--lime-hi)}
+  #scoreStat .v{color:var(--lime-hi)}
+
+  .progress{height:6px;background:rgba(0,0,0,.3);border-radius:99px;overflow:hidden;margin-bottom:20px}
+  .progress i{display:block;height:100%;background:linear-gradient(90deg,var(--lime-lo),var(--lime));width:0;transition:width .3s ease}
+
+  /* ===== Question card ===== */
+  .qcard{
+    background:linear-gradient(180deg,var(--olive-2),var(--olive-card));
+    border:1px solid rgba(159,217,42,.16);border-radius:20px;
+    padding:28px 22px 24px;text-align:center;margin-bottom:18px;position:relative;overflow:hidden;
+  }
+  .qcard::before{
+    content:"";position:absolute;inset:0 0 auto 0;height:4px;
+    background:linear-gradient(90deg,var(--lime-lo),var(--lime),var(--lime-hi));
+  }
+  .prompt-label{
+    font-family:'Silkscreen',monospace;font-size:9px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--cream-dim);opacity:.8;margin-bottom:14px;
+  }
+  /* The question word renders in a LOOPLESS font (Prompt — the same family used
+     by Thai news sites like thansettakij.com). Looped Sarabun forms appear only
+     in the post-answer comparison chips (.looped) and feedback. */
+  .thai{
+    font-family:'Prompt',sans-serif;font-weight:500;
+    font-size:clamp(46px,15vw,72px);line-height:1.12;color:var(--cream);
+    word-break:break-word;margin:2px 0 4px;
+  }
+  .jp-hint{
+    font-family:'Prompt',sans-serif;font-size:13px;color:var(--cream-dim);
+    min-height:18px;margin-top:6px;opacity:0;transition:opacity .25s;font-weight:300;
+  }
+  .jp-hint.show{opacity:1}
+
+  /* ===== Choices (reading options, stacked) ===== */
+  .choices{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+  .choice{
+    font-family:'Sarabun',sans-serif;font-weight:600;font-size:19px;
+    color:var(--cream);background:linear-gradient(180deg,var(--olive-2),var(--olive-card));
+    border:1px solid rgba(159,217,42,.16);border-radius:14px;
+    padding:14px 14px;cursor:pointer;text-align:left;
+    display:flex;align-items:stretch;gap:12px;
+    transition:transform .1s,border-color .14s,background .14s,box-shadow .14s;
+  }
+  .choice .dot{
+    width:26px;height:26px;border-radius:50%;flex:0 0 auto;align-self:center;
+    border:1px solid rgba(159,217,42,.3);display:grid;place-items:center;
+    font-family:'Silkscreen',monospace;font-size:10px;color:var(--cream-dim);
+  }
+  .choice .ctxt{flex:1 1 auto;align-self:center}
+  .choice .looped{
+    display:none;flex:0 0 auto;align-self:stretch;align-items:center;
+    font-family:'Sarabun',sans-serif;font-weight:600;
+    font-size:22px;line-height:1;color:inherit;white-space:nowrap;
+    padding:4px 12px;border-radius:9px;position:relative;margin-left:8px;
+  }
+  .choice .looped.show{display:inline-flex}
+  .choice .looped.show::before{
+    content:"";position:absolute;left:-8px;top:6px;bottom:6px;
+    width:2px;border-radius:2px;background:currentColor;opacity:.4;
+  }
+  .choice:hover:not(.locked){transform:translateY(-2px);border-color:var(--ring);box-shadow:0 8px 20px rgba(0,0,0,.35)}
+  .choice:active:not(.locked){transform:translateY(0)}
+  .choice:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+  .choice.locked{cursor:default}
+  .choice.correct{
+    background:linear-gradient(180deg,rgba(159,217,42,.25),rgba(159,217,42,.12));
+    border-color:var(--good);box-shadow:0 0 0 1px var(--good),0 0 18px rgba(159,217,42,.3);
+  }
+  .choice.correct .dot{background:var(--lime);border-color:var(--lime);color:var(--olive)}
+  .choice.correct .looped{color:var(--lime-hi);background:rgba(159,217,42,.12)}
+  .choice.wrong{
+    background:linear-gradient(180deg,rgba(224,83,58,.22),rgba(224,83,58,.1));
+    border-color:var(--bad);
+  }
+  .choice.wrong .dot{background:var(--bad);border-color:var(--bad);color:#fff}
+  .choice.wrong .looped{color:var(--bad-hi);background:rgba(224,83,58,.12)}
+  .choice.dim{opacity:.4}
+
+  /* ===== Feedback ===== */
+  .feedback{
+    min-height:24px;margin-bottom:16px;text-align:center;
+    font-family:'Prompt',sans-serif;font-weight:500;font-size:14px;
+    opacity:0;transition:opacity .2s;
+  }
+  .feedback.show{opacity:1}
+  .feedback .fb-head{font-family:'Silkscreen',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .feedback.ok .fb-head{color:var(--lime)}
+  .feedback.no .fb-head{color:var(--bad-hi)}
+  .feedback .fb-th{font-family:'Sarabun',sans-serif;font-weight:600;font-size:20px;margin-left:6px}
+  .feedback.ok .fb-th{color:var(--lime-hi)}
+  .feedback.no .fb-th{color:var(--bad-hi)}
+  .feedback .fb-read{font-family:'Sarabun',sans-serif;font-weight:600}
+
+  .next-btn{
+    display:block;width:100%;
+    font-family:'Silkscreen',monospace;font-size:13px;letter-spacing:.06em;
+    color:var(--olive);background:var(--lime);border:none;border-radius:13px;
+    padding:16px;cursor:pointer;
+    box-shadow:0 5px 16px rgba(159,217,42,.28);
+    transition:background .14s,transform .1s,opacity .14s;
+  }
+  .next-btn:hover:not(:disabled){background:var(--lime-hi);transform:translateY(-2px)}
+  .next-btn:active:not(:disabled){transform:translateY(0)}
+  .next-btn:focus-visible{outline:3px solid var(--ring);outline-offset:3px}
+  .next-btn:disabled{opacity:.35;cursor:not-allowed;box-shadow:none}
+
+  .quit-link{
+    display:block;text-align:center;margin-top:16px;
+    font-family:'Silkscreen',monospace;font-size:9px;letter-spacing:.08em;
+    color:var(--cream-dim);text-transform:uppercase;
+    background:none;border:none;cursor:pointer;opacity:.7;width:100%;padding:6px;
+  }
+  .quit-link:hover{opacity:1;color:var(--cream)}
+
+  /* ===== Result screen ===== */
+  .result-card{
+    background:linear-gradient(180deg,var(--olive-2),var(--olive-card));
+    border:1px solid rgba(159,217,42,.18);border-radius:22px;
+    padding:30px 24px;text-align:center;
+  }
+  .result-eyebrow{font-family:'Silkscreen',monospace;font-size:11px;letter-spacing:.12em;color:var(--cream-dim);text-transform:uppercase;margin-bottom:6px}
+  .result-score{font-family:'Silkscreen',monospace;font-size:30px;color:var(--lime-hi);margin-bottom:4px;text-shadow:0 0 14px rgba(159,217,42,.3)}
+  .result-pct{font-family:'Prompt',sans-serif;font-weight:300;color:var(--cream-dim);font-size:13px;margin-bottom:14px}
+
+  .achieve{
+    background:linear-gradient(180deg,rgba(0,0,0,.22),rgba(0,0,0,.12));
+    border:1px solid rgba(159,217,42,.14);border-radius:18px;
+    padding:22px 18px 20px;margin:6px 0 20px;
+  }
+  .achieve-icon{font-size:60px;line-height:1;animation:pop .55s cubic-bezier(.18,1.5,.4,1) both}
+  @keyframes pop{0%{transform:scale(.2);opacity:0}60%{transform:scale(1.15)}100%{transform:scale(1);opacity:1}}
+  .achieve-msg{font-family:'Prompt',sans-serif;font-weight:600;font-size:18px;margin-top:12px;color:var(--cream);line-height:1.35}
+  .achieve-sub{font-family:'Prompt',sans-serif;font-weight:300;font-size:13px;color:var(--cream-dim);margin-top:8px;line-height:1.55;max-width:34ch;margin-left:auto;margin-right:auto}
+
+  .review{text-align:left;margin-top:6px}
+  .review-head{font-family:'Silkscreen',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-dim);margin-bottom:10px}
+  .miss{
+    display:flex;align-items:center;gap:12px;
+    background:rgba(0,0,0,.22);border:1px solid rgba(224,83,58,.2);
+    border-radius:12px;padding:11px 13px;margin-bottom:8px;
+  }
+  .miss .mth{font-family:'Prompt',sans-serif;font-weight:500;font-size:26px;color:var(--cream);flex:0 0 auto;min-width:54px}
+  .miss .mbody{flex:1;min-width:0;font-family:'Prompt',sans-serif;font-weight:300;font-size:12.5px;line-height:1.5;color:var(--cream-dim)}
+  .miss .mbody .you{color:var(--bad-hi);font-family:'Sarabun',sans-serif;font-weight:600}
+  .miss .mbody .cor{color:var(--lime-hi);font-family:'Sarabun',sans-serif;font-weight:600}
+  .miss .mbody .rv-th{font-family:'Sarabun',sans-serif;font-weight:600}
+  .perfect{font-family:'Prompt',sans-serif;font-weight:500;font-size:14px;color:var(--lime);padding:6px 0}
+
+  .again-btn{
+    display:block;width:100%;margin-top:22px;
+    font-family:'Silkscreen',monospace;font-size:14px;letter-spacing:.06em;
+    color:var(--olive);background:var(--lime);border:none;border-radius:14px;
+    padding:18px;cursor:pointer;box-shadow:0 6px 20px rgba(159,217,42,.3);
+    transition:background .14s,transform .1s;
+  }
+  .again-btn:hover{background:var(--lime-hi);transform:translateY(-2px)}
+  .again-btn:active{transform:translateY(0)}
+  .again-btn:focus-visible{outline:3px solid var(--ring);outline-offset:3px}
+
+  /* ===== Footer ===== */
+  footer{
+    margin-top:30px;text-align:center;
+    font-family:'Silkscreen',monospace;font-size:9px;letter-spacing:.06em;
+    color:var(--cream-dim);opacity:.7;line-height:1.8;
+  }
+  footer .made{margin-bottom:14px}
+  .social{display:flex;justify-content:center;gap:14px;margin-bottom:10px}
+  .social a{
+    width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+    background:rgba(159,217,42,.08);border:1px solid rgba(159,217,42,.22);
+    color:var(--lime);text-decoration:none;
+    transition:transform .15s ease, background .15s ease, box-shadow .15s ease;
+  }
+  .social a:hover{transform:translateY(-2px);background:rgba(159,217,42,.16);box-shadow:0 6px 16px rgba(159,217,42,.22)}
+  .social a:focus-visible{outline:2px solid var(--ring);outline-offset:3px}
+  .social a svg{width:21px;height:21px;display:block;pointer-events:none}
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;animation:none!important}
+  }
+</style>
+</head>
+<body>
+<div class="embers" id="embers" aria-hidden="true"></div>
+<div class="wrap">
+
+  <!-- ============ START SCREEN ============ -->
+  <section id="startScreen">
+    <div class="brand">
+      <div class="mark" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-width="11">
+            <path d="M16 76 V36 L33 58 L50 36 V76" stroke="#9FD92A"/>
+            <path d="M50 76 V36 L67 58 L84 36 V76" stroke="#cdeb5f"/>
+          </g>
+        </svg>
+      </div>
+      <div class="brand-name">Moonoi Monsoon</div>
+    </div>
+    <h1 class="title">LOOPLESS FONT MASTER</h1>
+    <p class="subtitle">看板や見出しでは、タイ文字の「輪」が消える。<br><b>それでも読める目を鍛えよう。</b></p>
+
+    <div class="px-rule" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+    <div class="explain">
+      <div class="explain-label">▸ ループなしの罠</div>
+      <div class="demo" aria-hidden="true">
+        <div class="demo-col">
+          <div class="demo-glyph">บ</div>
+          <div class="demo-cap">ループあり</div>
+        </div>
+        <div class="demo-arrow">→</div>
+        <div class="demo-col">
+          <div class="demo-glyph loopless">น</div>
+          <div class="demo-cap">そっくりに見える</div>
+        </div>
+      </div>
+      <p class="explain-text">ループなしフォントでは บ ป น ผ พ などがそっくりな双子になります。単語を読んで正しい発音を選び、見分ける目を育てましょう。</p>
+    </div>
+
+    <button class="start-btn" id="startBtn">▸ START</button>
+
+
+    <footer>
+      <div class="made">หมูน้อย · little pig · Moonoi Monsoon</div>
+      <div class="social">
+        <a href="https://www.instagram.com/moonoi_monsoon" target="_blank" rel="noopener noreferrer" aria-label="Moonoi Monsoon on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5.4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="17.4" cy="6.6" r="1.4" fill="currentColor"/>
+          </svg>
+        </a>
+        <a href="https://moonoimonsoon.github.io" target="_blank" rel="noopener noreferrer" aria-label="Moonoi Monsoon hub site">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="currentColor" stroke-width="11">
+              <path d="M16 76 V36 L33 58 L50 36 V76"/>
+              <path d="M50 76 V36 L67 58 L84 36 V76"/>
+            </g>
+          </svg>
+        </a>
+      </div>
+    </footer>
+  </section>
+
+  <!-- ============ GAME SCREEN ============ -->
+  <section id="quiz" class="hidden">
+    <div class="game-header">
+      <svg class="hdr-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-width="12">
+          <path d="M16 76 V36 L33 58 L50 36 V76" stroke="#9FD92A"/>
+          <path d="M50 76 V36 L67 58 L84 36 V76" stroke="#cdeb5f"/>
+        </g>
+      </svg>
+      <span class="hdr-name">Moonoi Monsoon</span>
+      <span class="hdr-tag px">LOOPLESS</span>
+    </div>
+
+    <div class="statbar">
+      <div class="stat" id="qStat"><div class="k">もんだい</div><div class="v"><span id="qnum">1</span>/10</div></div>
+      <div class="stat" id="streakStat"><div class="k">れんぞく</div><div class="v" id="streak">0</div></div>
+      <div class="stat" id="scoreStat"><div class="k">スコア</div><div class="v" id="score">0</div></div>
+    </div>
+    <div class="progress"><i id="bar"></i></div>
+
+    <div class="qcard">
+      <div class="prompt-label">▸ なんて読む？</div>
+      <div class="thai" id="thai" lang="th">—</div>
+      <div class="jp-hint" id="jp"></div>
+    </div>
+
+    <div class="choices" id="choices"></div>
+    <div class="feedback" id="feedback"></div>
+
+    <button class="next-btn" id="next" disabled>▸ つぎへ</button>
+    <button class="quit-link" id="quitBtn">✕ メニューにもどる</button>
+  </section>
+
+  <!-- ============ RESULT SCREEN ============ -->
+  <section id="resultScreen" class="hidden">
+    <div class="result-card">
+      <div class="result-eyebrow">▸ クイズしゅうりょう</div>
+      <div class="result-score px" id="finalScore">0 / 10</div>
+      <div class="result-pct" id="finalPct">0%</div>
+
+      <div class="achieve" id="achieve">
+        <div class="achieve-icon" id="achieveIcon">🍋</div>
+        <div class="achieve-msg" id="achieveMsg"></div>
+        <div class="achieve-sub" id="achieveSub"></div>
+      </div>
+
+      <div class="review" id="review"></div>
+
+      <button class="again-btn" id="again">▸ もういちど</button>
+
+
+      <button class="quit-link" id="menuBtn">✕ メニューへ</button>
+    </div>
+    <footer>หมูน้อย · little pig · Moonoi Monsoon</footer>
+  </section>
+
+</div>
+
+<script>
+/* ====== VOCAB DATA (Thai spelling + phonetic reading + meaning) ====== */
+const VOCAB=[{"th": "ชอบ", "rd": "chɔ̂ɔp", "en": "好む、好きである"}, {"th": "แพ้", "rd": "phɛ́ɛ", "en": "（〜に）アレルギーがある"}, {"th": "เสื้อ", "rd": "sʉ̂ʉa", "en": "シャツ・上着・トップス"}, {"th": "เสื้อแขนยาว", "rd": "sʉ̂ʉa-khɛ̆ɛn-yaao", "en": "長袖のトップス"}, {"th": "เสื้อเชิ้ต", "rd": "sʉ̂ʉa-chə́ət", "en": "ワイシャツ"}, {"th": "เสื้อยืด", "rd": "sʉ̂ʉa-yʉ̂ʉt", "en": "Tシャツ"}, {"th": "กางเกง", "rd": "gaang-geeng", "en": "ズボン"}, {"th": "กระโปรง", "rd": "gra-bproong", "en": "スカート"}, {"th": "กระโปรงยาว", "rd": "gra-bproong-yaao", "en": "ロングスカート"}, {"th": "สร้อยคอ", "rd": "sɔ̂ɔi-khɔɔ", "en": "ネックレス"}, {"th": "สร้อยข้อมือ", "rd": "sɔ̂ɔi-khɔ̂ɔ-mʉʉ", "en": "ブレスレット"}, {"th": "แหวน", "rd": "wɛ̆ɛn", "en": "指輪"}, {"th": "กำไล", "rd": "gam-lai", "en": "腕輪・バングル"}, {"th": "แว่น", "rd": "wɛ̂n", "en": "眼鏡"}, {"th": "แว่นกันแดด", "rd": "wɛ̂n-gan-dɛ̀ɛt", "en": "サングラス"}, {"th": "ดูดี", "rd": "duu-dii", "en": "見栄えが良い"}, {"th": "เชย", "rd": "chəəi", "en": "ださい・古くさい"}, {"th": "แพง", "rd": "phɛɛng", "en": "高い（値段）"}, {"th": "พอดี", "rd": "phɔɔ-dii", "en": "ぴったり・ちょうど良い"}, {"th": "เงิน", "rd": "ngən", "en": "銀"}, {"th": "ทอง", "rd": "thɔɔng", "en": "金"}, {"th": "ใบ", "rd": "bai", "en": "袋・帽子・容器など"}, {"th": "วง", "rd": "wong", "en": "輪状のもの（指輪・腕輪・時計）"}, {"th": "เรือน", "rd": "rʉan", "en": "時計（の数え方）"}, {"th": "อัน", "rd": "an", "en": "小物一般"}, {"th": "ราคา", "rd": "raa-khaa", "en": "値段"}, {"th": "โปรแกรม", "rd": "bproo-grɛɛm", "en": "プログラム"}, {"th": "ปี", "rd": "bpii", "en": "年（年齢）"}, {"th": "หยวน", "rd": "yuan", "en": "元（人民元）"}, {"th": "เยน", "rd": "yen", "en": "円"}, {"th": "นาที", "rd": "naa-thii", "en": "分"}, {"th": "วัน", "rd": "wan", "en": "日"}, {"th": "เบา", "rd": "bao", "en": "軽い"}, {"th": "ผอม", "rd": "phɔ̆ɔm", "en": "痩せている"}, {"th": "ยาว", "rd": "yaao", "en": "長い"}, {"th": "เร็ว", "rd": "reo", "en": "速い"}, {"th": "ไกล", "rd": "glai", "en": "遠い"}, {"th": "แก่", "rd": "gɛ̀ɛ", "en": "年をとっている"}, {"th": "อ่อน", "rd": "ɔ̀ɔn", "en": "若い"}, {"th": "หล่อ", "rd": "lɔ̀ɔ", "en": "ハンサムな"}, {"th": "นาน", "rd": "naan", "en": "（時間が）長い"}, {"th": "เดือน", "rd": "dʉan", "en": "月（つき）"}, {"th": "เพราะ", "rd": "phrɔ́", "en": "なぜなら"}, {"th": "แข็งแรง", "rd": "khɛ̆ng-rɛɛng", "en": "丈夫な・健康な"}, {"th": "ความชอบ", "rd": "khwaam-chɔ̂ɔp", "en": "好み"}, {"th": "ตา", "rd": "dtaa", "en": "母方の祖父"}, {"th": "ยาย", "rd": "yaai", "en": "母方の祖母"}, {"th": "ลุง", "rd": "lung", "en": "父/母の兄（おじ）"}, {"th": "อา", "rd": "aa", "en": "父の弟・妹"}, {"th": "น้องชาย", "rd": "nɔ́ɔng-chaai", "en": "弟"}, {"th": "ภรรยา", "rd": "phan-ra-yaa", "en": "妻（正式）"}, {"th": "เมีย", "rd": "mia", "en": "妻（くだけた）"}, {"th": "แฟน", "rd": "fɛɛn", "en": "恋人"}, {"th": "เพื่อน", "rd": "phʉ̂an", "en": "友達"}, {"th": "เพิ่ม", "rd": "phə̂əm", "en": "加わる・増す"}, {"th": "ดัง", "rd": "dang", "en": "大きい（音）・有名な"}, {"th": "ดี", "rd": "dii", "en": "良い"}, {"th": "ร้อน", "rd": "rɔ́ɔn", "en": "暑い・熱い"}, {"th": "แย่", "rd": "yɛ̂ɛ", "en": "ひどい・悪化"}, {"th": "น้อย", "rd": "nɔ́ɔi", "en": "少ない"}, {"th": "ซื้อ", "rd": "sʉ́ʉ", "en": "買う"}, {"th": "ทำ", "rd": "tham", "en": "する・作る"}, {"th": "เตรียม", "rd": "dtriam", "en": "準備する"}, {"th": "แบ่ง", "rd": "bɛ̀ng", "en": "分ける・シェアする"}, {"th": "ทาน", "rd": "thaan", "en": "食べる（丁寧）"}, {"th": "อร่อย", "rd": "a-rɔ̀ɔi", "en": "おいしい"}, {"th": "ครัวซองต์", "rd": "khrua-sɔɔng", "en": "クロワッサン"}, {"th": "พาย", "rd": "phaai", "en": "パイ"}, {"th": "แตงโม", "rd": "dtɛɛng-moo", "en": "スイカ"}, {"th": "มะนาว", "rd": "ma-naao", "en": "ライム"}, {"th": "เครื่องดื่ม", "rd": "khrʉ̂ang-dʉ̀ʉm", "en": "飲み物"}, {"th": "กาแฟ", "rd": "gaa-fɛɛ", "en": "コーヒー"}, {"th": "ชา", "rd": "chaa", "en": "茶"}, {"th": "ช็อกโกแลต", "rd": "chɔ́k-goo-lɛ́ɛt", "en": "チョコレート"}, {"th": "นม", "rd": "nom", "en": "牛乳"}, {"th": "นมวัว", "rd": "nom-wua", "en": "牛乳"}, {"th": "ทนาย", "rd": "tha-naai", "en": "弁護士"}, {"th": "อาจารย์", "rd": "aa-jaan", "en": "教師・教授"}, {"th": "ครู", "rd": "khruu", "en": "教師（学校）"}, {"th": "สบาย ๆ", "rd": "sa-baai-sa-baai", "en": "おおらかな"}, {"th": "จริงใจ", "rd": "jing-jai", "en": "誠実な"}, {"th": "ใจดี", "rd": "jai-dii", "en": "親切な"}, {"th": "ใจเย็น", "rd": "jai-yen", "en": "落ち着いた・気が長い"}, {"th": "ใจร้อน", "rd": "jai-rɔ́ɔn", "en": "短気な"}, {"th": "ใจแคบ", "rd": "jai-khɛ̂ɛp", "en": "心が狭い"}, {"th": "เขย", "rd": "khə̆əi", "en": "婿方の男性親族"}, {"th": "น้องเขย", "rd": "nɔ́ɔng-khə̆əi", "en": "妹の夫"}, {"th": "แต่งงาน", "rd": "dtɛ̀ng-ngaan", "en": "結婚する"}, {"th": "เรียนต่อ", "rd": "rian-dtɔ̀ɔ", "en": "進学する"}, {"th": "ระวัง", "rd": "ra-wang", "en": "用心する・気をつける"}, {"th": "ห้องนอน", "rd": "hɔ̂ɔng-nɔɔn", "en": "寝室"}, {"th": "ห้องครัว", "rd": "hɔ̂ɔng-khrua", "en": "台所"}, {"th": "ระเบียง", "rd": "ra-biang", "en": "ベランダ"}, {"th": "ประตู", "rd": "bpra-dtuu", "en": "ドア"}, {"th": "บันได", "rd": "ban-dai", "en": "階段"}, {"th": "โซฟา", "rd": "soo-faa", "en": "ソファ"}, {"th": "แอร์", "rd": "ɛɛ", "en": "エアコン"}, {"th": "ดารา", "rd": "daa-raa", "en": "スター・芸能人"}, {"th": "ตัวละคร", "rd": "dtua-la-khɔɔn", "en": "登場人物"}, {"th": "อารมณ์", "rd": "aa-rom", "en": "感情・気分"}, {"th": "อารมณ์ดี", "rd": "aa-rom-dii", "en": "機嫌が良い"}, {"th": "สบายใจ", "rd": "sa-baai-jai", "en": "安心している・気が楽"}, {"th": "ดีใจ", "rd": "dii-jai", "en": "嬉しい"}, {"th": "อาย", "rd": "aai", "en": "恥ずかしい"}, {"th": "งง", "rd": "ngong", "en": "混乱する・困惑する"}, {"th": "รำคาญ", "rd": "ram-khaan", "en": "うんざりする・煩わしい"}, {"th": "ออนแอร์", "rd": "ɔɔn-ɛɛ", "en": "放送される・オンエア"}, {"th": "เรื่อง", "rd": "rʉ̂ʉang", "en": "（映画・話の）分類詞"}, {"th": "หมอ", "rd": "mɔ̆ɔ", "en": "医者"}, {"th": "พยาบาล", "rd": "pha-yaa-baan", "en": "看護師"}, {"th": "คอ", "rd": "khɔɔ", "en": "首・のど"}, {"th": "ตัว", "rd": "dtua", "en": "体"}, {"th": "แขน", "rd": "khɛ̆ɛn", "en": "腕"}, {"th": "มือ", "rd": "mʉʉ", "en": "手"}, {"th": "ศอก", "rd": "sɔ̀ɔk", "en": "ひじ"}, {"th": "บอกอาการ", "rd": "bɔ̀ɔk-aa-gaan", "en": "自分の症状を説明する"}, {"th": "เป็นลม", "rd": "bpen-lom", "en": "気を失う"}, {"th": "เป็นภูมิแพ้", "rd": "bpen-phuum-phɛ́ɛ", "en": "アレルギーがある"}, {"th": "จาม", "rd": "jaam", "en": "くしゃみをする"}, {"th": "ไอ", "rd": "ai", "en": "咳をする"}, {"th": "ตัวร้อน", "rd": "dtua-rɔ́ɔn", "en": "熱がある"}, {"th": "อาเจียน", "rd": "aa-jian", "en": "嘔吐する"}, {"th": "เมา", "rd": "mao", "en": "酔う"}, {"th": "คัน", "rd": "khan", "en": "かゆい"}, {"th": "เกา", "rd": "gao", "en": "かく"}, {"th": "เมื่อย", "rd": "mʉ̂ai", "en": "（筋肉が）だるい・こる"}, {"th": "หอม", "rd": "hɔ̆ɔm", "en": "良い香りがする"}, {"th": "แปลก", "rd": "bplɛ̀ɛk", "en": "変な・奇妙な"}, {"th": "เดิม", "rd": "dəəm", "en": "いつもの・元の・同じ"}, {"th": "อีเมล", "rd": "ii-meeo", "en": "Eメール / メールする"}, {"th": "ไลน์", "rd": "lai", "en": "LINE / LINEする"}, {"th": "กะเพรา", "rd": "ga-phrao", "en": "ガパオ（ホーリーバジル炒め）"}, {"th": "กระเทียม", "rd": "gra-thiam", "en": "ニンニク"}, {"th": "เบียร์", "rd": "bia", "en": "ビール"}, {"th": "จาน", "rd": "jaan", "en": "皿"}, {"th": "กระป๋อง", "rd": "gra-bpɔ̆ɔng", "en": "缶"}, {"th": "ขึ้น", "rd": "khʉ̂n", "en": "上がる・登る"}, {"th": "ลง", "rd": "long", "en": "下がる・降りる"}, {"th": "ออก", "rd": "ɔ̀ɔk", "en": "出る"}, {"th": "กล่อง", "rd": "glɔ̀ng", "en": "箱"}, {"th": "โจร", "rd": "joon", "en": "強盗・泥棒"}, {"th": "ขโมย", "rd": "kha-mooi", "en": "泥棒"}, {"th": "ขอทาน", "rd": "khɔ̆ɔ-thaan", "en": "物乞い"}, {"th": "เถอะ", "rd": "thə̀", "en": "（勧め・命令）〜しよう・〜なよ"}, {"th": "ชน", "rd": "chon", "en": "衝突する・ぶつかる"}, {"th": "ต่อย", "rd": "dtɔ̀ɔi", "en": "殴る・刺す（虫）"}, {"th": "ตี", "rd": "dtii", "en": "叩く"}, {"th": "โกง", "rd": "goong", "en": "ごまかす・不正をする"}, {"th": "หลอก", "rd": "lɔ̀ɔk", "en": "騙す・欺く"}, {"th": "แกล้ง", "rd": "glɛ̂ng", "en": "からかう・いじめる"}, {"th": "แตก", "rd": "dtɛ̀ɛk", "en": "割れる・砕ける"}, {"th": "ดูแล", "rd": "duu-lɛɛ", "en": "世話をする・看護する"}, {"th": "ทำแผล", "rd": "tham-phlɛ̆ɛ", "en": "傷の手当てをする"}, {"th": "ยา", "rd": "yaa", "en": "薬"}, {"th": "ยากิน", "rd": "yaa-gin", "en": "飲み薬"}, {"th": "ยาทา", "rd": "yaa-thaa", "en": "塗り薬・クリーム"}, {"th": "เลือด", "rd": "lʉ̂ʉat", "en": "血"}, {"th": "แผล", "rd": "phlɛ̆ɛ", "en": "傷"}, {"th": "กล่องพยาบาล", "rd": "glɔ̀ng-pha-yaa-baan", "en": "救急箱"}, {"th": "แมลง", "rd": "ma-lɛɛng", "en": "昆虫（6本脚）"}, {"th": "แมง", "rd": "mɛɛng", "en": "虫（8本脚）"}, {"th": "ยุง", "rd": "yung", "en": "蚊"}, {"th": "ผึ้ง", "rd": "phʉ̂ng", "en": "ミツバチ"}, {"th": "ต่อ", "rd": "dtɔ̀ɔ", "en": "スズメバチ"}, {"th": "แมงมุม", "rd": "mɛɛng-mum", "en": "クモ"}, {"th": "แมงป่อง", "rd": "mɛɛng-bpɔ̀ɔng", "en": "サソリ"}, {"th": "แมงกะพรุน", "rd": "mɛɛng-ga-phrun", "en": "クラゲ"}, {"th": "อันตราย", "rd": "an-dta-raai", "en": "危険な"}, {"th": "ปลอดภัย", "rd": "bplɔ̀ɔt-phai", "en": "安全な"}, {"th": "อำเภอ", "rd": "am-phəə", "en": "郡"}, {"th": "แขวง", "rd": "khwɛ̆ɛng", "en": "町（バンコクの区画）"}, {"th": "ตำบล", "rd": "dtam-bon", "en": "町（地方の区画）"}, {"th": "ชุมชน", "rd": "chum-chon", "en": "コミュニティ"}, {"th": "ทาง", "rd": "thaang", "en": "方向・道"}, {"th": "เหนือ", "rd": "nʉ̆ʉa", "en": "北"}, {"th": "ตะวันออก", "rd": "dta-wan-ɔ̀ɔk", "en": "東"}, {"th": "เจดีย์", "rd": "jee-dii", "en": "仏塔・パゴダ"}, {"th": "วัง", "rd": "wang", "en": "宮殿"}, {"th": "ดอย", "rd": "dɔɔi", "en": "山（北部方言）"}, {"th": "เขื่อน", "rd": "khʉ̀ʉan", "en": "ダム"}, {"th": "คลอง", "rd": "khlɔɔng", "en": "運河"}, {"th": "ทะเล", "rd": "tha-lee", "en": "海"}, {"th": "เกาะ", "rd": "gɔ̀", "en": "島"}, {"th": "ฤดู", "rd": "rʉ́-duu", "en": "季節"}, {"th": "ดูดาว", "rd": "duu-daao", "en": "星を見る"}, {"th": "ล่องแพ", "rd": "lɔ̂ng-phɛɛ", "en": "ラフティングする"}, {"th": "พายเรือ", "rd": "phaai-rʉa", "en": "ボートを漕ぐ"}, {"th": "จะ", "rd": "jà", "en": "〜するつもり（未来）"}, {"th": "นะ", "rd": "ná", "en": "〜ね（語気をやわらげる）"}, {"th": "และ", "rd": "lɛ́", "en": "〜と、そして"}, {"th": "กับ", "rd": "gàp", "en": "〜と（いっしょに)"}, {"th": "รัก", "rd": "rák", "en": "愛する"}, {"th": "จับ", "rd": "jàp", "en": "つかむ"}, {"th": "ทัน", "rd": "than", "en": "間に合う"}, {"th": "ขับ", "rd": "khàp", "en": "運転する"}, {"th": "ผิด", "rd": "phìt", "en": "まちがっている"}, {"th": "คิด", "rd": "khít", "en": "考える"}, {"th": "ติด", "rd": "dtìt", "en": "くっつく、ハマる"}, {"th": "ริม", "rd": "rim", "en": "ふち、へり"}, {"th": "ชิด", "rd": "chít", "en": "ぴったり寄る"}, {"th": "ลิง", "rd": "ling", "en": "サル"}, {"th": "ถุง", "rd": "thŭng", "en": "袋"}, {"th": "ลุก", "rd": "lúk", "en": "立ち上がる"}, {"th": "ทุก", "rd": "thúk", "en": "毎〜、すべての"}, {"th": "บุญ", "rd": "bun", "en": "徳、タンブン"}, {"th": "คุณ", "rd": "khun", "en": "あなた（丁寧）"}, {"th": "สุข", "rd": "sùk", "en": "幸福"}, {"th": "เด็ก", "rd": "dèk", "en": "子ども"}, {"th": "เผ็ด", "rd": "phèt", "en": "辛い"}, {"th": "เย็น", "rd": "yen", "en": "涼しい、夕方"}, {"th": "เซ็น", "rd": "sen", "en": "サインする"}, {"th": "เป็น", "rd": "bpen", "en": "〜である"}, {"th": "เล่น", "rd": "lên", "en": "遊ぶ"}, {"th": "คน", "rd": "khon", "en": "人"}, {"th": "ฝน", "rd": "fŏn", "en": "雨"}, {"th": "จน", "rd": "jon", "en": "貧しい、〜まで"}, {"th": "ลม", "rd": "lom", "en": "風"}, {"th": "ผม", "rd": "phŏm", "en": "私（男性）、髪"}, {"th": "ต้น", "rd": "dtôn", "en": "木、はじまり"}, {"th": "แกะ", "rd": "gɛ̀", "en": "羊"}, {"th": "แคะ", "rd": "khɛ́", "en": "ほじくり出す"}, {"th": "เลอะ", "rd": "lə́", "en": "汚れている"}, {"th": "มา", "rd": "maa", "en": "来る"}, {"th": "ปลา", "rd": "bplaa", "en": "魚"}, {"th": "ขา", "rd": "khăa", "en": "脚"}, {"th": "หมา", "rd": "măa", "en": "犬"}, {"th": "บ้าน", "rd": "bâan", "en": "家"}, {"th": "มี", "rd": "mii", "en": "ある、持っている"}, {"th": "สี", "rd": "sĭi", "en": "色"}, {"th": "หนี", "rd": "nĭi", "en": "逃げる"}, {"th": "หมู", "rd": "mŭu", "en": "豚"}, {"th": "ดู", "rd": "duu", "en": "見る"}, {"th": "รู้", "rd": "rúu", "en": "知っている"}, {"th": "ปู", "rd": "bpuu", "en": "カニ"}, {"th": "งู", "rd": "nguu", "en": "ヘビ"}, {"th": "เท", "rd": "thee", "en": "注ぐ"}, {"th": "เก", "rd": "gee", "en": "かわす、それる"}, {"th": "เซ", "rd": "see", "en": "よろける"}, {"th": "เมล์", "rd": "mee", "en": "メール、路線バス"}, {"th": "โต", "rd": "dtoo", "en": "大きい、育つ"}, {"th": "โชค", "rd": "chôok", "en": "運"}, {"th": "โมง", "rd": "moong", "en": "〜時"}, {"th": "โง่", "rd": "ngôo", "en": "おろかな"}, {"th": "พอ", "rd": "phɔɔ", "en": "十分な"}, {"th": "รอ", "rd": "rɔɔ", "en": "待つ"}, {"th": "ขอ", "rd": "khɔ̆ɔ", "en": "求める、ください"}, {"th": "สอน", "rd": "sɔ̆ɔn", "en": "教える"}, {"th": "แม่", "rd": "mɛ̂ɛ", "en": "母"}, {"th": "แดง", "rd": "dɛɛng", "en": "赤い"}, {"th": "เธอ", "rd": "thəə", "en": "君、彼女"}, {"th": "เจอ", "rd": "jəə", "en": "会う、見つける"}, {"th": "เดิน", "rd": "dəən", "en": "歩く"}, {"th": "เกิด", "rd": "gə̀ət", "en": "生まれる"}, {"th": "คือ", "rd": "khʉʉ", "en": "すなわち、〜である"}, {"th": "ลือ", "rd": "lʉʉ", "en": "うわさが広まる"}, {"th": "ถือ", "rd": "thʉ̆ʉ", "en": "手に持つ"}, {"th": "เสีย", "rd": "sĭa", "en": "（食べ物が）傷む"}, {"th": "เรียน", "rd": "rian", "en": "学ぶ"}, {"th": "เขียน", "rd": "khĭan", "en": "書く"}, {"th": "เปลี่ยน", "rd": "bplìan", "en": "変える"}, {"th": "เรือ", "rd": "rʉa", "en": "船"}, {"th": "เสือ", "rd": "sʉ̆ʉa", "en": "トラ"}, {"th": "เมือง", "rd": "mʉang", "en": "町、都市"}, {"th": "เกลือ", "rd": "glʉa", "en": "塩"}, {"th": "วัว", "rd": "wua", "en": "牛"}, {"th": "รวย", "rd": "ruai", "en": "金持ちの"}, {"th": "ดาว", "rd": "daao", "en": "星"}, {"th": "สวย", "rd": "sŭai", "en": "美しい"}, {"th": "ไป", "rd": "bpai", "en": "行く"}, {"th": "ใจ", "rd": "jai", "en": "心"}, {"th": "ใหม่", "rd": "mài", "en": "新しい"}, {"th": "ไหน", "rd": "năi", "en": "どこ"}, {"th": "ใคร", "rd": "khrai", "en": "だれ"}, {"th": "เรา", "rd": "rao", "en": "私たち"}, {"th": "เขา", "rd": "khăo", "en": "彼、彼女、山"}, {"th": "เก้า", "rd": "gâo", "en": "9"}, {"th": "เอา", "rd": "ao", "en": "取る、ほしい"}, {"th": "สาว", "rd": "săao", "en": "若い女性"}, {"th": "น้ำ", "rd": "náam", "en": "水"}, {"th": "คำ", "rd": "kham", "en": "ことば"}, {"th": "ดำ", "rd": "dam", "en": "黒い"}, {"th": "จำ", "rd": "jam", "en": "覚える"}, {"th": "นำ", "rd": "nam", "en": "導く"}, {"th": "หิว", "rd": "hĭu", "en": "おなかがすいた"}, {"th": "นิ้ว", "rd": "níu", "en": "指・つま先"}, {"th": "เคี้ยว", "rd": "khíao", "en": "かむ"}, {"th": "เลว", "rd": "leeo", "en": "悪い"}, {"th": "เดี๋ยว", "rd": "dĭao", "en": "ちょっと、もうすぐ"}, {"th": "แมว", "rd": "mɛɛo", "en": "猫"}, {"th": "แล้ว", "rd": "lɛ́ɛo", "en": "もう、〜した"}, {"th": "แห้ว", "rd": "hɛ̂ɛo", "en": "クログワイ"}, {"th": "โดย", "rd": "dooi", "en": "〜によって"}, {"th": "โรย", "rd": "rooi", "en": "ふりかける"}, {"th": "ห้อย", "rd": "hɔ̂ɔi", "en": "ぶら下げる"}, {"th": "ช่วย", "rd": "chûai", "en": "助ける"}, {"th": "ด้วย", "rd": "dûai", "en": "〜も、いっしょに"}, {"th": "ป่วย", "rd": "bpùai", "en": "病気である"}, {"th": "เหนื่อย", "rd": "nʉ̀ai", "en": "疲れた"}, {"th": "สาย", "rd": "săai", "en": "遅い、線"}, {"th": "ขาย", "rd": "khăai", "en": "売る"}, {"th": "หาย", "rd": "hăai", "en": "なくなる、治る"}, {"th": "ง่าย", "rd": "ngâai", "en": "かんたんな"}, {"th": "คอย", "rd": "khɔɔi", "en": "待ち受ける"}, {"th": "ร้อย", "rd": "rɔ́ɔi", "en": "100"}, {"th": "ปล่อย", "rd": "bplɔ̀i", "en": "放す"}, {"th": "ครับ", "rd": "khráp", "en": "〜です（男性丁寧）"}, {"th": "ค่ะ", "rd": "khâ", "en": "〜です（女性丁寧）"}, {"th": "ความ", "rd": "khwaam", "en": "〜さ（名詞化）"}, {"th": "ครอบครัว", "rd": "khrɔ̂ɔp-khrua", "en": "家族"}, {"th": "คะแนน", "rd": "kha-nɛɛn", "en": "点数"}, {"th": "ศึกษา", "rd": "sʉ̀k-săa", "en": "学ぶ、教育"}, {"th": "ศัตรู", "rd": "sàt-truu", "en": "敵"}, {"th": "ศาล", "rd": "săan", "en": "裁判所"}, {"th": "ศูนย์", "rd": "sŭun", "en": "センター、ゼロ"}, {"th": "เศรษฐี", "rd": "sèet-thĭi", "en": "大金持ち"}, {"th": "เงา", "rd": "ngao", "en": "影"}, {"th": "งาน", "rd": "ngaan", "en": "仕事、行事"}, {"th": "ง่วง", "rd": "ngûang", "en": "眠い"}, {"th": "เงียบ", "rd": "ngîap", "en": "静かな"}, {"th": "จอง", "rd": "jɔɔng", "en": "予約する"}, {"th": "จ่าย", "rd": "jàai", "en": "払う"}, {"th": "จาก", "rd": "jàak", "en": "〜から"}, {"th": "จมูก", "rd": "ja-mùuk", "en": "鼻"}, {"th": "ฉัน", "rd": "chăn", "en": "私"}, {"th": "ฉลาด", "rd": "cha-làat", "en": "かしこい"}, {"th": "ฉาก", "rd": "chàak", "en": "場面、ついたて"}, {"th": "ฉีด", "rd": "chìit", "en": "注射する"}, {"th": "ฉุน", "rd": "chŭn", "en": "つんとくる"}, {"th": "เฉย", "rd": "chə̆əi", "en": "知らんぷり、じっとした"}, {"th": "ช้าง", "rd": "cháang", "en": "ゾウ"}, {"th": "ชาม", "rd": "chaam", "en": "どんぶり"}, {"th": "ชั้น", "rd": "chán", "en": "階、棚"}, {"th": "ชาติ", "rd": "châat", "en": "国家、民族"}, {"th": "ซอย", "rd": "sɔɔi", "en": "路地、ソイ"}, {"th": "ซ้าย", "rd": "sáai", "en": "左"}, {"th": "ซัก", "rd": "sák", "en": "洗濯する"}, {"th": "ซ่อม", "rd": "sɔ̂ɔm", "en": "修理する"}, {"th": "ซื่อ", "rd": "sʉ̂ʉ", "en": "正直な"}, {"th": "ซอส", "rd": "sɔ́ɔt", "en": "ソース"}, {"th": "ญาติ", "rd": "yâat", "en": "親戚"}, {"th": "หญิง", "rd": "yĭng", "en": "女性"}, {"th": "ใหญ่", "rd": "yài", "en": "大きい"}, {"th": "ญี่ปุ่น", "rd": "yîi-bpùn", "en": "日本"}, {"th": "คุณภาพ", "rd": "khun-na-phâap", "en": "品質"}, {"th": "เณร", "rd": "neen", "en": "少年僧"}, {"th": "ดิน", "rd": "din", "en": "土"}, {"th": "ดาบ", "rd": "dàap", "en": "刀、剣"}, {"th": "ดึก", "rd": "dʉ̀k", "en": "夜ふけ"}, {"th": "ตลาด", "rd": "dta-làat", "en": "市場・マーケット"}, {"th": "ตอบ", "rd": "dtɔ̀ɔp", "en": "答える"}, {"th": "ต้ม", "rd": "dtôm", "en": "ゆでる"}, {"th": "ถนน", "rd": "tha-nŏn", "en": "道路"}, {"th": "ถาม", "rd": "thăam", "en": "質問する"}, {"th": "ถ้วย", "rd": "thûai", "en": "椀・カップ"}, {"th": "ถ่าย", "rd": "thàai", "en": "撮影する"}, {"th": "ถัง", "rd": "thăng", "en": "バケツ"}, {"th": "เถ้าแก่", "rd": "thâo-gɛ̀ɛ", "en": "店主、だんな"}, {"th": "หนู", "rd": "nŭu", "en": "ネズミ、私（女の子）"}, {"th": "หนัง", "rd": "năng", "en": "映画、皮"}, {"th": "น้อง", "rd": "nɔ́ɔng", "en": "年下のきょうだい"}, {"th": "นก", "rd": "nók", "en": "鳥"}, {"th": "บิน", "rd": "bin", "en": "飛ぶ"}, {"th": "บ่อย", "rd": "bɔ̀ɔi", "en": "しばしば"}, {"th": "บาง", "rd": "baang", "en": "薄い、いくつかの"}, {"th": "เป็ด", "rd": "bpèt", "en": "アヒル"}, {"th": "ปิด", "rd": "bpìt", "en": "閉める"}, {"th": "ป้าย", "rd": "bpâai", "en": "看板"}, {"th": "ผัก", "rd": "phàk", "en": "野菜"}, {"th": "ผี", "rd": "phĭi", "en": "おばけ"}, {"th": "ผ้า", "rd": "phâa", "en": "布"}, {"th": "ผัด", "rd": "phàt", "en": "炒める"}, {"th": "ฝา", "rd": "făa", "en": "ふた"}, {"th": "ฝาก", "rd": "fàak", "en": "預ける"}, {"th": "ฝัน", "rd": "făn", "en": "夢を見る"}, {"th": "ฝุ่น", "rd": "fùn", "en": "ほこり"}, {"th": "พบ", "rd": "phóp", "en": "会う"}, {"th": "พัก", "rd": "phák", "en": "休む"}, {"th": "พา", "rd": "phaa", "en": "連れて行く"}, {"th": "เพลง", "rd": "phleeng", "en": "歌"}, {"th": "ฟัน", "rd": "fan", "en": "歯"}, {"th": "ฟ้า", "rd": "fáa", "en": "空"}, {"th": "ไฟ", "rd": "fai", "en": "火、電気"}, {"th": "ฟรี", "rd": "frii", "en": "無料の"}, {"th": "ฟัง", "rd": "fang", "en": "聞く"}, {"th": "ภาษา", "rd": "phaa-săa", "en": "言語"}, {"th": "ภาพ", "rd": "phâap", "en": "絵、画像"}, {"th": "ภูเขา", "rd": "phuu-khăo", "en": "山"}, {"th": "ภาค", "rd": "phâak", "en": "地方"}, {"th": "มด", "rd": "mót", "en": "アリ"}, {"th": "มาก", "rd": "mâak", "en": "多い"}, {"th": "รถ", "rd": "rót", "en": "車"}, {"th": "ร้าน", "rd": "ráan", "en": "店"}, {"th": "รวม", "rd": "ruam", "en": "合わせる"}, {"th": "ลา", "rd": "laa", "en": "ロバ、いとまごい"}, {"th": "ลืม", "rd": "lʉʉm", "en": "忘れる"}, {"th": "เลข", "rd": "lêek", "en": "数字"}, {"th": "ลูก", "rd": "lûuk", "en": "子、実、玉"}, {"th": "วัด", "rd": "wát", "en": "お寺"}, {"th": "ไว", "rd": "wai", "en": "すばやい"}, {"th": "ว่าง", "rd": "wâang", "en": "ひまな、空いている"}, {"th": "วาด", "rd": "wâat", "en": "描く"}, {"th": "สวน", "rd": "sŭan", "en": "庭・公園"}, {"th": "ส้ม", "rd": "sôm", "en": "ミカン、オレンジ"}, {"th": "สิบ", "rd": "sìp", "en": "10"}, {"th": "สอง", "rd": "sɔ̆ɔng", "en": "2"}, {"th": "ษ", "rd": "sɔ̆ɔ-rʉʉ-sĭi", "en": "ソー・ルーシー（文字名）"}, {"th": "อ้วน", "rd": "ûan", "en": "太っている"}, {"th": "อ่าน", "rd": "àan", "en": "読む"}, {"th": "อิ่ม", "rd": "ìm", "en": "おなかいっぱい"}, {"th": "อด", "rd": "òt", "en": "がまんする"}, {"th": "ฮา", "rd": "haa", "en": "ウケる"}, {"th": "ฮัม", "rd": "ham", "en": "ハミングする"}, {"th": "เฮ", "rd": "hee", "en": "歓声を上げる"}, {"th": "กิน", "rd": "gin", "en": "食べる"}, {"th": "ไก่", "rd": "gài", "en": "ニワトリ"}, {"th": "แก้ว", "rd": "gɛ̂ɛo", "en": "コップ、ガラス"}, {"th": "กลับ", "rd": "glàp", "en": "帰る"}, {"th": "ข้าว", "rd": "khâao", "en": "ごはん、米"}, {"th": "ไข่", "rd": "khài", "en": "卵"}, {"th": "เขียว", "rd": "khĭao", "en": "緑の"}, {"th": "ของ", "rd": "khɔ̆ɔng", "en": "物、〜の"}, {"th": "เข้า", "rd": "khâo", "en": "入る"}, {"th": "ใต้", "rd": "dtâai", "en": "南"}, {"th": "ที่", "rd": "thîi", "en": "〜で、場所"}, {"th": "หา", "rd": "hăa", "en": "さがす"}, {"th": "ให้", "rd": "hâi", "en": "あげる、〜させる"}, {"th": "หก", "rd": "hòk", "en": "6"}, {"th": "ห้า", "rd": "hâa", "en": "5"}, {"th": "หนาว", "rd": "năao", "en": "寒い"}, {"th": "เมฆ", "rd": "mêek", "en": "雲"}, {"th": "ไม่", "rd": "mâi", "en": "〜ない"}, {"th": "ยาก", "rd": "yâak", "en": "むずかしい"}, {"th": "ยิ้ม", "rd": "yím", "en": "ほほえむ"}, {"th": "ยืน", "rd": "yʉʉn", "en": "立つ"}, {"th": "ยุ่ง", "rd": "yûng", "en": "忙しい"}, {"th": "จันทร์", "rd": "jan", "en": "月曜日"}, {"th": "อังคาร", "rd": "ang-khaan", "en": "火曜日"}, {"th": "พุธ", "rd": "phút", "en": "水曜日"}, {"th": "ศุกร์", "rd": "sùk", "en": "金曜日"}, {"th": "เสาร์", "rd": "săo", "en": "土曜日"}, {"th": "ณ", "rd": "ná", "en": "〜にて（文語）"}, {"th": "ทหาร", "rd": "tha-hăan", "en": "軍人"}, {"th": "ปรากฏ", "rd": "bpraa-gòt", "en": "現れる"}, {"th": "กฎ", "rd": "gòt", "en": "規則"}, {"th": "กฎหมาย", "rd": "gòt-măai", "en": "法律"}, {"th": "ปฏิบัติ", "rd": "bpà-dtì-bàt", "en": "実践する"}, {"th": "ปฏิเสธ", "rd": "bpà-dtì-sèet", "en": "断る"}, {"th": "ฐาน", "rd": "thăan", "en": "土台"}, {"th": "ฐานะ", "rd": "thăa-ná", "en": "地位、身分"}, {"th": "รัฐ", "rd": "rát", "en": "国家、州"}, {"th": "รัฐบาล", "rd": "rát-tha-baan", "en": "政府"}, {"th": "สถาน", "rd": "sa-thăan", "en": "場所（〜所）"}, {"th": "สถานี", "rd": "sa-thăa-nii", "en": "駅"}, {"th": "พูด", "rd": "phûut", "en": "話す"}, {"th": "บอก", "rd": "bɔ̀ɔk", "en": "伝える"}, {"th": "เปิด", "rd": "bpə̀ət", "en": "開ける"}, {"th": "เริ่ม", "rd": "rə̂əm", "en": "始める"}, {"th": "จบ", "rd": "jòp", "en": "終わる"}, {"th": "ใช้", "rd": "chái", "en": "使う"}, {"th": "ได้", "rd": "dâai", "en": "できる、得る"}, {"th": "ต้อง", "rd": "dtɔ̂ɔng", "en": "〜しなければ"}, {"th": "อยาก", "rd": "yàak", "en": "〜したい"}, {"th": "เกลียด", "rd": "glìat", "en": "憎む"}, {"th": "กลัว", "rd": "glua", "en": "こわい"}, {"th": "หวัง", "rd": "wăng", "en": "望む"}, {"th": "คิดถึง", "rd": "khít-thʉ̆ng", "en": "会いたい、恋しい"}, {"th": "เชื่อ", "rd": "chʉ̂a", "en": "信じる"}, {"th": "รู้สึก", "rd": "rúu-sʉ̀k", "en": "感じる"}, {"th": "จำได้", "rd": "jam-dâai", "en": "覚えている"}, {"th": "สนามบิน", "rd": "sa-năam-bin", "en": "空港"}, {"th": "โรงเรียน", "rd": "roong-rian", "en": "学校"}, {"th": "โรงแรม", "rd": "roong-rɛɛm", "en": "ホテル"}, {"th": "ธนาคาร", "rd": "tha-naa-khaan", "en": "銀行"}, {"th": "ไปรษณีย์", "rd": "bprai-sa-nii", "en": "郵便局"}, {"th": "ร้านค้า", "rd": "ráan-kháa", "en": "商店"}, {"th": "สวนสัตว์", "rd": "sŭan-sàt", "en": "動物園"}, {"th": "แม่น้ำ", "rd": "mɛ̂ɛ-náam", "en": "川"}, {"th": "ป่า", "rd": "bpàa", "en": "森"}, {"th": "ข้าวผัด", "rd": "khâao-phàt", "en": "チャーハン"}, {"th": "ก๋วยเตี๋ยว", "rd": "gŭai-dtĭao", "en": "クイッティアオ（麺）"}, {"th": "ต้มยำ", "rd": "dtôm-yam", "en": "トムヤム"}, {"th": "ส้มตำ", "rd": "sôm-dtam", "en": "ソムタム"}, {"th": "ไก่ทอด", "rd": "gài-thɔ̂ɔt", "en": "フライドチキン"}, {"th": "ขนม", "rd": "kha-nŏm", "en": "お菓子・スイーツ"}, {"th": "ผลไม้", "rd": "phŏn-la-máai", "en": "果物"}, {"th": "น้ำแข็ง", "rd": "náam-khɛ̆ng", "en": "氷"}, {"th": "หนึ่ง", "rd": "nʉ̀ng", "en": "1"}, {"th": "สาม", "rd": "săam", "en": "3"}, {"th": "สี่", "rd": "sìi", "en": "4"}, {"th": "เจ็ด", "rd": "jèt", "en": "7"}, {"th": "แปด", "rd": "bpɛ̀ɛt", "en": "8"}, {"th": "พัน", "rd": "phan", "en": "1000"}, {"th": "หมื่น", "rd": "mʉ̀ʉn", "en": "1万"}, {"th": "ล้าน", "rd": "láan", "en": "100万"}, {"th": "วันนี้", "rd": "wan-níi", "en": "今日"}, {"th": "พรุ่งนี้", "rd": "phrûng-níi", "en": "明日"}, {"th": "เมื่อวาน", "rd": "mʉ̂a-waan", "en": "昨日"}, {"th": "ตอนเช้า", "rd": "dtɔɔn-cháao", "en": "朝"}, {"th": "ตอนเย็น", "rd": "dtɔɔn-yen", "en": "夕方"}, {"th": "กลางคืน", "rd": "glaang-khʉʉn", "en": "夜"}, {"th": "ชั่วโมง", "rd": "chûa-moong", "en": "時間（hour）"}, {"th": "สัปดาห์", "rd": "sàp-daa", "en": "週"}, {"th": "เก่ง", "rd": "gèng", "en": "上手な"}, {"th": "น่ารัก", "rd": "nâa-rák", "en": "かわいい"}, {"th": "เล็ก", "rd": "lék", "en": "小さい"}, {"th": "สูง", "rd": "sŭung", "en": "高い・背が高い"}, {"th": "เตี้ย", "rd": "dtîa", "en": "（背が）低い"}, {"th": "เก่า", "rd": "gào", "en": "古い（物）"}, {"th": "มัน", "rd": "man", "en": "それ"}, {"th": "นี่", "rd": "nîi", "en": "これ"}, {"th": "นั่น", "rd": "nân", "en": "それ、あれ"}, {"th": "ที่นี่", "rd": "thîi-nîi", "en": "ここ"}, {"th": "ที่นั่น", "rd": "thîi-nân", "en": "そこ"}, {"th": "ทำไม", "rd": "tham-mai", "en": "なぜ"}, {"th": "อะไร", "rd": "a-rai", "en": "なに"}, {"th": "เมื่อไหร่", "rd": "mʉ̂a-rài", "en": "いつ"}, {"th": "อย่างไร", "rd": "yàang-rai", "en": "どのように"}, {"th": "เท่าไหร่", "rd": "thâo-rài", "en": "いくら"}];
+
+/* reading -> looped Thai spelling (for the "with-head" comparison after answering) */
+const RD2TH = {};
+for(const w of VOCAB){ if(!(w.rd in RD2TH)) RD2TH[w.rd]=w.th; }
+
+/* ====== Config ====== */
+const N_Q = 10;
+const N_CHOICES = 4;
+
+/* ====== Loopless-font confusable distractors ======
+   Goal: train reading the LOOPLESS (ไม่มีหัว) Thai script, not spot-the-diff on
+   the romanization. Every choice is a DIFFERENT real word whose Thai spelling
+   looks easy to confuse with the target when the head-loops are gone. */
+const CONFUSE_MAP = {
+  "บ":["น", "ป", "ผ", "ฝ", "พ", "ฟ"],
+  "ป":["น", "บ", "ผ", "ฝ", "พ", "ฟ"],
+  "ค":["ศ"],
+  "ศ":["ค", "ร", "ล", "ว", "ษ", "ส"],
+  "ง":["จ", "ฉ"],
+  "จ":["ง", "ฉ"],
+  "ฉ":["ง", "จ"],
+  "ช":["ซ"],
+  "ซ":["ช"],
+  "ณ":["ญ"],
+  "ญ":["ณ"],
+  "ฎ":["ฏ", "ฐ"],
+  "ฏ":["ฎ", "ฐ"],
+  "ฐ":["ฎ", "ฏ"],
+  "ด":["ต", "ถ"],
+  "ต":["ด", "ถ"],
+  "ถ":["ด", "ต"],
+  "น":["บ", "ป", "ผ", "ฝ", "พ", "ฟ"],
+  "ผ":["น", "บ", "ป", "ฝ", "พ", "ฟ"],
+  "ฝ":["น", "บ", "ป", "ผ", "พ", "ฟ"],
+  "พ":["น", "บ", "ป", "ผ", "ฝ", "ฟ"],
+  "ฟ":["น", "บ", "ป", "ผ", "ฝ", "พ"],
+  "ภ":["ม"],
+  "ม":["ภ"],
+  "ร":["ล", "ว", "ศ", "ษ", "ส"],
+  "ล":["ร", "ว", "ศ", "ษ", "ส"],
+  "ว":["ร", "ล", "ศ", "ษ", "ส"],
+  "ษ":["ร", "ล", "ว", "ศ", "ส"],
+  "ส":["ร", "ล", "ว", "ศ", "ษ"],
+  "อ":["ฮ"],
+  "ฮ":["อ"],
+  "ิ":["ี", "ึ", "ื"],
+  "ี":["ิ", "ึ", "ื"],
+  "ึ":["ิ", "ี", "ื"],
+  "ื":["ิ", "ี", "ึ"],
+  "ุ":["ู"],
+  "ู":["ุ"],
+  "เ":["แ", "โ"],
+  "แ":["เ"],
+  "โ":["เ"]
+};
+const CONFUSE = {};
+for(const k in CONFUSE_MAP){ CONFUSE[k] = new Set(CONFUSE_MAP[k]); }
+
+function confuseScore(target, cand){
+  if(cand.th===target.th) return -1;
+  const ta=[...target.th], ca=[...cand.th];
+  let s=0;
+  s -= Math.abs(ta.length-ca.length)*2;
+  const setA=new Set(ta), setC=new Set(ca);
+  for(const c of setA) if(setC.has(c)) s+=2;
+  for(const c of setA){
+    const twins=CONFUSE[c];
+    if(twins){ for(const t of twins) if(setC.has(t)){ s+=3; break; } }
+  }
+  if(ta[0]===ca[0]) s+=4;
+  else if(CONFUSE[ta[0]]&&CONFUSE[ta[0]].has(ca[0])) s+=5;
+  return s;
+}
+
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+function makeDistractors(correct, pool){
+  const scored = pool
+    .filter(w=>w.th!==correct.th && w.rd!==correct.rd)
+    .map(w=>({w, s:confuseScore(correct,w)}))
+    .sort((a,b)=>b.s-a.s);
+  const topPool = shuffle(scored.slice(0, 12)).map(x=>x.w);
+  const out=[]; const seen=new Set([correct.rd]);
+  for(const w of topPool){
+    if(out.length>=N_CHOICES-1) break;
+    if(!seen.has(w.rd)){ seen.add(w.rd); out.push(w.rd); }
+  }
+  if(out.length<N_CHOICES-1){
+    for(const x of shuffle(scored).map(s=>s.w)){
+      if(out.length>=N_CHOICES-1) break;
+      if(!seen.has(x.rd)){ seen.add(x.rd); out.push(x.rd); }
+    }
+  }
+  return out.slice(0,N_CHOICES-1);
+}
+
+/* ====== Quiz state ====== */
+let questions=[], qi=0, score=0, streak=0, bestStreak=0, locked=false, misses=[];
+
+function buildQuiz(){
+  const picks = shuffle(VOCAB).slice(0, N_Q);
+  questions = picks.map(w=>{
+    const distractors = makeDistractors(w, VOCAB);
+    const choices = shuffle([w.rd, ...distractors]);
+    return {w, choices, answer:w.rd};
+  });
+  qi=0; score=0; streak=0; bestStreak=0; misses=[];
+}
+
+/* ====== Render ====== */
+const $=id=>document.getElementById(id);
+const LETTERS=['A','B','C','D'];
+
+function renderQ(){
+  locked=false;
+  const q=questions[qi];
+  $('qnum').textContent=qi+1;
+  $('score').textContent=score;
+  $('streak').textContent=streak;
+  $('bar').style.width=((qi)/N_Q*100)+'%';
+  $('thai').textContent=q.w.th;
+  const jp=$('jp'); jp.textContent=q.w.en; jp.classList.remove('show');
+  const fb=$('feedback'); fb.className='feedback'; fb.innerHTML='';
+  $('next').disabled=true;
+  $('next').textContent = (qi===N_Q-1)?'▸ けっかを見る':'▸ つぎへ';
+
+  const box=$('choices'); box.innerHTML='';
+  q.choices.forEach((c,i)=>{
+    const b=document.createElement('button');
+    b.className='choice';
+    const looped = (c===q.answer) ? q.w.th : (RD2TH[c] || '');
+    b.innerHTML=`<span class="dot">${LETTERS[i]}</span>`
+      +`<span class="ctxt">${c}</span>`
+      +`<span class="looped" aria-hidden="true">${looped}</span>`;
+    b.onclick=()=>pick(b,c,q);
+    box.appendChild(b);
+  });
+}
+
+function pick(btn, choice, q){
+  if(locked) return;
+  locked=true;
+  const correct = choice===q.answer;
+  const fb=$('feedback');
+  $('jp').classList.add('show');
+
+  document.querySelectorAll('.choice').forEach(el=>{
+    el.classList.add('locked');
+    const txt=el.querySelector('.ctxt').textContent;
+    if(txt===q.answer){
+      el.classList.add('correct');
+      el.querySelector('.looped').classList.add('show');
+    } else if(el===btn){
+      el.classList.add('wrong');
+      el.querySelector('.looped').classList.add('show');
+    } else {
+      el.classList.add('dim');
+    }
+  });
+
+  if(correct){
+    score++; streak++;
+    if(streak>bestStreak) bestStreak=streak;
+    fb.className='feedback show ok';
+    fb.innerHTML=`<span class="fb-head">✓ せいかい</span> <span class="fb-read">${q.answer}</span> <span class="fb-th">${q.w.th}</span>`;
+  }else{
+    streak=0;
+    fb.className='feedback show no';
+    fb.innerHTML=`<span class="fb-head">✗ せいかいは</span> <span class="fb-read">${q.answer}</span> <span class="fb-th">${q.w.th}</span>`;
+    misses.push({th:q.w.th, you:choice, youTh:RD2TH[choice]||'', cor:q.answer, corTh:q.w.th, en:q.w.en});
+  }
+  $('score').textContent=score;
+  $('streak').textContent=streak;
+  $('next').disabled=false;
+}
+
+$('next').onclick=()=>{
+  if(qi<N_Q-1){ qi++; renderQ(); }
+  else showResult();
+};
+
+function showResult(){
+  $('quiz').classList.add('hidden');
+  $('resultScreen').classList.remove('hidden');
+  $('bar').style.width='100%';
+  window.scrollTo(0,0);
+  const pct=Math.round(score/N_Q*100);
+  $('finalScore').textContent=`${score} / ${N_Q}`;
+  $('finalPct').textContent=`正解率 ${pct}%`;
+
+  const perfect = (score === N_Q);
+  const yuzuCut = Math.floor(N_Q * 0.40);
+  let icon, msg, sub;
+  if(perfect){
+    icon='🎆';
+    msg='打ち上げ花火！真のLoopless Font Master';
+    sub=`${N_Q}問中${score}問——完璧、まぶしい。ループなし文字に、もう秘密はない。もう一度できる？`;
+  } else if(score <= yuzuCut){
+    icon='🍋';
+    msg='柚子のようにフレッシュな始まり';
+    sub=`${N_Q}問中${score}問。どんな達人もここから——まずはループありで読み、次はループなしへ。花を目指してまたおいで！`;
+  } else {
+    icon='🌸';
+    msg='桜のように満開';
+    sub=`${N_Q}問中${score}問正解——ループなしの形を見る目が花開いてきた。全問正解で、この花びらは花火になる。`;
+  }
+  $('achieveIcon').textContent=icon;
+  $('achieveMsg').textContent=msg;
+  $('achieveSub').textContent=sub;
+  const ai=$('achieveIcon'); ai.style.animation='none'; void ai.offsetWidth; ai.style.animation='';
+
+  const rev=$('review');
+  if(misses.length===0){
+    rev.innerHTML='<div class="perfect">ミスなし——ふくしゅうは不要。🎉</div>';
+  }else{
+    let h='<div class="review-head">▸ ふくしゅう · '+misses.length+'問</div>';
+    misses.forEach(m=>{
+      h+=`<div class="miss">
+        <div class="mth">${m.th}</div>
+        <div class="mbody">
+          <div>あなた: <span class="you">${m.you}</span></div>
+          <div>せいかい: <span class="cor">${m.cor}</span></div>
+          <div>${m.en}</div>
+        </div>
+      </div>`;
+    });
+    rev.innerHTML=h;
+  }
+}
+
+/* ====== Screen flow ====== */
+function startGame(){
+  $('startScreen').classList.add('hidden');
+  $('resultScreen').classList.add('hidden');
+  $('quiz').classList.remove('hidden');
+  window.scrollTo(0,0);
+  buildQuiz(); renderQ();
+}
+function toMenu(){
+  $('quiz').classList.add('hidden');
+  $('resultScreen').classList.add('hidden');
+  $('startScreen').classList.remove('hidden');
+  window.scrollTo(0,0);
+}
+
+$('startBtn').onclick = startGame;
+$('again').onclick = startGame;
+$('quitBtn').onclick = toMenu;
+$('menuBtn').onclick = toMenu;
+
+/* ====== Embers (forge ambiance) ====== */
+(function(){
+  const host=$('embers');
+  if(!host) return;
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  const N=22;
+  for(let i=0;i<N;i++){
+    const e=document.createElement('span');
+    e.className='ember'+(Math.random()<0.4?' spark':'');
+    e.style.left=(Math.random()*100)+'%';
+    e.style.animationDuration=(6+Math.random()*7)+'s';
+    e.style.animationDelay=(-Math.random()*10)+'s';
+    e.style.setProperty('--drift',((Math.random()*40)-20)+'px');
+    host.appendChild(e);
+  }
+})();
+</script>
+</body>
+</html>
