@@ -262,13 +262,12 @@
     <div id="kbsec">
     <div class="sectit" style="margin-top:16px">KEYBOARD CHECK<span class="req">REQUIRED</span></div>
     <div class="kbcheck" id="kbcheck">
-      <div class="label">Click the box below and press the <b style="color:var(--lime)">ก</b> key</div>
       <div class="testbox" id="testbox" tabindex="0">
-        <span id="testPlaceholder" style="color:var(--muted);font-size:13px">Click here, then press ก</span>
+        <span id="testPlaceholder" style="color:var(--muted);font-size:14px">Click here and press the <b style="color:var(--lime)">ก</b> key</span>
         <span class="key" id="testKey" style="display:none"></span>
       </div>
       <div class="state idle" id="kbState">NOT CHECKED</div>
-      <div class="hintline" id="kbHint">Checks that Thai input mode is on (a Latin letter means you must switch) · Backspace clears</div>
+      <div class="hintline" id="kbHint"></div>
     </div>
     </div>
 
@@ -759,7 +758,7 @@ const testKey=document.getElementById('testKey');
 const testPlaceholder=document.getElementById('testPlaceholder');
 const kbState=document.getElementById('kbState');
 const kbHint=document.getElementById('kbHint');
-const KB_HINT_DEFAULT='Checks that Thai input mode is on (a Latin letter means you must switch) · Backspace clears';
+const KB_HINT_DEFAULT='';/* ふだんは何も出さない。NG/OK時のメッセージだけこの枠に出す */
 testbox.addEventListener('keydown',e=>{
   if(e.key==='Backspace'||e.key==='Delete'){/* 表示を消して最初の状態に戻す */
     e.preventDefault();
