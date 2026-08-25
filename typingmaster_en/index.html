@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moonoi Monsoon — Thai Typing Master</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0f04; --bg2:#0d1407; --lime:#9FD92A; --lime-dim:#6b9418;
+    --ember:#ff8c2b; --ink:#dfe8c4; --muted:#7d8a5f;
+    --ok:#9FD92A; --ng:#ff5544; --panel:#121a09; --line:#2a3815;
+    --cyan:#5BC8D8; /* Reference Chartsの水色。累積苦手とKBチェックの案内色 */
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:radial-gradient(120% 80% at 50% 0%, var(--bg2), var(--bg) 70%);
+    color:var(--ink); font-family:'Sarabun',sans-serif; min-height:100vh;
+    display:flex;flex-direction:column;align-items:center;
+    padding:24px 16px 60px; overflow-x:hidden;
+  }
+  .ember{position:fixed;bottom:-10px;width:3px;height:3px;border-radius:50%;
+    background:var(--ember);opacity:0;pointer-events:none;
+    box-shadow:0 0 6px 1px var(--ember);animation:rise linear infinite;z-index:0}
+  @keyframes rise{0%{transform:translateY(0) translateX(0);opacity:0}
+    10%{opacity:.7}90%{opacity:.5}
+    100%{transform:translateY(-100vh) translateX(var(--drift));opacity:0}}
+  .wrap{width:100%;max-width:680px;position:relative;z-index:1}
+  header{text-align:center;margin-bottom:22px}
+  .logo{font-family:'Silkscreen';color:var(--lime);font-size:13px;letter-spacing:2px;
+    text-shadow:0 0 10px rgba(159,217,42,.5)}
+  h1{font-family:'Silkscreen';font-size:26px;color:var(--lime);margin-top:4px;
+    text-shadow:0 0 14px rgba(159,217,42,.45);line-height:1.3}
+  .sub{color:var(--muted);font-size:13px;margin-top:8px;letter-spacing:.5px}
+
+  .panel{background:linear-gradient(180deg,var(--panel),#0c1206);
+    border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px;
+    box-shadow:0 6px 30px rgba(0,0,0,.4), inset 0 1px 0 rgba(159,217,42,.05)}
+
+  .imrow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+  .im{background:#0e1607;border:1px solid var(--line);border-radius:10px;padding:14px;
+    cursor:pointer;transition:.15s;text-align:center}
+  .im:hover{border-color:var(--lime-dim)}
+  .im.sel{border-color:var(--lime);box-shadow:0 0 0 1px var(--lime),0 0 16px rgba(159,217,42,.2)}
+  .im .it{font-size:14px;font-weight:700;margin-bottom:3px}
+  .im .id{font-size:11px;color:var(--muted);line-height:1.4}
+  .im .rec{font-family:'Silkscreen';font-size:9px;color:var(--ember);margin-top:5px;letter-spacing:1px}
+  .sectit{font-family:'Silkscreen';font-size:10px;color:var(--lime-dim);letter-spacing:1px;margin-bottom:8px}
+  .req{font-size:10px;color:#0a0f04;background:var(--ember);border-radius:4px;
+    padding:1px 7px;margin-left:8px;font-weight:700;letter-spacing:1px}
+  #kbsec.hidden{display:none}
+
+  .levels{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .lvl{background:#0e1607;border:1px solid var(--line);border-radius:10px;
+    padding:14px;cursor:pointer;transition:.15s;text-align:center}
+  .lvl:hover{border-color:var(--lime-dim);transform:translateY(-2px)}
+  .lvl.sel{border-color:var(--lime);box-shadow:0 0 0 1px var(--lime),0 0 18px rgba(159,217,42,.25)}
+  .lvl.dim{opacity:.45}
+  .lvl .ln{font-family:'Silkscreen';color:var(--lime);font-size:11px;letter-spacing:1px}
+  .lvl .lt{font-size:15px;font-weight:600;margin:4px 0 2px}
+  .lvl .ld{font-size:12px;color:var(--muted)}
+  .lvl .chars{font-size:18px;color:var(--ink);margin-top:6px;letter-spacing:3px}
+  .lvl .badge{font-size:11px;color:var(--muted);margin-top:6px}
+
+  .startbtn{display:block;width:100%;margin-top:16px;background:var(--lime);
+    color:#0a0f04;font-family:'Silkscreen';font-size:15px;letter-spacing:1px;
+    border:none;border-radius:10px;padding:15px;cursor:pointer;transition:.15s}
+  .startbtn:hover{box-shadow:0 0 22px rgba(159,217,42,.5);transform:translateY(-1px)}
+  .startbtn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+
+  .kbcheck{background:#0c1206;border:1px solid var(--line);
+    border-radius:10px;padding:16px;text-align:center}
+  .kbcheck .label{font-size:13px;color:var(--muted);margin-bottom:10px}
+  .kbcheck .testbox{font-size:15px;color:var(--ink);background:#0a0f04;
+    border:1px dashed var(--line);border-radius:8px;padding:12px;margin-bottom:8px;
+    min-height:46px;display:flex;align-items:center;justify-content:center;gap:8px}
+  .kbcheck .testbox:focus{outline:none;border:1px solid var(--cyan);
+    box-shadow:0 0 0 1px var(--cyan),0 0 12px rgba(91,200,216,.25)}
+  .kbcheck .testbox .key{font-size:28px;font-weight:700;color:var(--lime)}
+  .kbcheck .state{font-family:'Silkscreen';font-size:12px;letter-spacing:1px}
+  .kbcheck .state.ok{color:var(--ok)}
+  .kbcheck .state.ng{color:var(--cyan)}
+  .kbcheck .state.idle{color:var(--muted)}
+  .kbcheck .hintline{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.5}
+
+  /* cumulative weak-key panel (start screen) */
+  #cumsec{display:none}
+  #cumsec.show{display:block}
+  /* 累積苦手はチャート類と同じ水色系(今回ミスの赤と区別する) */
+  #cumsec .sectit{color:#54aebd}
+  .cumweak{background:rgba(91,200,216,.05);border:1px solid rgba(91,200,216,.32);
+    border-radius:10px;padding:16px}
+  .cumweak .sub2{font-size:11px;color:var(--muted);margin-bottom:10px}
+  .cumweak .wch{color:var(--cyan)}
+  .cumweak .wbar .f{background:linear-gradient(90deg,#23606c,var(--cyan))}
+  .cumweak .wtype span b{color:var(--cyan)}
+
+  #game{display:none}
+  .hud{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;
+    font-family:'Silkscreen';font-size:12px;color:var(--muted)}
+  .hud .v{color:var(--lime)}
+  .hud .combo.hot{color:var(--ember);text-shadow:0 0 8px var(--ember)}
+
+  .timerbar{height:8px;background:#0e1607;border-radius:4px;overflow:hidden;margin-bottom:6px}
+  .timerbar .tf{height:100%;width:100%;
+    background:linear-gradient(90deg,var(--lime-dim),var(--lime));transition:width .25s linear}
+  .timerbar .tf.warn{background:linear-gradient(90deg,#b35a10,var(--ember))}
+  .timerbar .tf.crit{background:linear-gradient(90deg,#7a2010,var(--ng))}
+  .timertext{text-align:right;font-family:'Silkscreen';font-size:11px;color:var(--muted);margin-bottom:14px}
+  .timertext.crit{color:var(--ng)}
+
+  .progress{height:6px;background:#0e1607;border-radius:4px;overflow:hidden;margin-bottom:20px}
+  .progress .bar{height:100%;background:linear-gradient(90deg,var(--lime-dim),var(--lime));width:0;transition:width .25s}
+
+  .prompt{text-align:center;padding:30px 16px;border-radius:12px;
+    background:#0c1206;border:1px solid var(--line);margin-bottom:14px;position:relative;transition:.12s}
+  .prompt.shake{animation:shk .3s}
+  .prompt.flash{animation:fl .3s}
+  .prompt.timeout{animation:to .4s}
+  @keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+  @keyframes fl{0%{background:#1a2a0a}100%{background:#0c1206}}
+  @keyframes to{0%{background:#2a0a0a}100%{background:#0c1206}}
+  .target{font-size:54px;font-weight:700;letter-spacing:2px;line-height:1.25;min-height:70px;word-break:break-word}
+  .target.small{font-size:38px}
+  .target .ch{transition:.1s}
+  .target .ch.done{color:var(--ok)}
+  .target .ch.cur{color:var(--lime);text-shadow:0 0 16px rgba(159,217,42,.7);border-bottom:3px solid var(--lime)}
+  .target .ch.todo{color:var(--muted)}
+  .target .ch.bad{color:var(--ng);animation:badp .2s}
+  @keyframes badp{0%{transform:scale(1.3)}100%{transform:scale(1)}}
+  .hint{color:var(--muted);font-size:14px;margin-top:10px;min-height:20px}
+
+  .typed{text-align:center;font-size:22px;letter-spacing:2px;min-height:30px;
+    color:var(--ink);margin-bottom:6px;word-break:break-word}
+  .typed .caret{display:inline-block;width:2px;height:24px;background:var(--lime);
+    vertical-align:middle;animation:blink 1s step-end infinite}
+  @keyframes blink{50%{opacity:0}}
+  .status{text-align:center;font-size:13px;color:var(--muted);min-height:18px}
+
+  /* font-sizeは16px必須。これ未満だとiOS Safariがフォーカス時に画面を自動拡大する */
+  .touchinput{position:absolute;opacity:0;pointer-events:none;height:1px;width:1px;font-size:16px}
+  .tapcue{display:none;text-align:center;margin-bottom:14px}
+  .tapcue.show{display:block}
+  .tapcue button{background:var(--lime);color:#0a0f04;border:none;border-radius:10px;
+    padding:14px 26px;font-family:'Silkscreen';font-size:13px;cursor:pointer;letter-spacing:1px}
+
+  .kbwarn{display:none;background:#2a0a0a;border:1px solid var(--ng);border-radius:10px;
+    padding:14px;margin-bottom:14px;text-align:center}
+  .kbwarn.show{display:block}
+  .kbwarn .t{color:var(--ng);font-family:'Silkscreen';font-size:12px;margin-bottom:6px}
+  .kbwarn .d{font-size:13px;color:var(--ink)}
+
+  #results{display:none;text-align:center}
+  #results h2{font-family:'Silkscreen';color:var(--lime);font-size:20px;margin-bottom:18px}
+  .statgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:20px}
+  .stat{background:#0c1206;border:1px solid var(--line);border-radius:10px;padding:14px}
+  .stat .n{font-family:'Silkscreen';font-size:22px;color:var(--lime)}
+  .stat .l{font-size:11px;color:var(--muted);margin-top:4px}
+  .weak{text-align:left;margin-top:8px}
+  .weak h3{font-size:13px;color:var(--ink);margin-bottom:10px;font-weight:600}
+  .wrow{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .wch{font-size:26px;width:44px;text-align:center;color:var(--ng)}
+  .wbar{flex:1;height:18px;background:#0e1607;border-radius:5px;overflow:hidden;position:relative}
+  .wbar .f{height:100%;background:linear-gradient(90deg,#7a2010,var(--ng))}
+  .wtype{display:flex;gap:4px;font-size:10px;color:var(--muted);width:128px;
+    flex-direction:column;font-family:'Silkscreen'}
+  .wtype span b{color:var(--ember)}
+  .empty{color:var(--muted);font-size:14px;padding:14px}
+
+  .ghost{background:none;border:1px solid var(--line);color:var(--ink);
+    border-radius:9px;padding:12px 22px;font-family:'Silkscreen';font-size:12px;cursor:pointer;margin:6px;transition:.15s}
+  .ghost:hover{border-color:var(--lime);color:var(--lime)}
+  .ghost.sm{padding:8px 16px;font-size:10px;color:var(--muted);margin:0}
+  .ghost.sm:hover{border-color:var(--cyan);color:var(--cyan)}
+  .ghost.sm.danger:hover{border-color:var(--ng);color:var(--ng)}
+  .ghost.sm.armed{border-color:var(--ng);color:var(--ng)}
+  .quitrow{text-align:center;margin-top:16px}
+  .resetrow{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
+
+  .audiorow{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .atoggle{background:#0e1607;border:1px solid var(--line);border-radius:10px;padding:11px;
+    color:var(--ink);font-family:'Silkscreen';font-size:10px;letter-spacing:1px;
+    cursor:pointer;transition:.15s}
+  .atoggle:hover{border-color:var(--lime-dim)}
+  .atoggle.off{opacity:.4}
+  a.ghost{text-decoration:none;display:inline-block}
+
+  /* フッタ: 他アプリと同じアイコンセット。MMロゴでハブサイトのトップへ戻れる */
+  footer{margin-top:30px;text-align:center;font-family:'Silkscreen';font-size:9px;
+    letter-spacing:.06em;color:var(--muted);line-height:1.8}
+  footer .cap{margin-bottom:14px}
+  .social-row{display:flex;justify-content:center;gap:14px;margin-bottom:14px}
+  .social-row a{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;
+    background:rgba(159,217,42,.08);border:1px solid rgba(159,217,42,.22);
+    color:var(--lime);transition:transform .15s,background .15s,box-shadow .15s}
+  .social-row a:hover{transform:translateY(-2px);background:rgba(159,217,42,.16);
+    box-shadow:0 6px 16px rgba(159,217,42,.22)}
+  .social-row a svg{width:22px;height:22px;display:block;pointer-events:none}
+  footer .handle{margin-bottom:10px}
+  footer .made{font-family:'Sarabun',sans-serif;font-size:13px;letter-spacing:0}
+  footer .made a{color:var(--ink)}
+
+  .note{font-size:11px;color:var(--muted);text-align:center;margin-top:18px;line-height:1.6}
+  .kedlink{cursor:pointer;display:inline-block;border:1px solid var(--line);border-radius:999px;
+    padding:4px 14px;transition:.15s}
+  .kedlink .q{display:inline-flex;align-items:center;justify-content:center;
+    width:15px;height:15px;margin-left:7px;border:1px solid var(--muted);border-radius:50%;
+    font-size:10px;vertical-align:1px}
+  .kedlink:hover{color:var(--lime);border-color:var(--lime)}
+  .kedlink:hover .q{border-color:var(--lime)}
+  .kedbox{display:none;max-width:540px;margin:12px auto 0;text-align:left;
+    font-size:11px;color:var(--muted);line-height:1.8;
+    background:#0c1206;border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+  .kedbox.show{display:block}
+  kbd{background:#0e1607;border:1px solid var(--line);border-radius:4px;padding:1px 6px;
+    font-family:'Silkscreen';font-size:10px;color:var(--lime)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="logo">◆ MOONOI MONSOON ◆</div>
+    <h1>THAI TYPING<br>MASTER</h1>
+    <div class="sub"><span class="kedlink" id="kedLink">Kedmanee layout<span class="q">?</span></span></div>
+    <!-- 「Kedmanee 配列」クリックで開く解説 -->
+    <div class="kedbox" id="kedBox">
+      <p>Everything in this app assumes the Kedmanee layout. Thai has several
+      keyboard layouts, and Kedmanee is by far the most widely used. The name is a
+      Thai surname: it honours Suwanprasert Kedmanee (สุวรรณประเสริฐ เกษมณี), a Thai
+      employee of the Remington typewriter company who refined the layout in the
+      1930s. Frequent letters sit on the unshifted keys and rare ones behind Shift,
+      and the layout is codified as Thai Industrial Standard TIS 820. (A more
+      efficient rival, the Pattachote layout, never caught on.) The standard Thai
+      keyboards on Windows, macOS and iPhone — and the keycaps printed on keyboards
+      sold in Thailand — are all Kedmanee, so the finger memory you build here
+      works on every device.</p>
+    </div>
+  </header>
+
+  <div id="select" class="panel">
+    <div class="sectit">INPUT METHOD</div>
+    <div class="imrow" id="imRow">
+      <div class="im" data-im="physical">
+        <div class="it">Physical keyboard</div>
+        <div class="id">Magic Keyboard etc. Learn the layout and fingering</div>
+        <div class="rec" id="recPhys"></div>
+      </div>
+      <div class="im" data-im="touch">
+        <div class="it">Touch input</div>
+        <div class="id">iPhone/iPad on-screen keyboard. Letter practice</div>
+        <div class="rec" id="recTouch"></div>
+      </div>
+    </div>
+
+    <div class="sectit">LEVEL</div>
+    <div class="levels" id="levelGrid"></div>
+
+    <div id="kbsec">
+    <div class="sectit" style="margin-top:16px">KEYBOARD CHECK<span class="req">REQUIRED</span></div>
+    <div class="kbcheck" id="kbcheck">
+      <div class="label">Click the box below and press the <b style="color:var(--lime)">ก</b> key</div>
+      <div class="testbox" id="testbox" tabindex="0">
+        <span id="testPlaceholder" style="color:var(--muted);font-size:13px">Click here, then press ก</span>
+        <span class="key" id="testKey" style="display:none"></span>
+      </div>
+      <div class="state idle" id="kbState">NOT CHECKED</div>
+      <div class="hintline" id="kbHint">Checks that Thai input mode is on (a Latin letter means you must switch) · Backspace clears</div>
+    </div>
+    </div>
+
+    <!-- 累積の苦手キー（localStorageにデータがあるときだけ表示） -->
+    <div id="cumsec">
+    <div class="sectit" style="margin-top:16px">WEAK KEYS / ALL-TIME TOP 5</div>
+    <div class="cumweak" id="cumweak">
+      <div class="sub2">From every play on this browser</div>
+      <div id="cumList"></div>
+      <div class="resetrow">
+        <a class="ghost sm" href="stats.html">📊 Export record</a>
+        <button class="ghost sm danger" id="resetBtn">Reset record</button>
+      </div>
+    </div>
+    </div>
+
+    <div class="sectit" style="margin-top:16px">SOUND</div>
+    <div class="audiorow">
+      <button class="atoggle" id="bgmToggle" type="button">♪ BGM: ON</button>
+      <button class="atoggle" id="seToggle" type="button">✦ SFX: ON</button>
+    </div>
+
+    <button class="startbtn" id="startBtn" disabled>Choose input &amp; level</button>
+    <div class="note" style="margin-top:12px">
+      <kbd>Backspace</kbd> to retype · <kbd>Esc</kbd> to quit · timeout counts as a miss
+    </div>
+  </div>
+
+  <!-- GAME -->
+  <div id="game" class="panel">
+    <div class="hud">
+      <span><span class="v" id="hQ">0</span>/<span id="hT">0</span></span>
+      <span class="combo" id="hCombo">COMBO 0</span>
+      <span>ACC <span class="v" id="hAcc">100%</span></span>
+    </div>
+
+    <div class="timerbar"><div class="tf" id="timerFill"></div></div>
+    <div class="timertext" id="timerText">30.0s</div>
+    <div class="progress"><div class="bar" id="bar"></div></div>
+
+    <div class="kbwarn" id="kbwarn">
+      <div class="t">⚠ KEYBOARD NOT THAI</div>
+      <div class="d">Latin input detected. Switch back to Thai input mode.<br>
+        Typing resumes automatically once Thai letters come through (timer is paused).</div>
+    </div>
+
+    <div class="prompt" id="prompt">
+      <div class="target" id="target"></div>
+      <div class="hint" id="hint"></div>
+    </div>
+    <div class="typed" id="typed"><span class="caret"></span></div>
+
+    <div class="tapcue" id="tapcue">
+      <button id="focusBtn">Tap to open the keyboard</button>
+    </div>
+
+    <div class="status" id="status">Start typing</div>
+    <input class="touchinput" id="touchInput" type="text"
+      autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" lang="th">
+
+    <div class="quitrow"><button class="ghost sm" id="quitBtn">Quit</button></div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="panel">
+    <h2>RESULT</h2>
+    <div class="statgrid">
+      <div class="stat"><div class="n" id="rAcc">—</div><div class="l">Accuracy</div></div>
+      <div class="stat"><div class="n" id="rWpm">—</div><div class="l">Chars/min</div></div>
+      <div class="stat"><div class="n" id="rCombo">—</div><div class="l">Max combo</div></div>
+    </div>
+    <div class="weak">
+      <h3>Weak letters (missed this round)</h3>
+      <div id="weakList"></div>
+    </div>
+    <div style="margin-top:18px">
+      <button class="ghost" id="retryBtn">Play again</button>
+      <button class="ghost" id="backBtn">Level select</button>
+      <a class="ghost" href="stats.html">Record page</a>
+    </div>
+  </div>
+
+  <!-- フッタ: 他アプリ共通のアイコンセット。MMロゴでハブサイトのトップへ -->
+  <footer>
+    <div class="cap">หมูน้อย · LITTLE PIG</div>
+    <div class="social-row">
+      <a href="https://www.youtube.com/@moonoimonsoon" target="_blank" rel="noopener noreferrer" aria-label="Moonoi Monsoon on YouTube">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M5.5 4.6h13a4 4 0 0 1 4 4v6.8a4 4 0 0 1-4 4h-13a4 4 0 0 1-4-4V8.6a4 4 0 0 1 4-4Zm4.5 4l6.2 3.4L10 15.4Z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/moonoi_monsoon" target="_blank" rel="noopener noreferrer" aria-label="Moonoi Monsoon on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.4" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.4" fill="currentColor"/></svg>
+      </a>
+    </div>
+    <div class="social-row">
+      <a href="https://open.spotify.com/show/033RrLqYNJf0oa2FihbHQP" target="_blank" rel="noopener noreferrer" aria-label="Podcast on Spotify">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="9.6" stroke-width="1.7"/><path d="M7.1 9.3c3.3-.95 6.9-.6 9.7 1" stroke-width="1.9"/><path d="M7.9 12.6c2.7-.75 5.6-.45 7.9.9" stroke-width="1.8"/><path d="M8.7 15.7c2.1-.55 4.3-.3 6 .7" stroke-width="1.7"/></svg>
+      </a>
+      <a href="https://podcasts.apple.com/jp/podcast/id6792235277" target="_blank" rel="noopener noreferrer" aria-label="Podcast on Apple Podcasts">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="9.6" stroke="currentColor" stroke-width="1.7"/><rect x="10.1" y="5.9" width="3.8" height="7.2" rx="1.9" fill="currentColor"/><path d="M7.9 12.1a4.1 4.1 0 0 0 8.2 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M12 16.2v2.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </a>
+      <a href="https://moonoimonsoon.github.io/" aria-label="Moonoi Monsoon top page">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="currentColor" stroke-width="11"><path d="M16 76 V36 L33 58 L50 36 V76"/><path d="M50 76 V36 L67 58 L84 36 V76"/></g></svg>
+      </a>
+    </div>
+    <div class="handle">@MOONOI_MONSOON</div>
+    <div class="made">Made by Moonoi Monsoon · <a href="https://moonoimonsoon.github.io/">moonoimonsoon.github.io</a></div>
+  </footer>
+</div>
+
+<script>
+/* ================================================================
+   GAME DATA
+   ----------------------------------------------------------------
+   出題データはこのブロックに集約。将来は同じ構造のJSONを
+   ./typing-data.json として置けば、下のloadExternalData()が
+   起動時に読み込んで差し替える（パートナーが単語を編集できる形）。
+   GitHub Pages上で有効。ファイルが無ければこの内蔵データで動く。
+   ================================================================ */
+const GAME_DATA = {
+  preVowels: ['เ','แ','โ','ไ','ใ'],
+  /* 制限時間(秒) = base + perKey × その問題の打鍵数。外部JSONでも調整可 */
+  timeRule: { base:10, perKey:3.5 },
+  levels: [
+    { id:'home', ln:'LV.1', t:'Home row', d:'Base finger positions · frequent consonants',
+      chars:'ฟหกดเ้่าสว', kind:'char', physicalFocus:true,
+      items:['ฟ','ห','ก','ด','เ','้','่','า','ส','ว'] },
+    { id:'mid', ln:'LV.2', t:'Middle row', d:'Unshifted keys · remaining consonants',
+      chars:'งบทมพะรนยอ', kind:'char', physicalFocus:true,
+      items:['ง','บ','ท','ม','พ','ะ','ร','น','ย','อ'] },
+    { id:'words', ln:'LV.3', t:'Easy words', d:'Short everyday Thai',
+      chars:'', kind:'word', badge:'10 words',
+      items:['นก','ตา','มา','ดี','ไป','กิน','นอน','บ้าน','หมา','น้ำ'] },
+    { id:'shift', ln:'LV.4', t:'Tone marks · Shift', d:'Words with marks on top (the tricky part)',
+      chars:'◌่ ◌้ ◌๊ ◌๋ ◌็ ◌ั', kind:'word', physicalFocus:true, badge:'',
+      items:['ก็','ก๋','ปี๋','โต๊ะ','เก้า','ผู้','ครับ','ค่ะ'] },
+    { id:'mix', ln:'LV.5', t:'Mix', d:'Levels 1·2·4 shuffled together',
+      chars:'', kind:'mix', badge:'mixed',
+      mixFrom:['home','mid','shift'], /* 合成元のレベルid。外部JSONでも変更可 */
+      items:[] /* buildで合成 */ },
+    { id:'sentence', ln:'LV.6', t:'Sentences', d:'Short sentences of 7–9 words',
+      chars:'', kind:'sentence', badge:'letters from LV.1/2/4 only',
+      /* LV1・2・4で出た文字＋スペースのみで構成した文 */
+      items:[
+        'วัน นั้น เรา มา นอน ที่ บ้าน ตา',
+        'หมา ตัว นั้น นอน อยู่ ที่ สวน บ้าน เรา',
+        'ผม กับ ตา มา ทาน ที่ บ้าน ครับ',
+        'ปี นั้น เรา มี งาน มาก ที่ บ้าน',
+        'เย็น วัน นั้น ผู้ คน มา หา ครู',
+        'โต๊ะ ตัว นั้น อยู่ ที่ บ้าน เรา นะ',
+        'ตา มา ที่ วัด กับ เรา วัน นั้น'
+      ] },
+  ]
+};
+
+/* 外部データ読込（任意）。GitHub Pagesに typing-data.json を置くと上書き */
+async function loadExternalData(){
+  try{
+    const res=await fetch('./typing-data.json',{cache:'no-store'});
+    if(!res.ok)return;
+    const ext=await res.json();
+    if(ext.levels)GAME_DATA.levels=ext.levels;
+    if(ext.timeRule)GAME_DATA.timeRule=ext.timeRule;
+    if(ext.preVowels)GAME_DATA.preVowels=ext.preVowels;
+    buildLevelGrid(); /* 再描画 */
+  }catch(e){/* 無ければ内蔵データで続行 */}
+}
+
+/* ================================================================
+   FX LAYER — 演出フック
+   ----------------------------------------------------------------
+   判定エンジンは以下のフックだけを呼ぶ。将来のRPG化では
+   このオブジェクトを差し替える（敵ダメージ、世界の前進など）。
+   ================================================================ */
+const FX = {
+  onCorrect(ctx){ /* 1文字正解。ctx={char,pos,combo} */
+    AUDIO.se('ok');
+  },
+  onMiss(ctx){    /* ミス。ctx={want,got,pos} */
+    flashBad(ctx.pos); shakePrompt(); AUDIO.se('ng');
+  },
+  onClear(ctx){   /* 1問完了。ctx={perfect,combo} */
+    flashOk();
+  },
+  onTimeout(ctx){ /* 時間切れ */
+    const p=document.getElementById('prompt');
+    p.classList.add('timeout');setTimeout(()=>p.classList.remove('timeout'),400);
+  },
+};
+
+/* ================================================================
+   AUDIO — BGMと効果音
+   ----------------------------------------------------------------
+   音源ファイルは使わず、その場で音を合成する(著作権フリー・追加読込ゼロ)。
+   BGMは場面で切り替える: メニュー(選択・リザルト)=夜の虫と遠いパッド。
+   ゲーム中=ミニマル・パルス/シンギングボウル/オルガン・パッド/風鈴/
+   静かなアルペジオ の5種を、プレイするたびに順番に入れ替える。
+   聴き比べの原本は WIP/20260825_BGMサンプル_v2.html。
+   ブラウザは音の自動再生を禁止しているため、STARTボタン(ユーザー操作)で
+   音の装置を起こす。ON/OFFはlocalStorageに保存。
+   ================================================================ */
+const AUDIO_KEY='mm_thai_typing_audio_v1';
+/* ---- BGM部品: ディレイの残響 / 鐘 / ゆらぎ用LFO ---- */
+function bgmSpace(c,out,time,fb,wet){
+  const d=c.createDelay(3);d.delayTime.value=time;
+  const f=c.createGain();f.gain.value=fb;
+  const w=c.createGain();w.gain.value=wet;
+  d.connect(f);f.connect(d);d.connect(w);w.connect(out);
+  return d;
+}
+function bgmBell(c,dest,freq,when,vol,att,dec){
+  [[0,1],[1200,.16]].forEach(([cents,mul])=>{
+    const o=c.createOscillator(),g=c.createGain();
+    o.type='sine';o.frequency.value=freq*Math.pow(2,cents/1200);
+    g.gain.setValueAtTime(0,when);
+    g.gain.linearRampToValueAtTime(vol*mul,when+att);
+    g.gain.exponentialRampToValueAtTime(.0001,when+att+dec);
+    o.connect(g);g.connect(dest);o.start(when);o.stop(when+att+dec+.1);
+  });
+}
+function bgmLfo(c,param,hz,depth){
+  const o=c.createOscillator(),g=c.createGain();
+  o.type='sine';o.frequency.value=hz;g.gain.value=depth;
+  o.connect(g);g.connect(param);o.start();return o;
+}
+
+/* ---- 場面ごとのBGM。(ctx,out)を受けて{ivs:タイマー,oscs:止める音源}を返す ---- */
+/* メニュー: 夜の虫と遠いパッド */
+function sceneMenu(c,out){
+  const oscs=[];
+  [[174.61,.02],[261.63,.012]].forEach(([f,base])=>{
+    const o=c.createOscillator(),g=c.createGain();
+    o.type='sine';o.frequency.value=f;g.gain.value=base;
+    oscs.push(bgmLfo(c,g.gain,.05,base*.35));
+    o.connect(g);g.connect(out);o.start();oscs.push(o);
+  });
+  const bus=c.createGain();bus.gain.value=.75;bus.connect(out);
+  function chirp(t,f){
+    const n=4+Math.floor(Math.random()*3);
+    for(let i=0;i<n;i++){
+      const o=c.createOscillator(),g=c.createGain();
+      o.type='sine';o.frequency.value=f+Math.random()*200;
+      const s=t+i*.032;
+      g.gain.setValueAtTime(0,s);g.gain.linearRampToValueAtTime(.011,s+.006);
+      g.gain.linearRampToValueAtTime(0,s+.024);
+      o.connect(g);g.connect(bus);o.start(s);o.stop(s+.03);
+    }
+  }
+  let n1=c.currentTime+.8,n2=c.currentTime+1.4;
+  const iv=setInterval(()=>{
+    while(n1<c.currentTime+1.5){chirp(n1,4100);n1+=1.1+Math.random()*.9;}
+    while(n2<c.currentTime+1.5){chirp(n2,3500);n2+=1.7+Math.random()*1.4;}
+  },300);
+  return {ivs:[iv],oscs};
+}
+/* L: ミニマル・パルス(2声部が違う周期で回る) */
+function sceneL(c,out){
+  const bus=c.createGain();bus.connect(out);
+  bus.connect(bgmSpace(c,out,.6,.35,.3));
+  const lp=c.createBiquadFilter();lp.type='lowpass';lp.frequency.value=1800;lp.Q.value=.5;
+  lp.connect(bus);
+  function tick(f,t,v){
+    const o=c.createOscillator(),g=c.createGain();
+    o.type='triangle';o.frequency.value=f;
+    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.01);
+    g.gain.exponentialRampToValueAtTime(.0001,t+.5);
+    o.connect(g);g.connect(lp);o.start(t);o.stop(t+.55);
+  }
+  let t1=c.currentTime+.3,t2=c.currentTime+.3;
+  const iv=setInterval(()=>{
+    while(t1<c.currentTime+1.6){tick(349.23,t1,.04);t1+=.66;}
+    while(t2<c.currentTime+1.6){tick(523.25,t2,.022);t2+=.99;}
+  },300);
+  return {ivs:[iv],oscs:[]};
+}
+/* K: シンギングボウル(非整数倍音の長い余韻) */
+function sceneK(c,out){
+  const oscs=[];
+  const dr=c.createOscillator(),dg=c.createGain();
+  dr.type='sine';dr.frequency.value=87.31;dg.gain.value=.015;
+  oscs.push(bgmLfo(c,dg.gain,.06,.006));
+  dr.connect(dg);dg.connect(out);dr.start();oscs.push(dr);
+  const bus=c.createGain();bus.connect(out);
+  bus.connect(bgmSpace(c,out,1.2,.4,.4));
+  let nextT=c.currentTime+1;
+  const iv=setInterval(()=>{
+    while(nextT<c.currentTime+3){
+      const t=nextT,base=Math.random()<.5?174.61:220;
+      [[1,.05],[2.71,.014],[5.42,.005]].forEach(([mul,v])=>{
+        const o=c.createOscillator(),g=c.createGain();
+        o.type='sine';o.frequency.value=base*mul;
+        g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.04);
+        g.gain.exponentialRampToValueAtTime(.0001,t+14);
+        o.connect(g);g.connect(bus);o.start(t);o.stop(t+14.1);
+      });
+      nextT=t+14+Math.random()*8;
+    }
+  },900);
+  return {ivs:[iv],oscs};
+}
+/* N: オルガン・パッド(和音が10秒単位で入れ替わる) */
+function sceneN(c,out){
+  const lp=c.createBiquadFilter();lp.type='lowpass';lp.frequency.value=1000;lp.Q.value=.4;
+  lp.connect(out);
+  const CH=[[174.61,220,261.63],[146.83,220,293.66],[130.81,196,261.63],[174.61,233.08,293.66]];
+  let ci=0,nextT=c.currentTime+.2;
+  const iv=setInterval(()=>{
+    while(nextT<c.currentTime+3){
+      const t=nextT,chord=CH[ci%CH.length];ci++;
+      chord.forEach(f=>{
+        [[1,.03],[2,.009]].forEach(([mul,v])=>{
+          const o=c.createOscillator(),g=c.createGain();
+          o.type='sine';o.frequency.value=f*mul;
+          g.gain.setValueAtTime(0,t);
+          g.gain.linearRampToValueAtTime(v,t+2.5);
+          g.gain.linearRampToValueAtTime(v*.85,t+7);
+          g.gain.linearRampToValueAtTime(.0001,t+10);
+          o.connect(g);g.connect(lp);o.start(t);o.stop(t+10.1);
+        });
+      });
+      nextT=t+8.5; /* 次の和音と1.5秒重ねてつなぎ目を消す */
+    }
+  },700);
+  return {ivs:[iv],oscs:[]};
+}
+/* O: 風鈴(風のうねりで鳴る密度が変わる) */
+function sceneO(c,out){
+  const bus=c.createGain();bus.connect(out);
+  bus.connect(bgmSpace(c,out,.9,.4,.45));
+  const HI=[1046.5,1174.66,1318.51,1567.98,1760];
+  const t0=c.currentTime;
+  const iv=setInterval(()=>{
+    const wind=Math.max(0,Math.sin((c.currentTime-t0)*.09));
+    if(Math.random()<.06+wind*.4){
+      const f=HI[Math.floor(Math.random()*HI.length)];
+      bgmBell(c,bus,f,c.currentTime+.05,.012+Math.random()*.022,.01,3);
+    }
+  },180);
+  return {ivs:[iv],oscs:[]};
+}
+/* H: 静かなアルペジオ(同じ8音が一定の歩幅で回る) */
+function sceneH(c,out){
+  const bus=c.createGain();bus.connect(out);
+  bus.connect(bgmSpace(c,out,.7,.3,.3));
+  const lp=c.createBiquadFilter();lp.type='lowpass';lp.frequency.value=1200;lp.Q.value=.5;
+  lp.connect(bus);
+  const SC=[174.61,196,220,261.63,293.66,349.23];
+  const SEQ=[0,2,4,3,5,3,2,1];
+  let i=0,nextT=c.currentTime+.3;
+  const iv=setInterval(()=>{
+    while(nextT<c.currentTime+2){
+      const t=nextT;
+      const o=c.createOscillator(),g=c.createGain();
+      o.type='triangle';o.frequency.value=SC[SEQ[i%SEQ.length]];i++;
+      g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.06,t+.15);
+      g.gain.exponentialRampToValueAtTime(.0001,t+2.6);
+      o.connect(g);g.connect(lp);o.start(t);o.stop(t+2.7);
+      nextT=t+1.15;
+    }
+  },300);
+  return {ivs:[iv],oscs:[]};
+}
+const BGM_SCENES={menu:sceneMenu,l:sceneL,k:sceneK,n:sceneN,o:sceneO,h:sceneH};
+const GAME_BGM_ROT=['l','k','n','o','h'];
+const BGM_IDX_KEY='mm_thai_typing_bgm_idx';
+
+const AUDIO={
+  ctx:null,bgmOn:true,seOn:true,cur:null,
+  load(){try{const s=JSON.parse(localStorage.getItem(AUDIO_KEY));
+    if(s){this.bgmOn=s.bgm!==false;this.seOn=s.se!==false;}}catch(e){}},
+  save(){try{localStorage.setItem(AUDIO_KEY,JSON.stringify({bgm:this.bgmOn,se:this.seOn}));}catch(e){}},
+  init(){
+    if(this.ctx)return;
+    const C=window.AudioContext||window.webkitAudioContext;if(!C)return;
+    const c=this.ctx=new C();
+    this.seBus=c.createGain();this.seBus.gain.value=.5;this.seBus.connect(c.destination);
+  },
+  resume(){if(this.ctx&&this.ctx.state==='suspended')this.ctx.resume();},
+  /* 指定の場面BGMを開始(前の場面はフェードアウト) */
+  startScene(name){
+    if(!this.ctx||!this.bgmOn)return;
+    this.stopScene();this.resume();
+    const c=this.ctx,out=c.createGain();
+    out.gain.value=0;out.connect(c.destination);
+    const lv=(name==='menu')?.24:.16;/* メニューの夜の虫は控えめすぎたので大きめに */
+    out.gain.linearRampToValueAtTime(lv,c.currentTime+1.2);
+    this.cur={name,out,handle:BGM_SCENES[name](c,out)};
+  },
+  stopScene(){
+    if(!this.cur||!this.ctx)return;
+    const {out,handle}=this.cur;this.cur=null;
+    const n=this.ctx.currentTime;
+    out.gain.cancelScheduledValues(n);
+    out.gain.setValueAtTime(out.gain.value,n);
+    out.gain.linearRampToValueAtTime(0,n+.8);
+    handle.ivs.forEach(clearInterval);
+    setTimeout(()=>{handle.oscs.forEach(o=>{try{o.stop();}catch(e){}});
+      try{out.disconnect();}catch(e){}},1000);
+  },
+  /* メニュー(選択・リザルト)では夜の虫。すでに鳴っていれば続ける */
+  startMenuBgm(){
+    if(this.cur&&this.cur.name==='menu')return;
+    this.startScene('menu');
+  },
+  /* ゲーム中はプレイのたびに L→K→N→O→H を順に入れ替える */
+  startGameBgm(){
+    let i=0;try{i=parseInt(localStorage.getItem(BGM_IDX_KEY))||0;}catch(e){}
+    const name=GAME_BGM_ROT[i%GAME_BGM_ROT.length];
+    try{localStorage.setItem(BGM_IDX_KEY,String((i+1)%GAME_BGM_ROT.length));}catch(e){}
+    this.startScene(name);
+  },
+  /* 効果音: 正解=短く明るい打音 / 不正解=低くこもった音 */
+  se(kind){
+    if(!this.seOn||!this.ctx)return;this.resume();
+    const c=this.ctx,t=c.currentTime;
+    const o=c.createOscillator(),g=c.createGain();
+    if(kind==='ok'){
+      o.type='triangle';
+      o.frequency.value=1046.5*Math.pow(2,(Math.random()*30-15)/1200);
+      g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.15,t+.004);
+      g.gain.exponentialRampToValueAtTime(.0001,t+.11);
+      o.connect(g);g.connect(this.seBus);o.start(t);o.stop(t+.13);
+    }else{
+      o.type='square';
+      o.frequency.setValueAtTime(150,t);o.frequency.exponentialRampToValueAtTime(95,t+.08);
+      g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.07,t+.006);
+      g.gain.exponentialRampToValueAtTime(.0001,t+.1);
+      o.connect(g);g.connect(this.seBus);o.start(t);o.stop(t+.11);
+    }
+  }
+};
+
+/* ================================================================ STATE */
+let inputMethod=null;
+let level=null, queue=[], qi=0, target=[], pos=0, typed=[];
+let combo=0, maxCombo=0, totalKeys=0, correctKeys=0, startTime=0;
+let curHadError=false, kbBad=false, transitioning=false;
+let weak={};
+let timeLeft=0, timerId=null, timerEnd=0, qLimit=30, pendingNext=null;
+const STORE_KEY='mm_thai_typing_weak_v1';
+
+function isThaiChar(s){ return /[\u0E00-\u0E7F]/.test(s); }
+/* \u5B50\u97F3\u306E\u4E0A\u4E0B\u306B\u4E57\u308B\u8A18\u53F7\uFF08\u58F0\u8ABF\u8A18\u53F7\u30FB\u4E0A\u4E0B\u306E\u6BCD\u97F3\uFF09\u30021\u5B57\u305A\u3064\u5206\u3051\u308B\u3068\u70B9\u7DDA\u306E\u4E38\u304C\u51FA\u3066\u5D29\u308C\u308B */
+/* \u8868\u793A\u306E\u304B\u305F\u307E\u308A\u5224\u5B9A: \u4E0A\u4E0B\u306B\u4E57\u308B\u8A18\u53F7(\u58F0\u8ABF\u30FB\u4E0A\u4E0B\u6BCD\u97F3\u30FB\u0E31)\u3068\u0E33\u306F\u76F4\u524D\u306E\u5B57\u3068\u3072\u3068\u307E\u3068\u307E\u308A */
+const CLUSTER_JOIN=/[\u0E31\u0E33\u0E34-\u0E3A\u0E47-\u0E4E]/;
+function loadWeakAll(){try{const r=localStorage.getItem(STORE_KEY);if(r)return JSON.parse(r);}catch(e){}return null;}
+function saveWeak(){try{
+  const all=loadWeakAll()||{};
+  for(const c in weak){
+    if(!all[c])all[c]={couldnt:0,wrong:0,total:0};
+    all[c].couldnt+=weak[c].couldnt;all[c].wrong+=weak[c].wrong;all[c].total+=weak[c].total;
+  }
+  localStorage.setItem(STORE_KEY,JSON.stringify(all));
+}catch(e){}}
+/* 完走した回を1行ずつ履歴に残す(きろくページ stats.html が読む)。中断した回は残さない */
+const LOG_KEY='mm_thai_typing_log_v1';
+function appendLog(acc,cpm){try{
+  const a=JSON.parse(localStorage.getItem(LOG_KEY)||'[]');
+  a.push({t:Date.now(),lv:level.id,im:inputMethod,q:queue.length,
+    keys:totalKeys,ok:correctKeys,acc,cpm,combo:maxCombo});
+  while(a.length>1000)a.shift();
+  localStorage.setItem(LOG_KEY,JSON.stringify(a));
+}catch(e){}}
+
+/* ================================================================ DEVICE */
+const coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+const touchy = ('ontouchstart' in window) || navigator.maxTouchPoints>0;
+const likelyTouch = coarse && touchy;
+
+/* ================================================================ INPUT METHOD */
+const imRow=document.getElementById('imRow');
+const kbsec=document.getElementById('kbsec');/* 見出しラベルごと隠すため枠全体を持つ */
+document.getElementById('recPhys').textContent = likelyTouch ? '' : 'Recommended';
+document.getElementById('recTouch').textContent = likelyTouch ? 'Recommended' : '';
+imRow.querySelectorAll('.im').forEach(el=>{
+  el.onclick=()=>{
+    imRow.querySelectorAll('.im').forEach(x=>x.classList.remove('sel'));
+    el.classList.add('sel');
+    inputMethod=el.dataset.im;
+    kbsec.classList.toggle('hidden', inputMethod!=='physical');
+    updateLevelDim();refreshStart();
+  };
+});
+
+/* ================================================================ KB CHECK */
+let kbVerified=false;
+const testbox=document.getElementById('testbox');
+const testKey=document.getElementById('testKey');
+const testPlaceholder=document.getElementById('testPlaceholder');
+const kbState=document.getElementById('kbState');
+const kbHint=document.getElementById('kbHint');
+const KB_HINT_DEFAULT='Checks that Thai input mode is on (a Latin letter means you must switch) · Backspace clears';
+testbox.addEventListener('keydown',e=>{
+  if(e.key==='Backspace'||e.key==='Delete'){/* 表示を消して最初の状態に戻す */
+    e.preventDefault();
+    kbVerified=false;
+    testKey.style.display='none';testPlaceholder.style.display='inline';
+    kbState.textContent='NOT CHECKED';kbState.className='state idle';
+    kbHint.textContent=KB_HINT_DEFAULT;
+    refreshStart();return;
+  }
+  if(e.key.length!==1||e.ctrlKey||e.metaKey||e.altKey)return;
+  e.preventDefault();
+  testPlaceholder.style.display='none';testKey.style.display='inline';testKey.textContent=e.key;
+  if(isThaiChar(e.key)){
+    kbVerified=true;kbState.textContent='THAI MODE OK';kbState.className='state ok';
+    kbHint.textContent='Ready. Pick a level and hit START.';
+  }else{
+    kbVerified=false;kbState.textContent='NOT THAI YET';kbState.className='state ng';
+    kbHint.innerHTML='Switch to Thai input (Mac: <kbd>Ctrl+Space</kbd> / Win: <kbd>Win+Space</kbd>), then try ก again.';
+  }
+  refreshStart();
+});
+testbox.addEventListener('click',()=>testbox.focus());
+
+/* ================================================================ LEVEL SELECT */
+const grid=document.getElementById('levelGrid');
+const startBtn=document.getElementById('startBtn');
+let selId=null;
+function buildLevelGrid(){
+  grid.innerHTML='';
+  /* 外部JSONで作り直したとき、消えたレベルの選択が残らないようにする */
+  if(selId && !GAME_DATA.levels.some(l=>l.id===selId)) selId=null;
+  GAME_DATA.levels.forEach(l=>{
+    const d=document.createElement('div');
+    d.className='lvl';d.dataset.id=l.id;
+    if(l.id===selId)d.classList.add('sel'); /* 選択済みなら見た目を復元 */
+    const display=l.chars?`<div class="chars">${l.chars}</div>`:`<div class="badge">${l.badge||''}</div>`;
+    d.innerHTML=`<div class="ln">${l.ln}</div><div class="lt">${l.t}</div><div class="ld">${l.d}</div>${display}`;
+    d.onclick=()=>{
+      document.querySelectorAll('.lvl').forEach(x=>x.classList.remove('sel'));
+      d.classList.add('sel');selId=l.id;refreshStart();
+    };
+    grid.appendChild(d);
+  });
+  updateLevelDim();refreshStart();
+}
+function updateLevelDim(){
+  document.querySelectorAll('.lvl').forEach(el=>{
+    const lv=GAME_DATA.levels.find(x=>x.id===el.dataset.id);
+    el.classList.toggle('dim', inputMethod==='touch' && !!lv.physicalFocus);
+  });
+}
+function refreshStart(){
+  if(!inputMethod){startBtn.disabled=true;startBtn.textContent='Choose input method';return;}
+  if(!selId){startBtn.disabled=true;startBtn.textContent='Choose a level';return;}
+  if(inputMethod==='physical'&&!kbVerified){
+    startBtn.disabled=true;startBtn.textContent='Do the keyboard check first';return;}
+  startBtn.disabled=false;startBtn.textContent='START';
+}
+startBtn.onclick=()=>{
+  if(!inputMethod||!selId)return;
+  if(inputMethod==='physical'&&!kbVerified)return;
+  start(selId);
+};
+
+/* ================================================================ GAME FLOW */
+const elSelect=document.getElementById('select');
+const elGame=document.getElementById('game');
+const elResults=document.getElementById('results');
+const kbwarn=document.getElementById('kbwarn');
+const tapcue=document.getElementById('tapcue');
+const touchInput=document.getElementById('touchInput');
+
+function levelPool(l){
+  if(l.kind==='mix'){
+    /* 合成元を実行時にまとめる（データ二重管理を避ける） */
+    const ids=l.mixFrom||['home','mid','shift'];
+    return ids.flatMap(id=>{
+      const s=GAME_DATA.levels.find(x=>x.id===id);
+      return s?s.items:[];
+    });
+  }
+  return [...l.items];
+}
+
+function start(id){
+  level=GAME_DATA.levels.find(l=>l.id===id);
+  let pool=levelPool(level);
+  if(pool.length<10)pool=[...pool,...pool];
+  const count=(level.kind==='sentence')?Math.min(7,pool.length):10;
+  queue=shuffle(pool).slice(0,count);
+  qi=0;combo=0;maxCombo=0;totalKeys=0;correctKeys=0;weak={};kbBad=false;transitioning=false;
+  startTime=performance.now();
+  updateHud();/* 表示を初期化。しないと1打目まで前回のACC/COMBOが残る */
+  AUDIO.init();AUDIO.startGameBgm();/* STARTのクリック=ユーザー操作なので音を出せる */
+  elSelect.style.display='none';elResults.style.display='none';elGame.style.display='block';
+  document.getElementById('hT').textContent=queue.length;
+  tapcue.classList.toggle('show', inputMethod==='touch');
+  loadQuestion();
+}
+
+function loadQuestion(){
+  if(qi>=queue.length){return finish();}
+  target=[...queue[qi]];
+  pos=0;typed=[];curHadError=false;transitioning=false;
+  document.getElementById('hQ').textContent=qi+1;
+  document.getElementById('bar').style.width=(qi/queue.length*100)+'%';
+  const tEl=document.getElementById('target');
+  tEl.classList.toggle('small',target.length>14);
+  buildClusters();
+  renderTarget();renderTyped();
+  document.getElementById('status').textContent='Start typing';
+  document.getElementById('hint').textContent=hintFor(queue[qi]);
+  if(inputMethod==='touch'){touchInput.value='';}
+  qLimit=timeLimitFor(queue[qi]);
+  startTimer(qLimit);
+}
+function hintFor(s){
+  const arr=[...s];
+  if(arr.length===1){
+    if(GAME_DATA.preVowels.includes(s))return 'Preposed vowel — typed before its consonant';
+    return '';
+  }
+  if(arr.some(c=>GAME_DATA.preVowels.includes(c)))return 'Preposed vowels are typed before the consonant';
+  if(s.includes(' '))return 'Type the spaces too (they separate words)';
+  return '';
+}
+/* 打鍵単位を表示用のかたまりにまとめる。1打鍵=1<span>だと上下の記号が
+   iOS Safari等で潰れるため、かたまり単位の<span>にして正しく合成させる
+   (これにより旧「本来の綴り」の併記は不要になった) */
+let clusters=[];
+function buildClusters(){
+  clusters=[];
+  for(let i=0;i<target.length;i++){
+    if(i>0&&CLUSTER_JOIN.test(target[i])&&target[i-1]!==' ')
+      clusters[clusters.length-1].e=i+1;
+    else clusters.push({s:i,e:i+1});
+  }
+}
+function renderTarget(){
+  const el=document.getElementById('target');
+  el.innerHTML=clusters.map((cl,ci)=>{
+    let cls='todo';
+    if(pos>=cl.e)cls='done';else if(pos>=cl.s)cls='cur';
+    const txt=target.slice(cl.s,cl.e).join('');
+    const disp=(txt===' ')?'·':txt;
+    return `<span class="ch ${cls}" data-c="${ci}">${disp}</span>`;
+  }).join('');
+}
+function flashBad(i){
+  const ci=clusters.findIndex(cl=>i>=cl.s&&i<cl.e);
+  const el=document.querySelector(`.ch[data-c="${ci}"]`);
+  if(el){el.classList.add('bad');setTimeout(()=>el.classList.remove('bad'),200);}}
+function renderTyped(){
+  const shown=typed.map(c=>c===' '?'·':c).join('');
+  document.getElementById('typed').innerHTML=shown+'<span class="caret"></span>';
+}
+
+/* ================================================================ TIMER
+   pause/resume対応。kbwarn復帰時は残り時間を保持して再開 */
+/* 一律の制限時間だと1文字は余りすぎ・長文は足りないため、打鍵数に比例させる */
+function timeLimitFor(s){
+  const r=GAME_DATA.timeRule||{base:10,perKey:3.5};
+  return Math.ceil(r.base + r.perKey*[...s].length);
+}
+function startTimer(seconds){
+  clearInterval(timerId);timeLeft=seconds;timerEnd=performance.now()+seconds*1000;
+  updateTimer();timerId=setInterval(tick,100);
+}
+function resumeTimer(){
+  clearInterval(timerId);timerEnd=performance.now()+timeLeft*1000;
+  timerId=setInterval(tick,100);
+}
+/* 実際の経過時刻から残りを出す。0.1ずつ引くと別タブ中に時計が遅れるため */
+function tick(){
+  timeLeft=Math.max(0,(timerEnd-performance.now())/1000);
+  if(timeLeft<=0){timeLeft=0;updateTimer();timeout();}
+  else updateTimer();
+}
+function stopTimer(){clearInterval(timerId);}
+function updateTimer(){
+  const pct=Math.max(0,timeLeft/qLimit*100);
+  const fill=document.getElementById('timerFill');
+  fill.style.width=pct+'%';
+  /* 警告色の切り替えも制限時間に比例させる（短い問題が最初から警告色になるのを防ぐ） */
+  const critAt=Math.min(5,qLimit*0.2), warnAt=Math.min(10,qLimit*0.4);
+  fill.className='tf'+(timeLeft<=critAt?' crit':(timeLeft<=warnAt?' warn':''));
+  const tt=document.getElementById('timerText');
+  tt.textContent=timeLeft.toFixed(1)+'s';
+  tt.className='timertext'+(timeLeft<=critAt?' crit':'');
+}
+function timeout(){
+  stopTimer();
+  if(transitioning)return;
+  transitioning=true;
+  /* 打てずに残った字は不正解として数える（数えないと全問時間切れでも正確率100%になる） */
+  totalKeys+=target.length-pos;
+  for(let i=pos;i<target.length;i++){if(target[i]!==' ')recordMiss(target[i],'couldnt');}
+  combo=0;updateHud();
+  FX.onTimeout({});
+  document.getElementById('status').textContent="Time's up — next";
+  pendingNext=setTimeout(nextQuestion,500);
+}
+
+/* ================================================================ ENGINE (shared)
+   prefix照合。物理=1キーずつ / タッチ=input値全体、どちらもここへ */
+function commitTyped(newArr){
+  if(transitioning)return;
+  let i=0;
+  while(i<newArr.length && i<target.length && newArr[i]===target[i]) i++;
+  if(newArr.length<=target.length && i===newArr.length){
+    const gained=newArr.length-pos;
+    if(gained>0){
+      correctKeys+=gained;totalKeys+=gained;
+      FX.onCorrect({char:newArr[newArr.length-1],pos:newArr.length-1,combo});
+    }
+    pos=newArr.length;typed=newArr.slice();
+    renderTarget();renderTyped();
+    if(pos>=target.length) clearQuestion();
+    else updateHud();
+  }else{
+    curHadError=true;combo=0;totalKeys+=1;
+    const want=target[i];
+    if(want&&want!==' ')recordMiss(want,'wrong');
+    FX.onMiss({want,got:newArr[i],pos:i});
+    document.getElementById('status').textContent=
+      want?`Wrong key — expected ${want}`:'Extra input';
+    updateHud();
+    if(inputMethod==='touch'){
+      typed=target.slice(0,i);pos=i;
+      touchInput.value=typed.join('');
+      renderTarget();renderTyped();
+    }
+  }
+}
+function clearQuestion(){
+  stopTimer();
+  transitioning=true;
+  const perfect=!curHadError;
+  if(perfect){combo++;maxCombo=Math.max(maxCombo,combo);}else combo=0;
+  updateHud();
+  FX.onClear({perfect,combo});
+  pendingNext=setTimeout(nextQuestion,260);
+}
+
+/* ================================================================ PHYSICAL INPUT */
+document.addEventListener('keydown',e=>{
+  if(elGame.style.display!=='block')return;
+  if(e.key==='Escape'){e.preventDefault();abortGame();return;} /* 入力方式によらず中断 */
+  if(inputMethod!=='physical')return;
+  if(transitioning){e.preventDefault();return;}
+
+  if(e.key==='Backspace'){e.preventDefault();
+    if(pos>0){pos--;typed.pop();renderTarget();renderTyped();}return;}
+  if(e.key.length!==1)return;
+  if(e.ctrlKey||e.metaKey||e.altKey)return;
+  e.preventDefault();
+
+  if(e.key!==' '&&!isThaiChar(e.key)){showKbWarn();return;}
+  else hideKbWarn();
+
+  /* 物理は「今の位置に1字追加」してエンジンへ */
+  commitTyped([...typed, e.key]);
+});
+
+/* ================================================================ TOUCH INPUT */
+document.getElementById('focusBtn').onclick=()=>{touchInput.focus();};
+elGame.addEventListener('click',()=>{if(inputMethod==='touch')touchInput.focus();});
+touchInput.addEventListener('input',()=>{
+  if(inputMethod!=='touch'||elGame.style.display!=='block')return;
+  if(transitioning){touchInput.value=typed.join('');return;}
+  commitTyped([...touchInput.value]);
+});
+
+function showKbWarn(){if(kbBad)return;kbBad=true;kbwarn.classList.add('show');
+  stopTimer();document.getElementById('status').textContent='Switch back to Thai input to resume';}
+function hideKbWarn(){if(!kbBad)return;kbBad=false;kbwarn.classList.remove('show');
+  resumeTimer();/* 残り時間を保持して再開 */
+  document.getElementById('status').textContent='Resumed';}
+
+/* 途中でやめる。最後まで打っていないので、この回の記録は保存しない */
+function abortGame(){
+  /* 予約済みの「次の問題へ」も取り消す。残すと中断後も裏でゲームが進み続ける */
+  clearTimeout(pendingNext);pendingNext=null;
+  stopTimer();transitioning=true;AUDIO.startMenuBgm();/* メニューの夜の虫に戻す */
+  elGame.style.display='none';elSelect.style.display='block';
+  tapcue.classList.remove('show');kbwarn.classList.remove('show');kbBad=false;
+  renderCumWeak();
+}
+document.getElementById('quitBtn').onclick=e=>{e.stopPropagation();abortGame();};
+
+function recordMiss(ch,kind){if(!weak[ch])weak[ch]={couldnt:0,wrong:0,total:0};
+  weak[ch][kind]++;weak[ch].total++;}
+function nextQuestion(){pendingNext=null;stopTimer();qi++;loadQuestion();
+  if(inputMethod==='touch'&&elGame.style.display==='block'){setTimeout(()=>touchInput.focus(),50);}}
+
+function updateHud(){
+  const c=document.getElementById('hCombo');c.textContent='COMBO '+combo;
+  c.classList.toggle('hot',combo>=5);
+  const acc=totalKeys?Math.round(correctKeys/totalKeys*100):100;
+  document.getElementById('hAcc').textContent=acc+'%';
+}
+function shakePrompt(){const p=document.getElementById('prompt');
+  p.classList.add('shake');setTimeout(()=>p.classList.remove('shake'),300);}
+function flashOk(){const p=document.getElementById('prompt');
+  p.classList.add('flash');setTimeout(()=>p.classList.remove('flash'),300);}
+
+/* ================================================================ RESULTS */
+function finish(){
+  stopTimer();document.getElementById('bar').style.width='100%';saveWeak();
+  AUDIO.startMenuBgm();/* リザルトからはメニューの夜の虫に戻す */
+  const acc=totalKeys?Math.round(correctKeys/totalKeys*100):100;
+  const mins=(performance.now()-startTime)/60000;
+  const cpm=mins>0?Math.round(correctKeys/mins):0;
+  appendLog(acc,cpm);
+  document.getElementById('rAcc').textContent=acc+'%';
+  document.getElementById('rWpm').textContent=cpm;
+  document.getElementById('rCombo').textContent=maxCombo;
+  renderWeak(weak,document.getElementById('weakList'));
+  elGame.style.display='none';elResults.style.display='block';
+  tapcue.classList.remove('show');
+  renderCumWeak(); /* 次回のスタート画面用に更新 */
+}
+function renderWeak(data,box){
+  const entries=Object.entries(data).sort((a,b)=>b[1].total-a[1].total).slice(0,5);
+  if(entries.length===0){box.innerHTML='<div class="empty">No mistakes. Flawless ◆</div>';return;}
+  const max=entries[0][1].total;
+  box.innerHTML=entries.map(([ch,d])=>`
+    <div class="wrow"><div class="wch">${ch}</div>
+      <div class="wbar"><div class="f" style="width:${d.total/max*100}%"></div></div>
+      <div class="wtype"><span>timeout <b>${d.couldnt}</b></span>
+        <span>wrong key <b>${d.wrong}</b></span></div>
+    </div>`).join('');
+}
+/* スタート画面: 累積苦手トップ5（データがあるときだけ表示） */
+function renderCumWeak(){
+  const all=loadWeakAll();
+  const panel=document.getElementById('cumsec');/* ラベルごと出し入れする */
+  if(!all||Object.keys(all).length===0){panel.classList.remove('show');return;}
+  renderWeak(all,document.getElementById('cumList'));
+  panel.classList.add('show');
+}
+/* 累積記録の消去。押し間違いを防ぐため2回押し（4秒で解除） */
+const resetBtn=document.getElementById('resetBtn');
+let resetArmed=null;
+function disarmReset(){clearTimeout(resetArmed);resetArmed=null;
+  resetBtn.classList.remove('armed');resetBtn.textContent='Reset record';}
+resetBtn.onclick=()=>{
+  if(!resetArmed){
+    resetBtn.classList.add('armed');resetBtn.textContent='Press again to erase';
+    resetArmed=setTimeout(disarmReset,4000);return;
+  }
+  disarmReset();
+  try{localStorage.removeItem(STORE_KEY);}catch(e){}
+  renderCumWeak();
+};
+
+document.getElementById('retryBtn').onclick=()=>start(level.id);
+document.getElementById('backBtn').onclick=()=>{
+  elResults.style.display='none';elSelect.style.display='block';renderCumWeak();};
+
+/* ================================================================ UTIL */
+function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){
+  const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+(function(){for(let i=0;i<14;i++){const e=document.createElement('div');e.className='ember';
+  e.style.left=Math.random()*100+'vw';e.style.setProperty('--drift',(Math.random()*60-30)+'px');
+  e.style.animationDuration=(6+Math.random()*8)+'s';e.style.animationDelay=(Math.random()*8)+'s';
+  document.body.appendChild(e);}})();
+
+/* ================================================================ AUDIO UI */
+const bgmToggle=document.getElementById('bgmToggle');
+const seToggle=document.getElementById('seToggle');
+function paintAudioToggles(){
+  bgmToggle.textContent='♪ BGM: '+(AUDIO.bgmOn?'ON':'OFF');
+  bgmToggle.classList.toggle('off',!AUDIO.bgmOn);
+  seToggle.textContent='✦ SFX: '+(AUDIO.seOn?'ON':'OFF');
+  seToggle.classList.toggle('off',!AUDIO.seOn);
+}
+bgmToggle.onclick=()=>{AUDIO.bgmOn=!AUDIO.bgmOn;AUDIO.save();paintAudioToggles();
+  if(!AUDIO.bgmOn)AUDIO.stopScene();
+  else{AUDIO.init();AUDIO.startMenuBgm();}};
+seToggle.onclick=()=>{AUDIO.seOn=!AUDIO.seOn;AUDIO.save();paintAudioToggles();};
+
+/* メニューBGMは最初のクリック/キー操作で開始(ブラウザは操作なしに音を出せないため) */
+function bootMenuBgm(){AUDIO.init();if(elGame.style.display!=='block')AUDIO.startMenuBgm();}
+document.addEventListener('pointerdown',bootMenuBgm,{once:true});
+document.addEventListener('keydown',bootMenuBgm,{once:true});
+
+document.getElementById('kedLink').onclick=()=>{
+  document.getElementById('kedBox').classList.toggle('show');};
+
+/* init */
+AUDIO.load();
+paintAudioToggles();
+buildLevelGrid();
+renderCumWeak();
+loadExternalData();
+</script>
+</body>
+</html>

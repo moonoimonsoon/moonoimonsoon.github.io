@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moonoi Monsoon — Typing Record</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Sarabun:wght@400;600;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0f04; --bg2:#0d1407; --lime:#9FD92A; --lime-dim:#6b9418;
+    --ember:#ff8c2b; --ink:#dfe8c4; --muted:#7d8a5f;
+    --ng:#ff5544; --panel:#121a09; --line:#2a3815;
+    --cyan:#5BC8D8; /* 累積苦手はチャート類と同じ水色系 */
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:radial-gradient(120% 80% at 50% 0%, var(--bg2), var(--bg) 70%);
+    color:var(--ink); font-family:'Sarabun','Noto Sans JP',sans-serif; min-height:100vh;
+    display:flex;flex-direction:column;align-items:center;
+    padding:24px 16px 60px;
+  }
+  .wrap{width:100%;max-width:680px}
+  header{text-align:center;margin-bottom:22px}
+  .logo{font-family:'Silkscreen';color:var(--lime);font-size:13px;letter-spacing:2px;
+    text-shadow:0 0 10px rgba(159,217,42,.5)}
+  h1{font-family:'Silkscreen';font-size:24px;color:var(--lime);margin-top:4px;
+    text-shadow:0 0 14px rgba(159,217,42,.45)}
+  .sub{color:var(--muted);font-size:13px;margin-top:8px}
+  .panel{background:linear-gradient(180deg,var(--panel),#0c1206);
+    border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
+  .sectit{font-family:'Silkscreen';font-size:10px;color:var(--lime-dim);letter-spacing:1px;margin-bottom:10px}
+  .demobar{display:none;background:#2a2005;border:1px solid var(--ember);color:var(--ember);
+    border-radius:10px;padding:10px 14px;font-size:13px;text-align:center;margin-bottom:16px}
+  .demobar.show{display:block}
+
+  .namerow{display:flex;gap:10px;align-items:center;margin-bottom:4px}
+  .namerow label{font-size:13px;color:var(--muted);white-space:nowrap}
+  .namerow input{flex:1;background:#0a0f04;border:1px solid var(--line);border-radius:8px;
+    padding:10px 12px;color:var(--ink);font-family:inherit;font-size:16px}
+  .namerow input:focus{outline:none;border-color:var(--lime-dim)}
+
+  .statgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .stat{background:#0c1206;border:1px solid var(--line);border-radius:10px;padding:14px}
+  .stat .n{font-family:'Silkscreen';font-size:18px;color:var(--lime)}
+  .stat .l{font-size:11px;color:var(--muted);margin-top:4px}
+
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th{font-size:11px;color:var(--muted);font-weight:600;text-align:left;
+    padding:6px 8px;border-bottom:1px solid var(--line)}
+  td{padding:7px 8px;border-bottom:1px solid #16200c;vertical-align:middle}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .wch{font-size:24px;color:var(--cyan)}
+  .wbar{height:14px;background:#0e1607;border-radius:4px;overflow:hidden;min-width:70px}
+  .wbar .f{height:100%;background:linear-gradient(90deg,#23606c,var(--cyan))}
+  .empty{color:var(--muted);font-size:14px;padding:14px;text-align:center}
+  .note{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.6}
+
+  .btnrow{text-align:center;margin:4px 0}
+  .ghost{background:none;border:1px solid var(--line);color:var(--ink);
+    border-radius:9px;padding:12px 20px;font-family:'Silkscreen';font-size:12px;
+    cursor:pointer;margin:6px;transition:.15s;text-decoration:none;display:inline-block}
+  .ghost:hover{border-color:var(--lime);color:var(--lime)}
+  .primary{background:var(--lime);color:#0a0f04;border:none;border-radius:10px;
+    padding:14px 24px;font-family:'Silkscreen';font-size:13px;letter-spacing:1px;cursor:pointer;margin:6px}
+  .primary:hover{box-shadow:0 0 22px rgba(159,217,42,.5)}
+
+  .iorow{text-align:center;margin-bottom:10px}
+  #ioText{width:100%;height:90px;background:#0a0f04;border:1px solid var(--line);
+    border-radius:8px;color:var(--ink);font-size:12px;padding:10px;font-family:monospace;resize:vertical}
+  #ioMsg{font-size:12px;color:var(--lime);min-height:18px;margin-top:6px;text-align:center}
+
+  .prn-only{display:none}
+
+  /* ============================================================
+     印刷(PDF) = MOONOI MONSOON 黒仕様(Reference Chartsと同じ)。
+     背景を紙端まで塗るため @page margin:0 + body padding
+     ============================================================ */
+  @media print{
+    @page{size:A4;margin:0}
+    :root{--kbg:#0F140C;--kpanel:#141A0E;--kbox:#1A2113;--kline:#2C3A20;--kline2:#232E19;
+      --kink:#EAEFE0;--kink2:#CBD4BC;--kgrey:#9DA890;--ken:#7E8472;
+      --klime:#9FC63B;--kcyan:#5BC8D8}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    html,body{background:var(--kbg)}
+    body{color:var(--kink);padding:12mm 13mm;display:block}
+    .wrap{max-width:none}
+    .scr-only{display:none !important}
+    .prn-only{display:block}
+    .panel{background:none;border:none;border-radius:0;padding:0;margin-bottom:18px}
+    .demobar.show{display:block;background:var(--kpanel);border:1px solid var(--kline);color:var(--kgrey)}
+
+    /* ヘッダ: 🐷マーク＋タイトル(一語だけライム)＋右上ブランド＋ライム罫線 */
+    .p-hd{display:flex;align-items:center;gap:10px;border-bottom:1.6px solid var(--klime);
+      padding-bottom:8px;margin-bottom:16px}
+    .p-hd .mark{flex:0 0 auto;width:34px;height:34px;border-radius:9px;background:var(--klime);
+      display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1}
+    .p-hd h1{margin:0;font-size:19pt;font-weight:700;color:var(--kink);line-height:1.15;
+      font-family:'Noto Sans JP','Sarabun',sans-serif}
+    .p-hd h1 .hi{color:var(--klime)}
+    .p-hd .sub{margin-top:3px;color:var(--kgrey);font-size:8.5pt}
+    .p-hd .sub b{color:var(--kink2)}
+    .p-hd .brand{margin-left:auto;text-align:right;flex:0 0 auto;line-height:1.3}
+    .p-hd .brand .en{color:var(--klime);font-size:8pt;font-weight:700;letter-spacing:2px}
+    .p-hd .brand .th{display:block;color:var(--ken);font-size:7pt}
+
+    /* 見出し = ライムのベタ塗りピル */
+    .p-sec{margin:14px 0 8px}
+    .p-pill{display:inline-block;background:var(--klime);color:#101609;font-weight:700;
+      font-size:9pt;padding:3px 14px;border-radius:999px;letter-spacing:.5px;
+      font-family:'Noto Sans JP','Sarabun',sans-serif}
+
+    .statgrid{grid-template-columns:1fr 1fr 1fr 1fr;gap:8px}
+    .stat{background:var(--kbox);border:1px solid var(--kline);border-left:3px solid var(--klime);
+      border-radius:8px;padding:10px 12px;break-inside:avoid}
+    .stat .n{color:var(--kink);font-family:'Sarabun',sans-serif;font-weight:700;font-size:13pt}
+    .stat .l{color:var(--kgrey)}
+
+    table{font-size:10pt}
+    th{background:var(--kpanel);color:var(--kink2);border-top:1px solid var(--kline);
+      border-bottom:1px solid var(--kline);padding:6px 8px}
+    td{border-bottom:1px solid var(--kline2);color:var(--kink2)}
+    td.num{color:var(--kink)}
+    .wch{color:var(--kcyan);font-size:16pt;font-weight:700}
+    .wbar{background:var(--kbox);border:1px solid var(--kline);height:9px}
+    .wbar .f{background:var(--kcyan)}
+    tr{break-inside:avoid}
+    .note{color:var(--kgrey)}
+
+    .p-foot{margin-top:24px;padding-top:10px;border-top:1px solid var(--kline2);
+      display:flex;justify-content:space-between;align-items:flex-end;break-inside:avoid}
+    .p-foot .f-l{font-family:'Silkscreen';font-size:7pt;letter-spacing:1.5px;color:var(--ken)}
+    .p-foot .f-l .accent{color:var(--klime)}
+    .p-foot .f-r{text-align:center}
+    /* QRは読み取りのため白い小箱に載せる */
+    .p-foot .qrbox{background:#fff;border-radius:6px;padding:2mm;display:inline-block}
+    .p-foot svg{width:20mm;height:20mm;display:block}
+    .p-foot .f-url{font-size:8pt;color:var(--ken);margin-top:3px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 画面用ヘッダ -->
+  <header class="scr-only">
+    <div class="logo">◆ MOONOI MONSOON ◆</div>
+    <h1>TYPING RECORD</h1>
+    <div class="sub">Your Thai typing record</div>
+  </header>
+
+  <!-- 印刷用ヘッダ(チートシートと同じ黒仕様) -->
+  <div class="prn-only p-hd">
+    <span class="mark">🐷</span>
+    <div class="txt">
+      <h1>Thai Typing <span class="hi">Record</span></h1>
+      <div class="sub"><b>THAI TYPING MASTER</b> — PERSONAL RECORD　<span id="prnMeta"></span></div>
+    </div>
+    <div class="brand"><span class="en">MOONOI MONSOON</span><span class="th">หมูน้อยมรสุม</span></div>
+  </div>
+
+  <div class="demobar" id="demobar">Showing sample data (remove ?demo to see your own record)</div>
+
+  <div class="panel scr-only">
+    <div class="namerow">
+      <label for="nameInput">Name</label>
+      <input id="nameInput" placeholder="Shown on the PDF (optional)" maxlength="30">
+    </div>
+    <div class="note">Your record is saved automatically inside this browser. As long as you
+      play on the same device and browser it keeps growing — no login needed.</div>
+  </div>
+
+  <div class="panel">
+    <div class="sectit scr-only">SUMMARY</div>
+    <div class="prn-only p-sec"><span class="p-pill">Summary</span></div>
+    <div class="statgrid">
+      <div class="stat"><div class="n" id="sPeriod">—</div><div class="l">Period</div></div>
+      <div class="stat"><div class="n" id="sPlays">—</div><div class="l">Plays</div></div>
+      <div class="stat"><div class="n" id="sKeys">—</div><div class="l">Total keys</div></div>
+      <div class="stat"><div class="n" id="sAcc">—</div><div class="l">Accuracy</div></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="sectit scr-only">WEAK KEYS / ALL-TIME</div>
+    <div class="prn-only p-sec"><span class="p-pill">Weak letters (all-time)</span></div>
+    <div id="weakBox"></div>
+    <div class="note">"Timeouts" = ran out of time before typing it /
+      "Wrong key" = pressed a different key</div>
+  </div>
+
+  <div class="panel">
+    <div class="sectit scr-only">HISTORY</div>
+    <div class="prn-only p-sec"><span class="p-pill">Play history</span></div>
+    <div id="histBox"></div>
+  </div>
+
+  <!-- 印刷用フッタ: QRはハブサイト https://moonoimonsoon.github.io/ 行き -->
+  <div class="prn-only p-foot">
+    <div class="f-l"><span class="accent">MOONOI MONSOON</span> · THAI TYPING MASTER</div>
+    <div class="f-r">
+      <div class="qrbox"><svg viewBox="0 0 33 33" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke="#2b2b27" stroke-width="1" d="M2 2.5h7m3 0h5m1 0h1m1 0h1m3 0h7m-29 1h1m5 0h1m1 0h2m2 0h1m1 0h1m2 0h1m1 0h1m2 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m5 0h1m3 0h1m2 0h2m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m2 0h2m1 0h5m2 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m2 0h1m3 0h1m1 0h1m2 0h1m1 0h1m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h2m1 0h1m2 0h1m3 0h1m-18 1h1m1 0h4m1 0h1m1 0h2m1 0h2m1 0h3m1 0h3m1 0h2m1 0h1m-28 1h2m3 0h1m1 0h3m1 0h1m3 0h1m1 0h3m3 0h2m1 0h2m-23 1h2m1 0h1m2 0h2m1 0h2m4 0h4m1 0h1m-23 1h1m1 0h1m3 0h3m3 0h1m1 0h2m6 0h1m2 0h1m-29 1h1m1 0h2m2 0h1m1 0h4m1 0h4m3 0h3m2 0h1m1 0h1m-27 1h2m2 0h1m1 0h2m4 0h2m2 0h2m3 0h1m1 0h1m1 0h3m-28 1h1m2 0h1m1 0h1m2 0h1m1 0h1m4 0h2m1 0h2m1 0h2m1 0h1m2 0h1m-29 1h2m1 0h1m3 0h1m1 0h2m2 0h3m2 0h1m2 0h1m2 0h3m-27 1h4m2 0h2m1 0h1m1 0h2m2 0h1m3 0h2m2 0h1m1 0h1m2 0h1m-29 1h1m3 0h1m3 0h1m2 0h1m1 0h1m2 0h1m1 0h3m2 0h4m-27 1h3m2 0h2m3 0h2m1 0h1m1 0h1m3 0h2m2 0h1m4 0h1m-29 1h3m4 0h5m1 0h4m2 0h1m1 0h3m2 0h1m-27 1h4m2 0h2m3 0h2m1 0h1m1 0h2m1 0h10m-21 1h2m3 0h1m1 0h1m1 0h2m1 0h1m3 0h3m-27 1h7m4 0h1m3 0h6m1 0h1m1 0h1m1 0h1m-27 1h1m5 0h1m1 0h4m2 0h1m2 0h1m1 0h2m3 0h2m1 0h1m-28 1h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h1m1 0h1m2 0h6m-25 1h1m1 0h3m1 0h1m1 0h1m3 0h2m1 0h1m1 0h2m4 0h1m4 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m2 0h4m2 0h1m1 0h2m1 0h2m1 0h3m-29 1h1m5 0h1m1 0h2m5 0h1m3 0h1m4 0h3m1 0h1m-29 1h7m3 0h2m1 0h2m4 0h2m2 0h2"/></svg></div>
+      <div class="f-url">moonoimonsoon.github.io</div>
+    </div>
+  </div>
+
+  <div class="panel scr-only">
+    <div class="sectit">PDF / DOWNLOAD</div>
+    <div class="btnrow">
+      <button class="primary" id="pdfBtn">📄 Make a PDF</button>
+    </div>
+    <div class="note">Opens the print dialog. Choose <b>Save as PDF</b> as the destination
+      to download it (Moonoi design, QR code included).</div>
+  </div>
+
+  <div class="panel scr-only">
+    <div class="sectit">MOVE DATA</div>
+    <div class="note" style="margin:0 0 10px">Records live per device. To move them: Export here,
+      copy the code, then paste it into this page on the other device and press Import.
+      Importing merges, so both records are combined.</div>
+    <div class="iorow">
+      <button class="ghost" id="exportBtn">Export</button>
+      <button class="ghost" id="importBtn">Import</button>
+    </div>
+    <textarea id="ioText" placeholder="Export puts your code here. To import, paste a code here first, then press Import."></textarea>
+    <div id="ioMsg"></div>
+  </div>
+
+  <div class="btnrow scr-only">
+    <a class="ghost" href="index.html">← Back to the game</a>
+  </div>
+</div>
+
+<script>
+/* ゲーム本体(index.html)と同じ保存キーを読む。書き込みは引っ越し機能と名前だけ */
+const STORE_KEY='mm_thai_typing_weak_v1';
+const LOG_KEY='mm_thai_typing_log_v1';
+const NAME_KEY='mm_thai_typing_name_v1';
+const DEMO=new URLSearchParams(location.search).has('demo');
+
+const LV_NAMES={home:'LV.1 Home row',mid:'LV.2 Middle',words:'LV.3 Words',
+  shift:'LV.4 Tone marks',mix:'LV.5 Mix',sentence:'LV.6 Sentences'};
+const IM_NAMES={physical:'Keys',touch:'Touch'};
+
+function loadJSON(key,fallback){try{const r=localStorage.getItem(key);
+  if(r)return JSON.parse(r);}catch(e){}return fallback;}
+function saveJSON(key,v){try{localStorage.setItem(key,JSON.stringify(v));}catch(e){}}
+
+function demoData(){
+  const weak={'ผ':{couldnt:7,wrong:4,total:11},'ญ':{couldnt:5,wrong:3,total:8},
+    'ฝ':{couldnt:3,wrong:4,total:7},'็':{couldnt:2,wrong:3,total:5},
+    'ึ':{couldnt:1,wrong:3,total:4},'โ':{couldnt:0,wrong:2,total:2}};
+  const log=[];const day=864e5;const now=Date.now();
+  const lvs=['home','mid','words','shift','mix','sentence'];
+  for(let i=20;i>=1;i--){
+    log.push({t:now-i*day+(i%3)*36e5,lv:lvs[i%6],im:i%4===0?'touch':'physical',
+      q:10,keys:60+i*3,ok:Math.round((60+i*3)*(0.78+ (20-i)*0.01)),
+      acc:78+(20-i),cpm:55+(20-i)*2,combo:2+(i%5)});
+  }
+  return {weak,log,name:'Sample'};
+}
+
+const data=DEMO?demoData():{
+  weak:loadJSON(STORE_KEY,{}),
+  log:loadJSON(LOG_KEY,[]),
+  name:(()=>{try{return localStorage.getItem(NAME_KEY)||'';}catch(e){return'';}})()
+};
+
+/* ---------------- 表示 ---------------- */
+function fmtDate(t){const d=new Date(t);
+  return `${d.getFullYear()}/${d.getMonth()+1}/${d.getDate()}`;}
+function fmtDateShort(t){const d=new Date(t);
+  return `${d.getMonth()+1}/${d.getDate()}`;}
+
+function render(){
+  const log=[...data.log].sort((a,b)=>a.t-b.t);
+  /* サマリー */
+  let period='—',plays='—',keys='—',acc='—';
+  if(log.length){
+    const first=log[0].t,last=log[log.length-1].t;
+    const days=Math.max(1,Math.round((last-first)/864e5)+1);
+    period=`${fmtDateShort(first)}–${fmtDateShort(last)} · ${days}d`;
+    plays=String(log.length);
+    const tk=log.reduce((s,e)=>s+(e.keys||0),0);
+    const ok=log.reduce((s,e)=>s+(e.ok||0),0);
+    keys=tk.toLocaleString();
+    acc=tk?Math.round(ok/tk*100)+'%':'—';
+  }
+  document.getElementById('sPeriod').textContent=period;
+  document.getElementById('sPlays').textContent=plays;
+  document.getElementById('sKeys').textContent=keys;
+  document.getElementById('sAcc').textContent=acc;
+
+  /* 印刷ヘッダのメタ情報 */
+  const today=new Date();
+  const metas=[];
+  if(data.name)metas.push(`Name: ${data.name}`);
+  if(log.length)metas.push(`Period: ${fmtDate(log[0].t)} – ${fmtDate(log[log.length-1].t)}`);
+  metas.push(`Issued: ${fmtDate(today.getTime())}`);
+  document.getElementById('prnMeta').innerHTML=metas.join('　·　');
+
+  /* 苦手一覧(累積・全件) */
+  const wbox=document.getElementById('weakBox');
+  const entries=Object.entries(data.weak).sort((a,b)=>b[1].total-a[1].total);
+  if(!entries.length){wbox.innerHTML='<div class="empty">No record yet. Play the game and your weak letters will gather here.</div>';}
+  else{
+    const max=entries[0][1].total;
+    wbox.innerHTML=`<table><thead><tr>
+      <th>Letter</th><th>Trouble</th><th class="num">Timeouts</th>
+      <th class="num">Wrong key</th><th class="num">Total</th></tr></thead><tbody>`+
+      entries.map(([ch,d])=>`<tr><td class="wch">${ch}</td>
+        <td><div class="wbar"><div class="f" style="width:${Math.max(4,d.total/max*100)}%"></div></div></td>
+        <td class="num">${d.couldnt}</td><td class="num">${d.wrong}</td>
+        <td class="num"><b>${d.total}</b></td></tr>`).join('')+'</tbody></table>';
+  }
+
+  /* 履歴(新しい順・最大60行表示) */
+  const hbox=document.getElementById('histBox');
+  if(!log.length){hbox.innerHTML='<div class="empty">No history yet. Each finished round leaves one line here.</div>';}
+  else{
+    const rows=[...log].reverse().slice(0,60);
+    hbox.innerHTML=`<table><thead><tr>
+      <th>Date</th><th>Level</th><th>Input</th>
+      <th class="num">Acc</th><th class="num">CPM</th><th class="num">Combo</th></tr></thead><tbody>`+
+      rows.map(e=>`<tr><td>${fmtDate(e.t)}</td>
+        <td>${LV_NAMES[e.lv]||e.lv}</td><td>${IM_NAMES[e.im]||e.im||'—'}</td>
+        <td class="num">${e.acc}%</td><td class="num">${e.cpm}</td>
+        <td class="num">${e.combo??'—'}</td></tr>`).join('')+'</tbody></table>'+
+      (log.length>60?`<div class="note">Showing the latest 60 of ${log.length} plays.</div>`:'');
+  }
+}
+
+/* ---------------- 名前 ---------------- */
+const nameInput=document.getElementById('nameInput');
+nameInput.value=data.name;
+nameInput.addEventListener('input',()=>{
+  data.name=nameInput.value.trim();
+  if(!DEMO){try{localStorage.setItem(NAME_KEY,data.name);}catch(e){}}
+  render();
+});
+
+/* ---------------- PDF(印刷) ---------------- */
+document.getElementById('pdfBtn').onclick=()=>window.print();
+
+/* ---------------- 引っ越し ---------------- */
+const ioText=document.getElementById('ioText');
+const ioMsg=document.getElementById('ioMsg');
+document.getElementById('exportBtn').onclick=()=>{
+  ioText.value=JSON.stringify({w:data.weak,g:data.log,n:data.name});
+  ioText.select();
+  ioMsg.textContent='Code ready — already selected, just copy it (⌘+C).';
+};
+document.getElementById('importBtn').onclick=()=>{
+  if(DEMO){ioMsg.textContent='Import is disabled while viewing sample data.';return;}
+  try{
+    const inc=JSON.parse(ioText.value);
+    if(!inc||typeof inc!=='object')throw 0;
+    /* 苦手は文字ごとに合算 */
+    const w=loadJSON(STORE_KEY,{});
+    for(const c in (inc.w||{})){
+      if(!w[c])w[c]={couldnt:0,wrong:0,total:0};
+      w[c].couldnt+=inc.w[c].couldnt||0;w[c].wrong+=inc.w[c].wrong||0;w[c].total+=inc.w[c].total||0;
+    }
+    saveJSON(STORE_KEY,w);
+    /* 履歴は時刻で重複を除いて合流 */
+    const g=loadJSON(LOG_KEY,[]);
+    const seen=new Set(g.map(e=>e.t));
+    (inc.g||[]).forEach(e=>{if(e&&e.t&&!seen.has(e.t)){g.push(e);seen.add(e.t);}});
+    g.sort((a,b)=>a.t-b.t);
+    saveJSON(LOG_KEY,g);
+    if(inc.n&&!data.name){data.name=inc.n;
+      try{localStorage.setItem(NAME_KEY,inc.n);}catch(e){}nameInput.value=inc.n;}
+    data.weak=w;data.log=g;
+    render();
+    ioMsg.textContent='Imported — records merged.';
+  }catch(e){ioMsg.textContent='Could not import. Make sure you pasted the whole code.';}
+};
+
+/* init */
+if(DEMO)document.getElementById('demobar').classList.add('show');
+render();
+</script>
+</body>
+</html>
