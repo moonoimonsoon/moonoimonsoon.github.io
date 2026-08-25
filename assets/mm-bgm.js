@@ -28,7 +28,7 @@ var AUDIO_KEY='mm_thai_typing_audio_v1';   /* {bgm:bool, se:bool} */
 var IDX_KEY='mm_thai_typing_bgm_idx';      /* プレイ中BGMの順番 */
 var GAME_ROT=['l','k','n','o','h'];
 
-var ctx=null, cur=null, bgmOn=true, started=false;
+var ctx=null, cur=null, bgmOn=true;
 
 try{ var st=JSON.parse(localStorage.getItem(AUDIO_KEY)); if(st) bgmOn=(st.bgm!==false); }catch(e){}
 function saveOn(){
@@ -251,13 +251,33 @@ function makeBtn(){
   document.body.appendChild(btn);
 }
 
-/* ---- 最初の操作で鳴らし始める(ブラウザは操作なしに音を出せない) ---- */
-function boot(){
-  if(started) return; started=true;
-  play(cur?cur.name:'menu');
+/* ---- 音を出せる状態になり次第、すぐメニューBGMを始める ----
+   ブラウザは操作なしに音を出せないが、Chromeは同じサイトで一度クリックして
+   いれば次のページは読み込み直後から鳴らせる。そこで、
+   (1)読み込み時にまず試す (2)ダメなら操作のたびに試す(1回きりにしない。
+   iOSのタッチ開始のように解禁扱いされない操作でチャンスを消費しないため)
+   (3)鳴ったら監視をやめる。 */
+var BOOT_EVTS=['pointerdown','mousedown','touchend','keydown','click'];
+function unhook(){ BOOT_EVTS.forEach(function(ev){ document.removeEventListener(ev,kick,true); }); }
+function kick(){
+  var c=ac(); if(!c) return;
+  function go(){
+    if(c.state!=='running') return;
+    unhook();
+    if(bgmOn&&!cur) play('menu');
+  }
+  var p=null; try{ p=c.resume(); }catch(e){}
+  if(p&&p.then) p.then(go,function(){});
+  go();
 }
-['pointerdown','keydown','touchstart'].forEach(function(ev){
-  document.addEventListener(ev,boot,{once:true,passive:true});
+BOOT_EVTS.forEach(function(ev){
+  document.addEventListener(ev,kick,{capture:true,passive:true});
+});
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',kick);
+else kick();
+/* タブに戻ってきたときも再開を試す(iOSは背面で止まることがある) */
+document.addEventListener('visibilitychange',function(){
+  if(!document.hidden&&ctx&&bgmOn){ try{ ctx.resume(); }catch(e){} }
 });
 if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',makeBtn);
 else makeBtn();
@@ -265,8 +285,8 @@ else makeBtn();
 window.MMBGM={
   scene:function(kind){
     if(kind==='off'){ stopCur(); return; }
-    if(kind==='game'){ started=true; play(nextGame()); return; }
-    started=true; play('menu');
+    if(kind==='game'){ play(nextGame()); return; }
+    play('menu');
   },
   isOn:function(){ return bgmOn; },
   /* ページ側の音メニューからON/OFFするためのAPI(タイピングマスターが使う) */
