@@ -882,8 +882,9 @@ function hintFor(s){
     if(GAME_DATA.preVowels.includes(s))return 'Preposed vowel — typed before its consonant';
     return '';
   }
+  /* 文章ではスペースの案内を最優先(前置母音の注意より重要。知らないと詰まる) */
+  if(s.includes(' '))return 'Press SPACE where you see the · marks';
   if(arr.some(c=>GAME_DATA.preVowels.includes(c)))return 'Preposed vowels are typed before the consonant';
-  if(s.includes(' '))return 'Type the spaces too (they separate words)';
   return '';
 }
 /* 打鍵単位を表示用のかたまりにまとめる。1打鍵=1<span>だと上下の記号が
@@ -985,7 +986,8 @@ function commitTyped(newArr){
     if(want&&want!==' ')recordMiss(want,'wrong');
     FX.onMiss({want,got:newArr[i],pos:i});
     document.getElementById('status').textContent=
-      want?`Wrong key — expected ${want}`:'Extra input';
+      want===' '?"Type a space here — · marks a space"
+      :(want?`Wrong key — expected ${want}`:'Extra input');
     updateHud();
     if(inputMethod==='touch'){
       typed=target.slice(0,i);pos=i;
