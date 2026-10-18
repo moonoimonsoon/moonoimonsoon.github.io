@@ -7131,6 +7131,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
   langBtns.forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
   window.addEventListener('hashchange', function(){ go(location.hash, true); });
   var savedLang = 'ja'; try{ savedLang = localStorage.getItem('guide-lang') || 'ja'; }catch(e){}
+  try{ var q = new URLSearchParams(location.search).get('lang'); if(q === 'th' || q === 'ja') savedLang = q; }catch(e){}
   setLang(savedLang);
 })();
 
