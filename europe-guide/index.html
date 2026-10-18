@@ -45,9 +45,10 @@ b{font-weight:700}
 
 
 /* language switch */
-.langbar{max-width:880px;margin:0 auto;padding-top:14px;display:flex;justify-content:flex-end}
-.langbar-in{display:inline-flex;border:1px solid var(--line);border-radius:999px;background:var(--paper);padding:3px;gap:2px}
-.langbar button{font:inherit;font-size:13px;font-weight:500;border:0;background:none;color:var(--muted);padding:5px 12px;border-radius:999px;cursor:pointer}
+.langbar{position:fixed;right:max(12px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));z-index:50;display:flex;justify-content:flex-end;pointer-events:none}
+.langbar-in{pointer-events:auto;display:inline-flex;border:1px solid var(--line);border-radius:999px;background:var(--paper);padding:4px;gap:2px;box-shadow:0 6px 24px rgba(0,0,0,.45)}
+.langbar button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--muted);padding:8px 14px;border-radius:999px;cursor:pointer;min-height:40px}
+footer{padding-bottom:72px}
 .langbar button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
 html:lang(th) body{font-family:var(--f-thai),var(--f-body)}
 html:lang(th) .memo,html:lang(en) .memo{font-family:var(--f-body);font-weight:500}
@@ -7422,14 +7423,22 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     }
     go(location.hash, false);
   }
+  // remember which element is at the top of the screen so a language switch keeps the same place
+  function anchorNow(){
+    var els = book.querySelectorAll('[id]'), best = null, bestTop = -Infinity, limit = 90;
+    for(var i=0;i<els.length;i++){ var el=els[i]; if(el.offsetParent===null) continue; var t=el.getBoundingClientRect().top; if(t<=limit && t>bestTop){ bestTop=t; best=el; } }
+    return best ? {id: best.id, top: bestTop} : null;
+  }
   function setLang(l){
     if(!html[l]) l = 'ja';
-    if(l !== lang){ book.innerHTML = html[l]; }
+    var changed = (l !== lang), a = changed ? anchorNow() : null;
+    if(changed){ book.innerHTML = html[l]; }
     lang = l;
     document.documentElement.lang = l;
     langBtns.forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.lang === l ? 'true' : 'false'); });
     try{ localStorage.setItem('guide-lang', l); }catch(e){}
     init();
+    if(a){ var el = document.getElementById(a.id); if(el){ var y = el.getBoundingClientRect().top + window.pageYOffset - a.top; window.scrollTo({top:y, behavior:'auto'}); } }
   }
   langBtns.forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
   window.addEventListener('hashchange', function(){ go(location.hash, true); });
