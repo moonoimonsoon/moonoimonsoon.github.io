@@ -367,7 +367,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
       </defs>
       <!-- inbound from Dubai -->
       <path d="M500 20 Q 360 10 186 58" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="2 5" marker-end="url(#ah)"/>
-      <text x="508" y="38" font-size="11" fill="var(--muted)" text-anchor="end">11/23 ドバイから ✈</text>
+      <text x="508" y="38" font-size="11" fill="var(--muted)" text-anchor="end">11/23 ドバイ乗継 3h15 → ✈</text>
       <!-- AMS → PAR -->
       <path d="M176 60 L108 186" fill="none" stroke="var(--nl1)" stroke-width="3.5" stroke-linecap="round"/>
       <text x="150" y="128" font-size="11.5" fill="var(--ink)">Eurostar 3h31</text>
@@ -412,7 +412,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
       <thead><tr><th>日付</th><th>泊まる街</th><th>その日の主役</th><th>移動</th></tr></thead>
       <tbody>
         <tr><td class="d">11/22 日</td><td><span class="cityflag"><span class="flag f-th"></span>機内</span></td><td>夜に家を出る</td><td>深夜便</td></tr>
-        <tr><td class="d"><a href="#d-1123">11/23 月</a></td><td><span class="cityflag"><span class="flag f-nl"></span>アムステルダム</span></td><td>到着、昼寝、運河を少し</td><td>EK147 12:45着</td></tr>
+        <tr><td class="d"><a href="#d-1123">11/23 月</a></td><td><span class="cityflag"><span class="flag f-nl"></span>アムステルダム</span></td><td>ドバイで乗継3時間15分 → 到着、昼寝、運河を少し</td><td>EK385 → EK147 12:45着</td></tr>
         <tr><td class="d"><a href="#d-1124">11/24 火</a></td><td>アムステルダム</td><td>アンネ・フランクの家、風車</td><td>—</td></tr>
         <tr><td class="d"><a href="#d-1125">11/25 水</a></td><td><span class="cityflag"><span class="flag f-fr"></span>パリ</span></td><td>シテ島、Ryoはルーヴル夜間</td><td>Eurostar 08:10</td></tr>
         <tr><td class="d"><a href="#dlp-day">11/26 木</a></td><td>パリ</td><td>ディズニーランド・パリ（2パーク）</td><td>RER A</td></tr>
@@ -471,7 +471,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <table class="wide">
       <thead><tr><th>日付</th><th>区間</th><th>便・列車</th><th>時刻</th><th>荷物と注意</th></tr></thead>
       <tbody>
-        <tr><td class="d">11/23</td><td>BKK → DXB → AMS</td><td>EK385 / EK147（A380）</td><td class="mono">01:05 → 12:45</td><td>ベビーカーは機内まで</td></tr>
+        <tr><td class="d">11/23</td><td>BKK → DXB → AMS</td><td>EK385 / EK147（A380）</td><td class="mono">01:05 → 12:45</td><td>ドバイ T3 で乗継3時間15分（<a href="#dxb-out">乗継の過ごし方</a>）。ベビーカーは機内まで</td></tr>
         <tr><td class="d">11/25</td><td>AMS → パリ北駅</td><td>Eurostar（旧Thalys）</td><td class="mono">08:10 → 11:41</td><td>シェンゲン内なので出国審査なし。発車の30分前に駅へ</td></tr>
         <tr><td class="d">11/30</td><td>パリ・リヨン駅 → BCN サンツ</td><td>TGV INOUI 直通</td><td class="mono">07:42 → 14:32</td><td>スーツケースはワイヤーロックで棚に</td></tr>
         <tr><td class="d">12/3</td><td>BCN T1 → VCE</td><td>Vueling</td><td class="mono">12:40 → 14:25</td><td>FLY＋預け荷物。1人1個25kgまで、機内は足元のバッグだけ</td></tr>
@@ -2633,7 +2633,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <div class="th">ดูไบ</div>
     <p class="lead">帰り道の17時間の乗継。05:25 に着いて 22:30 に発ちます。100年前まで真珠採りの小さな港町だった街が、半世紀で超高層の都市になりました。基本は「よく寝て、疲れを取る日」です。</p>
   </div>
-  <div class="subnav"><a href="#ae-data">基本データ</a><a href="#ae-hist">歴史</a><a href="#ae-ties">日本・タイとの縁</a><a href="#dxb">乗継の1日</a><a href="#ae-sos">緊急</a><a href="#ae-phr">会話</a></div>
+  <div class="subnav"><a href="#ae-data">基本データ</a><a href="#ae-hist">歴史</a><a href="#ae-ties">日本・タイとの縁</a><a href="#dxb-out">往路の乗継</a><a href="#dxb">乗継の1日</a><a href="#ae-sos">緊急</a><a href="#ae-phr">会話</a></div>
 
   <div class="block" id="ae-data">
     <h3>基本データ <small>ข้อมูลพื้นฐาน</small></h3>
@@ -2680,6 +2680,25 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
         </ul>
       </div>
     </div>
+  </div>
+
+  <div class="block" id="dxb-out">
+    <h3>往路の乗継（11/23 早朝・3時間15分） <small>ต่อเครื่องขาไป</small></h3>
+    <p class="note">バンコクを深夜に出て、ドバイに早朝に着き、同じターミナル3から EK147 でアムステルダムへ。入国はせず、乗継の通路を通るだけです。時刻は eチケットの表記で最終確認。</p>
+    <ul class="tt">
+      <li><span class="t">着陸</span><div>EK385 到着（ドバイ時間の早朝、タイより3時間遅い）。降りる前に Yuzuha のおむつを替えておくと、通路の混雑を避けられる</div></li>
+      <li><span class="t">+15分</span><div>「Connections」の表示に沿って乗継の保安検査へ。液体は再検査なので、水は検査のあとで。ミルクと離乳食は申告すれば通る</div></li>
+      <li><span class="t">+40分</span><div>EK147 の搭乗ゲートを掲示板で確認（A380 はたいてい A または B コンコース。ターミナル3の中はシャトル列車で移動）</div></li>
+      <li><span class="t">+1時間</span><div>ゲート近くで休憩。ベビーケアルームでおむつ替えと授乳、ラウンジや売店でお湯をもらう。<b>無料のベビーカー</b>がターミナル内に置いてあることがある（自分のは機内預け）</div></li>
+      <li><span class="t">+2時間15分</span><div>搭乗開始（出発の約45分前）。乳児連れは優先搭乗を使える</div></li>
+      <li><span class="t">08:15ごろ</span><div>EK147 出発 → 12:45 アムステルダム着（飛行約7時間半、機内で朝食と昼食）</div></li>
+    </ul>
+    <div class="card" style="margin-top:12px"><h4>3時間15分の使い方</h4><ul>
+      <li>最優先は Yuzuha を寝かせること。深夜便のあとなので、ゲート近くの静かな場所で抱っこ紐かベビーカー（空港の貸出）で寝かせる</li>
+      <li>大人は交代で散歩と買い物。飲み物と、機内用のおやつを少し</li>
+      <li>乗継3時間あれば余裕があるが、A380 のゲートはターミナルの端になりやすい。出発1時間前にはゲートへ</li>
+      <li>遅延で乗継が短くなったら、降りてすぐ乗継デスク（Connections）で係員に「EK147」と伝えると案内してくれる</li>
+    </ul></div>
   </div>
 
   <div class="city" id="dxb">
@@ -3912,7 +3931,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
         <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--muted)"/></marker>
       </defs>
       <path d="M500 20 Q 360 10 186 58" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="2 5" marker-end="url(#ah)"/>
-      <text x="508" y="38" font-size="11" fill="var(--muted)" text-anchor="end">23 พ.ย. จากดูไบ ✈</text>
+      <text x="508" y="38" font-size="11" fill="var(--muted)" text-anchor="end">23 พ.ย. ต่อเครื่องดูไบ 3 ชม. 15 น. → ✈</text>
       <path d="M176 60 L108 186" fill="none" stroke="var(--nl1)" stroke-width="3.5" stroke-linecap="round"/>
       <text x="150" y="128" font-size="11.5" fill="var(--ink)">Eurostar 3h31</text>
       <path d="M105 192 L100 478" fill="none" stroke="var(--fr1)" stroke-width="3.5" stroke-linecap="round"/>
@@ -3949,7 +3968,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
       <thead><tr><th>วันที่</th><th>พักที่</th><th>ไฮไลต์ของวัน</th><th>การเดินทาง</th></tr></thead>
       <tbody>
         <tr><td class="d">22 พ.ย. อา.</td><td><span class="cityflag"><span class="flag f-th"></span>บนเครื่อง</span></td><td>ออกจากบ้านตอนกลางคืน</td><td>เที่ยวบินดึก</td></tr>
-        <tr><td class="d"><a href="#d-1123">23 พ.ย. จ.</a></td><td><span class="cityflag"><span class="flag f-nl"></span>อัมสเตอร์ดัม</span></td><td>ถึง งีบ เดินเล่นริมคลองนิดหน่อย</td><td>EK147 ถึง 12:45</td></tr>
+        <tr><td class="d"><a href="#d-1123">23 พ.ย. จ.</a></td><td><span class="cityflag"><span class="flag f-nl"></span>อัมสเตอร์ดัม</span></td><td>ต่อเครื่องที่ดูไบ 3 ชม. 15 นาที → ถึง งีบ เดินเล่นริมคลองนิดหน่อย</td><td>EK385 → EK147 ถึง 12:45</td></tr>
         <tr><td class="d"><a href="#d-1124">24 พ.ย. อ.</a></td><td>อัมสเตอร์ดัม</td><td>บ้านแอนน์ แฟรงก์ กังหันลม</td><td>—</td></tr>
         <tr><td class="d"><a href="#d-1125">25 พ.ย. พ.</a></td><td><span class="cityflag"><span class="flag f-fr"></span>ปารีส</span></td><td>เกาะซิเต Ryo ไปลูฟวร์รอบค่ำ</td><td>Eurostar 08:10</td></tr>
         <tr><td class="d"><a href="#dlp-day">26 พ.ย. พฤ.</a></td><td>ปารีส</td><td>ดิสนีย์แลนด์ปารีส (2 สวน)</td><td>RER A</td></tr>
@@ -4008,7 +4027,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <table class="wide">
       <thead><tr><th>วันที่</th><th>เส้นทาง</th><th>เที่ยวบิน・รถไฟ</th><th>เวลา</th><th>สัมภาระและข้อควรระวัง</th></tr></thead>
       <tbody>
-        <tr><td class="d">23 พ.ย.</td><td>BKK → DXB → AMS</td><td>EK385 / EK147 (A380)</td><td class="mono">01:05 → 12:45</td><td>รถเข็นเด็กใช้ได้ถึงหน้าประตูเครื่องบิน</td></tr>
+        <tr><td class="d">23 พ.ย.</td><td>BKK → DXB → AMS</td><td>EK385 / EK147 (A380)</td><td class="mono">01:05 → 12:45</td><td>ต่อเครื่องที่ดูไบ T3 3 ชม. 15 นาที (<a href="#dxb-out">วิธีใช้เวลาต่อเครื่อง</a>) รถเข็นเด็กใช้ได้ถึงหน้าประตูเครื่องบิน</td></tr>
         <tr><td class="d">25 พ.ย.</td><td>AMS → สถานีปารีสนอร์ด</td><td>Eurostar (เดิมชื่อ Thalys)</td><td class="mono">08:10 → 11:41</td><td>อยู่ในเชงเก้น ไม่มีตรวจคนเข้าเมือง ไปถึงสถานี 30 นาทีก่อนออก</td></tr>
         <tr><td class="d">30 พ.ย.</td><td>สถานีปารีส ลียง → สถานีบาร์เซโลนา ซานส์</td><td>TGV INOUI สายตรง</td><td class="mono">07:42 → 14:32</td><td>ล็อกกระเป๋าเดินทางไว้กับชั้นวางด้วยสายล็อก</td></tr>
         <tr><td class="d">3 ธ.ค.</td><td>BCN T1 → VCE</td><td>Vueling</td><td class="mono">12:40 → 14:25</td><td>FLY＋กระเป๋าโหลด ใบละไม่เกิน 25 กก. ขึ้นเครื่องได้แค่กระเป๋าใต้ที่นั่ง</td></tr>
@@ -6169,7 +6188,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <div class="th">ドバイ</div>
     <p class="lead">แวะต่อเครื่อง 17 ชม. ระหว่างทางกลับบ้าน ถึง 05:25 และออกเดินทาง 22:30 เมืองที่เมื่อ 100 ปีก่อนยังเป็นเมืองท่าเล็ก ๆ ของคนงมไข่มุก กลายเป็นมหานครตึกระฟ้าได้ภายในครึ่งศตวรรษ วันนี้เน้น "นอนให้พอ พักให้หายเหนื่อย" เป็นหลัก</p>
   </div>
-  <div class="subnav"><a href="#ae-data">ข้อมูลพื้นฐาน</a><a href="#ae-hist">ประวัติศาสตร์</a><a href="#ae-ties">ความสัมพันธ์กับญี่ปุ่นและไทย</a><a href="#dxb">หนึ่งวันระหว่างต่อเครื่อง</a><a href="#ae-sos">ฉุกเฉิน</a><a href="#ae-phr">บทสนทนา</a></div>
+  <div class="subnav"><a href="#ae-data">ข้อมูลพื้นฐาน</a><a href="#ae-hist">ประวัติศาสตร์</a><a href="#ae-ties">ความสัมพันธ์กับญี่ปุ่นและไทย</a><a href="#dxb-out">ต่อเครื่องขาไป</a><a href="#dxb">หนึ่งวันระหว่างต่อเครื่อง</a><a href="#ae-sos">ฉุกเฉิน</a><a href="#ae-phr">บทสนทนา</a></div>
 
   <div class="block" id="ae-data">
     <h3>ข้อมูลพื้นฐาน <small>Basics</small></h3>
@@ -6216,6 +6235,25 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
         </ul>
       </div>
     </div>
+  </div>
+
+  <div class="block" id="dxb-out">
+    <h3>ต่อเครื่องขาไป (เช้าตรู่ 23 พ.ย. · 3 ชม. 15 นาที) <small>Outbound transit</small></h3>
+    <p class="note">ออกจากกรุงเทพฯ ตอนดึก ถึงดูไบเช้าตรู่ แล้วต่อ EK147 ไปอัมสเตอร์ดัมจากเทอร์มินัล 3 เดิม ไม่ต้องผ่านตรวจคนเข้าเมือง แค่เดินตามทางต่อเครื่อง เวลาที่แน่นอนเช็กจากตั๋วอิเล็กทรอนิกส์</p>
+    <ul class="tt">
+      <li><span class="t">ลงจอด</span><div>EK385 ถึงดูไบ (เช้าตรู่ตามเวลาดูไบ ช้ากว่าไทย 3 ชั่วโมง) เปลี่ยนผ้าอ้อม Yuzuha ก่อนลงเครื่องจะได้ไม่ต้องเบียดในทางเดิน</div></li>
+      <li><span class="t">+15 นาที</span><div>เดินตามป้าย "Connections" ไปจุดตรวจความปลอดภัยสำหรับผู้โดยสารต่อเครื่อง ของเหลวถูกตรวจอีกครั้ง น้ำดื่มซื้อหลังตรวจ นมกับอาหารเด็กแจ้งเจ้าหน้าที่แล้วผ่านได้</div></li>
+      <li><span class="t">+40 นาที</span><div>ดูประตูขึ้นเครื่องของ EK147 ที่จอ (A380 มักอยู่คอนคอร์ส A หรือ B ในเทอร์มินัล 3 มีรถไฟรับส่งระหว่างอาคาร)</div></li>
+      <li><span class="t">+1 ชม.</span><div>พักใกล้ประตู ไปห้องดูแลเด็กเพื่อเปลี่ยนผ้าอ้อมและให้นม ขอน้ำร้อนที่เลานจ์หรือร้านค้า ในเทอร์มินัลมักมี<b>รถเข็นเด็กให้ยืมฟรี</b> (ของเราโหลดใต้เครื่อง)</div></li>
+      <li><span class="t">+2 ชม. 15 นาที</span><div>เริ่มขึ้นเครื่อง (ราว 45 นาทีก่อนออก) มีเด็กเล็กใช้สิทธิ์ขึ้นเครื่องก่อนได้</div></li>
+      <li><span class="t">ราว 08:15</span><div>EK147 ออก → ถึงอัมสเตอร์ดัม 12:45 (บินราว 7 ชั่วโมงครึ่ง มีอาหารเช้ากับกลางวันบนเครื่อง)</div></li>
+    </ul>
+    <div class="card" style="margin-top:12px"><h4>ใช้เวลา 3 ชม. 15 นาทีอย่างไร</h4><ul>
+      <li>สำคัญที่สุดคือให้ Yuzuha ได้นอน หลังเที่ยวบินดึก หาที่เงียบใกล้ประตู ให้นอนในเป้อุ้มหรือรถเข็นที่ยืมจากสนามบิน</li>
+      <li>ผู้ใหญ่ผลัดกันเดินเล่นและซื้อของ เครื่องดื่มกับขนมสำหรับบนเครื่องนิดหน่อย</li>
+      <li>3 ชั่วโมงพอสบาย แต่ประตูของ A380 มักอยู่สุดปลายเทอร์มินัล ไปถึงประตูก่อนออก 1 ชั่วโมง</li>
+      <li>ถ้าเครื่องล่าช้าจนเวลาต่อเครื่องสั้น ลงจากเครื่องแล้วไปเคาน์เตอร์ Connections ทันที บอกว่า "EK147" เจ้าหน้าที่จะพาไป</li>
+    </ul></div>
   </div>
 
   <div class="city" id="dxb">
