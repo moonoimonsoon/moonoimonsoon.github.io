@@ -1,3 +1,11 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#111318">
 <title>Europe Family Trip 2026</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -249,7 +257,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
   table.phr td:nth-child(1),table.phr td:nth-child(2){font-size:13.5px} table.phr td:nth-child(3){font-size:18px}
   .tt > li{grid-template-columns:50px 1fr}
   td.big{min-width:6.5em;max-width:10em} .tbl table{min-width:100%} td,th{padding-inline:8px}
-  table{font-size:14.5px} #dlp-only table,#plan-book table,#plan-move table{min-width:540px}
+  table{font-size:14.5px} table.wide{min-width:560px} #plan-days table{min-width:0} td a{white-space:nowrap}
   #plan-days td:nth-child(4),#plan-days th:nth-child(4){display:none} #plan-days td:nth-child(2){white-space:nowrap}
   .tbl{position:relative} .tbl::after{content:'';position:absolute;top:0;right:0;bottom:0;width:18px;background:linear-gradient(to right,transparent,var(--paper));pointer-events:none;border-radius:0 12px 12px 0}
   .hist li{grid-template-columns:64px 1fr;padding-inline:12px}
@@ -258,6 +266,9 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 @media print{nav.toc,.showall,.today{display:none} .chapter{display:block!important}}
 </style>
+</head>
+<body>
+
 <div class="langbar"><div class="langbar-in" role="group" aria-label="Language"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="th" aria-pressed="false">ไทย</button></div></div>
 <div id="book">
 <div class="wrap">
@@ -317,7 +328,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>前提の確認リスト <small>ข้อมูลที่ต้องยืนยัน</small></h3>
     <p class="note">この本は、これまでの相談で決めたことと調べたことを前提に書いています。下の書類や画面を見せてもらえれば、前提を確かめて「確定」に書き換えます。上から順に大事です。</p>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>前提にしていること</th><th>今の根拠</th><th>欲しいもの</th><th>状態</th></tr></thead>
       <tbody>
         <tr><td><b>エミレーツの便と時刻</b>（往路 EK385/EK147、復路 EK096/EK374）</td><td>Ryoが確認（11/23 01:05 BKK発、10/18）</td><td>eチケット（PDF）があればさらに安心</td><td><span class="pill ok">確認済み</span></td></tr>
@@ -329,8 +340,8 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
         <tr><td>Vueling 12/3 12:40→14:25、FLY＋預け荷物25kg×2、合計€339.58</td><td>予約中の画面</td><td>予約確認メール（予約番号）</td><td><span class="pill todo">予約中</span></td></tr>
         <tr><td>Eurostar 11/25 08:10→11:41（直通）</td><td>時刻表の検索結果</td><td>予約したらeチケット</td><td><span class="pill todo">未予約</span></td></tr>
         <tr><td>イタリアの列車 12/5 10:00頃、12/8 16:14</td><td>時刻表の検索結果</td><td>予約したらeチケット</td><td><span class="pill todo">未予約</span></td></tr>
-        <tr><td>宿6軒の住所・チェックイン時刻・ベビーベッド</td><td>Vendome と Libertel はPDFで確認済み。ほかは予約一覧の画面</td><td>Sint Nicolaas、Barceló Sants、Guerrini、Camilla、Cinque Lune の予約確認。Camilla のベビーベッドの返事</td><td><span class="pill todo">要確認</span></td></tr>
-        <tr><td>Libertel を 11/22 23:59 までに取り消す</td><td>方針どおり</td><td>取消の確認メール</td><td><span class="pill ng">取消する</span></td></tr>
+        <tr><td>宿6軒の住所・チェックイン時刻・ベビーベッド</td><td>Booking の予約一覧（10/18）：Sint Nicolaas、Libertel（2本）、Barceló Sants、Guerrini、Camilla、Cinque Lune が確定済み</td><td>Sint Nicolaas、Barceló Sants、Guerrini、Camilla、Cinque Lune の予約確認。Camilla のベビーベッドの返事</td><td><span class="pill todo">要確認</span></td></tr>
+        <tr><td>Hôtel Vendome Saint-Germain（11/25〜30）を取り消す。Booking ではまだ「確定済み」</td><td>パリは Libertel に決定（10/18）</td><td>無料取消の期限と、取消の確認メール</td><td><span class="pill ng">取消する</span></td></tr>
         <tr><td>Chubb Premium 3名、24時間窓口 <span class="key">+66 2039 5770</span></td><td>見積もり画面と調べた番号</td><td>保険証券（PDF）。証券番号と緊急番号を載せる</td><td><span class="pill todo">購入前</span></td></tr>
         <tr><td>アメックスの利用付帯（10/31 のバスで条件を満たす）</td><td>カードの規定の読み取り</td><td>アメックスに電話した結果（補償の範囲、家族カード）</td><td><span class="pill todo">電話予定</span></td></tr>
         <tr><td>12/6（第1日曜）はイタリアの国立美術館が無料で予約不可</td><td>これまでの制度</td><td>アカデミアの予約画面で12/6が選べるかどうか</td><td><span class="pill todo">要確認</span></td></tr>
@@ -392,7 +403,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>日程表 <small>กำหนดการ</small></h3>
     <p class="note">日付をタップすると、その日の詳しいページに飛びます。</p>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>日付</th><th>泊まる街</th><th>その日の主役</th><th>移動</th></tr></thead>
       <tbody>
         <tr><td class="d">11/22 日</td><td><span class="cityflag"><span class="flag f-th"></span>機内</span></td><td>夜に家を出る</td><td>深夜便</td></tr>
@@ -431,8 +442,8 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
       <tbody>
         <tr><td>航空券</td><td>エミレーツ BKK⇄欧州 3名（Saver＋Flex）</td><td><span class="pill ok">確定</span></td></tr>
         <tr><td>宿</td><td>Hotel Sint Nicolaas（アムステルダム 2泊）</td><td><span class="pill ok">確定</span></td></tr>
-        <tr><td>宿</td><td>Hôtel Vendome Saint-Germain（パリ 5泊）</td><td><span class="pill ok">確定</span></td></tr>
-        <tr><td>宿</td><td>Libertel（パリの予備）<span class="tsub">11/22 23:59 までに取消</span></td><td><span class="pill ng">取消する</span></td></tr>
+        <tr><td>宿</td><td>Libertel Austerlitz Jardin des Plantes（パリ 5泊）<span class="tsub">11/25〜29 と 11/29〜30 の2予約。チェックイン時に同じ部屋か確認</span></td><td><span class="pill ok">確定</span></td></tr>
+        <tr><td>宿</td><td>Hôtel Vendome Saint-Germain（パリ、使わない）<span class="tsub">無料取消の期限内に取消</span></td><td><span class="pill ng">取消する</span></td></tr>
         <tr><td>宿</td><td>Barceló Sants（バルセロナ 3泊）</td><td><span class="pill ok">確定</span></td></tr>
         <tr><td>宿</td><td>Hotel Guerrini（ヴェネツィア 2泊）</td><td><span class="pill ok">確定</span></td></tr>
         <tr><td>宿</td><td>Hotel Camilla Firenze（フィレンツェ 3泊）<span class="tsub">ベビーベッドの返事待ち</span></td><td><span class="pill ok">確定</span></td></tr>
@@ -452,7 +463,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
   <div class="block" id="plan-move">
     <h3>移動一覧 <small>การเดินทางระหว่างเมือง</small></h3>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>日付</th><th>区間</th><th>便・列車</th><th>時刻</th><th>荷物と注意</th></tr></thead>
       <tbody>
         <tr><td class="d">11/23</td><td>BKK → DXB → AMS</td><td>EK385 / EK147（A380）</td><td class="mono">01:05 → 12:45</td><td>ベビーカーは機内まで</td></tr>
@@ -511,7 +522,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>時差と日の長さ <small>เวลาและพระอาทิตย์</small></h3>
     <p class="note">時差は欧州が日本−8時間・タイ−6時間、ドバイが日本−5時間・タイ−3時間。欧州の夏時間は10/25に終わっているので、旅行中はずっと冬時間です。滞在中の日付の目安で、昼間はバンコクより3時間ほど短くなります。日の入りの30〜40分後には真っ暗です。</p>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>街（日付）</th><th>日の出</th><th>日の入り</th><th>昼の長さ</th></tr></thead>
       <tbody>
         <tr><td><span class="cityflag"><span class="flag f-nl"></span>アムステルダム</span> <small>11/23</small></td><td class="num">8:25</td><td class="num">16:38</td><td class="num">8時間13分</td></tr>
@@ -773,7 +784,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>地図とブックマーク <small>แผนที่</small></h3>
     <div class="mapslot"><b>Google マップのリスト（オランダ）</b><span class="muted">保存済みの場所を書き出したら、ここに一覧で追加します。</span></div>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>場所</th><th>種類</th><th>メモ</th><th>地図</th></tr></thead>
       <tbody>
         <tr><td>Hotel Sint Nicolaas</td><td>宿</td><td>中央駅から徒歩5分</td><td><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Sint+Nicolaas+Amsterdam">開く</a></td></tr>
@@ -837,7 +848,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <div class="eyebrow">Chapter 2 · France · 11/25 – 11/30</div>
     <h2>フランス <span class="local">France</span></h2>
     <div class="th">ฝรั่งเศส</div>
-    <p class="lead">旅でいちばん長い5泊の街。宿は5区のカルチェ・ラタン、ローマ時代のパリ（ルテティア）の中心です。朝は市場、昼は美術館、夕方は宿で休憩、夜は灯りの街。17世紀にはアユタヤのナーライ王の使節がヴェルサイユを訪ね、19世紀には日本の浮世絵がパリの画家たちを夢中にさせました。</p>
+    <p class="lead">旅でいちばん長い5泊の街。宿は5区の植物園のそば。カルチェ・ラタンとローマ時代のパリ（ルテティア）の跡が歩ける範囲です。朝は市場、昼は美術館、夕方は宿で休憩、夜は灯りの街。17世紀にはアユタヤのナーライ王の使節がヴェルサイユを訪ね、19世紀には日本の浮世絵がパリの画家たちを夢中にさせました。</p>
   </div>
   <div class="subnav"><a href="#fr-data">基本データ</a><a href="#fr-hist">歴史</a><a href="#fr-ties">日本・タイとの縁</a><a href="#paris">パリ</a><a href="#fr-food">食べる・飲む</a><a href="#fr-manners">テーブルマナー</a><a href="#fr-map">地図</a><a href="#fr-sos">緊急</a><a href="#fr-phr">会話</a></div>
 
@@ -906,22 +917,22 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     </div>
 
     <div class="stay">
-      <div class="name">Hôtel Vendome Saint-Germain <span class="pill ok">確定</span></div>
+      <div class="name">Libertel Austerlitz Jardin des Plantes <span class="pill ok">確定</span></div>
       <dl class="kv">
-        <dt>住所</dt><dd>8 Rue d'Arras, 75005 Paris（5区・カルチェ・ラタン）</dd>
-        <dt>電話</dt><dd><span class="key">+33 1 43 26 80 98</span></dd>
-        <dt>部屋</dt><dd>デラックス・ダブル、バルコニー付、キングベッド。ベビーベッドは予約に記載済み。冷蔵庫・ケトルあり</dd>
-        <dt>エレベーター</dt><dd>部屋まで行ける</dd>
-        <dt>周り</dt><dd>メトロ10号線 Cardinal Lemoine 徒歩1分、マルシェ・モベール2分、ムフタール通り3分、リュテス闘技場2分</dd>
+        <dt>住所</dt><dd>12 Boulevard de l'Hôpital, 75005 Paris（5区・植物園の向かい、オステルリッツ駅前）</dd>
+        <dt>電話</dt><dd>予約確認メールの番号を転記（Booking の予約は 11/25〜29 と 11/29〜30 の2本）</dd>
+        <dt>部屋</dt><dd>ベビーベッドとケトルの有無は予約確認で要確認。2本の予約にまたがるので、同じ部屋で続けられるかチェックイン時に確認</dd>
+        <dt>エレベーター</dt><dd>あり（階の途中で止まる造りなので、数段の階段がある）</dd>
+        <dt>周り</dt><dd>Gare d'Austerlitz 駅（メトロ5・10号線、<b>RER C</b>）徒歩2分、植物園の正門が道の向かい、ムフタール通り15分、リヨン駅は橋を渡って12分</dd>
       </dl>
     </div>
-    <p class="memo"><span class="who">RYO'S MEMO</span>宿のすぐ裏、カルディナル・ルモワーヌ通り74番地はヘミングウェイが1922〜23年に住んだ部屋。71番地ではジョイスが『ユリシーズ』を書き上げた。散歩のついでに表札を探してみる。</p>
+    <p class="memo"><span class="who">RYO'S MEMO</span>ムフタール通りの先、カルディナル・ルモワーヌ通り74番地はヘミングウェイが1922〜23年に住んだ部屋。71番地ではジョイスが『ユリシーズ』を書き上げた。散歩のついでに表札を探してみる。</p>
 
     <div class="move">
       <h4>北駅から宿まで</h4>
       <ol>
-        <li><b>おすすめはタクシー</b>：北駅の正規の乗り場から約20分、€20〜30。スーツケース2個とベビーカーがあるので、これがいちばん楽</li>
-        <li>電車なら RER B で2駅目の Saint-Michel Notre-Dame（約8分）→ 徒歩15分。RERの乗り換え通路は階段が多い</li>
+        <li><b>おすすめはタクシー</b>：北駅の正規の乗り場から約25分、€25〜35。スーツケース2個とベビーカーがあるので、これがいちばん楽</li>
+        <li>電車ならメトロ5号線で乗り換えなし、終点の Gare d'Austerlitz まで約15分 → 徒歩2分。ただし北駅の5号線ホームは階段が多い</li>
         <li>チェックインは15時から。先に荷物だけ預ける</li>
       </ol>
     </div>
@@ -943,7 +954,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <div class="day" id="d-1126">
       <div class="day-head"><span class="date">11/26 木</span><h4>ディズニーランド・パリ（2パーク）</h4></div>
       <ul class="tt">
-        <li><span class="t">07:40</span><div>宿からタクシーでリヨン駅へ（約10分）<span class="sub">ベビーカーがあるので、メトロの乗り換えよりタクシーが楽。RER A のホームまでエレベーターあり</span></div></li>
+        <li><span class="t">07:40</span><div>宿からタクシーでリヨン駅へ（橋を渡って約5分。歩いても12分）<span class="sub">ベビーカーがあるので朝はタクシーが楽。RER A のホームまでエレベーターあり</span></div></li>
         <li><span class="t">08:10</span><div><b>RER A</b>（Marne-la-Vallée–Chessy 行き）で終点まで約35分<span class="sub">切符はアプリの「Métro-Train-RER」1回券（大人1人€2.50。2025年からパリ市内と同額）。Yuzuhaは無料</span></div></li>
         <li><span class="t">09:00</span><div>駅を出てすぐ入口。荷物検査を通ってパークの前へ</div></li>
         <li><span class="t">09:30</span><div><b>前半：ディズニーランド・パーク</b>（この日は19:00閉園）<span class="sub">開園直後に、お城 → 地下の<b>ドラゴンの洞窟</b> → <b>おとぎの国の運河</b>のボート → <b>アリスの迷路</b>。人気のものから先に</span></div></li>
@@ -963,7 +974,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <div class="day" id="d-1127">
       <div class="day-head"><span class="date">11/27 金</span><h4>ヴェルサイユ宮殿と、エッフェル塔の夜</h4></div>
       <ul class="tt">
-        <li><span class="t">08:45</span><div>前日が長いので少しゆっくり。宿から徒歩15分で Saint-Michel Notre-Dame 駅 → <b>RER C</b> で約40分、終点 Versailles Château Rive Gauche<span class="sub">工事で運休・代行バスのことがあるので、前日の夜に確認</span></div></li>
+        <li><span class="t">08:45</span><div>前日が長いので少しゆっくり。宿の向かいの Gare d'Austerlitz から <b>RER C</b> に乗り換えなし、約45分で終点 Versailles Château Rive Gauche<span class="sub">工事で運休・代行バスのことがあるので、前日の夜に確認</span></div></li>
         <li><span class="t">10:00</span><div><b>ヴェルサイユ宮殿</b>（10時台の時間指定券）<span class="pill todo">要予約</span><span class="sub">大きなベビーカーは入口で預けることがある。抱っこ紐を持っていく。所要2時間</span></div></li>
         <li><span class="t">12:30</span><div>宮殿内か駅前で昼食</div></li>
         <li><span class="t">13:30</span><div>庭園を少し散歩（冬は噴水が止まっている）。元気ならプチトランでプチ・トリアノンへ</div></li>
@@ -985,7 +996,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <div class="day" id="d-1128">
       <div class="day-head"><span class="date">11/28 土</span><h4>朝市、モンマルトルの丘、パレ・ロワイヤル</h4></div>
       <ul class="tt">
-        <li><span class="t">07:30</span><div><b>マルシェ・モベール</b>（火・木・土の朝、宿から2分）<span class="sub">Laurent Dubois（チーズ熟成士の店）でチーズを少し。朝ごはんのパンとフルーツも</span></div></li>
+        <li><span class="t">07:30</span><div><b>マルシェ・モベール</b>（火・木・土の朝。メトロ10号線で2駅、Maubert-Mutualité 下車すぐ）<span class="sub">Laurent Dubois（チーズ熟成士の店）でチーズを少し。朝ごはんのパンとフルーツも</span></div></li>
         <li><span class="t">09:00</span><div>メトロで Abbesses 駅へ（深い駅なのでエレベーターで地上へ。入口はギマールのアール・ヌーヴォー）→ アベス広場の<b>「ジュテームの壁」</b>（250以上の言語の「愛してる」。日本語を探す）</div></li>
         <li><span class="t">09:45</span><div>ケーブルカー（メトロの切符で乗れる）→ <b>サクレ・クール寺院</b> → テルトル広場の画家たち</div></li>
         <li><span class="t">11:00</span><div>坂を下りながら、ブドウ畑（Clos Montmartre）とムーラン・ド・ラ・ギャレット</div></li>
@@ -1010,14 +1021,14 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
         <li><span class="t">21:00</span><div>G7 のアプリで翌朝 06:50 のタクシーを予約しておく</div></li>
         <li><span class="t">お土産</span><div><span class="pill maybe">オプション</span> ボン・マルシェの周り（徒歩10分圏）で義両親へのお土産：Officine Universelle Buly、Patrick Roger のチョコ、La Grande Épicerie<span class="sub">Hermès と City Pharma は<b>日曜休み</b>なので前日 11/28 の夕方に。詳しくは「お土産の作戦」</span></div></li>
       </ul>
-      <p class="rain"><b>時間があまったら</b>：宿から2分の<b>リュテス闘技場</b>（Yuzuhaの遊び場に）、植物園、パリのモスクのミントティー（オルセーの代わりにのんびりしたい日にも）</p>
+      <p class="rain"><b>時間があまったら</b>：宿の向かいの<b>植物園</b>（Yuzuhaの遊び場に。小さな動物園と進化大陳列館も）、リュテス闘技場、パリのモスクのミントティー（オルセーの代わりにのんびりしたい日にも）</p>
     </div>
 
     <div class="day" id="d-1130">
       <div class="day-head"><span class="date">11/30 月</span><h4>TGVで地中海へ</h4></div>
       <ul class="tt">
         <li><span class="t">06:15</span><div>起床、チェックアウト（前夜に精算しておくと早い）</div></li>
-        <li><span class="t">06:50</span><div>G7 タクシーでリヨン駅へ。約10分、€15〜20</div></li>
+        <li><span class="t">06:50</span><div>G7 タクシーでリヨン駅へ。橋を渡って約5分、€10前後（荷物がなければ徒歩12分）</div></li>
         <li><span class="t">07:10</span><div>出発ボードでホーム（Hall 1）を確認。発車の2分前に乗車締め切り。駅の時計塔と、レストラン Le Train Bleu の内装を外から</div></li>
         <li><span class="t">07:42</span><div><b>TGV INOUI 1等</b> 13号車 2階・テーブル席3席 <span class="pill ok">確定</span><span class="sub">スーツケースは車端の棚にワイヤーロックで固定。貴重品は座席へ</span></div></li>
         <li><span class="t">車窓</span><div>リヨンを過ぎてローヌ川の谷を南へ。ニームとモンペリエの先、ナルボンヌのあたりから地中海と潟湖が<b>進行方向の左</b>に、ピレネー山脈が<b>右</b>に見えてくる</div></li>
@@ -1100,7 +1111,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
       </div>
       <div class="spot">
         <h4>ムフタール通り<span class="local">Rue Mouffetard</span></h4>
-        <div class="tags"><span>宿から3分</span><span>ベビーカー度 <span class="baby">●●○</span></span></div>
+        <div class="tags"><span>宿から15分</span><span>ベビーカー度 <span class="baby">●●○</span></span></div>
         <div class="mame">豆知識</div>
         <ul>
           <li>ローマ時代の街道がもとになった、パリでいちばん古い通りのひとつ</li>
@@ -1110,7 +1121,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
       </div>
       <div class="spot">
         <h4>リュテス闘技場<span class="local">Arènes de Lutèce</span></h4>
-        <div class="tags"><span>宿から2分</span><span>無料</span><span>ベビーカー度 <span class="baby">●●●</span></span></div>
+        <div class="tags"><span>宿から10分</span><span>無料</span><span>ベビーカー度 <span class="baby">●●●</span></span></div>
         <div class="mame">豆知識</div>
         <ul>
           <li>1世紀ごろの円形闘技場で、約1万5千人が入れたとされる</li>
@@ -1158,7 +1169,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <div class="grid2">
       <div class="card"><h4>交通 · Navigo Easy</h4><ul><li>Île-de-France Mobilités のアプリでスマホに切符を入れるのが楽</li><li>メトロ・RER 1回€2.50（ヴェルサイユまでも同額）、バス€2</li><li>パリの改札はタッチ決済のカードが使えないことが多い</li><li>地下鉄は階段が多い。ベビーカーの日はバスかタクシー</li></ul></div>
       <div class="card"><h4>アジアの味が恋しくなったら</h4><ul><li>13区のショワジー通り：タイ・ベトナム系の食堂と大型アジア食材店（Tang Frères）。宿からバスかタクシーで15分</li><li>1区のサンタンヌ通り：ラーメン、うどん、おにぎり</li></ul></div>
-      <div class="card"><h4>夜のひとり時間</h4><ul><li>宿から3分に名画座 <b>Le Grand Action</b></li><li>VO＝原語上映。英語・日本語の映画なら字幕なしで楽しめる</li><li>Le Champo、Filmothèque du Quartier Latin も徒歩圏</li></ul></div>
+      <div class="card"><h4>夜のひとり時間</h4><ul><li>宿から12分に名画座 <b>Le Grand Action</b>（エコール通り）</li><li>VO＝原語上映。英語・日本語の映画なら字幕なしで楽しめる</li><li>Le Champo、Filmothèque du Quartier Latin も徒歩圏</li></ul></div>
     </div>
     <p class="alert"><b>注意</b>　刃物の持ち歩きは取り締まりの対象になりえます。オピネルのナイフは現地で買ってすぐスーツケースへ。TGV は出発の2日前に SNCF Connect のアプリでストライキの情報を確認。</p>
   </div>
@@ -1239,10 +1250,10 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>地図とブックマーク <small>แผนที่</small></h3>
     <div class="mapslot"><b>Google マップのリスト（フランス）</b><span class="muted">保存済みの場所を書き出したら、ここに一覧で追加します。</span></div>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>場所</th><th>種類</th><th>メモ</th><th>地図</th></tr></thead>
       <tbody>
-        <tr><td>Hôtel Vendome Saint-Germain</td><td>宿</td><td>8 Rue d'Arras</td><td><a href="https://www.google.com/maps/search/?api=1&query=8+Rue+d'Arras+75005+Paris">開く</a></td></tr>
+        <tr><td>Libertel Austerlitz Jardin des Plantes</td><td>宿</td><td>12 Bd de l'Hôpital</td><td><a href="https://www.google.com/maps/search/?api=1&query=Libertel+Austerlitz+Jardin+des+Plantes+Paris">開く</a></td></tr>
         <tr><td>Marché Maubert</td><td>市場</td><td>11/28 朝</td><td><a href="https://www.google.com/maps/search/?api=1&query=March%C3%A9+Maubert+Paris">開く</a></td></tr>
         <tr><td>Laurent Dubois</td><td>チーズ</td><td>11/28 朝</td><td><a href="https://www.google.com/maps/search/?api=1&query=Laurent+Dubois+fromager+Maubert+Paris">開く</a></td></tr>
         <tr><td>Sainte-Chapelle</td><td>見どころ</td><td>11/25 14:00</td><td><a href="https://www.google.com/maps/search/?api=1&query=Sainte-Chapelle+Paris">開く</a></td></tr>
@@ -1252,7 +1263,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
         <tr><td>Trocadéro</td><td>眺め</td><td>エッフェル塔の正面</td><td><a href="https://www.google.com/maps/search/?api=1&query=Place+du+Trocad%C3%A9ro+Paris">開く</a></td></tr>
         <tr><td>La Grande Épicerie de Paris</td><td>食品館</td><td>11/29 オプション</td><td><a href="https://www.google.com/maps/search/?api=1&query=La+Grande+%C3%89picerie+de+Paris+Rive+Gauche">開く</a></td></tr>
         <tr><td>Galerie Vivienne</td><td>見どころ</td><td>雨の日も</td><td><a href="https://www.google.com/maps/search/?api=1&query=Galerie+Vivienne+Paris">開く</a></td></tr>
-        <tr><td>Arènes de Lutèce</td><td>公園</td><td>宿から2分</td><td><a href="https://www.google.com/maps/search/?api=1&query=Ar%C3%A8nes+de+Lut%C3%A8ce+Paris">開く</a></td></tr>
+        <tr><td>Arènes de Lutèce</td><td>公園</td><td>宿から10分</td><td><a href="https://www.google.com/maps/search/?api=1&query=Ar%C3%A8nes+de+Lut%C3%A8ce+Paris">開く</a></td></tr>
         <tr><td>Grande Mosquée de Paris</td><td>カフェ</td><td>ミントティー</td><td><a href="https://www.google.com/maps/search/?api=1&query=Grande+Mosqu%C3%A9e+de+Paris+salon+de+th%C3%A9">開く</a></td></tr>
         <tr><td>Le Grand Action</td><td>映画館</td><td>Ryoの夜</td><td><a href="https://www.google.com/maps/search/?api=1&query=Le+Grand+Action+cinema+Paris">開く</a></td></tr>
         <tr><td>Disneyland Paris</td><td>テーマパーク</td><td>11/26 終日</td><td><a href="https://www.google.com/maps/search/?api=1&query=Disneyland+Paris">開く</a></td></tr>
@@ -1278,7 +1289,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
         <tr><td>在フランスタイ王国大使館</td><td><span class="key">+33 1 56 26 50 50</span></td><td>Somのパスポート関係</td></tr>
         <tr><td>子ども病院</td><td>Hôpital Necker-Enfants malades</td><td>15区、子どもの救急あり。<a href="https://www.google.com/maps/search/?api=1&query=H%C3%B4pital+Necker+Enfants+Malades+Paris">地図</a></td></tr>
         <tr><td>子ども病院（東側）</td><td>Hôpital Armand-Trousseau</td><td>12区。<a href="https://www.google.com/maps/search/?api=1&query=H%C3%B4pital+Armand+Trousseau+Paris">地図</a></td></tr>
-        <tr><td>宿</td><td><span class="key">+33 1 43 26 80 98</span></td><td>Vendome Saint-Germain</td></tr>
+        <tr><td>宿</td><td>予約確認メールの番号</td><td>Libertel Austerlitz Jardin des Plantes</td></tr>
       </tbody>
     </table>
     </div>
@@ -1368,7 +1379,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
   <div class="block" id="dlp-return">
     <h3>帰り道（宿まで） <small>เส้นทางกลับโรงแรม</small></h3>
     <p class="note">閉園の22時までいると、宿に着くのは23時ごろ。Yuzuhaの様子で、3つの帰り方から選ぶ。</p>
-    <div class="tbl"><table><thead><tr><th>時刻</th><th>動き</th></tr></thead><tbody><tr><td class="d">21:40</td><td>夜のショーが終わったら、閉園を待たずにパークを出る（出口とホームが混む前に）</td></tr><tr><td class="d">21:50</td><td>Marne-la-Vallée–Chessy 駅へ徒歩5〜10分。エレベーターでホームへ</td></tr><tr><td class="d">22:00頃</td><td>RER A でパリ方面へ（夜も10〜15分おき。始発駅なので座れる）</td></tr><tr><td class="d">22:40頃</td><td>リヨン駅（Gare de Lyon）着。エレベーターで地上へ</td></tr><tr><td class="d">22:50頃</td><td>駅のタクシー乗り場から宿まで約10分、€15前後</td></tr><tr><td class="d">23:00〜23:15</td><td>宿に着く</td></tr></tbody></table></div>
+    <div class="tbl"><table><thead><tr><th>時刻</th><th>動き</th></tr></thead><tbody><tr><td class="d">21:40</td><td>夜のショーが終わったら、閉園を待たずにパークを出る（出口とホームが混む前に）</td></tr><tr><td class="d">21:50</td><td>Marne-la-Vallée–Chessy 駅へ徒歩5〜10分。エレベーターでホームへ</td></tr><tr><td class="d">22:00頃</td><td>RER A でパリ方面へ（夜も10〜15分おき。始発駅なので座れる）</td></tr><tr><td class="d">22:40頃</td><td>リヨン駅（Gare de Lyon）着。エレベーターで地上へ</td></tr><tr><td class="d">22:50頃</td><td>駅のタクシー乗り場から宿まで約5分、€10前後（橋を渡ればすぐ）</td></tr><tr><td class="d">23:00〜23:15</td><td>宿に着く</td></tr></tbody></table></div>
     <div class="grid2"><div class="card"><h4>早めに切り上げるなら</h4><ul><li>20:30に出れば、宿は21:45ごろ</li><li>19:00（お城のパークの閉園）に出れば、宿は20:15ごろ</li></ul></div><div class="card"><h4>タクシーで直行するなら</h4><ul><li>パークから宿まで約40〜50分、€80〜100</li><li>乗り換えなしで寝たYuzuhaを運べる。駅前の乗り場か配車アプリ（Uber、G7）で</li></ul></div><div class="card"><h4>夜を楽にする準備</h4><ul><li>帰りの電車の切符は朝のうちにアプリで買っておく（閉園後は券売機に行列）</li><li>Yuzuhaはパジャマに着替えさせてフットマフへ。宿でそのままベッドに</li><li>荷物は体の前に。混むのは閉園直後だけ</li><li>翌日のヴェルサイユは10時台の入場なので、朝はゆっくりでよい</li></ul></div></div>
   </div>
 
@@ -1376,7 +1387,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>パリにしかないもの <small>มีที่ปารีสเท่านั้น</small></h3>
     <p class="note">★は世界でパリだけ。それ以外も日本のディズニーにはありません。Yuzuhaの欄は身長75cm前後の想定。</p>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>パーク</th><th>アトラクション</th><th>どんなもの</th><th>Yuzuha</th></tr></thead>
       <tbody>
         <tr><td>お城</td><td class="big">★眠れる森の美女の城とドラゴンの洞窟<span class="tsub">Le Château de la Belle au Bois Dormant / La Tanière du Dragon</span></td><td>世界のディズニーで唯一、お城の地下に巨大な竜のロボットが眠る</td><td>◯</td></tr>
@@ -1423,7 +1434,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>食事 <small>อาหาร</small></h3>
     <p class="note">テーブルサービスのレストランは公式アプリで予約（約2か月前から）。11/26 分はもう予約できるはず。高いけれど、パリにしかない体験なら夕食1回は奮発する価値あり。</p>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>店</th><th>パーク</th><th>タイプ</th><th>予約</th><th>ひとこと</th></tr></thead>
       <tbody>
         <tr><td class="big">Bistrot Chez Rémy</td><td>アナ雪側</td><td>テーブル</td><td><span class="pill todo">要予約</span></td><td>レミーの目線の巨大なお皿やコルクの椅子。パリならではの第1候補</td></tr>
@@ -1858,7 +1869,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>地図とブックマーク <small>แผนที่</small></h3>
     <div class="mapslot"><b>Google マップのリスト（スペイン）</b><span class="muted">保存済みの場所を書き出したら、ここに一覧で追加します。</span></div>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>場所</th><th>種類</th><th>メモ</th><th>地図</th></tr></thead>
       <tbody>
         <tr><td>Barceló Sants</td><td>宿</td><td>サンツ駅の上</td><td><a href="https://www.google.com/maps/search/?api=1&query=Barcel%C3%B3+Sants+Barcelona">開く</a></td></tr>
@@ -2392,7 +2403,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>地図とブックマーク <small>แผนที่</small></h3>
     <div class="mapslot"><b>Google マップのリスト（イタリア）</b><span class="muted">保存済みの場所を書き出したら、街ごとにここへ追加します。</span></div>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>街</th><th>場所</th><th>メモ</th><th>地図</th></tr></thead>
       <tbody>
         <tr><td>ヴェネツィア</td><td>Hotel Guerrini</td><td>駅から徒歩3〜5分</td><td><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Guerrini+Venezia">開く</a></td></tr>
@@ -2628,7 +2639,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <div class="grid2">
       <div class="card">
         <h4>乳の種類</h4>
-        <div class="tbl"><table>
+        <div class="tbl"><table class="wide">
           <thead><tr><th>日本語 · ไทย</th><th>蘭</th><th>仏</th><th>西</th><th>伊</th></tr></thead>
           <tbody>
             <tr><td>牛 · <span class="th">วัว</span></td><td>koe</td><td>vache</td><td>vaca</td><td>vacca</td></tr>
@@ -2666,7 +2677,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
   <div class="block" id="cheese-list">
     <h3>国別・これだけは食べたいチーズ <small>ชีสที่ต้องลอง</small></h3>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>国</th><th>名前</th><th>乳</th><th>どんなもの・豆知識</th></tr></thead>
       <tbody>
         <tr><td><span class="flag f-nl"></span></td><td class="big">ゴーダ<span class="tsub">Gouda</span></td><td>牛</td><td>熟成で名前が変わる：jong（4週）→ belegen（4か月）→ oud（10か月〜）→ overjarig（1年半〜）。古いほど固く、アミノ酸の結晶がじゃりっとして、キャラメルのような味に</td></tr>
@@ -2717,7 +2728,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
   <div class="block" id="wine-basic">
     <h3>ワインの基礎 <small>พื้นฐานไวน์</small></h3>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>日本語 · ไทย</th><th>オランダ</th><th>フランス</th><th>スペイン</th><th>イタリア</th></tr></thead>
       <tbody>
         <tr><td>赤 · <span class="th">แดง</span></td><td>rood</td><td>rouge</td><td>tinto</td><td>rosso</td></tr>
@@ -2740,7 +2751,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
   <div class="block" id="wine-list">
     <h3>国別・旅の途中で飲みたいワイン <small>ไวน์ที่ควรลอง</small></h3>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>国</th><th>名前</th><th>どんなもの</th><th>合わせる</th></tr></thead>
       <tbody>
         <tr><td><span class="flag f-nl"></span></td><td class="big">ジェネヴァ<span class="tsub">jenever</span></td><td>ワインではないが、オランダの酒といえばこれ。ジンの祖先</td><td>ニシン、ビターバレン</td></tr>
@@ -2851,7 +2862,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
   <div class="block">
     <h3>現地で買えるもの <small>ซื้อที่นั่นได้</small></h3>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>日本語 · ไทย</th><th>オランダ</th><th>フランス</th><th>スペイン</th><th>イタリア</th></tr></thead>
       <tbody>
         <tr><td class="big">おむつ · <span class="th">ผ้าอ้อม</span></td><td>luiers</td><td>couches</td><td>pañales</td><td>pannolini</td></tr>
@@ -2888,7 +2899,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
       </div>
     </div>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>日本語 · ไทย</th><th>オランダ</th><th>フランス</th><th>スペイン</th><th>イタリア</th></tr></thead>
       <tbody>
         <tr><td class="big">おむつ · <span class="th">ผ้าอ้อม</span></td><td>Pampers、Kruidvat（自社品も評判がいい）</td><td>Pampers、Love &amp; Green</td><td><b>Dodot</b>（スペインでの Pampers の名前）</td><td>Pampers、Huggies</td></tr>
@@ -2908,7 +2919,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
       <div class="card">
         <h4>どこでもらうか</h4>
         <ul>
-          <li><b>宿</b>：パリの Vendome は部屋にケトルあり。ほかの宿はチェックインのときにケトルを頼むか、フロントや朝食会場でもらう</li>
+          <li><b>宿</b>：チェックインのときにケトルを頼むか、フロントや朝食会場でもらう（パリの Libertel も予約確認で有無を確認）</li>
           <li><b>カフェ・レストラン</b>：頼めば無料か少額でくれる。「哺乳瓶用」と言うと丁寧に熱くしてくれる</li>
           <li><b>飛行機</b>：エミレーツも Vueling も、客室乗務員に頼む</li>
           <li><b>TGV・イタリアの高速列車</b>：バー車両で</li>
@@ -2924,7 +2935,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
       </div>
     </div>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>日本語</th><th>ไทย</th><th>オランダ</th><th>フランス</th><th>スペイン</th><th>イタリア</th></tr></thead>
       <tbody>
         <tr><td>お湯をください（哺乳瓶用）</td><td><span class="th">ขอน้ำร้อนหน่อย (สำหรับขวดนม)</span></td><td>Mag ik heet water? (voor de fles)</td><td>De l'eau chaude, s'il vous plaît (pour le biberon)</td><td>Agua caliente, por favor (para el biberón)</td><td>Acqua calda, per favore (per il biberon)</td></tr>
@@ -2958,7 +2969,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
   <div class="block">
     <h3>緊急番号の一覧 <small>เบอร์ฉุกเฉินทั้งหมด</small></h3>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>国</th><th>緊急</th><th>日本の公館</th><th>タイの公館</th></tr></thead>
       <tbody>
         <tr><td><span class="cityflag"><span class="flag f-nl"></span>オランダ</span></td><td><span class="key">112</span></td><td><span class="key">+31 70 346 9544</span><span class="tsub">ハーグ大使館</span></td><td><span class="key">+31 70 345 0766</span><span class="tsub">ハーグ大使館</span></td></tr>
@@ -3192,7 +3203,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     </div>
 
     <div class="tbl" style="margin-top:12px">
-    <table>
+    <table class="wide">
       <thead><tr><th>国</th><th>「泥棒！」</th><th>読み</th><th>「いりません」</th></tr></thead>
       <tbody>
         <tr><td>オランダ</td><td class="big">Houd de dief!</td><td>ハウト・デ・ディーフ</td><td>Nee, dank je（ネー・ダンク・イェ）</td></tr>
@@ -3319,7 +3330,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>重量の作戦 <small>แผนน้ำหนักกระเป๋า</small></h3>
     <p class="note">いちばん厳しいのは 12/3 の Vueling（1個25kg）。そこまでは軽いお土産、そのあとのイタリアで重いお土産、という順番にします。</p>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>区間</th><th>日付</th><th>預け荷物の枠</th><th>量るか</th><th>作戦</th></tr></thead>
       <tbody>
         <tr><td>エミレーツ 往路（Saver）</td><td class="d">11/23</td><td>1人25kg（Yuzuhaは10kg前後）</td><td>量る</td><td><b>出発時はスーツケース込みで1個15kg</b>を目標</td></tr>
@@ -3365,7 +3376,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
   <div class="block" id="prep-weather">
     <h3>天気と服装 <small>อากาศและการแต่งตัว</small></h3>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>街</th><th>最低〜最高</th><th>天気</th><th>東京でいうと</th></tr></thead>
       <tbody>
         <tr><td><span class="cityflag"><span class="flag f-nl"></span>アムステルダム</span></td><td class="num">4〜9℃</td><td>曇り・小雨、風が冷たい</td><td>12月下旬〜1月</td></tr>
@@ -3475,7 +3486,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>お土産の作戦（義両親へ） <small>ของฝากคุณพ่อคุณแม่</small></h3>
     <p class="note">食べ物は最後のイタリアでまとめ買い。パリでは日持ちする物と身につける物を中心に。行き先のバンコクは暑いので、溶ける物・傷む物は避けるか保冷して運ぶ。</p>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>街・日</th><th>候補</th><th>お店</th><th>メモ</th></tr></thead>
       <tbody><tr><td class="d">パリ 11/28（土）</td><td class="big">シルクのスカーフ・ネクタイ</td><td>Hermès（セーヴル通り店、ボン・マルシェの向かい。<b>日曜休み</b>）／抑えるなら Charvet のネクタイ（ヴァンドーム広場）</td><td>軽くてかさばらない。身につける物の本命</td></tr><tr><td class="d">パリ 11/28〜29</td><td class="big">義母（薬局経営）への切り札</td><td>Officine Universelle Buly（ボナパルト通り、日曜も営業）／City Pharma（サン・ジェルマン、Caudalie・Nuxe が薬局価格。<b>日曜休み</b>→11/28 土曜に）</td><td>どちらもオルセー・ボン・マルシェから徒歩圏</td></tr><tr><td class="d">パリ 11/29</td><td class="big">ゲランドの塩、Christine Ferber のジャム、Mariage Frères の紅茶</td><td>La Grande Épicerie de Paris</td><td>ジャムは瓶なので預け荷物へ</td></tr><tr><td class="d">パリ</td><td class="big">チョコレート</td><td>Patrick Roger／La Maison du Chocolat</td><td>マカロンは日持ちしないので✕。保冷バッグで運ぶ</td></tr><tr><td class="d">パリ</td><td class="big">ライヨールのチーズナイフセット／ソムリエナイフ</td><td>ライヨールの専門店</td><td>刃物なので買ったらすぐスーツケースへ</td></tr><tr><td class="d">パリ</td><td class="big">シャンパーニュ 1本</td><td>La Grande Épicerie か酒屋 Nicolas</td><td>Vueling 前なので1本まで（約1.5kg）</td></tr><tr><td class="d">ヴェネツィア 12/4</td><td class="big">ムラーノガラスのアクセサリー（義母）</td><td>リアルト周辺の工房直営店</td><td>「Vetro Artistico Murano」の本物の印を確認</td></tr><tr><td class="d">フィレンツェ 12/6–7</td><td class="big">革小物（財布・ベルト・名刺入れ）</td><td>Scuola del Cuoio（サンタ・クローチェ裏）／Il Bisonte</td><td>手袋はバンコクで使わないので✕</td></tr><tr><td class="d">フィレンツェ 12/7</td><td class="big">トリュフの塩・ハチミツ・オイル</td><td>Savini Tartufi</td><td>オイルは成分表に本物のトリュフだけのものを</td></tr><tr><td class="d">フィレンツェ 12/7</td><td class="big">サンタ・マリア・ノヴェッラ薬局のクリーム・香り</td><td>Officina Profumo-Farmaceutica di S. M. Novella</td><td>義母へのもう一つの切り札</td></tr><tr><td class="d">フィレンツェ</td><td class="big">ブルネッロ・ディ・モンタルチーノ／キャンティ・クラシコ・リゼルヴァ</td><td>ワインショップ（エノテカ）</td><td>タイの免税枠に注意（下）</td></tr><tr><td class="d">フィレンツェ・ローマ</td><td class="big">バルサミコ酢 Tradizionale DOP</td><td>食材店</td><td>小瓶でも高価。箱入りを</td></tr><tr><td class="d">ローマ 12/11 朝</td><td class="big">パルミジャーノ・レッジャーノ 24〜36か月</td><td>カンポ・デ・フィオーリ近くの食材店（Roscioli のサルメリアなど）</td><td>最後に真空パックで買う</td></tr></tbody>
     </table>
@@ -3617,7 +3628,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
       <div class="card">
         <h4>11/22 まで</h4>
         <ul class="check">
-          <li><input type="checkbox" id="td19"><label for="td19">Libertel を取消（11/22 23:59 まで）</label></li>
+          <li><input type="checkbox" id="td19"><label for="td19">Hôtel Vendome Saint-Germain を取消（無料取消の期限内に。Booking ではまだ確定済み）</label></li>
           <li><input type="checkbox" id="td20"><label for="td20">アムステルダムの宿にアーリーチェックインの依頼</label></li>
           <li><input type="checkbox" id="td21"><label for="td21">たびレジに登録</label></li>
           <li><input type="checkbox" id="td22"><label for="td22">天気予報を見て服装を決める</label></li>
@@ -3718,7 +3729,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>รายการที่ต้องยืนยัน <small>Things to confirm</small></h3>
     <p class="note">ไกด์เล่มนี้เขียนจากสิ่งที่ตกลงกันและข้อมูลที่หามาได้ ถ้าส่งเอกสารหรือภาพหน้าจอด้านล่างมา จะตรวจสอบแล้วเปลี่ยนเป็น "ยืนยันแล้ว" เรียงตามความสำคัญจากบนลงล่าง</p>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>สิ่งที่สมมติไว้</th><th>ข้อมูลตอนนี้</th><th>สิ่งที่ต้องการ</th><th>สถานะ</th></tr></thead>
       <tbody>
         <tr><td><b>เที่ยวบินและเวลาของเอมิเรตส์</b>（ขาไป EK385/EK147 ขากลับ EK096/EK374）</td><td>Ryo ยืนยันแล้ว (ออกจากกรุงเทพฯ 23 พ.ย. 01:05 เช็ก 18 ต.ค.)</td><td>ถ้ามีตั๋วอิเล็กทรอนิกส์ (PDF) ยิ่งดี</td><td><span class="pill ok">เช็กแล้ว</span></td></tr>
@@ -3730,8 +3741,8 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
         <tr><td>Vueling 3 ธ.ค. 12:40→14:25 แบบ FLY ＋ กระเป๋าโหลด 25 กก.×2 รวม €339.58</td><td>หน้าจอระหว่างจอง</td><td>อีเมลยืนยัน (เลขการจอง)</td><td><span class="pill todo">กำลังจอง</span></td></tr>
         <tr><td>Eurostar 25 พ.ย. 08:10→11:41 (ตรง)</td><td>ผลค้นหาตารางเวลา</td><td>ตั๋วเมื่อจองแล้ว</td><td><span class="pill todo">ยังไม่จอง</span></td></tr>
         <tr><td>รถไฟในอิตาลี 5 ธ.ค. ราว 10:00 และ 8 ธ.ค. 16:14</td><td>ผลค้นหาตารางเวลา</td><td>ตั๋วเมื่อจองแล้ว</td><td><span class="pill todo">ยังไม่จอง</span></td></tr>
-        <tr><td>ที่อยู่ เวลาเช็กอิน และเตียงเด็กของที่พัก 6 แห่ง</td><td>Vendome และ Libertel เช็กจาก PDF แล้ว ที่เหลือจากหน้าจอรายการจอง</td><td>อีเมลยืนยันของ Sint Nicolaas, Barceló Sants, Guerrini, Camilla, Cinque Lune และคำตอบเรื่องเตียงเด็กจาก Camilla</td><td><span class="pill todo">ต้องเช็ก</span></td></tr>
-        <tr><td>ยกเลิก Libertel ภายใน 22 พ.ย. 23:59</td><td>ตามแผน</td><td>อีเมลยืนยันการยกเลิก</td><td><span class="pill ng">ต้องยกเลิก</span></td></tr>
+        <tr><td>ที่อยู่ เวลาเช็กอิน และเตียงเด็กของที่พัก 6 แห่ง</td><td>รายการจองใน Booking (18 ต.ค.)：Sint Nicolaas, Libertel (2 รายการ), Barceló Sants, Guerrini, Camilla, Cinque Lune ยืนยันแล้ว</td><td>อีเมลยืนยันของ Sint Nicolaas, Barceló Sants, Guerrini, Camilla, Cinque Lune และคำตอบเรื่องเตียงเด็กจาก Camilla</td><td><span class="pill todo">ต้องเช็ก</span></td></tr>
+        <tr><td>ยกเลิก Hôtel Vendome Saint-Germain (25〜30 พ.ย.) ใน Booking ยังขึ้นว่า "ยืนยันแล้ว"</td><td>ปารีสตัดสินใจพักที่ Libertel (18 ต.ค.)</td><td>กำหนดยกเลิกฟรี และอีเมลยืนยันการยกเลิก</td><td><span class="pill ng">ต้องยกเลิก</span></td></tr>
         <tr><td>Chubb Premium 3 คน สายด่วน 24 ชม. <span class="key">+66 2039 5770</span></td><td>หน้าจอใบเสนอราคาและเบอร์ที่หามา</td><td>กรมธรรม์ (PDF) จะใส่เลขกรมธรรม์และเบอร์ฉุกเฉิน</td><td><span class="pill todo">ยังไม่ซื้อ</span></td></tr>
         <tr><td>ประกันเดินทางของบัตร Amex (จ่ายค่ารถบัส 31 ต.ค. ด้วยบัตร)</td><td>อ่านจากเงื่อนไขบัตร</td><td>ผลการโทรถาม Amex (ความคุ้มครอง บัตรเสริม)</td><td><span class="pill todo">จะโทรถาม</span></td></tr>
         <tr><td>6 ธ.ค. (อาทิตย์แรกของเดือน) พิพิธภัณฑ์รัฐของอิตาลีเข้าฟรีและจองไม่ได้</td><td>ระบบเดิมที่ผ่านมา</td><td>ดูว่าในหน้าจองของ Accademia เลือกวันที่ 6 ธ.ค. ได้หรือไม่</td><td><span class="pill todo">ต้องเช็ก</span></td></tr>
@@ -3784,7 +3795,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>กำหนดการ <small>Itinerary</small></h3>
     <p class="note">แตะที่วันที่เพื่อไปหน้ารายละเอียดของวันนั้น</p>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>วันที่</th><th>พักที่</th><th>ไฮไลต์ของวัน</th><th>การเดินทาง</th></tr></thead>
       <tbody>
         <tr><td class="d">22 พ.ย. อา.</td><td><span class="cityflag"><span class="flag f-th"></span>บนเครื่อง</span></td><td>ออกจากบ้านตอนกลางคืน</td><td>เที่ยวบินดึก</td></tr>
@@ -3823,8 +3834,8 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
       <tbody>
         <tr><td>ตั๋วเครื่องบิน</td><td>เอมิเรตส์ กรุงเทพฯ⇄ยุโรป 3 คน (Saver＋Flex)</td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
         <tr><td>ที่พัก</td><td>Hotel Sint Nicolaas (อัมสเตอร์ดัม 2 คืน)</td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
-        <tr><td>ที่พัก</td><td>Hôtel Vendome Saint-Germain (ปารีส 5 คืน)</td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
-        <tr><td>ที่พัก</td><td>Libertel (สำรองที่ปารีส)<span class="tsub">ยกเลิกภายใน 22 พ.ย. 23:59</span></td><td><span class="pill ng">ต้องยกเลิก</span></td></tr>
+        <tr><td>ที่พัก</td><td>Libertel Austerlitz Jardin des Plantes (ปารีส 5 คืน)<span class="tsub">จอง 2 รายการ 25〜29 และ 29〜30 พ.ย. ตอนเช็กอินถามว่าห้องเดิมไหม</span></td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
+        <tr><td>ที่พัก</td><td>Hôtel Vendome Saint-Germain (ปารีส ไม่ใช้แล้ว)<span class="tsub">ยกเลิกภายในกำหนดยกเลิกฟรี</span></td><td><span class="pill ng">ต้องยกเลิก</span></td></tr>
         <tr><td>ที่พัก</td><td>Barceló Sants (บาร์เซโลนา 3 คืน)</td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
         <tr><td>ที่พัก</td><td>Hotel Guerrini (เวนิส 2 คืน)</td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
         <tr><td>ที่พัก</td><td>Hotel Camilla Firenze (ฟลอเรนซ์ 3 คืน)<span class="tsub">รอคำตอบเรื่องเตียงเด็ก</span></td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
@@ -3844,7 +3855,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
   <div class="block" id="plan-move">
     <h3>การเดินทางระหว่างเมือง <small>Transfers</small></h3>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>วันที่</th><th>เส้นทาง</th><th>เที่ยวบิน・รถไฟ</th><th>เวลา</th><th>สัมภาระและข้อควรระวัง</th></tr></thead>
       <tbody>
         <tr><td class="d">23 พ.ย.</td><td>BKK → DXB → AMS</td><td>EK385 / EK147 (A380)</td><td class="mono">01:05 → 12:45</td><td>รถเข็นเด็กใช้ได้ถึงหน้าประตูเครื่องบิน</td></tr>
@@ -3903,7 +3914,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>เวลาและพระอาทิตย์ <small>Time &amp; daylight</small></h3>
     <p class="note">เวลายุโรปช้ากว่าญี่ปุ่น 8 ชม. ช้ากว่าไทย 6 ชม. ดูไบช้ากว่าญี่ปุ่น 5 ชม. ช้ากว่าไทย 3 ชม. เวลาฤดูร้อนของยุโรปสิ้นสุด 25 ต.ค. ระหว่างทริปจึงเป็นเวลาฤดูหนาวตลอด ตัวเลขเป็นค่าประมาณของวันที่เราอยู่ กลางวันสั้นกว่ากรุงเทพฯ ราว 3 ชั่วโมง หลังพระอาทิตย์ตก 30–40 นาทีจะมืดสนิท</p>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>เมือง (วันที่)</th><th>พระอาทิตย์ขึ้น</th><th>พระอาทิตย์ตก</th><th>ช่วงกลางวัน</th></tr></thead>
       <tbody>
         <tr><td><span class="cityflag"><span class="flag f-nl"></span>อัมสเตอร์ดัม</span> <small>23 พ.ย.</small></td><td class="num">8:25</td><td class="num">16:38</td><td class="num">8 ชม. 13 นาที</td></tr>
@@ -4165,7 +4176,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>แผนที่และบุ๊กมาร์ก <small>Map</small></h3>
     <div class="mapslot"><b>ลิสต์ Google Maps (เนเธอร์แลนด์)</b><span class="muted">เมื่อส่งออกสถานที่ที่บันทึกไว้แล้ว จะเพิ่มเป็นรายการที่นี่</span></div>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>สถานที่</th><th>ประเภท</th><th>โน้ต</th><th>แผนที่</th></tr></thead>
       <tbody>
         <tr><td>Hotel Sint Nicolaas</td><td>ที่พัก</td><td>เดิน 5 นาทีจากสถานีกลาง</td><td><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Sint+Nicolaas+Amsterdam">เปิด</a></td></tr>
@@ -4229,7 +4240,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <div class="eyebrow">Chapter 2 · France · 25 – 30 พ.ย.</div>
     <h2>ฝรั่งเศส <span class="local">France</span></h2>
     <div class="th">フランス</div>
-    <p class="lead">เมืองที่เราอยู่นานที่สุดในทริป 5 คืน ที่พักอยู่ย่านกาเทียร์ลาแต็ง เขต 5 ซึ่งเป็นใจกลางปารีสสมัยโรมัน (ลูเตเซีย) ตอนเช้าไปตลาด กลางวันไปพิพิธภัณฑ์ เย็นกลับมาพักที่โรงแรม กลางคืนชมเมืองแห่งแสงไฟ ในศตวรรษที่ 17 คณะราชทูตของสมเด็จพระนารายณ์แห่งอยุธยาเคยมาเยือนแวร์ซาย และในศตวรรษที่ 19 ภาพอุกิโยเอะของญี่ปุ่นทำให้จิตรกรปารีสหลงใหล</p>
+    <p class="lead">เมืองที่เราอยู่นานที่สุดในทริป 5 คืน ที่พักอยู่เขต 5 ข้างสวนพฤกษศาสตร์ เดินไปย่านกาเทียร์ลาแต็งและร่องรอยปารีสสมัยโรมัน (ลูเตเซีย) ได้ ตอนเช้าไปตลาด กลางวันไปพิพิธภัณฑ์ เย็นกลับมาพักที่โรงแรม กลางคืนชมเมืองแห่งแสงไฟ ในศตวรรษที่ 17 คณะราชทูตของสมเด็จพระนารายณ์แห่งอยุธยาเคยมาเยือนแวร์ซาย และในศตวรรษที่ 19 ภาพอุกิโยเอะของญี่ปุ่นทำให้จิตรกรปารีสหลงใหล</p>
   </div>
   <div class="subnav"><a href="#fr-data">ข้อมูลพื้นฐาน</a><a href="#fr-hist">ประวัติศาสตร์</a><a href="#fr-ties">ความสัมพันธ์กับญี่ปุ่นและไทย</a><a href="#paris">ปารีส</a><a href="#fr-food">อาหารและเครื่องดื่ม</a><a href="#fr-manners">มารยาทบนโต๊ะ</a><a href="#fr-map">แผนที่</a><a href="#fr-sos">ฉุกเฉิน</a><a href="#fr-phr">บทสนทนา</a></div>
 
@@ -4298,22 +4309,22 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     </div>
 
     <div class="stay">
-      <div class="name">Hôtel Vendome Saint-Germain <span class="pill ok">ยืนยันแล้ว</span></div>
+      <div class="name">Libertel Austerlitz Jardin des Plantes <span class="pill ok">ยืนยันแล้ว</span></div>
       <dl class="kv">
-        <dt>ที่อยู่</dt><dd>8 Rue d'Arras, 75005 Paris (เขต 5 ย่านกาเทียร์ลาแต็ง)</dd>
-        <dt>โทร</dt><dd><span class="key">+33 1 43 26 80 98</span></dd>
-        <dt>ห้อง</dt><dd>ดีลักซ์ดับเบิล มีระเบียง เตียงคิงไซซ์ ขอเตียงเด็กไว้ในการจองแล้ว มีตู้เย็นและกาต้มน้ำ</dd>
-        <dt>ลิฟต์</dt><dd>ขึ้นถึงห้องได้</dd>
-        <dt>รอบ ๆ</dt><dd>เมโทรสาย 10 สถานี Cardinal Lemoine เดิน 1 นาที ตลาดโมแบร์ 2 นาที ถนนมูฟฟ์ตาร์ 3 นาที อัฒจันทร์ลูเตซ 2 นาที</dd>
+        <dt>ที่อยู่</dt><dd>12 Boulevard de l'Hôpital, 75005 Paris (เขต 5 ตรงข้ามสวนพฤกษศาสตร์ หน้าสถานีโอสแตร์ลิตซ์)</dd>
+        <dt>โทร</dt><dd>คัดลอกเบอร์จากอีเมลยืนยันการจอง (ใน Booking จองไว้ 2 รายการ：25〜29 พ.ย. และ 29〜30 พ.ย.)</dd>
+        <dt>ห้อง</dt><dd>ต้องเช็กในอีเมลยืนยันว่ามีเตียงเด็กและกาต้มน้ำไหม การจองมี 2 รายการต่อกัน ตอนเช็กอินถามว่าอยู่ห้องเดิมต่อได้ไหม</dd>
+        <dt>ลิฟต์</dt><dd>มี (ลิฟต์จอดระหว่างชั้น เลยมีบันไดอีกไม่กี่ขั้น)</dd>
+        <dt>รอบ ๆ</dt><dd>สถานี Gare d'Austerlitz (เมโทรสาย 5・10 และ <b>RER C</b>) เดิน 2 นาที ประตูใหญ่สวนพฤกษศาสตร์อยู่ฝั่งตรงข้ามถนน ถนนมูฟฟ์ตาร์ 15 นาที สถานีปารีส ลียง ข้ามสะพาน 12 นาที</dd>
       </dl>
     </div>
-    <p class="memo"><span class="who">RYO'S MEMO</span>ด้านหลังโรงแรม บ้านเลขที่ 74 ถนนการ์ดินัล-เลอมวน คือห้องที่เฮมิงเวย์เคยอยู่ปี 1922–23 ส่วนเลขที่ 71 คือที่เจมส์ จอยซ์เขียน "ยูลิสซิส" จนเสร็จ ลองเดินไปหาป้ายดูนะ</p>
+    <p class="memo"><span class="who">RYO'S MEMO</span>เลยถนนมูฟฟ์ตาร์ไป บ้านเลขที่ 74 ถนนการ์ดินัล-เลอมวน คือห้องที่เฮมิงเวย์เคยอยู่ปี 1922–23 ส่วนเลขที่ 71 คือที่เจมส์ จอยซ์เขียน "ยูลิสซิส" จนเสร็จ ลองเดินไปหาป้ายดูนะ</p>
 
     <div class="move">
       <h4>จากสถานีปารีสนอร์ดไปโรงแรม</h4>
       <ol>
-        <li><b>แนะนำแท็กซี่</b>：จากจุดขึ้นรถแท็กซี่ทางการของสถานี ราว 20 นาที €20〜30 มีกระเป๋าเดินทาง 2 ใบกับรถเข็นเด็ก นั่งแท็กซี่สบายที่สุด</li>
-        <li>ถ้านั่งรถไฟ RER B 2 สถานีถึง Saint-Michel Notre-Dame (ราว 8 นาที) แล้วเดิน 15 นาที ทางเปลี่ยนสาย RER มีบันไดเยอะ</li>
+        <li><b>แนะนำแท็กซี่</b>：จากจุดขึ้นรถแท็กซี่ทางการของสถานี ราว 25 นาที €25〜35 มีกระเป๋าเดินทาง 2 ใบกับรถเข็นเด็ก นั่งแท็กซี่สบายที่สุด</li>
+        <li>ถ้านั่งรถไฟ เมโทรสาย 5 ไม่ต้องเปลี่ยนสาย ถึงปลายทาง Gare d'Austerlitz ราว 15 นาที แล้วเดิน 2 นาที แต่ชานชาลาสาย 5 ที่สถานีนอร์ดมีบันไดเยอะ</li>
         <li>เช็กอินได้ตั้งแต่ 15:00 ฝากกระเป๋าไว้ก่อน</li>
       </ol>
     </div>
@@ -4335,7 +4346,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <div class="day" id="d-1126">
       <div class="day-head"><span class="date">26 พ.ย. พฤ.</span><h4>ดิสนีย์แลนด์ปารีส (2 สวน)</h4></div>
       <ul class="tt">
-        <li><span class="t">07:40</span><div>นั่งแท็กซี่จากโรงแรมไปสถานีปารีส ลียง (ราว 10 นาที)<span class="sub">มีรถเข็นเด็ก นั่งแท็กซี่สบายกว่าต่อเมโทร มีลิฟต์ลงถึงชานชาลา RER A</span></div></li>
+        <li><span class="t">07:40</span><div>นั่งแท็กซี่จากโรงแรมไปสถานีปารีส ลียง (ข้ามสะพานราว 5 นาที เดินก็ได้ 12 นาที)<span class="sub">มีรถเข็นเด็ก ตอนเช้านั่งแท็กซี่สบายกว่า มีลิฟต์ลงถึงชานชาลา RER A</span></div></li>
         <li><span class="t">08:10</span><div><b>RER A</b> (ปลายทาง Marne-la-Vallée–Chessy) ราว 35 นาทีถึงปลายทาง<span class="sub">ซื้อตั๋วเที่ยวเดียว "Métro-Train-RER" ในแอป (ผู้ใหญ่ €2.50 ตั้งแต่ปี 2025 ราคาเดียวกับในเมือง) Yuzuha ฟรี</span></div></li>
         <li><span class="t">09:00</span><div>ออกจากสถานีก็ถึงทางเข้าเลย ผ่านจุดตรวจกระเป๋าแล้วไปหน้าสวนสนุก</div></li>
         <li><span class="t">09:30</span><div><b>ครึ่งแรก：ดิสนีย์แลนด์ พาร์ค</b> (วันนี้ปิด 19:00)<span class="sub">พอเปิดปุ๊บ ไปปราสาท → <b>ถ้ำมังกร</b>ใต้ปราสาท → ล่องเรือ<b>คลองดินแดนเทพนิยาย</b> → <b>เขาวงกตอลิซ</b> เริ่มจากอันที่คนนิยมก่อน</span></div></li>
@@ -4355,7 +4366,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <div class="day" id="d-1127">
       <div class="day-head"><span class="date">27 พ.ย. ศ.</span><h4>พระราชวังแวร์ซาย และค่ำคืนที่หอไอเฟล</h4></div>
       <ul class="tt">
-        <li><span class="t">08:45</span><div>เมื่อวานเหนื่อย ออกช้าหน่อย เดิน 15 นาทีไปสถานี Saint-Michel Notre-Dame → <b>RER C</b> ราว 40 นาที ปลายทาง Versailles Château Rive Gauche<span class="sub">บางครั้งปิดซ่อมหรือมีรถบัสแทน เช็กคืนก่อน</span></div></li>
+        <li><span class="t">08:45</span><div>เมื่อวานเหนื่อย ออกช้าหน่อย จากสถานี Gare d'Austerlitz ตรงข้ามโรงแรม นั่ง <b>RER C</b> ไม่ต้องเปลี่ยนสาย ราว 45 นาทีถึงปลายทาง Versailles Château Rive Gauche<span class="sub">บางครั้งปิดซ่อมหรือมีรถบัสแทน เช็กคืนก่อน</span></div></li>
         <li><span class="t">10:00</span><div><b>พระราชวังแวร์ซาย</b> (บัตรรอบ 10 โมง) <span class="pill todo">ต้องจอง</span><span class="sub">รถเข็นคันใหญ่อาจต้องฝากที่ทางเข้า เอาเป้อุ้มไปด้วย ใช้เวลาราว 2 ชั่วโมง</span></div></li>
         <li><span class="t">12:30</span><div>มื้อกลางวันในพระราชวังหรือหน้าสถานี</div></li>
         <li><span class="t">13:30</span><div>เดินเล่นในสวน (หน้าหนาวน้ำพุปิด) ถ้ายังไหวนั่งรถรางเล็กไปพระตำหนักเปอตีทรียานง</div></li>
@@ -4377,7 +4388,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <div class="day" id="d-1128">
       <div class="day-head"><span class="date">28 พ.ย. ส.</span><h4>ตลาดเช้า เนินมงมาร์ต และปาเลรอยัล</h4></div>
       <ul class="tt">
-        <li><span class="t">07:30</span><div><b>ตลาดโมแบร์</b> (เช้าวันอังคาร・พฤหัส・เสาร์ ห่างโรงแรม 2 นาที)<span class="sub">ซื้อชีสนิดหน่อยที่ Laurent Dubois (ร้านของผู้บ่มชีส) ขนมปังกับผลไม้สำหรับมื้อเช้าด้วย</span></div></li>
+        <li><span class="t">07:30</span><div><b>ตลาดโมแบร์</b> (เช้าวันอังคาร・พฤหัส・เสาร์ นั่งเมโทรสาย 10 สองสถานี ลง Maubert-Mutualité ถึงเลย)<span class="sub">ซื้อชีสนิดหน่อยที่ Laurent Dubois (ร้านของผู้บ่มชีส) ขนมปังกับผลไม้สำหรับมื้อเช้าด้วย</span></div></li>
         <li><span class="t">09:00</span><div>นั่งเมโทรไปสถานี Abbesses (สถานีลึก ขึ้นลิฟต์ ทางเข้าสไตล์อาร์ตนูโวของกีมาร์) → <b>"กำแพงแห่งรัก"</b> ที่จัตุรัสอาแบส (คำว่า "ฉันรักเธอ" กว่า 250 ภาษา ลองหาภาษาไทยดู)</div></li>
         <li><span class="t">09:45</span><div>รถกระเช้าไต่เขา (ใช้ตั๋วเมโทรได้) → <b>มหาวิหารซาเคร-เกอร์</b> → จิตรกรที่จัตุรัสแตร์ทร์</div></li>
         <li><span class="t">11:00</span><div>เดินลงเนิน ผ่านไร่องุ่น (Clos Montmartre) และกังหันลมมูแลง เดอ ลา กาแล็ต</div></li>
@@ -4402,14 +4413,14 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
         <li><span class="t">21:00</span><div>จองแท็กซี่ G7 ในแอปสำหรับ 06:50 เช้าวันรุ่งขึ้น</div></li>
         <li><span class="t">ของฝาก</span><div><span class="pill maybe">ตัวเลือก</span> ซื้อของฝากคุณพ่อคุณแม่แถวบง มาร์เช่ (เดินได้ใน 10 นาที)：Officine Universelle Buly ช็อกโกแลต Patrick Roger, La Grande Épicerie<span class="sub">Hermès กับ City Pharma <b>ปิดวันอาทิตย์</b> ให้ไปเย็นวันที่ 28 พ.ย. แทน รายละเอียดดู "แผนของฝาก"</span></div></li>
       </ul>
-      <p class="rain"><b>ถ้ามีเวลาเหลือ</b>：<b>อัฒจันทร์ลูเตซ</b> ห่างโรงแรม 2 นาที (ที่ให้ Yuzuha วิ่งเล่น) สวนพฤกษศาสตร์ และชามินต์ที่มัสยิดกลางปารีส (หรือแทนออร์แซในวันที่อยากพักผ่อน)</p>
+      <p class="rain"><b>ถ้ามีเวลาเหลือ</b>：<b>สวนพฤกษศาสตร์</b>ตรงข้ามโรงแรม (ที่ให้ Yuzuha วิ่งเล่น มีสวนสัตว์เล็ก ๆ กับหอวิวัฒนาการด้วย) อัฒจันทร์ลูเตซ และชามินต์ที่มัสยิดกลางปารีส (หรือแทนออร์แซในวันที่อยากพักผ่อน)</p>
     </div>
 
     <div class="day" id="d-1130">
       <div class="day-head"><span class="date">30 พ.ย. จ.</span><h4>นั่ง TGV สู่ทะเลเมดิเตอร์เรเนียน</h4></div>
       <ul class="tt">
         <li><span class="t">06:15</span><div>ตื่น เช็กเอาต์ (จ่ายเงินไว้ตั้งแต่คืนก่อนจะเร็วขึ้น)</div></li>
-        <li><span class="t">06:50</span><div>แท็กซี่ G7 ไปสถานีปารีส ลียง ราว 10 นาที €15〜20</div></li>
+        <li><span class="t">06:50</span><div>แท็กซี่ G7 ไปสถานีปารีส ลียง ข้ามสะพานราว 5 นาที ประมาณ €10 (ถ้าไม่มีกระเป๋าเดินได้ 12 นาที)</div></li>
         <li><span class="t">07:10</span><div>ดูชานชาลาบนป้าย (Hall 1) ปิดรับขึ้นรถ 2 นาทีก่อนออก ชมหอนาฬิกาของสถานีและร้านอาหาร Le Train Bleu จากข้างนอก</div></li>
         <li><span class="t">07:42</span><div><b>TGV INOUI ชั้น 1</b> ตู้ 13 ชั้นบน โต๊ะ 3 ที่ <span class="pill ok">ยืนยันแล้ว</span><span class="sub">ล็อกกระเป๋าเดินทางไว้กับชั้นวางท้ายตู้ ของมีค่าเก็บไว้ที่ที่นั่ง</span></div></li>
         <li><span class="t">วิว</span><div>ผ่านลียงแล้วลงใต้ตามหุบเขาแม่น้ำโรน เลยนีมส์และมงต์เปอลีเย แถวนาร์บอนน์จะเห็นทะเลเมดิเตอร์เรเนียนและทะเลสาบน้ำเค็ม<b>ทางซ้าย</b> และเทือกเขาพิเรนีส<b>ทางขวา</b></div></li>
@@ -4492,7 +4503,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
       </div>
       <div class="spot">
         <h4>ถนนมูฟฟ์ตาร์<span class="local">Rue Mouffetard</span></h4>
-        <div class="tags"><span>3 นาทีจากโรงแรม</span><span>รถเข็นเด็ก <span class="baby">●●○</span></span></div>
+        <div class="tags"><span>15 นาทีจากโรงแรม</span><span>รถเข็นเด็ก <span class="baby">●●○</span></span></div>
         <div class="mame">เกร็ดน่ารู้</div>
         <ul>
           <li>หนึ่งในถนนที่เก่าแก่ที่สุดในปารีส พัฒนามาจากถนนสมัยโรมัน</li>
@@ -4502,7 +4513,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
       </div>
       <div class="spot">
         <h4>อัฒจันทร์ลูเตซ<span class="local">Arènes de Lutèce</span></h4>
-        <div class="tags"><span>2 นาทีจากโรงแรม</span><span>ฟรี</span><span>รถเข็นเด็ก <span class="baby">●●●</span></span></div>
+        <div class="tags"><span>10 นาทีจากโรงแรม</span><span>ฟรี</span><span>รถเข็นเด็ก <span class="baby">●●●</span></span></div>
         <div class="mame">เกร็ดน่ารู้</div>
         <ul>
           <li>อัฒจันทร์จากราวศตวรรษที่ 1 จุคนได้ราว 15,000 คน</li>
@@ -4550,7 +4561,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <div class="grid2">
       <div class="card"><h4>การเดินทาง · Navigo Easy</h4><ul><li>ใส่ตั๋วในมือถือผ่านแอป Île-de-France Mobilités สะดวกที่สุด</li><li>เมโทร・RER เที่ยวละ €2.50 (ไปแวร์ซายราคาเดียวกัน) รถบัส €2</li><li>ประตูตรวจตั๋วในปารีสส่วนมากแตะบัตรเครดิตไม่ได้</li><li>รถไฟใต้ดินบันไดเยอะ วันที่ใช้รถเข็นนั่งรถบัสหรือแท็กซี่</li></ul></div>
       <div class="card"><h4>ถ้าคิดถึงรสชาติเอเชีย</h4><ul><li>ถนนชัวซีย์ เขต 13：ร้านอาหารไทย・เวียดนาม และซูเปอร์มาร์เก็ตเอเชียขนาดใหญ่ (Tang Frères) นั่งรถบัสหรือแท็กซี่จากโรงแรม 15 นาที</li><li>ถนนแซ็งต์-แอนน์ เขต 1：ราเมง อุด้ง ข้าวปั้น</li></ul></div>
-      <div class="card"><h4>เวลาส่วนตัวตอนค่ำ</h4><ul><li>โรงหนังเก่า <b>Le Grand Action</b> ห่างโรงแรม 3 นาที</li><li>VO = ฉายภาษาเดิม หนังภาษาอังกฤษหรือญี่ปุ่นดูได้ไม่ต้องมีซับ</li><li>Le Champo และ Filmothèque du Quartier Latin ก็เดินไปได้</li></ul></div>
+      <div class="card"><h4>เวลาส่วนตัวตอนค่ำ</h4><ul><li>โรงหนังเก่า <b>Le Grand Action</b> (ถนนเดเซกอล) ห่างโรงแรม 12 นาที</li><li>VO = ฉายภาษาเดิม หนังภาษาอังกฤษหรือญี่ปุ่นดูได้ไม่ต้องมีซับ</li><li>Le Champo และ Filmothèque du Quartier Latin ก็เดินไปได้</li></ul></div>
     </div>
     <p class="alert"><b>ระวัง</b>　การพกมีดอาจถูกจับปรับได้ มีดโอปิแนลซื้อแล้วใส่กระเป๋าเดินทางทันที เช็กข่าวการนัดหยุดงานของ TGV ในแอป SNCF Connect 2 วันก่อนเดินทาง</p>
   </div>
@@ -4630,10 +4641,10 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>แผนที่และบุ๊กมาร์ก <small>Map</small></h3>
     <div class="mapslot"><b>ลิสต์ Google Maps (ฝรั่งเศส)</b><span class="muted">เมื่อส่งออกสถานที่ที่บันทึกไว้แล้ว จะเพิ่มเป็นรายการที่นี่</span></div>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>สถานที่</th><th>ประเภท</th><th>โน้ต</th><th>แผนที่</th></tr></thead>
       <tbody>
-        <tr><td>Hôtel Vendome Saint-Germain</td><td>ที่พัก</td><td>8 Rue d'Arras</td><td><a href="https://www.google.com/maps/search/?api=1&query=8+Rue+d'Arras+75005+Paris">เปิด</a></td></tr>
+        <tr><td>Libertel Austerlitz Jardin des Plantes</td><td>ที่พัก</td><td>12 Bd de l'Hôpital</td><td><a href="https://www.google.com/maps/search/?api=1&query=Libertel+Austerlitz+Jardin+des+Plantes+Paris">เปิด</a></td></tr>
         <tr><td>Marché Maubert</td><td>ตลาด</td><td>เช้า 28 พ.ย.</td><td><a href="https://www.google.com/maps/search/?api=1&query=March%C3%A9+Maubert+Paris">เปิด</a></td></tr>
         <tr><td>Laurent Dubois</td><td>ชีส</td><td>เช้า 28 พ.ย.</td><td><a href="https://www.google.com/maps/search/?api=1&query=Laurent+Dubois+fromager+Maubert+Paris">เปิด</a></td></tr>
         <tr><td>Sainte-Chapelle</td><td>ที่เที่ยว</td><td>25 พ.ย. 14:00</td><td><a href="https://www.google.com/maps/search/?api=1&query=Sainte-Chapelle+Paris">เปิด</a></td></tr>
@@ -4643,7 +4654,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
         <tr><td>Trocadéro</td><td>จุดชมวิว</td><td>ด้านหน้าหอไอเฟล</td><td><a href="https://www.google.com/maps/search/?api=1&query=Place+du+Trocad%C3%A9ro+Paris">เปิด</a></td></tr>
         <tr><td>La Grande Épicerie de Paris</td><td>แผนกอาหาร</td><td>29 พ.ย. ตัวเลือก</td><td><a href="https://www.google.com/maps/search/?api=1&query=La+Grande+%C3%89picerie+de+Paris+Rive+Gauche">เปิด</a></td></tr>
         <tr><td>Galerie Vivienne</td><td>ที่เที่ยว</td><td>วันฝนตกก็ได้</td><td><a href="https://www.google.com/maps/search/?api=1&query=Galerie+Vivienne+Paris">เปิด</a></td></tr>
-        <tr><td>Arènes de Lutèce</td><td>สวน</td><td>2 นาทีจากโรงแรม</td><td><a href="https://www.google.com/maps/search/?api=1&query=Ar%C3%A8nes+de+Lut%C3%A8ce+Paris">เปิด</a></td></tr>
+        <tr><td>Arènes de Lutèce</td><td>สวน</td><td>10 นาทีจากโรงแรม</td><td><a href="https://www.google.com/maps/search/?api=1&query=Ar%C3%A8nes+de+Lut%C3%A8ce+Paris">เปิด</a></td></tr>
         <tr><td>Grande Mosquée de Paris</td><td>คาเฟ่</td><td>ชามินต์</td><td><a href="https://www.google.com/maps/search/?api=1&query=Grande+Mosqu%C3%A9e+de+Paris+salon+de+th%C3%A9">เปิด</a></td></tr>
         <tr><td>Le Grand Action</td><td>โรงหนัง</td><td>ค่ำคืนของ Ryo</td><td><a href="https://www.google.com/maps/search/?api=1&query=Le+Grand+Action+cinema+Paris">เปิด</a></td></tr>
         <tr><td>Disneyland Paris</td><td>สวนสนุก</td><td>26 พ.ย. ทั้งวัน</td><td><a href="https://www.google.com/maps/search/?api=1&query=Disneyland+Paris">เปิด</a></td></tr>
@@ -4669,7 +4680,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
         <tr><td>สถานทูตญี่ปุ่นในฝรั่งเศส</td><td><span class="key">+33 1 48 88 62 00</span></td><td>7 Avenue Hoche, 75008</td></tr>
         <tr><td>โรงพยาบาลเด็ก</td><td>Hôpital Necker-Enfants malades</td><td>เขต 15 มีห้องฉุกเฉินเด็ก <a href="https://www.google.com/maps/search/?api=1&query=H%C3%B4pital+Necker+Enfants+Malades+Paris">แผนที่</a></td></tr>
         <tr><td>โรงพยาบาลเด็ก (ฝั่งตะวันออก)</td><td>Hôpital Armand-Trousseau</td><td>เขต 12 <a href="https://www.google.com/maps/search/?api=1&query=H%C3%B4pital+Armand+Trousseau+Paris">แผนที่</a></td></tr>
-        <tr><td>โรงแรม</td><td><span class="key">+33 1 43 26 80 98</span></td><td>Vendome Saint-Germain</td></tr>
+        <tr><td>โรงแรม</td><td>เบอร์จากอีเมลยืนยันการจอง</td><td>Libertel Austerlitz Jardin des Plantes</td></tr>
       </tbody>
     </table>
     </div>
@@ -4759,7 +4770,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
   <div class="block" id="dlp-return">
     <h3>ขากลับ (ถึงโรงแรม) <small>Getting back</small></h3>
     <p class="note">ถ้าอยู่จนสวนปิด 22:00 จะถึงโรงแรมราว 5 ทุ่ม เลือกวิธีกลับ 1 ใน 3 แบบตามอาการของ Yuzuha</p>
-    <div class="tbl"><table><thead><tr><th>เวลา</th><th>ทำอะไร</th></tr></thead><tbody><tr><td class="d">21:40</td><td>พอโชว์กลางคืนจบ ออกจากสวนเลยไม่ต้องรอปิด (ก่อนทางออกและชานชาลาจะแน่น)</td></tr><tr><td class="d">21:50</td><td>เดิน 5〜10 นาทีไปสถานี Marne-la-Vallée–Chessy ขึ้นลิฟต์ไปชานชาลา</td></tr><tr><td class="d">ราว 22:00</td><td>นั่ง RER A เข้าปารีส (กลางคืนมีทุก 10〜15 นาที เป็นสถานีต้นทางจึงได้ที่นั่ง)</td></tr><tr><td class="d">ราว 22:40</td><td>ถึงสถานีปารีส ลียง (Gare de Lyon) ขึ้นลิฟต์ออกไปข้างบน</td></tr><tr><td class="d">ราว 22:50</td><td>ขึ้นแท็กซี่ที่จุดขึ้นรถของสถานี ถึงโรงแรมราว 10 นาที ประมาณ €15</td></tr><tr><td class="d">23:00〜23:15</td><td>ถึงโรงแรม</td></tr></tbody></table></div>
+    <div class="tbl"><table><thead><tr><th>เวลา</th><th>ทำอะไร</th></tr></thead><tbody><tr><td class="d">21:40</td><td>พอโชว์กลางคืนจบ ออกจากสวนเลยไม่ต้องรอปิด (ก่อนทางออกและชานชาลาจะแน่น)</td></tr><tr><td class="d">21:50</td><td>เดิน 5〜10 นาทีไปสถานี Marne-la-Vallée–Chessy ขึ้นลิฟต์ไปชานชาลา</td></tr><tr><td class="d">ราว 22:00</td><td>นั่ง RER A เข้าปารีส (กลางคืนมีทุก 10〜15 นาที เป็นสถานีต้นทางจึงได้ที่นั่ง)</td></tr><tr><td class="d">ราว 22:40</td><td>ถึงสถานีปารีส ลียง (Gare de Lyon) ขึ้นลิฟต์ออกไปข้างบน</td></tr><tr><td class="d">ราว 22:50</td><td>ขึ้นแท็กซี่ที่จุดขึ้นรถของสถานี ถึงโรงแรมราว 5 นาที ประมาณ €10 (แค่ข้ามสะพาน)</td></tr><tr><td class="d">23:00〜23:15</td><td>ถึงโรงแรม</td></tr></tbody></table></div>
     <div class="grid2"><div class="card"><h4>ถ้าจะกลับเร็วขึ้น</h4><ul><li>ออก 20:30 ถึงโรงแรมราว 21:45</li><li>ออก 19:00 (ตอนสวนปราสาทปิด) ถึงโรงแรมราว 20:15</li></ul></div><div class="card"><h4>ถ้านั่งแท็กซี่ตรงกลับ</h4><ul><li>จากสวนถึงโรงแรมราว 40〜50 นาที €80〜100</li><li>ไม่ต้องเปลี่ยนรถ อุ้ม Yuzuha ที่หลับแล้วกลับได้สบาย เรียกที่จุดแท็กซี่หน้าสถานีหรือแอป (Uber, G7)</li></ul></div><div class="card"><h4>เตรียมให้คืนนั้นสบาย</h4><ul><li>ซื้อตั๋วรถไฟขากลับในแอปไว้ตั้งแต่เช้า (หลังสวนปิดตู้ขายตั๋วคิวยาว)</li><li>เปลี่ยนชุดนอนให้ Yuzuha แล้วใส่ถุงคลุมเท้า ถึงโรงแรมย้ายลงเตียงได้เลย</li><li>กระเป๋าไว้ด้านหน้าตัว คนแน่นแค่ช่วงหลังสวนปิด</li><li>วันรุ่งขึ้นเข้าแวร์ซายรอบ 10 โมง ตื่นสายได้</li></ul></div></div>
   </div>
 
@@ -4767,7 +4778,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>มีที่ปารีสเท่านั้น <small>Only in Paris</small></h3>
     <p class="note">★ คือมีที่ปารีสแห่งเดียวในโลก ที่เหลือก็ไม่มีในดิสนีย์ญี่ปุ่น ช่อง Yuzuha คิดจากส่วนสูงราว 75 ซม.</p>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>สวน</th><th>เครื่องเล่น</th><th>เป็นแบบไหน</th><th>Yuzuha</th></tr></thead>
       <tbody>
         <tr><td>ปราสาท</td><td class="big">★ปราสาทเจ้าหญิงนิทราและถ้ำมังกร<span class="tsub">Le Château de la Belle au Bois Dormant / La Tanière du Dragon</span></td><td>แห่งเดียวในดิสนีย์ทั่วโลกที่มีหุ่นยนต์มังกรยักษ์หลับอยู่ใต้ปราสาท</td><td>◯</td></tr>
@@ -4814,7 +4825,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>อาหาร <small>Food</small></h3>
     <p class="note">ร้านอาหารแบบมีพนักงานเสิร์ฟจองในแอปทางการได้ (ล่วงหน้าราว 2 เดือน) ของวันที่ 26 พ.ย. น่าจะจองได้แล้ว ราคาแพงหน่อย แต่ถ้าเป็นประสบการณ์ที่มีแค่ปารีส มื้อเย็นสักมื้อก็คุ้มที่จะจัดเต็ม</p>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>ร้าน</th><th>สวน</th><th>ประเภท</th><th>จอง</th><th>สั้น ๆ</th></tr></thead>
       <tbody>
         <tr><td class="big">Bistrot Chez Rémy</td><td>ฝั่งโฟรเซ่น</td><td>มีพนักงานเสิร์ฟ</td><td><span class="pill todo">ต้องจอง</span></td><td>จานยักษ์และเก้าอี้จุกไม้ก๊อกในมุมมองของเรมี่ ตัวเลือกอันดับ 1 ที่มีแค่ปารีส</td></tr>
@@ -5249,7 +5260,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>แผนที่และบุ๊กมาร์ก <small>Map</small></h3>
     <div class="mapslot"><b>ลิสต์ Google Maps (สเปน)</b><span class="muted">เมื่อส่งออกสถานที่ที่บันทึกไว้แล้ว จะเพิ่มเป็นรายการที่นี่</span></div>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>สถานที่</th><th>ประเภท</th><th>โน้ต</th><th>แผนที่</th></tr></thead>
       <tbody>
         <tr><td>Barceló Sants</td><td>ที่พัก</td><td>อยู่บนสถานีซานส์</td><td><a href="https://www.google.com/maps/search/?api=1&query=Barcel%C3%B3+Sants+Barcelona">เปิด</a></td></tr>
@@ -5783,7 +5794,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>แผนที่และบุ๊กมาร์ก <small>Map</small></h3>
     <div class="mapslot"><b>ลิสต์ Google Maps (อิตาลี)</b><span class="muted">เมื่อส่งออกสถานที่ที่บันทึกไว้แล้ว จะเพิ่มเป็นรายการแยกตามเมืองที่นี่</span></div>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>เมือง</th><th>สถานที่</th><th>โน้ต</th><th>แผนที่</th></tr></thead>
       <tbody>
         <tr><td>เวนิส</td><td>Hotel Guerrini</td><td>เดินจากสถานี 3〜5 นาที</td><td><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Guerrini+Venezia">เปิด</a></td></tr>
@@ -6019,7 +6030,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <div class="grid2">
       <div class="card">
         <h4>ชนิดของนม</h4>
-        <div class="tbl"><table>
+        <div class="tbl"><table class="wide">
           <thead><tr><th>ไทย · 日本語</th><th>เนเธอร์แลนด์</th><th>ฝรั่งเศส</th><th>สเปน</th><th>อิตาลี</th></tr></thead>
           <tbody>
             <tr><td><span class="th">วัว</span> · 牛</td><td>koe</td><td>vache</td><td>vaca</td><td>vacca</td></tr>
@@ -6057,7 +6068,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
   <div class="block" id="cheese-list">
     <h3>ชีสที่ต้องลองของแต่ละประเทศ <small>Must-try cheeses</small></h3>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>ประเทศ</th><th>ชื่อ</th><th>นม</th><th>คืออะไร・เกร็ดน่ารู้</th></tr></thead>
       <tbody>
         <tr><td><span class="flag f-nl"></span></td><td class="big">เกาดา<span class="tsub">Gouda</span></td><td>วัว</td><td>ชื่อเปลี่ยนไปตามอายุการบ่ม：jong (4 สัปดาห์) → belegen (4 เดือน) → oud (10 เดือนขึ้นไป) → overjarig (1 ปีครึ่งขึ้นไป) ยิ่งบ่มนานยิ่งแข็ง มีผลึกกรดอะมิโนกรุบ ๆ และรสคล้ายคาราเมล</td></tr>
@@ -6108,7 +6119,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
   <div class="block" id="wine-basic">
     <h3>พื้นฐานไวน์ <small>Wine basics</small></h3>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>ไทย · 日本語</th><th>เนเธอร์แลนด์</th><th>ฝรั่งเศส</th><th>สเปน</th><th>อิตาลี</th></tr></thead>
       <tbody>
         <tr><td><span class="th">แดง</span> · 赤</td><td>rood</td><td>rouge</td><td>tinto</td><td>rosso</td></tr>
@@ -6131,7 +6142,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
   <div class="block" id="wine-list">
     <h3>ไวน์ที่ควรลองระหว่างทริปของแต่ละประเทศ <small>Wines to try</small></h3>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>ประเทศ</th><th>ชื่อ</th><th>เป็นอย่างไร</th><th>กินคู่กับ</th></tr></thead>
       <tbody>
         <tr><td><span class="flag f-nl"></span></td><td class="big">เยเนเวอร์<span class="tsub">jenever</span></td><td>ไม่ใช่ไวน์ แต่ถ้าพูดถึงเหล้าของเนเธอร์แลนด์ต้องนึกถึงตัวนี้ เป็นต้นกำเนิดของจิน</td><td>ปลาเฮร์ริง บิตเตอร์บาลเลน</td></tr>
@@ -6242,7 +6253,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
   <div class="block">
     <h3>ซื้อที่นั่นได้ <small>What you can buy there</small></h3>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>ไทย · 日本語</th><th>เนเธอร์แลนด์</th><th>ฝรั่งเศส</th><th>สเปน</th><th>อิตาลี</th></tr></thead>
       <tbody>
         <tr><td class="big">ผ้าอ้อม · おむつ</td><td>luiers</td><td>couches</td><td>pañales</td><td>pannolini</td></tr>
@@ -6279,7 +6290,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
       </div>
     </div>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>ไทย · 日本語</th><th>เนเธอร์แลนด์</th><th>ฝรั่งเศส</th><th>สเปน</th><th>อิตาลี</th></tr></thead>
       <tbody>
         <tr><td class="big">ผ้าอ้อม · おむつ</td><td>Pampers, Kruidvat (แบรนด์ของร้านเองก็ได้รับคำชม)</td><td>Pampers, Love &amp; Green</td><td><b>Dodot</b> (ชื่อของ Pampers ในสเปน)</td><td>Pampers, Huggies</td></tr>
@@ -6299,7 +6310,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
       <div class="card">
         <h4>ขอได้ที่ไหน</h4>
         <ul>
-          <li><b>ที่พัก</b>: Vendome ที่ปารีสมีกาต้มน้ำในห้อง ที่พักอื่นให้ขอกาต้มน้ำตอนเช็กอิน หรือขอน้ำร้อนที่แผนกต้อนรับหรือห้องอาหารเช้า</li>
+          <li><b>ที่พัก</b>: ขอกาต้มน้ำตอนเช็กอิน หรือขอน้ำร้อนที่แผนกต้อนรับหรือห้องอาหารเช้า (Libertel ที่ปารีสก็เช็กในอีเมลยืนยันว่ามีไหม)</li>
           <li><b>คาเฟ่・ร้านอาหาร</b>: ขอแล้วจะให้ฟรีหรือคิดเงินนิดหน่อย ถ้าบอกว่า "สำหรับขวดนม" จะทำให้ร้อนอย่างตั้งใจ</li>
           <li><b>เครื่องบิน</b>: ทั้งเอมิเรตส์และ Vueling ขอกับพนักงานต้อนรับบนเครื่อง</li>
           <li><b>TGV・รถไฟความเร็วสูงของอิตาลี</b>: ขอที่ตู้บาร์</li>
@@ -6315,7 +6326,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
       </div>
     </div>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>ไทย</th><th>日本語</th><th>เนเธอร์แลนด์</th><th>ฝรั่งเศส</th><th>สเปน</th><th>อิตาลี</th></tr></thead>
       <tbody>
         <tr><td>ขอน้ำร้อนหน่อย (สำหรับขวดนม)</td><td>お湯をください（哺乳瓶用）</td><td>Mag ik heet water? (voor de fles)</td><td>De l'eau chaude, s'il vous plaît (pour le biberon)</td><td>Agua caliente, por favor (para el biberón)</td><td>Acqua calda, per favore (per il biberon)</td></tr>
@@ -6349,7 +6360,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
   <div class="block">
     <h3>เบอร์ฉุกเฉินทั้งหมด <small>Emergency numbers</small></h3>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>ประเทศ</th><th>ฉุกเฉิน</th><th>สถานทูต/กงสุลญี่ปุ่น</th><th>สถานทูต/กงสุลไทย</th></tr></thead>
       <tbody>
         <tr><td><span class="cityflag"><span class="flag f-nl"></span>เนเธอร์แลนด์</span></td><td><span class="key">112</span></td><td><span class="key">+31 70 346 9544</span><span class="tsub">สถานทูตที่กรุงเฮก</span></td><td><span class="key">+31 70 345 0766</span><span class="tsub">สถานทูตที่กรุงเฮก</span></td></tr>
@@ -6583,7 +6594,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     </div>
 
     <div class="tbl" style="margin-top:12px">
-    <table>
+    <table class="wide">
       <thead><tr><th>ประเทศ</th><th>"ขโมย!"</th><th>คำอ่าน</th><th>"ไม่เอาครับ/ค่ะ"</th></tr></thead>
       <tbody>
         <tr><td>เนเธอร์แลนด์</td><td class="big">Houd de dief!</td><td>เฮาต์ เดอ ดีฟ</td><td>Nee, dank je (เน ดังค์ เย)</td></tr>
@@ -6710,7 +6721,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>แผนน้ำหนักกระเป๋า <small>Weight plan</small></h3>
     <p class="note">ที่เข้มงวดที่สุดคือ Vueling วันที่ 3 ธ.ค. (ใบละ 25 กก.) ก่อนถึงวันนั้นซื้อแต่ของฝากที่เบา แล้วค่อยซื้อของฝากที่หนักในอิตาลีหลังจากนั้น</p>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>ช่วง</th><th>วันที่</th><th>สัมภาระโหลด</th><th>ชั่งไหม</th><th>แผน</th></tr></thead>
       <tbody>
         <tr><td>เอมิเรตส์ ขาไป (Saver)</td><td class="d">23 พ.ย.</td><td>คนละ 25 กก. (Yuzuha ราว 10 กก.)</td><td>ชั่ง</td><td>ตอนออกเดินทางตั้งเป้า<b>ใบละ 15 กก. รวมตัวกระเป๋า</b></td></tr>
@@ -6756,7 +6767,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
   <div class="block" id="prep-weather">
     <h3>อากาศและการแต่งตัว <small>Weather &amp; clothing</small></h3>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>เมือง</th><th>ต่ำสุด–สูงสุด</th><th>อากาศ</th><th>เทียบกับโตเกียว</th></tr></thead>
       <tbody>
         <tr><td><span class="cityflag"><span class="flag f-nl"></span>อัมสเตอร์ดัม</span></td><td class="num">4–9℃</td><td>ครึ้ม・ฝนปรอย ลมหนาว</td><td>ปลาย ธ.ค.–ม.ค.</td></tr>
@@ -6866,7 +6877,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
     <h3>แผนของฝาก (สำหรับคุณพ่อคุณแม่) <small>Gifts for the in-laws</small></h3>
     <p class="note">ของกินซื้อรวดเดียวที่อิตาลีซึ่งเป็นประเทศสุดท้าย ที่ปารีสเน้นของที่เก็บได้นานและของใช้ติดตัว กรุงเทพฯ อากาศร้อน ของที่ละลายหรือเสียง่ายให้เลี่ยงหรือแช่เย็นระหว่างขนกลับ</p>
     <div class="tbl">
-    <table>
+    <table class="wide">
       <thead><tr><th>เมือง・วันที่</th><th>ของฝาก</th><th>ร้าน</th><th>โน้ต</th></tr></thead>
       <tbody><tr><td class="d">ปารีส 28 พ.ย. (ส.)</td><td class="big">ผ้าพันคอ・เนกไทผ้าไหม</td><td>Hermès (สาขาถนนแซฟวร์ ตรงข้ามบง มาร์เช่ <b>ปิดวันอาทิตย์</b>)／ถ้าอยากประหยัดหน่อย เนกไท Charvet (จัตุรัสว็องโดม)</td><td>เบา ไม่เปลืองที่ ของใช้ติดตัวชิ้นหลัก</td></tr><tr><td class="d">ปารีส 28〜29 พ.ย.</td><td class="big">ไม้ตายสำหรับคุณแม่ (เจ้าของร้านขายยา)</td><td>Officine Universelle Buly (ถนนโบนาปาร์ต เปิดวันอาทิตย์ด้วย)／City Pharma (แซ็ง-แฌร์แม็ง Caudalie・Nuxe ราคาร้านขายยา <b>ปิดวันอาทิตย์</b> → ไปวันเสาร์ 28 พ.ย.)</td><td>ทั้งสองร้านเดินจากออร์แซและบง มาร์เช่ได้</td></tr><tr><td class="d">ปารีส 29 พ.ย.</td><td class="big">เกลือเกรอนด์ แยม Christine Ferber ชา Mariage Frères</td><td>La Grande Épicerie de Paris</td><td>แยมเป็นขวดแก้ว ใส่กระเป๋าโหลด</td></tr><tr><td class="d">ปารีส</td><td class="big">ช็อกโกแลต</td><td>Patrick Roger／La Maison du Chocolat</td><td>มาการองเก็บได้ไม่นาน ✕ ขนกลับในกระเป๋าเก็บความเย็น</td></tr><tr><td class="d">ปารีส</td><td class="big">ชุดมีดตัดชีส・ที่เปิดไวน์ Laguiole</td><td>ร้าน Laguiole</td><td>เป็นมีด ซื้อแล้วใส่กระเป๋าเดินทางทันที</td></tr><tr><td class="d">ปารีส</td><td class="big">แชมเปญ 1 ขวด</td><td>La Grande Épicerie หรือร้านเหล้า Nicolas</td><td>ก่อนขึ้น Vueling ซื้อได้แค่ 1 ขวด (ราว 1.5 กก.)</td></tr><tr><td class="d">เวนิส 4 ธ.ค.</td><td class="big">เครื่องประดับแก้วมูราโน (คุณแม่)</td><td>ร้านของโรงงานแถวรีอัลโต</td><td>ดูตรา "Vetro Artistico Murano" ของแท้</td></tr><tr><td class="d">ฟลอเรนซ์ 6–7 ธ.ค.</td><td class="big">เครื่องหนัง (กระเป๋าสตางค์ เข็มขัด ที่ใส่นามบัตร)</td><td>Scuola del Cuoio (หลังซานตาโครเช)／Il Bisonte</td><td>ถุงมือไม่ได้ใช้ที่กรุงเทพฯ ✕</td></tr><tr><td class="d">ฟลอเรนซ์ 7 ธ.ค.</td><td class="big">เกลือ・น้ำผึ้ง・น้ำมันทรัฟเฟิล</td><td>Savini Tartufi</td><td>น้ำมันเลือกที่ส่วนผสมเป็นทรัฟเฟิลแท้</td></tr><tr><td class="d">ฟลอเรนซ์ 7 ธ.ค.</td><td class="big">ครีมและน้ำหอมของร้านขายยาซานตามาเรียโนเวลลา</td><td>Officina Profumo-Farmaceutica di S. M. Novella</td><td>ไม้ตายอีกชิ้นสำหรับคุณแม่</td></tr><tr><td class="d">ฟลอเรนซ์</td><td class="big">บรูเนลโล ดิ มอนตัลชิโน／คิอันติ คลาสซิโก ริเซอร์วา</td><td>ร้านไวน์ (เอโนเตกา)</td><td>ระวังโควตาปลอดภาษีของไทย (ด้านล่าง)</td></tr><tr><td class="d">ฟลอเรนซ์・โรม</td><td class="big">น้ำส้มสายชูบัลซามิก Tradizionale DOP</td><td>ร้านวัตถุดิบ</td><td>ขวดเล็กก็แพง เลือกแบบมีกล่อง</td></tr><tr><td class="d">โรม เช้า 11 ธ.ค.</td><td class="big">ชีสปาร์มิจาโน เรจจาโน 24〜36 เดือน</td><td>ร้านวัตถุดิบใกล้กัมโป เด ฟีโอรี (เช่น Roscioli Salumeria)</td><td>ซื้อเป็นอย่างสุดท้าย ให้แพ็กสุญญากาศ</td></tr></tbody>
     </table>
@@ -7008,7 +7019,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
       <div class="card">
         <h4>ภายใน 22 พ.ย.</h4>
         <ul class="check">
-          <li><input type="checkbox" id="td19"><label for="td19">ยกเลิก Libertel (ภายใน 22 พ.ย. 23:59)</label></li>
+          <li><input type="checkbox" id="td19"><label for="td19">ยกเลิก Hôtel Vendome Saint-Germain (ภายในกำหนดยกเลิกฟรี ใน Booking ยังขึ้นว่ายืนยันแล้ว)</label></li>
           <li><input type="checkbox" id="td20"><label for="td20">ขอเช็กอินก่อนเวลากับที่พักในอัมสเตอร์ดัม</label></li>
           <li><input type="checkbox" id="td21"><label for="td21">ลงทะเบียน Tabireg</label></li>
           <li><input type="checkbox" id="td22"><label for="td22">ดูพยากรณ์อากาศแล้วเลือกเสื้อผ้า</label></li>
@@ -7136,3 +7147,6 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
 })();
 
 </script>
+
+</body>
+</html>
