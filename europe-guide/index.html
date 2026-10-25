@@ -3988,53 +3988,116 @@ html:lang(ja) .phr td:nth-child(3){font-weight:400;color:var(--muted);font-size:
 
   <div class="block" id="prep-pack">
     <h3>持ち物チェック</h3>
-    <p class="note">チェックはこの端末に保存されます（他の人とは共有されません）。</p>
+    <p class="note">いつもの持ち物リストを今回の旅（冬の欧州、Yuzuha 10か月、スーツケース2個＋オルフェオ＋防水トート＋リュック3つ）に合わせたもの。右の札は入れるバッグ。チェックはこの端末に保存されます。</p>
     <div class="grid2">
       <div class="card">
-        <h4>書類</h4>
+        <h4>バッグの割り振り</h4>
         <ul class="check">
-          <li><input type="checkbox" id="pk1"><label for="pk1">パスポート4冊（Ryo、Som、Yuzuhaの日本・タイ）</label></li>
-          <li><input type="checkbox" id="pk2"><label for="pk2">Somのシェンゲンビザ</label></li>
-          <li><input type="checkbox" id="pk3"><label for="pk3">エミレーツのeチケット</label></li>
-          <li><input type="checkbox" id="pk4"><label for="pk4">Chubbの保険証券（英語）</label></li>
-          <li><input type="checkbox" id="pk5"><label for="pk5">宿と列車の予約（iCloudの旅行フォルダに）</label></li>
-          <li><input type="checkbox" id="pk6"><label for="pk6">パスポートのコピーと写真2枚ずつ</label></li>
+          <li><input type="checkbox" id="pk-bag1"><label for="pk-bag1">スーツケース①：3人分の服・部屋着・下着を人ごとに大型ゴミ袋で小分け。洗面用具も。帰りはワインなど割れ物を服で包んでここへ <span class="pill maybe">①服</span></label></li>
+          <li><input type="checkbox" id="pk-bag2"><label for="pk-bag2">スーツケース②：おむつ・おしりふき・粉ミルクのストック、洗濯セット、ジム用品。使って空いた分にお土産 <span class="pill maybe">②ストック</span></label></li>
+          <li><input type="checkbox" id="pk-bag3"><label for="pk-bag3">Ryoのリュック（機内7kg）：iPad・PC、充電まわり、書類のコピー、機内の上着 <span class="pill maybe">Ryoリュック</span></label></li>
+          <li><input type="checkbox" id="pk-bag4"><label for="pk-bag4">Somのリュック（機内7kg）：Somの身の回り品、Yuzuhaの着替え1組、ブランケット <span class="pill maybe">Somリュック</span></label></li>
+          <li><input type="checkbox" id="pk-bag5"><label for="pk-bag5">赤ちゃん用品のリュック（55×38×22cm、5kg。機内に持ち込めるか dokbua に確認） <span class="pill maybe">ベビーリュック</span></label></li>
+          <li><input type="checkbox" id="pk-bag6"><label for="pk-bag6">防水トート：ミルク一式（哺乳瓶、保温ボトル、液体ミルク、小分けの粉ミルク）。保安検査でそのまま出せる <span class="pill maybe">防水トート</span></label></li>
+          <li><input type="checkbox" id="pk-bag7"><label for="pk-bag7">モンベル ドライショルダー（Ryoの貴重品）とアニエスベーのバッグ（ワイヤー鍵で運用） <span class="pill maybe">ポーチ</span></label></li>
+          <li><input type="checkbox" id="pk-bag8"><label for="pk-bag8">オルフェオ＋レインカバー＋フットマフ、抱っこ紐（防寒ケープ付き） <span class="pill maybe">着ていく</span></label></li>
         </ul>
       </div>
       <div class="card">
-        <h4>お金と通信</h4>
+        <h4>貴重品・書類</h4>
         <ul class="check">
-          <li><input type="checkbox" id="pk7"><label for="pk7">ヒルトン・アメックス・プレミアム、家族カード</label></li>
-          <li><input type="checkbox" id="pk8"><label for="pk8">Wiseのカード（ユーロ残高）</label></li>
-          <li><input type="checkbox" id="pk9"><label for="pk9">ユーロ現金を少し（€200程度）</label></li>
-          <li><input type="checkbox" id="pk10"><label for="pk10">Saily eSIM を入れておく</label></li>
-          <li><input type="checkbox" id="pk11"><label for="pk11">変換プラグ（C型、G型）、充電器、モバイルバッテリー</label></li>
+          <li><input type="checkbox" id="pk-doc1"><label for="pk-doc1">パスポート4冊（Ryo 日本、Som タイ、Yuzuha 日本とタイ） <span class="pill maybe">ポーチ</span></label></li>
+          <li><input type="checkbox" id="pk-doc2"><label for="pk-doc2">Som のシェンゲンビザ（パスポートに貼付） <span class="pill maybe">ポーチ</span></label></li>
+          <li><input type="checkbox" id="pk-doc3"><label for="pk-doc3">エミレーツの e チケット（予約 CW5RYJ）、宿の予約票7枚、TGV・ディズニーの券（スマホとコピー） <span class="pill maybe">Ryoリュック</span></label></li>
+          <li><input type="checkbox" id="pk-doc4"><label for="pk-doc4">Chubb の証券（CTBTHIAB0006338）、アメックスの保険の連絡先メモ <span class="pill maybe">Ryoリュック</span></label></li>
+          <li><input type="checkbox" id="pk-doc5"><label for="pk-doc5">パスポートのコピーと写真2枚ずつ（紛失時用） <span class="pill maybe">Ryoリュック</span></label></li>
+          <li><input type="checkbox" id="pk-doc6"><label for="pk-doc6">Yuzuha の母子手帳と、予防接種の記録（英語があれば） <span class="pill maybe">Somリュック</span></label></li>
+          <li><input type="checkbox" id="pk-doc7"><label for="pk-doc7">財布＋メッシュ財布（小銭用）。ヒルトン・アメックス・プレミアム、家族カード、Wise <span class="pill maybe">ポーチ</span></label></li>
+          <li><input type="checkbox" id="pk-doc8"><label for="pk-doc8">ユーロ現金 €200 ほど、帰りのタクシー用にバーツ少し、円少し <span class="pill maybe">ポーチ</span></label></li>
+          <li><input type="checkbox" id="pk-doc9"><label for="pk-doc9">SIM ピン（財布に）。Saily の eSIM は出発前に入れておく <span class="pill maybe">ポーチ</span></label></li>
         </ul>
       </div>
       <div class="card">
-        <h4>Yuzuhaのもの</h4>
+        <h4>Ryo の服（冬の欧州 4〜15℃）</h4>
         <ul class="check">
-          <li><input type="checkbox" id="pk12"><label for="pk12">ベビーカー（Cybex Orfeo）とレインカバー、フットマフ</label></li>
-          <li><input type="checkbox" id="pk13"><label for="pk13">抱っこ紐</label></li>
-          <li><input type="checkbox" id="pk14"><label for="pk14">おむつとおしりふき（3〜4日分）</label></li>
-          <li><input type="checkbox" id="pk15"><label for="pk15">いつもの粉ミルクと哺乳瓶</label></li>
-          <li><input type="checkbox" id="pk16"><label for="pk16">使い慣れた薬（熱、下痢）と体温計</label></li>
-          <li><input type="checkbox" id="pk17"><label for="pk17">お気に入りのおもちゃ、機内用のおやつ</label></li>
+          <li><input type="checkbox" id="pk-rc1"><label for="pk-rc1">ダウンジャケット（着ていく）、ニット帽・手袋・マフラー <span class="pill maybe">着ていく</span></label></li>
+          <li><input type="checkbox" id="pk-rc2"><label for="pk-rc2">パタゴニアのジョガーパンツ多め（半ズボンはなし） <span class="pill maybe">①服</span></label></li>
+          <li><input type="checkbox" id="pk-rc3"><label for="pk-rc3">ユニクロの厚手 T シャツ（宿泊数の半分。洗って回す）、エアリズムのシャツ・パンツ多め <span class="pill maybe">①服</span></label></li>
+          <li><input type="checkbox" id="pk-rc4"><label for="pk-rc4">ヒートテック上下、厚手の靴下 <span class="pill maybe">①服</span></label></li>
+          <li><input type="checkbox" id="pk-rc5"><label for="pk-rc5">レストラン用のきれいめなシャツ1枚（ビストロ、ディナー） <span class="pill maybe">①服</span></label></li>
+          <li><input type="checkbox" id="pk-rc6"><label for="pk-rc6">防水のスニーカー（石畳と雨） <span class="pill maybe">着ていく</span></label></li>
+          <li><input type="checkbox" id="pk-rc7"><label for="pk-rc7">メガネ・メガネ調整、サングラス＋鼻パッド、マスク、キャップ <span class="pill maybe">Ryoリュック</span></label></li>
+          <li><input type="checkbox" id="pk-rc8"><label for="pk-rc8">折り畳み傘（モンベル） <span class="pill maybe">Ryoリュック</span></label></li>
         </ul>
       </div>
       <div class="card">
-        <h4>荷物の道具</h4>
+        <h4>部屋着・機内着</h4>
         <ul class="check">
-          <li><input type="checkbox" id="pk18"><label for="pk18">荷物スケール</label></li>
-          <li><input type="checkbox" id="pk19"><label for="pk19">ワイヤーロック（列車用）</label></li>
-          <li><input type="checkbox" id="pk20"><label for="pk20">AirTag 2個</label></li>
-          <li><input type="checkbox" id="pk21"><label for="pk21">折りたたみのボストンバッグ</label></li>
-          <li><input type="checkbox" id="pk22"><label for="pk22">リュック用の小さな鍵</label></li>
-          <li><input type="checkbox" id="pk23"><label for="pk23">モンベル ドライショルダー（Ryoの貴重品用）、スマホのストラップ2本</label></li>
-          <li><input type="checkbox" id="pk24"><label for="pk24">TNF BCローリングダッフル 97L（Somの預け枠）</label></li>
-          <li><input type="checkbox" id="pk25"><label for="pk25">厚手の大型ゴミ袋（45〜70L）を8枚ほど（服の小分けと洗濯物用）</label></li>
-          <li><input type="checkbox" id="pk26"><label for="pk26">赤ちゃん用品のリュック（55×38×22cm以内、5kg以内）</label></li>
+          <li><input type="checkbox" id="pk-lw1"><label for="pk-lw1">部屋着 T シャツ（UQ ドライ）×4〜5、部屋用のズボン×2 <span class="pill maybe">①服</span></label></li>
+          <li><input type="checkbox" id="pk-lw2"><label for="pk-lw2">パタゴニアのパーカー（機内用） <span class="pill maybe">Ryoリュック</span></label></li>
+          <li><input type="checkbox" id="pk-lw3"><label for="pk-lw3">防水スリッパ（宿の部屋とシャワー用） <span class="pill maybe">①服</span></label></li>
         </ul>
+      </div>
+      <div class="card">
+        <h4>Yuzuha のもの</h4>
+        <ul class="check">
+          <li><input type="checkbox" id="pk-yz1"><label for="pk-yz1">着替え：肌着・ロンパースを1日2〜3組×4日分（洗って回す） <span class="pill maybe">①服</span></label></li>
+          <li><input type="checkbox" id="pk-yz2"><label for="pk-yz2">防寒のジャンプスーツかダウン、帽子、ミトン、厚手の靴下多め <span class="pill maybe">着ていく</span></label></li>
+          <li><input type="checkbox" id="pk-yz3"><label for="pk-yz3">スリーパー、ガーゼ、スタイ <span class="pill maybe">①服</span></label></li>
+          <li><input type="checkbox" id="pk-yz4"><label for="pk-yz4">おむつ 6〜8枚、おしりふき、おむつ替えシート、消臭袋（機内・移動日用） <span class="pill maybe">ベビーリュック</span></label></li>
+          <li><input type="checkbox" id="pk-yz5"><label for="pk-yz5">おむつ・おしりふきのストック（最初の3〜4日分。あとは現地で） <span class="pill maybe">②ストック</span></label></li>
+          <li><input type="checkbox" id="pk-yz6"><label for="pk-yz6">いつもの粉ミルク（旅行全体の分。銘柄を変えない） <span class="pill maybe">②ストック</span></label></li>
+          <li><input type="checkbox" id="pk-yz7"><label for="pk-yz7">哺乳瓶 2〜3本、保温ボトル（タイガー）、液体ミルク（移動日）、ミルクの小分けケース <span class="pill maybe">防水トート</span></label></li>
+          <li><input type="checkbox" id="pk-yz8"><label for="pk-yz8">哺乳瓶の消毒（ミルトンなどの錠剤）、ボトル用ブラシ、小さい洗剤 <span class="pill maybe">②ストック</span></label></li>
+          <li><input type="checkbox" id="pk-yz9"><label for="pk-yz9">離乳食・おやつ、スプーン、食事用エプロン <span class="pill maybe">ベビーリュック</span></label></li>
+          <li><input type="checkbox" id="pk-yz10"><label for="pk-yz10">おしゃぶり＋ホルダー、お気に入りのおもちゃ 2〜3個 <span class="pill maybe">ベビーリュック</span></label></li>
+          <li><input type="checkbox" id="pk-yz11"><label for="pk-yz11">使い慣れた薬（熱・下痢）、体温計、保湿クリーム、爪切り <span class="pill maybe">ベビーリュック</span></label></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>機械</h4>
+        <ul class="check">
+          <li><input type="checkbox" id="pk-dv1"><label for="pk-dv1">iPhone、ワイヤレスイヤホン、Apple Watch（ジム用） <span class="pill maybe">ポーチ</span></label></li>
+          <li><input type="checkbox" id="pk-dv2"><label for="pk-dv2">iPad Pro、MacBook Pro（育休中なので社用 PC と社用 iPhone は置いていく） <span class="pill maybe">Ryoリュック</span></label></li>
+          <li><input type="checkbox" id="pk-dv3"><label for="pk-dv3">iPhone の充電ケーブル 2 セット、モバイルバッテリー 2 個（必ず機内に。預けは禁止） <span class="pill maybe">Ryoリュック</span></label></li>
+          <li><input type="checkbox" id="pk-dv4"><label for="pk-dv4">変換プラグ：C 型 ×3（欧州）、G 型 ×1（ドバイ） <span class="pill maybe">Ryoリュック</span></label></li>
+          <li><input type="checkbox" id="pk-dv5"><label for="pk-dv5">延長タップ 1 本（宿のコンセントが少ない） <span class="pill maybe">①服</span></label></li>
+          <li><input type="checkbox" id="pk-dv6"><label for="pk-dv6">AirTag 2 個（スーツケース①②に1個ずつ） <span class="pill maybe">①服</span></label></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>洗面用具・薬</h4>
+        <ul class="check">
+          <li><input type="checkbox" id="pk-ty1"><label for="pk-ty1">歯ブラシ、歯磨き粉、髭剃り、鼻毛カッター、糸ようじ、耳かき、洗顔フォーム <span class="pill maybe">①服</span></label></li>
+          <li><input type="checkbox" id="pk-ty2"><label for="pk-ty2">リップクリーム、ハンドクリーム（冬の欧州は乾燥する） <span class="pill maybe">①服</span></label></li>
+          <li><input type="checkbox" id="pk-ty3"><label for="pk-ty3">常備薬（抗生物質、痛み止め、風邪薬）。機内に入れる <span class="pill maybe">Ryoリュック</span></label></li>
+          <li><input type="checkbox" id="pk-ty4"><label for="pk-ty4">軽石（かかと用） <span class="pill maybe">①服</span></label></li>
+          <li><input type="checkbox" id="pk-ty5"><label for="pk-ty5">液体は 100ml 以下の容器に入れて透明な袋へ（機内用） <span class="pill maybe">Ryoリュック</span></label></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>ジム</h4>
+        <ul class="check">
+          <li><input type="checkbox" id="pk-gy1"><label for="pk-gy1">ジョギングシューズ、ジム用のウェア 1 組、小タオル <span class="pill maybe">②ストック</span></label></li>
+          <li><input type="checkbox" id="pk-gy2"><label for="pk-gy2">Anytime Fitness の会員キー（またはアプリ） <span class="pill maybe">ポーチ</span></label></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>旅の道具</h4>
+        <ul class="check">
+          <li><input type="checkbox" id="pk-tg1"><label for="pk-tg1">荷物スケール（Vueling の前夜に 25kg を確認） <span class="pill maybe">②ストック</span></label></li>
+          <li><input type="checkbox" id="pk-tg2"><label for="pk-tg2">ワイヤーロック（列車の荷物棚用）、リュック用の小さな鍵 <span class="pill maybe">②ストック</span></label></li>
+          <li><input type="checkbox" id="pk-tg3"><label for="pk-tg3">厚手の大型ゴミ袋 8 枚、ジップ袋（大小） <span class="pill maybe">②ストック</span></label></li>
+          <li><input type="checkbox" id="pk-tg4"><label for="pk-tg4">ワイン用の緩衝袋 2〜3 枚、折りたたみのボストンバッグ <span class="pill maybe">②ストック</span></label></li>
+          <li><input type="checkbox" id="pk-tg5"><label for="pk-tg5">洗濯セット：小分けの洗剤、洗濯ロープ、ハンガー、洗濯ネット <span class="pill maybe">②ストック</span></label></li>
+          <li><input type="checkbox" id="pk-tg6"><label for="pk-tg6">エコバッグ（欧州のスーパーは袋が有料）、ポケットティッシュ、除菌シート <span class="pill maybe">Somリュック</span></label></li>
+          <li><input type="checkbox" id="pk-tg7"><label for="pk-tg7">マイ箸とシェラカップ 1 つ（部屋で食べる日用。調理道具は持っていかない） <span class="pill maybe">②ストック</span></label></li>
+          <li><input type="checkbox" id="pk-tg8"><label for="pk-tg8">スマホのストラップ 2 本（スリ対策） <span class="pill maybe">Ryoリュック</span></label></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>今回は持っていかない</h4>
+        <p>釣り道具とライフジャケット、ゴルフのグローブ、ピックルボール、スピーカー、調理セット（メスティン、ガス缶、バーナーは飛行機に載せられない。宿にもキッチンがない）、ゆずぽん、背広・革靴・名刺・襟付きの上着、国際免許証、タイの交通系 IC カード、半ズボン、カオコー用の食材</p>
       </div>
     </div>
   </div>
@@ -4260,7 +4323,7 @@ html:lang(ja) .phr td:nth-child(3){font-weight:400;color:var(--muted);font-size:
   <span>公館の番号の出典：外務省「在外公館リスト」、タイ外務省「List of Royal Thai Embassy contact point」。</span>
   <details id="changelog" style="margin-top:6px">
     <summary style="cursor:pointer;font-weight:700;color:var(--ink)">変更履歴</summary>
-    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">10/25</td><td>日本語版からタイ語の併記（見出しの小さい字、会話の表のタイ語の列など）を外した。タイ語はタイ語版に</td></tr><tr><td class="d">10/25</td><td>デザインを3つから選べるように（右下のパレットのボタンを押すと開く）：Som（明るい紙＋各国の線画、標準）、Yuzuha（ポップ）、Ryo（ダーク）。URL に ?theme=som / yuzuha / ryo でも指定できる</td></tr><tr><td class="d">10/25</td><td>保険は Chubb とヒルトン・アメックス・プレミアムの2本に整理。困ったときの連絡ステップ（場面別）と連絡先一覧を追加</td></tr><tr><td class="d">10/25</td><td>宿6軒の予約票を反映（予約番号、時間、無料取消の期限、部屋）。アメックスの補償を規定で確認（持ち物の盗難は補償なし）。Anytime Fitness の節を追加</td></tr><tr><td class="d">10/25</td><td>保険の節を追加（Chubb の証券の内容、アメックスとの分担、請求のルール）</td></tr><tr><td class="d">10/25</td><td>荷物の構成と動かし方（場面ごとの対策）を追加。エミレーツの預け荷物と座席を eチケットで確認。持ち物・やることを更新。この変更履歴を追加</td></tr><tr><td class="d">10/18</td><td>各国の「予習の映画」を追加</td></tr><tr><td class="d">10/18</td><td>往路のドバイ乗継（3時間15分）を日程とルート図に追加</td></tr><tr><td class="d">10/18</td><td>言語の切り替えを画面の右下に固定（同じ場所のまま日本語・タイ語を切り替え）</td></tr><tr><td class="d">10/18</td><td>Google マップのお気に入りリスト（タイプ別、タイ語名つき）と、ホテル・主要な場所の地図リンクを追加。ルート図に帰路のドバイ17時間乗継</td></tr><tr><td class="d">10/18</td><td>パリの宿を Libertel Austerlitz に変更し、宿6軒を確定に</td></tr><tr><td class="d">10/18</td><td>GitHub 版を公開。iPhone 向けに文字を大きく、横長の表は横スクロールに。?lang=th でタイ語から開く</td></tr><tr><td class="d">10/17ごろ</td><td>全体の見直し（Yuzuha は旅行時に生後10か月、往路は01:05発、保険料を削除）。日本語・タイ語の2言語版に</td></tr><tr><td class="d">10/17ごろ</td><td>デモ・ストライキの日の動き方、スリ対策（場面別のシナリオ）、フランスのテーブルマナーのコラムを追加</td></tr><tr><td class="d">10/16ごろ</td><td>ディズニーランド・パリのチケット購入を反映。「ディズニーとフランス」、ヴェルサイユの入場時刻、日の出・日の入りの表を追加</td></tr><tr><td class="d">10/15</td><td>初版</td></tr></tbody></table></div>
+    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">10/25</td><td>持ち物チェックを、いつもの持ち物リストから今回の旅用に作り直し（入れるバッグの札つき）</td></tr><tr><td class="d">10/25</td><td>日本語版からタイ語の併記（見出しの小さい字、会話の表のタイ語の列など）を外した。タイ語はタイ語版に</td></tr><tr><td class="d">10/25</td><td>デザインを3つから選べるように（右下のパレットのボタンを押すと開く）：Som（明るい紙＋各国の線画、標準）、Yuzuha（ポップ）、Ryo（ダーク）。URL に ?theme=som / yuzuha / ryo でも指定できる</td></tr><tr><td class="d">10/25</td><td>保険は Chubb とヒルトン・アメックス・プレミアムの2本に整理。困ったときの連絡ステップ（場面別）と連絡先一覧を追加</td></tr><tr><td class="d">10/25</td><td>宿6軒の予約票を反映（予約番号、時間、無料取消の期限、部屋）。アメックスの補償を規定で確認（持ち物の盗難は補償なし）。Anytime Fitness の節を追加</td></tr><tr><td class="d">10/25</td><td>保険の節を追加（Chubb の証券の内容、アメックスとの分担、請求のルール）</td></tr><tr><td class="d">10/25</td><td>荷物の構成と動かし方（場面ごとの対策）を追加。エミレーツの預け荷物と座席を eチケットで確認。持ち物・やることを更新。この変更履歴を追加</td></tr><tr><td class="d">10/18</td><td>各国の「予習の映画」を追加</td></tr><tr><td class="d">10/18</td><td>往路のドバイ乗継（3時間15分）を日程とルート図に追加</td></tr><tr><td class="d">10/18</td><td>言語の切り替えを画面の右下に固定（同じ場所のまま日本語・タイ語を切り替え）</td></tr><tr><td class="d">10/18</td><td>Google マップのお気に入りリスト（タイプ別、タイ語名つき）と、ホテル・主要な場所の地図リンクを追加。ルート図に帰路のドバイ17時間乗継</td></tr><tr><td class="d">10/18</td><td>パリの宿を Libertel Austerlitz に変更し、宿6軒を確定に</td></tr><tr><td class="d">10/18</td><td>GitHub 版を公開。iPhone 向けに文字を大きく、横長の表は横スクロールに。?lang=th でタイ語から開く</td></tr><tr><td class="d">10/17ごろ</td><td>全体の見直し（Yuzuha は旅行時に生後10か月、往路は01:05発、保険料を削除）。日本語・タイ語の2言語版に</td></tr><tr><td class="d">10/17ごろ</td><td>デモ・ストライキの日の動き方、スリ対策（場面別のシナリオ）、フランスのテーブルマナーのコラムを追加</td></tr><tr><td class="d">10/16ごろ</td><td>ディズニーランド・パリのチケット購入を反映。「ディズニーとフランス」、ヴェルサイユの入場時刻、日の出・日の入りの表を追加</td></tr><tr><td class="d">10/15</td><td>初版</td></tr></tbody></table></div>
   </details>
 </footer>
 
@@ -7920,53 +7983,116 @@ html:lang(ja) .phr td:nth-child(3){font-weight:400;color:var(--muted);font-size:
 
   <div class="block" id="prep-pack">
     <h3>เช็กของที่ต้องเอาไป <small>Packing checklist</small></h3>
-    <p class="note">สิ่งที่ติ๊กไว้จะบันทึกในเครื่องนี้ (ไม่ได้แชร์กับคนอื่น)</p>
+    <p class="note">ปรับจากรายการของประจำให้เข้ากับทริปนี้ (ยุโรปหน้าหนาว Yuzuha 10 เดือน กระเป๋าเดินทาง 2 ใบ＋Orfeo＋กระเป๋ากันน้ำ＋เป้ 3 ใบ) ป้ายด้านขวาคือกระเป๋าที่ใส่ การติ๊กจะบันทึกไว้ในเครื่องนี้</p>
     <div class="grid2">
       <div class="card">
-        <h4>เอกสาร</h4>
+        <h4>การแบ่งกระเป๋า</h4>
         <ul class="check">
-          <li><input type="checkbox" id="pk1"><label for="pk1">พาสปอร์ต 4 เล่ม (Ryo, Som, Yuzuha ทั้งญี่ปุ่นและไทย)</label></li>
-          <li><input type="checkbox" id="pk2"><label for="pk2">วีซ่าเชงเก้นของ Som</label></li>
-          <li><input type="checkbox" id="pk3"><label for="pk3">ตั๋วอิเล็กทรอนิกส์ของเอมิเรตส์</label></li>
-          <li><input type="checkbox" id="pk4"><label for="pk4">กรมธรรม์ Chubb (ภาษาอังกฤษ)</label></li>
-          <li><input type="checkbox" id="pk5"><label for="pk5">การจองที่พักและรถไฟ (ในโฟลเดอร์ทริปบน iCloud)</label></li>
-          <li><input type="checkbox" id="pk6"><label for="pk6">สำเนาพาสปอร์ตและรูปถ่ายคนละ 2 ใบ</label></li>
+          <li><input type="checkbox" id="pk-bag1"><label for="pk-bag1">กระเป๋าเดินทาง ①: เสื้อผ้า ชุดนอน ชุดชั้นในของ 3 คน แยกใส่ถุงขยะใบใหญ่ทีละคน ของใช้ในห้องน้ำด้วย ขากลับห่อไวน์และของแตกง่ายด้วยเสื้อผ้าแล้วใส่ใบนี้ <span class="pill maybe">①เสื้อผ้า</span></label></li>
+          <li><input type="checkbox" id="pk-bag2"><label for="pk-bag2">กระเป๋าเดินทาง ②: ผ้าอ้อม ทิชชู่เปียก นมผงสำรอง ชุดซักผ้า ของไปฟิตเนส ใช้ไปแล้วที่ว่างใส่ของฝาก <span class="pill maybe">②ของสำรอง</span></label></li>
+          <li><input type="checkbox" id="pk-bag3"><label for="pk-bag3">เป้ Ryo (ถือขึ้นเครื่อง 7 กก.): iPad・คอม ที่ชาร์จ สำเนาเอกสาร เสื้อคลุมบนเครื่อง <span class="pill maybe">เป้ Ryo</span></label></li>
+          <li><input type="checkbox" id="pk-bag4"><label for="pk-bag4">เป้ซม (ถือขึ้นเครื่อง 7 กก.): ของใช้ส่วนตัวของซม เสื้อผ้าเปลี่ยนของ Yuzuha 1 ชุด ผ้าห่ม <span class="pill maybe">เป้ซม</span></label></li>
+          <li><input type="checkbox" id="pk-bag5"><label for="pk-bag5">เป้ของใช้เด็ก (55×38×22 ซม. 5 กก. ถามพี่ดอกบัวว่าถือขึ้นเครื่องได้ไหม) <span class="pill maybe">เป้ของใช้เด็ก</span></label></li>
+          <li><input type="checkbox" id="pk-bag6"><label for="pk-bag6">กระเป๋ากันน้ำ: ชุดนม (ขวดนม กระติกน้ำร้อน นมกล่อง นมผงแบ่งใส่) ที่จุดตรวจหยิบออกได้ทันที <span class="pill maybe">กระเป๋ากันน้ำ</span></label></li>
+          <li><input type="checkbox" id="pk-bag7"><label for="pk-bag7">กระเป๋า Montbell Dry Shoulder (ของมีค่าของ Ryo) และกระเป๋า agnès b. (ใช้กับสายล็อก) <span class="pill maybe">กระเป๋าคาดตัว</span></label></li>
+          <li><input type="checkbox" id="pk-bag8"><label for="pk-bag8">รถเข็น Orfeo＋ผ้าคลุมกันฝน＋ถุงคลุมเท้า เป้อุ้ม (มีผ้าคลุมกันหนาว) <span class="pill maybe">ใส่ไป</span></label></li>
         </ul>
       </div>
       <div class="card">
-        <h4>เงินและการสื่อสาร</h4>
+        <h4>ของมีค่า・เอกสาร</h4>
         <ul class="check">
-          <li><input type="checkbox" id="pk7"><label for="pk7">Hilton Amex Premium และบัตรเสริม</label></li>
-          <li><input type="checkbox" id="pk8"><label for="pk8">บัตร Wise (ยอดเงินยูโร)</label></li>
-          <li><input type="checkbox" id="pk9"><label for="pk9">เงินสดยูโรเล็กน้อย (ราว €200)</label></li>
-          <li><input type="checkbox" id="pk10"><label for="pk10">ติดตั้ง Saily eSIM ไว้</label></li>
-          <li><input type="checkbox" id="pk11"><label for="pk11">ปลั๊กแปลง (แบบ C, แบบ G) ที่ชาร์จ พาวเวอร์แบงก์</label></li>
+          <li><input type="checkbox" id="pk-doc1"><label for="pk-doc1">พาสปอร์ต 4 เล่ม (Ryo ญี่ปุ่น ซม ไทย Yuzuha ญี่ปุ่นและไทย) <span class="pill maybe">กระเป๋าคาดตัว</span></label></li>
+          <li><input type="checkbox" id="pk-doc2"><label for="pk-doc2">วีซ่าเชงเก้นของซม (ติดในพาสปอร์ต) <span class="pill maybe">กระเป๋าคาดตัว</span></label></li>
+          <li><input type="checkbox" id="pk-doc3"><label for="pk-doc3">e-ticket เอมิเรตส์ (CW5RYJ) ใบยืนยันที่พัก 7 ใบ ตั๋ว TGV・ดิสนีย์ (ในมือถือและสำเนา) <span class="pill maybe">เป้ Ryo</span></label></li>
+          <li><input type="checkbox" id="pk-doc4"><label for="pk-doc4">กรมธรรม์ Chubb (CTBTHIAB0006338) โน้ตเบอร์ติดต่อประกัน Amex <span class="pill maybe">เป้ Ryo</span></label></li>
+          <li><input type="checkbox" id="pk-doc5"><label for="pk-doc5">สำเนาพาสปอร์ตและรูปถ่ายคนละ 2 รูป (เผื่อหาย) <span class="pill maybe">เป้ Ryo</span></label></li>
+          <li><input type="checkbox" id="pk-doc6"><label for="pk-doc6">สมุดสุขภาพแม่และเด็กของ Yuzuha และประวัติการฉีดวัคซีน (ถ้ามีภาษาอังกฤษ) <span class="pill maybe">เป้ซม</span></label></li>
+          <li><input type="checkbox" id="pk-doc7"><label for="pk-doc7">กระเป๋าสตางค์＋กระเป๋าตาข่าย (ใส่เหรียญ) บัตร Hilton Amex Premium บัตรเสริม Wise <span class="pill maybe">กระเป๋าคาดตัว</span></label></li>
+          <li><input type="checkbox" id="pk-doc8"><label for="pk-doc8">เงินสดยูโรราว 200 ยูโร เงินบาทนิดหน่อยไว้นั่งแท็กซี่ขากลับ เงินเยนนิดหน่อย <span class="pill maybe">กระเป๋าคาดตัว</span></label></li>
+          <li><input type="checkbox" id="pk-doc9"><label for="pk-doc9">เข็มจิ้มซิม (ในกระเป๋าสตางค์) ติดตั้ง eSIM ของ Saily ก่อนออกเดินทาง <span class="pill maybe">กระเป๋าคาดตัว</span></label></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>เสื้อผ้า Ryo (ยุโรปหน้าหนาว 4–15℃)</h4>
+        <ul class="check">
+          <li><input type="checkbox" id="pk-rc1"><label for="pk-rc1">แจ็กเก็ตดาวน์ (ใส่ไป) หมวกไหมพรม ถุงมือ ผ้าพันคอ <span class="pill maybe">ใส่ไป</span></label></li>
+          <li><input type="checkbox" id="pk-rc2"><label for="pk-rc2">กางเกงจ็อกเกอร์ Patagonia หลายตัว (ไม่เอากางเกงขาสั้น) <span class="pill maybe">①เสื้อผ้า</span></label></li>
+          <li><input type="checkbox" id="pk-rc3"><label for="pk-rc3">เสื้อยืดหนาของยูนิโคล่ (ครึ่งหนึ่งของจำนวนคืน ซักแล้วใส่ซ้ำ) เสื้อและกางเกงใน AIRism หลายตัว <span class="pill maybe">①เสื้อผ้า</span></label></li>
+          <li><input type="checkbox" id="pk-rc4"><label for="pk-rc4">HEATTECH บนล่าง ถุงเท้าหนา <span class="pill maybe">①เสื้อผ้า</span></label></li>
+          <li><input type="checkbox" id="pk-rc5"><label for="pk-rc5">เสื้อเชิ้ตเรียบร้อย 1 ตัวสำหรับร้านอาหาร (บิสโทร มื้อค่ำ) <span class="pill maybe">①เสื้อผ้า</span></label></li>
+          <li><input type="checkbox" id="pk-rc6"><label for="pk-rc6">รองเท้าผ้าใบกันน้ำ (ถนนหินและฝน) <span class="pill maybe">ใส่ไป</span></label></li>
+          <li><input type="checkbox" id="pk-rc7"><label for="pk-rc7">แว่นตา・อุปกรณ์ปรับแว่น แว่นกันแดด＋แป้นรองจมูก หน้ากาก หมวกแก๊ป <span class="pill maybe">เป้ Ryo</span></label></li>
+          <li><input type="checkbox" id="pk-rc8"><label for="pk-rc8">ร่มพับ (Montbell) <span class="pill maybe">เป้ Ryo</span></label></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>ชุดอยู่ห้อง・ชุดบนเครื่อง</h4>
+        <ul class="check">
+          <li><input type="checkbox" id="pk-lw1"><label for="pk-lw1">เสื้อยืดอยู่ห้อง (UQ Dry) 4–5 ตัว กางเกงอยู่ห้อง 2 ตัว <span class="pill maybe">①เสื้อผ้า</span></label></li>
+          <li><input type="checkbox" id="pk-lw2"><label for="pk-lw2">เสื้อฮู้ด Patagonia (บนเครื่อง) <span class="pill maybe">เป้ Ryo</span></label></li>
+          <li><input type="checkbox" id="pk-lw3"><label for="pk-lw3">รองเท้าแตะกันน้ำ (ในห้องพักและอาบน้ำ) <span class="pill maybe">①เสื้อผ้า</span></label></li>
         </ul>
       </div>
       <div class="card">
         <h4>ของ Yuzuha</h4>
         <ul class="check">
-          <li><input type="checkbox" id="pk12"><label for="pk12">รถเข็นเด็ก (Cybex Orfeo) ผ้าคลุมกันฝน ถุงคลุมเท้า</label></li>
-          <li><input type="checkbox" id="pk13"><label for="pk13">เป้อุ้มเด็ก</label></li>
-          <li><input type="checkbox" id="pk14"><label for="pk14">ผ้าอ้อมและทิชชู่เปียก (3–4 วัน)</label></li>
-          <li><input type="checkbox" id="pk15"><label for="pk15">นมผงยี่ห้อประจำและขวดนม</label></li>
-          <li><input type="checkbox" id="pk16"><label for="pk16">ยาที่ใช้ประจำ (ลดไข้ แก้ท้องเสีย) และปรอทวัดไข้</label></li>
-          <li><input type="checkbox" id="pk17"><label for="pk17">ของเล่นชิ้นโปรด ขนมสำหรับบนเครื่อง</label></li>
+          <li><input type="checkbox" id="pk-yz1"><label for="pk-yz1">เสื้อผ้าเปลี่ยน: เสื้อด้านใน・บอดี้สูท วันละ 2–3 ชุด × 4 วัน (ซักแล้วใช้ซ้ำ) <span class="pill maybe">①เสื้อผ้า</span></label></li>
+          <li><input type="checkbox" id="pk-yz2"><label for="pk-yz2">ชุดจั๊มสูทกันหนาวหรือดาวน์ หมวก ถุงมือ ถุงเท้าหนาหลายคู่ <span class="pill maybe">ใส่ไป</span></label></li>
+          <li><input type="checkbox" id="pk-yz3"><label for="pk-yz3">ถุงนอนเด็ก ผ้าก๊อซ ผ้ากันเปื้อน <span class="pill maybe">①เสื้อผ้า</span></label></li>
+          <li><input type="checkbox" id="pk-yz4"><label for="pk-yz4">ผ้าอ้อม 6–8 ชิ้น ทิชชู่เปียก แผ่นรองเปลี่ยนผ้าอ้อม ถุงดับกลิ่น (บนเครื่อง・วันเดินทาง) <span class="pill maybe">เป้ของใช้เด็ก</span></label></li>
+          <li><input type="checkbox" id="pk-yz5"><label for="pk-yz5">ผ้าอ้อม・ทิชชู่เปียกสำรอง (3–4 วันแรก ที่เหลือซื้อที่นั่น) <span class="pill maybe">②ของสำรอง</span></label></li>
+          <li><input type="checkbox" id="pk-yz6"><label for="pk-yz6">นมผงยี่ห้อเดิม (พอสำหรับทั้งทริป ไม่เปลี่ยนยี่ห้อ) <span class="pill maybe">②ของสำรอง</span></label></li>
+          <li><input type="checkbox" id="pk-yz7"><label for="pk-yz7">ขวดนม 2–3 ขวด กระติกน้ำร้อน (Tiger) นมกล่อง (วันเดินทาง) กล่องแบ่งนมผง <span class="pill maybe">กระเป๋ากันน้ำ</span></label></li>
+          <li><input type="checkbox" id="pk-yz8"><label for="pk-yz8">ที่ฆ่าเชื้อขวดนม (เม็ด เช่น Milton) แปรงล้างขวด น้ำยาล้างขวดนมขวดเล็ก <span class="pill maybe">②ของสำรอง</span></label></li>
+          <li><input type="checkbox" id="pk-yz9"><label for="pk-yz9">อาหารเด็ก・ขนม ช้อน ผ้ากันเปื้อนตอนกิน <span class="pill maybe">เป้ของใช้เด็ก</span></label></li>
+          <li><input type="checkbox" id="pk-yz10"><label for="pk-yz10">จุกหลอก＋สายคล้อง ของเล่นที่ชอบ 2–3 ชิ้น <span class="pill maybe">เป้ของใช้เด็ก</span></label></li>
+          <li><input type="checkbox" id="pk-yz11"><label for="pk-yz11">ยาที่ใช้ประจำ (ไข้・ท้องเสีย) ปรอทวัดไข้ ครีมบำรุงผิว กรรไกรตัดเล็บ <span class="pill maybe">เป้ของใช้เด็ก</span></label></li>
         </ul>
       </div>
       <div class="card">
-        <h4>อุปกรณ์สำหรับกระเป๋า</h4>
+        <h4>อุปกรณ์อิเล็กทรอนิกส์</h4>
         <ul class="check">
-          <li><input type="checkbox" id="pk18"><label for="pk18">ตาชั่งกระเป๋า</label></li>
-          <li><input type="checkbox" id="pk19"><label for="pk19">สายล็อก (สำหรับบนรถไฟ)</label></li>
-          <li><input type="checkbox" id="pk20"><label for="pk20">AirTag 2 อัน</label></li>
-          <li><input type="checkbox" id="pk21"><label for="pk21">กระเป๋าบอสตันแบบพับได้</label></li>
-          <li><input type="checkbox" id="pk22"><label for="pk22">กุญแจเล็กสำหรับเป้</label></li>
-          <li><input type="checkbox" id="pk23"><label for="pk23">กระเป๋ามองเบล Dry Shoulder (ใส่ของมีค่าของ Ryo) สายคล้องมือถือ 2 เส้น</label></li>
-          <li><input type="checkbox" id="pk24"><label for="pk24">TNF BC Rolling Duffel 97 ลิตร (โหลดในสิทธิ์ของซม)</label></li>
-          <li><input type="checkbox" id="pk25"><label for="pk25">ถุงขยะใบใหญ่แบบหนา (45–70 ลิตร) ประมาณ 8 ใบ (แยกเสื้อผ้าและใส่ผ้าที่ต้องซัก)</label></li>
-          <li><input type="checkbox" id="pk26"><label for="pk26">เป้ใส่ของใช้เด็ก (ไม่เกิน 55×38×22 ซม. ไม่เกิน 5 กก.)</label></li>
+          <li><input type="checkbox" id="pk-dv1"><label for="pk-dv1">iPhone หูฟังไร้สาย Apple Watch (สำหรับฟิตเนส) <span class="pill maybe">กระเป๋าคาดตัว</span></label></li>
+          <li><input type="checkbox" id="pk-dv2"><label for="pk-dv2">iPad Pro MacBook Pro (ลาเลี้ยงลูกอยู่ คอมและ iPhone ของบริษัทไม่เอาไป) <span class="pill maybe">เป้ Ryo</span></label></li>
+          <li><input type="checkbox" id="pk-dv3"><label for="pk-dv3">สายชาร์จ iPhone 2 ชุด แบตสำรอง 2 ก้อน (ต้องถือขึ้นเครื่อง ห้ามโหลด) <span class="pill maybe">เป้ Ryo</span></label></li>
+          <li><input type="checkbox" id="pk-dv4"><label for="pk-dv4">ปลั๊กแปลง: แบบ C × 3 (ยุโรป) แบบ G × 1 (ดูไบ) <span class="pill maybe">เป้ Ryo</span></label></li>
+          <li><input type="checkbox" id="pk-dv5"><label for="pk-dv5">ปลั๊กพ่วง 1 อัน (ปลั๊กในที่พักมีน้อย) <span class="pill maybe">①เสื้อผ้า</span></label></li>
+          <li><input type="checkbox" id="pk-dv6"><label for="pk-dv6">AirTag 2 อัน (ใส่กระเป๋าเดินทาง ①② ใบละอัน) <span class="pill maybe">①เสื้อผ้า</span></label></li>
         </ul>
+      </div>
+      <div class="card">
+        <h4>ของใช้ในห้องน้ำ・ยา</h4>
+        <ul class="check">
+          <li><input type="checkbox" id="pk-ty1"><label for="pk-ty1">แปรงสีฟัน ยาสีฟัน มีดโกน ที่ตัดขนจมูก ไหมขัดฟัน ไม้แคะหู โฟมล้างหน้า <span class="pill maybe">①เสื้อผ้า</span></label></li>
+          <li><input type="checkbox" id="pk-ty2"><label for="pk-ty2">ลิปบาล์ม ครีมทามือ (ยุโรปหน้าหนาวอากาศแห้ง) <span class="pill maybe">①เสื้อผ้า</span></label></li>
+          <li><input type="checkbox" id="pk-ty3"><label for="pk-ty3">ยาประจำตัว (ยาปฏิชีวนะ ยาแก้ปวด ยาแก้หวัด) ถือขึ้นเครื่อง <span class="pill maybe">เป้ Ryo</span></label></li>
+          <li><input type="checkbox" id="pk-ty4"><label for="pk-ty4">หินขัดเท้า <span class="pill maybe">①เสื้อผ้า</span></label></li>
+          <li><input type="checkbox" id="pk-ty5"><label for="pk-ty5">ของเหลวใส่ภาชนะไม่เกิน 100 มล. ในถุงใส (สำหรับบนเครื่อง) <span class="pill maybe">เป้ Ryo</span></label></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>ฟิตเนส</h4>
+        <ul class="check">
+          <li><input type="checkbox" id="pk-gy1"><label for="pk-gy1">รองเท้าวิ่ง ชุดออกกำลังกาย 1 ชุด ผ้าเช็ดตัวผืนเล็ก <span class="pill maybe">②ของสำรอง</span></label></li>
+          <li><input type="checkbox" id="pk-gy2"><label for="pk-gy2">กุญแจสมาชิก Anytime Fitness (หรือแอป) <span class="pill maybe">กระเป๋าคาดตัว</span></label></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>อุปกรณ์เดินทาง</h4>
+        <ul class="check">
+          <li><input type="checkbox" id="pk-tg1"><label for="pk-tg1">ตาชั่งกระเป๋า (คืนก่อนบิน Vueling เช็ก 25 กก.) <span class="pill maybe">②ของสำรอง</span></label></li>
+          <li><input type="checkbox" id="pk-tg2"><label for="pk-tg2">สายล็อก (ชั้นวางกระเป๋าบนรถไฟ) กุญแจเล็กสำหรับเป้ <span class="pill maybe">②ของสำรอง</span></label></li>
+          <li><input type="checkbox" id="pk-tg3"><label for="pk-tg3">ถุงขยะใบใหญ่แบบหนา 8 ใบ ถุงซิปล็อก (ใหญ่・เล็ก) <span class="pill maybe">②ของสำรอง</span></label></li>
+          <li><input type="checkbox" id="pk-tg4"><label for="pk-tg4">ถุงกันกระแทกสำหรับไวน์ 2–3 ใบ กระเป๋าบอสตันพับได้ <span class="pill maybe">②ของสำรอง</span></label></li>
+          <li><input type="checkbox" id="pk-tg5"><label for="pk-tg5">ชุดซักผ้า: ผงซักฟอกแบ่งใส่ เชือกตากผ้า ไม้แขวน ถุงซักผ้า <span class="pill maybe">②ของสำรอง</span></label></li>
+          <li><input type="checkbox" id="pk-tg6"><label for="pk-tg6">ถุงผ้า (ซูเปอร์ในยุโรปถุงต้องเสียเงิน) ทิชชู่พกพา ทิชชู่ฆ่าเชื้อ <span class="pill maybe">เป้ซม</span></label></li>
+          <li><input type="checkbox" id="pk-tg7"><label for="pk-tg7">ตะเกียบส่วนตัวและถ้วยเซียร่า 1 ใบ (ไว้กินในห้อง ไม่เอาอุปกรณ์ทำอาหารไป) <span class="pill maybe">②ของสำรอง</span></label></li>
+          <li><input type="checkbox" id="pk-tg8"><label for="pk-tg8">สายคล้องมือถือ 2 เส้น (กันขโมย) <span class="pill maybe">เป้ Ryo</span></label></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>ไม่เอาไปทริปนี้</h4>
+        <p>อุปกรณ์ตกปลาและเสื้อชูชีพ ถุงมือกอล์ฟ ไม้พิกเกิลบอล ลำโพง ชุดทำอาหาร (เมสทิน แก๊สกระป๋อง เตาแก๊ส ขึ้นเครื่องไม่ได้ ที่พักก็ไม่มีครัว) ยูซุปง สูท・รองเท้าหนัง・นามบัตร・เสื้อมีปก ใบขับขี่สากล บัตรรถไฟฟ้าไทย กางเกงขาสั้น ของกินสำหรับเขาค้อ</p>
       </div>
     </div>
   </div>
@@ -8193,7 +8319,7 @@ html:lang(ja) .phr td:nth-child(3){font-weight:400;color:var(--muted);font-size:
   <span>ที่มาของเบอร์สถานทูต/กงสุล: "รายชื่อสถานทูตและสถานกงสุลในต่างประเทศ" ของกระทรวงการต่างประเทศญี่ปุ่น และ "List of Royal Thai Embassy contact point" ของกระทรวงการต่างประเทศไทย</span>
   <details id="changelog" style="margin-top:6px">
     <summary style="cursor:pointer;font-weight:700;color:var(--ink)">ประวัติการแก้ไข</summary>
-    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">25 ต.ค.</td><td>ฉบับภาษาญี่ปุ่นเอาภาษาไทยที่เขียนคู่กันออก (ตัวเล็กข้างหัวข้อ คอลัมน์ภาษาไทยในตารางบทสนทนา ฯลฯ) ภาษาไทยอยู่ในฉบับภาษาไทย</td></tr><tr><td class="d">25 ต.ค.</td><td>เลือกดีไซน์ได้ 3 แบบ (กดปุ่มจานสีมุมขวาล่าง): Som (กระดาษสีอ่อน＋ลายเส้นของแต่ละประเทศ ค่าเริ่มต้น) Yuzuha (สีสดใส) Ryo (สีเข้ม) หรือใส่ ?theme=som / yuzuha / ryo ในลิงก์ก็ได้</td></tr><tr><td class="d">25 ต.ค.</td><td>สรุปประกันเหลือ 2 ตัว คือ Chubb และ Hilton Amex Premium เพิ่มขั้นตอนติดต่อเมื่อเกิดเหตุ (แยกสถานการณ์) และรายชื่อเบอร์ติดต่อ</td></tr><tr><td class="d">25 ต.ค.</td><td>อัปเดตข้อมูลจากใบยืนยันโรงแรม 6 แห่ง (เลขที่จอง เวลา วันสุดท้ายที่ยกเลิกฟรี ห้อง) เช็กความคุ้มครอง Amex จากเงื่อนไข (ของติดตัวถูกขโมยไม่คุ้มครอง) เพิ่มหัวข้อ Anytime Fitness</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อประกันการเดินทาง (รายละเอียดกรมธรรม์ Chubb การแบ่งหน้าที่กับ Amex กฎการเคลม)</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อจัดกระเป๋าและการขนย้าย (วิธีรับมือแต่ละสถานการณ์) เช็กสัมภาระและที่นั่งเอมิเรตส์จาก e-ticket อัปเดตรายการของและสิ่งที่ต้องทำ เพิ่มประวัติการแก้ไขนี้</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่ม "หนังที่ควรดูก่อนไป" ของแต่ละประเทศ</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มการแวะเปลี่ยนเครื่องที่ดูไบขาไป (3 ชม. 15 นาที) ในกำหนดการและแผนที่เส้นทาง</td></tr><tr><td class="d">18 ต.ค.</td><td>ปุ่มเปลี่ยนภาษาอยู่มุมขวาล่างตลอด (สลับญี่ปุ่น/ไทยได้โดยไม่เลื่อนหน้า)</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มลิสต์สถานที่โปรดใน Google Maps (แยกประเภท มีชื่อภาษาไทย) และลิงก์แผนที่ของโรงแรมและสถานที่สำคัญ เพิ่มการแวะดูไบ 17 ชม. ขากลับในแผนที่</td></tr><tr><td class="d">18 ต.ค.</td><td>เปลี่ยนที่พักปารีสเป็น Libertel Austerlitz และยืนยันที่พักทั้ง 6 แห่ง</td></tr><tr><td class="d">18 ต.ค.</td><td>เปิดเวอร์ชัน GitHub ตัวอักษรใหญ่ขึ้นสำหรับ iPhone ตารางกว้างเลื่อนด้านข้างได้ เปิดเป็นภาษาไทยด้วย ?lang=th</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>ทบทวนทั้งเล่ม (Yuzuha อายุ 10 เดือนตอนเดินทาง ขาไปออก 01:05 ตัดค่าประกันออก) ทำเป็น 2 ภาษา ญี่ปุ่นและไทย</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>เพิ่มวิธีรับมือวันประท้วง/นัดหยุดงาน การป้องกันล้วงกระเป๋า (แยกตามสถานการณ์) และคอลัมน์มารยาทบนโต๊ะอาหารของฝรั่งเศส</td></tr><tr><td class="d">ราว 16 ต.ค.</td><td>อัปเดตว่าซื้อตั๋วดิสนีย์แลนด์ปารีสแล้ว เพิ่ม "ดิสนีย์กับฝรั่งเศส" เวลาเข้าแวร์ซาย และตารางเวลาพระอาทิตย์ขึ้น-ตก</td></tr><tr><td class="d">15 ต.ค.</td><td>เวอร์ชันแรก</td></tr></tbody></table></div>
+    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">25 ต.ค.</td><td>ทำรายการของที่ต้องเอาไปใหม่จากรายการประจำ ให้เข้ากับทริปนี้ (มีป้ายบอกกระเป๋าที่ใส่)</td></tr><tr><td class="d">25 ต.ค.</td><td>ฉบับภาษาญี่ปุ่นเอาภาษาไทยที่เขียนคู่กันออก (ตัวเล็กข้างหัวข้อ คอลัมน์ภาษาไทยในตารางบทสนทนา ฯลฯ) ภาษาไทยอยู่ในฉบับภาษาไทย</td></tr><tr><td class="d">25 ต.ค.</td><td>เลือกดีไซน์ได้ 3 แบบ (กดปุ่มจานสีมุมขวาล่าง): Som (กระดาษสีอ่อน＋ลายเส้นของแต่ละประเทศ ค่าเริ่มต้น) Yuzuha (สีสดใส) Ryo (สีเข้ม) หรือใส่ ?theme=som / yuzuha / ryo ในลิงก์ก็ได้</td></tr><tr><td class="d">25 ต.ค.</td><td>สรุปประกันเหลือ 2 ตัว คือ Chubb และ Hilton Amex Premium เพิ่มขั้นตอนติดต่อเมื่อเกิดเหตุ (แยกสถานการณ์) และรายชื่อเบอร์ติดต่อ</td></tr><tr><td class="d">25 ต.ค.</td><td>อัปเดตข้อมูลจากใบยืนยันโรงแรม 6 แห่ง (เลขที่จอง เวลา วันสุดท้ายที่ยกเลิกฟรี ห้อง) เช็กความคุ้มครอง Amex จากเงื่อนไข (ของติดตัวถูกขโมยไม่คุ้มครอง) เพิ่มหัวข้อ Anytime Fitness</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อประกันการเดินทาง (รายละเอียดกรมธรรม์ Chubb การแบ่งหน้าที่กับ Amex กฎการเคลม)</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อจัดกระเป๋าและการขนย้าย (วิธีรับมือแต่ละสถานการณ์) เช็กสัมภาระและที่นั่งเอมิเรตส์จาก e-ticket อัปเดตรายการของและสิ่งที่ต้องทำ เพิ่มประวัติการแก้ไขนี้</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่ม "หนังที่ควรดูก่อนไป" ของแต่ละประเทศ</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มการแวะเปลี่ยนเครื่องที่ดูไบขาไป (3 ชม. 15 นาที) ในกำหนดการและแผนที่เส้นทาง</td></tr><tr><td class="d">18 ต.ค.</td><td>ปุ่มเปลี่ยนภาษาอยู่มุมขวาล่างตลอด (สลับญี่ปุ่น/ไทยได้โดยไม่เลื่อนหน้า)</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มลิสต์สถานที่โปรดใน Google Maps (แยกประเภท มีชื่อภาษาไทย) และลิงก์แผนที่ของโรงแรมและสถานที่สำคัญ เพิ่มการแวะดูไบ 17 ชม. ขากลับในแผนที่</td></tr><tr><td class="d">18 ต.ค.</td><td>เปลี่ยนที่พักปารีสเป็น Libertel Austerlitz และยืนยันที่พักทั้ง 6 แห่ง</td></tr><tr><td class="d">18 ต.ค.</td><td>เปิดเวอร์ชัน GitHub ตัวอักษรใหญ่ขึ้นสำหรับ iPhone ตารางกว้างเลื่อนด้านข้างได้ เปิดเป็นภาษาไทยด้วย ?lang=th</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>ทบทวนทั้งเล่ม (Yuzuha อายุ 10 เดือนตอนเดินทาง ขาไปออก 01:05 ตัดค่าประกันออก) ทำเป็น 2 ภาษา ญี่ปุ่นและไทย</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>เพิ่มวิธีรับมือวันประท้วง/นัดหยุดงาน การป้องกันล้วงกระเป๋า (แยกตามสถานการณ์) และคอลัมน์มารยาทบนโต๊ะอาหารของฝรั่งเศส</td></tr><tr><td class="d">ราว 16 ต.ค.</td><td>อัปเดตว่าซื้อตั๋วดิสนีย์แลนด์ปารีสแล้ว เพิ่ม "ดิสนีย์กับฝรั่งเศส" เวลาเข้าแวร์ซาย และตารางเวลาพระอาทิตย์ขึ้น-ตก</td></tr><tr><td class="d">15 ต.ค.</td><td>เวอร์ชันแรก</td></tr></tbody></table></div>
   </details>
 </footer>
 
