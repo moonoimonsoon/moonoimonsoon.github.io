@@ -322,6 +322,15 @@ html[data-theme="yuzuha"] .cover h1 .hl{background:none;color:#E2493A}
 html[data-theme="som"] .themetoggle,html[data-theme="som"] .themepop{box-shadow:0 6px 20px rgba(120,90,40,.16);background:#FFFFFF}
 html[data-theme="yuzuha"] .themetoggle,html[data-theme="yuzuha"] .themepop{border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink)}
 html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
+
+/* Japanese edition: phrase tables have no Thai column (日本語 / 現地語 / 読み) */
+html:lang(ja) .phr td:nth-child(2){font-weight:700;color:var(--c1)}
+html:lang(ja) .phr td:nth-child(3){font-weight:400;color:var(--muted);font-size:13px}
+@media (max-width:640px){
+  html:lang(ja) table.phr td:nth-child(1){grid-column:1/-1;text-align:left}
+  html:lang(ja) table.phr td:nth-child(2){grid-column:1/-1;font-size:18px;text-align:left;color:var(--c1);padding-block:2px}
+  html:lang(ja) table.phr td:nth-child(3){grid-column:1/-1;font-size:13.5px}
+}
 </style>
 </head>
 <body>
@@ -335,7 +344,6 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
 <header class="cover">
   <div class="eyebrow">Our Own Guidebook · 2026.11.22 – 12.13</div>
   <h1>Ryo・Som・Yuzuhaの<br><span class="hl">ヨーロッパ21日間</span>ガイド</h1>
-  <div class="th">ไกด์บุ๊กยุโรป 21 วันของครอบครัวเรา</div>
   <div class="route" aria-label="ルート">
     <span class="stop"><span class="flag f-th"></span>Bangkok</span><span class="arrow">→</span>
     <span class="stop"><span class="flag f-nl"></span>Amsterdam</span><span class="arrow">→</span>
@@ -378,13 +386,12 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   <div class="ch-head">
     <div class="eyebrow">Chapter 0 · Introduction</div>
     <h2>はじめに <span class="local">この旅の全体像</span></h2>
-    <div class="th">ภาพรวมของทริป</div>
     <p class="lead">北のアムステルダムから南へ下り、地中海を渡ってイタリアを縦に進み、ローマからドバイ経由でバンコクへ帰る一筆書きです。移動は基本的に列車。座ったまま景色を見られて、ベビーカーごと乗れて、空港の待ち時間もないので、乳児連れにはいちばん楽な選択です。</p>
   </div>
   <div class="subnav"><a href="#plan-check">前提の確認リスト</a><a href="#plan-map">ルート図</a><a href="#plan-days">日程表</a><a href="#plan-book">予約一覧</a><a href="#plan-move">移動一覧</a><a href="#plan-border">入出国</a><a href="#plan-time">時差と日の長さ</a><a href="#plan-legend">この本の記号</a></div>
 
   <div class="block" id="plan-check">
-    <h3>前提の確認リスト <small>ข้อมูลที่ต้องยืนยัน</small></h3>
+    <h3>前提の確認リスト</h3>
     <p class="note">この本は、これまでの相談で決めたことと調べたことを前提に書いています。下の書類や画面を見せてもらえれば、前提を確かめて「確定」に書き換えます。上から順に大事です。</p>
     <div class="tbl">
     <table class="wide">
@@ -414,7 +421,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="plan-map">
-    <h3>ルート図 <small>แผนที่เส้นทาง</small></h3>
+    <h3>ルート図</h3>
     <p class="note">位置は緯度経度から描いた概略です。国別の詳しい地図と Google マップのリストは各章に追加していきます。</p>
     <div class="tbl" style="padding:8px">
     <svg viewBox="0 0 520 572" role="img" aria-label="アムステルダムからパリ、バルセロナ、ヴェネツィア、フィレンツェ、ローマへのルート概略図" style="width:100%;height:auto;display:block;max-width:520px;margin:0 auto">
@@ -463,7 +470,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="plan-days">
-    <h3>日程表 <small>กำหนดการ</small></h3>
+    <h3>日程表</h3>
     <p class="note">日付をタップすると、その日の詳しいページに飛びます。</p>
     <div class="tbl">
     <table class="wide">
@@ -497,7 +504,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="plan-book">
-    <h3>予約一覧 <small>สถานะการจอง</small></h3>
+    <h3>予約一覧</h3>
     <p class="note">金額は予算シートで管理しています（このページには載せません）。「要予約」が残っているものは、Somのビザが下りてパスポートが戻ってから順に取ります。</p>
     <div class="tbl">
     <table>
@@ -524,7 +531,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="plan-move">
-    <h3>移動一覧 <small>การเดินทางระหว่างเมือง</small></h3>
+    <h3>移動一覧</h3>
     <div class="tbl">
     <table class="wide">
       <thead><tr><th>日付</th><th>区間</th><th>便・列車</th><th>時刻</th><th>荷物と注意</th></tr></thead>
@@ -543,7 +550,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="plan-border">
-    <h3>入出国とパスポート <small>ตรวจคนเข้าเมือง</small></h3>
+    <h3>入出国とパスポート</h3>
     <div class="grid2">
       <div class="card">
         <h4>Yuzuhaのパスポートの使い分け</h4>
@@ -582,7 +589,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="plan-time">
-    <h3>時差と日の長さ <small>เวลาและพระอาทิตย์</small></h3>
+    <h3>時差と日の長さ</h3>
     <p class="note">時差は欧州が日本−8時間・タイ−6時間、ドバイが日本−5時間・タイ−3時間。欧州の夏時間は10/25に終わっているので、旅行中はずっと冬時間です。滞在中の日付の目安で、昼間はバンコクより3時間ほど短くなります。日の入りの30〜40分後には真っ暗です。</p>
     <div class="tbl">
     <table class="wide">
@@ -612,7 +619,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="plan-legend">
-    <h3>この本の記号 <small>สัญลักษณ์</small></h3>
+    <h3>この本の記号</h3>
     <div class="card">
       <ul>
         <li><span class="pill ok">確定</span> 予約済み　<span class="pill todo">要予約</span> これから予約　<span class="pill maybe">検討中</span> 当日の体力と天気で決める　<span class="pill ng">取消する</span></li>
@@ -630,13 +637,12 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   <div class="ch-head">
     <div class="eyebrow">Chapter 1 · Netherlands · 11/23 – 11/25</div>
     <h2>オランダ <span class="local">Nederland</span></h2>
-    <div class="th">เนเธอร์แลนด์</div>
     <p class="lead">国土の約4分の1が海面より低く、「世界は神が造ったが、オランダはオランダ人が造った」と言われる国。江戸時代の日本が交易を続けた唯一の西洋の国で、アユタヤ王朝のタイとも深い縁があります。旅の始まりは、時差ぼけを抜きながらゆっくりと。</p>
   </div>
   <div class="subnav"><a href="#nl-data">基本データ</a><a href="#nl-hist">歴史</a><a href="#nl-ties">日本・タイとの縁</a><a href="#ams">アムステルダム</a><a href="#nl-food">食べる・飲む</a><a href="#nl-film">予習の映画</a><a href="#nl-map">地図</a><a href="#nl-sos">緊急</a><a href="#nl-phr">会話</a></div>
 
   <div class="block" id="nl-data">
-    <h3>基本データ <small>ข้อมูลพื้นฐาน</small></h3>
+    <h3>基本データ</h3>
     <dl class="data">
       <div><dt>首都</dt><dd>アムステルダム（政府と王宮の執務はハーグ）</dd></div>
       <div><dt>言語</dt><dd>オランダ語。英語はほぼどこでも通じる</dd></div>
@@ -651,7 +657,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="nl-hist">
-    <h3>ざっくり歴史 <small>ประวัติศาสตร์ย่อ</small></h3>
+    <h3>ざっくり歴史</h3>
     <ol class="hist">
       <li><span class="y">1275</span><div>アムステル川をせき止めた「ダム」の上に町ができ、<b>Amstel + dam</b> がアムステルダムの名に。中心のダム広場がその場所</div></li>
       <li><span class="y">1581</span><div>スペイン（ハプスブルク家）からの独立を宣言。八十年戦争を経て1648年に正式に独立</div></li>
@@ -665,7 +671,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="nl-ties">
-    <h3>日本・タイとの縁 <small>ความสัมพันธ์กับญี่ปุ่นและไทย</small></h3>
+    <h3>日本・タイとの縁</h3>
     <div class="ties">
       <div class="tie">
         <h4><span class="flag f-jp"></span>日本とオランダ</h4>
@@ -828,7 +834,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
 
   <!-- food -->
   <div class="block" id="nl-food">
-    <h3>食べる・飲む <small>อาหารและเครื่องดื่ม</small></h3>
+    <h3>食べる・飲む</h3>
     <p class="note">1日の食費の使い方の例は「食事のシナリオ」へ：<a href="#meal-ams">アムステルダム</a></p>
     <div class="tbl">
     <table>
@@ -848,13 +854,13 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
 
   <!-- map -->
   <div class="block" id="nl-film">
-    <h3>予習の映画 <small>ดูหนังก่อนไป</small></h3>
+    <h3>予習の映画</h3>
     <p class="note">配信先は国と時期で変わるので、見る前に JustWatch で確認（Netflix・プライム・ビデオの追加課金なし枠を優先）。最小構成は『アンネの日記』→『マリー・アントワネット』→『メディチ』2話→『ローマの休日』。</p>
     <div class="tbl"><table class="wide"><thead><tr><th>作品</th><th>年</th><th>何が分かる</th><th>行く日</th><th>配信</th></tr></thead><tbody><tr><td class="big">アンネの日記</td><td class="num">1959</td><td>隠れ家の761日そのもの。11/24に行く「後ろの家」の間取りが頭に入る。長いので前半だけでも</td><td><a href="#d-1124">→</a></td><td class="muted">確認</td></tr><tr><td class="big">真珠の耳飾りの少女</td><td class="num">2003</td><td>フェルメールの時代、黄金時代のオランダの家の中と光。国立美術館のフェルメールの前で効く</td><td><a href="#d-1124">→</a></td><td class="muted">確認</td></tr></tbody></table></div>
   </div>
 
   <div class="block" id="nl-map">
-    <h3>地図とブックマーク <small>แผนที่</small></h3>
+    <h3>地図とブックマーク</h3>
     <div class="mapslot"><b>Google マップのリスト（オランダ）</b><span class="muted">Ryoの Google マップのお気に入りをタイプ別に。名前をタップすると Google マップで開きます（10/18時点）。</span><span><a class="pill ok" href="https://maps.app.goo.gl/3Wf8tfGg8R75RFMn9" target="_blank" rel="noopener" style="text-decoration:none">リストを Google マップで開く</a></span></div>
 <h4 style="margin-top:14px">見る・歩く</h4><div class="tbl"><table><thead><tr><th>場所</th><th>種類</th><th>地図</th></tr></thead><tbody>
 <tr><td class="big">アムステルダム国立美術館</td><td>美術館</td><td><a href="https://www.google.com/maps/search/?api=1&query=%E3%82%A2%E3%83%A0%E3%82%B9%E3%83%86%E3%83%AB%E3%83%80%E3%83%A0%E5%9B%BD%E7%AB%8B%E7%BE%8E%E8%A1%93%E9%A4%A8%20Amsterdam">開く</a></td></tr>
@@ -891,7 +897,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
 
   <!-- emergency -->
   <div class="block" id="nl-sos">
-    <h3>緊急連絡先 <small>เบอร์ฉุกเฉิน</small></h3>
+    <h3>緊急連絡先</h3>
     <div class="tbl">
     <table>
       <thead><tr><th>どこへ</th><th>番号</th><th>メモ</th></tr></thead>
@@ -910,19 +916,19 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
 
   <!-- phrases -->
   <div class="block" id="nl-phr">
-    <h3>基礎会話 <small>บทสนทนาพื้นฐาน</small></h3>
+    <h3>基礎会話</h3>
     <p class="note">英語でほぼ通じる国です。あいさつとお礼だけオランダ語にすると喜ばれます。読みは目安です。</p>
     <div class="tbl">
     <table class="phr">
-      <thead><tr><th>日本語</th><th>ไทย</th><th>オランダ語</th><th>読み</th><th>คำอ่าน</th></tr></thead>
+      <thead><tr><th>日本語</th><th>オランダ語</th><th>読み</th></tr></thead>
       <tbody>
-        <tr><td>こんにちは</td><td><span class="th">สวัสดี</span></td><td>Hallo / Goedemorgen</td><td>ハロー／フーデモルヘン（朝）</td><td><span class="th">ฮัลโล / ฮูเดอมอร์เคิน</span></td></tr>
-        <tr><td>ありがとう</td><td><span class="th">ขอบคุณ</span></td><td>Dank je wel</td><td>ダンキュヴェル</td><td><span class="th">ดังค์ เยอ เวล</span></td></tr>
-        <tr><td>すみません</td><td><span class="th">ขอโทษ</span></td><td>Pardon</td><td>パルドン</td><td><span class="th">ปาร์ดอน</span></td></tr>
-        <tr><td>お会計をお願いします</td><td><span class="th">เช็กบิลด้วย</span></td><td>Mag ik de rekening?</td><td>マッハ・イク・デ・レーケニング</td><td><span class="th">มัค อิก เดอ เรเคอนิง</span></td></tr>
-        <tr><td>味見してもいいですか</td><td><span class="th">ขอชิมได้ไหม</span></td><td>Mag ik even proeven?</td><td>マッハ・イク・エーヴェ・プルーヴェ</td><td><span class="th">มัค อิก เอเวอ ปรูเวอ</span></td></tr>
-        <tr><td>乾杯</td><td><span class="th">ชนแก้ว</span></td><td>Proost!</td><td>プロースト</td><td><span class="th">โปรสต์</span></td></tr>
-        <tr><td>助けて</td><td><span class="th">ช่วยด้วย</span></td><td>Help!</td><td>ヘルプ</td><td><span class="th">เฮ็ลป์</span></td></tr>
+        <tr><td>こんにちは</td><td>Hallo / Goedemorgen</td><td>ハロー／フーデモルヘン（朝）</td></tr>
+        <tr><td>ありがとう</td><td>Dank je wel</td><td>ダンキュヴェル</td></tr>
+        <tr><td>すみません</td><td>Pardon</td><td>パルドン</td></tr>
+        <tr><td>お会計をお願いします</td><td>Mag ik de rekening?</td><td>マッハ・イク・デ・レーケニング</td></tr>
+        <tr><td>味見してもいいですか</td><td>Mag ik even proeven?</td><td>マッハ・イク・エーヴェ・プルーヴェ</td></tr>
+        <tr><td>乾杯</td><td>Proost!</td><td>プロースト</td></tr>
+        <tr><td>助けて</td><td>Help!</td><td>ヘルプ</td></tr>
       </tbody>
     </table>
     </div>
@@ -935,13 +941,12 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   <div class="ch-head">
     <div class="eyebrow">Chapter 2 · France · 11/25 – 11/30</div>
     <h2>フランス <span class="local">France</span></h2>
-    <div class="th">ฝรั่งเศส</div>
     <p class="lead">旅でいちばん長い5泊の街。宿は5区の植物園のそば。カルチェ・ラタンとローマ時代のパリ（ルテティア）の跡が歩ける範囲です。朝は市場、昼は美術館、夕方は宿で休憩、夜は灯りの街。17世紀にはアユタヤのナーライ王の使節がヴェルサイユを訪ね、19世紀には日本の浮世絵がパリの画家たちを夢中にさせました。</p>
   </div>
   <div class="subnav"><a href="#fr-data">基本データ</a><a href="#fr-hist">歴史</a><a href="#fr-ties">日本・タイとの縁</a><a href="#paris">パリ</a><a href="#fr-food">食べる・飲む</a><a href="#fr-manners">テーブルマナー</a><a href="#fr-film">予習の映画</a><a href="#fr-map">地図</a><a href="#fr-sos">緊急</a><a href="#fr-phr">会話</a></div>
 
   <div class="block" id="fr-data">
-    <h3>基本データ <small>ข้อมูลพื้นฐาน</small></h3>
+    <h3>基本データ</h3>
     <dl class="data">
       <div><dt>首都</dt><dd>パリ（20の区がカタツムリ状に並ぶ）</dd></div>
       <div><dt>言語</dt><dd>フランス語。まず「Bonjour」から話し始めるのが礼儀</dd></div>
@@ -956,7 +961,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="fr-hist">
-    <h3>ざっくり歴史 <small>ประวัติศาสตร์ย่อ</small></h3>
+    <h3>ざっくり歴史</h3>
     <ol class="hist">
       <li><span class="y">前52年</span><div>パリシイ族の集落をローマが征服し、ルテティアと呼ぶ。宿の近くの<b>リュテス闘技場</b>がその名残</div></li>
       <li><span class="y">1163</span><div>ノートルダム大聖堂の建設が始まる。完成まで約180年</div></li>
@@ -973,7 +978,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="fr-ties">
-    <h3>日本・タイとの縁 <small>ความสัมพันธ์กับญี่ปุ่นและไทย</small></h3>
+    <h3>日本・タイとの縁</h3>
     <div class="ties">
       <div class="tie">
         <h4><span class="flag f-jp"></span>日本とフランス</h4>
@@ -1267,7 +1272,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
 
   <!-- food -->
   <div class="block" id="fr-food">
-    <h3>食べる・飲む <small>อาหารและเครื่องดื่ม</small></h3>
+    <h3>食べる・飲む</h3>
     <p class="note">1日の食費の使い方の例は「食事のシナリオ」へ：<a href="#meal-par">パリ</a></p>
     <p class="note">チーズとワインの詳しい話は「チーズとワイン」の章に。ここではパリで食べたいものを。</p>
     <div class="tbl">
@@ -1338,13 +1343,13 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
 
   <!-- map -->
   <div class="block" id="fr-film">
-    <h3>予習の映画 <small>ดูหนังก่อนไป</small></h3>
+    <h3>予習の映画</h3>
     <p class="note">配信先は国と時期で変わるので、見る前に JustWatch で確認（Netflix・プライム・ビデオの追加課金なし枠を優先）。最小構成は『アンネの日記』→『マリー・アントワネット』→『メディチ』2話→『ローマの休日』。</p>
     <div class="tbl"><table class="wide"><thead><tr><th>作品</th><th>年</th><th>何が分かる</th><th>行く日</th><th>配信</th></tr></thead><tbody><tr><td class="big">マリー・アントワネット（ソフィア・コッポラ）</td><td class="num">2006</td><td>ヴェルサイユで実際に撮影。11/27の鏡の間と庭園が「彼女の家」に見える</td><td><a href="#d-1127">→</a></td><td class="muted">確認</td></tr><tr><td class="big">レ・ミゼラブル</td><td class="num">2012</td><td>革命後のパリ、バリケードの時代。ミュージカル版が取っつきやすい</td><td><a href="#fr-hist">→</a></td><td class="muted">確認</td></tr><tr><td class="big">ノートルダムの鐘（ディズニー）</td><td class="num">1996</td><td>大聖堂の中世とユゴーの原作。Somと一緒に見やすい。「ディズニーとフランス」ともつながる</td><td><a href="#d-1125">→</a></td><td class="muted">確認</td></tr><tr><td class="big">ミッドナイト・イン・パリ</td><td class="num">2011</td><td>1920年代のパリ。ヘミングウェイの部屋が宿から歩ける距離にある</td><td><a href="#paris">→</a></td><td class="muted">確認</td></tr></tbody></table></div>
   </div>
 
   <div class="block" id="fr-map">
-    <h3>地図とブックマーク <small>แผนที่</small></h3>
+    <h3>地図とブックマーク</h3>
     <div class="mapslot"><b>Google マップのリスト（フランス）</b><span class="muted">Ryoの Google マップのお気に入りをタイプ別に。名前をタップすると Google マップで開きます（10/18時点）。</span><span><a class="pill ok" href="https://maps.app.goo.gl/ZbMT9GLskDPg2WKG7" target="_blank" rel="noopener" style="text-decoration:none">リストを Google マップで開く</a></span></div>
 <h4 style="margin-top:14px">見る・歩く</h4><div class="tbl"><table><thead><tr><th>場所</th><th>種類</th><th>地図</th></tr></thead><tbody>
 <tr><td class="big">ロダン美術館</td><td>彫刻美術館</td><td><a href="https://www.google.com/maps/search/?api=1&query=%E3%83%AD%E3%83%80%E3%83%B3%E7%BE%8E%E8%A1%93%E9%A4%A8%20Paris">開く</a></td></tr>
@@ -1453,7 +1458,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
 
   <!-- emergency -->
   <div class="block" id="fr-sos">
-    <h3>緊急連絡先 <small>เบอร์ฉุกเฉิน</small></h3>
+    <h3>緊急連絡先</h3>
     <div class="tbl">
     <table>
       <thead><tr><th>どこへ</th><th>番号</th><th>メモ</th></tr></thead>
@@ -1475,26 +1480,26 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
 
   <!-- phrases -->
   <div class="block" id="fr-phr">
-    <h3>基礎会話 <small>บทสนทนาพื้นฐาน</small></h3>
+    <h3>基礎会話</h3>
     <p class="note">Ryoの5年分のフランス語の出番です。お店に入るときの「Bonjour」と出るときの「Merci, au revoir」だけで、対応がまったく変わります。読みは目安です。</p>
     <div class="tbl">
     <table class="phr">
-      <thead><tr><th>日本語</th><th>ไทย</th><th>フランス語</th><th>読み</th><th>คำอ่าน</th></tr></thead>
+      <thead><tr><th>日本語</th><th>フランス語</th><th>読み</th></tr></thead>
       <tbody>
-        <tr><td>こんにちは／こんばんは</td><td><span class="th">สวัสดี</span></td><td>Bonjour / Bonsoir</td><td>ボンジュール／ボンソワール</td><td><span class="th">บงชูร์ / บงซัวร์</span></td></tr>
-        <tr><td>ありがとう</td><td><span class="th">ขอบคุณ</span></td><td>Merci (beaucoup)</td><td>メルスィ（ボークー）</td><td><span class="th">แมร์ซี (โบกู)</span></td></tr>
-        <tr><td>さようなら</td><td><span class="th">ลาก่อน</span></td><td>Au revoir</td><td>オ・ルヴォワール</td><td><span class="th">โอ เรอวัวร์</span></td></tr>
-        <tr><td>すみません（呼びかけ）</td><td><span class="th">ขอโทษนะ</span></td><td>Excusez-moi</td><td>エクスキュゼ・モワ</td><td><span class="th">เอ็กซ์กูเซ มัว</span></td></tr>
-        <tr><td>結構です</td><td><span class="th">ไม่เป็นไร ขอบคุณ</span></td><td>Non, merci</td><td>ノン・メルスィ</td><td><span class="th">นง แมร์ซี</span></td></tr>
-        <tr><td>お会計をお願いします</td><td><span class="th">เช็กบิลด้วย</span></td><td>L'addition, s'il vous plaît</td><td>ラディスィオン・スィル・ヴ・プレ</td><td><span class="th">ลาดิซียง ซิล วู แปล</span></td></tr>
-        <tr><td>水道水をください（無料）</td><td><span class="th">ขอน้ำเปล่า</span></td><td>Une carafe d'eau, s'il vous plaît</td><td>ユヌ・カラフ・ドー</td><td><span class="th">ยูน การาฟ โด</span></td></tr>
-        <tr><td>子ども用の椅子はありますか</td><td><span class="th">มีเก้าอี้เด็กไหม</span></td><td>Vous avez une chaise haute ?</td><td>ヴザヴェ・ユヌ・シェーズ・オート</td><td><span class="th">วูซาเว ยูน แชซ โอต</span></td></tr>
-        <tr><td>エレベーターはありますか</td><td><span class="th">มีลิฟต์ไหม</span></td><td>Il y a un ascenseur ?</td><td>イリヤ・アン・ナサンスール</td><td><span class="th">อีลียา อัง นาซองเซอร์</span></td></tr>
-        <tr><td>トイレはどこですか</td><td><span class="th">ห้องน้ำอยู่ไหน</span></td><td>Où sont les toilettes ?</td><td>ウ・ソン・レ・トワレット</td><td><span class="th">อู ซง เล ตัวแล็ต</span></td></tr>
-        <tr><td>これを100グラムください</td><td><span class="th">เอาอันนี้ 100 กรัม</span></td><td>Cent grammes de ça, s'il vous plaît</td><td>サン・グラム・ドゥ・サ</td><td><span class="th">ซอง กรัม เดอ ซา</span></td></tr>
-        <tr><td>真空パックにしてください</td><td><span class="th">ช่วยแพ็กสุญญากาศ</span></td><td>Sous vide, s'il vous plaît</td><td>ス・ヴィッド</td><td><span class="th">ซู วีด</span></td></tr>
-        <tr><td>いくらですか</td><td><span class="th">เท่าไหร่</span></td><td>C'est combien ?</td><td>セ・コンビアン</td><td><span class="th">เซ กงเบียง</span></td></tr>
-        <tr><td>助けて</td><td><span class="th">ช่วยด้วย</span></td><td>Au secours !</td><td>オ・スクール</td><td><span class="th">โอ สกูร์</span></td></tr>
+        <tr><td>こんにちは／こんばんは</td><td>Bonjour / Bonsoir</td><td>ボンジュール／ボンソワール</td></tr>
+        <tr><td>ありがとう</td><td>Merci (beaucoup)</td><td>メルスィ（ボークー）</td></tr>
+        <tr><td>さようなら</td><td>Au revoir</td><td>オ・ルヴォワール</td></tr>
+        <tr><td>すみません（呼びかけ）</td><td>Excusez-moi</td><td>エクスキュゼ・モワ</td></tr>
+        <tr><td>結構です</td><td>Non, merci</td><td>ノン・メルスィ</td></tr>
+        <tr><td>お会計をお願いします</td><td>L'addition, s'il vous plaît</td><td>ラディスィオン・スィル・ヴ・プレ</td></tr>
+        <tr><td>水道水をください（無料）</td><td>Une carafe d'eau, s'il vous plaît</td><td>ユヌ・カラフ・ドー</td></tr>
+        <tr><td>子ども用の椅子はありますか</td><td>Vous avez une chaise haute ?</td><td>ヴザヴェ・ユヌ・シェーズ・オート</td></tr>
+        <tr><td>エレベーターはありますか</td><td>Il y a un ascenseur ?</td><td>イリヤ・アン・ナサンスール</td></tr>
+        <tr><td>トイレはどこですか</td><td>Où sont les toilettes ?</td><td>ウ・ソン・レ・トワレット</td></tr>
+        <tr><td>これを100グラムください</td><td>Cent grammes de ça, s'il vous plaît</td><td>サン・グラム・ドゥ・サ</td></tr>
+        <tr><td>真空パックにしてください</td><td>Sous vide, s'il vous plaît</td><td>ス・ヴィッド</td></tr>
+        <tr><td>いくらですか</td><td>C'est combien ?</td><td>セ・コンビアン</td></tr>
+        <tr><td>助けて</td><td>Au secours !</td><td>オ・スクール</td></tr>
       </tbody>
     </table>
     </div>
@@ -1507,13 +1512,12 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   <div class="ch-head">
     <div class="eyebrow">Special · Disneyland Paris · 11/26 (Thu)</div>
     <h2>ディズニーランド・パリ攻略 <span class="local">Disneyland Paris</span></h2>
-    <div class="th">ดิสนีย์แลนด์ปารีส</div>
     <p class="lead">アメリカ、東京に続いて、Somの「主なディズニー制覇」がかかった1日。2026年3月に第2パークが「ディズニー・アドベンチャー・ワールド」に生まれ変わり、11月はクリスマスの季節。前半はお城のパーク、後半はアナ雪のパークの2パーク作戦です。Yuzuhaにとっては東京に続く2つ目のお城。同じ構図で写真を撮って並べよう。</p>
   </div>
   <div class="subnav"><a href="#dlp-basic">基本</a><a href="#dlp-day">1日の作戦</a><a href="#dlp-return">帰り道</a><a href="#dlp-only">パリにしかないもの</a><a href="#dlp-xmas">クリスマス</a><a href="#dlp-food">食事</a><a href="#dlp-shop">グッズ</a><a href="#dlp-letter">アレンデールの手紙</a><a href="#dlp-fr">フランスとの縁</a><a href="#dlp-baby">赤ちゃん連れ</a><a href="#dlp-check">チェックリスト</a><a href="#dlp-map">地図</a></div>
 
   <div class="block" id="dlp-basic">
-    <h3>基本情報 <small>ข้อมูลพื้นฐาน</small></h3>
+    <h3>基本情報</h3>
     <dl class="data">
       <div><dt>日にち</dt><dd>11/26（木）。平日で土日より空いている</dd></div>
       <div><dt>ディズニーランド・パーク</dt><dd>9:30〜<b>19:00</b>（この日は早じまい）</dd></div>
@@ -1529,7 +1533,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="dlp-day">
-    <h3>1日の作戦 <small>แผนทั้งวัน</small></h3>
+    <h3>1日の作戦</h3>
     <p class="note">お城のパークが19時で閉まるので、<b>前半＝お城、後半＝アナ雪</b>。乗り物は、乗れる人が限られるものほど朝に。Yuzuhaの昼寝はベビーカーで、その間は歩いて見る場所へ。</p>
     <ul class="tt">
       <li><span class="t">07:40</span><div>宿からタクシーでリヨン駅 → RER A（「Métro-Train-RER」1回券、大人€2.50。ディズニーまで市内と同額）</div></li>
@@ -1555,14 +1559,14 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="dlp-return">
-    <h3>帰り道（宿まで） <small>เส้นทางกลับโรงแรม</small></h3>
+    <h3>帰り道（宿まで）</h3>
     <p class="note">閉園の22時までいると、宿に着くのは23時ごろ。Yuzuhaの様子で、3つの帰り方から選ぶ。</p>
     <div class="tbl"><table><thead><tr><th>時刻</th><th>動き</th></tr></thead><tbody><tr><td class="d">21:40</td><td>夜のショーが終わったら、閉園を待たずにパークを出る（出口とホームが混む前に）</td></tr><tr><td class="d">21:50</td><td>Marne-la-Vallée–Chessy 駅へ徒歩5〜10分。エレベーターでホームへ</td></tr><tr><td class="d">22:00頃</td><td>RER A でパリ方面へ（夜も10〜15分おき。始発駅なので座れる）</td></tr><tr><td class="d">22:40頃</td><td>リヨン駅（Gare de Lyon）着。エレベーターで地上へ</td></tr><tr><td class="d">22:50頃</td><td>駅のタクシー乗り場から宿まで約5分、€10前後（橋を渡ればすぐ）</td></tr><tr><td class="d">23:00〜23:15</td><td>宿に着く</td></tr></tbody></table></div>
     <div class="grid2"><div class="card"><h4>早めに切り上げるなら</h4><ul><li>20:30に出れば、宿は21:45ごろ</li><li>19:00（お城のパークの閉園）に出れば、宿は20:15ごろ</li></ul></div><div class="card"><h4>タクシーで直行するなら</h4><ul><li>パークから宿まで約40〜50分、€80〜100</li><li>乗り換えなしで寝たYuzuhaを運べる。駅前の乗り場か配車アプリ（Uber、G7）で</li></ul></div><div class="card"><h4>夜を楽にする準備</h4><ul><li>帰りの電車の切符は朝のうちにアプリで買っておく（閉園後は券売機に行列）</li><li>Yuzuhaはパジャマに着替えさせてフットマフへ。宿でそのままベッドに</li><li>荷物は体の前に。混むのは閉園直後だけ</li><li>翌日のヴェルサイユは10時台の入場なので、朝はゆっくりでよい</li></ul></div></div>
   </div>
 
   <div class="block" id="dlp-only">
-    <h3>パリにしかないもの <small>มีที่ปารีสเท่านั้น</small></h3>
+    <h3>パリにしかないもの</h3>
     <p class="note">★は世界でパリだけ。それ以外も日本のディズニーにはありません。Yuzuhaの欄は身長75cm前後の想定。</p>
     <div class="tbl">
     <table class="wide">
@@ -1590,7 +1594,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="dlp-xmas">
-    <h3>クリスマスの季節 <small>ช่วงคริสต์มาส</small></h3>
+    <h3>クリスマスの季節</h3>
     <p class="note">「Disney's Enchanted Christmas」は 2026年11/7〜2027年1/6。11/26 はちょうどその中です。</p>
     <div class="grid2">
       <div class="card"><h4>お城のパーク</h4><ul>
@@ -1609,7 +1613,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="dlp-food">
-    <h3>食事 <small>อาหาร</small></h3>
+    <h3>食事</h3>
     <p class="note">テーブルサービスのレストランは公式アプリで予約（約2か月前から）。11/26 分はもう予約できるはず。高いけれど、パリにしかない体験なら夕食1回は奮発する価値あり。</p>
     <div class="tbl">
     <table class="wide">
@@ -1641,7 +1645,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="dlp-shop">
-    <h3>グッズとショップ <small>ของที่ระลึกและร้านค้า</small></h3>
+    <h3>グッズとショップ</h3>
     <p class="note">荷物になるので、買い物は夕方から。お城のパークの店は19時で閉まるので、そちらは17時ごろに。<b>World of Disney</b>（ディズニー・ヴィレッジ）はパークの外で遅くまで開いているので、最後の買い物に。</p>
     <p class="note">予習の動画：<a href="https://youtu.be/838fcz_KB8A">ディズニーランド・パリのグッズ紹介（YouTube）</a></p>
     <div class="tbl">
@@ -1676,7 +1680,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="dlp-letter">
-    <h3>アレンデールの手紙 <small>จดหมายจากอาเรนเดลล์</small></h3>
+    <h3>アレンデールの手紙</h3>
     <div class="column">
       <div class="lab">DON'T FORGET · 忘れずに</div>
       <h4>Envoyez un souvenir d'Arendelle !（アレンデールから思い出を送ろう）</h4>
@@ -1690,7 +1694,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="dlp-fr">
-    <h3>ディズニーとフランス <small>ดิสนีย์กับฝรั่งเศส</small></h3>
+    <h3>ディズニーとフランス</h3>
     <p class="note">ディズニーとフランスのつながりは意外に深い。ノルマンディー出身の一族が興した会社が、フランスの童話を世界に広め、テーマパークとしてフランスに「帰ってきた」。そう思って歩くと、パークの見え方が少し変わります。</p>
 
     <div class="card">
@@ -1751,7 +1755,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="dlp-baby">
-    <h3>赤ちゃん連れ <small>เที่ยวกับลูกน้อย</small></h3>
+    <h3>赤ちゃん連れ</h3>
     <div class="grid2">
       <div class="card"><h4>ベビーケアセンター</h4><ul>
         <li>お城のパーク：<b>Plaza Gardens の隣</b>（メインストリートの突き当たり付近）</li>
@@ -1776,7 +1780,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="dlp-check">
-    <h3>チェックリスト <small>เช็กลิสต์</small></h3>
+    <h3>チェックリスト</h3>
     <div class="grid2">
       <div class="card"><h4>出発前</h4>
         <ul class="check">
@@ -1801,7 +1805,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="dlp-map">
-    <h3>地図 <small>แผนที่</small></h3>
+    <h3>地図</h3>
     <div class="tbl">
     <table>
       <thead><tr><th>場所</th><th>メモ</th><th>地図</th></tr></thead>
@@ -1822,13 +1826,12 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   <div class="ch-head">
     <div class="eyebrow">Chapter 3 · Spain (Catalonia) · 11/30 – 12/3</div>
     <h2>スペイン <span class="local">España · Catalunya</span></h2>
-    <div class="th">สเปน · แคว้นกาตาลุญญา</div>
     <p class="lead">正確には、スペインの中の「カタルーニャ」。独自の言葉（カタルーニャ語）と旗を持ち、地中海の商業で栄えた誇り高い土地です。旅でいちばん暖かく、晴れの多い3日間。2026年はガウディの没後100年で、サグラダ・ファミリアの節目の年でもあります。</p>
   </div>
   <div class="subnav"><a href="#es-data">基本データ</a><a href="#es-hist">歴史</a><a href="#es-ties">日本・タイとの縁</a><a href="#bcn">バルセロナ</a><a href="#es-food">食べる・飲む</a><a href="#es-film">予習の映画</a><a href="#es-map">地図</a><a href="#es-sos">緊急</a><a href="#es-phr">会話</a></div>
 
   <div class="block" id="es-data">
-    <h3>基本データ <small>ข้อมูลพื้นฐาน</small></h3>
+    <h3>基本データ</h3>
     <dl class="data">
       <div><dt>首都</dt><dd>マドリード（カタルーニャの州都がバルセロナ）</dd></div>
       <div><dt>言語</dt><dd>カタルーニャ語とスペイン語。看板はカタルーニャ語が先</dd></div>
@@ -1843,7 +1846,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="es-hist">
-    <h3>ざっくり歴史 <small>ประวัติศาสตร์ย่อ</small></h3>
+    <h3>ざっくり歴史</h3>
     <ol class="hist">
       <li><span class="y">前15年頃</span><div>ローマの植民市バルキノができる。旧市街に城壁と神殿の柱が残る</div></li>
       <li><span class="y">801</span><div>イスラム勢力からフランク王国が奪回。スペインの他の地域より早くキリスト教圏に</div></li>
@@ -1858,7 +1861,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="es-ties">
-    <h3>日本・タイとの縁 <small>ความสัมพันธ์กับญี่ปุ่นและไทย</small></h3>
+    <h3>日本・タイとの縁</h3>
     <div class="ties">
       <div class="tie">
         <h4><span class="flag f-jp"></span>日本とスペイン</h4>
@@ -2019,7 +2022,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
 
   <!-- food -->
   <div class="block" id="es-food">
-    <h3>食べる・飲む <small>อาหารและเครื่องดื่ม</small></h3>
+    <h3>食べる・飲む</h3>
     <p class="note">1日の食費の使い方の例は「食事のシナリオ」へ：<a href="#meal-bcn">バルセロナ</a></p>
     <div class="tbl">
     <table>
@@ -2049,13 +2052,13 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
 
   <!-- map -->
   <div class="block" id="es-film">
-    <h3>予習の映画 <small>ดูหนังก่อนไป</small></h3>
+    <h3>予習の映画</h3>
     <p class="note">配信先は国と時期で変わるので、見る前に JustWatch で確認（Netflix・プライム・ビデオの追加課金なし枠を優先）。最小構成は『アンネの日記』→『マリー・アントワネット』→『メディチ』2話→『ローマの休日』。</p>
     <div class="tbl"><table class="wide"><thead><tr><th>作品</th><th>年</th><th>何が分かる</th><th>行く日</th><th>配信</th></tr></thead><tbody><tr><td class="big">大地と自由（ケン・ローチ）</td><td class="num">1995</td><td>スペイン内戦のバルセロナ。フランコ時代にカタルーニャ語が禁じられた背景が分かる</td><td><a href="#es-hist">→</a></td><td class="muted">確認</td></tr><tr><td class="big">ガウディ 無限の建築（ドキュメンタリー）</td><td class="num">—</td><td>サグラダ・ファミリアの造り方と、まだ続く建設。12/1の予習に</td><td><a href="#d-1201">→</a></td><td class="muted">確認</td></tr><tr><td class="big">それでも恋するバルセロナ</td><td class="num">2008</td><td>軽め。街の空気と建物がたくさん映る</td><td><a href="#bcn">→</a></td><td class="muted">確認</td></tr></tbody></table></div>
   </div>
 
   <div class="block" id="es-map">
-    <h3>地図とブックマーク <small>แผนที่</small></h3>
+    <h3>地図とブックマーク</h3>
     <div class="mapslot"><b>Google マップのリスト（スペイン）</b><span class="muted">Ryoの Google マップのお気に入りをタイプ別に。名前をタップすると Google マップで開きます（10/18時点）。</span><span><a class="pill ok" href="https://maps.app.goo.gl/S9mm4bpFMba3AXHG7" target="_blank" rel="noopener" style="text-decoration:none">リストを Google マップで開く</a></span></div>
 <h4 style="margin-top:14px">見る・歩く</h4><div class="tbl"><table><thead><tr><th>場所</th><th>種類</th><th>地図</th></tr></thead><tbody>
 <tr><td class="big">ラ・モニュメンタル</td><td>旧闘牛場</td><td><a href="https://www.google.com/maps/search/?api=1&query=%E3%83%A9%E3%83%BB%E3%83%A2%E3%83%8B%E3%83%A5%E3%83%A1%E3%83%B3%E3%82%BF%E3%83%AB%20Barcelona">開く</a></td></tr>
@@ -2105,7 +2108,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
 
   <!-- emergency -->
   <div class="block" id="es-sos">
-    <h3>緊急連絡先 <small>เบอร์ฉุกเฉิน</small></h3>
+    <h3>緊急連絡先</h3>
     <div class="tbl">
     <table>
       <thead><tr><th>どこへ</th><th>番号</th><th>メモ</th></tr></thead>
@@ -2123,24 +2126,24 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
 
   <!-- phrases -->
   <div class="block" id="es-phr">
-    <h3>基礎会話 <small>บทสนทนาพื้นฐาน</small></h3>
+    <h3>基礎会話</h3>
     <p class="note">スペイン語で十分通じます。あいさつとお礼だけカタルーニャ語にすると、とても喜ばれます。読みは目安です。</p>
     <div class="tbl">
     <table class="phr">
-      <thead><tr><th>日本語</th><th>ไทย</th><th>スペイン語（カタルーニャ語）</th><th>読み</th><th>คำอ่าน</th></tr></thead>
+      <thead><tr><th>日本語</th><th>スペイン語（カタルーニャ語）</th><th>読み</th></tr></thead>
       <tbody>
-        <tr><td>おはよう／こんにちは</td><td><span class="th">สวัสดี</span></td><td>Hola（Bon dia）</td><td>オラ（ボン・ディア）</td><td><span class="th">โอลา (บอน เดีย)</span></td></tr>
-        <tr><td>ありがとう</td><td><span class="th">ขอบคุณ</span></td><td>Gracias（Gràcies / Merci）</td><td>グラシアス（グラシエス）</td><td><span class="th">กราเซียส (กราซีเอส)</span></td></tr>
-        <tr><td>すみません</td><td><span class="th">ขอโทษ</span></td><td>Perdón</td><td>ペルドン</td><td><span class="th">แปร์ดอน</span></td></tr>
-        <tr><td>お会計をお願いします</td><td><span class="th">เช็กบิลด้วย</span></td><td>La cuenta, por favor</td><td>ラ・クエンタ・ポル・ファボール</td><td><span class="th">ลา กวนตา ปอร์ ฟาบอร์</span></td></tr>
-        <tr><td>いくらですか</td><td><span class="th">เท่าไหร่</span></td><td>¿Cuánto es?</td><td>クアント・エス</td><td><span class="th">กวันโต เอส</span></td></tr>
-        <tr><td>子ども用の椅子はありますか</td><td><span class="th">มีเก้าอี้เด็กไหม</span></td><td>¿Tiene una trona?</td><td>ティエネ・ウナ・トロナ</td><td><span class="th">เตียเน อูนา โตรนา</span></td></tr>
-        <tr><td>エレベーターはありますか</td><td><span class="th">มีลิฟต์ไหม</span></td><td>¿Hay ascensor?</td><td>アイ・アセンソール</td><td><span class="th">ไอ อาเซนซอร์</span></td></tr>
-        <tr><td>トイレはどこですか</td><td><span class="th">ห้องน้ำอยู่ไหน</span></td><td>¿Dónde está el baño?</td><td>ドンデ・エスタ・エル・バーニョ</td><td><span class="th">ดอนเด เอสตา เอล บาญโญ</span></td></tr>
-        <tr><td>水（ガスなし）をください</td><td><span class="th">ขอน้ำเปล่า</span></td><td>Agua sin gas, por favor</td><td>アグア・シン・ガス</td><td><span class="th">อากัว ซิน กัส</span></td></tr>
-        <tr><td>これを100グラムください</td><td><span class="th">เอาอันนี้ 100 กรัม</span></td><td>Cien gramos de esto</td><td>シエン・グラモス・デ・エスト</td><td><span class="th">เซียน กรามอส เด เอสโต</span></td></tr>
-        <tr><td>真空パックにしてください</td><td><span class="th">ช่วยแพ็กสุญญากาศ</span></td><td>Al vacío, por favor</td><td>アル・バシオ</td><td><span class="th">อัล บาซีโอ</span></td></tr>
-        <tr><td>助けて</td><td><span class="th">ช่วยด้วย</span></td><td>¡Ayuda!</td><td>アユダ</td><td><span class="th">อายูดา</span></td></tr>
+        <tr><td>おはよう／こんにちは</td><td>Hola（Bon dia）</td><td>オラ（ボン・ディア）</td></tr>
+        <tr><td>ありがとう</td><td>Gracias（Gràcies / Merci）</td><td>グラシアス（グラシエス）</td></tr>
+        <tr><td>すみません</td><td>Perdón</td><td>ペルドン</td></tr>
+        <tr><td>お会計をお願いします</td><td>La cuenta, por favor</td><td>ラ・クエンタ・ポル・ファボール</td></tr>
+        <tr><td>いくらですか</td><td>¿Cuánto es?</td><td>クアント・エス</td></tr>
+        <tr><td>子ども用の椅子はありますか</td><td>¿Tiene una trona?</td><td>ティエネ・ウナ・トロナ</td></tr>
+        <tr><td>エレベーターはありますか</td><td>¿Hay ascensor?</td><td>アイ・アセンソール</td></tr>
+        <tr><td>トイレはどこですか</td><td>¿Dónde está el baño?</td><td>ドンデ・エスタ・エル・バーニョ</td></tr>
+        <tr><td>水（ガスなし）をください</td><td>Agua sin gas, por favor</td><td>アグア・シン・ガス</td></tr>
+        <tr><td>これを100グラムください</td><td>Cien gramos de esto</td><td>シエン・グラモス・デ・エスト</td></tr>
+        <tr><td>真空パックにしてください</td><td>Al vacío, por favor</td><td>アル・バシオ</td></tr>
+        <tr><td>助けて</td><td>¡Ayuda!</td><td>アユダ</td></tr>
       </tbody>
     </table>
     </div>
@@ -2153,13 +2156,12 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   <div class="ch-head">
     <div class="eyebrow">Chapter 4 · Italy · 12/3 – 12/11</div>
     <h2>イタリア <span class="local">Italia</span></h2>
-    <div class="th">อิตาลี</div>
     <p class="lead">水の都ヴェネツィア、ルネサンスのフィレンツェ、永遠の都ローマ。3つの街は、千年続いた共和国、メディチ家、ローマ帝国と教皇という、まったく別の歴史の主役です。12/5〜8 は「無原罪の御宿り」の祝日を含む4連休。列車とレストランは早めに押さえます。</p>
   </div>
   <div class="subnav"><a href="#it-data">基本データ</a><a href="#it-hist">歴史</a><a href="#it-ties">日本・タイとの縁</a><a href="#vce">ヴェネツィア</a><a href="#flr">フィレンツェ</a><a href="#rom">ローマ</a><a href="#it-food">食べる・飲む</a><a href="#it-film">予習の映画</a><a href="#it-map">地図</a><a href="#it-sos">緊急</a><a href="#it-phr">会話</a></div>
 
   <div class="block" id="it-data">
-    <h3>基本データ <small>ข้อมูลพื้นฐาน</small></h3>
+    <h3>基本データ</h3>
     <dl class="data">
       <div><dt>首都</dt><dd>ローマ（中にバチカン市国）</dd></div>
       <div><dt>言語</dt><dd>イタリア語。観光地では英語も通じる</dd></div>
@@ -2174,7 +2176,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="it-hist">
-    <h3>ざっくり歴史 <small>ประวัติศาสตร์ย่อ</small></h3>
+    <h3>ざっくり歴史</h3>
     <ol class="hist">
       <li><span class="y">前753</span><div>ロムルスがローマを建国したという伝説の年。双子の兄弟を育てた狼が街のシンボル</div></li>
       <li><span class="y">前27</span><div>アウグストゥスが初代皇帝に。ローマ帝国の始まり</div></li>
@@ -2191,7 +2193,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="it-ties">
-    <h3>日本・タイとの縁 <small>ความสัมพันธ์กับญี่ปุ่นและไทย</small></h3>
+    <h3>日本・タイとの縁</h3>
     <div class="ties">
       <div class="tie">
         <h4><span class="flag f-jp"></span>日本とイタリア</h4>
@@ -2597,7 +2599,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
 
   <!-- food -->
   <div class="block" id="it-food">
-    <h3>食べる・飲む <small>อาหารและเครื่องดื่ม</small></h3>
+    <h3>食べる・飲む</h3>
     <p class="note">1日の食費の使い方の例は「食事のシナリオ」へ：<a href="#meal-vce">ヴェネツィア</a>・<a href="#meal-flr">フィレンツェ</a>・<a href="#meal-rom">ローマ</a></p>
     <div class="tbl">
     <table>
@@ -2630,13 +2632,13 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
 
   <!-- map -->
   <div class="block" id="it-film">
-    <h3>予習の映画 <small>ดูหนังก่อนไป</small></h3>
+    <h3>予習の映画</h3>
     <p class="note">配信先は国と時期で変わるので、見る前に JustWatch で確認（Netflix・プライム・ビデオの追加課金なし枠を優先）。最小構成は『アンネの日記』→『マリー・アントワネット』→『メディチ』2話→『ローマの休日』。</p>
     <div class="tbl"><table class="wide"><thead><tr><th>作品</th><th>年</th><th>何が分かる</th><th>行く日</th><th>配信</th></tr></thead><tbody><tr><td class="big">ヴェニスの商人（アル・パチーノ）</td><td class="num">2004</td><td>共和国時代の商人と法の街。リアルト周辺のロケが多い</td><td><a href="#vce">→</a></td><td class="muted">確認</td></tr><tr><td class="big">カサノバ（ヒース・レジャー）</td><td class="num">2005</td><td>ドゥカーレ宮殿の鉛の牢獄から脱獄した本人の話。12/4に「ここから逃げた」が分かる</td><td><a href="#d-1204">→</a></td><td class="muted">確認</td></tr><tr><td class="big">メディチ（ドラマ、Netflix）</td><td class="num">2016–</td><td>クーポラ建設から始まり、メディチ家が街を支配する過程。S1の最初の2話だけでもドゥオモの見え方が変わる</td><td><a href="#flr">→</a></td><td class="muted">確認</td></tr><tr><td class="big">眺めのいい部屋</td><td class="num">1985</td><td>20世紀初めの英国人観光客の目で見たフィレンツェ</td><td><a href="#flr">→</a></td><td class="muted">確認</td></tr><tr><td class="big">グラディエーター</td><td class="num">2000</td><td>コロッセオと帝政ローマ。脚色は多いが闘技場の使われ方はこれが一番</td><td><a href="#d-1210">→</a></td><td class="muted">確認</td></tr><tr><td class="big">ローマの休日</td><td class="num">1953</td><td>スペイン階段、トレビの泉、真実の口。12/10午後のコースがそのまま出る</td><td><a href="#d-1210">→</a></td><td class="muted">確認</td></tr><tr><td class="big">2人のローマ教皇（Netflix）</td><td class="num">2019</td><td>システィーナ礼拝堂とコンクラーベの仕組み。12/9のバチカンの予習に</td><td><a href="#d-1209">→</a></td><td class="muted">確認</td></tr></tbody></table></div>
   </div>
 
   <div class="block" id="it-map">
-    <h3>地図とブックマーク <small>แผนที่</small></h3>
+    <h3>地図とブックマーク</h3>
     <div class="mapslot"><b>Google マップのリスト（イタリア）</b><span class="muted">Ryoの Google マップのお気に入りをタイプ別に。名前をタップすると Google マップで開きます（10/18時点）。</span><span><a class="pill ok" href="https://maps.app.goo.gl/K256ahymrrsRqD2k9" target="_blank" rel="noopener" style="text-decoration:none">リストを Google マップで開く</a></span></div>
 <h4 style="margin-top:14px">見る・歩く</h4><div class="tbl"><table><thead><tr><th>場所</th><th>種類</th><th>地図</th></tr></thead><tbody>
 <tr><td class="big">メディチ家礼拝堂</td><td>歴史博物館</td><td><a href="https://www.google.com/maps/search/?api=1&query=%E3%83%A1%E3%83%87%E3%82%A3%E3%83%81%E5%AE%B6%E7%A4%BC%E6%8B%9D%E5%A0%82%20Firenze">開く</a></td></tr>
@@ -2687,7 +2689,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
 
   <!-- emergency -->
   <div class="block" id="it-sos">
-    <h3>緊急連絡先 <small>เบอร์ฉุกเฉิน</small></h3>
+    <h3>緊急連絡先</h3>
     <div class="tbl">
     <table>
       <thead><tr><th>どこへ</th><th>番号</th><th>メモ</th></tr></thead>
@@ -2708,26 +2710,26 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
 
   <!-- phrases -->
   <div class="block" id="it-phr">
-    <h3>基礎会話 <small>บทสนทนาพื้นฐาน</small></h3>
+    <h3>基礎会話</h3>
     <p class="note">イタリア語はローマ字読みに近いので、日本語話者にもタイ語話者にも発音しやすい言葉です。読みは目安です。</p>
     <div class="tbl">
     <table class="phr">
-      <thead><tr><th>日本語</th><th>ไทย</th><th>イタリア語</th><th>読み</th><th>คำอ่าน</th></tr></thead>
+      <thead><tr><th>日本語</th><th>イタリア語</th><th>読み</th></tr></thead>
       <tbody>
-        <tr><td>おはよう／こんにちは</td><td><span class="th">สวัสดี</span></td><td>Buongiorno</td><td>ボンジョルノ</td><td><span class="th">บวนจอร์โน</span></td></tr>
-        <tr><td>こんばんは</td><td><span class="th">สวัสดีตอนเย็น</span></td><td>Buonasera</td><td>ボナセーラ</td><td><span class="th">บัวนาเซรา</span></td></tr>
-        <tr><td>ありがとう</td><td><span class="th">ขอบคุณ</span></td><td>Grazie (mille)</td><td>グラツィエ（ミッレ）</td><td><span class="th">กราซีเอ (มิลเล)</span></td></tr>
-        <tr><td>すみません</td><td><span class="th">ขอโทษ</span></td><td>Scusi</td><td>スクーズィ</td><td><span class="th">สกูซี</span></td></tr>
-        <tr><td>お会計をお願いします</td><td><span class="th">เช็กบิลด้วย</span></td><td>Il conto, per favore</td><td>イル・コント・ペル・ファヴォーレ</td><td><span class="th">อิล คอนโต แปร์ ฟาโวเร</span></td></tr>
-        <tr><td>いくらですか</td><td><span class="th">เท่าไหร่</span></td><td>Quanto costa?</td><td>クアント・コスタ</td><td><span class="th">ควานโต คอสตา</span></td></tr>
-        <tr><td>子ども用の椅子はありますか</td><td><span class="th">มีเก้าอี้เด็กไหม</span></td><td>Avete un seggiolone?</td><td>アヴェーテ・ウン・セッジョローネ</td><td><span class="th">อาเวเต อุน เซจโจโลเน</span></td></tr>
-        <tr><td>エレベーターはありますか</td><td><span class="th">มีลิฟต์ไหม</span></td><td>C'è un ascensore?</td><td>チェ・ウン・アッシェンソーレ</td><td><span class="th">เช อุน อัชเชนโซเร</span></td></tr>
-        <tr><td>トイレはどこですか</td><td><span class="th">ห้องน้ำอยู่ไหน</span></td><td>Dov'è il bagno?</td><td>ドヴェ・イル・バーニョ</td><td><span class="th">โดเว อิล บานโญ</span></td></tr>
-        <tr><td>水（ガスなし／ガス入り）</td><td><span class="th">น้ำเปล่า / น้ำโซดา</span></td><td>Acqua naturale / frizzante</td><td>アックア・ナトゥラーレ／フリッツァンテ</td><td><span class="th">อักควา นาตูราเล / ฟริซซานเต</span></td></tr>
-        <tr><td>これを100グラムください</td><td><span class="th">เอาอันนี้ 100 กรัม</span></td><td>Un etto di questo</td><td>ウネット・ディ・クエスト</td><td><span class="th">อุน เน็ตโต ดี เควสโต</span></td></tr>
-        <tr><td>真空パックにしてください</td><td><span class="th">ช่วยแพ็กสุญญากาศ</span></td><td>Sottovuoto, per favore</td><td>ソットヴオート</td><td><span class="th">ซตโตวูโอโต</span></td></tr>
-        <tr><td>おいしい！</td><td><span class="th">อร่อยมาก</span></td><td>Buonissimo!</td><td>ボニッスィモ</td><td><span class="th">บัวนิสซีโม</span></td></tr>
-        <tr><td>助けて</td><td><span class="th">ช่วยด้วย</span></td><td>Aiuto!</td><td>アユート</td><td><span class="th">อายูโต</span></td></tr>
+        <tr><td>おはよう／こんにちは</td><td>Buongiorno</td><td>ボンジョルノ</td></tr>
+        <tr><td>こんばんは</td><td>Buonasera</td><td>ボナセーラ</td></tr>
+        <tr><td>ありがとう</td><td>Grazie (mille)</td><td>グラツィエ（ミッレ）</td></tr>
+        <tr><td>すみません</td><td>Scusi</td><td>スクーズィ</td></tr>
+        <tr><td>お会計をお願いします</td><td>Il conto, per favore</td><td>イル・コント・ペル・ファヴォーレ</td></tr>
+        <tr><td>いくらですか</td><td>Quanto costa?</td><td>クアント・コスタ</td></tr>
+        <tr><td>子ども用の椅子はありますか</td><td>Avete un seggiolone?</td><td>アヴェーテ・ウン・セッジョローネ</td></tr>
+        <tr><td>エレベーターはありますか</td><td>C'è un ascensore?</td><td>チェ・ウン・アッシェンソーレ</td></tr>
+        <tr><td>トイレはどこですか</td><td>Dov'è il bagno?</td><td>ドヴェ・イル・バーニョ</td></tr>
+        <tr><td>水（ガスなし／ガス入り）</td><td>Acqua naturale / frizzante</td><td>アックア・ナトゥラーレ／フリッツァンテ</td></tr>
+        <tr><td>これを100グラムください</td><td>Un etto di questo</td><td>ウネット・ディ・クエスト</td></tr>
+        <tr><td>真空パックにしてください</td><td>Sottovuoto, per favore</td><td>ソットヴオート</td></tr>
+        <tr><td>おいしい！</td><td>Buonissimo!</td><td>ボニッスィモ</td></tr>
+        <tr><td>助けて</td><td>Aiuto!</td><td>アユート</td></tr>
       </tbody>
     </table>
     </div>
@@ -2740,13 +2742,12 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   <div class="ch-head">
     <div class="eyebrow">Chapter 5 · United Arab Emirates · 12/12</div>
     <h2>ドバイ <span class="local">دبي · Dubai</span></h2>
-    <div class="th">ดูไบ</div>
     <p class="lead">帰り道の17時間の乗継。05:25 に着いて 22:30 に発ちます。100年前まで真珠採りの小さな港町だった街が、半世紀で超高層の都市になりました。基本は「よく寝て、疲れを取る日」です。</p>
   </div>
   <div class="subnav"><a href="#ae-data">基本データ</a><a href="#ae-hist">歴史</a><a href="#ae-ties">日本・タイとの縁</a><a href="#dxb-out">往路の乗継</a><a href="#dxb">乗継の1日</a><a href="#ae-sos">緊急</a><a href="#ae-phr">会話</a></div>
 
   <div class="block" id="ae-data">
-    <h3>基本データ <small>ข้อมูลพื้นฐาน</small></h3>
+    <h3>基本データ</h3>
     <dl class="data">
       <div><dt>国</dt><dd>7つの首長国の連邦。首都はアブダビ</dd></div>
       <div><dt>言語</dt><dd>アラビア語。英語がどこでも通じる</dd></div>
@@ -2761,7 +2762,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="ae-hist">
-    <h3>ざっくり歴史 <small>ประวัติศาสตร์ย่อ</small></h3>
+    <h3>ざっくり歴史</h3>
     <ol class="hist">
       <li><span class="y">1833</span><div>マクトゥーム家がクリーク（入り江）のほとりに定住。今も首長の家系</div></li>
       <li><span class="y">〜1930年代</span><div>真珠採りが主な産業。ところが日本の養殖真珠と世界恐慌で値崩れし、街は困窮した</div></li>
@@ -2773,7 +2774,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="ae-ties">
-    <h3>日本・タイとの縁 <small>ความสัมพันธ์กับญี่ปุ่นและไทย</small></h3>
+    <h3>日本・タイとの縁</h3>
     <div class="ties">
       <div class="tie">
         <h4><span class="flag f-jp"></span>日本とUAE</h4>
@@ -2793,7 +2794,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="dxb-out">
-    <h3>往路の乗継（11/23 早朝・3時間15分） <small>ต่อเครื่องขาไป</small></h3>
+    <h3>往路の乗継（11/23 早朝・3時間15分）</h3>
     <p class="note">バンコクを深夜に出て、ドバイに早朝に着き、同じターミナル3から EK147 でアムステルダムへ。入国はせず、乗継の通路を通るだけです。時刻は eチケットの表記で最終確認。</p>
     <ul class="tt">
       <li><span class="t">着陸</span><div>EK385 到着（ドバイ時間の早朝、タイより3時間遅い）。降りる前に Yuzuha のおむつを替えておくと、通路の混雑を避けられる</div></li>
@@ -2868,7 +2869,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="ae-sos">
-    <h3>緊急連絡先 <small>เบอร์ฉุกเฉิน</small></h3>
+    <h3>緊急連絡先</h3>
     <div class="tbl">
     <table>
       <thead><tr><th>どこへ</th><th>番号</th><th>メモ</th></tr></thead>
@@ -2884,16 +2885,16 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="ae-phr">
-    <h3>基礎会話 <small>บทสนทนาพื้นฐาน</small></h3>
+    <h3>基礎会話</h3>
     <p class="note">英語で困ることはありません。あいさつとお礼だけ。</p>
     <div class="tbl">
     <table class="phr">
-      <thead><tr><th>日本語</th><th>ไทย</th><th>アラビア語</th><th>読み</th><th>คำอ่าน</th></tr></thead>
+      <thead><tr><th>日本語</th><th>アラビア語</th><th>読み</th></tr></thead>
       <tbody>
-        <tr><td>こんにちは</td><td><span class="th">สวัสดี</span></td><td>Marhaba</td><td>マルハバ</td><td><span class="th">มัรฮะบา</span></td></tr>
-        <tr><td>こんにちは（丁寧）</td><td><span class="th">สวัสดี</span></td><td>As-salamu alaykum</td><td>アッサラーム・アライクム</td><td><span class="th">อัสสลามุอะลัยกุม</span></td></tr>
-        <tr><td>ありがとう</td><td><span class="th">ขอบคุณ</span></td><td>Shukran</td><td>シュクラン</td><td><span class="th">ชุกรัน</span></td></tr>
-        <tr><td>結構です</td><td><span class="th">ไม่ ขอบคุณ</span></td><td>La, shukran</td><td>ラー・シュクラン</td><td><span class="th">ลา ชุกรัน</span></td></tr>
+        <tr><td>こんにちは</td><td>Marhaba</td><td>マルハバ</td></tr>
+        <tr><td>こんにちは（丁寧）</td><td>As-salamu alaykum</td><td>アッサラーム・アライクム</td></tr>
+        <tr><td>ありがとう</td><td>Shukran</td><td>シュクラン</td></tr>
+        <tr><td>結構です</td><td>La, shukran</td><td>ラー・シュクラン</td></tr>
       </tbody>
     </table>
     </div>
@@ -2906,23 +2907,22 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   <div class="ch-head">
     <div class="eyebrow">Chapter 6 · Cheese &amp; Wine</div>
     <h2>チーズとワインの教科書 <span class="local">Fromage · Formaggio · Queso · Wijn</span></h2>
-    <div class="th">ตำราชีสและไวน์</div>
     <p class="lead">4か国を回る旅は、チーズとワインの産地を北から南へ縦断する旅でもあります。お店で迷わないための基礎と、国ごとに「これだけは」というものを。</p>
   </div>
   <div class="subnav"><a href="#cheese-basic">チーズの基礎</a><a href="#cheese-list">国別チーズ</a><a href="#cheese-buy">チーズの買い方</a><a href="#wine-basic">ワインの基礎</a><a href="#wine-list">国別ワイン</a><a href="#wine-order">注文の仕方</a><a href="#bring">持ち帰り</a></div>
 
   <div class="block" id="cheese-basic">
-    <h3>チーズの基礎 <small>พื้นฐานชีส</small></h3>
+    <h3>チーズの基礎</h3>
     <div class="grid2">
       <div class="card">
         <h4>乳の種類</h4>
         <div class="tbl"><table class="wide">
-          <thead><tr><th>日本語 · ไทย</th><th>蘭</th><th>仏</th><th>西</th><th>伊</th></tr></thead>
+          <thead><tr><th>日本語</th><th>蘭</th><th>仏</th><th>西</th><th>伊</th></tr></thead>
           <tbody>
-            <tr><td>牛 · <span class="th">วัว</span></td><td>koe</td><td>vache</td><td>vaca</td><td>vacca</td></tr>
-            <tr><td>山羊 · <span class="th">แพะ</span></td><td>geit</td><td>chèvre</td><td>cabra</td><td>capra</td></tr>
-            <tr><td>羊 · <span class="th">แกะ</span></td><td>schaap</td><td>brebis</td><td>oveja</td><td>pecora</td></tr>
-            <tr><td>水牛 · <span class="th">ควาย</span></td><td>buffel</td><td>bufflonne</td><td>búfala</td><td>bufala</td></tr>
+            <tr><td>牛 ·</td><td>koe</td><td>vache</td><td>vaca</td><td>vacca</td></tr>
+            <tr><td>山羊 ·</td><td>geit</td><td>chèvre</td><td>cabra</td><td>capra</td></tr>
+            <tr><td>羊 ·</td><td>schaap</td><td>brebis</td><td>oveja</td><td>pecora</td></tr>
+            <tr><td>水牛 ·</td><td>buffel</td><td>bufflonne</td><td>búfala</td><td>bufala</td></tr>
           </tbody>
         </table></div>
         <p class="muted" style="font-size:13px">牛はまろやか、山羊は酸味と独特の香り、羊はコクと塩気。イタリアの「ペコリーノ」は羊のチーズのこと。</p>
@@ -2952,7 +2952,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="cheese-list">
-    <h3>国別・これだけは食べたいチーズ <small>ชีสที่ต้องลอง</small></h3>
+    <h3>国別・これだけは食べたいチーズ</h3>
     <div class="tbl">
     <table class="wide">
       <thead><tr><th>国</th><th>名前</th><th>乳</th><th>どんなもの・豆知識</th></tr></thead>
@@ -2980,7 +2980,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="cheese-buy">
-    <h3>チーズの買い方 <small>วิธีซื้อชีส</small></h3>
+    <h3>チーズの買い方</h3>
     <div class="grid2">
       <div class="card">
         <h4>お店で</h4>
@@ -3003,22 +3003,22 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="wine-basic">
-    <h3>ワインの基礎 <small>พื้นฐานไวน์</small></h3>
+    <h3>ワインの基礎</h3>
     <div class="tbl">
     <table class="wide">
-      <thead><tr><th>日本語 · ไทย</th><th>オランダ</th><th>フランス</th><th>スペイン</th><th>イタリア</th></tr></thead>
+      <thead><tr><th>日本語</th><th>オランダ</th><th>フランス</th><th>スペイン</th><th>イタリア</th></tr></thead>
       <tbody>
-        <tr><td>赤 · <span class="th">แดง</span></td><td>rood</td><td>rouge</td><td>tinto</td><td>rosso</td></tr>
-        <tr><td>白 · <span class="th">ขาว</span></td><td>wit</td><td>blanc</td><td>blanco</td><td>bianco</td></tr>
-        <tr><td>ロゼ · <span class="th">โรเซ่</span></td><td>rosé</td><td>rosé</td><td>rosado</td><td>rosato</td></tr>
-        <tr><td>泡 · <span class="th">สปาร์กลิง</span></td><td>mousserend</td><td>mousseux／Champagne／Crémant</td><td>espumoso／Cava</td><td>spumante／Prosecco</td></tr>
-        <tr><td>辛口 · <span class="th">รสแห้ง</span></td><td>droog</td><td>sec／brut（泡）</td><td>seco／brut</td><td>secco／brut</td></tr>
-        <tr><td>甘口 · <span class="th">รสหวาน</span></td><td>zoet</td><td>doux／moelleux</td><td>dulce</td><td>dolce／passito</td></tr>
-        <tr><td>原産地の格付け · <span class="th">ระดับแหล่งผลิต</span></td><td>—（ほぼ造らない）</td><td>AOC（AOP）</td><td>DOCa ＞ DO</td><td>DOCG ＞ DOC ＞ IGT</td></tr>
-        <tr><td>ハウスワイン · <span class="th">ไวน์ประจำร้าน</span></td><td>huiswijn</td><td>vin de la maison</td><td>vino de la casa</td><td>vino della casa（sfuso）</td></tr>
-        <tr><td>グラス · <span class="th">แก้ว</span></td><td>een glas</td><td>un verre</td><td>una copa</td><td>un calice</td></tr>
-        <tr><td>ボトル · <span class="th">ขวด</span></td><td>een fles</td><td>une bouteille</td><td>una botella</td><td>una bottiglia</td></tr>
-        <tr><td>乾杯 · <span class="th">ชนแก้ว</span></td><td>Proost!</td><td>Santé !</td><td>¡Salud!</td><td>Cin cin! / Salute!</td></tr>
+        <tr><td>赤 ·</td><td>rood</td><td>rouge</td><td>tinto</td><td>rosso</td></tr>
+        <tr><td>白 ·</td><td>wit</td><td>blanc</td><td>blanco</td><td>bianco</td></tr>
+        <tr><td>ロゼ ·</td><td>rosé</td><td>rosé</td><td>rosado</td><td>rosato</td></tr>
+        <tr><td>泡 ·</td><td>mousserend</td><td>mousseux／Champagne／Crémant</td><td>espumoso／Cava</td><td>spumante／Prosecco</td></tr>
+        <tr><td>辛口 ·</td><td>droog</td><td>sec／brut（泡）</td><td>seco／brut</td><td>secco／brut</td></tr>
+        <tr><td>甘口 ·</td><td>zoet</td><td>doux／moelleux</td><td>dulce</td><td>dolce／passito</td></tr>
+        <tr><td>原産地の格付け ·</td><td>—（ほぼ造らない）</td><td>AOC（AOP）</td><td>DOCa ＞ DO</td><td>DOCG ＞ DOC ＞ IGT</td></tr>
+        <tr><td>ハウスワイン ·</td><td>huiswijn</td><td>vin de la maison</td><td>vino de la casa</td><td>vino della casa（sfuso）</td></tr>
+        <tr><td>グラス ·</td><td>een glas</td><td>un verre</td><td>una copa</td><td>un calice</td></tr>
+        <tr><td>ボトル ·</td><td>een fles</td><td>une bouteille</td><td>una botella</td><td>una bottiglia</td></tr>
+        <tr><td>乾杯 ·</td><td>Proost!</td><td>Santé !</td><td>¡Salud!</td><td>Cin cin! / Salute!</td></tr>
       </tbody>
     </table>
     </div>
@@ -3026,7 +3026,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="wine-list">
-    <h3>国別・旅の途中で飲みたいワイン <small>ไวน์ที่ควรลอง</small></h3>
+    <h3>国別・旅の途中で飲みたいワイン</h3>
     <div class="tbl">
     <table class="wide">
       <thead><tr><th>国</th><th>名前</th><th>どんなもの</th><th>合わせる</th></tr></thead>
@@ -3065,7 +3065,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="wine-order">
-    <h3>注文の仕方 <small>วิธีสั่ง</small></h3>
+    <h3>注文の仕方</h3>
     <div class="grid2">
       <div class="card">
         <h4>量の単位</h4>
@@ -3088,7 +3088,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="bring">
-    <h3>持ち帰りのルール <small>การนำกลับ</small></h3>
+    <h3>持ち帰りのルール</h3>
     <div class="grid2">
       <div class="card">
         <h4>機内には持ち込めない</h4>
@@ -3117,12 +3117,11 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   <div class="ch-head">
     <div class="eyebrow">Chapter 7 · Traveling with a Baby</div>
     <h2>赤ちゃん連れのコツ <span class="local">Yuzuhaと</span></h2>
-    <div class="th">เที่ยวกับลูกน้อย</div>
     <p class="lead">Yuzuhaのリズムを予定の真ん中に置くのが、いちばんの成功のコツです。この本の日程は「午前に1つ、昼寝、夕方に1つ」の形でできています。</p>
   </div>
 
   <div class="block">
-    <h3>1日のリズム <small>จังหวะของวัน</small></h3>
+    <h3>1日のリズム</h3>
     <div class="tbl">
     <table>
       <thead><tr><th>時間</th><th>過ごし方</th></tr></thead>
@@ -3137,16 +3136,16 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block">
-    <h3>現地で買えるもの <small>ซื้อที่นั่นได้</small></h3>
+    <h3>現地で買えるもの</h3>
     <div class="tbl">
     <table class="wide">
-      <thead><tr><th>日本語 · ไทย</th><th>オランダ</th><th>フランス</th><th>スペイン</th><th>イタリア</th></tr></thead>
+      <thead><tr><th>日本語</th><th>オランダ</th><th>フランス</th><th>スペイン</th><th>イタリア</th></tr></thead>
       <tbody>
-        <tr><td class="big">おむつ · <span class="th">ผ้าอ้อม</span></td><td>luiers</td><td>couches</td><td>pañales</td><td>pannolini</td></tr>
-        <tr><td class="big">おしりふき · <span class="th">ทิชชู่เปียก</span></td><td>billendoekjes</td><td>lingettes</td><td>toallitas</td><td>salviette</td></tr>
-        <tr><td class="big">ベビーフード · <span class="th">อาหารเด็ก</span></td><td>babyvoeding</td><td>petits pots</td><td>potitos</td><td>omogeneizzati</td></tr>
-        <tr><td class="big">粉ミルク · <span class="th">นมผง</span></td><td>flesvoeding</td><td>lait infantile</td><td>leche infantil</td><td>latte in polvere</td></tr>
-        <tr><td class="big">買う場所 · <span class="th">ที่ซื้อ</span></td><td>Kruidvat、Etos、スーパー</td><td>pharmacie、Monoprix</td><td>farmacia、スーパー</td><td>farmacia、スーパー</td></tr>
+        <tr><td class="big">おむつ ·</td><td>luiers</td><td>couches</td><td>pañales</td><td>pannolini</td></tr>
+        <tr><td class="big">おしりふき ·</td><td>billendoekjes</td><td>lingettes</td><td>toallitas</td><td>salviette</td></tr>
+        <tr><td class="big">ベビーフード ·</td><td>babyvoeding</td><td>petits pots</td><td>potitos</td><td>omogeneizzati</td></tr>
+        <tr><td class="big">粉ミルク ·</td><td>flesvoeding</td><td>lait infantile</td><td>leche infantil</td><td>latte in polvere</td></tr>
+        <tr><td class="big">買う場所 ·</td><td>Kruidvat、Etos、スーパー</td><td>pharmacie、Monoprix</td><td>farmacia、スーパー</td><td>farmacia、スーパー</td></tr>
       </tbody>
     </table>
     </div>
@@ -3154,7 +3153,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block">
-    <h3>おむつのサイズと、安心ブランド <small>ขนาดผ้าอ้อมและยี่ห้อที่ไว้ใจได้</small></h3>
+    <h3>おむつのサイズと、安心ブランド</h3>
     <p class="note">Yuzuhaは旅行中およそ8kgの見込み。欧州のおむつは袋に体重（kg）で書いてあるので、それで選べば大丈夫です。</p>
     <div class="grid2">
       <div class="card">
@@ -3177,13 +3176,13 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
     </div>
     <div class="tbl">
     <table class="wide">
-      <thead><tr><th>日本語 · ไทย</th><th>オランダ</th><th>フランス</th><th>スペイン</th><th>イタリア</th></tr></thead>
+      <thead><tr><th>日本語</th><th>オランダ</th><th>フランス</th><th>スペイン</th><th>イタリア</th></tr></thead>
       <tbody>
-        <tr><td class="big">おむつ · <span class="th">ผ้าอ้อม</span></td><td>Pampers、Kruidvat（自社品も評判がいい）</td><td>Pampers、Love &amp; Green</td><td><b>Dodot</b>（スペインでの Pampers の名前）</td><td>Pampers、Huggies</td></tr>
-        <tr><td class="big">ベビーフード · <span class="th">อาหารเด็ก</span></td><td><b>Olvarit</b>、Hipp</td><td><b>Blédina</b>、Hipp、Babybio</td><td>Hero Baby、Nestlé Naturnes、Hipp</td><td><b>Plasmon</b>、Mellin、Hipp</td></tr>
-        <tr><td class="big">粉ミルク · <span class="th">นมผง</span></td><td><b>Nutrilon</b></td><td>Gallia、Guigoz</td><td>Almirón、Nutribén</td><td>Mellin、Aptamil、Humana</td></tr>
-        <tr><td class="big">おしりふき・スキンケア · <span class="th">ทิชชู่เปียก ครีม</span></td><td>Zwitsal</td><td><b>Mustela</b>、Biolane</td><td>Dodot</td><td>Chicco</td></tr>
-        <tr><td class="big">赤ちゃん用のおやつ · <span class="th">ขนมเด็ก</span></td><td>Olvarit のスティック</td><td>Blédina のビスケット</td><td>Hero のビスケット</td><td><b>Plasmon のビスコッティ</b>（イタリア人なら誰でも知っている）</td></tr>
+        <tr><td class="big">おむつ ·</td><td>Pampers、Kruidvat（自社品も評判がいい）</td><td>Pampers、Love &amp; Green</td><td><b>Dodot</b>（スペインでの Pampers の名前）</td><td>Pampers、Huggies</td></tr>
+        <tr><td class="big">ベビーフード ·</td><td><b>Olvarit</b>、Hipp</td><td><b>Blédina</b>、Hipp、Babybio</td><td>Hero Baby、Nestlé Naturnes、Hipp</td><td><b>Plasmon</b>、Mellin、Hipp</td></tr>
+        <tr><td class="big">粉ミルク ·</td><td><b>Nutrilon</b></td><td>Gallia、Guigoz</td><td>Almirón、Nutribén</td><td>Mellin、Aptamil、Humana</td></tr>
+        <tr><td class="big">おしりふき・スキンケア ·</td><td>Zwitsal</td><td><b>Mustela</b>、Biolane</td><td>Dodot</td><td>Chicco</td></tr>
+        <tr><td class="big">赤ちゃん用のおやつ ·</td><td>Olvarit のスティック</td><td>Blédina のビスケット</td><td>Hero のビスケット</td><td><b>Plasmon のビスコッティ</b>（イタリア人なら誰でも知っている）</td></tr>
       </tbody>
     </table>
     </div>
@@ -3191,7 +3190,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block">
-    <h3>お湯の手に入れ方 <small>หาน้ำร้อน</small></h3>
+    <h3>お湯の手に入れ方</h3>
     <div class="grid2">
       <div class="card">
         <h4>どこでもらうか</h4>
@@ -3213,10 +3212,10 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
     </div>
     <div class="tbl">
     <table class="wide">
-      <thead><tr><th>日本語</th><th>ไทย</th><th>オランダ</th><th>フランス</th><th>スペイン</th><th>イタリア</th></tr></thead>
+      <thead><tr><th>日本語</th><th>オランダ</th><th>フランス</th><th>スペイン</th><th>イタリア</th></tr></thead>
       <tbody>
-        <tr><td>お湯をください（哺乳瓶用）</td><td><span class="th">ขอน้ำร้อนหน่อย (สำหรับขวดนม)</span></td><td>Mag ik heet water? (voor de fles)</td><td>De l'eau chaude, s'il vous plaît (pour le biberon)</td><td>Agua caliente, por favor (para el biberón)</td><td>Acqua calda, per favore (per il biberon)</td></tr>
-        <tr><td>温めてもらえますか</td><td><span class="th">ช่วยอุ่นให้หน่อยได้ไหม</span></td><td>Kunt u dit opwarmen?</td><td>Vous pouvez le réchauffer ?</td><td>¿Puede calentarlo?</td><td>Può scaldarlo?</td></tr>
+        <tr><td>お湯をください（哺乳瓶用）</td><td>Mag ik heet water? (voor de fles)</td><td>De l'eau chaude, s'il vous plaît (pour le biberon)</td><td>Agua caliente, por favor (para el biberón)</td><td>Acqua calda, per favore (per il biberon)</td></tr>
+        <tr><td>温めてもらえますか</td><td>Kunt u dit opwarmen?</td><td>Vous pouvez le réchauffer ?</td><td>¿Puede calentarlo?</td><td>Può scaldarlo?</td></tr>
       </tbody>
     </table>
     </div>
@@ -3224,7 +3223,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
 
 
   <div class="block">
-    <h3>移動のとき <small>ระหว่างเดินทาง</small></h3>
+    <h3>移動のとき</h3>
     <div class="grid2">
       <div class="card"><h4>飛行機</h4><ul><li>離着陸のときにミルクかおしゃぶりで耳抜き</li><li>エミレーツは乳児用のバシネット（壁付けのベッド）を席と一緒に依頼</li><li>ベビーカーは搭乗口まで使える（エミレーツ、Vueling とも）</li></ul></div>
       <div class="card"><h4>列車</h4><ul><li>TGV の2階は景色がよく揺れも少ない。おむつ替えの台は車両のトイレに</li><li>イタリアの高速列車は荷物置き場が車端。スーツケースが見える席を</li></ul></div>
@@ -3240,11 +3239,10 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   <div class="ch-head">
     <div class="eyebrow">Chapter 8 · Safety &amp; Emergency</div>
     <h2>緊急・安全 <span class="local">困ったときはこのページ</span></h2>
-    <div class="th">ฉุกเฉินและความปลอดภัย</div>
   </div>
 
   <div class="block">
-    <h3>緊急番号の一覧 <small>เบอร์ฉุกเฉินทั้งหมด</small></h3>
+    <h3>緊急番号の一覧</h3>
     <div class="tbl">
     <table class="wide">
       <thead><tr><th>国</th><th>緊急</th><th>日本の公館</th><th>タイの公館</th></tr></thead>
@@ -3261,7 +3259,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block">
-    <h3>病院に行く前に <small>ก่อนไปโรงพยาบาล</small></h3>
+    <h3>病院に行く前に</h3>
     <div class="grid2">
       <div class="card">
         <h4>手順</h4>
@@ -3284,7 +3282,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="safe-ins">
-    <h3>保険（Chubb とアメックスの2本立て） <small>ประกันการเดินทาง</small></h3>
+    <h3>保険（Chubb とアメックスの2本立て）</h3>
     <p class="note">病気・けがは両方から出ます。一方、<b>持ち物の盗難（現金、カメラ、バッグなど）はどちらも補償なし</b>。例外はアメックスで買った物とスマホ1台だけです。だからスリ対策がいちばんの保険です。</p>
     <div class="tbl">
     <table class="wide">
@@ -3353,7 +3351,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="safe-steps">
-    <h3>困ったときの連絡ステップ <small>ขั้นตอนเมื่อเกิดเหตุ</small></h3>
+    <h3>困ったときの連絡ステップ</h3>
     <p class="note">使う保険は <b>Chubb</b> と <b>ヒルトン・アメックス・プレミアム</b> の2つだけ。病気・けがは Chubb が先、お金の遅れや取消はアメックス、と覚えておく。Chubb の期間は 11/23〜12/13、アメックスは 10/31〜1/6（タイ滞在中も含む）。</p>
     <div class="tbl">
     <table class="wide">
@@ -3465,7 +3463,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block">
-    <h3>盗難・紛失のとき <small>ของหาย</small></h3>
+    <h3>盗難・紛失のとき</h3>
     <div class="grid2">
       <div class="card">
         <h4>パスポートをなくしたら</h4>
@@ -3497,7 +3495,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="safe-pick">
-    <h3>スリ対策 <small>ป้องกันล้วงกระเป๋า</small></h3>
+    <h3>スリ対策</h3>
     <p class="note">子連れは「両手がふさがる」「目が子どもに向く」「荷物が多い」ので、スリから見ると狙いやすい客です。暴力的な強盗はまれで、ほとんどは<b>気づかれずに抜く</b>か<b>一瞬で奪う</b>。だから「貴重品は一か所、体の前」と「役割分担」がいちばん効きます。</p>
 
     <div class="grid2">
@@ -3673,7 +3671,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="safe-demo">
-    <h3>デモ・ストライキの日の動き方 <small>วันที่มีการประท้วงหรือนัดหยุดงาน</small></h3>
+    <h3>デモ・ストライキの日の動き方</h3>
     <p class="alert red"><b>2026年秋の状況（10/18時点）</b>　フランスでは9月から高校生の抗議が全国に広がり、10/17は全国約55万人、パリ約11万人の規模に。パリでは催涙ガスや放火があり、メトロの駅が約25か所閉鎖された。ベルギーとイタリアでも若者の抗議が出ている。11/20には若者の国際ストライキの呼びかけ「N20」もある。<b>出発前（11/20ごろ）に最新の状況で見直す</b></p>
     <p class="note">デモはたいてい前日までにルートが発表されます。前の晩に確認して、その日はルートの周りを避ける。観光をやめる必要はほとんどありません。</p>
 
@@ -3749,7 +3747,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block">
-    <h3>パスポートの持ち方 <small>การเก็บพาสปอร์ต</small></h3>
+    <h3>パスポートの持ち方</h3>
     <div class="card">
       <ul>
         <li>原本を持ち歩く（Somのビザはパスポートに貼られている）</li>
@@ -3761,7 +3759,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block">
-    <h3>通信と電源 <small>สื่อสารและไฟฟ้า</small></h3>
+    <h3>通信と電源</h3>
     <div class="card">
       <ul>
         <li>データ通信は Saily の eSIM（欧州無制限）</li>
@@ -3779,12 +3777,11 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   <div class="ch-head">
     <div class="eyebrow">Chapter 9 · Luggage, Money &amp; To-do</div>
     <h2>荷物・お金・準備 <span class="local">出発前に読むページ</span></h2>
-    <div class="th">กระเป๋า เงิน และสิ่งที่ต้องเตรียม</div>
   </div>
   <div class="subnav"><a href="#prep-bags">荷物の構成</a><a href="#prep-gym">ジム</a><a href="#prep-weight">重量の作戦</a><a href="#prep-weather">天気と服装</a><a href="#prep-pack">持ち物</a><a href="#prep-money">お金</a><a href="#prep-gifts">お土産</a><a href="#prep-wise">Wise</a><a href="#prep-meals">食事のシナリオ</a><a href="#prep-todo">やること</a></div>
 
   <div class="block" id="prep-bags">
-    <h3>荷物の構成と動かし方 <small>จัดกระเป๋าและการขนย้าย</small></h3>
+    <h3>荷物の構成と動かし方</h3>
     <p class="note">大きい荷物は「4輪のスーツケース＋2輪で引けて背負えるダッフル」の2個。Ryoの両手と背中で1回で運べる形にして、荷物を置いて往復する場面をなくすのが狙いです。手荷物の数字はエミレーツのeチケット（10/25確認）どおり。</p>
     <div class="tbl">
     <table class="wide">
@@ -3888,7 +3885,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="prep-gym">
-    <h3>Anytime Fitness（旅先のジム） <small>ฟิตเนส Anytime</small></h3>
+    <h3>Anytime Fitness（旅先のジム）</h3>
     <p class="note">現実的に行けるのは、宿から歩けるバルセロナとフィレンツェ。どこも24時間だが、公式ページに有人の時間が出ていない。<b>初回は有人の時間に会員キーの登録が要ることが多い</b>ので、前もって電話かメールで確認しておく。ほかの国の店を使えるかは、自分のホーム店の規定も確認。</p>
     <div class="tbl">
     <table class="wide">
@@ -3916,7 +3913,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="prep-weight">
-    <h3>重量の作戦 <small>แผนน้ำหนักกระเป๋า</small></h3>
+    <h3>重量の作戦</h3>
     <p class="note">いちばん厳しいのは 12/3 の Vueling（1個25kg）。そこまでは軽いお土産、そのあとのイタリアで重いお土産、という順番にします。</p>
     <div class="tbl">
     <table class="wide">
@@ -3963,7 +3960,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="prep-weather">
-    <h3>天気と服装 <small>อากาศและการแต่งตัว</small></h3>
+    <h3>天気と服装</h3>
     <div class="tbl">
     <table class="wide">
       <thead><tr><th>街</th><th>最低〜最高</th><th>天気</th><th>東京でいうと</th></tr></thead>
@@ -3990,7 +3987,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="prep-pack">
-    <h3>持ち物チェック <small>รายการของ</small></h3>
+    <h3>持ち物チェック</h3>
     <p class="note">チェックはこの端末に保存されます（他の人とは共有されません）。</p>
     <div class="grid2">
       <div class="card">
@@ -4043,7 +4040,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="prep-money">
-    <h3>お金 <small>งบประมาณ</small></h3>
+    <h3>お金</h3>
     <p class="note">全体の金額は予算シート（europe_trip_budget.xlsx）で管理し、このページには載せません。現地ではユーロのまま入力します。</p>
     <div class="grid2">
       <div class="card">
@@ -4075,7 +4072,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
 
 
   <div class="block" id="prep-gifts">
-    <h3>お土産の作戦（義両親へ） <small>ของฝากคุณพ่อคุณแม่</small></h3>
+    <h3>お土産の作戦（義両親へ）</h3>
     <p class="note">食べ物は最後のイタリアでまとめ買い。パリでは日持ちする物と身につける物を中心に。行き先のバンコクは暑いので、溶ける物・傷む物は避けるか保冷して運ぶ。</p>
     <div class="tbl">
     <table class="wide">
@@ -4087,7 +4084,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="prep-wise">
-    <h3>Wise の使い方と、不正利用の予防 <small>การใช้ Wise อย่างปลอดภัย</small></h3>
+    <h3>Wise の使い方と、不正利用の予防</h3>
     <p class="note">カード情報を盗まれないようにするのには限界があります。なので「盗まれても使わせない」「止めても旅が続けられる」形にしておきます。</p>
     <div class="grid2">
       <div class="card">
@@ -4140,7 +4137,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="prep-meals">
-    <h3>1日の食事のシナリオ <small>ตัวอย่างการกินในหนึ่งวัน</small></h3>
+    <h3>1日の食事のシナリオ</h3>
     <p class="note">予算シートの「大人2人の1日の食費」に合わせた、ある1日の食べ方の例です。値段は2026年の現地の相場からの目安。Yuzuhaのベビーフードやおやつ（1日€3〜5）は別に見ています。豪華な日をつくったら、翌日を市場や部屋飯にして平均で合わせます。</p>
     <div class="grid2">
       <div class="card" id="meal-ams">
@@ -4182,7 +4179,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   </div>
 
   <div class="block" id="prep-todo">
-    <h3>やること <small>สิ่งที่ต้องทำ</small></h3>
+    <h3>やること</h3>
     <div class="grid2">
       <div class="card">
         <h4>10月中</h4>
@@ -4242,7 +4239,6 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   <div class="ch-head">
     <div class="eyebrow">Chapter 10 · Someday</div>
     <h2>次回の旅の案 <span class="local">スイスとコモ湖</span></h2>
-    <div class="th">ทริปหน้า · สวิตเซอร์แลนด์และทะเลสาบโคโม</div>
     <p class="lead">今回と重ならない土地で1週間。山の乗り物がすべて動く7月前後が向いています。チューリッヒに着いて、ミラノから帰る形です。</p>
   </div>
   <div class="block">
@@ -4264,7 +4260,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   <span>公館の番号の出典：外務省「在外公館リスト」、タイ外務省「List of Royal Thai Embassy contact point」。</span>
   <details id="changelog" style="margin-top:6px">
     <summary style="cursor:pointer;font-weight:700;color:var(--ink)">変更履歴</summary>
-    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">10/25</td><td>デザインを3つから選べるように（右下のパレットのボタンを押すと開く）：Som（明るい紙＋各国の線画、標準）、Yuzuha（ポップ）、Ryo（ダーク）。URL に ?theme=som / yuzuha / ryo でも指定できる</td></tr><tr><td class="d">10/25</td><td>保険は Chubb とヒルトン・アメックス・プレミアムの2本に整理。困ったときの連絡ステップ（場面別）と連絡先一覧を追加</td></tr><tr><td class="d">10/25</td><td>宿6軒の予約票を反映（予約番号、時間、無料取消の期限、部屋）。アメックスの補償を規定で確認（持ち物の盗難は補償なし）。Anytime Fitness の節を追加</td></tr><tr><td class="d">10/25</td><td>保険の節を追加（Chubb の証券の内容、アメックスとの分担、請求のルール）</td></tr><tr><td class="d">10/25</td><td>荷物の構成と動かし方（場面ごとの対策）を追加。エミレーツの預け荷物と座席を eチケットで確認。持ち物・やることを更新。この変更履歴を追加</td></tr><tr><td class="d">10/18</td><td>各国の「予習の映画」を追加</td></tr><tr><td class="d">10/18</td><td>往路のドバイ乗継（3時間15分）を日程とルート図に追加</td></tr><tr><td class="d">10/18</td><td>言語の切り替えを画面の右下に固定（同じ場所のまま日本語・タイ語を切り替え）</td></tr><tr><td class="d">10/18</td><td>Google マップのお気に入りリスト（タイプ別、タイ語名つき）と、ホテル・主要な場所の地図リンクを追加。ルート図に帰路のドバイ17時間乗継</td></tr><tr><td class="d">10/18</td><td>パリの宿を Libertel Austerlitz に変更し、宿6軒を確定に</td></tr><tr><td class="d">10/18</td><td>GitHub 版を公開。iPhone 向けに文字を大きく、横長の表は横スクロールに。?lang=th でタイ語から開く</td></tr><tr><td class="d">10/17ごろ</td><td>全体の見直し（Yuzuha は旅行時に生後10か月、往路は01:05発、保険料を削除）。日本語・タイ語の2言語版に</td></tr><tr><td class="d">10/17ごろ</td><td>デモ・ストライキの日の動き方、スリ対策（場面別のシナリオ）、フランスのテーブルマナーのコラムを追加</td></tr><tr><td class="d">10/16ごろ</td><td>ディズニーランド・パリのチケット購入を反映。「ディズニーとフランス」、ヴェルサイユの入場時刻、日の出・日の入りの表を追加</td></tr><tr><td class="d">10/15</td><td>初版</td></tr></tbody></table></div>
+    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">10/25</td><td>日本語版からタイ語の併記（見出しの小さい字、会話の表のタイ語の列など）を外した。タイ語はタイ語版に</td></tr><tr><td class="d">10/25</td><td>デザインを3つから選べるように（右下のパレットのボタンを押すと開く）：Som（明るい紙＋各国の線画、標準）、Yuzuha（ポップ）、Ryo（ダーク）。URL に ?theme=som / yuzuha / ryo でも指定できる</td></tr><tr><td class="d">10/25</td><td>保険は Chubb とヒルトン・アメックス・プレミアムの2本に整理。困ったときの連絡ステップ（場面別）と連絡先一覧を追加</td></tr><tr><td class="d">10/25</td><td>宿6軒の予約票を反映（予約番号、時間、無料取消の期限、部屋）。アメックスの補償を規定で確認（持ち物の盗難は補償なし）。Anytime Fitness の節を追加</td></tr><tr><td class="d">10/25</td><td>保険の節を追加（Chubb の証券の内容、アメックスとの分担、請求のルール）</td></tr><tr><td class="d">10/25</td><td>荷物の構成と動かし方（場面ごとの対策）を追加。エミレーツの預け荷物と座席を eチケットで確認。持ち物・やることを更新。この変更履歴を追加</td></tr><tr><td class="d">10/18</td><td>各国の「予習の映画」を追加</td></tr><tr><td class="d">10/18</td><td>往路のドバイ乗継（3時間15分）を日程とルート図に追加</td></tr><tr><td class="d">10/18</td><td>言語の切り替えを画面の右下に固定（同じ場所のまま日本語・タイ語を切り替え）</td></tr><tr><td class="d">10/18</td><td>Google マップのお気に入りリスト（タイプ別、タイ語名つき）と、ホテル・主要な場所の地図リンクを追加。ルート図に帰路のドバイ17時間乗継</td></tr><tr><td class="d">10/18</td><td>パリの宿を Libertel Austerlitz に変更し、宿6軒を確定に</td></tr><tr><td class="d">10/18</td><td>GitHub 版を公開。iPhone 向けに文字を大きく、横長の表は横スクロールに。?lang=th でタイ語から開く</td></tr><tr><td class="d">10/17ごろ</td><td>全体の見直し（Yuzuha は旅行時に生後10か月、往路は01:05発、保険料を削除）。日本語・タイ語の2言語版に</td></tr><tr><td class="d">10/17ごろ</td><td>デモ・ストライキの日の動き方、スリ対策（場面別のシナリオ）、フランスのテーブルマナーのコラムを追加</td></tr><tr><td class="d">10/16ごろ</td><td>ディズニーランド・パリのチケット購入を反映。「ディズニーとフランス」、ヴェルサイユの入場時刻、日の出・日の入りの表を追加</td></tr><tr><td class="d">10/15</td><td>初版</td></tr></tbody></table></div>
   </details>
 </footer>
 
@@ -8197,7 +8193,7 @@ html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
   <span>ที่มาของเบอร์สถานทูต/กงสุล: "รายชื่อสถานทูตและสถานกงสุลในต่างประเทศ" ของกระทรวงการต่างประเทศญี่ปุ่น และ "List of Royal Thai Embassy contact point" ของกระทรวงการต่างประเทศไทย</span>
   <details id="changelog" style="margin-top:6px">
     <summary style="cursor:pointer;font-weight:700;color:var(--ink)">ประวัติการแก้ไข</summary>
-    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">25 ต.ค.</td><td>เลือกดีไซน์ได้ 3 แบบ (กดปุ่มจานสีมุมขวาล่าง): Som (กระดาษสีอ่อน＋ลายเส้นของแต่ละประเทศ ค่าเริ่มต้น) Yuzuha (สีสดใส) Ryo (สีเข้ม) หรือใส่ ?theme=som / yuzuha / ryo ในลิงก์ก็ได้</td></tr><tr><td class="d">25 ต.ค.</td><td>สรุปประกันเหลือ 2 ตัว คือ Chubb และ Hilton Amex Premium เพิ่มขั้นตอนติดต่อเมื่อเกิดเหตุ (แยกสถานการณ์) และรายชื่อเบอร์ติดต่อ</td></tr><tr><td class="d">25 ต.ค.</td><td>อัปเดตข้อมูลจากใบยืนยันโรงแรม 6 แห่ง (เลขที่จอง เวลา วันสุดท้ายที่ยกเลิกฟรี ห้อง) เช็กความคุ้มครอง Amex จากเงื่อนไข (ของติดตัวถูกขโมยไม่คุ้มครอง) เพิ่มหัวข้อ Anytime Fitness</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อประกันการเดินทาง (รายละเอียดกรมธรรม์ Chubb การแบ่งหน้าที่กับ Amex กฎการเคลม)</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อจัดกระเป๋าและการขนย้าย (วิธีรับมือแต่ละสถานการณ์) เช็กสัมภาระและที่นั่งเอมิเรตส์จาก e-ticket อัปเดตรายการของและสิ่งที่ต้องทำ เพิ่มประวัติการแก้ไขนี้</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่ม "หนังที่ควรดูก่อนไป" ของแต่ละประเทศ</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มการแวะเปลี่ยนเครื่องที่ดูไบขาไป (3 ชม. 15 นาที) ในกำหนดการและแผนที่เส้นทาง</td></tr><tr><td class="d">18 ต.ค.</td><td>ปุ่มเปลี่ยนภาษาอยู่มุมขวาล่างตลอด (สลับญี่ปุ่น/ไทยได้โดยไม่เลื่อนหน้า)</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มลิสต์สถานที่โปรดใน Google Maps (แยกประเภท มีชื่อภาษาไทย) และลิงก์แผนที่ของโรงแรมและสถานที่สำคัญ เพิ่มการแวะดูไบ 17 ชม. ขากลับในแผนที่</td></tr><tr><td class="d">18 ต.ค.</td><td>เปลี่ยนที่พักปารีสเป็น Libertel Austerlitz และยืนยันที่พักทั้ง 6 แห่ง</td></tr><tr><td class="d">18 ต.ค.</td><td>เปิดเวอร์ชัน GitHub ตัวอักษรใหญ่ขึ้นสำหรับ iPhone ตารางกว้างเลื่อนด้านข้างได้ เปิดเป็นภาษาไทยด้วย ?lang=th</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>ทบทวนทั้งเล่ม (Yuzuha อายุ 10 เดือนตอนเดินทาง ขาไปออก 01:05 ตัดค่าประกันออก) ทำเป็น 2 ภาษา ญี่ปุ่นและไทย</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>เพิ่มวิธีรับมือวันประท้วง/นัดหยุดงาน การป้องกันล้วงกระเป๋า (แยกตามสถานการณ์) และคอลัมน์มารยาทบนโต๊ะอาหารของฝรั่งเศส</td></tr><tr><td class="d">ราว 16 ต.ค.</td><td>อัปเดตว่าซื้อตั๋วดิสนีย์แลนด์ปารีสแล้ว เพิ่ม "ดิสนีย์กับฝรั่งเศส" เวลาเข้าแวร์ซาย และตารางเวลาพระอาทิตย์ขึ้น-ตก</td></tr><tr><td class="d">15 ต.ค.</td><td>เวอร์ชันแรก</td></tr></tbody></table></div>
+    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">25 ต.ค.</td><td>ฉบับภาษาญี่ปุ่นเอาภาษาไทยที่เขียนคู่กันออก (ตัวเล็กข้างหัวข้อ คอลัมน์ภาษาไทยในตารางบทสนทนา ฯลฯ) ภาษาไทยอยู่ในฉบับภาษาไทย</td></tr><tr><td class="d">25 ต.ค.</td><td>เลือกดีไซน์ได้ 3 แบบ (กดปุ่มจานสีมุมขวาล่าง): Som (กระดาษสีอ่อน＋ลายเส้นของแต่ละประเทศ ค่าเริ่มต้น) Yuzuha (สีสดใส) Ryo (สีเข้ม) หรือใส่ ?theme=som / yuzuha / ryo ในลิงก์ก็ได้</td></tr><tr><td class="d">25 ต.ค.</td><td>สรุปประกันเหลือ 2 ตัว คือ Chubb และ Hilton Amex Premium เพิ่มขั้นตอนติดต่อเมื่อเกิดเหตุ (แยกสถานการณ์) และรายชื่อเบอร์ติดต่อ</td></tr><tr><td class="d">25 ต.ค.</td><td>อัปเดตข้อมูลจากใบยืนยันโรงแรม 6 แห่ง (เลขที่จอง เวลา วันสุดท้ายที่ยกเลิกฟรี ห้อง) เช็กความคุ้มครอง Amex จากเงื่อนไข (ของติดตัวถูกขโมยไม่คุ้มครอง) เพิ่มหัวข้อ Anytime Fitness</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อประกันการเดินทาง (รายละเอียดกรมธรรม์ Chubb การแบ่งหน้าที่กับ Amex กฎการเคลม)</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อจัดกระเป๋าและการขนย้าย (วิธีรับมือแต่ละสถานการณ์) เช็กสัมภาระและที่นั่งเอมิเรตส์จาก e-ticket อัปเดตรายการของและสิ่งที่ต้องทำ เพิ่มประวัติการแก้ไขนี้</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่ม "หนังที่ควรดูก่อนไป" ของแต่ละประเทศ</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มการแวะเปลี่ยนเครื่องที่ดูไบขาไป (3 ชม. 15 นาที) ในกำหนดการและแผนที่เส้นทาง</td></tr><tr><td class="d">18 ต.ค.</td><td>ปุ่มเปลี่ยนภาษาอยู่มุมขวาล่างตลอด (สลับญี่ปุ่น/ไทยได้โดยไม่เลื่อนหน้า)</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มลิสต์สถานที่โปรดใน Google Maps (แยกประเภท มีชื่อภาษาไทย) และลิงก์แผนที่ของโรงแรมและสถานที่สำคัญ เพิ่มการแวะดูไบ 17 ชม. ขากลับในแผนที่</td></tr><tr><td class="d">18 ต.ค.</td><td>เปลี่ยนที่พักปารีสเป็น Libertel Austerlitz และยืนยันที่พักทั้ง 6 แห่ง</td></tr><tr><td class="d">18 ต.ค.</td><td>เปิดเวอร์ชัน GitHub ตัวอักษรใหญ่ขึ้นสำหรับ iPhone ตารางกว้างเลื่อนด้านข้างได้ เปิดเป็นภาษาไทยด้วย ?lang=th</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>ทบทวนทั้งเล่ม (Yuzuha อายุ 10 เดือนตอนเดินทาง ขาไปออก 01:05 ตัดค่าประกันออก) ทำเป็น 2 ภาษา ญี่ปุ่นและไทย</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>เพิ่มวิธีรับมือวันประท้วง/นัดหยุดงาน การป้องกันล้วงกระเป๋า (แยกตามสถานการณ์) และคอลัมน์มารยาทบนโต๊ะอาหารของฝรั่งเศส</td></tr><tr><td class="d">ราว 16 ต.ค.</td><td>อัปเดตว่าซื้อตั๋วดิสนีย์แลนด์ปารีสแล้ว เพิ่ม "ดิสนีย์กับฝรั่งเศส" เวลาเข้าแวร์ซาย และตารางเวลาพระอาทิตย์ขึ้น-ตก</td></tr><tr><td class="d">15 ต.ค.</td><td>เวอร์ชันแรก</td></tr></tbody></table></div>
   </details>
 </footer>
 
