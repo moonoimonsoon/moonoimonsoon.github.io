@@ -323,6 +323,8 @@ html[data-theme="som"] .themetoggle,html[data-theme="som"] .themepop{box-shadow:
 html[data-theme="yuzuha"] .themetoggle,html[data-theme="yuzuha"] .themepop{border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink)}
 html .themetoggle[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
 
+/* first column: keep short Japanese labels on one line (no one-character-per-line columns) */
+.tbl td:first-child,.tbl th:first-child{word-break:keep-all;min-width:3.5em}
 /* Japanese edition: phrase tables have no Thai column (日本語 / 現地語 / 読み) */
 html:lang(ja) .phr td:nth-child(2),html:lang(en) .phr td:nth-child(2){font-weight:700;color:var(--c1)}
 html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weight:400;color:var(--muted);font-size:13px}
