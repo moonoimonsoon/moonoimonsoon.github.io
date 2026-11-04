@@ -373,7 +373,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <li><a href="#nl" data-ch="nl"><span class="flag f-nl"></span>オランダ</a></li>
     <li><a href="#fr" data-ch="fr"><span class="flag f-fr"></span>フランス</a></li>
     <li><a href="#dlp" data-ch="dlp">ディズニー</a></li>
-    <li><a href="#bocuse" data-ch="bocuse">ボキューズ</a></li>
+    <li><a href="#bocuse" data-ch="bocuse">リヨン・ボキューズ</a></li>
     <li><a href="#es" data-ch="es"><span class="flag f-es"></span>スペイン</a></li>
     <li><a href="#it" data-ch="it"><span class="flag f-it"></span>イタリア</a></li>
     <li><a href="#ae" data-ch="ae"><span class="flag f-ae"></span>ドバイ</a></li>
@@ -408,7 +408,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
         <tr><td>Yuzuhaはエミレーツに<b>日本旅券</b>で登録されている</td><td>使い分けの方針</td><td>eチケットの旅券情報（APIの登録内容）</td><td><span class="pill todo">要確認</span></td></tr>
         <tr><td>Somのシェンゲンビザ：イタリア発給、11/22〜12/13を含む期間</td><td>11/2 にVFSで申請予定</td><td>発給されたビザシールの写真</td><td><span class="pill maybe">申請前</span></td></tr>
         <tr><td><b>Somのタイ旅券はUAEに入国するのにビザが要る</b>。ドバイでは街に出るので、エミレーツ経由で48時間の乗継ビザを取る（<a href="#dxb">ドバイの章</a>）</td><td>UAE 政府の案内と各種資料（11/2 確認）</td><td>乗継ビザの許可メール（11/18 に申請予定）</td><td><span class="pill todo">申請する</span></td></tr>
-        <tr><td>TGV 11/30 07:42→14:32、1等13号車2階・テーブル3席</td><td>予約画面</td><td>eチケット（座席番号入り）</td><td><span class="pill todo">要確認</span></td></tr>
+        <tr><td>リヨン経由に変更（11/4 決定）：11/28 パリ→リヨン、11/30 リヨン→バルセロナ。今の TGV（11/30 パリ→バルセロナ）は払い戻す</td><td>券の条件：11/23 まで無料で払い戻し可</td><td>新しい列車2本とリヨンの宿の予約</td><td><span class="pill todo">予約する</span></td></tr>
         <tr><td>Vueling 12/3 12:40→14:25、FLY＋預け荷物25kg×2、合計€339.58</td><td>予約中の画面</td><td>予約確認メール（予約番号）</td><td><span class="pill todo">予約中</span></td></tr>
         <tr><td>Eurostar 11/25 09:10→12:37（直通、9328便、18号車 95・96番）</td><td>2人分の e チケット（11/3 購入、Standard）</td><td>—</td><td><span class="pill ok">確認済み</span></td></tr>
         <tr><td>Frecciarossa 12/5 11:26→13:39（9415便、Business、3号車 5D・6D）</td><td>2人分の e チケット（11/3 購入、Base）</td><td>—</td><td><span class="pill ok">確認済み</span></td></tr>
@@ -444,8 +444,9 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <path d="M176 60 L108 186" fill="none" stroke="var(--nl1)" stroke-width="3.5" stroke-linecap="round"/>
       <text x="150" y="128" font-size="11.5" fill="var(--ink)">Eurostar 3h27</text>
       <!-- PAR → BCN -->
-      <path d="M105 192 L100 478" fill="none" stroke="var(--fr1)" stroke-width="3.5" stroke-linecap="round"/>
-      <text x="112" y="330" font-size="11.5" fill="var(--ink)">TGV 6h50</text>
+      <path d="M105 192 L168 300 L100 478" fill="none" stroke="var(--fr1)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="142" y="240" font-size="11.5" fill="var(--ink)">TGV 2h</text><text x="80" y="398" font-size="11.5" fill="var(--ink)">列車</text>
+      <circle cx="168" cy="300" r="6" fill="var(--fr2)" stroke="var(--paper)" stroke-width="2"/><text x="180" y="298" font-size="13" font-weight="700" fill="var(--ink)">リヨン</text><text x="180" y="313" font-size="11" fill="var(--muted)">2泊</text>
       <!-- BCN → VCE flight -->
       <path d="M106 478 Q 230 300 376 326" fill="none" stroke="var(--es1)" stroke-width="2.5" stroke-dasharray="7 6" marker-end="url(#ah)"/>
       <text x="196" y="372" font-size="11.5" fill="var(--ink)">Vueling ✈ 1h45</text>
@@ -464,7 +465,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <!-- cities -->
       <g font-size="13" font-weight="700" fill="var(--ink)">
         <circle cx="176" cy="58" r="7" fill="var(--nl1)" stroke="var(--paper)" stroke-width="2"/><text x="190" y="62">アムステルダム</text><text x="190" y="77" font-size="11" font-weight="400" fill="var(--muted)">2泊</text>
-        <circle cx="105" cy="188" r="7" fill="var(--fr1)" stroke="var(--paper)" stroke-width="2"/><text x="20" y="176">パリ</text><text x="20" y="160" font-size="11" font-weight="400" fill="var(--muted)">5泊</text>
+        <circle cx="105" cy="188" r="7" fill="var(--fr1)" stroke="var(--paper)" stroke-width="2"/><text x="20" y="176">パリ</text><text x="20" y="160" font-size="11" font-weight="400" fill="var(--muted)">3泊</text>
         <circle cx="100" cy="482" r="7" fill="var(--es1)" stroke="var(--paper)" stroke-width="2"/><text x="20" y="508">バルセロナ</text><text x="20" y="524" font-size="11" font-weight="400" fill="var(--muted)">3泊</text>
         <circle cx="382" cy="322" r="7" fill="var(--it1)" stroke="var(--paper)" stroke-width="2"/><text x="396" y="318">ヴェネツィア</text><text x="396" y="304" font-size="11" font-weight="400" fill="var(--muted)">2泊</text>
         <circle cx="354" cy="389" r="7" fill="var(--it1)" stroke="var(--paper)" stroke-width="2"/><text x="370" y="394">フィレンツェ 3泊</text>
@@ -489,9 +490,9 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
         <tr><td class="d"><a href="#d-1125">11/25 水</a></td><td><span class="cityflag"><span class="flag f-fr"></span>パリ</span></td><td>シテ島、Ryoはルーヴル夜間</td><td>Eurostar 09:10</td></tr>
         <tr><td class="d"><a href="#dlp-day">11/26 木</a></td><td>パリ</td><td>ディズニーランド・パリ（2パーク）</td><td>RER A</td></tr>
         <tr><td class="d"><a href="#d-1127">11/27 金</a></td><td>パリ</td><td>ヴェルサイユ、エッフェル塔、フォアグラ</td><td>RER C</td></tr>
-        <tr><td class="d"><a href="#d-1128">11/28 土</a></td><td>パリ</td><td>朝市、モンマルトル、焼きモン・ドール</td><td>—</td></tr>
-        <tr><td class="d"><a href="#d-1129">11/29 日</a></td><td>パリ</td><td>ムフタール通り、オルセー（サン・ジェルマンとボン・マルシェはオプション）</td><td>—</td></tr>
-        <tr><td class="d"><a href="#d-1130">11/30 月</a></td><td><span class="cityflag"><span class="flag f-es"></span>バルセロナ</span></td><td>車窓の地中海、グラシア通り</td><td>TGV 07:42</td></tr>
+        <tr><td class="d"><a href="#d-1128">11/28 土</a></td><td><span class="cityflag"><span class="flag f-fr"></span>リヨン</span></td><td>朝市、モンマルトル → 夕方の TGV でリヨンへ</td><td>TGV（未予約）</td></tr>
+        <tr><td class="d"><a href="#d-1129">11/29 日</a></td><td>リヨン</td><td>ボキューズ市場、フルヴィエールの丘、<b>夜はポール・ボキューズ本店</b></td><td>—</td></tr>
+        <tr><td class="d"><a href="#d-1130">11/30 月</a></td><td><span class="cityflag"><span class="flag f-es"></span>バルセロナ</span></td><td>朝のリヨン散歩 → 昼前の列車でバルセロナへ</td><td>列車（未予約）</td></tr>
         <tr><td class="d"><a href="#d-1201">12/1 火</a></td><td>バルセロナ</td><td>ガウディの日</td><td>—</td></tr>
         <tr><td class="d"><a href="#d-1202">12/2 水</a></td><td>バルセロナ</td><td>市場、旧市街、パエリア、海</td><td>—</td></tr>
         <tr><td class="d"><a href="#d-1203">12/3 木</a></td><td><span class="cityflag"><span class="flag f-it"></span>ヴェネツィア</span></td><td>バーカロでチケッティ</td><td>Vueling 12:40</td></tr>
@@ -519,14 +520,16 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <tbody>
         <tr><td>航空券</td><td>エミレーツ BKK⇄欧州 3名（Saver＋Flex）</td><td><span class="pill ok">確定</span></td></tr>
         <tr><td>宿</td><td>Hotel Sint Nicolaas（アムステルダム 2泊）</td><td><span class="pill ok">確定</span></td></tr>
-        <tr><td>宿</td><td>Libertel Austerlitz Jardin des Plantes（パリ 5泊）<span class="tsub">11/25〜29 と 11/29〜30 の2予約。チェックイン時に同じ部屋か確認</span></td><td><span class="pill ok">確定</span></td></tr>
+        <tr><td>宿</td><td>Libertel Austerlitz Jardin des Plantes（パリ 3泊）<span class="tsub">11/25〜29 の予約を 11/25〜28 に短縮（11/22 まで無料）、11/29〜30 の予約は取消（11/26 まで無料）</span></td><td><span class="pill ok">確定</span></td></tr>
         <tr><td>宿</td><td>Hôtel Vendome Saint-Germain（パリ、使わない）<span class="tsub">無料取消の期限内に取消</span></td><td><span class="pill ng">取消する</span></td></tr>
         <tr><td>宿</td><td>Barceló Sants（バルセロナ 3泊）</td><td><span class="pill ok">確定</span></td></tr>
         <tr><td>宿</td><td>Hotel Guerrini（ヴェネツィア 2泊）</td><td><span class="pill ok">確定</span></td></tr>
         <tr><td>宿</td><td>Hotel Camilla Firenze（フィレンツェ 3泊）<span class="tsub">ベビーベッドの返事待ち</span></td><td><span class="pill ok">確定</span></td></tr>
         <tr><td>宿</td><td>Antica Dimora delle Cinque Lune（ローマ 3泊）</td><td><span class="pill ok">確定</span></td></tr>
         <tr><td>宿</td><td>ドバイの乗継ホテル（約17時間）</td><td><span class="pill todo">要予約</span></td></tr>
-        <tr><td>列車</td><td>TGV INOUI 1等 パリ→バルセロナ 13号車2階</td><td><span class="pill ok">確定</span></td></tr>
+        <tr><td>列車</td><td>TGV INOUI 1等 パリ→バルセロナ 11/30<span class="tsub">リヨン経由に変えるため払い戻す（11/23 まで無料）</span></td><td><span class="pill ng">払い戻す</span></td></tr>
+        <tr><td>列車</td><td>パリ→リヨン 11/28（夕方）、リヨン→バルセロナ 11/30（昼前）</td><td><span class="pill todo">要予約</span></td></tr>
+        <tr><td>宿</td><td>リヨン 2泊（11/28〜30）。パールデュー駅の近くが便利</td><td><span class="pill todo">要予約</span></td></tr>
         <tr><td>入場券</td><td>ディズニーランド・パリ 11/26 日付指定・1日2パーク（大人2名）<br><small>10/15購入。<b>3日前（11/23）までキャンセル可</b>。11/22は出発日なので、日付を変えるなら出発前に決める</small></td><td><span class="pill ok">確定</span></td></tr>
         <tr><td>レストラン</td><td>Paul Bocuse 本店（リヨン郊外）11/29 20:15、3名<span class="tsub">カードの仮押さえ。11/28 20:15 までなら無料で取消。11/22 ごろ再確認（<a href="#bocuse">ボキューズの章</a>）</span></td><td><span class="pill ok">確定</span></td></tr>
         <tr><td>列車</td><td>Eurostar アムステルダム→パリ 11/25 09:10（Standard、18号車 95・96番）<span class="tsub">出発1時間前まで日時の変更は無料</span></td><td><span class="pill ok">確定</span></td></tr>
@@ -547,7 +550,8 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <tbody>
         <tr><td class="d">11/23</td><td>BKK → DXB → AMS</td><td>EK385 / EK147（A380）</td><td class="mono">01:05 → 12:45</td><td>ドバイ T3 で乗継3時間15分（<a href="#dxb-out">乗継の過ごし方</a>）。ベビーカーは機内まで</td></tr>
         <tr><td class="d">11/25</td><td>AMS → パリ北駅</td><td>Eurostar 9328（18号車 95・96）</td><td class="mono">09:10 → 12:37</td><td>シェンゲン内なので出国審査なし。チケットの案内どおり 08:50 までに駅へ</td></tr>
-        <tr><td class="d">11/30</td><td>パリ・リヨン駅 → BCN サンツ</td><td>TGV INOUI 直通</td><td class="mono">07:42 → 14:32</td><td>スーツケースはワイヤーロックで棚に</td></tr>
+        <tr><td class="d">11/28</td><td>パリ・リヨン駅 → リヨン・パールデュー</td><td>TGV INOUI（未予約）</td><td class="mono">夕方 → 約2時間</td><td>SEMI FLEX の運賃がおすすめ</td></tr>
+        <tr><td class="d">11/30</td><td>リヨン・パールデュー → BCN サンツ</td><td>列車（未予約）</td><td class="mono">昼前発</td><td>直通は Renfe の AVE 14:35 → 19:23 の1本だけ。昼前に出るならモンペリエかナルボンヌで乗り換え</td></tr>
         <tr><td class="d">12/3</td><td>BCN T1 → VCE</td><td>Vueling</td><td class="mono">12:40 → 14:25</td><td>FLY＋預け荷物。1人1個25kgまで、機内は足元のバッグだけ</td></tr>
         <tr><td class="d">12/5</td><td>ヴェネツィア S.L. → フィレンツェ SMN</td><td>Frecciarossa 9415（Business、3号車 5D・6D）</td><td class="mono">11:26 → 13:39</td><td>連休初日。荷物は車両の端の棚に</td></tr>
         <tr><td class="d">12/7</td><td>フィレンツェ SMN ⇄ ピサ中央</td><td>地方線（Regionale）</td><td class="mono">12:00頃 / 16:30頃</td><td>日帰り。予約なし、当日アプリか券売機で</td></tr>
@@ -1100,6 +1104,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 
     <div class="day" id="d-1128">
       <div class="day-head"><span class="date">11/28 土</span><h4>朝市、モンマルトルの丘、パレ・ロワイヤル</h4></div>
+      <p class="alert"><b>11/28 の夕方にリヨンへ移動</b>　TGV の時刻が決まったら、夕方からの予定（Hermès、焼きモン・ドール）を組み直します。</p>
       <ul class="tt">
         <li><span class="t">07:30</span><div><b>マルシェ・モベール</b>（火・木・土の朝。メトロ10号線で2駅、Maubert-Mutualité 下車すぐ）<span class="sub">Laurent Dubois（チーズ熟成士の店）でチーズを少し。朝ごはんのパンとフルーツも</span></div></li>
         <li><span class="t">09:00</span><div>メトロで Abbesses 駅へ（深い駅なのでエレベーターで地上へ。入口はギマールのアール・ヌーヴォー）→ アベス広場の<b>「ジュテームの壁」</b>（250以上の言語の「愛してる」。日本語を探す）</div></li>
@@ -1114,8 +1119,9 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <p class="rain"><b>雨なら</b>：モンマルトルをやめて、屋根付きのパサージュ巡り（ギャルリー・ヴィヴィエンヌ、パノラマ通り）を長めに</p>
     </div>
 
-    <div class="day" id="d-1129">
+    <div class="day" id="d-1129-par">
       <div class="day-head"><span class="date">11/29 日</span><h4>日曜の朝のムフタール通り、午後はオルセー</h4></div>
+      <p class="alert"><b>この日はリヨンに滞在</b>　下はパリにいた場合の予定です。行きたいものは、ほかの日に入れるか検討します（<a href="#d-1129">11/29 のリヨン</a>）。</p>
       <ul class="tt">
         <li><span class="t">08:00</span><div><span class="pill maybe">オプション</span> <b>マルシェ・バスティーユ</b>（木・日、パリ最大級。牡蠣とロティサリーチキン）<span class="sub">土曜にモベールへ行けていれば省いてよい</span></div></li>
         <li><span class="t">10:30</span><div><b>ムフタール通りの日曜の朝</b>。通りの下のサン・メダール教会前で、アコーディオンに合わせてみんなで歌う（日曜の昼前だけ）</div></li>
@@ -1129,8 +1135,9 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <p class="rain"><b>時間があまったら</b>：宿の向かいの<b>植物園</b>（Yuzuhaの遊び場に。小さな動物園と進化大陳列館も）、リュテス闘技場、パリのモスクのミントティー（オルセーの代わりにのんびりしたい日にも）</p>
     </div>
 
-    <div class="day" id="d-1130">
+    <div class="day" id="d-1130-par">
       <div class="day-head"><span class="date">11/30 月</span><h4>TGVで地中海へ</h4></div>
+      <p class="alert"><b>この TGV は払い戻す予定</b>　11/30 はリヨンからバルセロナへ向かいます（<a href="#d-1130">11/30 のリヨン</a>）。払い戻しは 11/23 まで無料。</p>
       <ul class="tt">
         <li><span class="t">06:15</span><div>起床、チェックアウト（前夜に精算しておくと早い）</div></li>
         <li><span class="t">06:50</span><div>G7 タクシーでリヨン駅へ。橋を渡って約5分、€10前後（荷物がなければ徒歩12分）</div></li>
@@ -1833,11 +1840,11 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="bocuse" class="chapter bcs" data-chapter="bocuse">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Special · Restaurant Paul Bocuse · 11/29 (Sun) 20:15</div>
-    <h2>ポール・ボキューズ本店 <span class="local">L'Auberge du Pont de Collonges</span></h2>
+    <div class="eyebrow">Special · Lyon 11/28 – 11/30 · Restaurant Paul Bocuse 11/29 (Sun) 20:15</div>
+    <h2>リヨンとポール・ボキューズ本店 <span class="local">Lyon · L'Auberge du Pont de Collonges</span></h2>
     <p class="lead">「世紀の料理人」ポール・ボキューズの本店。1924年から続く家族の店で、ミシュランの三つ星を55年守った、フランス料理の古典の総本山です。銀座で知った味の本家へ、家族3人で。リヨンの北、ソーヌ川のほとりの赤と緑の建物です。</p>
   </div>
-  <div class="subnav"><a href="#bcs-basic">予約と基本</a><a href="#bcs-go">行き方</a><a href="#bcs-day">当日の流れ</a><a href="#bcs-menu">メニュー</a><a href="#bcs-dish">名物料理</a><a href="#bcs-baby">赤ちゃん連れ</a><a href="#bcs-hist">ボキューズの歩み</a><a href="#bcs-gift">お土産</a><a href="#bcs-check">チェックリスト</a><a href="#bcs-map">地図</a></div>
+  <div class="subnav"><a href="#bcs-basic">予約と基本</a><a href="#bcs-go">行き方</a><a href="#bcs-day">リヨンの3日間</a><a href="#bcs-menu">メニュー</a><a href="#bcs-dish">名物料理</a><a href="#bcs-baby">赤ちゃん連れ</a><a href="#bcs-hist">ボキューズの歩み</a><a href="#bcs-gift">お土産</a><a href="#bcs-check">チェックリスト</a><a href="#bcs-map">地図</a></div>
 
   <div class="block" id="bcs-basic">
     <h3>予約と基本情報</h3>
@@ -1861,7 +1868,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <h4>リヨン市内から店まで</h4>
       <ol>
         <li><b>タクシーか配車アプリ</b>（Uber、G7）で約20〜25分。日曜の夜は割増料金</li>
-        <li>宿を <b>19:40 ごろ</b>に出れば、少し早めの 20:05 ごろに着く</li>
+        <li>宿を <b>18:50 ごろ</b>に出て、19:15 ごろに着く。予約は 20:15 なので、早めに着いたらソーヌ川沿いを歩くか、店で食前酒を</li>
         <li>運転手には「<b>Restaurant Paul Bocuse, Collonges-au-Mont-d'Or</b>」で通じる</li>
         <li><b>帰り</b>は、会計のときに「<b>Pourriez-vous nous appeler un taxi ?</b>（タクシーを呼んでいただけますか）」。郊外なので配車アプリは来るまで時間がかかることがある</li>
       </ol>
@@ -1870,17 +1877,35 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   </div>
 
   <div class="block" id="bcs-day">
-    <h3>11/29（日）の流れ</h3>
-    <p class="note">夜に長くて重い食事があるので、昼は軽く、夕方は宿で休憩してから向かいます。リヨンの列車と宿が決まったら、リヨンの章にまとめ直します。</p>
-    <ul class="tt">
-      <li><span class="t">09:00</span><div><b>ポール・ボキューズ市場</b>（Les Halles de Lyon Paul Bocuse）。日曜は朝から昼過ぎまで<span class="sub">チーズ、シャルキュトリー、牡蠣。ボキューズゆかりの店の並びを見ておくと、夜の料理がより楽しめる</span></div></li>
-      <li><span class="t">12:00</span><div>市場の中で軽く昼ごはん（牡蠣をいくつか、パテ・アン・クルートをひと切れ、など）</div></li>
-      <li><span class="t">14:00</span><div>旧市街（ヴュー・リヨン）、トラブール、フルヴィエールの丘（ケーブルカー）</div></li>
-      <li><span class="t">16:30</span><div>宿で休憩。Yuzuha はしっかり昼寝。着替え</div></li>
-      <li><span class="t">19:40</span><div>タクシーで本店へ</div></li>
-      <li><span class="t">20:15</span><div><b>ポール・ボキューズ本店でディナー</b> <span class="pill ok">確定</span><span class="sub">前菜・メイン・デザートの3皿なら2時間前後。21:00 までに注文すれば100周年記念コースも選べる</span></div></li>
-      <li><span class="t">22:30頃</span><div>店でタクシーを呼んでもらい宿へ → 23:00ごろ着</div></li>
-    </ul>
+    <h3>リヨンの3日間（大枠）</h3>
+    <p class="note">列車と宿はこれから予約します。時刻は予約が決まったら直します。宿はパールデュー駅の近くにすると、市場にも、出発の駅にも歩いて行けます。</p>
+    <div class="day" id="d-1128-lyo">
+      <div class="day-head"><span class="date">11/28 土</span><h4>パリからリヨンへ</h4></div>
+      <ul class="tt">
+        <li><span class="t">夕方</span><div><b>TGV</b> パリ・リヨン駅 → リヨン・パールデュー（約2時間）<span class="pill todo">要予約</span></div></li>
+        <li><span class="t">夜</span><div>宿にチェックイン → 近くで軽く夕食。翌日にそなえて早めに休む</div></li>
+      </ul>
+    </div>
+    <div class="day" id="d-1129">
+      <div class="day-head"><span class="date">11/29 日</span><h4>市場、丘の上、そしてボキューズ</h4></div>
+      <ul class="tt">
+        <li><span class="t">09:00</span><div><b>ポール・ボキューズ市場</b>（Les Halles de Lyon Paul Bocuse）。日曜は朝から昼過ぎまで<span class="sub">チーズ、シャルキュトリー、牡蠣。夜の料理の食材の産地を先に見ておく</span></div></li>
+        <li><span class="t">12:00</span><div><b>軽い昼ごはん</b>（市場の中か旧市街で）。夜にそなえて控えめに</div></li>
+        <li><span class="t">13:30</span><div>旧市街（ヴュー・リヨン）→ <b>ケーブルカー</b>でフルヴィエールの丘へ<span class="sub">丘の上の大聖堂と、赤い屋根の街の眺め。帰りは坂道を歩いて下りるか、またケーブルカーで</span></div></li>
+        <li><span class="t">15:00</span><div>旧市街の路地とトラブール（建物の中を抜ける通路）を散歩</div></li>
+        <li><span class="t">16:30</span><div>宿に戻って休憩と準備。Yuzuha はしっかり昼寝。<b>お腹を空かせておく</b></div></li>
+        <li><span class="t">18:50</span><div>タクシーで本店へ（約20〜25分）<span class="sub">早めに着いたら、ソーヌ川沿いを少し歩くか、店で食前酒を</span></div></li>
+        <li><span class="t">20:15</span><div><b>ポール・ボキューズ本店でディナー</b> <span class="pill ok">確定</span><span class="sub">4時間ほどかけて、ゆっくりと</span></div></li>
+        <li><span class="t">24:00頃</span><div>店でタクシーを呼んでもらい、宿へ</div></li>
+      </ul>
+    </div>
+    <div class="day" id="d-1130">
+      <div class="day-head"><span class="date">11/30 月</span><h4>朝のリヨン、そしてバルセロナへ</h4></div>
+      <ul class="tt">
+        <li><span class="t">朝</span><div>ゆっくり起きて、ソーヌ川沿いか宿のまわりを軽く散歩</div></li>
+        <li><span class="t">昼前</span><div>リヨン・パールデュー → <b>バルセロナ・サンツ</b> <span class="pill todo">要予約</span><span class="sub">直通は Renfe の AVE（14:35 → 19:23）の1本だけ。昼前に出るなら、モンペリエかナルボンヌで乗り換え</span></div></li>
+      </ul>
+    </div>
   </div>
 
   <div class="block" id="bcs-menu">
@@ -1973,7 +1998,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <h3>赤ちゃん連れ</h3>
     <div class="grid2">
       <div class="card"><h4>伝えてあること</h4><ul><li>10か月の娘が一緒であること</li><li>ベビーカーで休ませ、まわりに迷惑をかけないよう気をつけること</li><li>子ども用の椅子（chaise haute）のお願い</li></ul></div>
-      <div class="card"><h4>当日のコツ</h4><ul><li>夕方の昼寝をしっかりして、パジャマに近い楽な服で。ベビーカーで眠れるように</li><li>おむつ替えのセット、ミルク、おしゃぶり、小さなおもちゃ</li><li>ぐずったら、どちらかが入口のロビーか外で少しあやす</li><li>皿数を3皿にして、2時間前後で切り上げる</li><li>Yuzuha の食事は持ち込みで。出すときは一言「Je peux donner son repas au bébé ?」</li></ul></div>
+      <div class="card"><h4>当日のコツ</h4><ul><li>夕方の昼寝をしっかりして、パジャマに近い楽な服で。ベビーカーで眠れるように</li><li>おむつ替えのセット、ミルク、おしゃぶり、小さなおもちゃ</li><li>ぐずったら、どちらかが入口のロビーか外で少しあやす</li><li>4時間ほどの長い食事なので、Yuzuha が眠そうならベビーカーで寝かせる。疲れたら皿数を減らしてもよい</li><li>Yuzuha の食事は持ち込みで。出すときは一言「Je peux donner son repas au bébé ?」</li></ul></div>
     </div>
   </div>
 
@@ -2024,7 +2049,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       </div>
       <div class="card"><h4>当日</h4>
         <ul class="check">
-          <li><input type="checkbox" id="bcs6"><label for="bcs6">19:40 にタクシーを呼ぶ</label></li>
+          <li><input type="checkbox" id="bcs6"><label for="bcs6">18:50 にタクシーを呼ぶ</label></li>
           <li><input type="checkbox" id="bcs7"><label for="bcs7">スープ V.G.E. と膀胱包みのブレス鶏を頼めるか聞く</label></li>
           <li><input type="checkbox" id="bcs8"><label for="bcs8">Yuzuha のミルク、おむつ、おもちゃ、ブランケット</label></li>
           <li><input type="checkbox" id="bcs9"><label for="bcs9">写真：外観、デザートワゴン、パイ包み焼きの切り分け</label></li>
@@ -2139,7 +2164,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <div class="day" id="d-1130-es">
       <div class="day-head"><span class="date">11/30 月</span><h4>到着、グラシア通りの夕暮れ</h4></div>
       <ul class="tt">
-        <li><span class="t">14:32</span><div>サンツ駅着 → そのままホテルへ<span class="sub">駅の構内では、リュックを体の前に</span></div></li>
+        <li><span class="t">夕方</span><div>サンツ駅着（時刻は列車の予約後）→ そのままホテルへ<span class="sub">駅の構内では、リュックを体の前に</span></div></li>
         <li><span class="t">15:30</span><div>チェックイン、ひと休み</div></li>
         <li><span class="t">16:30</span><div>メトロL3で Passeig de Gràcia へ（約10分）。<b>カサ・バトリョ</b>と<b>カサ・ミラ</b>を外から。点灯したクリスマスの飾りの下を散歩</div></li>
         <li><span class="t">19:00</span><div>早めのタパス（エイシャンプラ地区のバル）。19時台なら赤ちゃん連れでも入りやすい</div></li>
@@ -4571,7 +4596,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   <span>公館の番号の出典：外務省「在外公館リスト」、タイ外務省「List of Royal Thai Embassy contact point」。</span>
   <details id="changelog" style="margin-top:6px">
     <summary style="cursor:pointer;font-weight:700;color:var(--ink)">変更履歴</summary>
-    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/4</td><td>ポール・ボキューズ本店（11/29 20:15）を予約。ディズニーと同じ形で「ボキューズ」の章を追加（予約、行き方、当日の流れ、秋のメニュー、名物料理、赤ちゃん連れ、歴史、お土産）</td></tr><tr><td class="d">11/3</td><td>ピサを 12/7（月）の午後に移動（地方線で日帰り）。12/8 はフィレンツェの朝を楽しんで、昼食後の列車でローマへ</td></tr><tr><td class="d">11/3</td><td>12/5 の Frecciarossa 9415（11:26 → 13:39、Business）を予約。ヴェネツィアの朝に散歩を入れ、フィレンツェ初日はアカデミアを 15:15 に、ミケランジェロ広場の夕日は 12/6 に移動。英語版を追加</td></tr><tr><td class="d">11/3</td><td>Eurostar（11/25 09:10 → 12:37）を予約。アムステルダムの朝と、パリの初日の時間割を合わせて調整</td></tr><tr><td class="d">11/2</td><td>予約番号（エミレーツ、Booking の宿）と保険の証券番号をしおりから削除（第三者が予約を操作できないように）</td></tr><tr><td class="d">11/2</td><td>ドバイ：街に出ることに決定。Som はエミレーツ経由で48時間の乗継ビザ（手順をドバイの章に）</td></tr><tr><td class="d">10/25</td><td>持ち物チェックを、いつもの持ち物リストから今回の旅用に作り直し（入れるバッグの札つき）</td></tr><tr><td class="d">10/25</td><td>日本語版からタイ語の併記（見出しの小さい字、会話の表のタイ語の列など）を外した。タイ語はタイ語版に</td></tr><tr><td class="d">10/25</td><td>デザインを3つから選べるように（右下のパレットのボタンを押すと開く）：Som（明るい紙＋各国の線画、標準）、Yuzuha（ポップ）、Ryo（ダーク）。URL に ?theme=som / yuzuha / ryo でも指定できる</td></tr><tr><td class="d">10/25</td><td>保険は Chubb とヒルトン・アメックス・プレミアムの2本に整理。困ったときの連絡ステップ（場面別）と連絡先一覧を追加</td></tr><tr><td class="d">10/25</td><td>宿6軒の予約票を反映（時間、無料取消の期限、部屋）。アメックスの補償を規定で確認（持ち物の盗難は補償なし）。Anytime Fitness の節を追加</td></tr><tr><td class="d">10/25</td><td>保険の節を追加（Chubb の証券の内容、アメックスとの分担、請求のルール）</td></tr><tr><td class="d">10/25</td><td>荷物の構成と動かし方（場面ごとの対策）を追加。エミレーツの預け荷物と座席を eチケットで確認。持ち物・やることを更新。この変更履歴を追加</td></tr><tr><td class="d">10/18</td><td>各国の「予習の映画」を追加</td></tr><tr><td class="d">10/18</td><td>往路のドバイ乗継（3時間15分）を日程とルート図に追加</td></tr><tr><td class="d">10/18</td><td>言語の切り替えを画面の右下に固定（同じ場所のまま日本語・タイ語を切り替え）</td></tr><tr><td class="d">10/18</td><td>Google マップのお気に入りリスト（タイプ別、タイ語名つき）と、ホテル・主要な場所の地図リンクを追加。ルート図に帰路のドバイ17時間乗継</td></tr><tr><td class="d">10/18</td><td>パリの宿を Libertel Austerlitz に変更し、宿6軒を確定に</td></tr><tr><td class="d">10/18</td><td>GitHub 版を公開。iPhone 向けに文字を大きく、横長の表は横スクロールに。?lang=th でタイ語から開く</td></tr><tr><td class="d">10/17ごろ</td><td>全体の見直し（Yuzuha は旅行時に生後10か月、往路は01:05発、保険料を削除）。日本語・タイ語の2言語版に</td></tr><tr><td class="d">10/17ごろ</td><td>デモ・ストライキの日の動き方、スリ対策（場面別のシナリオ）、フランスのテーブルマナーのコラムを追加</td></tr><tr><td class="d">10/16ごろ</td><td>ディズニーランド・パリのチケット購入を反映。「ディズニーとフランス」、ヴェルサイユの入場時刻、日の出・日の入りの表を追加</td></tr><tr><td class="d">10/15</td><td>初版</td></tr></tbody></table></div>
+    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/4</td><td>リヨン経由に変更（11/28 夕方にパリ → リヨン、2泊、11/30 にバルセロナへ）。日程表、予約一覧、移動一覧、ルート図を更新し、リヨンの3日間をボキューズの章に。パリの 11/29 の予定は候補として残す</td></tr><tr><td class="d">11/4</td><td>ポール・ボキューズ本店（11/29 20:15）を予約。ディズニーと同じ形で「ボキューズ」の章を追加（予約、行き方、当日の流れ、秋のメニュー、名物料理、赤ちゃん連れ、歴史、お土産）</td></tr><tr><td class="d">11/3</td><td>ピサを 12/7（月）の午後に移動（地方線で日帰り）。12/8 はフィレンツェの朝を楽しんで、昼食後の列車でローマへ</td></tr><tr><td class="d">11/3</td><td>12/5 の Frecciarossa 9415（11:26 → 13:39、Business）を予約。ヴェネツィアの朝に散歩を入れ、フィレンツェ初日はアカデミアを 15:15 に、ミケランジェロ広場の夕日は 12/6 に移動。英語版を追加</td></tr><tr><td class="d">11/3</td><td>Eurostar（11/25 09:10 → 12:37）を予約。アムステルダムの朝と、パリの初日の時間割を合わせて調整</td></tr><tr><td class="d">11/2</td><td>予約番号（エミレーツ、Booking の宿）と保険の証券番号をしおりから削除（第三者が予約を操作できないように）</td></tr><tr><td class="d">11/2</td><td>ドバイ：街に出ることに決定。Som はエミレーツ経由で48時間の乗継ビザ（手順をドバイの章に）</td></tr><tr><td class="d">10/25</td><td>持ち物チェックを、いつもの持ち物リストから今回の旅用に作り直し（入れるバッグの札つき）</td></tr><tr><td class="d">10/25</td><td>日本語版からタイ語の併記（見出しの小さい字、会話の表のタイ語の列など）を外した。タイ語はタイ語版に</td></tr><tr><td class="d">10/25</td><td>デザインを3つから選べるように（右下のパレットのボタンを押すと開く）：Som（明るい紙＋各国の線画、標準）、Yuzuha（ポップ）、Ryo（ダーク）。URL に ?theme=som / yuzuha / ryo でも指定できる</td></tr><tr><td class="d">10/25</td><td>保険は Chubb とヒルトン・アメックス・プレミアムの2本に整理。困ったときの連絡ステップ（場面別）と連絡先一覧を追加</td></tr><tr><td class="d">10/25</td><td>宿6軒の予約票を反映（時間、無料取消の期限、部屋）。アメックスの補償を規定で確認（持ち物の盗難は補償なし）。Anytime Fitness の節を追加</td></tr><tr><td class="d">10/25</td><td>保険の節を追加（Chubb の証券の内容、アメックスとの分担、請求のルール）</td></tr><tr><td class="d">10/25</td><td>荷物の構成と動かし方（場面ごとの対策）を追加。エミレーツの預け荷物と座席を eチケットで確認。持ち物・やることを更新。この変更履歴を追加</td></tr><tr><td class="d">10/18</td><td>各国の「予習の映画」を追加</td></tr><tr><td class="d">10/18</td><td>往路のドバイ乗継（3時間15分）を日程とルート図に追加</td></tr><tr><td class="d">10/18</td><td>言語の切り替えを画面の右下に固定（同じ場所のまま日本語・タイ語を切り替え）</td></tr><tr><td class="d">10/18</td><td>Google マップのお気に入りリスト（タイプ別、タイ語名つき）と、ホテル・主要な場所の地図リンクを追加。ルート図に帰路のドバイ17時間乗継</td></tr><tr><td class="d">10/18</td><td>パリの宿を Libertel Austerlitz に変更し、宿6軒を確定に</td></tr><tr><td class="d">10/18</td><td>GitHub 版を公開。iPhone 向けに文字を大きく、横長の表は横スクロールに。?lang=th でタイ語から開く</td></tr><tr><td class="d">10/17ごろ</td><td>全体の見直し（Yuzuha は旅行時に生後10か月、往路は01:05発、保険料を削除）。日本語・タイ語の2言語版に</td></tr><tr><td class="d">10/17ごろ</td><td>デモ・ストライキの日の動き方、スリ対策（場面別のシナリオ）、フランスのテーブルマナーのコラムを追加</td></tr><tr><td class="d">10/16ごろ</td><td>ディズニーランド・パリのチケット購入を反映。「ディズニーとフランス」、ヴェルサイユの入場時刻、日の出・日の入りの表を追加</td></tr><tr><td class="d">10/15</td><td>初版</td></tr></tbody></table></div>
   </details>
 </footer>
 
@@ -4610,7 +4635,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <li><a href="#nl" data-ch="nl"><span class="flag f-nl"></span>เนเธอร์แลนด์</a></li>
     <li><a href="#fr" data-ch="fr"><span class="flag f-fr"></span>ฝรั่งเศส</a></li>
     <li><a href="#dlp" data-ch="dlp">ดิสนีย์</a></li>
-    <li><a href="#bocuse" data-ch="bocuse">โบกุส</a></li>
+    <li><a href="#bocuse" data-ch="bocuse">ลียง・โบกุส</a></li>
     <li><a href="#es" data-ch="es"><span class="flag f-es"></span>สเปน</a></li>
     <li><a href="#it" data-ch="it"><span class="flag f-it"></span>อิตาลี</a></li>
     <li><a href="#ae" data-ch="ae"><span class="flag f-ae"></span>ดูไบ</a></li>
@@ -4646,7 +4671,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
         <tr><td>Yuzuha ลงทะเบียนกับเอมิเรตส์ด้วย<b>พาสปอร์ตญี่ปุ่น</b></td><td>ตามแผนการใช้พาสปอร์ต</td><td>ข้อมูลพาสปอร์ตในตั๋ว (ข้อมูล API)</td><td><span class="pill todo">ต้องเช็ก</span></td></tr>
         <tr><td>วีซ่าเชงเก้นของ Som：ออกโดยอิตาลี ครอบคลุม 22 พ.ย.–13 ธ.ค.</td><td>ยื่นที่ VFS วันที่ 2 พ.ย.</td><td>รูปสติกเกอร์วีซ่าที่ได้รับ</td><td><span class="pill maybe">ยังไม่ยื่น</span></td></tr>
         <tr><td><b>พาสปอร์ตไทยของซมต้องมีวีซ่าถึงจะเข้า UAE ได้</b> ที่ดูไบจะออกไปในเมือง จึงขอวีซ่าทรานซิต 48 ชม. ผ่านเอมิเรตส์ (<a href="#dxb">บทดูไบ</a>)</td><td>ข้อมูลรัฐบาล UAE และแหล่งอื่น ๆ (เช็ก 2 พ.ย.)</td><td>อีเมลอนุมัติวีซ่าทรานซิต (จะยื่น 18 พ.ย.)</td><td><span class="pill todo">ต้องยื่น</span></td></tr>
-        <tr><td>TGV 30 พ.ย. 07:42→14:32 ชั้น 1 ตู้ 13 ชั้นบน โต๊ะ 3 ที่</td><td>หน้าจอการจอง</td><td>ตั๋ว (มีเลขที่นั่ง)</td><td><span class="pill todo">ต้องเช็ก</span></td></tr>
+        <tr><td>เปลี่ยนเป็นแวะลียง (ตัดสินใจ 4 พ.ย.)：28 พ.ย. ปารีส→ลียง 30 พ.ย. ลียง→บาร์เซโลนา ตั๋ว TGV เดิม (30 พ.ย. ปารีส→บาร์เซโลนา) จะคืน</td><td>เงื่อนไขตั๋ว：คืนฟรีถึง 23 พ.ย.</td><td>จองรถไฟใหม่ 2 เที่ยวและโรงแรมที่ลียง</td><td><span class="pill todo">ต้องจอง</span></td></tr>
         <tr><td>Vueling 3 ธ.ค. 12:40→14:25 แบบ FLY ＋ กระเป๋าโหลด 25 กก.×2 รวม €339.58</td><td>หน้าจอระหว่างจอง</td><td>อีเมลยืนยัน (เลขการจอง)</td><td><span class="pill todo">กำลังจอง</span></td></tr>
         <tr><td>Eurostar 25 พ.ย. 09:10→12:37 (ตรง ขบวน 9328 ตู้ 18 ที่นั่ง 95・96)</td><td>e-ticket 2 คน (ซื้อ 3 พ.ย. Standard)</td><td>—</td><td><span class="pill ok">เช็กแล้ว</span></td></tr>
         <tr><td>Frecciarossa 5 ธ.ค. 11:26→13:39 (ขบวน 9415 Business ตู้ 3 ที่นั่ง 5D・6D)</td><td>e-ticket 2 คน (ซื้อ 3 พ.ย. ราคา Base)</td><td>—</td><td><span class="pill ok">เช็กแล้ว</span></td></tr>
@@ -4679,8 +4704,9 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <text x="508" y="42" font-size="12" font-weight="700" fill="var(--ink)" text-anchor="end">ดูไบ</text><text x="508" y="56" font-size="11" fill="var(--muted)" text-anchor="end">23 พ.ย. ต่อเครื่อง 3 ชม. 15 น. ✈</text>
       <path d="M176 60 L108 186" fill="none" stroke="var(--nl1)" stroke-width="3.5" stroke-linecap="round"/>
       <text x="150" y="128" font-size="11.5" fill="var(--ink)">Eurostar 3h27</text>
-      <path d="M105 192 L100 478" fill="none" stroke="var(--fr1)" stroke-width="3.5" stroke-linecap="round"/>
-      <text x="112" y="330" font-size="11.5" fill="var(--ink)">TGV 6h50</text>
+      <path d="M105 192 L168 300 L100 478" fill="none" stroke="var(--fr1)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="142" y="240" font-size="11.5" fill="var(--ink)">TGV 2h</text><text x="80" y="398" font-size="11.5" fill="var(--ink)">รถไฟ</text>
+      <circle cx="168" cy="300" r="6" fill="var(--fr2)" stroke="var(--paper)" stroke-width="2"/><text x="180" y="298" font-size="13" font-weight="700" fill="var(--ink)">ลียง</text><text x="180" y="313" font-size="11" fill="var(--muted)">2 คืน</text>
       <path d="M106 478 Q 230 300 376 326" fill="none" stroke="var(--es1)" stroke-width="2.5" stroke-dasharray="7 6" marker-end="url(#ah)"/>
       <text x="196" y="372" font-size="11.5" fill="var(--ink)">Vueling ✈ 1h45</text>
       <path d="M382 326 L354 386" fill="none" stroke="var(--it1)" stroke-width="3.5" stroke-linecap="round"/>
@@ -4693,7 +4719,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <text x="400" y="500" font-size="11" fill="var(--muted)">11 ธ.ค. ✈</text><text x="508" y="568" font-size="11" fill="var(--muted)" text-anchor="end">13 ธ.ค. ไปกรุงเทพฯ ✈</text>
       <g font-size="13" font-weight="700" fill="var(--ink)">
         <circle cx="176" cy="58" r="7" fill="var(--nl1)" stroke="var(--paper)" stroke-width="2"/><text x="190" y="62">อัมสเตอร์ดัม</text><text x="190" y="77" font-size="11" font-weight="400" fill="var(--muted)">2 คืน</text>
-        <circle cx="105" cy="188" r="7" fill="var(--fr1)" stroke="var(--paper)" stroke-width="2"/><text x="20" y="176">ปารีส</text><text x="20" y="160" font-size="11" font-weight="400" fill="var(--muted)">5 คืน</text>
+        <circle cx="105" cy="188" r="7" fill="var(--fr1)" stroke="var(--paper)" stroke-width="2"/><text x="20" y="176">ปารีส</text><text x="20" y="160" font-size="11" font-weight="400" fill="var(--muted)">3 คืน</text>
         <circle cx="100" cy="482" r="7" fill="var(--es1)" stroke="var(--paper)" stroke-width="2"/><text x="20" y="508">บาร์เซโลนา</text><text x="20" y="524" font-size="11" font-weight="400" fill="var(--muted)">3 คืน</text>
         <circle cx="382" cy="322" r="7" fill="var(--it1)" stroke="var(--paper)" stroke-width="2"/><text x="396" y="318">เวนิส</text><text x="396" y="304" font-size="11" font-weight="400" fill="var(--muted)">2 คืน</text>
         <circle cx="354" cy="389" r="7" fill="var(--it1)" stroke="var(--paper)" stroke-width="2"/><text x="370" y="394">ฟลอเรนซ์ 3 คืน</text>
@@ -4718,9 +4744,9 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
         <tr><td class="d"><a href="#d-1125">25 พ.ย. พ.</a></td><td><span class="cityflag"><span class="flag f-fr"></span>ปารีส</span></td><td>เกาะซิเต Ryo ไปลูฟวร์รอบค่ำ</td><td>Eurostar 09:10</td></tr>
         <tr><td class="d"><a href="#dlp-day">26 พ.ย. พฤ.</a></td><td>ปารีส</td><td>ดิสนีย์แลนด์ปารีส (2 สวน)</td><td>RER A</td></tr>
         <tr><td class="d"><a href="#d-1127">27 พ.ย. ศ.</a></td><td>ปารีส</td><td>แวร์ซาย หอไอเฟล ฟัวกราส์</td><td>RER C</td></tr>
-        <tr><td class="d"><a href="#d-1128">28 พ.ย. ส.</a></td><td>ปารีส</td><td>ตลาดเช้า มงมาร์ต ชีสมงดอร์อบ</td><td>—</td></tr>
-        <tr><td class="d"><a href="#d-1129">29 พ.ย. อา.</a></td><td>ปารีส</td><td>ถนนมูฟฟ์ตาร์ พิพิธภัณฑ์ออร์แซ (แซ็ง-แฌร์แม็งและบง มาร์เช่เป็นตัวเลือกเสริม)</td><td>—</td></tr>
-        <tr><td class="d"><a href="#d-1130">30 พ.ย. จ.</a></td><td><span class="cityflag"><span class="flag f-es"></span>บาร์เซโลนา</span></td><td>วิวเมดิเตอร์เรเนียนจากรถไฟ ถนนปาสเซจ เด กราเซีย</td><td>TGV 07:42</td></tr>
+        <tr><td class="d"><a href="#d-1128">28 พ.ย. ส.</a></td><td><span class="cityflag"><span class="flag f-fr"></span>ลียง</span></td><td>ตลาดเช้า มงมาร์ต → นั่ง TGV ตอนเย็นไปลียง</td><td>TGV (ยังไม่จอง)</td></tr>
+        <tr><td class="d"><a href="#d-1129">29 พ.ย. อา.</a></td><td>ลียง</td><td>ตลาดปอล โบกุส เนินฟูร์วิแยร์ <b>มื้อเย็นที่ร้านปอล โบกุส</b></td><td>—</td></tr>
+        <tr><td class="d"><a href="#d-1130">30 พ.ย. จ.</a></td><td><span class="cityflag"><span class="flag f-es"></span>บาร์เซโลนา</span></td><td>เดินเล่นลียงยามเช้า → รถไฟก่อนเที่ยงไปบาร์เซโลนา</td><td>รถไฟ (ยังไม่จอง)</td></tr>
         <tr><td class="d"><a href="#d-1201">1 ธ.ค. อ.</a></td><td>บาร์เซโลนา</td><td>วันของเกาดี</td><td>—</td></tr>
         <tr><td class="d"><a href="#d-1202">2 ธ.ค. พ.</a></td><td>บาร์เซโลนา</td><td>ตลาด เมืองเก่า ปาเอยา ทะเล</td><td>—</td></tr>
         <tr><td class="d"><a href="#d-1203">3 ธ.ค. พฤ.</a></td><td><span class="cityflag"><span class="flag f-it"></span>เวนิส</span></td><td>กับแกล้มชิเกตติที่บาร์คาโร</td><td>Vueling 12:40</td></tr>
@@ -4748,14 +4774,16 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <tbody>
         <tr><td>ตั๋วเครื่องบิน</td><td>เอมิเรตส์ กรุงเทพฯ⇄ยุโรป 3 คน (Saver＋Flex)</td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
         <tr><td>ที่พัก</td><td>Hotel Sint Nicolaas (อัมสเตอร์ดัม 2 คืน)</td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
-        <tr><td>ที่พัก</td><td>Libertel Austerlitz Jardin des Plantes (ปารีส 5 คืน)<span class="tsub">จอง 2 รายการ 25〜29 และ 29〜30 พ.ย. ตอนเช็กอินถามว่าห้องเดิมไหม</span></td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
+        <tr><td>ที่พัก</td><td>Libertel Austerlitz Jardin des Plantes (ปารีส 3 คืน)<span class="tsub">ย่นรายการ 25〜29 พ.ย. เป็น 25〜28 พ.ย. (ฟรีถึง 22 พ.ย.) และยกเลิกรายการ 29〜30 พ.ย. (ฟรีถึง 26 พ.ย.)</span></td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
         <tr><td>ที่พัก</td><td>Hôtel Vendome Saint-Germain (ปารีส ไม่ใช้แล้ว)<span class="tsub">ยกเลิกภายในกำหนดยกเลิกฟรี</span></td><td><span class="pill ng">ต้องยกเลิก</span></td></tr>
         <tr><td>ที่พัก</td><td>Barceló Sants (บาร์เซโลนา 3 คืน)</td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
         <tr><td>ที่พัก</td><td>Hotel Guerrini (เวนิส 2 คืน)</td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
         <tr><td>ที่พัก</td><td>Hotel Camilla Firenze (ฟลอเรนซ์ 3 คืน)<span class="tsub">รอคำตอบเรื่องเตียงเด็ก</span></td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
         <tr><td>ที่พัก</td><td>Antica Dimora delle Cinque Lune (โรม 3 คืน)</td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
         <tr><td>ที่พัก</td><td>โรงแรมระหว่างต่อเครื่องที่ดูไบ (ราว 17 ชั่วโมง)</td><td><span class="pill todo">ต้องจอง</span></td></tr>
-        <tr><td>รถไฟ</td><td>TGV INOUI ชั้น 1 ปารีส→บาร์เซโลนา ตู้ 13 ชั้นบน</td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
+        <tr><td>รถไฟ</td><td>TGV INOUI ชั้น 1 ปารีส→บาร์เซโลนา 30 พ.ย.<span class="tsub">จะคืนเพราะเปลี่ยนไปแวะลียง (คืนฟรีถึง 23 พ.ย.)</span></td><td><span class="pill ng">คืนตั๋ว</span></td></tr>
+        <tr><td>รถไฟ</td><td>ปารีส→ลียง 28 พ.ย. (ตอนเย็น) ลียง→บาร์เซโลนา 30 พ.ย. (ก่อนเที่ยง)</td><td><span class="pill todo">ต้องจอง</span></td></tr>
+        <tr><td>ที่พัก</td><td>ลียง 2 คืน (28〜30 พ.ย.) ใกล้สถานีปาร์-ดิเยอสะดวก</td><td><span class="pill todo">ต้องจอง</span></td></tr>
         <tr><td>บัตรเข้า</td><td>ดิสนีย์แลนด์ปารีส 26 พ.ย. บัตรระบุวัน 1 วัน 2 สวน (ผู้ใหญ่ 2 คน)<br><small>ซื้อแล้ว 15 ต.ค. <b>ยกเลิกได้ถึง 3 วันก่อน (23 พ.ย.)</b> 22 พ.ย. เป็นวันออกเดินทาง ถ้าจะเปลี่ยนวันให้ตัดสินใจก่อนออกเดินทาง</small></td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
         <tr><td>ร้านอาหาร</td><td>ร้านปอล โบกุส สาขาแรก (ชานเมืองลียง) 29 พ.ย. 20:15 3 คน<span class="tsub">กันวงเงินบัตรไว้ ยกเลิกฟรีถึง 28 พ.ย. 20:15 ยืนยันอีกครั้งราว 22 พ.ย. (<a href="#bocuse">บทโบกุส</a>)</span></td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
         <tr><td>รถไฟ</td><td>Eurostar อัมสเตอร์ดัม→ปารีส 25 พ.ย. 09:10 (Standard ตู้ 18 ที่นั่ง 95・96)<span class="tsub">เปลี่ยนวันเวลาได้ฟรีถึง 1 ชม. ก่อนออก</span></td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
@@ -4776,7 +4804,8 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <tbody>
         <tr><td class="d">23 พ.ย.</td><td>BKK → DXB → AMS</td><td>EK385 / EK147 (A380)</td><td class="mono">01:05 → 12:45</td><td>ต่อเครื่องที่ดูไบ T3 3 ชม. 15 นาที (<a href="#dxb-out">วิธีใช้เวลาต่อเครื่อง</a>) รถเข็นเด็กใช้ได้ถึงหน้าประตูเครื่องบิน</td></tr>
         <tr><td class="d">25 พ.ย.</td><td>AMS → สถานีปารีสนอร์ด</td><td>Eurostar 9328 (ตู้ 18 ที่นั่ง 95・96)</td><td class="mono">09:10 → 12:37</td><td>อยู่ในเชงเก้น ไม่มีตรวจคนเข้าเมือง ไปถึงสถานี 30 นาทีก่อนออก</td></tr>
-        <tr><td class="d">30 พ.ย.</td><td>สถานีปารีส ลียง → สถานีบาร์เซโลนา ซานส์</td><td>TGV INOUI สายตรง</td><td class="mono">07:42 → 14:32</td><td>ล็อกกระเป๋าเดินทางไว้กับชั้นวางด้วยสายล็อก</td></tr>
+        <tr><td class="d">28 พ.ย.</td><td>สถานีปารีส ลียง → สถานีลียง ปาร์-ดิเยอ</td><td>TGV INOUI (ยังไม่จอง)</td><td class="mono">ตอนเย็น → ราว 2 ชม.</td><td>แนะนำราคา SEMI FLEX</td></tr>
+        <tr><td class="d">30 พ.ย.</td><td>ลียง ปาร์-ดิเยอ → สถานีบาร์เซโลนา ซานส์</td><td>รถไฟ (ยังไม่จอง)</td><td class="mono">ออกก่อนเที่ยง</td><td>สายตรงมีแค่ AVE ของ Renfe 14:35 → 19:23 ถ้าออกก่อนเที่ยงต้องต่อรถที่มงเปลีเยหรือนาร์บอนน์</td></tr>
         <tr><td class="d">3 ธ.ค.</td><td>BCN T1 → VCE</td><td>Vueling</td><td class="mono">12:40 → 14:25</td><td>FLY＋กระเป๋าโหลด ใบละไม่เกิน 25 กก. ขึ้นเครื่องได้แค่กระเป๋าใต้ที่นั่ง</td></tr>
         <tr><td class="d">5 ธ.ค.</td><td>เวนิส S.L. → ฟลอเรนซ์ SMN</td><td>Frecciarossa 9415 (Business ตู้ 3 ที่นั่ง 5D・6D)</td><td class="mono">11:26 → 13:39</td><td>วันแรกของวันหยุดยาว วางกระเป๋าบนชั้นท้ายตู้</td></tr>
         <tr><td class="d">7 ธ.ค.</td><td>ฟลอเรนซ์ SMN ⇄ ปิซา เซนตราเล</td><td>รถไฟท้องถิ่น (Regionale)</td><td class="mono">ราว 12:00 / ราว 16:30</td><td>ไปกลับวันเดียว ไม่ต้องจอง ซื้อในแอปหรือตู้ขายตั๋ววันนั้น</td></tr>
@@ -5331,6 +5360,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 
     <div class="day" id="d-1128">
       <div class="day-head"><span class="date">28 พ.ย. ส.</span><h4>ตลาดเช้า เนินมงมาร์ต และปาเลรอยัล</h4></div>
+      <p class="alert"><b>เย็นวันที่ 28 พ.ย. ย้ายไปลียง</b>　เมื่อได้เวลารถ TGV แล้ว จะจัดแผนช่วงเย็น (Hermès ชีสมงดอร์อบ) ใหม่</p>
       <ul class="tt">
         <li><span class="t">07:30</span><div><b>ตลาดโมแบร์</b> (เช้าวันอังคาร・พฤหัส・เสาร์ นั่งเมโทรสาย 10 สองสถานี ลง Maubert-Mutualité ถึงเลย)<span class="sub">ซื้อชีสนิดหน่อยที่ Laurent Dubois (ร้านของผู้บ่มชีส) ขนมปังกับผลไม้สำหรับมื้อเช้าด้วย</span></div></li>
         <li><span class="t">09:00</span><div>นั่งเมโทรไปสถานี Abbesses (สถานีลึก ขึ้นลิฟต์ ทางเข้าสไตล์อาร์ตนูโวของกีมาร์) → <b>"กำแพงแห่งรัก"</b> ที่จัตุรัสอาแบส (คำว่า "ฉันรักเธอ" กว่า 250 ภาษา ลองหาภาษาไทยดู)</div></li>
@@ -5345,8 +5375,9 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <p class="rain"><b>ถ้าฝนตก</b>：ข้ามมงมาร์ต เดินเล่นทางเดินในร่ม (กาเลอรี วิเวียน ปาสซาจ เด ปาโนรามา) ให้นานขึ้น</p>
     </div>
 
-    <div class="day" id="d-1129">
+    <div class="day" id="d-1129-par">
       <div class="day-head"><span class="date">29 พ.ย. อา.</span><h4>เช้าวันอาทิตย์ที่ถนนมูฟฟ์ตาร์ บ่ายไปออร์แซ</h4></div>
+      <p class="alert"><b>วันนี้อยู่ที่ลียง</b>　ข้างล่างคือแผนถ้ายังอยู่ปารีส ที่อยากไปจะลองย้ายไปวันอื่น (<a href="#d-1129">ลียง 29 พ.ย.</a>)</p>
       <ul class="tt">
         <li><span class="t">08:00</span><div><span class="pill maybe">ตัวเลือก</span> <b>ตลาดบาสตีย์</b> (พฤหัส・อาทิตย์ ใหญ่ที่สุดแห่งหนึ่งในปารีส หอยนางรมและไก่อบ)<span class="sub">ถ้าวันเสาร์ไปตลาดโมแบร์แล้ว ข้ามได้</span></div></li>
         <li><span class="t">10:30</span><div><b>เช้าวันอาทิตย์ที่ถนนมูฟฟ์ตาร์</b> หน้าโบสถ์แซ็ง-เมดาร์ด้านล่างถนน ทุกคนร้องเพลงตามเสียงหีบเพลงชัก (เฉพาะสาย ๆ วันอาทิตย์)</div></li>
@@ -5360,8 +5391,9 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <p class="rain"><b>ถ้ามีเวลาเหลือ</b>：<b>สวนพฤกษศาสตร์</b>ตรงข้ามโรงแรม (ที่ให้ Yuzuha วิ่งเล่น มีสวนสัตว์เล็ก ๆ กับหอวิวัฒนาการด้วย) อัฒจันทร์ลูเตซ และชามินต์ที่มัสยิดกลางปารีส (หรือแทนออร์แซในวันที่อยากพักผ่อน)</p>
     </div>
 
-    <div class="day" id="d-1130">
+    <div class="day" id="d-1130-par">
       <div class="day-head"><span class="date">30 พ.ย. จ.</span><h4>นั่ง TGV สู่ทะเลเมดิเตอร์เรเนียน</h4></div>
+      <p class="alert"><b>ตั๋ว TGV นี้จะคืน</b>　30 พ.ย. จะเดินทางจากลียงไปบาร์เซโลนา (<a href="#d-1130">ลียง 30 พ.ย.</a>) คืนฟรีถึง 23 พ.ย.</p>
       <ul class="tt">
         <li><span class="t">06:15</span><div>ตื่น เช็กเอาต์ (จ่ายเงินไว้ตั้งแต่คืนก่อนจะเร็วขึ้น)</div></li>
         <li><span class="t">06:50</span><div>แท็กซี่ G7 ไปสถานีปารีส ลียง ข้ามสะพานราว 5 นาที ประมาณ €10 (ถ้าไม่มีกระเป๋าเดินได้ 12 นาที)</div></li>
@@ -6064,11 +6096,11 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="bocuse" class="chapter bcs" data-chapter="bocuse">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Special · Restaurant Paul Bocuse · 29 พ.ย. (อา.) 20:15</div>
-    <h2>ร้านปอล โบกุส สาขาแรก <span class="local">L'Auberge du Pont de Collonges</span></h2>
+    <div class="eyebrow">Special · ลียง 28 – 30 พ.ย. · Restaurant Paul Bocuse 29 พ.ย. (อา.) 20:15</div>
+    <h2>ลียงและร้านปอล โบกุส สาขาแรก <span class="local">Lyon · L'Auberge du Pont de Collonges</span></h2>
     <p class="lead">ร้านแรกของปอล โบกุส "เชฟแห่งศตวรรษ" ร้านของครอบครัวตั้งแต่ปี 1924 ที่ครองสามดาวมิชลินนานถึง 55 ปี เป็นศูนย์กลางของอาหารฝรั่งเศสแบบคลาสสิก เราจะไปชิมต้นตำรับของรสชาติที่ Ryo เคยได้ลองที่กินซ่า ไปกันสามคนพ่อแม่ลูก ร้านเป็นอาคารสีแดงเขียวริมแม่น้ำโซน ทางเหนือของลียง</p>
   </div>
-  <div class="subnav"><a href="#bcs-basic">การจอง</a><a href="#bcs-go">การเดินทาง</a><a href="#bcs-day">ตารางวันนั้น</a><a href="#bcs-menu">เมนู</a><a href="#bcs-dish">อาหารขึ้นชื่อ</a><a href="#bcs-baby">พาลูกน้อยไป</a><a href="#bcs-hist">ประวัติ</a><a href="#bcs-gift">ของฝาก</a><a href="#bcs-check">เช็กลิสต์</a><a href="#bcs-map">แผนที่</a></div>
+  <div class="subnav"><a href="#bcs-basic">การจอง</a><a href="#bcs-go">การเดินทาง</a><a href="#bcs-day">3 วันที่ลียง</a><a href="#bcs-menu">เมนู</a><a href="#bcs-dish">อาหารขึ้นชื่อ</a><a href="#bcs-baby">พาลูกน้อยไป</a><a href="#bcs-hist">ประวัติ</a><a href="#bcs-gift">ของฝาก</a><a href="#bcs-check">เช็กลิสต์</a><a href="#bcs-map">แผนที่</a></div>
 
   <div class="block" id="bcs-basic">
     <h3>การจองและข้อมูลพื้นฐาน</h3>
@@ -6092,7 +6124,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <h4>จากในเมืองลียงไปร้าน</h4>
       <ol>
         <li><b>แท็กซี่หรือแอปเรียกรถ</b> (Uber, G7) ราว 20〜25 นาที คืนวันอาทิตย์คิดราคาพิเศษ</li>
-        <li>ออกจากโรงแรม<b>ราว 19:40</b> จะถึงก่อนเวลานิดหน่อย ราว 20:05</li>
+        <li>ออกจากโรงแรม<b>ราว 18:50</b> ถึงราว 19:15 จองไว้ 20:15 ถ้าถึงเร็วให้เดินเล่นริมแม่น้ำโซนหรือดื่มอาเปริติฟที่ร้าน</li>
         <li>บอกคนขับว่า "<b>Restaurant Paul Bocuse, Collonges-au-Mont-d'Or</b>"</li>
         <li><b>ขากลับ</b> ตอนจ่ายเงินให้พูดว่า "<b>Pourriez-vous nous appeler un taxi ?</b>" (ช่วยเรียกแท็กซี่ให้หน่อยได้ไหม) เพราะอยู่ชานเมือง แอปเรียกรถอาจรอนาน</li>
       </ol>
@@ -6101,17 +6133,35 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   </div>
 
   <div class="block" id="bcs-day">
-    <h3>ตารางวันที่ 29 พ.ย. (อา.)</h3>
-    <p class="note">มื้อเย็นยาวและหนัก มื้อกลางวันเลยกินเบา ๆ แล้วพักที่โรงแรมตอนเย็นก่อนออกไป เมื่อจองรถไฟและโรงแรมที่ลียงแล้ว จะย้ายไปรวมในบทลียง</p>
-    <ul class="tt">
-      <li><span class="t">09:00</span><div><b>ตลาดปอล โบกุส</b> (Les Halles de Lyon Paul Bocuse) วันอาทิตย์เปิดตั้งแต่เช้าถึงบ่ายต้น ๆ<span class="sub">ชีส ชาร์กูเตอรี (แฮมและไส้กรอก) หอยนางรม ได้เห็นร้านวัตถุดิบก่อน มื้อเย็นจะยิ่งสนุก</span></div></li>
-      <li><span class="t">12:00</span><div>มื้อกลางวันเบา ๆ ในตลาด (หอยนางรมสักสองสามตัว ปาเต อ็อง ครูตสักชิ้น)</div></li>
-      <li><span class="t">14:00</span><div>เมืองเก่า (วิเยอ ลียง) ทางลอด "ทราบูล" และเนินฟูร์วิแยร์ (รถรางไต่เขา)</div></li>
-      <li><span class="t">16:30</span><div>พักที่โรงแรม ให้ Yuzuha งีบให้เต็มที่ แล้วเปลี่ยนชุด</div></li>
-      <li><span class="t">19:40</span><div>นั่งแท็กซี่ไปร้าน</div></li>
-      <li><span class="t">20:15</span><div><b>มื้อเย็นที่ร้านปอล โบกุส</b> <span class="pill ok">ยืนยันแล้ว</span><span class="sub">ถ้าสั่งจานเริ่ม จานหลัก ของหวาน ใช้เวลาราว 2 ชม. เมนูครบรอบ 100 ปีสั่งได้ถึง 21:00</span></div></li>
-      <li><span class="t">22:30</span><div>ให้ร้านช่วยเรียกแท็กซี่กลับโรงแรม → ถึงราว 23:00</div></li>
-    </ul>
+    <h3>3 วันที่ลียง (แผนคร่าว ๆ)</h3>
+    <p class="note">รถไฟและโรงแรมยังต้องจอง เวลาจะแก้เมื่อจองแล้ว ถ้าพักใกล้สถานีปาร์-ดิเยอ จะเดินไปทั้งตลาดและสถานีขาออกได้</p>
+    <div class="day" id="d-1128-lyo">
+      <div class="day-head"><span class="date">28 พ.ย. ส.</span><h4>จากปารีสไปลียง</h4></div>
+      <ul class="tt">
+        <li><span class="t">เย็น</span><div><b>TGV</b> สถานีปารีส ลียง → ลียง ปาร์-ดิเยอ (ราว 2 ชม.)<span class="pill todo">ต้องจอง</span></div></li>
+        <li><span class="t">ค่ำ</span><div>เช็กอิน → มื้อเย็นเบา ๆ ใกล้โรงแรม นอนเร็วเตรียมตัวสำหรับวันพรุ่งนี้</div></li>
+      </ul>
+    </div>
+    <div class="day" id="d-1129">
+      <div class="day-head"><span class="date">29 พ.ย. อา.</span><h4>ตลาด บนเนินเขา และโบกุส</h4></div>
+      <ul class="tt">
+        <li><span class="t">09:00</span><div><b>ตลาดปอล โบกุส</b> (Les Halles de Lyon Paul Bocuse) วันอาทิตย์เปิดตั้งแต่เช้าถึงบ่ายต้น ๆ<span class="sub">ชีส ชาร์กูเตอรี หอยนางรม ได้เห็นแหล่งวัตถุดิบของมื้อเย็นก่อน</span></div></li>
+        <li><span class="t">12:00</span><div><b>มื้อกลางวันเบา ๆ</b> (ในตลาดหรือเมืองเก่า) กินน้อย ๆ เผื่อมื้อเย็น</div></li>
+        <li><span class="t">13:30</span><div>เมืองเก่า (วิเยอ ลียง) → นั่ง<b>รถรางไต่เขา</b>ขึ้นเนินฟูร์วิแยร์<span class="sub">มหาวิหารบนเนินและวิวหลังคาแดงทั้งเมือง ขากลับเดินลงเนินหรือนั่งรถรางอีกที</span></div></li>
+        <li><span class="t">15:00</span><div>เดินเล่นตรอกในเมืองเก่าและทางลอด "ทราบูล" (ทางเดินทะลุตึก)</div></li>
+        <li><span class="t">16:30</span><div>กลับโรงแรม พักและเตรียมตัว ให้ Yuzuha งีบให้เต็มที่ <b>ปล่อยให้ท้องว่างไว้</b></div></li>
+        <li><span class="t">18:50</span><div>นั่งแท็กซี่ไปร้าน (ราว 20〜25 นาที)<span class="sub">ถ้าถึงเร็ว เดินเล่นริมแม่น้ำโซนหรือดื่มอาเปริติฟที่ร้าน</span></div></li>
+        <li><span class="t">20:15</span><div><b>มื้อเย็นที่ร้านปอล โบกุส</b> <span class="pill ok">ยืนยันแล้ว</span><span class="sub">ใช้เวลาราว 4 ชม. อย่างสบาย ๆ</span></div></li>
+        <li><span class="t">ราว 24:00</span><div>ให้ร้านเรียกแท็กซี่กลับโรงแรม</div></li>
+      </ul>
+    </div>
+    <div class="day" id="d-1130">
+      <div class="day-head"><span class="date">30 พ.ย. จ.</span><h4>เช้าที่ลียง แล้วไปบาร์เซโลนา</h4></div>
+      <ul class="tt">
+        <li><span class="t">เช้า</span><div>ตื่นสาย ๆ เดินเล่นริมแม่น้ำโซนหรือแถวโรงแรม</div></li>
+        <li><span class="t">ก่อนเที่ยง</span><div>ลียง ปาร์-ดิเยอ → <b>บาร์เซโลนา ซานส์</b> <span class="pill todo">ต้องจอง</span><span class="sub">สายตรงมีแค่ AVE ของ Renfe (14:35 → 19:23) ถ้าออกก่อนเที่ยงต้องต่อรถที่มงเปลีเยหรือนาร์บอนน์</span></div></li>
+      </ul>
+    </div>
   </div>
 
   <div class="block" id="bcs-menu">
@@ -6204,7 +6254,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <h3>พาลูกน้อยไป</h3>
     <div class="grid2">
       <div class="card"><h4>สิ่งที่แจ้งร้านไว้</h4><ul><li>จะพาลูกสาว 10 เดือนไปด้วย</li><li>ให้นอนพักในรถเข็น และจะระวังไม่ให้รบกวนลูกค้าคนอื่น</li><li>ขอเก้าอี้เด็ก (chaise haute)</li></ul></div>
-      <div class="card"><h4>เคล็ดลับวันนั้น</h4><ul><li>ให้งีบตอนเย็นให้พอ ใส่ชุดสบาย ๆ ใกล้ชุดนอน จะได้หลับในรถเข็นได้</li><li>ชุดเปลี่ยนผ้าอ้อม นม จุกหลอก ของเล่นชิ้นเล็ก</li><li>ถ้าลูกงอแง ให้คนหนึ่งพาไปปลอบที่ล็อบบี้หรือข้างนอก</li><li>สั่งแค่ 3 จาน ใช้เวลาราว 2 ชม.</li><li>เอาอาหารของ Yuzuha ไปเอง ก่อนป้อนให้ถามว่า "Je peux donner son repas au bébé ?"</li></ul></div>
+      <div class="card"><h4>เคล็ดลับวันนั้น</h4><ul><li>ให้งีบตอนเย็นให้พอ ใส่ชุดสบาย ๆ ใกล้ชุดนอน จะได้หลับในรถเข็นได้</li><li>ชุดเปลี่ยนผ้าอ้อม นม จุกหลอก ของเล่นชิ้นเล็ก</li><li>ถ้าลูกงอแง ให้คนหนึ่งพาไปปลอบที่ล็อบบี้หรือข้างนอก</li><li>มื้อนี้ยาวราว 4 ชม. ถ้า Yuzuha ง่วงให้นอนในรถเข็น ถ้าเหนื่อยก็สั่งจานน้อยลงได้</li><li>เอาอาหารของ Yuzuha ไปเอง ก่อนป้อนให้ถามว่า "Je peux donner son repas au bébé ?"</li></ul></div>
     </div>
   </div>
 
@@ -6255,7 +6305,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       </div>
       <div class="card"><h4>วันนั้น</h4>
         <ul class="check">
-          <li><input type="checkbox" id="bcs6"><label for="bcs6">เรียกแท็กซี่ตอน 19:40</label></li>
+          <li><input type="checkbox" id="bcs6"><label for="bcs6">เรียกแท็กซี่ตอน 18:50</label></li>
           <li><input type="checkbox" id="bcs7"><label for="bcs7">ถามเรื่องซุป V.G.E. กับไก่ห่อกระเพาะปัสสาวะหมู</label></li>
           <li><input type="checkbox" id="bcs8"><label for="bcs8">นม ผ้าอ้อม ของเล่น ผ้าห่มของ Yuzuha</label></li>
           <li><input type="checkbox" id="bcs9"><label for="bcs9">ถ่ายรูป：หน้าร้าน รถเข็นของหวาน ตอนหั่นปลาห่อพาย</label></li>
@@ -6371,7 +6421,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <div class="day" id="d-1130-es">
       <div class="day-head"><span class="date">30 พ.ย. จ.</span><h4>ถึงแล้ว ยามเย็นที่ถนนปาเซจเดกราเซีย</h4></div>
       <ul class="tt">
-        <li><span class="t">14:32</span><div>ถึงสถานีซานส์ → เข้าโรงแรมเลย<span class="sub">ในสถานีให้สะพายเป้ไว้ด้านหน้า</span></div></li>
+        <li><span class="t">ตอนเย็น</span><div>ถึงสถานีซานส์ (เวลาตามรถไฟที่จอง) → เข้าโรงแรมเลย<span class="sub">ในสถานีให้สะพายเป้ไว้ด้านหน้า</span></div></li>
         <li><span class="t">15:30</span><div>เช็กอิน พักสักหน่อย</div></li>
         <li><span class="t">16:30</span><div>เมโทร L3 ไป Passeig de Gràcia (ราว 10 นาที) ชม<b>กาซาบัตโย</b>และ<b>กาซามิลา</b>จากข้างนอก เดินเล่นใต้ไฟประดับคริสต์มาสที่เปิดแล้ว</div></li>
         <li><span class="t">19:00</span><div>ทาปาสมื้อเร็ว (บาร์ในย่านเอชัมปลา) ช่วงหนึ่งทุ่มพาเด็กเล็กเข้าร้านได้ง่าย</div></li>
@@ -8810,7 +8860,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   <span>ที่มาของเบอร์สถานทูต/กงสุล: "รายชื่อสถานทูตและสถานกงสุลในต่างประเทศ" ของกระทรวงการต่างประเทศญี่ปุ่น และ "List of Royal Thai Embassy contact point" ของกระทรวงการต่างประเทศไทย</span>
   <details id="changelog" style="margin-top:6px">
     <summary style="cursor:pointer;font-weight:700;color:var(--ink)">ประวัติการแก้ไข</summary>
-    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">4 พ.ย.</td><td>จองร้านปอล โบกุส สาขาแรก (29 พ.ย. 20:15) เพิ่มบท "โบกุส" แบบเดียวกับบทดิสนีย์ (การจอง การเดินทาง ตารางวันนั้น เมนูฤดูใบไม้ร่วง อาหารขึ้นชื่อ พาลูกน้อยไป ประวัติ ของฝาก)</td></tr><tr><td class="d">3 พ.ย.</td><td>ย้ายปิซาไปบ่ายวันที่ 7 ธ.ค. (จ.) ไปกลับด้วยรถไฟท้องถิ่น วันที่ 8 ธ.ค. เที่ยวฟลอเรนซ์ยามเช้า กินมื้อกลางวันแล้วนั่งรถไฟไปโรม</td></tr><tr><td class="d">3 พ.ย.</td><td>จอง Frecciarossa 9415 วันที่ 5 ธ.ค. (11:26 → 13:39 Business) เพิ่มเดินเล่นเวนิสยามเช้า วันแรกที่ฟลอเรนซ์เลื่อนอัคคาเดเมียเป็น 15:15 และย้ายพระอาทิตย์ตกที่ลานมีเกลันเจโลไปวันที่ 6 ธ.ค. เพิ่มฉบับภาษาอังกฤษ</td></tr><tr><td class="d">3 พ.ย.</td><td>จอง Eurostar (25 พ.ย. 09:10 → 12:37) ปรับตารางเช้าที่อัมสเตอร์ดัมและวันแรกที่ปารีสให้ตรงกัน</td></tr><tr><td class="d">2 พ.ย.</td><td>ลบรหัสจอง (เอมิเรตส์ ที่พักใน Booking) และเลขกรมธรรม์ประกันออกจากไกด์ (กันคนอื่นเข้าไปแก้หรือยกเลิกการจอง)</td></tr><tr><td class="d">2 พ.ย.</td><td>ดูไบ: ตัดสินใจออกไปในเมือง ซมขอวีซ่าทรานซิต 48 ชม. ผ่านเอมิเรตส์ (มีขั้นตอนในบทดูไบ)</td></tr><tr><td class="d">25 ต.ค.</td><td>ทำรายการของที่ต้องเอาไปใหม่จากรายการประจำ ให้เข้ากับทริปนี้ (มีป้ายบอกกระเป๋าที่ใส่)</td></tr><tr><td class="d">25 ต.ค.</td><td>ฉบับภาษาญี่ปุ่นเอาภาษาไทยที่เขียนคู่กันออก (ตัวเล็กข้างหัวข้อ คอลัมน์ภาษาไทยในตารางบทสนทนา ฯลฯ) ภาษาไทยอยู่ในฉบับภาษาไทย</td></tr><tr><td class="d">25 ต.ค.</td><td>เลือกดีไซน์ได้ 3 แบบ (กดปุ่มจานสีมุมขวาล่าง): Som (กระดาษสีอ่อน＋ลายเส้นของแต่ละประเทศ ค่าเริ่มต้น) Yuzuha (สีสดใส) Ryo (สีเข้ม) หรือใส่ ?theme=som / yuzuha / ryo ในลิงก์ก็ได้</td></tr><tr><td class="d">25 ต.ค.</td><td>สรุปประกันเหลือ 2 ตัว คือ Chubb และ Hilton Amex Premium เพิ่มขั้นตอนติดต่อเมื่อเกิดเหตุ (แยกสถานการณ์) และรายชื่อเบอร์ติดต่อ</td></tr><tr><td class="d">25 ต.ค.</td><td>อัปเดตข้อมูลจากใบยืนยันโรงแรม 6 แห่ง (เวลา วันสุดท้ายที่ยกเลิกฟรี ห้อง) เช็กความคุ้มครอง Amex จากเงื่อนไข (ของติดตัวถูกขโมยไม่คุ้มครอง) เพิ่มหัวข้อ Anytime Fitness</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อประกันการเดินทาง (รายละเอียดกรมธรรม์ Chubb การแบ่งหน้าที่กับ Amex กฎการเคลม)</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อจัดกระเป๋าและการขนย้าย (วิธีรับมือแต่ละสถานการณ์) เช็กสัมภาระและที่นั่งเอมิเรตส์จาก e-ticket อัปเดตรายการของและสิ่งที่ต้องทำ เพิ่มประวัติการแก้ไขนี้</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่ม "หนังที่ควรดูก่อนไป" ของแต่ละประเทศ</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มการแวะเปลี่ยนเครื่องที่ดูไบขาไป (3 ชม. 15 นาที) ในกำหนดการและแผนที่เส้นทาง</td></tr><tr><td class="d">18 ต.ค.</td><td>ปุ่มเปลี่ยนภาษาอยู่มุมขวาล่างตลอด (สลับญี่ปุ่น/ไทยได้โดยไม่เลื่อนหน้า)</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มลิสต์สถานที่โปรดใน Google Maps (แยกประเภท มีชื่อภาษาไทย) และลิงก์แผนที่ของโรงแรมและสถานที่สำคัญ เพิ่มการแวะดูไบ 17 ชม. ขากลับในแผนที่</td></tr><tr><td class="d">18 ต.ค.</td><td>เปลี่ยนที่พักปารีสเป็น Libertel Austerlitz และยืนยันที่พักทั้ง 6 แห่ง</td></tr><tr><td class="d">18 ต.ค.</td><td>เปิดเวอร์ชัน GitHub ตัวอักษรใหญ่ขึ้นสำหรับ iPhone ตารางกว้างเลื่อนด้านข้างได้ เปิดเป็นภาษาไทยด้วย ?lang=th</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>ทบทวนทั้งเล่ม (Yuzuha อายุ 10 เดือนตอนเดินทาง ขาไปออก 01:05 ตัดค่าประกันออก) ทำเป็น 2 ภาษา ญี่ปุ่นและไทย</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>เพิ่มวิธีรับมือวันประท้วง/นัดหยุดงาน การป้องกันล้วงกระเป๋า (แยกตามสถานการณ์) และคอลัมน์มารยาทบนโต๊ะอาหารของฝรั่งเศส</td></tr><tr><td class="d">ราว 16 ต.ค.</td><td>อัปเดตว่าซื้อตั๋วดิสนีย์แลนด์ปารีสแล้ว เพิ่ม "ดิสนีย์กับฝรั่งเศส" เวลาเข้าแวร์ซาย และตารางเวลาพระอาทิตย์ขึ้น-ตก</td></tr><tr><td class="d">15 ต.ค.</td><td>เวอร์ชันแรก</td></tr></tbody></table></div>
+    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">4 พ.ย.</td><td>เปลี่ยนเป็นแวะลียง (เย็น 28 พ.ย. ปารีส → ลียง 2 คืน 30 พ.ย. ไปบาร์เซโลนา) อัปเดตกำหนดการ รายการจอง การเดินทาง แผนที่เส้นทาง และใส่ 3 วันที่ลียงในบทโบกุส แผนปารีสวันที่ 29 พ.ย. เก็บไว้เป็นตัวเลือก</td></tr><tr><td class="d">4 พ.ย.</td><td>จองร้านปอล โบกุส สาขาแรก (29 พ.ย. 20:15) เพิ่มบท "โบกุส" แบบเดียวกับบทดิสนีย์ (การจอง การเดินทาง ตารางวันนั้น เมนูฤดูใบไม้ร่วง อาหารขึ้นชื่อ พาลูกน้อยไป ประวัติ ของฝาก)</td></tr><tr><td class="d">3 พ.ย.</td><td>ย้ายปิซาไปบ่ายวันที่ 7 ธ.ค. (จ.) ไปกลับด้วยรถไฟท้องถิ่น วันที่ 8 ธ.ค. เที่ยวฟลอเรนซ์ยามเช้า กินมื้อกลางวันแล้วนั่งรถไฟไปโรม</td></tr><tr><td class="d">3 พ.ย.</td><td>จอง Frecciarossa 9415 วันที่ 5 ธ.ค. (11:26 → 13:39 Business) เพิ่มเดินเล่นเวนิสยามเช้า วันแรกที่ฟลอเรนซ์เลื่อนอัคคาเดเมียเป็น 15:15 และย้ายพระอาทิตย์ตกที่ลานมีเกลันเจโลไปวันที่ 6 ธ.ค. เพิ่มฉบับภาษาอังกฤษ</td></tr><tr><td class="d">3 พ.ย.</td><td>จอง Eurostar (25 พ.ย. 09:10 → 12:37) ปรับตารางเช้าที่อัมสเตอร์ดัมและวันแรกที่ปารีสให้ตรงกัน</td></tr><tr><td class="d">2 พ.ย.</td><td>ลบรหัสจอง (เอมิเรตส์ ที่พักใน Booking) และเลขกรมธรรม์ประกันออกจากไกด์ (กันคนอื่นเข้าไปแก้หรือยกเลิกการจอง)</td></tr><tr><td class="d">2 พ.ย.</td><td>ดูไบ: ตัดสินใจออกไปในเมือง ซมขอวีซ่าทรานซิต 48 ชม. ผ่านเอมิเรตส์ (มีขั้นตอนในบทดูไบ)</td></tr><tr><td class="d">25 ต.ค.</td><td>ทำรายการของที่ต้องเอาไปใหม่จากรายการประจำ ให้เข้ากับทริปนี้ (มีป้ายบอกกระเป๋าที่ใส่)</td></tr><tr><td class="d">25 ต.ค.</td><td>ฉบับภาษาญี่ปุ่นเอาภาษาไทยที่เขียนคู่กันออก (ตัวเล็กข้างหัวข้อ คอลัมน์ภาษาไทยในตารางบทสนทนา ฯลฯ) ภาษาไทยอยู่ในฉบับภาษาไทย</td></tr><tr><td class="d">25 ต.ค.</td><td>เลือกดีไซน์ได้ 3 แบบ (กดปุ่มจานสีมุมขวาล่าง): Som (กระดาษสีอ่อน＋ลายเส้นของแต่ละประเทศ ค่าเริ่มต้น) Yuzuha (สีสดใส) Ryo (สีเข้ม) หรือใส่ ?theme=som / yuzuha / ryo ในลิงก์ก็ได้</td></tr><tr><td class="d">25 ต.ค.</td><td>สรุปประกันเหลือ 2 ตัว คือ Chubb และ Hilton Amex Premium เพิ่มขั้นตอนติดต่อเมื่อเกิดเหตุ (แยกสถานการณ์) และรายชื่อเบอร์ติดต่อ</td></tr><tr><td class="d">25 ต.ค.</td><td>อัปเดตข้อมูลจากใบยืนยันโรงแรม 6 แห่ง (เวลา วันสุดท้ายที่ยกเลิกฟรี ห้อง) เช็กความคุ้มครอง Amex จากเงื่อนไข (ของติดตัวถูกขโมยไม่คุ้มครอง) เพิ่มหัวข้อ Anytime Fitness</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อประกันการเดินทาง (รายละเอียดกรมธรรม์ Chubb การแบ่งหน้าที่กับ Amex กฎการเคลม)</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อจัดกระเป๋าและการขนย้าย (วิธีรับมือแต่ละสถานการณ์) เช็กสัมภาระและที่นั่งเอมิเรตส์จาก e-ticket อัปเดตรายการของและสิ่งที่ต้องทำ เพิ่มประวัติการแก้ไขนี้</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่ม "หนังที่ควรดูก่อนไป" ของแต่ละประเทศ</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มการแวะเปลี่ยนเครื่องที่ดูไบขาไป (3 ชม. 15 นาที) ในกำหนดการและแผนที่เส้นทาง</td></tr><tr><td class="d">18 ต.ค.</td><td>ปุ่มเปลี่ยนภาษาอยู่มุมขวาล่างตลอด (สลับญี่ปุ่น/ไทยได้โดยไม่เลื่อนหน้า)</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มลิสต์สถานที่โปรดใน Google Maps (แยกประเภท มีชื่อภาษาไทย) และลิงก์แผนที่ของโรงแรมและสถานที่สำคัญ เพิ่มการแวะดูไบ 17 ชม. ขากลับในแผนที่</td></tr><tr><td class="d">18 ต.ค.</td><td>เปลี่ยนที่พักปารีสเป็น Libertel Austerlitz และยืนยันที่พักทั้ง 6 แห่ง</td></tr><tr><td class="d">18 ต.ค.</td><td>เปิดเวอร์ชัน GitHub ตัวอักษรใหญ่ขึ้นสำหรับ iPhone ตารางกว้างเลื่อนด้านข้างได้ เปิดเป็นภาษาไทยด้วย ?lang=th</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>ทบทวนทั้งเล่ม (Yuzuha อายุ 10 เดือนตอนเดินทาง ขาไปออก 01:05 ตัดค่าประกันออก) ทำเป็น 2 ภาษา ญี่ปุ่นและไทย</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>เพิ่มวิธีรับมือวันประท้วง/นัดหยุดงาน การป้องกันล้วงกระเป๋า (แยกตามสถานการณ์) และคอลัมน์มารยาทบนโต๊ะอาหารของฝรั่งเศส</td></tr><tr><td class="d">ราว 16 ต.ค.</td><td>อัปเดตว่าซื้อตั๋วดิสนีย์แลนด์ปารีสแล้ว เพิ่ม "ดิสนีย์กับฝรั่งเศส" เวลาเข้าแวร์ซาย และตารางเวลาพระอาทิตย์ขึ้น-ตก</td></tr><tr><td class="d">15 ต.ค.</td><td>เวอร์ชันแรก</td></tr></tbody></table></div>
   </details>
 </footer>
 
@@ -8848,7 +8898,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <li><a href="#nl" data-ch="nl"><span class="flag f-nl"></span>Netherlands</a></li>
     <li><a href="#fr" data-ch="fr"><span class="flag f-fr"></span>France</a></li>
     <li><a href="#dlp" data-ch="dlp">Disneyland</a></li>
-    <li><a href="#bocuse" data-ch="bocuse">Paul Bocuse</a></li>
+    <li><a href="#bocuse" data-ch="bocuse">Lyon · Bocuse</a></li>
     <li><a href="#es" data-ch="es"><span class="flag f-es"></span>Spain</a></li>
     <li><a href="#it" data-ch="it"><span class="flag f-it"></span>Italy</a></li>
     <li><a href="#ae" data-ch="ae"><span class="flag f-ae"></span>Dubai</a></li>
@@ -8883,7 +8933,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
         <tr><td>Yuzuha is registered with Emirates on her <b>Japanese passport</b></td><td>Our passport plan</td><td>Passport data on the e-ticket (API details)</td><td><span class="pill todo">To check</span></td></tr>
         <tr><td>Som's Schengen visa: issued by Italy, covering 11/22–12/13</td><td>VFS application planned for 11/2</td><td>Photo of the issued visa sticker</td><td><span class="pill maybe">Not yet applied</span></td></tr>
         <tr><td><b>Som's Thai passport needs a visa to enter the UAE</b>. We will go into the city in Dubai, so she gets a 48-hour transit visa through Emirates (<a href="#dxb">Dubai chapter</a>)</td><td>UAE government guidance and other sources (checked 11/2)</td><td>Transit visa approval e-mail</td><td><span class="pill todo">To apply</span></td></tr>
-        <tr><td>TGV 11/30 07:42→14:32, 1st class, coach 13 upper deck, table for 3</td><td>Booking screen</td><td>E-ticket with seat numbers</td><td><span class="pill todo">To check</span></td></tr>
+        <tr><td>Changed to go via Lyon (decided 11/4): 11/28 Paris → Lyon, 11/30 Lyon → Barcelona. The current TGV (11/30 Paris → Barcelona) will be refunded</td><td>Fare terms: free refund until 11/23</td><td>Book two new trains and a Lyon hotel</td><td><span class="pill todo">To book</span></td></tr>
         <tr><td>Vueling 12/3 12:40→14:25</td><td>Fare chosen (FLY GRANDE)</td><td>Booking confirmation e-mail</td><td><span class="pill todo">Booking</span></td></tr>
         <tr><td>Eurostar 11/25 09:10→12:37 (direct, train 9328, coach 18, seats 95 &amp; 96)</td><td>E-tickets for two (bought 11/3, Standard)</td><td>—</td><td><span class="pill ok">Confirmed</span></td></tr>
         <tr><td>Frecciarossa 12/5 11:26→13:39 (train 9415, Business, coach 3, seats 5D &amp; 6D)</td><td>E-tickets for two (bought 11/3, Base fare)</td><td>—</td><td><span class="pill ok">Confirmed</span></td></tr>
@@ -8916,8 +8966,9 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <text x="508" y="42" font-size="12" font-weight="700" fill="var(--ink)" text-anchor="end">Dubai</text><text x="508" y="56" font-size="11" fill="var(--muted)" text-anchor="end">11/23 transfer 3h15 ✈</text>
       <path d="M176 60 L108 186" fill="none" stroke="var(--nl1)" stroke-width="3.5" stroke-linecap="round"/>
       <text x="150" y="128" font-size="11.5" fill="var(--ink)">Eurostar 3h27</text>
-      <path d="M105 192 L100 478" fill="none" stroke="var(--fr1)" stroke-width="3.5" stroke-linecap="round"/>
-      <text x="112" y="330" font-size="11.5" fill="var(--ink)">TGV 6h50</text>
+      <path d="M105 192 L168 300 L100 478" fill="none" stroke="var(--fr1)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="142" y="240" font-size="11.5" fill="var(--ink)">TGV 2h</text><text x="80" y="398" font-size="11.5" fill="var(--ink)">Train</text>
+      <circle cx="168" cy="300" r="6" fill="var(--fr2)" stroke="var(--paper)" stroke-width="2"/><text x="180" y="298" font-size="13" font-weight="700" fill="var(--ink)">Lyon</text><text x="180" y="313" font-size="11" fill="var(--muted)">2 nights</text>
       <path d="M106 478 Q 230 300 376 326" fill="none" stroke="var(--es1)" stroke-width="2.5" stroke-dasharray="7 6" marker-end="url(#ah)"/>
       <text x="196" y="372" font-size="11.5" fill="var(--ink)">Vueling ✈ 1h45</text>
       <path d="M382 326 L354 386" fill="none" stroke="var(--it1)" stroke-width="3.5" stroke-linecap="round"/>
@@ -8930,7 +8981,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <text x="400" y="500" font-size="11" fill="var(--muted)">12/11 ✈</text><text x="508" y="568" font-size="11" fill="var(--muted)" text-anchor="end">12/13 to Bangkok ✈</text>
       <g font-size="13" font-weight="700" fill="var(--ink)">
         <circle cx="176" cy="58" r="7" fill="var(--nl1)" stroke="var(--paper)" stroke-width="2"/><text x="190" y="62">Amsterdam</text><text x="190" y="77" font-size="11" font-weight="400" fill="var(--muted)">2 nights</text>
-        <circle cx="105" cy="188" r="7" fill="var(--fr1)" stroke="var(--paper)" stroke-width="2"/><text x="20" y="176">Paris</text><text x="20" y="160" font-size="11" font-weight="400" fill="var(--muted)">5 nights</text>
+        <circle cx="105" cy="188" r="7" fill="var(--fr1)" stroke="var(--paper)" stroke-width="2"/><text x="20" y="176">Paris</text><text x="20" y="160" font-size="11" font-weight="400" fill="var(--muted)">3 nights</text>
         <circle cx="100" cy="482" r="7" fill="var(--es1)" stroke="var(--paper)" stroke-width="2"/><text x="20" y="508">Barcelona</text><text x="20" y="524" font-size="11" font-weight="400" fill="var(--muted)">3 nights</text>
         <circle cx="382" cy="322" r="7" fill="var(--it1)" stroke="var(--paper)" stroke-width="2"/><text x="396" y="318">Venice</text><text x="396" y="304" font-size="11" font-weight="400" fill="var(--muted)">2 nights</text>
         <circle cx="354" cy="389" r="7" fill="var(--it1)" stroke="var(--paper)" stroke-width="2"/><text x="370" y="394">Florence 3 nights</text>
@@ -8955,9 +9006,9 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
         <tr><td class="d"><a href="#d-1125">11/25 Wed</a></td><td><span class="cityflag"><span class="flag f-fr"></span>Paris</span></td><td>Île de la Cité; Ryo: Louvre late opening</td><td>Eurostar 09:10</td></tr>
         <tr><td class="d"><a href="#dlp-day">11/26 Thu</a></td><td>Paris</td><td>Disneyland Paris (2 parks)</td><td>RER A</td></tr>
         <tr><td class="d"><a href="#d-1127">11/27 Fri</a></td><td>Paris</td><td>Versailles, Eiffel Tower, foie gras</td><td>RER C</td></tr>
-        <tr><td class="d"><a href="#d-1128">11/28 Sat</a></td><td>Paris</td><td>Morning market, Montmartre, baked Mont d'Or</td><td>—</td></tr>
-        <tr><td class="d"><a href="#d-1129">11/29 Sun</a></td><td>Paris</td><td>Rue Mouffetard, Musée d'Orsay (Saint-Germain and Le Bon Marché optional)</td><td>—</td></tr>
-        <tr><td class="d"><a href="#d-1130">11/30 Mon</a></td><td><span class="cityflag"><span class="flag f-es"></span>Barcelona</span></td><td>The Mediterranean from the train, Passeig de Gràcia</td><td>TGV 07:42</td></tr>
+        <tr><td class="d"><a href="#d-1128">11/28 Sat</a></td><td><span class="cityflag"><span class="flag f-fr"></span>Lyon</span></td><td>Morning market, Montmartre → evening TGV to Lyon</td><td>TGV (not booked)</td></tr>
+        <tr><td class="d"><a href="#d-1129">11/29 Sun</a></td><td>Lyon</td><td>Bocuse market hall, Fourvière hill, <b>dinner at Restaurant Paul Bocuse</b></td><td>—</td></tr>
+        <tr><td class="d"><a href="#d-1130">11/30 Mon</a></td><td><span class="cityflag"><span class="flag f-es"></span>Barcelona</span></td><td>Morning walk in Lyon → late-morning train to Barcelona</td><td>Train (not booked)</td></tr>
         <tr><td class="d"><a href="#d-1201">12/1 Tue</a></td><td>Barcelona</td><td>Gaudí day</td><td>—</td></tr>
         <tr><td class="d"><a href="#d-1202">12/2 Wed</a></td><td>Barcelona</td><td>Market, old town, paella, the sea</td><td>—</td></tr>
         <tr><td class="d"><a href="#d-1203">12/3 Thu</a></td><td><span class="cityflag"><span class="flag f-it"></span>Venice</span></td><td>Cicchetti at a bacaro</td><td>Vueling 12:40</td></tr>
@@ -8985,14 +9036,16 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <tbody>
         <tr><td>Flights</td><td>Emirates BKK ⇄ Europe, 3 people (Saver + Flex)</td><td><span class="pill ok">Booked</span></td></tr>
         <tr><td>Hotel</td><td>Hotel Sint Nicolaas (Amsterdam, 2 nights)</td><td><span class="pill ok">Booked</span></td></tr>
-        <tr><td>Hotel</td><td>Libertel Austerlitz Jardin des Plantes (Paris, 5 nights)<span class="tsub">Two bookings, 11/25–29 and 11/29–30. Ask at check-in to keep the same room</span></td><td><span class="pill ok">Booked</span></td></tr>
+        <tr><td>Hotel</td><td>Libertel Austerlitz Jardin des Plantes (Paris, 3 nights)<span class="tsub">Shorten the 11/25–29 booking to 11/25–28 (free until 11/22) and cancel the 11/29–30 booking (free until 11/26)</span></td><td><span class="pill ok">Booked</span></td></tr>
         <tr><td>Hotel</td><td>Hôtel Vendome Saint-Germain (Paris, not used)<span class="tsub">Cancel before the free-cancellation deadline</span></td><td><span class="pill ng">To cancel</span></td></tr>
         <tr><td>Hotel</td><td>Barceló Sants (Barcelona, 3 nights)</td><td><span class="pill ok">Booked</span></td></tr>
         <tr><td>Hotel</td><td>Hotel Guerrini (Venice, 2 nights)</td><td><span class="pill ok">Booked</span></td></tr>
         <tr><td>Hotel</td><td>Hotel Camilla Firenze (Florence, 3 nights)<span class="tsub">Waiting for reply about a baby cot</span></td><td><span class="pill ok">Booked</span></td></tr>
         <tr><td>Hotel</td><td>Antica Dimora delle Cinque Lune (Rome, 3 nights)</td><td><span class="pill ok">Booked</span></td></tr>
         <tr><td>Hotel</td><td>Dubai stopover hotel (about 17 hours)</td><td><span class="pill todo">To book</span></td></tr>
-        <tr><td>Train</td><td>TGV INOUI 1st class Paris → Barcelona, coach 13 upper deck</td><td><span class="pill ok">Booked</span></td></tr>
+        <tr><td>Train</td><td>TGV INOUI 1st class Paris → Barcelona 11/30<span class="tsub">To be refunded since we go via Lyon (free until 11/23)</span></td><td><span class="pill ng">To refund</span></td></tr>
+        <tr><td>Train</td><td>Paris → Lyon 11/28 (evening), Lyon → Barcelona 11/30 (late morning)</td><td><span class="pill todo">To book</span></td></tr>
+        <tr><td>Hotel</td><td>Lyon, 2 nights (11/28–30). Near Part-Dieu station is handiest</td><td><span class="pill todo">To book</span></td></tr>
         <tr><td>Tickets</td><td>Disneyland Paris 11/26, dated 1-day 2-park ticket (2 adults)<br><small>Bought 10/15. <b>Cancellable until 3 days before (11/23)</b>. 11/22 is departure day, so decide any change before leaving</small></td><td><span class="pill ok">Booked</span></td></tr>
         <tr><td>Restaurant</td><td>Restaurant Paul Bocuse (near Lyon) 11/29 20:15, 3 people<span class="tsub">Card imprint only. Free cancellation until 11/28 20:15. Reconfirm around 11/22 (<a href="#bocuse">Bocuse chapter</a>)</span></td><td><span class="pill ok">Booked</span></td></tr>
         <tr><td>Train</td><td>Eurostar Amsterdam → Paris 11/25 09:10 (Standard, coach 18, seats 95 &amp; 96)<span class="tsub">Free date/time change until 1 hour before departure</span></td><td><span class="pill ok">Booked</span></td></tr>
@@ -9013,7 +9066,8 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <tbody>
         <tr><td class="d">11/23</td><td>BKK → DXB → AMS</td><td>EK385 / EK147 (A380)</td><td class="mono">01:05 → 12:45</td><td>3h15 transfer at Dubai T3 (<a href="#dxb-out">how to spend it</a>). Stroller to the aircraft door</td></tr>
         <tr><td class="d">11/25</td><td>AMS → Paris Nord</td><td>Eurostar 9328 (coach 18, seats 95 &amp; 96)</td><td class="mono">09:10 → 12:37</td><td>Inside Schengen, no passport control. Be at the station by 08:50 as the ticket says</td></tr>
-        <tr><td class="d">11/30</td><td>Paris Gare de Lyon → BCN Sants</td><td>TGV INOUI direct</td><td class="mono">07:42 → 14:32</td><td>Lock suitcases to the rack with a wire lock</td></tr>
+        <tr><td class="d">11/28</td><td>Paris Gare de Lyon → Lyon Part-Dieu</td><td>TGV INOUI (not booked)</td><td class="mono">evening → ~2h</td><td>SEMI FLEX fare recommended</td></tr>
+        <tr><td class="d">11/30</td><td>Lyon Part-Dieu → BCN Sants</td><td>Train (not booked)</td><td class="mono">late morning</td><td>The only direct train is Renfe AVE 14:35 → 19:23. Leaving before noon means changing at Montpellier or Narbonne</td></tr>
         <tr><td class="d">12/3</td><td>BCN T1 → VCE</td><td>Vueling</td><td class="mono">12:40 → 14:25</td><td>FLY GRANDE: under-seat bag, 10kg cabin bag and 25kg checked bag per person</td></tr>
         <tr><td class="d">12/5</td><td>Venezia S. Lucia → Firenze SMN</td><td>Frecciarossa 9415 (Business, coach 3, seats 5D &amp; 6D)</td><td class="mono">11:26 → 13:39</td><td>First day of a long weekend. Bags on the rack at the end of the coach</td></tr>
         <tr><td class="d">12/7</td><td>Firenze SMN ⇄ Pisa Centrale</td><td>Regional train</td><td class="mono">~12:00 / ~16:30</td><td>Day trip. No booking; buy on the day in the app or at a machine</td></tr>
@@ -9565,6 +9619,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 
     <div class="day" id="d-1128">
       <div class="day-head"><span class="date">11/28 Sat</span><h4>Morning market, Montmartre, Palais-Royal</h4></div>
+      <p class="alert"><b>To Lyon on the evening of 11/28</b>　Once the TGV time is set, the evening plans (Hermès, baked Mont d'Or) will be reworked.</p>
       <ul class="tt">
         <li><span class="t">07:30</span><div><b>Marché Maubert</b> (Tue, Thu, Sat mornings; Metro 10, two stops, right outside Maubert-Mutualité)<span class="sub">A little cheese from Laurent Dubois (master cheese ager). Bread and fruit for breakfast too</span></div></li>
         <li><span class="t">09:00</span><div>Metro to Abbesses (a deep station: take the lift up; Guimard's Art Nouveau entrance) → the <b>"I Love You" wall</b> in Square Jehan-Rictus ("I love you" in more than 250 languages; find the Japanese and Thai)</div></li>
@@ -9579,8 +9634,9 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <p class="rain"><b>If it rains</b>: skip Montmartre and spend longer in the covered passages (Galerie Vivienne, Passage des Panoramas)</p>
     </div>
 
-    <div class="day" id="d-1129">
+    <div class="day" id="d-1129-par">
       <div class="day-head"><span class="date">11/29 Sun</span><h4>Rue Mouffetard on Sunday morning, Orsay in the afternoon</h4></div>
+      <p class="alert"><b>We are in Lyon this day</b>　Below is the plan if we had stayed in Paris; we'll try to fit the must-sees into other days (<a href="#d-1129">Lyon, 11/29</a>).</p>
       <ul class="tt">
         <li><span class="t">08:00</span><div><span class="pill maybe">Optional</span> <b>Marché Bastille</b> (Thu and Sun, one of the largest in Paris; oysters and rotisserie chicken)<span class="sub">Skip it if we made it to Maubert on Saturday</span></div></li>
         <li><span class="t">10:30</span><div><b>Sunday morning on Rue Mouffetard</b>. In front of Saint-Médard church at the bottom of the street, everyone sings along to an accordion (Sunday late morning only)</div></li>
@@ -9594,8 +9650,9 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <p class="rain"><b>With time to spare</b>: the <b>Jardin des Plantes</b> opposite the hotel (a playground for Yuzuha, a small zoo and the Grand Gallery of Evolution), the Arènes de Lutèce, mint tea at the Grande Mosquée (also good instead of Orsay on a lazy day)</p>
     </div>
 
-    <div class="day" id="d-1130">
+    <div class="day" id="d-1130-par">
       <div class="day-head"><span class="date">11/30 Mon</span><h4>By TGV to the Mediterranean</h4></div>
+      <p class="alert"><b>This TGV will be refunded</b>　On 11/30 we travel from Lyon to Barcelona (<a href="#d-1130">Lyon, 11/30</a>). Free refund until 11/23.</p>
       <ul class="tt">
         <li><span class="t">06:15</span><div>Wake up, check out (pay the night before to be quick)</div></li>
         <li><span class="t">06:50</span><div>G7 taxi to Gare de Lyon, about 5 min across the bridge, around €10 (12 min on foot without luggage)</div></li>
@@ -10297,11 +10354,11 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="bocuse" class="chapter bcs" data-chapter="bocuse">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Special · Restaurant Paul Bocuse · 11/29 (Sun) 20:15</div>
-    <h2>Restaurant Paul Bocuse <span class="local">L'Auberge du Pont de Collonges</span></h2>
+    <div class="eyebrow">Special · Lyon 11/28 – 11/30 · Restaurant Paul Bocuse 11/29 (Sun) 20:15</div>
+    <h2>Lyon and Restaurant Paul Bocuse <span class="local">Lyon · L'Auberge du Pont de Collonges</span></h2>
     <p class="lead">The flagship of Paul Bocuse, the "Chef of the Century". A family house since 1924 that held three Michelin stars for 55 years, the temple of classic French cuisine. We go to the original of the restaurant Ryo first tasted in Ginza, as a family of three. A red-and-green building on the banks of the Saône, just north of Lyon.</p>
   </div>
-  <div class="subnav"><a href="#bcs-basic">Booking</a><a href="#bcs-go">Getting there</a><a href="#bcs-day">The day</a><a href="#bcs-menu">Menu</a><a href="#bcs-dish">Signature dishes</a><a href="#bcs-baby">With a baby</a><a href="#bcs-hist">History</a><a href="#bcs-gift">Gifts</a><a href="#bcs-check">Checklist</a><a href="#bcs-map">Map</a></div>
+  <div class="subnav"><a href="#bcs-basic">Booking</a><a href="#bcs-go">Getting there</a><a href="#bcs-day">Three days in Lyon</a><a href="#bcs-menu">Menu</a><a href="#bcs-dish">Signature dishes</a><a href="#bcs-baby">With a baby</a><a href="#bcs-hist">History</a><a href="#bcs-gift">Gifts</a><a href="#bcs-check">Checklist</a><a href="#bcs-map">Map</a></div>
 
   <div class="block" id="bcs-basic">
     <h3>Booking and basics</h3>
@@ -10325,7 +10382,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       <h4>From central Lyon</h4>
       <ol>
         <li><b>Taxi or ride app</b> (Uber, G7), about 20–25 min. Sunday night is the higher tariff</li>
-        <li>Leave the hotel <b>around 19:40</b> to arrive a little early, around 20:05</li>
+        <li>Leave the hotel <b>around 18:50</b>, arriving about 19:15. The booking is 20:15, so walk by the Saône or have an aperitif at the restaurant</li>
         <li>Tell the driver "<b>Restaurant Paul Bocuse, Collonges-au-Mont-d'Or</b>"</li>
         <li><b>Going back</b>: when paying, ask "<b>Pourriez-vous nous appeler un taxi ?</b>" (Could you call us a taxi?). Ride apps can take a while out in the suburbs</li>
       </ol>
@@ -10334,17 +10391,35 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   </div>
 
   <div class="block" id="bcs-day">
-    <h3>Sunday 11/29</h3>
-    <p class="note">A long, rich dinner at night, so a light lunch and a rest at the hotel late afternoon. Once the Lyon train and hotel are booked, this moves into a Lyon chapter.</p>
-    <ul class="tt">
-      <li><span class="t">09:00</span><div><b>Les Halles de Lyon Paul Bocuse</b> market, open Sunday from morning to early afternoon<span class="sub">Cheese, charcuterie, oysters. Seeing the producers first makes the evening's dishes even better</span></div></li>
-      <li><span class="t">12:00</span><div>A light lunch inside the market (a few oysters, a slice of pâté en croûte)</div></li>
-      <li><span class="t">14:00</span><div>Old town (Vieux Lyon), traboules, Fourvière hill (funicular)</div></li>
-      <li><span class="t">16:30</span><div>Rest at the hotel. A good nap for Yuzuha. Change clothes</div></li>
-      <li><span class="t">19:40</span><div>Taxi to the restaurant</div></li>
-      <li><span class="t">20:15</span><div><b>Dinner at Restaurant Paul Bocuse</b> <span class="pill ok">Booked</span><span class="sub">Starter, main and dessert take about 2 hours. The Centenary menu can be ordered until 21:00</span></div></li>
-      <li><span class="t">~22:30</span><div>Restaurant calls a taxi → back at the hotel around 23:00</div></li>
-    </ul>
+    <h3>Three days in Lyon (outline)</h3>
+    <p class="note">Trains and hotel are still to be booked; times will be updated once they are. A hotel near Part-Dieu station puts both the market hall and the departure station within walking distance.</p>
+    <div class="day" id="d-1128-lyo">
+      <div class="day-head"><span class="date">11/28 Sat</span><h4>Paris to Lyon</h4></div>
+      <ul class="tt">
+        <li><span class="t">Evening</span><div><b>TGV</b> Paris Gare de Lyon → Lyon Part-Dieu (about 2 hours)<span class="pill todo">To book</span></div></li>
+        <li><span class="t">Night</span><div>Check in → light dinner nearby. Early night before the big day</div></li>
+      </ul>
+    </div>
+    <div class="day" id="d-1129">
+      <div class="day-head"><span class="date">11/29 Sun</span><h4>Market, the hilltop, and Bocuse</h4></div>
+      <ul class="tt">
+        <li><span class="t">09:00</span><div><b>Les Halles de Lyon Paul Bocuse</b>, open Sunday from morning to early afternoon<span class="sub">Cheese, charcuterie, oysters. See where tonight's ingredients come from</span></div></li>
+        <li><span class="t">12:00</span><div><b>A light lunch</b> (in the market hall or the old town). Keep it small for the evening</div></li>
+        <li><span class="t">13:30</span><div>Old town (Vieux Lyon) → <b>funicular</b> up to Fourvière hill<span class="sub">The basilica on top and the view over the red roofs. Walk down the slope or take the funicular back</span></div></li>
+        <li><span class="t">15:00</span><div>Stroll the old-town lanes and traboules (passages through buildings)</div></li>
+        <li><span class="t">16:30</span><div>Back to the hotel to rest and get ready. A good nap for Yuzuha. <b>Arrive hungry</b></div></li>
+        <li><span class="t">18:50</span><div>Taxi to the restaurant (about 20–25 min)<span class="sub">If early, a short walk by the Saône or an aperitif at the restaurant</span></div></li>
+        <li><span class="t">20:15</span><div><b>Dinner at Restaurant Paul Bocuse</b> <span class="pill ok">Booked</span><span class="sub">About four unhurried hours</span></div></li>
+        <li><span class="t">~24:00</span><div>The restaurant calls a taxi back to the hotel</div></li>
+      </ul>
+    </div>
+    <div class="day" id="d-1130">
+      <div class="day-head"><span class="date">11/30 Mon</span><h4>Morning in Lyon, then Barcelona</h4></div>
+      <ul class="tt">
+        <li><span class="t">Morning</span><div>A slow start and a short walk by the Saône or around the hotel</div></li>
+        <li><span class="t">Late morning</span><div>Lyon Part-Dieu → <b>Barcelona Sants</b> <span class="pill todo">To book</span><span class="sub">The only direct train is Renfe AVE (14:35 → 19:23). Leaving before noon means changing at Montpellier or Narbonne</span></div></li>
+      </ul>
+    </div>
   </div>
 
   <div class="block" id="bcs-menu">
@@ -10437,7 +10512,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <h3>With a baby</h3>
     <div class="grid2">
       <div class="card"><h4>What we told them</h4><ul><li>Our 10-month-old daughter is coming</li><li>She will rest in her stroller and we'll take care not to disturb other guests</li><li>A request for a high chair (chaise haute)</li></ul></div>
-      <div class="card"><h4>Tips for the evening</h4><ul><li>A good late-afternoon nap and comfy clothes close to pyjamas, so she can sleep in the stroller</li><li>Nappy kit, milk, dummy, a small toy</li><li>If she fusses, one of us soothes her in the lobby or outside</li><li>Keep it to three courses, about 2 hours</li><li>Bring her own food; before feeding her, ask "Je peux donner son repas au bébé ?"</li></ul></div>
+      <div class="card"><h4>Tips for the evening</h4><ul><li>A good late-afternoon nap and comfy clothes close to pyjamas, so she can sleep in the stroller</li><li>Nappy kit, milk, dummy, a small toy</li><li>If she fusses, one of us soothes her in the lobby or outside</li><li>A long dinner of about four hours: let Yuzuha sleep in the stroller when she is tired; order fewer courses if needed</li><li>Bring her own food; before feeding her, ask "Je peux donner son repas au bébé ?"</li></ul></div>
     </div>
   </div>
 
@@ -10488,7 +10563,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       </div>
       <div class="card"><h4>On the day</h4>
         <ul class="check">
-          <li><input type="checkbox" id="bcs6"><label for="bcs6">Call a taxi at 19:40</label></li>
+          <li><input type="checkbox" id="bcs6"><label for="bcs6">Call a taxi at 18:50</label></li>
           <li><input type="checkbox" id="bcs7"><label for="bcs7">Ask about the V.G.E. soup and the chicken in a bladder</label></li>
           <li><input type="checkbox" id="bcs8"><label for="bcs8">Yuzuha's milk, nappies, toy, blanket</label></li>
           <li><input type="checkbox" id="bcs9"><label for="bcs9">Photos: the façade, the dessert trolley, carving the sea bass</label></li>
@@ -10603,7 +10678,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <div class="day" id="d-1130-es">
       <div class="day-head"><span class="date">11/30 Mon</span><h4>Arrival, evening on Passeig de Gràcia</h4></div>
       <ul class="tt">
-        <li><span class="t">14:32</span><div>Arrive at Sants → straight up to the hotel<span class="sub">In the station, wear backpacks on the front</span></div></li>
+        <li><span class="t">Evening</span><div>Arrive at Sants (time depends on the train we book) → straight up to the hotel<span class="sub">In the station, wear backpacks on the front</span></div></li>
         <li><span class="t">15:30</span><div>Check in, rest</div></li>
         <li><span class="t">16:30</span><div>Metro L3 to Passeig de Gràcia (about 10 min). <b>Casa Batlló</b> and <b>Casa Milà</b> from outside. Walk under the Christmas lights</div></li>
         <li><span class="t">19:00</span><div>Early tapas (a bar in the Eixample). Around 19:00 it's easy to go in with a baby</div></li>
@@ -13031,7 +13106,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   <span>Sources for mission numbers: Japan's Ministry of Foreign Affairs list of overseas missions; Thailand's Ministry of Foreign Affairs "List of Royal Thai Embassy contact point".</span>
   <details id="changelog" style="margin-top:6px">
     <summary style="cursor:pointer;font-weight:700;color:var(--ink)">Change log</summary>
-    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/4</td><td>Restaurant Paul Bocuse booked (11/29 20:15). New "Paul Bocuse" chapter in the same style as Disneyland (booking, getting there, the day, autumn menu, signature dishes, with a baby, history, gifts)</td></tr><tr><td class="d">11/3</td><td>Pisa moved to the afternoon of 12/7 (Mon), a day trip by regional train. On 12/8, a Florence morning, then the train to Rome after lunch</td></tr><tr><td class="d">11/3</td><td>English edition added. Frecciarossa 9415 on 12/5 booked (11:26 → 13:39, Business); a morning walk in Venice; Florence day 1 re-timed (Accademia 15:15, Piazzale Michelangelo sunset moved to 12/6)</td></tr><tr><td class="d">11/3</td><td>Eurostar booked (11/25 09:10 → 12:37); Amsterdam morning and first day in Paris adjusted</td></tr><tr><td class="d">11/2</td><td>Booking references and insurance policy numbers removed from the guide (so no one else can change our bookings)</td></tr><tr><td class="d">11/2</td><td>Dubai: decided to go into the city; Som gets a 48-hour transit visa via Emirates</td></tr><tr><td class="d">10/25</td><td>Packing checklist rebuilt for this trip; three designs (Som, Yuzuha, Ryo) via the palette button; insurance section and step-by-step contacts; hotel details from the confirmations; luggage strategy</td></tr><tr><td class="d">10/18</td><td>Films to watch; Google Maps lists; Paris hotel changed to Libertel; GitHub version published</td></tr><tr><td class="d">10/17</td><td>Full review; Japanese and Thai editions; protests, pickpocket scenarios, French table manners</td></tr><tr><td class="d">10/15</td><td>First edition</td></tr></tbody></table></div>
+    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/4</td><td>Now going via Lyon (Paris → Lyon on the evening of 11/28, 2 nights, to Barcelona on 11/30). Itinerary, bookings, transport and route map updated; the three Lyon days are in the Bocuse chapter. The Paris plan for 11/29 is kept as a candidate</td></tr><tr><td class="d">11/4</td><td>Restaurant Paul Bocuse booked (11/29 20:15). New "Paul Bocuse" chapter in the same style as Disneyland (booking, getting there, the day, autumn menu, signature dishes, with a baby, history, gifts)</td></tr><tr><td class="d">11/3</td><td>Pisa moved to the afternoon of 12/7 (Mon), a day trip by regional train. On 12/8, a Florence morning, then the train to Rome after lunch</td></tr><tr><td class="d">11/3</td><td>English edition added. Frecciarossa 9415 on 12/5 booked (11:26 → 13:39, Business); a morning walk in Venice; Florence day 1 re-timed (Accademia 15:15, Piazzale Michelangelo sunset moved to 12/6)</td></tr><tr><td class="d">11/3</td><td>Eurostar booked (11/25 09:10 → 12:37); Amsterdam morning and first day in Paris adjusted</td></tr><tr><td class="d">11/2</td><td>Booking references and insurance policy numbers removed from the guide (so no one else can change our bookings)</td></tr><tr><td class="d">11/2</td><td>Dubai: decided to go into the city; Som gets a 48-hour transit visa via Emirates</td></tr><tr><td class="d">10/25</td><td>Packing checklist rebuilt for this trip; three designs (Som, Yuzuha, Ryo) via the palette button; insurance section and step-by-step contacts; hotel details from the confirmations; luggage strategy</td></tr><tr><td class="d">10/18</td><td>Films to watch; Google Maps lists; Paris hotel changed to Libertel; GitHub version published</td></tr><tr><td class="d">10/17</td><td>Full review; Japanese and Thai editions; protests, pickpocket scenarios, French table manners</td></tr><tr><td class="d">10/15</td><td>First edition</td></tr></tbody></table></div>
   </details>
 </footer>
 
