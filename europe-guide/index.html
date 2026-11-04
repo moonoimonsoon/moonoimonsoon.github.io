@@ -95,6 +95,8 @@ nav.toc a[aria-current="true"]{background:var(--ink);color:var(--bg);border-colo
 .chapter.base{--c1:var(--ink);--c2:var(--muted)}
 .chapter.dlp{--c1:#B9A2F2;--c2:#F2C25A}
 .dlp .band{background:linear-gradient(90deg,#6E5BC9,#B9A2F2 45%,#F2C25A)}
+.chapter.bcs{--c1:#E0614F;--c2:#7FB069}
+.bcs .band{background:linear-gradient(90deg,#B8322A,#E0614F 40%,#7FB069 75%,#D4A84B)}
 .band{height:12px;border-radius:4px;margin-bottom:16px;box-shadow:0 0 0 1px var(--line)}
 .nl .band{background:linear-gradient(to bottom,var(--nl1) 0 33.3%,var(--flag-white) 33.3% 66.6%,var(--nl2) 66.6%)}
 .fr .band{background:linear-gradient(to right,var(--fr1) 0 33.3%,var(--flag-white) 33.3% 66.6%,var(--fr2) 66.6%)}
@@ -283,7 +285,7 @@ footer{margin-top:44px;font-size:12px;color:var(--muted);border-top:1px solid va
 html[data-theme="som"] .motif{display:block}
 html[data-theme="yuzuha"] .motif{display:block}
 html[data-theme="yuzuha"] .motif .deco{display:block}
-html[data-ch="plan"] .m[data-m="plan"],html[data-ch="nl"] .m[data-m="nl"],html[data-ch="fr"] .m[data-m="fr"],html[data-ch="dlp"] .m[data-m="dlp"],html[data-ch="es"] .m[data-m="es"],html[data-ch="it"] .m[data-m="it"],html[data-ch="ae"] .m[data-m="ae"],html[data-ch="food"] .m[data-m="food"],html[data-ch="baby"] .m[data-m="baby"],html[data-ch="safety"] .m[data-m="safety"],html[data-ch="prep"] .m[data-m="prep"],html[data-ch="next"] .m[data-m="next"]{display:block}
+html[data-ch="plan"] .m[data-m="plan"],html[data-ch="nl"] .m[data-m="nl"],html[data-ch="fr"] .m[data-m="fr"],html[data-ch="dlp"] .m[data-m="dlp"],html[data-ch="bocuse"] .m[data-m="bocuse"],html[data-ch="es"] .m[data-m="es"],html[data-ch="it"] .m[data-m="it"],html[data-ch="ae"] .m[data-m="ae"],html[data-ch="food"] .m[data-m="food"],html[data-ch="baby"] .m[data-m="baby"],html[data-ch="safety"] .m[data-m="safety"],html[data-ch="prep"] .m[data-m="prep"],html[data-ch="next"] .m[data-m="next"]{display:block}
 html[data-theme="yuzuha"] .motif .m{display:none!important}
 
 html[data-theme="som"]{
@@ -304,6 +306,7 @@ html[data-theme="yuzuha"]{
   --f-display:"M PLUS Rounded 1c","Zen Maru Gothic","Hiragino Maru Gothic ProN",system-ui,sans-serif;
 }
 html[data-theme="som"] .chapter.dlp,html[data-theme="yuzuha"] .chapter.dlp{--c1:#6B4FC8;--c2:#9A6E00}
+html[data-theme="som"] .chapter.bcs,html[data-theme="yuzuha"] .chapter.bcs{--c1:#B8322A;--c2:#3E7A3A}
 html[data-theme="som"] .card,html[data-theme="som"] .spot,html[data-theme="som"] .tie,html[data-theme="som"] .stay,html[data-theme="som"] .fact,html[data-theme="som"] .tt,html[data-theme="som"] .tbl,html[data-theme="som"] .data,html[data-theme="som"] .hist,html[data-theme="som"] .column{box-shadow:0 1px 0 var(--line),0 8px 22px rgba(120,90,40,.07)}
 html[data-theme="som"] .langbar-in{box-shadow:0 6px 20px rgba(120,90,40,.16)}
 html[data-theme="som"] .cover h1 .hl{background:linear-gradient(transparent 62%,#FFE08A 62%)}
@@ -337,7 +340,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 </head>
 <body>
 
-<div class="motif" aria-hidden="true"><svg width="0" height="0" style="position:absolute"><defs><symbol id="mo-windmill" viewBox="-10 0 125 155"><path d="M40 70 L34 150 L66 150 L60 70 Z"/><path d="M50 70 L50 20 M50 70 L95 52 M50 70 L60 118 M50 70 L8 88"/><path d="M50 20 L58 8 L90 28 L82 40 Z M95 52 L108 60 L96 92 L84 84 Z M60 118 L54 132 L22 116 L30 104 Z M8 88 L-6 80 L6 48 L18 56 Z"/><path d="M44 150 L44 136 Q50 128 56 136 L56 150"/></symbol><symbol id="mo-eiffel" viewBox="0 -5 120 240"><path d="M60 0 L60 22 M54 22 L66 22 L74 90 L46 90 Z"/><path d="M46 90 L38 140 L82 140 L74 90"/><path d="M38 140 L18 230 M82 140 L102 230 M30 186 L90 186"/><path d="M40 230 Q60 196 80 230"/><path d="M8 230 L112 230"/></symbol><symbol id="mo-spires" viewBox="-5 0 122 175"><path d="M10 170 L10 70 Q16 40 22 70 L22 170 M34 170 L34 50 Q42 8 50 50 L50 170 M62 170 L62 60 Q70 24 78 60 L78 170 M90 170 L90 76 Q96 48 102 76 L102 170"/><path d="M42 40 L42 26 M70 52 L70 40 M0 170 L112 170"/><path d="M34 120 L50 120 M62 120 L78 120"/></symbol><symbol id="mo-gondola" viewBox="-5 5 250 105"><path d="M10 60 Q70 86 150 62 Q170 54 178 40 L182 52 Q172 74 150 80 Q80 100 12 72 Z"/><path d="M150 62 L156 34 M156 34 L168 30 M60 74 L56 20 L60 14"/><path d="M0 104 Q40 96 80 104 T160 104 T240 104"/></symbol><symbol id="mo-dome" viewBox="0 -5 140 130"><path d="M20 120 L20 70 Q20 26 70 18 Q120 26 120 70 L120 120"/><path d="M70 18 L70 2 M64 2 L76 2 M44 30 L50 120 M96 30 L90 120 M8 120 L132 120"/><path d="M30 70 L110 70"/></symbol><symbol id="mo-arena" viewBox="-5 -10 130 85"><path d="M0 70 L0 10 Q60 -6 120 10 L120 70 Z"/><path d="M12 70 L12 50 Q20 38 28 50 L28 70 M40 70 L40 50 Q48 38 56 50 L56 70 M68 70 L68 50 Q76 38 84 50 L84 70 M96 70 L96 50 Q104 38 112 50 L112 70"/><path d="M12 34 Q20 22 28 34 M40 32 Q48 20 56 32 M68 32 Q76 20 84 32 M96 34 Q104 22 112 34"/></symbol><symbol id="mo-plane" viewBox="0 0 140 80"><path d="M10 44 L58 40 L84 8 L96 10 L80 40 L118 38 Q132 40 118 46 L80 48 L96 74 L84 76 L58 48 L10 46 Z"/><path d="M14 44 L4 30 L12 30 L26 42"/></symbol><symbol id="mo-stars" viewBox="0 0 140 140"><path d="M70 20 L70 50 M70 90 L70 120 M20 70 L50 70 M90 70 L120 70 M35 35 L56 56 M84 84 L105 105 M105 35 L84 56 M56 84 L35 105"/><circle cx="70" cy="70" r="6"/><path d="M118 10 l4 9 l9 4 l-9 4 l-4 9 l-4 -9 l-9 -4 l9 -4 Z M18 112 l3 7 l7 3 l-7 3 l-3 7 l-3 -7 l-7 -3 l7 -3 Z"/></symbol><symbol id="mo-skyline" viewBox="0 0 200 140"><path d="M0 130 L200 130"/><path d="M14 130 L14 80 L34 80 L34 130 M44 130 L44 50 L56 40 L68 50 L68 130 M80 130 L80 20 Q88 6 96 20 L96 130 M108 130 L108 64 L128 64 L128 130 M140 130 L140 90 L170 90 L170 130"/><path d="M160 30 A16 16 0 1 0 176 50 A12 12 0 1 1 160 30 Z"/></symbol><symbol id="mo-glass" viewBox="0 0 120 140"><path d="M20 10 L60 10 Q64 50 40 62 Q16 50 20 10 Z M40 62 L40 110 M24 112 L56 112"/><path d="M80 112 L80 40 Q80 28 88 22 L88 6 L100 6 L100 22 Q108 28 108 40 L108 112 Z M80 70 L108 70"/></symbol><symbol id="mo-stroller" viewBox="0 0 140 120"><path d="M20 60 L110 60 Q110 96 66 96 Q22 96 20 60 Z"/><path d="M20 60 Q24 14 66 14 L66 60"/><path d="M110 60 L126 30 L134 30"/><circle cx="36" cy="106" r="10"/><circle cx="96" cy="106" r="10"/></symbol><symbol id="mo-buoy" viewBox="0 0 120 120"><circle cx="60" cy="60" r="46"/><circle cx="60" cy="60" r="22"/><path d="M28 28 L44 44 M92 28 L76 44 M28 92 L44 76 M92 92 L76 76"/></symbol><symbol id="mo-suitcase" viewBox="0 0 120 140"><rect x="14" y="30" width="92" height="96" rx="12"/><path d="M42 30 L42 12 L78 12 L78 30 M38 30 L38 126 M82 30 L82 126"/><circle cx="30" cy="132" r="5"/><circle cx="90" cy="132" r="5"/></symbol><symbol id="mo-mountains" viewBox="0 0 220 120"><path d="M0 110 L60 30 L90 66 L130 10 L220 110 Z"/><path d="M118 26 L130 10 L144 28 L134 24 L126 30 Z M50 44 L60 30 L70 42"/></symbol></defs></svg><svg class="deco" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice"><circle cx="350" cy="70" r="96" fill="#FF8A7A" opacity=".55"/><circle cx="372" cy="160" r="30" fill="#FFD23F" opacity=".7"/><circle cx="-10" cy="430" r="80" fill="#7CC6FF" opacity=".5"/><circle cx="400" cy="600" r="70" fill="#7EDCB0" opacity=".55"/><path d="M-20 800 Q100 740 220 800 T460 800 L460 860 L-20 860 Z" fill="#B9A2F2" opacity=".5"/></svg><svg class="m m1" data-m="plan" viewBox="0 0 140 80" style="color:var(--fr1)"><use href="#mo-plane"/></svg><svg class="m m2" data-m="plan" viewBox="-5 5 250 105" style="color:var(--it1)"><use href="#mo-gondola"/></svg><svg class="m m1" data-m="nl" viewBox="-10 0 125 155" style="color:var(--nl1)"><use href="#mo-windmill"/></svg><svg class="m m2" data-m="nl" viewBox="-10 0 125 155" style="color:var(--nl2)"><use href="#mo-windmill"/></svg><svg class="m m1" data-m="fr" viewBox="0 -5 120 240" style="color:var(--fr1)"><use href="#mo-eiffel"/></svg><svg class="m m2" data-m="fr" viewBox="0 -5 140 130" style="color:var(--fr2)"><use href="#mo-dome"/></svg><svg class="m m1" data-m="dlp" viewBox="0 0 140 140" style="color:#7B5BD6"><use href="#mo-stars"/></svg><svg class="m m2" data-m="dlp" viewBox="0 0 140 140" style="color:var(--es-ink)"><use href="#mo-stars"/></svg><svg class="m m1" data-m="es" viewBox="-5 0 122 175" style="color:var(--es-ink)"><use href="#mo-spires"/></svg><svg class="m m2" data-m="es" viewBox="-5 0 122 175" style="color:var(--es1)"><use href="#mo-spires"/></svg><svg class="m m1" data-m="it" viewBox="0 -5 140 130" style="color:var(--it1)"><use href="#mo-dome"/></svg><svg class="m m2" data-m="it" viewBox="-5 5 250 105" style="color:var(--it2)"><use href="#mo-gondola"/></svg><svg class="m m1" data-m="ae" viewBox="0 0 200 140" style="color:var(--ae1)"><use href="#mo-skyline"/></svg><svg class="m m2" data-m="ae" viewBox="0 0 200 140" style="color:var(--ae2)"><use href="#mo-skyline"/></svg><svg class="m m1" data-m="food" viewBox="0 0 120 140" style="color:var(--food)"><use href="#mo-glass"/></svg><svg class="m m2" data-m="food" viewBox="0 0 120 140" style="color:var(--fr2)"><use href="#mo-glass"/></svg><svg class="m m1" data-m="baby" viewBox="0 0 140 120" style="color:var(--fr1)"><use href="#mo-stroller"/></svg><svg class="m m2" data-m="baby" viewBox="0 0 140 120" style="color:var(--th1)"><use href="#mo-stroller"/></svg><svg class="m m1" data-m="safety" viewBox="0 0 120 120" style="color:var(--bad)"><use href="#mo-buoy"/></svg><svg class="m m2" data-m="safety" viewBox="0 0 120 120" style="color:var(--fr1)"><use href="#mo-buoy"/></svg><svg class="m m1" data-m="prep" viewBox="0 0 120 140" style="color:var(--food)"><use href="#mo-suitcase"/></svg><svg class="m m2" data-m="prep" viewBox="0 0 140 80" style="color:var(--fr1)"><use href="#mo-plane"/></svg><svg class="m m1" data-m="next" viewBox="0 0 220 120" style="color:var(--it1)"><use href="#mo-mountains"/></svg><svg class="m m2" data-m="next" viewBox="0 0 220 120" style="color:var(--fr1)"><use href="#mo-mountains"/></svg></div>
+<div class="motif" aria-hidden="true"><svg width="0" height="0" style="position:absolute"><defs><symbol id="mo-windmill" viewBox="-10 0 125 155"><path d="M40 70 L34 150 L66 150 L60 70 Z"/><path d="M50 70 L50 20 M50 70 L95 52 M50 70 L60 118 M50 70 L8 88"/><path d="M50 20 L58 8 L90 28 L82 40 Z M95 52 L108 60 L96 92 L84 84 Z M60 118 L54 132 L22 116 L30 104 Z M8 88 L-6 80 L6 48 L18 56 Z"/><path d="M44 150 L44 136 Q50 128 56 136 L56 150"/></symbol><symbol id="mo-eiffel" viewBox="0 -5 120 240"><path d="M60 0 L60 22 M54 22 L66 22 L74 90 L46 90 Z"/><path d="M46 90 L38 140 L82 140 L74 90"/><path d="M38 140 L18 230 M82 140 L102 230 M30 186 L90 186"/><path d="M40 230 Q60 196 80 230"/><path d="M8 230 L112 230"/></symbol><symbol id="mo-spires" viewBox="-5 0 122 175"><path d="M10 170 L10 70 Q16 40 22 70 L22 170 M34 170 L34 50 Q42 8 50 50 L50 170 M62 170 L62 60 Q70 24 78 60 L78 170 M90 170 L90 76 Q96 48 102 76 L102 170"/><path d="M42 40 L42 26 M70 52 L70 40 M0 170 L112 170"/><path d="M34 120 L50 120 M62 120 L78 120"/></symbol><symbol id="mo-gondola" viewBox="-5 5 250 105"><path d="M10 60 Q70 86 150 62 Q170 54 178 40 L182 52 Q172 74 150 80 Q80 100 12 72 Z"/><path d="M150 62 L156 34 M156 34 L168 30 M60 74 L56 20 L60 14"/><path d="M0 104 Q40 96 80 104 T160 104 T240 104"/></symbol><symbol id="mo-dome" viewBox="0 -5 140 130"><path d="M20 120 L20 70 Q20 26 70 18 Q120 26 120 70 L120 120"/><path d="M70 18 L70 2 M64 2 L76 2 M44 30 L50 120 M96 30 L90 120 M8 120 L132 120"/><path d="M30 70 L110 70"/></symbol><symbol id="mo-arena" viewBox="-5 -10 130 85"><path d="M0 70 L0 10 Q60 -6 120 10 L120 70 Z"/><path d="M12 70 L12 50 Q20 38 28 50 L28 70 M40 70 L40 50 Q48 38 56 50 L56 70 M68 70 L68 50 Q76 38 84 50 L84 70 M96 70 L96 50 Q104 38 112 50 L112 70"/><path d="M12 34 Q20 22 28 34 M40 32 Q48 20 56 32 M68 32 Q76 20 84 32 M96 34 Q104 22 112 34"/></symbol><symbol id="mo-plane" viewBox="0 0 140 80"><path d="M10 44 L58 40 L84 8 L96 10 L80 40 L118 38 Q132 40 118 46 L80 48 L96 74 L84 76 L58 48 L10 46 Z"/><path d="M14 44 L4 30 L12 30 L26 42"/></symbol><symbol id="mo-stars" viewBox="0 0 140 140"><path d="M70 20 L70 50 M70 90 L70 120 M20 70 L50 70 M90 70 L120 70 M35 35 L56 56 M84 84 L105 105 M105 35 L84 56 M56 84 L35 105"/><circle cx="70" cy="70" r="6"/><path d="M118 10 l4 9 l9 4 l-9 4 l-4 9 l-4 -9 l-9 -4 l9 -4 Z M18 112 l3 7 l7 3 l-7 3 l-3 7 l-3 -7 l-7 -3 l7 -3 Z"/></symbol><symbol id="mo-skyline" viewBox="0 0 200 140"><path d="M0 130 L200 130"/><path d="M14 130 L14 80 L34 80 L34 130 M44 130 L44 50 L56 40 L68 50 L68 130 M80 130 L80 20 Q88 6 96 20 L96 130 M108 130 L108 64 L128 64 L128 130 M140 130 L140 90 L170 90 L170 130"/><path d="M160 30 A16 16 0 1 0 176 50 A12 12 0 1 1 160 30 Z"/></symbol><symbol id="mo-glass" viewBox="0 0 120 140"><path d="M20 10 L60 10 Q64 50 40 62 Q16 50 20 10 Z M40 62 L40 110 M24 112 L56 112"/><path d="M80 112 L80 40 Q80 28 88 22 L88 6 L100 6 L100 22 Q108 28 108 40 L108 112 Z M80 70 L108 70"/></symbol><symbol id="mo-stroller" viewBox="0 0 140 120"><path d="M20 60 L110 60 Q110 96 66 96 Q22 96 20 60 Z"/><path d="M20 60 Q24 14 66 14 L66 60"/><path d="M110 60 L126 30 L134 30"/><circle cx="36" cy="106" r="10"/><circle cx="96" cy="106" r="10"/></symbol><symbol id="mo-buoy" viewBox="0 0 120 120"><circle cx="60" cy="60" r="46"/><circle cx="60" cy="60" r="22"/><path d="M28 28 L44 44 M92 28 L76 44 M28 92 L44 76 M92 92 L76 76"/></symbol><symbol id="mo-suitcase" viewBox="0 0 120 140"><rect x="14" y="30" width="92" height="96" rx="12"/><path d="M42 30 L42 12 L78 12 L78 30 M38 30 L38 126 M82 30 L82 126"/><circle cx="30" cy="132" r="5"/><circle cx="90" cy="132" r="5"/></symbol><symbol id="mo-toque" viewBox="0 0 140 150"><path d="M40 90 Q14 86 16 60 Q18 36 44 40 Q50 14 72 16 Q96 16 100 40 Q124 36 124 62 Q124 86 100 90 Z"/><path d="M40 90 L44 130 L96 130 L100 90 M46 110 L94 110"/></symbol><symbol id="mo-mountains" viewBox="0 0 220 120"><path d="M0 110 L60 30 L90 66 L130 10 L220 110 Z"/><path d="M118 26 L130 10 L144 28 L134 24 L126 30 Z M50 44 L60 30 L70 42"/></symbol></defs></svg><svg class="deco" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice"><circle cx="350" cy="70" r="96" fill="#FF8A7A" opacity=".55"/><circle cx="372" cy="160" r="30" fill="#FFD23F" opacity=".7"/><circle cx="-10" cy="430" r="80" fill="#7CC6FF" opacity=".5"/><circle cx="400" cy="600" r="70" fill="#7EDCB0" opacity=".55"/><path d="M-20 800 Q100 740 220 800 T460 800 L460 860 L-20 860 Z" fill="#B9A2F2" opacity=".5"/></svg><svg class="m m1" data-m="plan" viewBox="0 0 140 80" style="color:var(--fr1)"><use href="#mo-plane"/></svg><svg class="m m2" data-m="plan" viewBox="-5 5 250 105" style="color:var(--it1)"><use href="#mo-gondola"/></svg><svg class="m m1" data-m="nl" viewBox="-10 0 125 155" style="color:var(--nl1)"><use href="#mo-windmill"/></svg><svg class="m m2" data-m="nl" viewBox="-10 0 125 155" style="color:var(--nl2)"><use href="#mo-windmill"/></svg><svg class="m m1" data-m="fr" viewBox="0 -5 120 240" style="color:var(--fr1)"><use href="#mo-eiffel"/></svg><svg class="m m2" data-m="fr" viewBox="0 -5 140 130" style="color:var(--fr2)"><use href="#mo-dome"/></svg><svg class="m m1" data-m="dlp" viewBox="0 0 140 140" style="color:#7B5BD6"><use href="#mo-stars"/></svg><svg class="m m2" data-m="dlp" viewBox="0 0 140 140" style="color:var(--es-ink)"><use href="#mo-stars"/></svg><svg class="m m1" data-m="bocuse" viewBox="0 0 140 150" style="color:#B8322A"><use href="#mo-toque"/></svg><svg class="m m2" data-m="bocuse" viewBox="0 0 120 140" style="color:#3E7A3A"><use href="#mo-glass"/></svg><svg class="m m1" data-m="es" viewBox="-5 0 122 175" style="color:var(--es-ink)"><use href="#mo-spires"/></svg><svg class="m m2" data-m="es" viewBox="-5 0 122 175" style="color:var(--es1)"><use href="#mo-spires"/></svg><svg class="m m1" data-m="it" viewBox="0 -5 140 130" style="color:var(--it1)"><use href="#mo-dome"/></svg><svg class="m m2" data-m="it" viewBox="-5 5 250 105" style="color:var(--it2)"><use href="#mo-gondola"/></svg><svg class="m m1" data-m="ae" viewBox="0 0 200 140" style="color:var(--ae1)"><use href="#mo-skyline"/></svg><svg class="m m2" data-m="ae" viewBox="0 0 200 140" style="color:var(--ae2)"><use href="#mo-skyline"/></svg><svg class="m m1" data-m="food" viewBox="0 0 120 140" style="color:var(--food)"><use href="#mo-glass"/></svg><svg class="m m2" data-m="food" viewBox="0 0 120 140" style="color:var(--fr2)"><use href="#mo-glass"/></svg><svg class="m m1" data-m="baby" viewBox="0 0 140 120" style="color:var(--fr1)"><use href="#mo-stroller"/></svg><svg class="m m2" data-m="baby" viewBox="0 0 140 120" style="color:var(--th1)"><use href="#mo-stroller"/></svg><svg class="m m1" data-m="safety" viewBox="0 0 120 120" style="color:var(--bad)"><use href="#mo-buoy"/></svg><svg class="m m2" data-m="safety" viewBox="0 0 120 120" style="color:var(--fr1)"><use href="#mo-buoy"/></svg><svg class="m m1" data-m="prep" viewBox="0 0 120 140" style="color:var(--food)"><use href="#mo-suitcase"/></svg><svg class="m m2" data-m="prep" viewBox="0 0 140 80" style="color:var(--fr1)"><use href="#mo-plane"/></svg><svg class="m m1" data-m="next" viewBox="0 0 220 120" style="color:var(--it1)"><use href="#mo-mountains"/></svg><svg class="m m2" data-m="next" viewBox="0 0 220 120" style="color:var(--fr1)"><use href="#mo-mountains"/></svg></div>
 <script>(function(){var t='som';try{t=localStorage.getItem('guide-theme')||t}catch(e){}try{var q=new URLSearchParams(location.search).get('theme');if(q)t=q}catch(e){}if(['som','yuzuha','ryo'].indexOf(t)<0)t='som';document.documentElement.setAttribute('data-theme',t);document.documentElement.setAttribute('data-ch','plan')})();</script>
 <div class="langbar"><div class="themepop themebar" id="themepop" role="group" aria-label="Design" hidden><button type="button" data-theme-btn="som" aria-pressed="true"><span class="sw sw-som"></span>Som</button><button type="button" data-theme-btn="yuzuha" aria-pressed="false"><span class="sw sw-yuzuha"></span>Yuzuha</button><button type="button" data-theme-btn="ryo" aria-pressed="false"><span class="sw sw-ryo"></span>Ryo</button></div><div class="langrow"><button type="button" class="themetoggle" id="themetoggle" aria-expanded="false" aria-controls="themepop" aria-label="デザインを選ぶ / เลือกดีไซน์ / Design"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.2 0 1.8-.8 1.8-1.7 0-1.1-.9-1.6-.9-2.6 0-1 .8-1.7 1.9-1.7H17a4 4 0 0 0 4-4C21 6.5 17 3 12 3Z"/><circle cx="7.5" cy="11" r="1.2" fill="currentColor"/><circle cx="10" cy="7" r="1.2" fill="currentColor"/><circle cx="15" cy="7.5" r="1.2" fill="currentColor"/></svg></button><div class="langbar-in" role="group" aria-label="Language"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="th" aria-pressed="false">ไทย</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div></div></div>
 <div id="book">
@@ -370,6 +373,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <li><a href="#nl" data-ch="nl"><span class="flag f-nl"></span>オランダ</a></li>
     <li><a href="#fr" data-ch="fr"><span class="flag f-fr"></span>フランス</a></li>
     <li><a href="#dlp" data-ch="dlp">ディズニー</a></li>
+    <li><a href="#bocuse" data-ch="bocuse">ボキューズ</a></li>
     <li><a href="#es" data-ch="es"><span class="flag f-es"></span>スペイン</a></li>
     <li><a href="#it" data-ch="it"><span class="flag f-it"></span>イタリア</a></li>
     <li><a href="#ae" data-ch="ae"><span class="flag f-ae"></span>ドバイ</a></li>
@@ -524,6 +528,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
         <tr><td>宿</td><td>ドバイの乗継ホテル（約17時間）</td><td><span class="pill todo">要予約</span></td></tr>
         <tr><td>列車</td><td>TGV INOUI 1等 パリ→バルセロナ 13号車2階</td><td><span class="pill ok">確定</span></td></tr>
         <tr><td>入場券</td><td>ディズニーランド・パリ 11/26 日付指定・1日2パーク（大人2名）<br><small>10/15購入。<b>3日前（11/23）までキャンセル可</b>。11/22は出発日なので、日付を変えるなら出発前に決める</small></td><td><span class="pill ok">確定</span></td></tr>
+        <tr><td>レストラン</td><td>Paul Bocuse 本店（リヨン郊外）11/29 20:15、3名<span class="tsub">カードの仮押さえ。11/28 20:15 までなら無料で取消。11/22 ごろ再確認（<a href="#bocuse">ボキューズの章</a>）</span></td><td><span class="pill ok">確定</span></td></tr>
         <tr><td>列車</td><td>Eurostar アムステルダム→パリ 11/25 09:10（Standard、18号車 95・96番）<span class="tsub">出発1時間前まで日時の変更は無料</span></td><td><span class="pill ok">確定</span></td></tr>
         <tr><td>飛行機</td><td>Vueling バルセロナ→ヴェネツィア 12/3 12:40（FLY＋預け荷物25kg）</td><td><span class="pill todo">要予約</span></td></tr>
         <tr><td>列車</td><td>Frecciarossa 9415 ヴェネツィア→フィレンツェ 12/5 11:26（Business、3号車 5D・6D）<span class="tsub">Base 運賃。出発前なら日時の変更は無料</span></td><td><span class="pill ok">確定</span></td></tr>
@@ -1818,6 +1823,229 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
         <tr><td>Disneyland Park</td><td>お城のパーク</td><td><a href="https://www.google.com/maps/search/?api=1&query=Disneyland+Park+Paris">開く</a></td></tr>
         <tr><td>Disney Adventure World</td><td>アナ雪のパーク</td><td><a href="https://www.google.com/maps/search/?api=1&query=Disney+Adventure+World+Paris">開く</a></td></tr>
         <tr><td>World of Disney (Disney Village)</td><td>最後の買い物</td><td><a href="https://www.google.com/maps/search/?api=1&query=World+of+Disney+Disney+Village+Paris">開く</a></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SPECIAL: PAUL BOCUSE =================== -->
+<section id="bocuse" class="chapter bcs" data-chapter="bocuse">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Special · Restaurant Paul Bocuse · 11/29 (Sun) 20:15</div>
+    <h2>ポール・ボキューズ本店 <span class="local">L'Auberge du Pont de Collonges</span></h2>
+    <p class="lead">「世紀の料理人」ポール・ボキューズの本店。1924年から続く家族の店で、ミシュランの三つ星を55年守った、フランス料理の古典の総本山です。銀座で知った味の本家へ、家族3人で。リヨンの北、ソーヌ川のほとりの赤と緑の建物です。</p>
+  </div>
+  <div class="subnav"><a href="#bcs-basic">予約と基本</a><a href="#bcs-go">行き方</a><a href="#bcs-day">当日の流れ</a><a href="#bcs-menu">メニュー</a><a href="#bcs-dish">名物料理</a><a href="#bcs-baby">赤ちゃん連れ</a><a href="#bcs-hist">ボキューズの歩み</a><a href="#bcs-gift">お土産</a><a href="#bcs-check">チェックリスト</a><a href="#bcs-map">地図</a></div>
+
+  <div class="block" id="bcs-basic">
+    <h3>予約と基本情報</h3>
+    <div class="stay">
+      <div class="name">Restaurant Paul Bocuse（L'Auberge du Pont de Collonges）  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Restaurant%20Paul%20Bocuse%20Collonges-au-Mont-d%27Or">地図</a><span class="pill ok">確定</span></div>
+      <dl class="kv">
+        <dt>日時</dt><dd><b>11/29（日）20:15</b>、3名（大人2名と Yuzuha）</dd>
+        <dt>住所</dt><dd>40 Quai de la Plage, 69660 Collonges-au-Mont-d'Or（リヨン中心部から北へ約10km）</dd>
+        <dt>電話</dt><dd><span class="key">+33 4 72 42 90 90</span>　reservation@bocuse.fr</dd>
+        <dt>服装</dt><dd>エレガント・カジュアル（男性は襟付きのシャツと革靴が無難。ジャケットがあればなお良い）</dd>
+        <dt>保証</dt><dd>カードの仮押さえ（引き落としなし）。<b>11/28 の 20:15 より後の取り消しと、来店しなかった場合だけ請求</b></dd>
+        <dt>再確認</dt><dd><b>1週間前（11/22 ごろ）に予約の再確認</b>をするよう案内あり <span class="pill todo">要対応</span></dd>
+        <dt>伝えたこと</dt><dd>10か月の娘を連れて行くこと、ベビーカーで休ませること、子ども用の椅子のお願い（予約時にメッセージ送付済み）</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="block" id="bcs-go">
+    <h3>行き方</h3>
+    <div class="move">
+      <h4>リヨン市内から店まで</h4>
+      <ol>
+        <li><b>タクシーか配車アプリ</b>（Uber、G7）で約20〜25分。日曜の夜は割増料金で片道 €30〜40 が目安</li>
+        <li>宿を <b>19:40 ごろ</b>に出れば、少し早めの 20:05 ごろに着く</li>
+        <li>運転手には「<b>Restaurant Paul Bocuse, Collonges-au-Mont-d'Or</b>」で通じる</li>
+        <li><b>帰り</b>は、会計のときに「<b>Pourriez-vous nous appeler un taxi ?</b>（タクシーを呼んでいただけますか）」。郊外なので配車アプリは来るまで時間がかかることがある</li>
+      </ol>
+    </div>
+    <p class="note">路線バス（TCL）やローカル線の Collonges-Fontaines 駅もありますが、夜でベビーカーもあるので、タクシーが安心です。</p>
+  </div>
+
+  <div class="block" id="bcs-day">
+    <h3>11/29（日）の流れ</h3>
+    <p class="note">夜に長くて重い食事があるので、昼は軽く、夕方は宿で休憩してから向かいます。リヨンの列車と宿が決まったら、リヨンの章にまとめ直します。</p>
+    <ul class="tt">
+      <li><span class="t">09:00</span><div><b>ポール・ボキューズ市場</b>（Les Halles de Lyon Paul Bocuse）。日曜は朝から昼過ぎまで<span class="sub">チーズ、シャルキュトリー、牡蠣。ボキューズゆかりの店の並びを見ておくと、夜の料理がより楽しめる</span></div></li>
+      <li><span class="t">12:00</span><div>市場の中で軽く昼ごはん（牡蠣をいくつか、パテ・アン・クルートをひと切れ、など）</div></li>
+      <li><span class="t">14:00</span><div>旧市街（ヴュー・リヨン）、トラブール、フルヴィエールの丘（ケーブルカー）</div></li>
+      <li><span class="t">16:30</span><div>宿で休憩。Yuzuha はしっかり昼寝。着替え</div></li>
+      <li><span class="t">19:40</span><div>タクシーで本店へ</div></li>
+      <li><span class="t">20:15</span><div><b>ポール・ボキューズ本店でディナー</b> <span class="pill ok">確定</span><span class="sub">前菜・メイン・デザートの3皿なら2時間前後。21:00 までに注文すれば100周年記念コースも選べる</span></div></li>
+      <li><span class="t">22:30頃</span><div>店でタクシーを呼んでもらい宿へ → 23:00ごろ着</div></li>
+    </ul>
+  </div>
+
+  <div class="block" id="bcs-menu">
+    <h3>メニュー（2026年秋）</h3>
+    <p class="note">予約してあってもアラカルトで注文できます。値段は1人あたり、税金・サービス料込み（店の公式メニュー、2026年秋）。料理は市場の仕入れで変わることがあります。</p>
+    <h4 style="margin-top:12px">コース</h4>
+    <div class="tbl">
+    <table>
+      <thead><tr><th>コース</th><th>内容</th><th>価格</th></tr></thead>
+      <tbody>
+        <tr><td class="big">Over Time</td><td>アミューズ → 鴨のフォアグラのコンフィ（洋梨、パイ生地のブリオッシュ）→ ブレス鶏の2通りの料理、モリーユ茸のクリームソース → チーズ → デザートワゴン</td><td class="num">€230</td></tr>
+        <tr><td class="big">Tradition</td><td>アミューズ → ブルーオマールのフリカッセ → アンコウのアメリケーヌソース → <b>スズキのパイ包み焼き</b>か仔牛の骨付き肉の鍋焼き（2人以上）→ チーズ → デザートワゴン</td><td class="num">€300</td></tr>
+        <tr><td class="big">Centenaire（100周年記念）</td><td>クネル（キャビア添え）、キノコの一皿、ホタテ、仔牛の胸腺、ボージョレ風の口直し、<b>ブレス鶏の豚の膀胱包み</b>、チーズ、デザート。テーブル全員で注文、夜は21:00まで。ワインを1皿ずつ合わせると €660</td><td class="num">€370</td></tr>
+        <tr><td class="big">子ども（12歳以下）</td><td>前菜とメインを1皿ずつ、デザート</td><td class="num">€140</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h4 style="margin-top:12px">アラカルトの主なもの</h4>
+    <div class="tbl">
+    <table>
+      <thead><tr><th>料理</th><th>メモ</th><th>価格</th></tr></thead>
+      <tbody>
+        <tr><td class="big">オマールと川スズキのクネル<span class="tsub">シャンパンソース、キャビア</span></td><td>リヨン名物クネルの最高級版</td><td class="num">€98</td></tr>
+        <tr><td class="big">鴨のフォアグラのコンフィ<span class="tsub">洋梨、温かいパイ生地のブリオッシュ</span></td><td>定番の前菜</td><td class="num">€94</td></tr>
+        <tr><td class="big">ブルーオマールの2通りの料理</td><td>尾はパリ風、爪はシーザー風</td><td class="num">€130</td></tr>
+        <tr><td class="big">天然スズキのパイ包み焼き<span class="tsub">ショロンソース、2人で1尾</span></td><td>席で切り分ける名物料理</td><td class="num">€225</td></tr>
+        <tr><td class="big">ドンブ産ホロホロ鳥<span class="tsub">2人で1羽</span></td><td>テーブルで切り分けてフランベ</td><td class="num">€280</td></tr>
+        <tr><td class="big">シャロレー牛フィレのロッシーニ風</td><td>ペリグー（トリュフ）ソース</td><td class="num">€98</td></tr>
+        <tr><td class="big">セルヴェル・ド・カニュ</td><td>リヨン名物のハーブ入りフレッシュチーズ、席で作る</td><td class="num">€30</td></tr>
+        <tr><td class="big">チーズのワゴン</td><td>地元のフレッシュチーズと熟成チーズから数種類</td><td class="num">€50</td></tr>
+        <tr><td class="big">デザートワゴン</td><td>ワゴンのお菓子からいくつでも選べる</td><td class="num">€50</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="card">
+      <h5>私たちの頼み方（案）</h5>
+      <ul>
+        <li>前菜：<b>クネル</b>と<b>フォアグラ</b>を1皿ずつ（半分ずつ分け合う）</li>
+        <li>メイン：<b>スズキのパイ包み焼き</b>を2人で1尾</li>
+        <li>デザート：<b>デザートワゴン</b>を2人で1つ</li>
+        <li>飲み物：グラスワインを1杯ずつと水。ローヌのコート・ロティ（赤）か、白ならコンドリュー</li>
+        <li><b>当日聞くこと</b>：黒トリュフのスープ <b>V.G.E.</b> と、<b>ブレス鶏の豚の膀胱包み</b>（秋のアラカルトにはないが、以前は単品で €290）を頼めるか</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block" id="bcs-dish">
+    <h3>名物料理と豆知識</h3>
+    <div class="spots">
+      <div class="spot">
+        <h4>黒トリュフのスープ V.G.E.<span class="local">Soupe aux truffes noires V.G.E.</span></h4>
+        <ul>
+          <li>1975年、エリゼ宮でジスカール・デスタン大統領（頭文字が V.G.E.）のために作ったスープ</li>
+          <li>器にパイ生地をかぶせて焼き、スプーンで生地を割って、中のスープと一緒に食べる</li>
+          <li>本店の看板料理。2026年秋のメニューには載っていないので、当日聞いてみる</li>
+        </ul>
+      </div>
+      <div class="spot">
+        <h4>ブレス鶏の豚の膀胱包み<span class="local">Volaille de Bresse truffée en vessie</span></h4>
+        <ul>
+          <li>ブレス鶏は <b>AOP（原産地呼称保護）を持つ唯一の鶏</b>。産地はリヨンの北東</li>
+          <li>皮の下にトリュフを差し込み、豚の膀胱に包んで蒸し煮にする。風船のようにふくらんだ姿で運ばれてくる</li>
+          <li>リヨンの古典の料理を、ボキューズが看板料理に育てた一皿</li>
+        </ul>
+      </div>
+      <div class="spot">
+        <h4>スズキのパイ包み焼き<span class="local">Loup en croûte feuilletée</span></h4>
+        <ul>
+          <li>魚の形に飾ったパイ生地で、詰め物をした天然スズキを包んで焼く</li>
+          <li>席で切り分けてくれる。ショロンソースはトマト入りのベアルネーズ</li>
+        </ul>
+      </div>
+      <div class="spot">
+        <h4>クネル<span class="local">Quenelles</span></h4>
+        <ul>
+          <li>川魚のすり身を軽く固めて、ソースで焼くリヨンの名物。本店ではオマールと川スズキで作り、シャンパンソースとキャビア</li>
+        </ul>
+      </div>
+      <div class="spot">
+        <h4>デザートワゴン<span class="local">Chariot des desserts</span></h4>
+        <ul>
+          <li>タルト、クレーム・ブリュレ、チョコレートのケーキなどがワゴンいっぱいに並ぶ。いくつでも少しずつ盛ってもらえる</li>
+          <li>パティシエのブノワ・シャルヴェは、アイスデザートの世界チャンピオン（2018年）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="block" id="bcs-baby">
+    <h3>赤ちゃん連れ</h3>
+    <div class="grid2">
+      <div class="card"><h4>伝えてあること</h4><ul><li>10か月の娘が一緒であること</li><li>ベビーカーで休ませ、まわりに迷惑をかけないよう気をつけること</li><li>子ども用の椅子（chaise haute）のお願い</li></ul></div>
+      <div class="card"><h4>当日のコツ</h4><ul><li>夕方の昼寝をしっかりして、パジャマに近い楽な服で。ベビーカーで眠れるように</li><li>おむつ替えのセット、ミルク、おしゃぶり、小さなおもちゃ</li><li>ぐずったら、どちらかが入口のロビーか外で少しあやす</li><li>皿数を3皿にして、2時間前後で切り上げる</li><li>Yuzuha の食事は持ち込みで。出すときは一言「Je peux donner son repas au bébé ?」</li></ul></div>
+    </div>
+  </div>
+
+  <div class="block" id="bcs-hist">
+    <h3>ポール・ボキューズの歩み</h3>
+    <ol class="hist">
+      <li><span class="y">1924</span><div>祖父母がソーヌ川のほとりで食堂を始める。今の店の始まり</div></li>
+      <li><span class="y">1926</span><div>ポール・ボキューズ誕生。のちにフェルナン・ポワン（ヴィエンヌの「ラ・ピラミッド」）のもとで修業</div></li>
+      <li><span class="y">1965</span><div><b>ミシュランの三つ星</b>。以後2019年まで55年間守る</div></li>
+      <li><span class="y">1975</span><div>レジオン・ドヌール勲章を受け、エリゼ宮の祝いの席で黒トリュフのスープ V.G.E. を作る</div></li>
+      <li><span class="y">1970年代</span><div><b>ヌーヴェル・キュイジーヌ</b>の旗手として、料理人を厨房から表舞台に出す</div></li>
+      <li><span class="y">1987</span><div>国際料理コンクール <b>ボキューズ・ドール</b>を始める。今も2年に一度リヨンで決勝</div></li>
+      <li><span class="y">1989</span><div>ゴ・エ・ミヨが「<b>世紀の料理人</b>」に選ぶ</div></li>
+      <li><span class="y">2018</span><div>1月20日、91歳で亡くなる。生まれたのと同じ、この店の建物で</div></li>
+      <li><span class="y">2020</span><div>ミシュランが二つ星に。今も3人の M.O.F.（フランス最優秀職人）が店を支える</div></li>
+    </ol>
+    <p class="memo"><span class="who">RYO'S MEMO</span>銀座で先輩に連れて行ってもらったボキューズの、本家。写真を撮って、先輩への土産話にする。</p>
+  </div>
+
+  <div class="block" id="bcs-gift">
+    <h3>お土産</h3>
+    <div class="tbl">
+    <table>
+      <thead><tr><th>もの</th><th>どこで</th><th>メモ</th></tr></thead>
+      <tbody>
+        <tr><td class="big">本店の記念品</td><td>本店</td><td>置いてあれば。食事のときに聞く</td></tr>
+        <tr><td class="big">Bernachon のチョコレート</td><td>リヨン市内（6区）</td><td>ボキューズの娘が嫁いだ老舗。ケーキ「Le Président」は 1975年の V.G.E. の祝いのために作られたと言われる。板チョコは日持ちする</td></tr>
+        <tr><td class="big">クッサン・ド・リヨン</td><td>Voisin など</td><td>緑のクッションの形のチョコ菓子。配りやすい</td></tr>
+        <tr><td class="big">記念本 <i>Bocuse: A Century of Stories</i></td><td>書店など</td><td>創業100年の本（英語）。重いので最後に</td></tr>
+        <tr><td class="big">コート・ロティのワイン</td><td>ワインショップ</td><td>リヨンの南のローヌの名酒</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="alert"><b>持ち帰れないもの</b>　テリーヌ、ソーセージ、パテなどの肉製品は、日本にもタイにも持ち込めません。</p>
+  </div>
+
+  <div class="block" id="bcs-check">
+    <h3>チェックリスト</h3>
+    <div class="grid2">
+      <div class="card"><h4>出発前</h4>
+        <ul class="check">
+          <li><input type="checkbox" id="bcs1" checked><label for="bcs1">11/29 20:15 を予約（3名）、赤ちゃん連れのメッセージ送付 — 11/4 済み</label></li>
+          <li><input type="checkbox" id="bcs2"><label for="bcs2">11/22 ごろ、予約の再確認（メールか電話）</label></li>
+          <li><input type="checkbox" id="bcs3"><label for="bcs3">取り消すなら 11/28 の 20:15 まで</label></li>
+          <li><input type="checkbox" id="bcs4"><label for="bcs4">リヨンの列車と宿を押さえる</label></li>
+          <li><input type="checkbox" id="bcs5"><label for="bcs5">服：Ryo は襟付きシャツと革靴（ジャケット）、Som はワンピースなど</label></li>
+        </ul>
+      </div>
+      <div class="card"><h4>当日</h4>
+        <ul class="check">
+          <li><input type="checkbox" id="bcs6"><label for="bcs6">19:40 にタクシーを呼ぶ</label></li>
+          <li><input type="checkbox" id="bcs7"><label for="bcs7">スープ V.G.E. と膀胱包みのブレス鶏を頼めるか聞く</label></li>
+          <li><input type="checkbox" id="bcs8"><label for="bcs8">Yuzuha のミルク、おむつ、おもちゃ、ブランケット</label></li>
+          <li><input type="checkbox" id="bcs9"><label for="bcs9">写真：外観、デザートワゴン、パイ包み焼きの切り分け</label></li>
+          <li><input type="checkbox" id="bcs10"><label for="bcs10">帰りのタクシーを店で呼んでもらう</label></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="block" id="bcs-map">
+    <h3>地図</h3>
+    <div class="tbl">
+    <table>
+      <thead><tr><th>場所</th><th>メモ</th><th>地図</th></tr></thead>
+      <tbody>
+        <tr><td>Restaurant Paul Bocuse</td><td>11/29 20:15</td><td><a href="https://www.google.com/maps/search/?api=1&query=Restaurant%20Paul%20Bocuse%20Collonges-au-Mont-d%27Or">開く</a></td></tr>
+        <tr><td>Les Halles de Lyon Paul Bocuse</td><td>11/29 朝</td><td><a href="https://www.google.com/maps/search/?api=1&query=Les%20Halles%20de%20Lyon%20Paul%20Bocuse">開く</a></td></tr>
+        <tr><td>Lyon Part-Dieu</td><td>着く駅・出る駅</td><td><a href="https://www.google.com/maps/search/?api=1&query=Gare%20de%20Lyon%20Part-Dieu">開く</a></td></tr>
+        <tr><td>Brasserie Le Sud</td><td>ボキューズのブラッスリー（南仏の料理）</td><td><a href="https://www.google.com/maps/search/?api=1&query=Brasserie%20Le%20Sud%20Paul%20Bocuse%20Lyon">開く</a></td></tr>
+        <tr><td>Au Petit Bouchon Chez Georges</td><td>ブション、月〜金</td><td><a href="https://www.google.com/maps/search/?api=1&query=Au%20Petit%20Bouchon%20Chez%20Georges%20Lyon">開く</a></td></tr>
+        <tr><td>Bernachon</td><td>チョコレート</td><td><a href="https://www.google.com/maps/search/?api=1&query=Bernachon%20Lyon">開く</a></td></tr>
       </tbody>
     </table>
     </div>
@@ -4343,7 +4571,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   <span>公館の番号の出典：外務省「在外公館リスト」、タイ外務省「List of Royal Thai Embassy contact point」。</span>
   <details id="changelog" style="margin-top:6px">
     <summary style="cursor:pointer;font-weight:700;color:var(--ink)">変更履歴</summary>
-    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/3</td><td>ピサを 12/7（月）の午後に移動（地方線で日帰り）。12/8 はフィレンツェの朝を楽しんで、昼食後の列車でローマへ</td></tr><tr><td class="d">11/3</td><td>12/5 の Frecciarossa 9415（11:26 → 13:39、Business）を予約。ヴェネツィアの朝に散歩を入れ、フィレンツェ初日はアカデミアを 15:15 に、ミケランジェロ広場の夕日は 12/6 に移動。英語版を追加</td></tr><tr><td class="d">11/3</td><td>Eurostar（11/25 09:10 → 12:37）を予約。アムステルダムの朝と、パリの初日の時間割を合わせて調整</td></tr><tr><td class="d">11/2</td><td>予約番号（エミレーツ、Booking の宿）と保険の証券番号をしおりから削除（第三者が予約を操作できないように）</td></tr><tr><td class="d">11/2</td><td>ドバイ：街に出ることに決定。Som はエミレーツ経由で48時間の乗継ビザ（手順をドバイの章に）</td></tr><tr><td class="d">10/25</td><td>持ち物チェックを、いつもの持ち物リストから今回の旅用に作り直し（入れるバッグの札つき）</td></tr><tr><td class="d">10/25</td><td>日本語版からタイ語の併記（見出しの小さい字、会話の表のタイ語の列など）を外した。タイ語はタイ語版に</td></tr><tr><td class="d">10/25</td><td>デザインを3つから選べるように（右下のパレットのボタンを押すと開く）：Som（明るい紙＋各国の線画、標準）、Yuzuha（ポップ）、Ryo（ダーク）。URL に ?theme=som / yuzuha / ryo でも指定できる</td></tr><tr><td class="d">10/25</td><td>保険は Chubb とヒルトン・アメックス・プレミアムの2本に整理。困ったときの連絡ステップ（場面別）と連絡先一覧を追加</td></tr><tr><td class="d">10/25</td><td>宿6軒の予約票を反映（時間、無料取消の期限、部屋）。アメックスの補償を規定で確認（持ち物の盗難は補償なし）。Anytime Fitness の節を追加</td></tr><tr><td class="d">10/25</td><td>保険の節を追加（Chubb の証券の内容、アメックスとの分担、請求のルール）</td></tr><tr><td class="d">10/25</td><td>荷物の構成と動かし方（場面ごとの対策）を追加。エミレーツの預け荷物と座席を eチケットで確認。持ち物・やることを更新。この変更履歴を追加</td></tr><tr><td class="d">10/18</td><td>各国の「予習の映画」を追加</td></tr><tr><td class="d">10/18</td><td>往路のドバイ乗継（3時間15分）を日程とルート図に追加</td></tr><tr><td class="d">10/18</td><td>言語の切り替えを画面の右下に固定（同じ場所のまま日本語・タイ語を切り替え）</td></tr><tr><td class="d">10/18</td><td>Google マップのお気に入りリスト（タイプ別、タイ語名つき）と、ホテル・主要な場所の地図リンクを追加。ルート図に帰路のドバイ17時間乗継</td></tr><tr><td class="d">10/18</td><td>パリの宿を Libertel Austerlitz に変更し、宿6軒を確定に</td></tr><tr><td class="d">10/18</td><td>GitHub 版を公開。iPhone 向けに文字を大きく、横長の表は横スクロールに。?lang=th でタイ語から開く</td></tr><tr><td class="d">10/17ごろ</td><td>全体の見直し（Yuzuha は旅行時に生後10か月、往路は01:05発、保険料を削除）。日本語・タイ語の2言語版に</td></tr><tr><td class="d">10/17ごろ</td><td>デモ・ストライキの日の動き方、スリ対策（場面別のシナリオ）、フランスのテーブルマナーのコラムを追加</td></tr><tr><td class="d">10/16ごろ</td><td>ディズニーランド・パリのチケット購入を反映。「ディズニーとフランス」、ヴェルサイユの入場時刻、日の出・日の入りの表を追加</td></tr><tr><td class="d">10/15</td><td>初版</td></tr></tbody></table></div>
+    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/4</td><td>ポール・ボキューズ本店（11/29 20:15）を予約。ディズニーと同じ形で「ボキューズ」の章を追加（予約、行き方、当日の流れ、秋のメニューと値段、名物料理、赤ちゃん連れ、歴史、お土産）</td></tr><tr><td class="d">11/3</td><td>ピサを 12/7（月）の午後に移動（地方線で日帰り）。12/8 はフィレンツェの朝を楽しんで、昼食後の列車でローマへ</td></tr><tr><td class="d">11/3</td><td>12/5 の Frecciarossa 9415（11:26 → 13:39、Business）を予約。ヴェネツィアの朝に散歩を入れ、フィレンツェ初日はアカデミアを 15:15 に、ミケランジェロ広場の夕日は 12/6 に移動。英語版を追加</td></tr><tr><td class="d">11/3</td><td>Eurostar（11/25 09:10 → 12:37）を予約。アムステルダムの朝と、パリの初日の時間割を合わせて調整</td></tr><tr><td class="d">11/2</td><td>予約番号（エミレーツ、Booking の宿）と保険の証券番号をしおりから削除（第三者が予約を操作できないように）</td></tr><tr><td class="d">11/2</td><td>ドバイ：街に出ることに決定。Som はエミレーツ経由で48時間の乗継ビザ（手順をドバイの章に）</td></tr><tr><td class="d">10/25</td><td>持ち物チェックを、いつもの持ち物リストから今回の旅用に作り直し（入れるバッグの札つき）</td></tr><tr><td class="d">10/25</td><td>日本語版からタイ語の併記（見出しの小さい字、会話の表のタイ語の列など）を外した。タイ語はタイ語版に</td></tr><tr><td class="d">10/25</td><td>デザインを3つから選べるように（右下のパレットのボタンを押すと開く）：Som（明るい紙＋各国の線画、標準）、Yuzuha（ポップ）、Ryo（ダーク）。URL に ?theme=som / yuzuha / ryo でも指定できる</td></tr><tr><td class="d">10/25</td><td>保険は Chubb とヒルトン・アメックス・プレミアムの2本に整理。困ったときの連絡ステップ（場面別）と連絡先一覧を追加</td></tr><tr><td class="d">10/25</td><td>宿6軒の予約票を反映（時間、無料取消の期限、部屋）。アメックスの補償を規定で確認（持ち物の盗難は補償なし）。Anytime Fitness の節を追加</td></tr><tr><td class="d">10/25</td><td>保険の節を追加（Chubb の証券の内容、アメックスとの分担、請求のルール）</td></tr><tr><td class="d">10/25</td><td>荷物の構成と動かし方（場面ごとの対策）を追加。エミレーツの預け荷物と座席を eチケットで確認。持ち物・やることを更新。この変更履歴を追加</td></tr><tr><td class="d">10/18</td><td>各国の「予習の映画」を追加</td></tr><tr><td class="d">10/18</td><td>往路のドバイ乗継（3時間15分）を日程とルート図に追加</td></tr><tr><td class="d">10/18</td><td>言語の切り替えを画面の右下に固定（同じ場所のまま日本語・タイ語を切り替え）</td></tr><tr><td class="d">10/18</td><td>Google マップのお気に入りリスト（タイプ別、タイ語名つき）と、ホテル・主要な場所の地図リンクを追加。ルート図に帰路のドバイ17時間乗継</td></tr><tr><td class="d">10/18</td><td>パリの宿を Libertel Austerlitz に変更し、宿6軒を確定に</td></tr><tr><td class="d">10/18</td><td>GitHub 版を公開。iPhone 向けに文字を大きく、横長の表は横スクロールに。?lang=th でタイ語から開く</td></tr><tr><td class="d">10/17ごろ</td><td>全体の見直し（Yuzuha は旅行時に生後10か月、往路は01:05発、保険料を削除）。日本語・タイ語の2言語版に</td></tr><tr><td class="d">10/17ごろ</td><td>デモ・ストライキの日の動き方、スリ対策（場面別のシナリオ）、フランスのテーブルマナーのコラムを追加</td></tr><tr><td class="d">10/16ごろ</td><td>ディズニーランド・パリのチケット購入を反映。「ディズニーとフランス」、ヴェルサイユの入場時刻、日の出・日の入りの表を追加</td></tr><tr><td class="d">10/15</td><td>初版</td></tr></tbody></table></div>
   </details>
 </footer>
 
@@ -4382,6 +4610,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <li><a href="#nl" data-ch="nl"><span class="flag f-nl"></span>เนเธอร์แลนด์</a></li>
     <li><a href="#fr" data-ch="fr"><span class="flag f-fr"></span>ฝรั่งเศส</a></li>
     <li><a href="#dlp" data-ch="dlp">ดิสนีย์</a></li>
+    <li><a href="#bocuse" data-ch="bocuse">โบกุส</a></li>
     <li><a href="#es" data-ch="es"><span class="flag f-es"></span>สเปน</a></li>
     <li><a href="#it" data-ch="it"><span class="flag f-it"></span>อิตาลี</a></li>
     <li><a href="#ae" data-ch="ae"><span class="flag f-ae"></span>ดูไบ</a></li>
@@ -4528,6 +4757,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
         <tr><td>ที่พัก</td><td>โรงแรมระหว่างต่อเครื่องที่ดูไบ (ราว 17 ชั่วโมง)</td><td><span class="pill todo">ต้องจอง</span></td></tr>
         <tr><td>รถไฟ</td><td>TGV INOUI ชั้น 1 ปารีส→บาร์เซโลนา ตู้ 13 ชั้นบน</td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
         <tr><td>บัตรเข้า</td><td>ดิสนีย์แลนด์ปารีส 26 พ.ย. บัตรระบุวัน 1 วัน 2 สวน (ผู้ใหญ่ 2 คน)<br><small>ซื้อแล้ว 15 ต.ค. <b>ยกเลิกได้ถึง 3 วันก่อน (23 พ.ย.)</b> 22 พ.ย. เป็นวันออกเดินทาง ถ้าจะเปลี่ยนวันให้ตัดสินใจก่อนออกเดินทาง</small></td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
+        <tr><td>ร้านอาหาร</td><td>ร้านปอล โบกุส สาขาแรก (ชานเมืองลียง) 29 พ.ย. 20:15 3 คน<span class="tsub">กันวงเงินบัตรไว้ ยกเลิกฟรีถึง 28 พ.ย. 20:15 ยืนยันอีกครั้งราว 22 พ.ย. (<a href="#bocuse">บทโบกุส</a>)</span></td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
         <tr><td>รถไฟ</td><td>Eurostar อัมสเตอร์ดัม→ปารีส 25 พ.ย. 09:10 (Standard ตู้ 18 ที่นั่ง 95・96)<span class="tsub">เปลี่ยนวันเวลาได้ฟรีถึง 1 ชม. ก่อนออก</span></td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
         <tr><td>เครื่องบิน</td><td>Vueling บาร์เซโลนา→เวนิส 3 ธ.ค. 12:40 (FLY＋กระเป๋าโหลด 25 กก.)</td><td><span class="pill todo">ต้องจอง</span></td></tr>
         <tr><td>รถไฟ</td><td>Frecciarossa 9415 เวนิส→ฟลอเรนซ์ 5 ธ.ค. 11:26 (Business ตู้ 3 ที่นั่ง 5D・6D)<span class="tsub">ราคา Base เปลี่ยนวันเวลาได้ฟรีก่อนรถออก</span></td><td><span class="pill ok">ยืนยันแล้ว</span></td></tr>
@@ -5824,6 +6054,229 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
         <tr><td>Disneyland Park</td><td>สวนปราสาท</td><td><a href="https://www.google.com/maps/search/?api=1&query=Disneyland+Park+Paris">เปิด</a></td></tr>
         <tr><td>Disney Adventure World</td><td>สวนโฟรเซ่น</td><td><a href="https://www.google.com/maps/search/?api=1&query=Disney+Adventure+World+Paris">เปิด</a></td></tr>
         <tr><td>World of Disney (Disney Village)</td><td>ช้อปปิ้งรอบสุดท้าย</td><td><a href="https://www.google.com/maps/search/?api=1&query=World+of+Disney+Disney+Village+Paris">เปิด</a></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SPECIAL: PAUL BOCUSE =================== -->
+<section id="bocuse" class="chapter bcs" data-chapter="bocuse">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Special · Restaurant Paul Bocuse · 29 พ.ย. (อา.) 20:15</div>
+    <h2>ร้านปอล โบกุส สาขาแรก <span class="local">L'Auberge du Pont de Collonges</span></h2>
+    <p class="lead">ร้านแรกของปอล โบกุส "เชฟแห่งศตวรรษ" ร้านของครอบครัวตั้งแต่ปี 1924 ที่ครองสามดาวมิชลินนานถึง 55 ปี เป็นศูนย์กลางของอาหารฝรั่งเศสแบบคลาสสิก เราจะไปชิมต้นตำรับของรสชาติที่ Ryo เคยได้ลองที่กินซ่า ไปกันสามคนพ่อแม่ลูก ร้านเป็นอาคารสีแดงเขียวริมแม่น้ำโซน ทางเหนือของลียง</p>
+  </div>
+  <div class="subnav"><a href="#bcs-basic">การจอง</a><a href="#bcs-go">การเดินทาง</a><a href="#bcs-day">ตารางวันนั้น</a><a href="#bcs-menu">เมนู</a><a href="#bcs-dish">อาหารขึ้นชื่อ</a><a href="#bcs-baby">พาลูกน้อยไป</a><a href="#bcs-hist">ประวัติ</a><a href="#bcs-gift">ของฝาก</a><a href="#bcs-check">เช็กลิสต์</a><a href="#bcs-map">แผนที่</a></div>
+
+  <div class="block" id="bcs-basic">
+    <h3>การจองและข้อมูลพื้นฐาน</h3>
+    <div class="stay">
+      <div class="name">Restaurant Paul Bocuse (L'Auberge du Pont de Collonges)  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Restaurant%20Paul%20Bocuse%20Collonges-au-Mont-d%27Or">แผนที่</a><span class="pill ok">ยืนยันแล้ว</span></div>
+      <dl class="kv">
+        <dt>วันเวลา</dt><dd><b>29 พ.ย. (อา.) 20:15</b> 3 คน (ผู้ใหญ่ 2 คนและ Yuzuha)</dd>
+        <dt>ที่อยู่</dt><dd>40 Quai de la Plage, 69660 Collonges-au-Mont-d'Or (ห่างจากใจกลางลียงไปทางเหนือราว 10 กม.)</dd>
+        <dt>โทร</dt><dd><span class="key">+33 4 72 42 90 90</span>　reservation@bocuse.fr</dd>
+        <dt>การแต่งกาย</dt><dd>สุภาพแบบลำลอง (ผู้ชายใส่เสื้อมีปกกับรองเท้าหนัง ถ้ามีแจ็กเก็ตจะดีมาก)</dd>
+        <dt>การค้ำประกัน</dt><dd>กันวงเงินบัตรไว้เฉย ๆ (ไม่ตัดเงิน) <b>จะเก็บเงินเฉพาะเมื่อยกเลิกหลัง 28 พ.ย. 20:15 หรือไม่ไปตามนัด</b></dd>
+        <dt>ยืนยันอีกครั้ง</dt><dd>ร้านขอให้<b>ยืนยันการจองล่วงหน้า 1 สัปดาห์ (ราว 22 พ.ย.)</b> <span class="pill todo">ต้องทำ</span></dd>
+        <dt>แจ้งร้านแล้ว</dt><dd>จะพาลูกสาว 10 เดือนไปด้วย ให้นอนพักในรถเข็น และขอเก้าอี้เด็ก (ส่งข้อความตอนจองแล้ว)</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="block" id="bcs-go">
+    <h3>การเดินทาง</h3>
+    <div class="move">
+      <h4>จากในเมืองลียงไปร้าน</h4>
+      <ol>
+        <li><b>แท็กซี่หรือแอปเรียกรถ</b> (Uber, G7) ราว 20〜25 นาที คืนวันอาทิตย์คิดราคาพิเศษ เที่ยวเดียวราว €30〜40</li>
+        <li>ออกจากโรงแรม<b>ราว 19:40</b> จะถึงก่อนเวลานิดหน่อย ราว 20:05</li>
+        <li>บอกคนขับว่า "<b>Restaurant Paul Bocuse, Collonges-au-Mont-d'Or</b>"</li>
+        <li><b>ขากลับ</b> ตอนจ่ายเงินให้พูดว่า "<b>Pourriez-vous nous appeler un taxi ?</b>" (ช่วยเรียกแท็กซี่ให้หน่อยได้ไหม) เพราะอยู่ชานเมือง แอปเรียกรถอาจรอนาน</li>
+      </ol>
+    </div>
+    <p class="note">มีรถเมล์ TCL และสถานีรถไฟท้องถิ่น Collonges-Fontaines ด้วย แต่กลางคืนและมีรถเข็นเด็ก นั่งแท็กซี่สบายกว่า</p>
+  </div>
+
+  <div class="block" id="bcs-day">
+    <h3>ตารางวันที่ 29 พ.ย. (อา.)</h3>
+    <p class="note">มื้อเย็นยาวและหนัก มื้อกลางวันเลยกินเบา ๆ แล้วพักที่โรงแรมตอนเย็นก่อนออกไป เมื่อจองรถไฟและโรงแรมที่ลียงแล้ว จะย้ายไปรวมในบทลียง</p>
+    <ul class="tt">
+      <li><span class="t">09:00</span><div><b>ตลาดปอล โบกุส</b> (Les Halles de Lyon Paul Bocuse) วันอาทิตย์เปิดตั้งแต่เช้าถึงบ่ายต้น ๆ<span class="sub">ชีส ชาร์กูเตอรี (แฮมและไส้กรอก) หอยนางรม ได้เห็นร้านวัตถุดิบก่อน มื้อเย็นจะยิ่งสนุก</span></div></li>
+      <li><span class="t">12:00</span><div>มื้อกลางวันเบา ๆ ในตลาด (หอยนางรมสักสองสามตัว ปาเต อ็อง ครูตสักชิ้น)</div></li>
+      <li><span class="t">14:00</span><div>เมืองเก่า (วิเยอ ลียง) ทางลอด "ทราบูล" และเนินฟูร์วิแยร์ (รถรางไต่เขา)</div></li>
+      <li><span class="t">16:30</span><div>พักที่โรงแรม ให้ Yuzuha งีบให้เต็มที่ แล้วเปลี่ยนชุด</div></li>
+      <li><span class="t">19:40</span><div>นั่งแท็กซี่ไปร้าน</div></li>
+      <li><span class="t">20:15</span><div><b>มื้อเย็นที่ร้านปอล โบกุส</b> <span class="pill ok">ยืนยันแล้ว</span><span class="sub">ถ้าสั่งจานเริ่ม จานหลัก ของหวาน ใช้เวลาราว 2 ชม. เมนูครบรอบ 100 ปีสั่งได้ถึง 21:00</span></div></li>
+      <li><span class="t">22:30</span><div>ให้ร้านช่วยเรียกแท็กซี่กลับโรงแรม → ถึงราว 23:00</div></li>
+    </ul>
+  </div>
+
+  <div class="block" id="bcs-menu">
+    <h3>เมนู (ฤดูใบไม้ร่วง 2026)</h3>
+    <p class="note">จองแล้วก็สั่งแบบอาลาคาร์ตได้ ราคาต่อคน รวมภาษีและค่าบริการแล้ว (เมนูทางการของร้าน ฤดูใบไม้ร่วง 2026) อาหารอาจเปลี่ยนตามวัตถุดิบในตลาด</p>
+    <h4 style="margin-top:12px">เมนูคอร์ส</h4>
+    <div class="tbl">
+    <table>
+      <thead><tr><th>คอร์ส</th><th>รายการ</th><th>ราคา</th></tr></thead>
+      <tbody>
+        <tr><td class="big">Over Time</td><td>ของว่างคำเดียว → ฟัวกราเป็ดกงฟี (ลูกแพร์ ขนมปังบริยอชไส้แป้งพาย) → ไก่เบรสส์ 2 แบบ ซอสครีมเห็ดมอเรล → ชีส → รถเข็นของหวาน</td><td class="num">€230</td></tr>
+        <tr><td class="big">Tradition</td><td>ของว่างคำเดียว → ล็อบสเตอร์สีน้ำเงินผัด → ปลามังก์ฟิชซอสอเมริเคน → <b>ปลากะพงห่อพาย</b> หรือซี่โครงลูกวัวอบหม้อ (2 คนขึ้นไป) → ชีส → รถเข็นของหวาน</td><td class="num">€300</td></tr>
+        <tr><td class="big">Centenaire (ครบรอบ 100 ปี)</td><td>เกอแนลกับคาเวียร์ จานเห็ด หอยเชลล์ ต่อมไทมัสลูกวัว ของล้างปากแบบโบโฌเลส์ <b>ไก่เบรสส์ห่อกระเพาะปัสสาวะหมู</b> ชีส ของหวาน ต้องสั่งทั้งโต๊ะ มื้อเย็นสั่งได้ถึง 21:00 รวมไวน์จับคู่ €660</td><td class="num">€370</td></tr>
+        <tr><td class="big">เด็ก (12 ปีลงไป)</td><td>จานเริ่มและจานหลักอย่างละจาน ของหวาน</td><td class="num">€140</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h4 style="margin-top:12px">อาลาคาร์ตที่น่าสนใจ</h4>
+    <div class="tbl">
+    <table>
+      <thead><tr><th>อาหาร</th><th>โน้ต</th><th>ราคา</th></tr></thead>
+      <tbody>
+        <tr><td class="big">เกอแนลล็อบสเตอร์กับปลาไพก์เพิร์ช<span class="tsub">ซอสแชมเปญ คาเวียร์</span></td><td>เกอแนลของขึ้นชื่อลียงแบบหรูที่สุด</td><td class="num">€98</td></tr>
+        <tr><td class="big">ฟัวกราเป็ดกงฟี<span class="tsub">ลูกแพร์ บริยอชไส้แป้งพายอุ่น ๆ</span></td><td>จานเริ่มคลาสสิก</td><td class="num">€94</td></tr>
+        <tr><td class="big">ล็อบสเตอร์สีน้ำเงิน 2 แบบ</td><td>หางแบบปารีส ก้ามแบบซีซาร์</td><td class="num">€130</td></tr>
+        <tr><td class="big">ปลากะพงทะเลห่อพาย<span class="tsub">ซอสโชรง 2 คนต่อ 1 ตัว</span></td><td>อาหารขึ้นชื่อ หั่นให้ที่โต๊ะ</td><td class="num">€225</td></tr>
+        <tr><td class="big">ไก่ต็อกจากดงบ์<span class="tsub">2 คนต่อ 1 ตัว</span></td><td>หั่นและฟลอมเบที่โต๊ะ</td><td class="num">€280</td></tr>
+        <tr><td class="big">สเต๊กเนื้อชาโรเลส์แบบรอสซินี</td><td>ซอสเปรีเกอ (ทรัฟเฟิล)</td><td class="num">€98</td></tr>
+        <tr><td class="big">แซร์แวล เดอ กานูต์</td><td>ชีสสดผสมสมุนไพร ของขึ้นชื่อลียง ทำให้ที่โต๊ะ</td><td class="num">€30</td></tr>
+        <tr><td class="big">รถเข็นชีส</td><td>ชีสสดและชีสบ่มของท้องถิ่นหลายชนิด</td><td class="num">€50</td></tr>
+        <tr><td class="big">รถเข็นของหวาน</td><td>เลือกจากรถเข็นได้กี่อย่างก็ได้</td><td class="num">€50</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="card">
+      <h5>แผนการสั่งของเรา</h5>
+      <ul>
+        <li>จานเริ่ม：<b>เกอแนล</b>กับ<b>ฟัวกรา</b>อย่างละจาน แบ่งกันคนละครึ่ง</li>
+        <li>จานหลัก：<b>ปลากะพงห่อพาย</b> 1 ตัวสำหรับ 2 คน</li>
+        <li>ของหวาน：<b>รถเข็นของหวาน</b> 1 ที่แบ่งกัน</li>
+        <li>เครื่องดื่ม：ไวน์คนละแก้วกับน้ำ แดงเป็นโกต-โรตี หรือขาวเป็นกงดรีเยอ จากแถบโรน</li>
+        <li><b>ถามในวันนั้น</b>：สั่งซุปทรัฟเฟิลดำ <b>V.G.E.</b> และ<b>ไก่เบรสส์ห่อกระเพาะปัสสาวะหมู</b>ได้ไหม (ไม่มีในอาลาคาร์ตฤดูใบไม้ร่วง เคยสั่งเดี่ยวได้ €290)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block" id="bcs-dish">
+    <h3>อาหารขึ้นชื่อและเกร็ดน่ารู้</h3>
+    <div class="spots">
+      <div class="spot">
+        <h4>ซุปทรัฟเฟิลดำ V.G.E.<span class="local">Soupe aux truffes noires V.G.E.</span></h4>
+        <ul>
+          <li>คิดขึ้นในปี 1975 ที่ทำเนียบเอลิเซ่ สำหรับประธานาธิบดีวาเลรี ฌิสการ์ แดสแตง (อักษรย่อ V.G.E.)</li>
+          <li>ปิดถ้วยด้วยแป้งพายแล้วอบ ใช้ช้อนเจาะแป้งแล้วกินพร้อมซุปข้างใน</li>
+          <li>อาหารประจำร้าน แต่ไม่มีในเมนูฤดูใบไม้ร่วง 2026 เลยต้องถามดู</li>
+        </ul>
+      </div>
+      <div class="spot">
+        <h4>ไก่เบรสส์ห่อกระเพาะปัสสาวะหมู<span class="local">Volaille de Bresse truffée en vessie</span></h4>
+        <ul>
+          <li>ไก่เบรสส์เป็น<b>ไก่ชนิดเดียวที่ได้ AOP</b> (การคุ้มครองแหล่งกำเนิด) มาจากทางตะวันออกเฉียงเหนือของลียง</li>
+          <li>สอดทรัฟเฟิลไว้ใต้หนัง ห่อด้วยกระเพาะปัสสาวะหมูแล้วต้ม ยกมาเสิร์ฟพองเหมือนลูกโป่ง</li>
+          <li>อาหารคลาสสิกของลียงที่โบกุสทำจนเป็นจานประจำร้าน</li>
+        </ul>
+      </div>
+      <div class="spot">
+        <h4>ปลากะพงห่อพาย<span class="local">Loup en croûte feuilletée</span></h4>
+        <ul>
+          <li>ปลากะพงทะเลยัดไส้ ห่อด้วยแป้งพายที่แต่งเป็นรูปปลา</li>
+          <li>หั่นให้ที่โต๊ะ ซอสโชรงคือซอสแบร์เนสผสมมะเขือเทศ</li>
+        </ul>
+      </div>
+      <div class="spot">
+        <h4>เกอแนล<span class="local">Quenelles</span></h4>
+        <ul>
+          <li>ของขึ้นชื่อลียง เนื้อปลาน้ำจืดบดปั้นเบา ๆ แล้วอบกับซอส ที่ร้านนี้ทำจากล็อบสเตอร์กับปลาไพก์เพิร์ช ซอสแชมเปญและคาเวียร์</li>
+        </ul>
+      </div>
+      <div class="spot">
+        <h4>รถเข็นของหวาน<span class="local">Chariot des desserts</span></h4>
+        <ul>
+          <li>ทาร์ต แครมบรูเล เค้กช็อกโกแลต ฯลฯ เต็มรถเข็น ตักให้อย่างละนิดได้หลายอย่าง</li>
+          <li>เชฟขนม เบอนัว ชาร์เว เป็นแชมป์โลกของหวานไอศกรีม (ปี 2018)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="block" id="bcs-baby">
+    <h3>พาลูกน้อยไป</h3>
+    <div class="grid2">
+      <div class="card"><h4>สิ่งที่แจ้งร้านไว้</h4><ul><li>จะพาลูกสาว 10 เดือนไปด้วย</li><li>ให้นอนพักในรถเข็น และจะระวังไม่ให้รบกวนลูกค้าคนอื่น</li><li>ขอเก้าอี้เด็ก (chaise haute)</li></ul></div>
+      <div class="card"><h4>เคล็ดลับวันนั้น</h4><ul><li>ให้งีบตอนเย็นให้พอ ใส่ชุดสบาย ๆ ใกล้ชุดนอน จะได้หลับในรถเข็นได้</li><li>ชุดเปลี่ยนผ้าอ้อม นม จุกหลอก ของเล่นชิ้นเล็ก</li><li>ถ้าลูกงอแง ให้คนหนึ่งพาไปปลอบที่ล็อบบี้หรือข้างนอก</li><li>สั่งแค่ 3 จาน ใช้เวลาราว 2 ชม.</li><li>เอาอาหารของ Yuzuha ไปเอง ก่อนป้อนให้ถามว่า "Je peux donner son repas au bébé ?"</li></ul></div>
+    </div>
+  </div>
+
+  <div class="block" id="bcs-hist">
+    <h3>เส้นทางของปอล โบกุส</h3>
+    <ol class="hist">
+      <li><span class="y">1924</span><div>ปู่ย่าของโบกุสเปิดร้านอาหารริมแม่น้ำโซน จุดเริ่มต้นของร้านนี้</div></li>
+      <li><span class="y">1926</span><div>ปอล โบกุสเกิด ต่อมาฝึกงานกับเฟอร์น็อง ปวงต์ (ร้านลาปีรามิด ที่เวียน)</div></li>
+      <li><span class="y">1965</span><div><b>ได้สามดาวมิชลิน</b> และรักษาไว้ได้ 55 ปีจนถึงปี 2019</div></li>
+      <li><span class="y">1975</span><div>ได้รับเครื่องราชอิสริยาภรณ์เลฌียงดอเนอร์ และทำซุปทรัฟเฟิลดำ V.G.E. ในงานฉลองที่ทำเนียบเอลิเซ่</div></li>
+      <li><span class="y">ทศวรรษ 1970</span><div>ผู้นำกระแส<b>นูแวล คุยซีน</b> พาเชฟออกจากหลังครัวมาอยู่ในแสงไฟ</div></li>
+      <li><span class="y">1987</span><div>ก่อตั้งการแข่งขันทำอาหาร<b>โบกุส ดอร์</b> รอบชิงยังจัดที่ลียงทุก 2 ปี</div></li>
+      <li><span class="y">1989</span><div>โก-เอ-มีโยยกให้เป็น "<b>เชฟแห่งศตวรรษ</b>"</div></li>
+      <li><span class="y">2018</span><div>เสียชีวิตเมื่อ 20 มกราคม อายุ 91 ปี ในอาคารเดียวกับที่เกิด</div></li>
+      <li><span class="y">2020</span><div>มิชลินเหลือสองดาว ยังมี M.O.F. (ช่างฝีมือยอดเยี่ยมของฝรั่งเศส) 3 คนดูแลร้าน</div></li>
+    </ol>
+    <p class="memo"><span class="who">RYO'S MEMO</span>ต้นตำรับของร้านโบกุสที่รุ่นพี่ที่ทำงานเคยพาไปที่กินซ่า ถ่ายรูปไว้เล่าให้รุ่นพี่ฟัง</p>
+  </div>
+
+  <div class="block" id="bcs-gift">
+    <h3>ของฝาก</h3>
+    <div class="tbl">
+    <table>
+      <thead><tr><th>ของ</th><th>ที่ไหน</th><th>โน้ต</th></tr></thead>
+      <tbody>
+        <tr><td class="big">ของที่ระลึกของร้าน</td><td>ที่ร้าน</td><td>ถ้ามีขาย ถามตอนกินข้าว</td></tr>
+        <tr><td class="big">ช็อกโกแลต Bernachon</td><td>ในเมืองลียง (เขต 6)</td><td>ร้านช็อกโกแลตเก่าแก่ที่ลูกสาวโบกุสแต่งงานเข้าไป เค้ก "Le Président" ว่ากันว่าทำขึ้นเพื่องานฉลอง V.G.E. ปี 1975 ช็อกโกแลตแท่งเก็บได้นาน</td></tr>
+        <tr><td class="big">กุสซอง เดอ ลียง</td><td>Voisin ฯลฯ</td><td>ช็อกโกแลตรูปหมอนสีเขียว แจกง่าย</td></tr>
+        <tr><td class="big">หนังสือ <i>Bocuse: A Century of Stories</i></td><td>ร้านหนังสือ</td><td>หนังสือครบรอบ 100 ปี (ภาษาอังกฤษ) หนัก ซื้อท้าย ๆ</td></tr>
+        <tr><td class="big">ไวน์โกต-โรตี</td><td>ร้านไวน์</td><td>ไวน์ดังจากแถบโรน ทางใต้ของลียง</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="alert"><b>ห้ามนำกลับ</b>　ผลิตภัณฑ์จากเนื้อสัตว์ (เทอร์รีน ไส้กรอก ปาเต) นำเข้าญี่ปุ่นและไทยไม่ได้</p>
+  </div>
+
+  <div class="block" id="bcs-check">
+    <h3>เช็กลิสต์</h3>
+    <div class="grid2">
+      <div class="card"><h4>ก่อนออกเดินทาง</h4>
+        <ul class="check">
+          <li><input type="checkbox" id="bcs1" checked><label for="bcs1">จอง 29 พ.ย. 20:15 (3 คน) และส่งข้อความเรื่องลูกน้อย — ทำแล้ว 4 พ.ย.</label></li>
+          <li><input type="checkbox" id="bcs2"><label for="bcs2">ยืนยันการจองอีกครั้งราว 22 พ.ย. (อีเมลหรือโทร)</label></li>
+          <li><input type="checkbox" id="bcs3"><label for="bcs3">ถ้าจะยกเลิก ต้องก่อน 28 พ.ย. 20:15</label></li>
+          <li><input type="checkbox" id="bcs4"><label for="bcs4">จองรถไฟและโรงแรมที่ลียง</label></li>
+          <li><input type="checkbox" id="bcs5"><label for="bcs5">เสื้อผ้า：Ryo เสื้อมีปกกับรองเท้าหนัง (แจ็กเก็ต) ซมใส่ชุดเดรส ฯลฯ</label></li>
+        </ul>
+      </div>
+      <div class="card"><h4>วันนั้น</h4>
+        <ul class="check">
+          <li><input type="checkbox" id="bcs6"><label for="bcs6">เรียกแท็กซี่ตอน 19:40</label></li>
+          <li><input type="checkbox" id="bcs7"><label for="bcs7">ถามเรื่องซุป V.G.E. กับไก่ห่อกระเพาะปัสสาวะหมู</label></li>
+          <li><input type="checkbox" id="bcs8"><label for="bcs8">นม ผ้าอ้อม ของเล่น ผ้าห่มของ Yuzuha</label></li>
+          <li><input type="checkbox" id="bcs9"><label for="bcs9">ถ่ายรูป：หน้าร้าน รถเข็นของหวาน ตอนหั่นปลาห่อพาย</label></li>
+          <li><input type="checkbox" id="bcs10"><label for="bcs10">ขอให้ร้านเรียกแท็กซี่ขากลับ</label></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="block" id="bcs-map">
+    <h3>แผนที่</h3>
+    <div class="tbl">
+    <table>
+      <thead><tr><th>สถานที่</th><th>โน้ต</th><th>แผนที่</th></tr></thead>
+      <tbody>
+        <tr><td>Restaurant Paul Bocuse</td><td>29 พ.ย. 20:15</td><td><a href="https://www.google.com/maps/search/?api=1&query=Restaurant%20Paul%20Bocuse%20Collonges-au-Mont-d%27Or">เปิด</a></td></tr>
+        <tr><td>Les Halles de Lyon Paul Bocuse</td><td>29 พ.ย. ช่วงเช้า</td><td><a href="https://www.google.com/maps/search/?api=1&query=Les%20Halles%20de%20Lyon%20Paul%20Bocuse">เปิด</a></td></tr>
+        <tr><td>Lyon Part-Dieu</td><td>สถานีขาไปและขาออก</td><td><a href="https://www.google.com/maps/search/?api=1&query=Gare%20de%20Lyon%20Part-Dieu">เปิด</a></td></tr>
+        <tr><td>Brasserie Le Sud</td><td>บราสเซอรีของโบกุส (อาหารฝรั่งเศสตอนใต้)</td><td><a href="https://www.google.com/maps/search/?api=1&query=Brasserie%20Le%20Sud%20Paul%20Bocuse%20Lyon">เปิด</a></td></tr>
+        <tr><td>Au Petit Bouchon Chez Georges</td><td>บูชง จันทร์〜ศุกร์</td><td><a href="https://www.google.com/maps/search/?api=1&query=Au%20Petit%20Bouchon%20Chez%20Georges%20Lyon">เปิด</a></td></tr>
+        <tr><td>Bernachon</td><td>ช็อกโกแลต</td><td><a href="https://www.google.com/maps/search/?api=1&query=Bernachon%20Lyon">เปิด</a></td></tr>
       </tbody>
     </table>
     </div>
@@ -8357,7 +8810,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   <span>ที่มาของเบอร์สถานทูต/กงสุล: "รายชื่อสถานทูตและสถานกงสุลในต่างประเทศ" ของกระทรวงการต่างประเทศญี่ปุ่น และ "List of Royal Thai Embassy contact point" ของกระทรวงการต่างประเทศไทย</span>
   <details id="changelog" style="margin-top:6px">
     <summary style="cursor:pointer;font-weight:700;color:var(--ink)">ประวัติการแก้ไข</summary>
-    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">3 พ.ย.</td><td>ย้ายปิซาไปบ่ายวันที่ 7 ธ.ค. (จ.) ไปกลับด้วยรถไฟท้องถิ่น วันที่ 8 ธ.ค. เที่ยวฟลอเรนซ์ยามเช้า กินมื้อกลางวันแล้วนั่งรถไฟไปโรม</td></tr><tr><td class="d">3 พ.ย.</td><td>จอง Frecciarossa 9415 วันที่ 5 ธ.ค. (11:26 → 13:39 Business) เพิ่มเดินเล่นเวนิสยามเช้า วันแรกที่ฟลอเรนซ์เลื่อนอัคคาเดเมียเป็น 15:15 และย้ายพระอาทิตย์ตกที่ลานมีเกลันเจโลไปวันที่ 6 ธ.ค. เพิ่มฉบับภาษาอังกฤษ</td></tr><tr><td class="d">3 พ.ย.</td><td>จอง Eurostar (25 พ.ย. 09:10 → 12:37) ปรับตารางเช้าที่อัมสเตอร์ดัมและวันแรกที่ปารีสให้ตรงกัน</td></tr><tr><td class="d">2 พ.ย.</td><td>ลบรหัสจอง (เอมิเรตส์ ที่พักใน Booking) และเลขกรมธรรม์ประกันออกจากไกด์ (กันคนอื่นเข้าไปแก้หรือยกเลิกการจอง)</td></tr><tr><td class="d">2 พ.ย.</td><td>ดูไบ: ตัดสินใจออกไปในเมือง ซมขอวีซ่าทรานซิต 48 ชม. ผ่านเอมิเรตส์ (มีขั้นตอนในบทดูไบ)</td></tr><tr><td class="d">25 ต.ค.</td><td>ทำรายการของที่ต้องเอาไปใหม่จากรายการประจำ ให้เข้ากับทริปนี้ (มีป้ายบอกกระเป๋าที่ใส่)</td></tr><tr><td class="d">25 ต.ค.</td><td>ฉบับภาษาญี่ปุ่นเอาภาษาไทยที่เขียนคู่กันออก (ตัวเล็กข้างหัวข้อ คอลัมน์ภาษาไทยในตารางบทสนทนา ฯลฯ) ภาษาไทยอยู่ในฉบับภาษาไทย</td></tr><tr><td class="d">25 ต.ค.</td><td>เลือกดีไซน์ได้ 3 แบบ (กดปุ่มจานสีมุมขวาล่าง): Som (กระดาษสีอ่อน＋ลายเส้นของแต่ละประเทศ ค่าเริ่มต้น) Yuzuha (สีสดใส) Ryo (สีเข้ม) หรือใส่ ?theme=som / yuzuha / ryo ในลิงก์ก็ได้</td></tr><tr><td class="d">25 ต.ค.</td><td>สรุปประกันเหลือ 2 ตัว คือ Chubb และ Hilton Amex Premium เพิ่มขั้นตอนติดต่อเมื่อเกิดเหตุ (แยกสถานการณ์) และรายชื่อเบอร์ติดต่อ</td></tr><tr><td class="d">25 ต.ค.</td><td>อัปเดตข้อมูลจากใบยืนยันโรงแรม 6 แห่ง (เวลา วันสุดท้ายที่ยกเลิกฟรี ห้อง) เช็กความคุ้มครอง Amex จากเงื่อนไข (ของติดตัวถูกขโมยไม่คุ้มครอง) เพิ่มหัวข้อ Anytime Fitness</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อประกันการเดินทาง (รายละเอียดกรมธรรม์ Chubb การแบ่งหน้าที่กับ Amex กฎการเคลม)</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อจัดกระเป๋าและการขนย้าย (วิธีรับมือแต่ละสถานการณ์) เช็กสัมภาระและที่นั่งเอมิเรตส์จาก e-ticket อัปเดตรายการของและสิ่งที่ต้องทำ เพิ่มประวัติการแก้ไขนี้</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่ม "หนังที่ควรดูก่อนไป" ของแต่ละประเทศ</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มการแวะเปลี่ยนเครื่องที่ดูไบขาไป (3 ชม. 15 นาที) ในกำหนดการและแผนที่เส้นทาง</td></tr><tr><td class="d">18 ต.ค.</td><td>ปุ่มเปลี่ยนภาษาอยู่มุมขวาล่างตลอด (สลับญี่ปุ่น/ไทยได้โดยไม่เลื่อนหน้า)</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มลิสต์สถานที่โปรดใน Google Maps (แยกประเภท มีชื่อภาษาไทย) และลิงก์แผนที่ของโรงแรมและสถานที่สำคัญ เพิ่มการแวะดูไบ 17 ชม. ขากลับในแผนที่</td></tr><tr><td class="d">18 ต.ค.</td><td>เปลี่ยนที่พักปารีสเป็น Libertel Austerlitz และยืนยันที่พักทั้ง 6 แห่ง</td></tr><tr><td class="d">18 ต.ค.</td><td>เปิดเวอร์ชัน GitHub ตัวอักษรใหญ่ขึ้นสำหรับ iPhone ตารางกว้างเลื่อนด้านข้างได้ เปิดเป็นภาษาไทยด้วย ?lang=th</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>ทบทวนทั้งเล่ม (Yuzuha อายุ 10 เดือนตอนเดินทาง ขาไปออก 01:05 ตัดค่าประกันออก) ทำเป็น 2 ภาษา ญี่ปุ่นและไทย</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>เพิ่มวิธีรับมือวันประท้วง/นัดหยุดงาน การป้องกันล้วงกระเป๋า (แยกตามสถานการณ์) และคอลัมน์มารยาทบนโต๊ะอาหารของฝรั่งเศส</td></tr><tr><td class="d">ราว 16 ต.ค.</td><td>อัปเดตว่าซื้อตั๋วดิสนีย์แลนด์ปารีสแล้ว เพิ่ม "ดิสนีย์กับฝรั่งเศส" เวลาเข้าแวร์ซาย และตารางเวลาพระอาทิตย์ขึ้น-ตก</td></tr><tr><td class="d">15 ต.ค.</td><td>เวอร์ชันแรก</td></tr></tbody></table></div>
+    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">4 พ.ย.</td><td>จองร้านปอล โบกุส สาขาแรก (29 พ.ย. 20:15) เพิ่มบท "โบกุส" แบบเดียวกับบทดิสนีย์ (การจอง การเดินทาง ตารางวันนั้น เมนูและราคาฤดูใบไม้ร่วง อาหารขึ้นชื่อ พาลูกน้อยไป ประวัติ ของฝาก)</td></tr><tr><td class="d">3 พ.ย.</td><td>ย้ายปิซาไปบ่ายวันที่ 7 ธ.ค. (จ.) ไปกลับด้วยรถไฟท้องถิ่น วันที่ 8 ธ.ค. เที่ยวฟลอเรนซ์ยามเช้า กินมื้อกลางวันแล้วนั่งรถไฟไปโรม</td></tr><tr><td class="d">3 พ.ย.</td><td>จอง Frecciarossa 9415 วันที่ 5 ธ.ค. (11:26 → 13:39 Business) เพิ่มเดินเล่นเวนิสยามเช้า วันแรกที่ฟลอเรนซ์เลื่อนอัคคาเดเมียเป็น 15:15 และย้ายพระอาทิตย์ตกที่ลานมีเกลันเจโลไปวันที่ 6 ธ.ค. เพิ่มฉบับภาษาอังกฤษ</td></tr><tr><td class="d">3 พ.ย.</td><td>จอง Eurostar (25 พ.ย. 09:10 → 12:37) ปรับตารางเช้าที่อัมสเตอร์ดัมและวันแรกที่ปารีสให้ตรงกัน</td></tr><tr><td class="d">2 พ.ย.</td><td>ลบรหัสจอง (เอมิเรตส์ ที่พักใน Booking) และเลขกรมธรรม์ประกันออกจากไกด์ (กันคนอื่นเข้าไปแก้หรือยกเลิกการจอง)</td></tr><tr><td class="d">2 พ.ย.</td><td>ดูไบ: ตัดสินใจออกไปในเมือง ซมขอวีซ่าทรานซิต 48 ชม. ผ่านเอมิเรตส์ (มีขั้นตอนในบทดูไบ)</td></tr><tr><td class="d">25 ต.ค.</td><td>ทำรายการของที่ต้องเอาไปใหม่จากรายการประจำ ให้เข้ากับทริปนี้ (มีป้ายบอกกระเป๋าที่ใส่)</td></tr><tr><td class="d">25 ต.ค.</td><td>ฉบับภาษาญี่ปุ่นเอาภาษาไทยที่เขียนคู่กันออก (ตัวเล็กข้างหัวข้อ คอลัมน์ภาษาไทยในตารางบทสนทนา ฯลฯ) ภาษาไทยอยู่ในฉบับภาษาไทย</td></tr><tr><td class="d">25 ต.ค.</td><td>เลือกดีไซน์ได้ 3 แบบ (กดปุ่มจานสีมุมขวาล่าง): Som (กระดาษสีอ่อน＋ลายเส้นของแต่ละประเทศ ค่าเริ่มต้น) Yuzuha (สีสดใส) Ryo (สีเข้ม) หรือใส่ ?theme=som / yuzuha / ryo ในลิงก์ก็ได้</td></tr><tr><td class="d">25 ต.ค.</td><td>สรุปประกันเหลือ 2 ตัว คือ Chubb และ Hilton Amex Premium เพิ่มขั้นตอนติดต่อเมื่อเกิดเหตุ (แยกสถานการณ์) และรายชื่อเบอร์ติดต่อ</td></tr><tr><td class="d">25 ต.ค.</td><td>อัปเดตข้อมูลจากใบยืนยันโรงแรม 6 แห่ง (เวลา วันสุดท้ายที่ยกเลิกฟรี ห้อง) เช็กความคุ้มครอง Amex จากเงื่อนไข (ของติดตัวถูกขโมยไม่คุ้มครอง) เพิ่มหัวข้อ Anytime Fitness</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อประกันการเดินทาง (รายละเอียดกรมธรรม์ Chubb การแบ่งหน้าที่กับ Amex กฎการเคลม)</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อจัดกระเป๋าและการขนย้าย (วิธีรับมือแต่ละสถานการณ์) เช็กสัมภาระและที่นั่งเอมิเรตส์จาก e-ticket อัปเดตรายการของและสิ่งที่ต้องทำ เพิ่มประวัติการแก้ไขนี้</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่ม "หนังที่ควรดูก่อนไป" ของแต่ละประเทศ</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มการแวะเปลี่ยนเครื่องที่ดูไบขาไป (3 ชม. 15 นาที) ในกำหนดการและแผนที่เส้นทาง</td></tr><tr><td class="d">18 ต.ค.</td><td>ปุ่มเปลี่ยนภาษาอยู่มุมขวาล่างตลอด (สลับญี่ปุ่น/ไทยได้โดยไม่เลื่อนหน้า)</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มลิสต์สถานที่โปรดใน Google Maps (แยกประเภท มีชื่อภาษาไทย) และลิงก์แผนที่ของโรงแรมและสถานที่สำคัญ เพิ่มการแวะดูไบ 17 ชม. ขากลับในแผนที่</td></tr><tr><td class="d">18 ต.ค.</td><td>เปลี่ยนที่พักปารีสเป็น Libertel Austerlitz และยืนยันที่พักทั้ง 6 แห่ง</td></tr><tr><td class="d">18 ต.ค.</td><td>เปิดเวอร์ชัน GitHub ตัวอักษรใหญ่ขึ้นสำหรับ iPhone ตารางกว้างเลื่อนด้านข้างได้ เปิดเป็นภาษาไทยด้วย ?lang=th</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>ทบทวนทั้งเล่ม (Yuzuha อายุ 10 เดือนตอนเดินทาง ขาไปออก 01:05 ตัดค่าประกันออก) ทำเป็น 2 ภาษา ญี่ปุ่นและไทย</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>เพิ่มวิธีรับมือวันประท้วง/นัดหยุดงาน การป้องกันล้วงกระเป๋า (แยกตามสถานการณ์) และคอลัมน์มารยาทบนโต๊ะอาหารของฝรั่งเศส</td></tr><tr><td class="d">ราว 16 ต.ค.</td><td>อัปเดตว่าซื้อตั๋วดิสนีย์แลนด์ปารีสแล้ว เพิ่ม "ดิสนีย์กับฝรั่งเศส" เวลาเข้าแวร์ซาย และตารางเวลาพระอาทิตย์ขึ้น-ตก</td></tr><tr><td class="d">15 ต.ค.</td><td>เวอร์ชันแรก</td></tr></tbody></table></div>
   </details>
 </footer>
 
@@ -8395,6 +8848,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <li><a href="#nl" data-ch="nl"><span class="flag f-nl"></span>Netherlands</a></li>
     <li><a href="#fr" data-ch="fr"><span class="flag f-fr"></span>France</a></li>
     <li><a href="#dlp" data-ch="dlp">Disneyland</a></li>
+    <li><a href="#bocuse" data-ch="bocuse">Paul Bocuse</a></li>
     <li><a href="#es" data-ch="es"><span class="flag f-es"></span>Spain</a></li>
     <li><a href="#it" data-ch="it"><span class="flag f-it"></span>Italy</a></li>
     <li><a href="#ae" data-ch="ae"><span class="flag f-ae"></span>Dubai</a></li>
@@ -8540,6 +8994,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
         <tr><td>Hotel</td><td>Dubai stopover hotel (about 17 hours)</td><td><span class="pill todo">To book</span></td></tr>
         <tr><td>Train</td><td>TGV INOUI 1st class Paris → Barcelona, coach 13 upper deck</td><td><span class="pill ok">Booked</span></td></tr>
         <tr><td>Tickets</td><td>Disneyland Paris 11/26, dated 1-day 2-park ticket (2 adults)<br><small>Bought 10/15. <b>Cancellable until 3 days before (11/23)</b>. 11/22 is departure day, so decide any change before leaving</small></td><td><span class="pill ok">Booked</span></td></tr>
+        <tr><td>Restaurant</td><td>Restaurant Paul Bocuse (near Lyon) 11/29 20:15, 3 people<span class="tsub">Card imprint only. Free cancellation until 11/28 20:15. Reconfirm around 11/22 (<a href="#bocuse">Bocuse chapter</a>)</span></td><td><span class="pill ok">Booked</span></td></tr>
         <tr><td>Train</td><td>Eurostar Amsterdam → Paris 11/25 09:10 (Standard, coach 18, seats 95 &amp; 96)<span class="tsub">Free date/time change until 1 hour before departure</span></td><td><span class="pill ok">Booked</span></td></tr>
         <tr><td>Flight</td><td>Vueling Barcelona → Venice 12/3 12:40 (FLY GRANDE)</td><td><span class="pill todo">To book</span></td></tr>
         <tr><td>Train</td><td>Frecciarossa 9415 Venice → Florence 12/5 11:26 (Business, coach 3, seats 5D &amp; 6D)<span class="tsub">Base fare: free date/time change before departure</span></td><td><span class="pill ok">Booked</span></td></tr>
@@ -9832,6 +10287,229 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
         <tr><td>Disneyland Park</td><td>The castle park</td><td><a href="https://www.google.com/maps/search/?api=1&query=Disneyland+Park+Paris">Open</a></td></tr>
         <tr><td>Disney Adventure World</td><td>The Frozen park</td><td><a href="https://www.google.com/maps/search/?api=1&query=Disney+Adventure+World+Paris">Open</a></td></tr>
         <tr><td>World of Disney (Disney Village)</td><td>Last shopping</td><td><a href="https://www.google.com/maps/search/?api=1&query=World+of+Disney+Disney+Village+Paris">Open</a></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SPECIAL: PAUL BOCUSE =================== -->
+<section id="bocuse" class="chapter bcs" data-chapter="bocuse">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Special · Restaurant Paul Bocuse · 11/29 (Sun) 20:15</div>
+    <h2>Restaurant Paul Bocuse <span class="local">L'Auberge du Pont de Collonges</span></h2>
+    <p class="lead">The flagship of Paul Bocuse, the "Chef of the Century". A family house since 1924 that held three Michelin stars for 55 years, the temple of classic French cuisine. We go to the original of the restaurant Ryo first tasted in Ginza, as a family of three. A red-and-green building on the banks of the Saône, just north of Lyon.</p>
+  </div>
+  <div class="subnav"><a href="#bcs-basic">Booking</a><a href="#bcs-go">Getting there</a><a href="#bcs-day">The day</a><a href="#bcs-menu">Menu</a><a href="#bcs-dish">Signature dishes</a><a href="#bcs-baby">With a baby</a><a href="#bcs-hist">History</a><a href="#bcs-gift">Gifts</a><a href="#bcs-check">Checklist</a><a href="#bcs-map">Map</a></div>
+
+  <div class="block" id="bcs-basic">
+    <h3>Booking and basics</h3>
+    <div class="stay">
+      <div class="name">Restaurant Paul Bocuse (L'Auberge du Pont de Collonges)  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Restaurant%20Paul%20Bocuse%20Collonges-au-Mont-d%27Or">Map</a><span class="pill ok">Booked</span></div>
+      <dl class="kv">
+        <dt>When</dt><dd><b>11/29 (Sun) 20:15</b>, 3 people (2 adults and Yuzuha)</dd>
+        <dt>Address</dt><dd>40 Quai de la Plage, 69660 Collonges-au-Mont-d'Or (about 10 km north of central Lyon)</dd>
+        <dt>Phone</dt><dd><span class="key">+33 4 72 42 90 90</span>　reservation@bocuse.fr</dd>
+        <dt>Dress</dt><dd>Elegant casual (for men, a collared shirt and leather shoes; a jacket is even better)</dd>
+        <dt>Guarantee</dt><dd>Card imprint only (nothing charged). <b>Charged only for a no-show or a cancellation after 11/28 20:15</b></dd>
+        <dt>Reconfirm</dt><dd>The restaurant asks us to <b>reconfirm one week before (around 11/22)</b> <span class="pill todo">To do</span></dd>
+        <dt>Told them</dt><dd>We come with our 10-month-old daughter, she will rest in her stroller, and we asked for a high chair (message sent with the booking)</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="block" id="bcs-go">
+    <h3>Getting there</h3>
+    <div class="move">
+      <h4>From central Lyon</h4>
+      <ol>
+        <li><b>Taxi or ride app</b> (Uber, G7), about 20–25 min. Sunday night is the higher tariff: about €30–40 each way</li>
+        <li>Leave the hotel <b>around 19:40</b> to arrive a little early, around 20:05</li>
+        <li>Tell the driver "<b>Restaurant Paul Bocuse, Collonges-au-Mont-d'Or</b>"</li>
+        <li><b>Going back</b>: when paying, ask "<b>Pourriez-vous nous appeler un taxi ?</b>" (Could you call us a taxi?). Ride apps can take a while out in the suburbs</li>
+      </ol>
+    </div>
+    <p class="note">There is a TCL bus and the Collonges-Fontaines local station, but at night with a stroller a taxi is easier.</p>
+  </div>
+
+  <div class="block" id="bcs-day">
+    <h3>Sunday 11/29</h3>
+    <p class="note">A long, rich dinner at night, so a light lunch and a rest at the hotel late afternoon. Once the Lyon train and hotel are booked, this moves into a Lyon chapter.</p>
+    <ul class="tt">
+      <li><span class="t">09:00</span><div><b>Les Halles de Lyon Paul Bocuse</b> market, open Sunday from morning to early afternoon<span class="sub">Cheese, charcuterie, oysters. Seeing the producers first makes the evening's dishes even better</span></div></li>
+      <li><span class="t">12:00</span><div>A light lunch inside the market (a few oysters, a slice of pâté en croûte)</div></li>
+      <li><span class="t">14:00</span><div>Old town (Vieux Lyon), traboules, Fourvière hill (funicular)</div></li>
+      <li><span class="t">16:30</span><div>Rest at the hotel. A good nap for Yuzuha. Change clothes</div></li>
+      <li><span class="t">19:40</span><div>Taxi to the restaurant</div></li>
+      <li><span class="t">20:15</span><div><b>Dinner at Restaurant Paul Bocuse</b> <span class="pill ok">Booked</span><span class="sub">Starter, main and dessert take about 2 hours. The Centenary menu can be ordered until 21:00</span></div></li>
+      <li><span class="t">~22:30</span><div>Restaurant calls a taxi → back at the hotel around 23:00</div></li>
+    </ul>
+  </div>
+
+  <div class="block" id="bcs-menu">
+    <h3>Menu (autumn 2026)</h3>
+    <p class="note">À la carte is fine even with a booking. Prices per person, tax and service included (official menu, autumn 2026). Dishes may change with the market.</p>
+    <h4 style="margin-top:12px">Set menus</h4>
+    <div class="tbl">
+    <table>
+      <thead><tr><th>Menu</th><th>What's in it</th><th>Price</th></tr></thead>
+      <tbody>
+        <tr><td class="big">Over Time</td><td>Amuse-bouche → confit duck foie gras (pear, warm puff-pastry brioche) → Bresse chicken two ways, morel cream sauce → cheese → dessert trolley</td><td class="num">€230</td></tr>
+        <tr><td class="big">Tradition</td><td>Amuse-bouche → blue lobster fricassee → monkfish with American sauce → <b>sea bass in puff pastry</b> or Limousin veal chop (for 2+) → cheese → dessert trolley</td><td class="num">€300</td></tr>
+        <tr><td class="big">Centenaire (100th anniversary)</td><td>Quenelles with caviar, "The Mushroom", scallops, veal sweetbread, a Beaujolais interlude, <b>truffled Bresse chicken in a bladder</b>, cheese, dessert. Whole table; dinner orders until 21:00. €660 with wine pairing</td><td class="num">€370</td></tr>
+        <tr><td class="big">Children (12 and under)</td><td>One starter and one main, dessert</td><td class="num">€140</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h4 style="margin-top:12px">Main à la carte dishes</h4>
+    <div class="tbl">
+    <table>
+      <thead><tr><th>Dish</th><th>Note</th><th>Price</th></tr></thead>
+      <tbody>
+        <tr><td class="big">Quenelles of lobster and pikeperch<span class="tsub">Champagne sauce, caviar</span></td><td>The grandest version of Lyon's quenelle</td><td class="num">€98</td></tr>
+        <tr><td class="big">Confit duck foie gras<span class="tsub">pear, warm puff-pastry brioche</span></td><td>Classic starter</td><td class="num">€94</td></tr>
+        <tr><td class="big">Blue lobster two ways</td><td>Parisian-style tail, Caesar-style claws</td><td class="num">€130</td></tr>
+        <tr><td class="big">Wild sea bass in puff pastry<span class="tsub">Choron sauce, one fish for 2</span></td><td>Signature dish, carved at the table</td><td class="num">€225</td></tr>
+        <tr><td class="big">Dombes guinea fowl<span class="tsub">one bird for 2</span></td><td>Carved and flambéed at the table</td><td class="num">€280</td></tr>
+        <tr><td class="big">Charolais beef fillet Rossini</td><td>Périgueux (truffle) sauce</td><td class="num">€98</td></tr>
+        <tr><td class="big">Cervelle de canut</td><td>Lyon's herbed fresh cheese, made at the table</td><td class="num">€30</td></tr>
+        <tr><td class="big">Cheese trolley</td><td>Several fresh and matured local cheeses</td><td class="num">€50</td></tr>
+        <tr><td class="big">Dessert trolley</td><td>Choose as many as you like from the trolley</td><td class="num">€50</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="card">
+      <h5>How we plan to order</h5>
+      <ul>
+        <li>Starters: one <b>quenelles</b> and one <b>foie gras</b>, shared</li>
+        <li>Main: one <b>sea bass in puff pastry</b> for the two of us</li>
+        <li>Dessert: one <b>dessert trolley</b> shared</li>
+        <li>Drinks: a glass of wine each and water. Côte-Rôtie (red) or Condrieu (white) from the Rhône</li>
+        <li><b>Ask on the day</b>: can we order the black truffle soup <b>V.G.E.</b> and the <b>Bresse chicken in a bladder</b> (not on the autumn carte; €290 à la carte before)?</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block" id="bcs-dish">
+    <h3>Signature dishes and trivia</h3>
+    <div class="spots">
+      <div class="spot">
+        <h4>Black truffle soup V.G.E.<span class="local">Soupe aux truffes noires V.G.E.</span></h4>
+        <ul>
+          <li>Created in 1975 at the Élysée Palace for President Valéry Giscard d'Estaing (V.G.E.)</li>
+          <li>Baked under a puff-pastry lid; you break the pastry with your spoon and eat it with the soup</li>
+          <li>The house's signature. Not on the autumn 2026 menu, so ask</li>
+        </ul>
+      </div>
+      <div class="spot">
+        <h4>Bresse chicken in a bladder<span class="local">Volaille de Bresse truffée en vessie</span></h4>
+        <ul>
+          <li>Bresse chicken is <b>the only chicken with an AOP</b> (protected designation of origin). It comes from north-east of Lyon</li>
+          <li>Truffle under the skin, sealed in a pig's bladder and poached; it arrives puffed up like a balloon</li>
+          <li>A Lyon classic that Bocuse made one of his signatures</li>
+        </ul>
+      </div>
+      <div class="spot">
+        <h4>Sea bass in puff pastry<span class="local">Loup en croûte feuilletée</span></h4>
+        <ul>
+          <li>Stuffed wild sea bass wrapped in pastry decorated as a fish</li>
+          <li>Carved at the table. Choron sauce is béarnaise with tomato</li>
+        </ul>
+      </div>
+      <div class="spot">
+        <h4>Quenelles<span class="local">Quenelles</span></h4>
+        <ul>
+          <li>Lyon's speciality of light river-fish dumplings baked in sauce. Here made with lobster and pikeperch, with Champagne sauce and caviar</li>
+        </ul>
+      </div>
+      <div class="spot">
+        <h4>Dessert trolley<span class="local">Chariot des desserts</span></h4>
+        <ul>
+          <li>Tarts, crème brûlée, chocolate cakes and more on a trolley; they serve you a little of as many as you like</li>
+          <li>Pastry chef Benoît Charvet was world champion in iced desserts (2018)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="block" id="bcs-baby">
+    <h3>With a baby</h3>
+    <div class="grid2">
+      <div class="card"><h4>What we told them</h4><ul><li>Our 10-month-old daughter is coming</li><li>She will rest in her stroller and we'll take care not to disturb other guests</li><li>A request for a high chair (chaise haute)</li></ul></div>
+      <div class="card"><h4>Tips for the evening</h4><ul><li>A good late-afternoon nap and comfy clothes close to pyjamas, so she can sleep in the stroller</li><li>Nappy kit, milk, dummy, a small toy</li><li>If she fusses, one of us soothes her in the lobby or outside</li><li>Keep it to three courses, about 2 hours</li><li>Bring her own food; before feeding her, ask "Je peux donner son repas au bébé ?"</li></ul></div>
+    </div>
+  </div>
+
+  <div class="block" id="bcs-hist">
+    <h3>The Bocuse story</h3>
+    <ol class="hist">
+      <li><span class="y">1924</span><div>Bocuse's grandparents open an inn on the Saône: the start of today's restaurant</div></li>
+      <li><span class="y">1926</span><div>Paul Bocuse is born. He later trains under Fernand Point (La Pyramide, Vienne)</div></li>
+      <li><span class="y">1965</span><div><b>Three Michelin stars</b>, kept for 55 years until 2019</div></li>
+      <li><span class="y">1975</span><div>Receives the Légion d'honneur and creates the black truffle soup V.G.E. for the celebration at the Élysée</div></li>
+      <li><span class="y">1970s</span><div>A leader of <b>nouvelle cuisine</b>, bringing chefs out of the kitchen and into the spotlight</div></li>
+      <li><span class="y">1987</span><div>Founds the <b>Bocuse d'Or</b> cooking competition; the final is still held in Lyon every two years</div></li>
+      <li><span class="y">1989</span><div>Gault&amp;Millau names him "<b>Chef of the Century</b>"</div></li>
+      <li><span class="y">2018</span><div>Dies on 20 January aged 91, in the same building where he was born</div></li>
+      <li><span class="y">2020</span><div>Two Michelin stars. Three M.O.F. (Meilleurs Ouvriers de France) still lead the house</div></li>
+    </ol>
+    <p class="memo"><span class="who">RYO'S MEMO</span>The original of the Bocuse my senior colleague took me to in Ginza. Take photos and tell him about it.</p>
+  </div>
+
+  <div class="block" id="bcs-gift">
+    <h3>Gifts</h3>
+    <div class="tbl">
+    <table>
+      <thead><tr><th>Item</th><th>Where</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td class="big">Restaurant keepsakes</td><td>The restaurant</td><td>If they have any; ask during dinner</td></tr>
+        <tr><td class="big">Bernachon chocolate</td><td>Central Lyon (6th)</td><td>The old chocolatier Bocuse's daughter married into. The cake "Le Président" is said to have been made for the 1975 V.G.E. celebration. Chocolate bars keep well</td></tr>
+        <tr><td class="big">Coussin de Lyon</td><td>Voisin and others</td><td>Green cushion-shaped chocolate sweets, easy to hand out</td></tr>
+        <tr><td class="big">Book <i>Bocuse: A Century of Stories</i></td><td>Bookshops</td><td>The 100-year book (English). Heavy, so buy last</td></tr>
+        <tr><td class="big">Côte-Rôtie wine</td><td>Wine shops</td><td>Famous Rhône wine from just south of Lyon</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="alert"><b>Can't bring home</b>　Meat products (terrines, sausages, pâté) cannot be taken into Japan or Thailand.</p>
+  </div>
+
+  <div class="block" id="bcs-check">
+    <h3>Checklist</h3>
+    <div class="grid2">
+      <div class="card"><h4>Before the trip</h4>
+        <ul class="check">
+          <li><input type="checkbox" id="bcs1" checked><label for="bcs1">Book 11/29 20:15 (3 people) and send the baby message — done 11/4</label></li>
+          <li><input type="checkbox" id="bcs2"><label for="bcs2">Reconfirm around 11/22 (e-mail or phone)</label></li>
+          <li><input type="checkbox" id="bcs3"><label for="bcs3">To cancel, do it before 11/28 20:15</label></li>
+          <li><input type="checkbox" id="bcs4"><label for="bcs4">Book the Lyon trains and hotel</label></li>
+          <li><input type="checkbox" id="bcs5"><label for="bcs5">Clothes: Ryo collared shirt and leather shoes (jacket), Som a dress</label></li>
+        </ul>
+      </div>
+      <div class="card"><h4>On the day</h4>
+        <ul class="check">
+          <li><input type="checkbox" id="bcs6"><label for="bcs6">Call a taxi at 19:40</label></li>
+          <li><input type="checkbox" id="bcs7"><label for="bcs7">Ask about the V.G.E. soup and the chicken in a bladder</label></li>
+          <li><input type="checkbox" id="bcs8"><label for="bcs8">Yuzuha's milk, nappies, toy, blanket</label></li>
+          <li><input type="checkbox" id="bcs9"><label for="bcs9">Photos: the façade, the dessert trolley, carving the sea bass</label></li>
+          <li><input type="checkbox" id="bcs10"><label for="bcs10">Ask the restaurant to call a taxi home</label></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="block" id="bcs-map">
+    <h3>Map</h3>
+    <div class="tbl">
+    <table>
+      <thead><tr><th>Place</th><th>Note</th><th>Map</th></tr></thead>
+      <tbody>
+        <tr><td>Restaurant Paul Bocuse</td><td>11/29 20:15</td><td><a href="https://www.google.com/maps/search/?api=1&query=Restaurant%20Paul%20Bocuse%20Collonges-au-Mont-d%27Or">Open</a></td></tr>
+        <tr><td>Les Halles de Lyon Paul Bocuse</td><td>11/29 morning</td><td><a href="https://www.google.com/maps/search/?api=1&query=Les%20Halles%20de%20Lyon%20Paul%20Bocuse">Open</a></td></tr>
+        <tr><td>Lyon Part-Dieu</td><td>Arrival and departure station</td><td><a href="https://www.google.com/maps/search/?api=1&query=Gare%20de%20Lyon%20Part-Dieu">Open</a></td></tr>
+        <tr><td>Brasserie Le Sud</td><td>Bocuse brasserie (southern French food)</td><td><a href="https://www.google.com/maps/search/?api=1&query=Brasserie%20Le%20Sud%20Paul%20Bocuse%20Lyon">Open</a></td></tr>
+        <tr><td>Au Petit Bouchon Chez Georges</td><td>Bouchon, Mon–Fri</td><td><a href="https://www.google.com/maps/search/?api=1&query=Au%20Petit%20Bouchon%20Chez%20Georges%20Lyon">Open</a></td></tr>
+        <tr><td>Bernachon</td><td>Chocolate</td><td><a href="https://www.google.com/maps/search/?api=1&query=Bernachon%20Lyon">Open</a></td></tr>
       </tbody>
     </table>
     </div>
@@ -12353,7 +13031,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   <span>Sources for mission numbers: Japan's Ministry of Foreign Affairs list of overseas missions; Thailand's Ministry of Foreign Affairs "List of Royal Thai Embassy contact point".</span>
   <details id="changelog" style="margin-top:6px">
     <summary style="cursor:pointer;font-weight:700;color:var(--ink)">Change log</summary>
-    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/3</td><td>Pisa moved to the afternoon of 12/7 (Mon), a day trip by regional train. On 12/8, a Florence morning, then the train to Rome after lunch</td></tr><tr><td class="d">11/3</td><td>English edition added. Frecciarossa 9415 on 12/5 booked (11:26 → 13:39, Business); a morning walk in Venice; Florence day 1 re-timed (Accademia 15:15, Piazzale Michelangelo sunset moved to 12/6)</td></tr><tr><td class="d">11/3</td><td>Eurostar booked (11/25 09:10 → 12:37); Amsterdam morning and first day in Paris adjusted</td></tr><tr><td class="d">11/2</td><td>Booking references and insurance policy numbers removed from the guide (so no one else can change our bookings)</td></tr><tr><td class="d">11/2</td><td>Dubai: decided to go into the city; Som gets a 48-hour transit visa via Emirates</td></tr><tr><td class="d">10/25</td><td>Packing checklist rebuilt for this trip; three designs (Som, Yuzuha, Ryo) via the palette button; insurance section and step-by-step contacts; hotel details from the confirmations; luggage strategy</td></tr><tr><td class="d">10/18</td><td>Films to watch; Google Maps lists; Paris hotel changed to Libertel; GitHub version published</td></tr><tr><td class="d">10/17</td><td>Full review; Japanese and Thai editions; protests, pickpocket scenarios, French table manners</td></tr><tr><td class="d">10/15</td><td>First edition</td></tr></tbody></table></div>
+    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/4</td><td>Restaurant Paul Bocuse booked (11/29 20:15). New "Paul Bocuse" chapter in the same style as Disneyland (booking, getting there, the day, autumn menu and prices, signature dishes, with a baby, history, gifts)</td></tr><tr><td class="d">11/3</td><td>Pisa moved to the afternoon of 12/7 (Mon), a day trip by regional train. On 12/8, a Florence morning, then the train to Rome after lunch</td></tr><tr><td class="d">11/3</td><td>English edition added. Frecciarossa 9415 on 12/5 booked (11:26 → 13:39, Business); a morning walk in Venice; Florence day 1 re-timed (Accademia 15:15, Piazzale Michelangelo sunset moved to 12/6)</td></tr><tr><td class="d">11/3</td><td>Eurostar booked (11/25 09:10 → 12:37); Amsterdam morning and first day in Paris adjusted</td></tr><tr><td class="d">11/2</td><td>Booking references and insurance policy numbers removed from the guide (so no one else can change our bookings)</td></tr><tr><td class="d">11/2</td><td>Dubai: decided to go into the city; Som gets a 48-hour transit visa via Emirates</td></tr><tr><td class="d">10/25</td><td>Packing checklist rebuilt for this trip; three designs (Som, Yuzuha, Ryo) via the palette button; insurance section and step-by-step contacts; hotel details from the confirmations; luggage strategy</td></tr><tr><td class="d">10/18</td><td>Films to watch; Google Maps lists; Paris hotel changed to Libertel; GitHub version published</td></tr><tr><td class="d">10/17</td><td>Full review; Japanese and Thai editions; protests, pickpocket scenarios, French table manners</td></tr><tr><td class="d">10/15</td><td>First edition</td></tr></tbody></table></div>
   </details>
 </footer>
 
