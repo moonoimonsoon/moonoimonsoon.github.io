@@ -131,6 +131,8 @@ nav.toc .toc-group a.here .dot{border-color:color-mix(in srgb,var(--bg) 40%,tran
 .chapter.dlp{--c1:#B9A2F2;--c2:#F2C25A}
 .dlp .band{background:linear-gradient(90deg,#6E5BC9,#B9A2F2 45%,#F2C25A)}
 .chapter.bcs{--c1:#B9A2F2;--c2:#F2C25A}
+.chapter.mrc{--c1:#C2185B;--c2:#B8860B}
+.mrc .band{background:linear-gradient(90deg,#B8860B,#E7B7C8 50%,#C2185B)}
 .bcs .band{background:linear-gradient(90deg,#6E5BC9,#B9A2F2 45%,#F2C25A)}
 .band{height:12px;border-radius:4px;margin-bottom:16px;box-shadow:0 0 0 1px var(--line)}
 .nl .band{background:linear-gradient(to bottom,var(--nl1) 0 33.3%,var(--flag-white) 33.3% 66.6%,var(--nl2) 66.6%)}
@@ -348,6 +350,7 @@ html[data-theme="yuzuha"]{
 }
 html[data-theme="som"] .chapter.dlp,html[data-theme="yuzuha"] .chapter.dlp{--c1:#6B4FC8;--c2:#9A6E00}
 html[data-theme="som"] .chapter.bcs,html[data-theme="yuzuha"] .chapter.bcs{--c1:#6B4FC8;--c2:#9A6E00}
+html[data-theme="som"] .chapter.mrc,html[data-theme="yuzuha"] .chapter.mrc{--c1:#A0154B;--c2:#8A6400}
 html[data-theme="som"] .card,html[data-theme="som"] .spot,html[data-theme="som"] .tie,html[data-theme="som"] .stay,html[data-theme="som"] .tt,html[data-theme="som"] .tbl,html[data-theme="som"] .data,html[data-theme="som"] .hist,html[data-theme="som"] .column{box-shadow:0 1px 0 var(--line),0 8px 22px rgba(120,90,40,.07)}
 html[data-theme="som"] .langbar-in{box-shadow:0 6px 20px rgba(120,90,40,.16)}
 html[data-theme="som"] .cover h1 .hl{background:linear-gradient(transparent 62%,#FFE08A 62%)}
@@ -524,6 +527,7 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
 .jr-key button{font:inherit;font-size:12.5px;font-weight:700;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
 .jr-key .km{flex-basis:100%;font-size:12px;color:var(--muted)}
 #journal .jr-day{scroll-margin-top:64px}
+.kv dd{overflow-wrap:anywhere}
 </style>
 </head>
 <body>
@@ -569,6 +573,7 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
         <li><a href="#plan" data-ch="plan" data-now="はじめに"><span class="no">00</span><span class="nm">はじめに</span><span class="dot" aria-hidden="true"></span><span class="dt">計画と予約</span></a></li>
         <li><a href="#nl" data-ch="nl" data-now="アムステルダム"><span class="no">01</span><span class="nm"><span class="flag f-nl"></span>アムステルダム</span><span class="dot" aria-hidden="true"></span><span class="dt">11/23–24</span></a></li>
         <li><a href="#fr" data-ch="fr" data-now="パリ"><span class="no">02</span><span class="nm"><span class="flag f-fr"></span>パリ</span><span class="dot" aria-hidden="true"></span><span class="dt">11/24–28</span></a></li>
+        <li class="sub"><a href="#meurice" data-ch="meurice" data-now="ル・ムーリス"><span class="no"></span><span class="nm">ル・ムーリスのティータイム</span><span class="dot" aria-hidden="true"></span><span class="dt">11/25</span></a></li>
         <li class="sub"><a href="#dlp" data-ch="dlp" data-now="ディズニー"><span class="no"></span><span class="nm">ディズニーランド・パリ</span><span class="dot" aria-hidden="true"></span><span class="dt">11/25</span></a></li>
         <li><a href="#bocuse" data-ch="bocuse" data-now="リヨン"><span class="no">02</span><span class="nm"><span class="flag f-fr"></span>リヨン</span><span class="dot" aria-hidden="true"></span><span class="dt">11/28–30</span></a></li>
         <li class="sub"><a href="#bcs-basic" data-ch="bocuse" data-now="リヨン"><span class="no"></span><span class="nm">ポール・ボキューズ本店</span><span class="dot" aria-hidden="true"></span><span class="dt">11/29</span></a></li>
@@ -1276,7 +1281,7 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
         <li><span class="t">11:15</span><div>裏の<b>ギャラリー・ラファイエット</b>へ。ドームの下の<b>クリスマスツリー</b>と、屋上テラスの眺め（無料）</div></li>
         <li><span class="t">12:00</span><div>オペラ大通りを南へ。<b>セドリック・グロレ</b>の店（オペラ大通り35番地）→ Mille のブティック → ロワイヤル通りの <b>Ladurée 本店</b>（16番地、1862年からのいちばん古い店）は前から見るだけ。お腹はティータイムにとっておく<span class="sub">ヴァンドーム広場（Ritz）はグロレの店からすぐ。通り道なので外から</span></div></li>
         <li><span class="t">12:45</span><div><b>コンコルド広場</b> → <b>チュイルリー庭園</b>をのんびり。柚葉はここでベビーカー昼寝</div></li>
-        <li><span class="t">13:45</span><div><b>ル・ムーリス「ル・ダリ」</b>のクリスマスのティータイム（セドリック・グロレ）。リヴォリ通り228番地 <span class="pill todo">要予約</span><span class="sub">スマートカジュアル（キャップ・スポーツウェア・短パン・サンダル不可）。約1時間半</span></div></li>
+        <li><span class="t">13:45</span><div><b>ル・ムーリス「ル・ダリ」</b>のティータイム（セドリック・グロレ、<a href="#meurice">特集の章</a>）。リヴォリ通り228番地 <span class="pill todo">要予約</span><span class="sub">スマートカジュアル（キャップ・スポーツウェア・短パン・サンダル不可）。約1時間半</span></div></li>
         <li><span class="t">15:15</span><div>柚葉をリセット（おむつ、ミルク）。ここで別行動</div></li>
         <li><span class="t">15:30</span><div><span class="solo">Som</span> メトロ1号線 Tuileries → Châtelet で <b>RER A</b> に乗り換え → 終点 Marne-la-Vallée–Chessy（約50分）→ <b>ディズニー・アドベンチャー・ワールド</b>だけ（16:00〜16:30 に入園、閉園の 22:00 まで） <span class="pill ok">確定</span><span class="sub">宿に戻るのは 23:30 ごろ。閉園時刻は1週間前にアプリで確認。回り方と帰り道は<a href="#dlp-split">ディズニーの章</a></span></div></li>
         <li><span class="t">15:30</span><div><span class="solo">Ryo と柚葉</span> リヴォリ通りを東へ歩いて<b>パレ・ロワイヤル</b>の中庭（ビュランの円柱）と庭園</div></li>
@@ -1664,6 +1669,117 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
         <tr><td>助けて</td><td>Au secours !</td><td>オ・スクール</td></tr>
       </tbody>
     </table>
+    </div>
+  </div>
+</section>
+<!-- =================== SPECIAL: LE MEURICE TEA TIME =================== -->
+<section id="meurice" class="chapter mrc" data-chapter="meurice">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Special · Paris 11/25 (Wed) 13:45 · Le Meurice – Le Dalí</div>
+    <h2>ル・ムーリスのティータイム <span class="local">Tea Time by Cedric Grolet</span></h2>
+    <p class="lead">「世界一のパティシエ」と呼ばれたセドリック・グロレが、ホテル ル・ムーリスのレストラン「ル・ダリ」で出すティータイム。本物そっくりの果物の形をしたケーキが、銀の木に実るように並びます。サルバドール・ダリが30年近く定宿にしたホテルの、シュールな部屋で過ごす1時間半。このあと Som はディズニーへ、Ryo と柚葉はルーヴルへ。</p>
+  </div>
+  <div class="subnav"><a href="#mrc-basic">予約と基本</a><a href="#mrc-flow">ティータイムの流れ</a><a href="#mrc-grolet">セドリック・グロレ</a><a href="#mrc-dali">ダリとル・ムーリス</a><a href="#mrc-room">部屋で探すもの</a><a href="#mrc-tips">楽しみ方</a></div>
+
+  <div class="block" id="mrc-basic">
+    <h3>予約と基本情報</h3>
+    <div class="stay">
+      <div class="name">Restaurant Le Dalí（Le Meurice）  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Le%20Meurice%20228%20rue%20de%20Rivoli%20Paris">地図</a><span class="pill todo">要予約</span></div>
+      <dl class="kv">
+        <dt>日時</dt><dd><b>11/25（水）13:45</b>、大人2名と柚葉。約1時間半</dd>
+        <dt>場所</dt><dd>リヴォリ通り228番地。チュイルリー公園の向かい、メトロ1号線 Tuileries 駅のすぐ前</dd>
+        <dt>営業</dt><dd>ティータイムは月〜土の 12:30〜17:30（日曜は 16:30〜17:30 だけ）</dd>
+        <dt>予約</dt><dd><span class="key">+33 1 44 58 10 44</span>　restaurantledali.lmp@dorchestercollection.com</dd>
+        <dt>服装</dt><dd>スマートカジュアル（キャップ・スポーツウェア・短パン・サンダルは不可）</dd>
+        <dt>伝えること</dt><dd>10か月の娘とベビーカーで行くこと。子ども用の椅子があればお願いする</dd>
+      </dl>
+    </div>
+    <p class="note">ル・ムーリスは1835年、パリのホテルで最初に「午後のお茶」を出した場所。イギリスからの旅行者のための習慣でした。</p>
+  </div>
+
+  <div class="block" id="mrc-flow">
+    <h3>ティータイムの流れ</h3>
+    <p class="note">2026年春に新しくなった形。三段のスタンドではなく、ひと皿ずつ運ばれてきます。中身は季節で変わります。</p>
+    <div class="tbl"><table><thead><tr><th>順番</th><th>出てくるもの</th><th>見どころ</th></tr></thead><tbody>
+      <tr><td class="big">1. しょっぱいもの</td><td>トリュフの香りの焦がしバターと黒トリュフのジャンボン・ブール（ハムのサンド）、ブリオッシュのロブスターロール、レモンでしめたサーモンとキャビア</td><td>器はベルナルドの「Aux Oiseaux（鳥たち）」</td></tr>
+      <tr><td class="big">2. 果物の木</td><td>手づくりの銀の木に、その季節の<b>6種類の「果物」</b>が実る。見た目は本物そっくりのケーキ</td><td>ナイフを入れると、中まで果物そのもの。グロレの代名詞</td></tr>
+      <tr><td class="big">3. 焼きたて</td><td>パティシエが席まで運んでくる、焼きたてのスコーン、クグロフ、砂糖のブリオッシュ</td><td>部屋に甘い香りが広がる時間</td></tr>
+      <tr><td class="big">飲みもの</td><td>コーヒー、紅茶、アラン・デュカスのショコラ・ショー（ホットチョコレート）</td><td>ロゼのシャンパーニュを足すこともできる</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="mrc-grolet">
+    <h3>セドリック・グロレとは</h3>
+    <div class="grid2">
+      <div class="card"><h4>どんな人</h4><ul>
+        <li>1985年、フランス中部ロワール県のフィルミニ生まれ</li>
+        <li>21歳でパリへ。<b>フォション</b>で6年、クリストフ・アダムのもとで修業</li>
+        <li>2011年にル・ムーリスへ。2013年からシェフ・パティシエ（アラン・デュカスの料理を出すホテル）</li>
+        <li>SNS で世界中に知られた、いま最も有名なパティシエのひとり</li>
+      </ul></div>
+      <div class="card"><h4>おもな受賞</h4><ul>
+        <li>2017年「世界最優秀パティシエ」（レ・グランド・ターブル・デュ・モンド）</li>
+        <li>2018年 世界のベストレストラン50の「ベスト・パティシエ」</li>
+        <li>2018年 ゴ・エ・ミヨの「最優秀パティシエ」</li>
+      </ul></div>
+      <div class="card"><h4>果物のケーキ（トロンプ・ルイユ）</h4><ul>
+        <li>薄いホワイトチョコの殻を果物の形に流し、エアブラシで色をのせる。ヘタや葉まで再現</li>
+        <li>中はその果物のコンポートやクリーム。レモン、りんご、いちじく、ヘーゼルナッツなど</li>
+        <li>「だまし絵」の意味のトロンプ・ルイユ。ダリのホテルにぴったりの遊び</li>
+      </ul></div>
+      <div class="card"><h4>お店と本</h4><ul>
+        <li>パリ：ル・ムーリス店（2018年）、<b>オペラ店</b>（オペラ大通り35番地。11/25 の昼に前を通る）</li>
+        <li>ロンドン（The Berkeley、2022年）、シンガポール（2023年）</li>
+        <li>本：『Fruits』（2017年）、『Opéra』（2020年）</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="block" id="mrc-dali">
+    <h3>サルバドール・ダリとル・ムーリス</h3>
+    <p class="note">シュルレアリスムの画家ダリは、30年近くこのホテルを定宿にしました。部屋の名前「ル・ダリ」はここから。</p>
+    <div class="grid2">
+      <div class="card"><h4>ダリの逸話</h4><ul>
+        <li>いつも同じスイートに泊まり、その部屋はいま「ダリ・スイート」と呼ばれる</li>
+        <li>ペットのオセロット（山猫）を連れてきて、逃げ出すたびにスタッフが追いかけた</li>
+        <li>スタッフへのお礼にスケッチを渡した、庭でハエを捕まえてほしいと頼んだ、という話も</li>
+        <li>王党派を名乗ったダリは、スペイン国王アルフォンソ13世が泊まった部屋を好み、「国王の気分」を味わった</li>
+      </ul></div>
+      <div class="card"><h4>ほかの芸術家</h4><ul>
+        <li>1918年、<b>ピカソ</b>がバレリーナのオルガとここで結婚。立会人はジャン・コクトー</li>
+        <li>作曲家チャイコフスキーもよく泊まった</li>
+        <li>バー228の壁画は1907年のもの（フォンテーヌブロー城の園遊会）</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="block" id="mrc-room">
+    <h3>ル・ダリの部屋で探すもの</h3>
+    <div class="tbl"><table><thead><tr><th>もの</th><th>どこ</th><th>見どころ</th></tr></thead><tbody>
+      <tr><td class="big">天井の絵</td><td>ル・ダリの天井</td><td>145㎡の手描きのキャンバス。フィリップ・スタルクの娘アラ・スタルクの作品で、4枚の三角形に踊る人たち。まず見上げる</td></tr>
+      <tr><td class="big">半分ずつのピアノ</td><td>バー228との境目</td><td>半分がバー、半分がレストランにはみ出すピアノ。ダリへのオマージュ</td></tr>
+      <tr><td class="big">凍る鏡</td><td>入口</td><td>冷えた水が好きだったダリにちなみ、毎日新しく凍らせる鏡。指で落書きできる</td></tr>
+      <tr><td class="big">ダリの目</td><td>バー228</td><td>入ってくる人を見つめるダリの目</td></tr>
+      <tr><td class="big">会話の椅子</td><td>ロビー</td><td>2人が背中合わせに座るルイ16世風の椅子。ダリの「会話の家具」から</td></tr>
+    </tbody></table></div>
+    <p class="note">内装はフィリップ・スタルク（2007年、2016年に改装）。ホテルの絢爛さと、ダリのシュールな遊びが同じ部屋にあります。</p>
+  </div>
+
+  <div class="block" id="mrc-tips">
+    <h3>楽しみ方</h3>
+    <div class="grid2">
+      <div class="card"><h4>コツ</h4><ul>
+        <li>昼食は軽めに。このあと Som はディズニーで夜まで、Ryo と柚葉はルーヴル</li>
+        <li>果物のケーキは、切る前と切ったあとの断面を写真に</li>
+        <li>焼き菓子は残しても包んでもらえるか聞いてみる（「Je peux emporter ?」）</li>
+        <li>15:15 ごろ柚葉のおむつとミルクを済ませて、ここで別行動。Som は目の前の Tuileries 駅からディズニーへ</li>
+      </ul></div>
+      <div class="card"><h4>ひとこと</h4><ul>
+        <li>予約しています：<b>Nous avons une réservation au nom de Taniwaki.</b></li>
+        <li>子ども用の椅子はありますか：<b>Avez-vous une chaise haute ?</b></li>
+        <li>とてもおいしかったです：<b>C'était délicieux, merci beaucoup.</b></li>
+      </ul></div>
     </div>
   </div>
 </section>
@@ -5805,7 +5921,7 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
   <span>公館の番号の出典：外務省「在外公館リスト」、タイ外務省「List of Royal Thai Embassy contact point」。</span>
   <details id="changelog" style="margin-top:6px">
     <summary style="cursor:pointer;font-weight:700;color:var(--ink)">変更履歴</summary>
-    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/7</td><td>ディズニー（Som、11/25 のアドベンチャー・ワールド）の券を予約済みに。ディズニーは Som が1人で 15〜16時ごろから閉園までアドベンチャー・ワールドだけ、の前提に章を更新（回り方・帰り道・持ち物・手紙）。12/8 フィレンツェ→ローマの Frecciarossa（9587、13:14→14:49）を予約済みに。Vueling 12/3（VY6092、座席 9E・9F）を予約済みに。2人とも上の棚の手荷物付きに合わせて荷物の表を更新。「0歳柚葉のヨーロッパ日記」の章を追加。旅の記録から1日ずつ、AIで整えた日本語・タイ語・英語版を公開できるように。日本語版は「柚葉」表記に。日記の日付に一番の見どころを1つだけ表示（例：ルーヴル美術館他）。日記の「書き出す（プレビュー）」と「AIで文章を整える」を追加。目次・日記ボタンを同じ幅にし、章送りを1つにまとめ、「全章を続けて表示」は目次の中へ。表紙を Taniwaki Family’s Guidebook に</td></tr><tr><td class="d">11/7</td><td>ドバイを「乗り継ぎ」ではなく旅先の一つとして扱うように。「✎ メモ」を「✎ 日記」に。旅の記録の章に家族専用の注意書き</td></tr><tr><td class="d">11/7</td><td>旅の記録を自動同期に：Ryo と Som はしおりで一度ログインすれば、メモがネットにつながったときに自動で二人の記録にまとまる（送る・貼り付けは不要）</td></tr><tr><td class="d">11/7</td><td>新しい章：建築の見方、クリスマスマーケット、免税（VAT還付）、旅の記録。上のバーに「✎ メモ」を追加（どのページからでも、柚葉・パパ・ママの一言をその日の記録に追加。未送信の件数を表示）。スマホでオフラインでも使えるアプリ形式に</td></tr><tr><td class="d">11/7</td><td>GitHub 版をホーム画面に追加すると、オフラインでも読めるように（アプリのアイコン付き）。旅行中の1行に、現地時刻と、その日の時間割から「次は ◯:◯◯ ◯◯」を表示（押すとその行へ）。数字の4つは1行に。表紙を小さく：出発までの日数（旅行中は「何日目・どこに滞在中・次はどこへ」）を冒頭に1行、数字の4つのブロックを枠なしの1段に。目次を「目次」ボタンで開く形に（都市ごと、ディズニーとボキューズは都市の下）。チーズとワインを料理の章から独立させて「読みもの」へ。スマホでは4列以上の表を縦並びに。表紙を5か国に</td></tr><tr><td class="d">11/7</td><td>「美術館と名作」の章を新しく追加（ルーヴル、ロダン、オルセー、サグラダ・ファミリア、ピカソ美術館、ドゥカーレ宮殿、アカデミア、ウフィツィ、バチカン）。フランスの章の冒頭を、パリ4泊とリヨン2泊に合わせて修正</td></tr><tr><td class="d">11/6</td><td>アンネ・フランクの家を予約済みに（11/24 9:00〜9:15 の入場枠、3名）</td></tr><tr><td class="d">11/6</td><td>11/25 を調整：オペラ座とル・ムーリスは「要予約」に戻した。ロワイヤル通りの Ladurée は外から見るだけ。ルーヴルは 17:00 から（キッチン道具屋とプチバトーはオプションへ）。凱旋門はベビーカーを入口の係員に預ける</td></tr><tr><td class="d">11/6</td><td>パリの 11/24〜28 を組み直し。11/24 は夜のエッフェル塔・凱旋門・シャンゼリゼ、11/25 は朝のモンマルトル → オペラ座 → ル・ムーリス 13:45 → Som は夕方からディズニー、Ryo と柚葉はルーヴル、11/26 はヴェルサイユ → ナポレオンの墓 → ロダン → ボン・マルシェ → Josselin → 夜のノートルダム、11/27 はマレから1区、11/28 はパンテオンのあと TGV。外したものはすべて「オプション」の表へ。パリで食べる地方の味の表を追加。ディズニーの章を案 F（11/25 の夕方、Som 1人）に</td></tr><tr><td class="d">11/6</td><td>アムステルダムを1泊に。宿を art'otel（中央駅の正面）に、Eurostar を 11/24 13:10→16:40（18号車 85・86番）に変更。パリの宿は 11/24〜28 の4泊。11/24 の夕方パリ着の日と、11/25 の一日（カルチエ・ラタン → シテ島 → ル・ムーリスのお茶 → 3人でルーヴル夜間）を組み直し。風車村などはオプションへ。パリ→バルセロナの TGV は払い戻し済み</td></tr><tr><td class="d">11/6</td><td>11/26 に案 E（Ryo は午前パリ、オルセー → Le Relais de l'Entrecôte → オランジュリー → 凱旋門、16:00 にディズニーで合流）を追加。リヨンの日曜にベルナション本店を追加</td></tr><tr><td class="d">11/5</td><td>リヨンの日曜の午後をテット・ドール公園に絞り（リュミエール研究所は候補）、月曜の午前にクロワ・ルースの丘の散歩を追加。土曜の夜のフルヴィエールの夜景はそのまま</td></tr><tr><td class="d">11/5</td><td>料理の章に「スペインの地方と食」「イタリアの地方と食」を追加（フランスと同じく方角ごと、都市名と今回の旅つき）</td></tr><tr><td class="d">11/5</td><td>料理の章に、白トリュフ（サン・ミニアート、Savini Tartufi、Procacci、値段と持ち帰りの注意）と、銅の鍋・カヌレ型の手入れを追加。ボキューズの章に本店で残す記念を追加</td></tr><tr><td class="d">11/5</td><td>料理の章に「料理を始めるための買い物」を追加（これだけは外さない5つ、街ごとの道具と食材の店、持ち帰りの注意）</td></tr><tr><td class="d">11/5</td><td>料理の章に「デザートと甘いもの」（サロン・ド・テなど店の種類、街ごとの名物と名店）と「訪れる街のチーズ」（リヨンのサン・マルスランなど）を追加。フランスの地方を北・西・東・中央・南東・南西に分けて都市名つきに。巨匠ゆかりの名店を、店ごとの説明と楽しみ方つきのカードに</td></tr><tr><td class="d">11/5</td><td>11/26 を別行動の前提で整理（Ryo はディズニーに行かない）。4つの案と、Ryo と柚葉のパリ、Ryo 1人のパリの流れをディズニーの章に。料理の章の並びをフランス → スペイン → イタリア（旅の順）に</td></tr><tr><td class="d">11/5</td><td>「チーズとワイン」の章を「料理の教科書」に作り直し、フランス・イタリア・スペインに絞った（歴史、影響し合った関係、巨匠、名店と地図、店の格式、食事の流れ、3か国のマナー、フランスの地方と食）。各国の章の「食べる・飲む」とテーブルマナーもここへ移動</td></tr><tr><td class="d">11/4</td><td>ルート図の色を国ごとに統一（オランダはオレンジ、フランスは青、スペインは赤、イタリアは緑、飛行機とドバイはグレー）。日程表の都市すべてに国旗</td></tr><tr><td class="d">11/4</td><td>ボキューズの章「赤ちゃん連れ」に、本店の予約係からの返信（原文と訳）を、フランス料理のサービスの一例として追加</td></tr><tr><td class="d">11/4</td><td>AVE INT 09742（11/30 リヨン 14:35 → バルセロナ 19:23）を予約。リヨンの月曜の昼を自由時間に、バルセロナ初日は夜の到着に合わせて組み直し（グラシア通りの散歩は候補に）。Apple Wallet に入らない注意を追加</td></tr><tr><td class="d">11/4</td><td>TGV INOUI 6619（11/28 15:00 → 16:56、1等）を予約。パリの 11/28 を組み直し（朝市とモンマルトル → 13:45 に駅へ）。午後の予定は候補として残す</td></tr><tr><td class="d">11/4</td><td>リヨンの宿（Mercure パールデュー、2泊）と、11/28 夜のブション Daniel et Denise Saint-Jean（19:00）を予約。11/28 の夜は食後にケーブルカーでフルヴィエールの丘の夜景へ。11/29 の午後は公園か博物館を1つと昼寝に</td></tr><tr><td class="d">11/4</td><td>お土産を誰に何を買うかの記載と「お土産の作戦」を削除。ボキューズの章に、EY の上司の話と柚葉へのメッセージを追加</td></tr><tr><td class="d">11/4</td><td>リヨン経由に変更（11/28 夕方にパリ → リヨン、2泊、11/30 にバルセロナへ）。日程表、予約一覧、移動一覧、ルート図を更新し、リヨンの3日間をボキューズの章に。パリの 11/29 の予定は候補として残す</td></tr><tr><td class="d">11/4</td><td>ポール・ボキューズ本店（11/29 20:15）を予約。ディズニーと同じ形で「ボキューズ」の章を追加（予約、行き方、当日の流れ、秋のメニュー、名物料理、赤ちゃん連れ、歴史、お土産）</td></tr><tr><td class="d">11/3</td><td>ピサを 12/7（月）の午後に移動（地方線で日帰り）。12/8 はフィレンツェの朝を楽しんで、昼食後の列車でローマへ</td></tr><tr><td class="d">11/3</td><td>12/5 の Frecciarossa 9415（11:26 → 13:39、Business）を予約。ヴェネツィアの朝に散歩を入れ、フィレンツェ初日はアカデミアを 15:15 に、ミケランジェロ広場の夕日は 12/6 に移動。英語版を追加</td></tr><tr><td class="d">11/3</td><td>Eurostar（11/25 09:10 → 12:37）を予約。アムステルダムの朝と、パリの初日の時間割を合わせて調整</td></tr><tr><td class="d">11/2</td><td>予約番号（エミレーツ、Booking の宿）と保険の証券番号をしおりから削除（第三者が予約を操作できないように）</td></tr><tr><td class="d">11/2</td><td>ドバイ：街に出ることに決定。Som はエミレーツ経由で48時間の乗継ビザ（手順をドバイの章に）</td></tr><tr><td class="d">10/25</td><td>持ち物チェックを、いつもの持ち物リストから今回の旅用に作り直し（入れるバッグの札つき）</td></tr><tr><td class="d">10/25</td><td>日本語版からタイ語の併記（見出しの小さい字、会話の表のタイ語の列など）を外した。タイ語はタイ語版に</td></tr><tr><td class="d">10/25</td><td>デザインを3つから選べるように（右下のパレットのボタンを押すと開く）：Som（明るい紙＋各国の線画、標準）、柚葉（ポップ）、Ryo（ダーク）。URL に ?theme=som / yuzuha / ryo でも指定できる</td></tr><tr><td class="d">10/25</td><td>保険は Chubb とヒルトン・アメックス・プレミアムの2本に整理。困ったときの連絡ステップ（場面別）と連絡先一覧を追加</td></tr><tr><td class="d">10/25</td><td>宿6軒の予約票を反映（時間、無料取消の期限、部屋）。アメックスの補償を規定で確認（持ち物の盗難は補償なし）。Anytime Fitness の節を追加</td></tr><tr><td class="d">10/25</td><td>保険の節を追加（Chubb の証券の内容、アメックスとの分担、請求のルール）</td></tr><tr><td class="d">10/25</td><td>荷物の構成と動かし方（場面ごとの対策）を追加。エミレーツの預け荷物と座席を eチケットで確認。持ち物・やることを更新。この変更履歴を追加</td></tr><tr><td class="d">10/18</td><td>各国の「予習の映画」を追加</td></tr><tr><td class="d">10/18</td><td>往路のドバイ乗継（3時間15分）を日程とルート図に追加</td></tr><tr><td class="d">10/18</td><td>言語の切り替えを画面の右下に固定（同じ場所のまま日本語・タイ語を切り替え）</td></tr><tr><td class="d">10/18</td><td>Google マップのお気に入りリスト（タイプ別、タイ語名つき）と、ホテル・主要な場所の地図リンクを追加。ルート図に帰路のドバイ17時間乗継</td></tr><tr><td class="d">10/18</td><td>パリの宿を Libertel Austerlitz に変更し、宿6軒を確定に</td></tr><tr><td class="d">10/18</td><td>GitHub 版を公開。iPhone 向けに文字を大きく、横長の表は横スクロールに。?lang=th でタイ語から開く</td></tr><tr><td class="d">10/17ごろ</td><td>全体の見直し（柚葉は旅行時に生後10か月、往路は01:05発、保険料を削除）。日本語・タイ語の2言語版に</td></tr><tr><td class="d">10/17ごろ</td><td>デモ・ストライキの日の動き方、スリ対策（場面別のシナリオ）、フランスのテーブルマナーのコラムを追加</td></tr><tr><td class="d">10/16ごろ</td><td>ディズニーランド・パリのチケット購入を反映。「ディズニーとフランス」、ヴェルサイユの入場時刻、日の出・日の入りの表を追加</td></tr><tr><td class="d">10/15</td><td>初版</td></tr></tbody></table></div>
+    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/7</td><td>ディズニーの前に特集「ル・ムーリスのティータイム」（セドリック・グロレ、ダリとル・ムーリス）を追加。ディズニー（Som、11/25 のアドベンチャー・ワールド）の券を予約済みに。ディズニーは Som が1人で 15〜16時ごろから閉園までアドベンチャー・ワールドだけ、の前提に章を更新（回り方・帰り道・持ち物・手紙）。12/8 フィレンツェ→ローマの Frecciarossa（9587、13:14→14:49）を予約済みに。Vueling 12/3（VY6092、座席 9E・9F）を予約済みに。2人とも上の棚の手荷物付きに合わせて荷物の表を更新。「0歳柚葉のヨーロッパ日記」の章を追加。旅の記録から1日ずつ、AIで整えた日本語・タイ語・英語版を公開できるように。日本語版は「柚葉」表記に。日記の日付に一番の見どころを1つだけ表示（例：ルーヴル美術館他）。日記の「書き出す（プレビュー）」と「AIで文章を整える」を追加。目次・日記ボタンを同じ幅にし、章送りを1つにまとめ、「全章を続けて表示」は目次の中へ。表紙を Taniwaki Family’s Guidebook に</td></tr><tr><td class="d">11/7</td><td>ドバイを「乗り継ぎ」ではなく旅先の一つとして扱うように。「✎ メモ」を「✎ 日記」に。旅の記録の章に家族専用の注意書き</td></tr><tr><td class="d">11/7</td><td>旅の記録を自動同期に：Ryo と Som はしおりで一度ログインすれば、メモがネットにつながったときに自動で二人の記録にまとまる（送る・貼り付けは不要）</td></tr><tr><td class="d">11/7</td><td>新しい章：建築の見方、クリスマスマーケット、免税（VAT還付）、旅の記録。上のバーに「✎ メモ」を追加（どのページからでも、柚葉・パパ・ママの一言をその日の記録に追加。未送信の件数を表示）。スマホでオフラインでも使えるアプリ形式に</td></tr><tr><td class="d">11/7</td><td>GitHub 版をホーム画面に追加すると、オフラインでも読めるように（アプリのアイコン付き）。旅行中の1行に、現地時刻と、その日の時間割から「次は ◯:◯◯ ◯◯」を表示（押すとその行へ）。数字の4つは1行に。表紙を小さく：出発までの日数（旅行中は「何日目・どこに滞在中・次はどこへ」）を冒頭に1行、数字の4つのブロックを枠なしの1段に。目次を「目次」ボタンで開く形に（都市ごと、ディズニーとボキューズは都市の下）。チーズとワインを料理の章から独立させて「読みもの」へ。スマホでは4列以上の表を縦並びに。表紙を5か国に</td></tr><tr><td class="d">11/7</td><td>「美術館と名作」の章を新しく追加（ルーヴル、ロダン、オルセー、サグラダ・ファミリア、ピカソ美術館、ドゥカーレ宮殿、アカデミア、ウフィツィ、バチカン）。フランスの章の冒頭を、パリ4泊とリヨン2泊に合わせて修正</td></tr><tr><td class="d">11/6</td><td>アンネ・フランクの家を予約済みに（11/24 9:00〜9:15 の入場枠、3名）</td></tr><tr><td class="d">11/6</td><td>11/25 を調整：オペラ座とル・ムーリスは「要予約」に戻した。ロワイヤル通りの Ladurée は外から見るだけ。ルーヴルは 17:00 から（キッチン道具屋とプチバトーはオプションへ）。凱旋門はベビーカーを入口の係員に預ける</td></tr><tr><td class="d">11/6</td><td>パリの 11/24〜28 を組み直し。11/24 は夜のエッフェル塔・凱旋門・シャンゼリゼ、11/25 は朝のモンマルトル → オペラ座 → ル・ムーリス 13:45 → Som は夕方からディズニー、Ryo と柚葉はルーヴル、11/26 はヴェルサイユ → ナポレオンの墓 → ロダン → ボン・マルシェ → Josselin → 夜のノートルダム、11/27 はマレから1区、11/28 はパンテオンのあと TGV。外したものはすべて「オプション」の表へ。パリで食べる地方の味の表を追加。ディズニーの章を案 F（11/25 の夕方、Som 1人）に</td></tr><tr><td class="d">11/6</td><td>アムステルダムを1泊に。宿を art'otel（中央駅の正面）に、Eurostar を 11/24 13:10→16:40（18号車 85・86番）に変更。パリの宿は 11/24〜28 の4泊。11/24 の夕方パリ着の日と、11/25 の一日（カルチエ・ラタン → シテ島 → ル・ムーリスのお茶 → 3人でルーヴル夜間）を組み直し。風車村などはオプションへ。パリ→バルセロナの TGV は払い戻し済み</td></tr><tr><td class="d">11/6</td><td>11/26 に案 E（Ryo は午前パリ、オルセー → Le Relais de l'Entrecôte → オランジュリー → 凱旋門、16:00 にディズニーで合流）を追加。リヨンの日曜にベルナション本店を追加</td></tr><tr><td class="d">11/5</td><td>リヨンの日曜の午後をテット・ドール公園に絞り（リュミエール研究所は候補）、月曜の午前にクロワ・ルースの丘の散歩を追加。土曜の夜のフルヴィエールの夜景はそのまま</td></tr><tr><td class="d">11/5</td><td>料理の章に「スペインの地方と食」「イタリアの地方と食」を追加（フランスと同じく方角ごと、都市名と今回の旅つき）</td></tr><tr><td class="d">11/5</td><td>料理の章に、白トリュフ（サン・ミニアート、Savini Tartufi、Procacci、値段と持ち帰りの注意）と、銅の鍋・カヌレ型の手入れを追加。ボキューズの章に本店で残す記念を追加</td></tr><tr><td class="d">11/5</td><td>料理の章に「料理を始めるための買い物」を追加（これだけは外さない5つ、街ごとの道具と食材の店、持ち帰りの注意）</td></tr><tr><td class="d">11/5</td><td>料理の章に「デザートと甘いもの」（サロン・ド・テなど店の種類、街ごとの名物と名店）と「訪れる街のチーズ」（リヨンのサン・マルスランなど）を追加。フランスの地方を北・西・東・中央・南東・南西に分けて都市名つきに。巨匠ゆかりの名店を、店ごとの説明と楽しみ方つきのカードに</td></tr><tr><td class="d">11/5</td><td>11/26 を別行動の前提で整理（Ryo はディズニーに行かない）。4つの案と、Ryo と柚葉のパリ、Ryo 1人のパリの流れをディズニーの章に。料理の章の並びをフランス → スペイン → イタリア（旅の順）に</td></tr><tr><td class="d">11/5</td><td>「チーズとワイン」の章を「料理の教科書」に作り直し、フランス・イタリア・スペインに絞った（歴史、影響し合った関係、巨匠、名店と地図、店の格式、食事の流れ、3か国のマナー、フランスの地方と食）。各国の章の「食べる・飲む」とテーブルマナーもここへ移動</td></tr><tr><td class="d">11/4</td><td>ルート図の色を国ごとに統一（オランダはオレンジ、フランスは青、スペインは赤、イタリアは緑、飛行機とドバイはグレー）。日程表の都市すべてに国旗</td></tr><tr><td class="d">11/4</td><td>ボキューズの章「赤ちゃん連れ」に、本店の予約係からの返信（原文と訳）を、フランス料理のサービスの一例として追加</td></tr><tr><td class="d">11/4</td><td>AVE INT 09742（11/30 リヨン 14:35 → バルセロナ 19:23）を予約。リヨンの月曜の昼を自由時間に、バルセロナ初日は夜の到着に合わせて組み直し（グラシア通りの散歩は候補に）。Apple Wallet に入らない注意を追加</td></tr><tr><td class="d">11/4</td><td>TGV INOUI 6619（11/28 15:00 → 16:56、1等）を予約。パリの 11/28 を組み直し（朝市とモンマルトル → 13:45 に駅へ）。午後の予定は候補として残す</td></tr><tr><td class="d">11/4</td><td>リヨンの宿（Mercure パールデュー、2泊）と、11/28 夜のブション Daniel et Denise Saint-Jean（19:00）を予約。11/28 の夜は食後にケーブルカーでフルヴィエールの丘の夜景へ。11/29 の午後は公園か博物館を1つと昼寝に</td></tr><tr><td class="d">11/4</td><td>お土産を誰に何を買うかの記載と「お土産の作戦」を削除。ボキューズの章に、EY の上司の話と柚葉へのメッセージを追加</td></tr><tr><td class="d">11/4</td><td>リヨン経由に変更（11/28 夕方にパリ → リヨン、2泊、11/30 にバルセロナへ）。日程表、予約一覧、移動一覧、ルート図を更新し、リヨンの3日間をボキューズの章に。パリの 11/29 の予定は候補として残す</td></tr><tr><td class="d">11/4</td><td>ポール・ボキューズ本店（11/29 20:15）を予約。ディズニーと同じ形で「ボキューズ」の章を追加（予約、行き方、当日の流れ、秋のメニュー、名物料理、赤ちゃん連れ、歴史、お土産）</td></tr><tr><td class="d">11/3</td><td>ピサを 12/7（月）の午後に移動（地方線で日帰り）。12/8 はフィレンツェの朝を楽しんで、昼食後の列車でローマへ</td></tr><tr><td class="d">11/3</td><td>12/5 の Frecciarossa 9415（11:26 → 13:39、Business）を予約。ヴェネツィアの朝に散歩を入れ、フィレンツェ初日はアカデミアを 15:15 に、ミケランジェロ広場の夕日は 12/6 に移動。英語版を追加</td></tr><tr><td class="d">11/3</td><td>Eurostar（11/25 09:10 → 12:37）を予約。アムステルダムの朝と、パリの初日の時間割を合わせて調整</td></tr><tr><td class="d">11/2</td><td>予約番号（エミレーツ、Booking の宿）と保険の証券番号をしおりから削除（第三者が予約を操作できないように）</td></tr><tr><td class="d">11/2</td><td>ドバイ：街に出ることに決定。Som はエミレーツ経由で48時間の乗継ビザ（手順をドバイの章に）</td></tr><tr><td class="d">10/25</td><td>持ち物チェックを、いつもの持ち物リストから今回の旅用に作り直し（入れるバッグの札つき）</td></tr><tr><td class="d">10/25</td><td>日本語版からタイ語の併記（見出しの小さい字、会話の表のタイ語の列など）を外した。タイ語はタイ語版に</td></tr><tr><td class="d">10/25</td><td>デザインを3つから選べるように（右下のパレットのボタンを押すと開く）：Som（明るい紙＋各国の線画、標準）、柚葉（ポップ）、Ryo（ダーク）。URL に ?theme=som / yuzuha / ryo でも指定できる</td></tr><tr><td class="d">10/25</td><td>保険は Chubb とヒルトン・アメックス・プレミアムの2本に整理。困ったときの連絡ステップ（場面別）と連絡先一覧を追加</td></tr><tr><td class="d">10/25</td><td>宿6軒の予約票を反映（時間、無料取消の期限、部屋）。アメックスの補償を規定で確認（持ち物の盗難は補償なし）。Anytime Fitness の節を追加</td></tr><tr><td class="d">10/25</td><td>保険の節を追加（Chubb の証券の内容、アメックスとの分担、請求のルール）</td></tr><tr><td class="d">10/25</td><td>荷物の構成と動かし方（場面ごとの対策）を追加。エミレーツの預け荷物と座席を eチケットで確認。持ち物・やることを更新。この変更履歴を追加</td></tr><tr><td class="d">10/18</td><td>各国の「予習の映画」を追加</td></tr><tr><td class="d">10/18</td><td>往路のドバイ乗継（3時間15分）を日程とルート図に追加</td></tr><tr><td class="d">10/18</td><td>言語の切り替えを画面の右下に固定（同じ場所のまま日本語・タイ語を切り替え）</td></tr><tr><td class="d">10/18</td><td>Google マップのお気に入りリスト（タイプ別、タイ語名つき）と、ホテル・主要な場所の地図リンクを追加。ルート図に帰路のドバイ17時間乗継</td></tr><tr><td class="d">10/18</td><td>パリの宿を Libertel Austerlitz に変更し、宿6軒を確定に</td></tr><tr><td class="d">10/18</td><td>GitHub 版を公開。iPhone 向けに文字を大きく、横長の表は横スクロールに。?lang=th でタイ語から開く</td></tr><tr><td class="d">10/17ごろ</td><td>全体の見直し（柚葉は旅行時に生後10か月、往路は01:05発、保険料を削除）。日本語・タイ語の2言語版に</td></tr><tr><td class="d">10/17ごろ</td><td>デモ・ストライキの日の動き方、スリ対策（場面別のシナリオ）、フランスのテーブルマナーのコラムを追加</td></tr><tr><td class="d">10/16ごろ</td><td>ディズニーランド・パリのチケット購入を反映。「ディズニーとフランス」、ヴェルサイユの入場時刻、日の出・日の入りの表を追加</td></tr><tr><td class="d">10/15</td><td>初版</td></tr></tbody></table></div>
   </details>
 </footer>
 
@@ -5852,6 +5968,7 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
         <li><a href="#plan" data-ch="plan" data-now="เริ่มต้น"><span class="no">00</span><span class="nm">เริ่มต้น</span><span class="dot" aria-hidden="true"></span><span class="dt">แผนและการจอง</span></a></li>
         <li><a href="#nl" data-ch="nl" data-now="อัมสเตอร์ดัม"><span class="no">01</span><span class="nm"><span class="flag f-nl"></span>อัมสเตอร์ดัม</span><span class="dot" aria-hidden="true"></span><span class="dt">23–24 พ.ย.</span></a></li>
         <li><a href="#fr" data-ch="fr" data-now="ปารีส"><span class="no">02</span><span class="nm"><span class="flag f-fr"></span>ปารีส</span><span class="dot" aria-hidden="true"></span><span class="dt">24–28 พ.ย.</span></a></li>
+        <li class="sub"><a href="#meurice" data-ch="meurice" data-now="เลอเมอริส"><span class="no"></span><span class="nm">ทีไทม์ที่เลอเมอริส</span><span class="dot" aria-hidden="true"></span><span class="dt">25 พ.ย.</span></a></li>
         <li class="sub"><a href="#dlp" data-ch="dlp" data-now="ดิสนีย์"><span class="no"></span><span class="nm">ดิสนีย์แลนด์ปารีส</span><span class="dot" aria-hidden="true"></span><span class="dt">25 พ.ย.</span></a></li>
         <li><a href="#bocuse" data-ch="bocuse" data-now="ลียง"><span class="no">02</span><span class="nm"><span class="flag f-fr"></span>ลียง</span><span class="dot" aria-hidden="true"></span><span class="dt">28–30 พ.ย.</span></a></li>
         <li class="sub"><a href="#bcs-basic" data-ch="bocuse" data-now="ลียง"><span class="no"></span><span class="nm">ร้านปอล โบกุส</span><span class="dot" aria-hidden="true"></span><span class="dt">29 พ.ย.</span></a></li>
@@ -6553,7 +6670,7 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
         <li><span class="t">11:15</span><div>ไป<b>ห้างกาเลอรีลาฟาแยต</b>ด้านหลัง ชม<b>ต้นคริสต์มาส</b>ใต้โดม และวิวจากดาดฟ้า (ฟรี)</div></li>
         <li><span class="t">12:00</span><div>เดินลงใต้ตามถนนโอเปรา ร้าน<b>เซดริก โกรเลต์</b> (เลขที่ 35) → บูติก Mille → <b>Ladurée ร้านแรก</b>บนถนนรัวยาล (เลขที่ 16 ร้านเก่าที่สุดตั้งแต่ 1862) แค่ดูจากหน้าร้าน เก็บท้องไว้สำหรับทีไทม์<span class="sub">จัตุรัสว็องโดม (Ritz) อยู่ใกล้ร้านโกรเลต์ ผ่านทางพอดี ชมจากข้างนอก</span></div></li>
         <li><span class="t">12:45</span><div><b>จัตุรัสกงกอร์ด</b> → เดินเล่นสบาย ๆ ใน<b>สวนตุยเลอรี</b> ให้ Yuzuha งีบในรถเข็นตรงนี้</div></li>
-        <li><span class="t">13:45</span><div>ทีไทม์คริสต์มาสที่ <b>Le Meurice "Le Dalí"</b> (Cédric Grolet) 228 Rue de Rivoli <span class="pill todo">ต้องจอง</span><span class="sub">แต่งกายสมาร์ตแคชวล (ห้ามหมวกแก๊ป ชุดกีฬา กางเกงขาสั้น รองเท้าแตะ) ราว 1 ชม. ครึ่ง</span></div></li>
+        <li><span class="t">13:45</span><div>ทีไทม์ที่ <b>Le Meurice "Le Dalí"</b> (Cédric Grolet) 228 Rue de Rivoli  <a href="#meurice">(บทพิเศษ)</a> <span class="pill todo">ต้องจอง</span><span class="sub">แต่งกายสมาร์ตแคชวล (ห้ามหมวกแก๊ป ชุดกีฬา กางเกงขาสั้น รองเท้าแตะ) ราว 1 ชม. ครึ่ง</span></div></li>
         <li><span class="t">15:15</span><div>รีเซ็ต Yuzuha (เปลี่ยนผ้าอ้อม ให้นม) แล้วแยกกันเที่ยวตรงนี้</div></li>
         <li><span class="t">15:30</span><div><span class="solo">Som</span> เมโทรสาย 1 Tuileries → เปลี่ยนเป็น <b>RER A</b> ที่ Châtelet → ปลายทาง Marne-la-Vallée–Chessy (ราว 50 นาที) → <b>ดิสนีย์ แอดเวนเจอร์ เวิลด์</b>อย่างเดียว (เข้าสวน 16:00–16:30 อยู่จนสวนปิด 22:00) <span class="pill ok">ยืนยันแล้ว</span><span class="sub">กลับถึงโรงแรมราว 23:30 เช็กเวลาปิดในแอปอีกครั้งก่อนไป 1 สัปดาห์ วิธีเที่ยวและทางกลับอยู่ใน<a href="#dlp-split">บทดิสนีย์</a></span></div></li>
         <li><span class="t">15:30</span><div><span class="solo">Ryo กับ Yuzuha</span> เดินไปทางตะวันออกตามถนนรีโวลีไปลานใน<b>ปาแลรอยัล</b> (เสาของบูแรน) และสวน</div></li>
@@ -6941,6 +7058,117 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
         <tr><td>ช่วยด้วย</td><td>助けて</td><td>Au secours !</td><td><span class="th">โอ สกูร์</span></td><td>オ・スクール</td></tr>
       </tbody>
     </table>
+    </div>
+  </div>
+</section>
+<!-- =================== SPECIAL: LE MEURICE TEA TIME =================== -->
+<section id="meurice" class="chapter mrc" data-chapter="meurice">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Special · Paris 11/25 (Wed) 13:45 · Le Meurice – Le Dalí</div>
+    <h2>ทีไทม์ที่เลอเมอริส <span class="local">Tea Time by Cedric Grolet</span></h2>
+    <p class="lead">ทีไทม์ของเซดริก โกรเลต์ เชฟขนมที่เคยได้ชื่อว่า "เก่งที่สุดในโลก" ที่ห้องอาหาร "เลอ ดาลี" ในโรงแรมเลอเมอริส เค้กหน้าตาเหมือนผลไม้จริงเรียงอยู่บนต้นไม้เงินเหมือนผลไม้ออกลูก หนึ่งชั่วโมงครึ่งในห้องสไตล์เซอร์เรียลของโรงแรมที่ซัลวาดอร์ ดาลี พักประจำเกือบ 30 ปี หลังจากนั้น Som ไปดิสนีย์ ส่วน Ryo กับ Yuzuha ไปลูฟวร์</p>
+  </div>
+  <div class="subnav"><a href="#mrc-basic">การจองและข้อมูล</a><a href="#mrc-flow">ลำดับการเสิร์ฟ</a><a href="#mrc-grolet">เซดริก โกรเลต์</a><a href="#mrc-dali">ดาลีกับเลอเมอริส</a><a href="#mrc-room">ของที่ต้องหาในห้อง</a><a href="#mrc-tips">เคล็ดลับ</a></div>
+
+  <div class="block" id="mrc-basic">
+    <h3>การจองและข้อมูลพื้นฐาน</h3>
+    <div class="stay">
+      <div class="name">Restaurant Le Dalí (Le Meurice)  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Le%20Meurice%20228%20rue%20de%20Rivoli%20Paris">แผนที่</a><span class="pill todo">ต้องจอง</span></div>
+      <dl class="kv">
+        <dt>วันเวลา</dt><dd><b>25 พ.ย. (พ.) 13:45</b> ผู้ใหญ่ 2 คนกับ Yuzuha ราว 1 ชั่วโมงครึ่ง</dd>
+        <dt>ที่ตั้ง</dt><dd>228 rue de Rivoli ตรงข้ามสวนตุยเลอรี หน้าสถานีเมโทรสาย 1 Tuileries</dd>
+        <dt>เวลาเปิด</dt><dd>ทีไทม์ จ.–ส. 12:30–17:30 (วันอาทิตย์ 16:30–17:30 เท่านั้น)</dd>
+        <dt>จอง</dt><dd><span class="key">+33 1 44 58 10 44</span>　restaurantledali.lmp@dorchestercollection.com</dd>
+        <dt>การแต่งกาย</dt><dd>สมาร์ตแคชวล (ห้ามหมวกแก๊ป ชุดกีฬา กางเกงขาสั้น รองเท้าแตะ)</dd>
+        <dt>แจ้งร้าน</dt><dd>มากับลูกวัย 10 เดือนและรถเข็นเด็ก ถ้ามีเก้าอี้เด็กขอด้วย</dd>
+      </dl>
+    </div>
+    <p class="note">ปี 1835 เลอเมอริสเป็นโรงแรมแห่งแรกในปารีสที่เสิร์ฟ "น้ำชายามบ่าย" เพื่อแขกชาวอังกฤษ</p>
+  </div>
+
+  <div class="block" id="mrc-flow">
+    <h3>ลำดับการเสิร์ฟ</h3>
+    <p class="note">รูปแบบใหม่ตั้งแต่ฤดูใบไม้ผลิปี 2026 ไม่ใช้ถาดสามชั้น แต่ยกมาทีละอย่าง เมนูเปลี่ยนตามฤดู</p>
+    <div class="tbl"><table><thead><tr><th>ลำดับ</th><th>มีอะไรบ้าง</th><th>จุดเด่น</th></tr></thead><tbody>
+      <tr><td class="big">1. ของคาว</td><td>ฌ็องบง-เบอร์ (แซนด์วิชแฮม) กับเนยเผากลิ่นทรัฟเฟิลและทรัฟเฟิลดำ ลอบสเตอร์โรลบนบริยอช แซลมอนหมักเลมอนกับคาเวียร์</td><td>จานชามของ Bernardaud ลาย "Aux Oiseaux (นก)"</td></tr>
+      <tr><td class="big">2. ต้นไม้ผลไม้</td><td>ต้นไม้เงินทำมือ ห้อย<b>"ผลไม้" 6 ชนิดตามฤดู</b> เป็นเค้กที่หน้าตาเหมือนของจริง</td><td>ผ่าแล้วข้างในเป็นผลไม้ทั้งลูก เอกลักษณ์ของโกรเลต์</td></tr>
+      <tr><td class="big">3. อบใหม่ ๆ</td><td>เชฟขนมยกสโคน คูเกลฮอฟ และบริยอชน้ำตาลอุ่น ๆ มาเสิร์ฟถึงโต๊ะ</td><td>กลิ่นขนมอบหอมไปทั้งห้อง</td></tr>
+      <tr><td class="big">เครื่องดื่ม</td><td>กาแฟ ชา หรือช็อกโกแลตร้อนของอาแลง ดูกาส</td><td>สั่งแชมเปญโรเซ่เพิ่มได้</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="mrc-grolet">
+    <h3>เซดริก โกรเลต์ คือใคร</h3>
+    <div class="grid2">
+      <div class="card"><h4>ประวัติ</h4><ul>
+        <li>เกิดปี 1985 ที่ฟีร์มีนี จังหวัดลัวร์ ตอนกลางของฝรั่งเศส</li>
+        <li>อายุ 21 มาปารีส ทำงานที่ <b>Fauchon</b> 6 ปี แล้วฝึกกับคริสตอฟ อาดัม</li>
+        <li>ปี 2011 มาเลอเมอริส ปี 2013 เป็นหัวหน้าเชฟขนม (โรงแรมที่มีห้องอาหารของอาแลง ดูกาส)</li>
+        <li>โด่งดังไปทั่วโลกผ่านโซเชียลมีเดีย เป็นเชฟขนมที่คนรู้จักมากที่สุดคนหนึ่งในตอนนี้</li>
+      </ul></div>
+      <div class="card"><h4>รางวัลสำคัญ</h4><ul>
+        <li>ปี 2017 "เชฟขนมยอดเยี่ยมของโลก" (Les Grandes Tables du Monde)</li>
+        <li>ปี 2018 "เชฟขนมยอดเยี่ยม" ของ The World's 50 Best Restaurants</li>
+        <li>ปี 2018 "เชฟขนมแห่งปี" ของ Gault&amp;Millau</li>
+      </ul></div>
+      <div class="card"><h4>เค้กผลไม้ (ทรงป์ลุย)</h4><ul>
+        <li>เปลือกช็อกโกแลตขาวบาง ๆ หล่อเป็นรูปผลไม้ แล้วพ่นสีด้วยแอร์บรัช ทำแม้กระทั่งขั้วและใบ</li>
+        <li>ข้างในเป็นคอมโปตหรือครีมของผลไม้นั้น เช่น เลมอน แอปเปิล มะเดื่อ เฮเซลนัต</li>
+        <li>ทรงป์ลุย (trompe-l'œil) แปลว่า "หลอกตา" เข้ากับโรงแรมของดาลีพอดี</li>
+      </ul></div>
+      <div class="card"><h4>ร้านและหนังสือ</h4><ul>
+        <li>ปารีส: สาขาเลอเมอริส (2018) และ<b>สาขาโอเปรา</b> (35 avenue de l'Opéra เดินผ่านตอนเที่ยงวันที่ 25 พ.ย.)</li>
+        <li>ลอนดอน (The Berkeley ปี 2022) สิงคโปร์ (ปี 2023)</li>
+        <li>หนังสือ: <i>Fruits</i> (2017) <i>Opéra</i> (2020)</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="block" id="mrc-dali">
+    <h3>ซัลวาดอร์ ดาลีกับเลอเมอริส</h3>
+    <p class="note">จิตรกรเซอร์เรียลิสม์ ดาลี พักโรงแรมนี้เป็นประจำเกือบ 30 ปี ชื่อห้อง "เลอ ดาลี" มาจากตรงนี้</p>
+    <div class="grid2">
+      <div class="card"><h4>เรื่องเล่าของดาลี</h4><ul>
+        <li>พักห้องสวีตเดิมทุกครั้ง ตอนนี้ห้องนั้นเรียกว่า "ดาลีสวีต"</li>
+        <li>พาโอเซล็อต (แมวป่า) ที่เลี้ยงมาด้วย พอหนีออกมา พนักงานก็ต้องวิ่งไล่จับ</li>
+        <li>ว่ากันว่าให้ภาพสเก็ตช์เป็นทิปแก่พนักงาน และขอให้ช่วยจับแมลงวันในสวน</li>
+        <li>ดาลีบอกว่าตัวเองนิยมกษัตริย์ เลยชอบห้องที่พระเจ้าอัลฟอนโซที่ 13 แห่งสเปนเคยประทับ รู้สึกเหมือนเป็นกษัตริย์</li>
+      </ul></div>
+      <div class="card"><h4>ศิลปินคนอื่น</h4><ul>
+        <li>ปี 1918 <b>ปิกัสโซ</b>แต่งงานกับนักบัลเลต์โอลกาที่นี่ มีฌ็อง ก็อกโตเป็นพยาน</li>
+        <li>ไชคอฟสกีก็มาพักบ่อย</li>
+        <li>ภาพจิตรกรรมฝาผนังในบาร์ 228 มาจากปี 1907 (งานเลี้ยงในสวนที่ปราสาทฟงแตนโบล)</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="block" id="mrc-room">
+    <h3>ของที่ต้องหาในห้องเลอ ดาลี</h3>
+    <div class="tbl"><table><thead><tr><th>อะไร</th><th>ที่ไหน</th><th>น่าดูตรงไหน</th></tr></thead><tbody>
+      <tr><td class="big">ภาพบนเพดาน</td><td>เพดานห้องเลอ ดาลี</td><td>ผ้าใบวาดด้วยมือ 145 ตร.ม. ผลงานของอารา สตาร์ก ลูกสาวฟิลิปป์ สตาร์ก เป็นสามเหลี่ยม 4 ผืนรูปคนเต้นรำ เข้าไปแล้วแหงนดูก่อน</td></tr>
+      <tr><td class="big">เปียโนครึ่งเดียว</td><td>รอยต่อกับบาร์ 228</td><td>ครึ่งหนึ่งอยู่ในบาร์ อีกครึ่งยื่นเข้ามาในห้องอาหาร แสดงความเคารพต่อดาลี</td></tr>
+      <tr><td class="big">กระจกน้ำแข็ง</td><td>ทางเข้า</td><td>แช่แข็งใหม่ทุกวัน เพราะดาลีชอบน้ำเย็นจัด เอานิ้ววาดบนน้ำแข็งได้</td></tr>
+      <tr><td class="big">ดวงตาของดาลี</td><td>บาร์ 228</td><td>จ้องมองทุกคนที่เดินเข้ามา</td></tr>
+      <tr><td class="big">เก้าอี้สนทนา</td><td>ล็อบบี้</td><td>เก้าอี้สไตล์หลุยส์ที่ 16 นั่งหันหลังชนกันได้ 2 คน มาจาก "เฟอร์นิเจอร์สนทนา" ของดาลี</td></tr>
+    </tbody></table></div>
+    <p class="note">ตกแต่งโดยฟิลิปป์ สตาร์ก (ปี 2007 ปรับใหม่ปี 2016) ความหรูหราของโรงแรมกับมุกเซอร์เรียลของดาลีอยู่ในห้องเดียวกัน</p>
+  </div>
+
+  <div class="block" id="mrc-tips">
+    <h3>เคล็ดลับ</h3>
+    <div class="grid2">
+      <div class="card"><h4>เที่ยวให้สนุก</h4><ul>
+        <li>มื้อกลางวันกินเบา ๆ หลังจากนี้ Som อยู่ดิสนีย์จนดึก Ryo กับ Yuzuha ไปลูฟวร์</li>
+        <li>ถ่ายรูปเค้กผลไม้ก่อนผ่าและหลังผ่า</li>
+        <li>ขนมอบที่เหลือ ลองถามว่าห่อกลับได้ไหม ("Je peux emporter ?")</li>
+        <li>ราว 15:15 เปลี่ยนผ้าอ้อมและให้นม Yuzuha แล้วแยกกันตรงนี้ Som นั่งเมโทรจากสถานี Tuileries หน้าโรงแรมไปดิสนีย์</li>
+      </ul></div>
+      <div class="card"><h4>ประโยคที่ใช้ได้</h4><ul>
+        <li>เราจองไว้แล้ว: <b>Nous avons une réservation au nom de Taniwaki.</b></li>
+        <li>มีเก้าอี้เด็กไหม: <b>Avez-vous une chaise haute ?</b></li>
+        <li>อร่อยมาก ขอบคุณ: <b>C'était délicieux, merci beaucoup.</b></li>
+      </ul></div>
     </div>
   </div>
 </section>
@@ -11095,7 +11323,7 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
   <span>ที่มาของเบอร์สถานทูต/กงสุล: "รายชื่อสถานทูตและสถานกงสุลในต่างประเทศ" ของกระทรวงการต่างประเทศญี่ปุ่น และ "List of Royal Thai Embassy contact point" ของกระทรวงการต่างประเทศไทย</span>
   <details id="changelog" style="margin-top:6px">
     <summary style="cursor:pointer;font-weight:700;color:var(--ink)">ประวัติการแก้ไข</summary>
-    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/7</td><td>จองบัตรดิสนีย์ของ Som (25 พ.ย. แอดเวนเจอร์ เวิลด์) แล้ว อัปเดตบทดิสนีย์: Som ไปคนเดียว เฉพาะแอดเวนเจอร์ เวิลด์ ตั้งแต่ราว 15–16 น. จนสวนปิด จอง Frecciarossa 8 ธ.ค. ฟลอเรนซ์→โรม (9587 13:14→14:49) แล้ว Vueling 3 ธ.ค. (VY6092 ที่นั่ง 9E・9F) จองแล้ว ปรับตารางกระเป๋าตามสิทธิ์กระเป๋าขึ้นเครื่องของทั้งสองคน เพิ่มบท "ไดอารียุโรปของ Yuzuha วัย 0 ขวบ" เผยแพร่บันทึกทีละวันเป็นภาษาญี่ปุ่น ไทย และอังกฤษที่ AI เกลาแล้ว. แต่ละวันในไดอารีแสดงไฮไลต์เดียว เพิ่มปุ่ม "ส่งออก (ดูตัวอย่าง)" และ "ให้ AI เกลาข้อความ" ปุ่มสารบัญกับไดอารีกว้างเท่ากัน ปุ่มเลื่อนบทรวมเป็นอันเดียว "แสดงทุกบทต่อกัน" ย้ายไปอยู่ในสารบัญ ปกเป็น Taniwaki Family’s Guidebook</td></tr><tr><td class="d">7 พ.ย.</td><td>ดูไบเป็นหนึ่งในจุดหมายของทริป ไม่ใช่แค่ต่อเครื่อง เปลี่ยน "✎ จด" เป็น "✎ ไดอารี" เพิ่มคำเตือนสำหรับครอบครัวเท่านั้นในบทบันทึก</td></tr><tr><td class="d">7 พ.ย.</td><td>บันทึกการเดินทางซิงก์อัตโนมัติ：Ryo และ Som ล็อกอินในไกด์บุ๊กครั้งเดียว บันทึกจะรวมเข้าด้วยกันเองเมื่อมีเน็ต (ไม่ต้องส่งหรือวาง)</td></tr><tr><td class="d">7 พ.ย.</td><td>บทใหม่：วิธีดูสถาปัตยกรรม ตลาดคริสต์มาส ขอคืนภาษี (VAT) บันทึกการเดินทาง เพิ่มปุ่ม "✎ จด" ที่แถบด้านบน (จดของ Yuzuha・พ่อ・แม่ ลงบันทึกของวันนั้นได้จากทุกหน้า แสดงจำนวนที่ยังไม่ส่ง) ใช้เป็นแอปแบบออฟไลน์บนมือถือได้</td></tr><tr><td class="d">7 พ.ย.</td><td>เวอร์ชัน GitHub เพิ่มไปยังหน้าจอโฮมแล้วอ่านออฟไลน์ได้ (มีไอคอนแอป) บรรทัดสถานะระหว่างทริปแสดงเวลาท้องถิ่นและ "ต่อไป ◯:◯◯ ◯◯" จากตารางเวลาวันนั้น (กดแล้วไปที่บรรทัดนั้น) ตัวเลข 4 ช่องอยู่บรรทัดเดียว ย่อหน้าปก：บรรทัดเดียวบอกจำนวนวันก่อนออกเดินทาง (ระหว่างทริปบอก "วันที่เท่าไร・อยู่ที่ไหน・ต่อไปไปไหน") ตัวเลข 4 ช่องเหลือแถวเดียวไม่มีกรอบ สารบัญเปิดด้วยปุ่ม "สารบัญ" (แยกตามเมือง ดิสนีย์กับโบกุสอยู่ใต้เมือง) แยกชีสและไวน์ออกจากบทอาหารไปอยู่ใน "บทอ่าน" บนมือถือ ตาราง 4 คอลัมน์ขึ้นไปเรียงแนวตั้ง หน้าปกเป็น 5 ประเทศ</td></tr><tr><td class="d">7 พ.ย.</td><td>เพิ่มบทใหม่ "พิพิธภัณฑ์และงานชิ้นเอก" (ลูฟวร์ โรแด็ง ออร์แซ ซากราดาฟามีเลีย พิพิธภัณฑ์ปีกัสโซ วังดอจ อัคคาเดเมีย อุฟฟีซี วาติกัน) แก้คำนำบทฝรั่งเศสให้ตรงกับปารีส 4 คืนและลียง 2 คืน</td></tr><tr><td class="d">6 พ.ย.</td><td>บ้านแอนน์ แฟรงก์จองแล้ว (24 พ.ย. รอบเข้า 9:00〜9:15 3 คน)</td></tr><tr><td class="d">6 พ.ย.</td><td>ปรับวันที่ 25 พ.ย.：โรงอุปรากรกับ Le Meurice กลับเป็น "ต้องจอง" Ladurée ถนนรัวยาลแค่ดูจากข้างนอก ลูฟวร์เริ่ม 17:00 (ร้านอุปกรณ์ครัวกับปตีบาโตย้ายไปตัวเลือก) ประตูชัยฝากรถเข็นไว้กับเจ้าหน้าที่ที่ทางเข้า</td></tr><tr><td class="d">6 พ.ย.</td><td>จัดปารีส 24〜28 พ.ย. ใหม่ 24 พ.ย. หอไอเฟล ประตูชัย ช็องเซลีเซยามค่ำ 25 พ.ย. มงมาร์ตยามเช้า → โรงอุปรากร → Le Meurice 13:45 → Som ไปดิสนีย์ตอนเย็น Ryo กับ Yuzuha ไปลูฟวร์ 26 พ.ย. แวร์ซาย → สุสานนโปเลียน → โรแด็ง → บงมาร์เช → Josselin → นอเทรอดามยามค่ำ 27 พ.ย. จากมาเรไปเขต 1 28 พ.ย. แพนธีออนแล้วขึ้น TGV ที่เอาออกทั้งหมดย้ายไปตาราง "ตัวเลือก" เพิ่มตารางรสชาติท้องถิ่นที่กินได้ในปารีส บทดิสนีย์เปลี่ยนเป็นแผน F (เย็น 25 พ.ย. Som คนเดียว)</td></tr><tr><td class="d">6 พ.ย.</td><td>อัมสเตอร์ดัมเหลือ 1 คืน ที่พักเปลี่ยนเป็น art'otel (ตรงข้ามสถานีกลาง) Eurostar เปลี่ยนเป็น 24 พ.ย. 13:10→16:40 (ตู้ 18 ที่นั่ง 85・86) โรงแรมปารีส 24〜28 พ.ย. 4 คืน จัดวันที่ 24 พ.ย. (ถึงปารีสตอนเย็น) และ 25 พ.ย. ใหม่ (ย่านละติน → เกาะซิเต → จิบชาที่ Le Meurice → ลูฟวร์รอบค่ำ 3 คน) หมู่บ้านกังหันลมย้ายไปเป็นตัวเลือก ตั๋ว TGV ปารีส→บาร์เซโลนาคืนเงินแล้ว</td></tr><tr><td class="d">6 พ.ย.</td><td>เพิ่มแผน E วันที่ 26 พ.ย. (Ryo เที่ยวปารีสช่วงเช้า ออร์แซ → Le Relais de l'Entrecôte → ออร็องเฌอรี → ประตูชัย แล้วไปสมทบที่ดิสนีย์ 16:00) เพิ่มร้านหลัก Bernachon ในวันอาทิตย์ที่ลียง</td></tr><tr><td class="d">5 พ.ย.</td><td>บ่ายวันอาทิตย์ที่ลียงเลือกสวนแตต-ดอร์ (สถาบันลูมีแยร์เป็นตัวเลือก) เพิ่มเดินเล่นเนินครัวรูสเช้าวันจันทร์ วิวกลางคืนฟูร์วิแยร์คืนวันเสาร์คงเดิม</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่ม "ภูมิภาคของสเปนกับอาหาร" และ "ภูมิภาคของอิตาลีกับอาหาร" ในบทอาหาร (แบ่งตามทิศเหมือนฝรั่งเศส พร้อมชื่อเมืองและทริปนี้)</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่มเรื่องทรัฟเฟิลขาว (ซานมีนีอาโต Savini Tartufi Procacci ราคาและการนำกลับ) และการดูแลหม้อทองแดงกับพิมพ์คาเนเลในบทอาหาร เพิ่มของที่ระลึกจากร้านในบทโบกุส</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่ม "ของที่ควรซื้อเพื่อเริ่มทำอาหาร" ในบทอาหาร (5 อย่างที่ไม่ควรพลาด ร้านอุปกรณ์และวัตถุดิบแต่ละเมือง ข้อควรระวังในการนำกลับ)</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่ม "ของหวานและขนม" (ประเภทร้านอย่างซาลง เดอ เต ของเด่นและร้านดังแต่ละเมือง) และ "ชีสของเมืองที่เราไป" (เช่นแซ็ง-มาร์แซล็งของลียง) ในบทอาหาร แบ่งภูมิภาคฝรั่งเศสเป็นเหนือ ตะวันตก ตะวันออก กลาง ตะวันออกเฉียงใต้ ตะวันตกเฉียงใต้ พร้อมชื่อเมือง ร้านดังของเชฟระดับตำนานทำเป็นการ์ดพร้อมคำอธิบายและวิธีสนุก</td></tr><tr><td class="d">5 พ.ย.</td><td>จัด 26 พ.ย. ใหม่โดยแยกกันเที่ยว (Ryo ไม่ไปดิสนีย์) ใส่ 4 แผน และแผนปารีสของ Ryo กับ Yuzuha และของ Ryo คนเดียวในบทดิสนีย์ เรียงบทอาหารเป็นฝรั่งเศส → สเปน → อิตาลี (ตามลำดับการเดินทาง)</td></tr><tr><td class="d">5 พ.ย.</td><td>ปรับบท "ชีสและไวน์" เป็น "ตำราอาหาร" เน้นฝรั่งเศส อิตาลี สเปน (ประวัติศาสตร์ อิทธิพลต่อกัน เชฟระดับตำนาน ร้านดังพร้อมแผนที่ ระดับของร้าน ลำดับมื้ออาหาร มารยาทสามประเทศ ภูมิภาคฝรั่งเศส) ย้าย "อาหารและเครื่องดื่ม" และมารยาทจากบทของแต่ละประเทศมารวมที่นี่</td></tr><tr><td class="d">4 พ.ย.</td><td>ปรับสีแผนที่เส้นทางตามประเทศ (เนเธอร์แลนด์สีส้ม ฝรั่งเศสสีน้ำเงิน สเปนสีแดง อิตาลีสีเขียว เครื่องบินและดูไบสีเทา) ใส่ธงชาติทุกเมืองในตารางกำหนดการ</td></tr><tr><td class="d">4 พ.ย.</td><td>เพิ่มข้อความตอบกลับจากฝ่ายจองของร้านโบกุส (ต้นฉบับและคำแปล) ในหัวข้อ "พาลูกเล็กไป" ของบทโบกุส เป็นตัวอย่างเซอร์วิสของอาหารฝรั่งเศส</td></tr><tr><td class="d">4 พ.ย.</td><td>จอง AVE INT 09742 (30 พ.ย. ลียง 14:35 → บาร์เซโลนา 19:23) วันจันทร์ที่ลียงมีเวลาว่างถึงบ่าย วันแรกที่บาร์เซโลนาจัดใหม่ตามเวลาถึงตอนค่ำ (เดินถนนกราเซียเป็นตัวเลือก) เพิ่มคำเตือนว่าใส่ Apple Wallet ไม่ได้</td></tr><tr><td class="d">4 พ.ย.</td><td>จอง TGV INOUI 6619 (28 พ.ย. 15:00 → 16:56 ชั้น 1) จัดวันที่ 28 พ.ย. ที่ปารีสใหม่ (ตลาดเช้าและมงมาร์ต → ไปสถานี 13:45) แผนช่วงบ่ายเก็บไว้เป็นตัวเลือก</td></tr><tr><td class="d">4 พ.ย.</td><td>จองโรงแรมที่ลียง (Mercure ปาร์-ดิเยอ 2 คืน) และบูชง Daniel et Denise Saint-Jean คืน 28 พ.ย. (19:00) คืนนั้นหลังมื้อเย็นนั่งรถรางขึ้นไปดูวิวกลางคืนบนเนินฟูร์วิแยร์ บ่าย 29 พ.ย. เลือกสวนสาธารณะหรือพิพิธภัณฑ์ 1 แห่งแล้วงีบกลางวัน</td></tr><tr><td class="d">4 พ.ย.</td><td>ลบส่วนที่เขียนว่าจะซื้อของฝากอะไรให้ใคร และหัวข้อ "แผนของฝาก" เพิ่มเรื่องหัวหน้าที่ EY และข้อความถึง Yuzuha ในบทโบกุส</td></tr><tr><td class="d">4 พ.ย.</td><td>เปลี่ยนเป็นแวะลียง (เย็น 28 พ.ย. ปารีส → ลียง 2 คืน 30 พ.ย. ไปบาร์เซโลนา) อัปเดตกำหนดการ รายการจอง การเดินทาง แผนที่เส้นทาง และใส่ 3 วันที่ลียงในบทโบกุส แผนปารีสวันที่ 29 พ.ย. เก็บไว้เป็นตัวเลือก</td></tr><tr><td class="d">4 พ.ย.</td><td>จองร้านปอล โบกุส สาขาแรก (29 พ.ย. 20:15) เพิ่มบท "โบกุส" แบบเดียวกับบทดิสนีย์ (การจอง การเดินทาง ตารางวันนั้น เมนูฤดูใบไม้ร่วง อาหารขึ้นชื่อ พาลูกน้อยไป ประวัติ ของฝาก)</td></tr><tr><td class="d">3 พ.ย.</td><td>ย้ายปิซาไปบ่ายวันที่ 7 ธ.ค. (จ.) ไปกลับด้วยรถไฟท้องถิ่น วันที่ 8 ธ.ค. เที่ยวฟลอเรนซ์ยามเช้า กินมื้อกลางวันแล้วนั่งรถไฟไปโรม</td></tr><tr><td class="d">3 พ.ย.</td><td>จอง Frecciarossa 9415 วันที่ 5 ธ.ค. (11:26 → 13:39 Business) เพิ่มเดินเล่นเวนิสยามเช้า วันแรกที่ฟลอเรนซ์เลื่อนอัคคาเดเมียเป็น 15:15 และย้ายพระอาทิตย์ตกที่ลานมีเกลันเจโลไปวันที่ 6 ธ.ค. เพิ่มฉบับภาษาอังกฤษ</td></tr><tr><td class="d">3 พ.ย.</td><td>จอง Eurostar (25 พ.ย. 09:10 → 12:37) ปรับตารางเช้าที่อัมสเตอร์ดัมและวันแรกที่ปารีสให้ตรงกัน</td></tr><tr><td class="d">2 พ.ย.</td><td>ลบรหัสจอง (เอมิเรตส์ ที่พักใน Booking) และเลขกรมธรรม์ประกันออกจากไกด์ (กันคนอื่นเข้าไปแก้หรือยกเลิกการจอง)</td></tr><tr><td class="d">2 พ.ย.</td><td>ดูไบ: ตัดสินใจออกไปในเมือง ซมขอวีซ่าทรานซิต 48 ชม. ผ่านเอมิเรตส์ (มีขั้นตอนในบทดูไบ)</td></tr><tr><td class="d">25 ต.ค.</td><td>ทำรายการของที่ต้องเอาไปใหม่จากรายการประจำ ให้เข้ากับทริปนี้ (มีป้ายบอกกระเป๋าที่ใส่)</td></tr><tr><td class="d">25 ต.ค.</td><td>ฉบับภาษาญี่ปุ่นเอาภาษาไทยที่เขียนคู่กันออก (ตัวเล็กข้างหัวข้อ คอลัมน์ภาษาไทยในตารางบทสนทนา ฯลฯ) ภาษาไทยอยู่ในฉบับภาษาไทย</td></tr><tr><td class="d">25 ต.ค.</td><td>เลือกดีไซน์ได้ 3 แบบ (กดปุ่มจานสีมุมขวาล่าง): Som (กระดาษสีอ่อน＋ลายเส้นของแต่ละประเทศ ค่าเริ่มต้น) Yuzuha (สีสดใส) Ryo (สีเข้ม) หรือใส่ ?theme=som / yuzuha / ryo ในลิงก์ก็ได้</td></tr><tr><td class="d">25 ต.ค.</td><td>สรุปประกันเหลือ 2 ตัว คือ Chubb และ Hilton Amex Premium เพิ่มขั้นตอนติดต่อเมื่อเกิดเหตุ (แยกสถานการณ์) และรายชื่อเบอร์ติดต่อ</td></tr><tr><td class="d">25 ต.ค.</td><td>อัปเดตข้อมูลจากใบยืนยันโรงแรม 6 แห่ง (เวลา วันสุดท้ายที่ยกเลิกฟรี ห้อง) เช็กความคุ้มครอง Amex จากเงื่อนไข (ของติดตัวถูกขโมยไม่คุ้มครอง) เพิ่มหัวข้อ Anytime Fitness</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อประกันการเดินทาง (รายละเอียดกรมธรรม์ Chubb การแบ่งหน้าที่กับ Amex กฎการเคลม)</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อจัดกระเป๋าและการขนย้าย (วิธีรับมือแต่ละสถานการณ์) เช็กสัมภาระและที่นั่งเอมิเรตส์จาก e-ticket อัปเดตรายการของและสิ่งที่ต้องทำ เพิ่มประวัติการแก้ไขนี้</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่ม "หนังที่ควรดูก่อนไป" ของแต่ละประเทศ</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มการแวะเปลี่ยนเครื่องที่ดูไบขาไป (3 ชม. 15 นาที) ในกำหนดการและแผนที่เส้นทาง</td></tr><tr><td class="d">18 ต.ค.</td><td>ปุ่มเปลี่ยนภาษาอยู่มุมขวาล่างตลอด (สลับญี่ปุ่น/ไทยได้โดยไม่เลื่อนหน้า)</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มลิสต์สถานที่โปรดใน Google Maps (แยกประเภท มีชื่อภาษาไทย) และลิงก์แผนที่ของโรงแรมและสถานที่สำคัญ เพิ่มการแวะดูไบ 17 ชม. ขากลับในแผนที่</td></tr><tr><td class="d">18 ต.ค.</td><td>เปลี่ยนที่พักปารีสเป็น Libertel Austerlitz และยืนยันที่พักทั้ง 6 แห่ง</td></tr><tr><td class="d">18 ต.ค.</td><td>เปิดเวอร์ชัน GitHub ตัวอักษรใหญ่ขึ้นสำหรับ iPhone ตารางกว้างเลื่อนด้านข้างได้ เปิดเป็นภาษาไทยด้วย ?lang=th</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>ทบทวนทั้งเล่ม (Yuzuha อายุ 10 เดือนตอนเดินทาง ขาไปออก 01:05 ตัดค่าประกันออก) ทำเป็น 2 ภาษา ญี่ปุ่นและไทย</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>เพิ่มวิธีรับมือวันประท้วง/นัดหยุดงาน การป้องกันล้วงกระเป๋า (แยกตามสถานการณ์) และคอลัมน์มารยาทบนโต๊ะอาหารของฝรั่งเศส</td></tr><tr><td class="d">ราว 16 ต.ค.</td><td>อัปเดตว่าซื้อตั๋วดิสนีย์แลนด์ปารีสแล้ว เพิ่ม "ดิสนีย์กับฝรั่งเศส" เวลาเข้าแวร์ซาย และตารางเวลาพระอาทิตย์ขึ้น-ตก</td></tr><tr><td class="d">15 ต.ค.</td><td>เวอร์ชันแรก</td></tr></tbody></table></div>
+    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/7</td><td>เพิ่มบทพิเศษ "ทีไทม์ที่เลอเมอริส" (เซดริก โกรเลต์ ดาลีกับเลอเมอริส) ก่อนบทดิสนีย์ จองบัตรดิสนีย์ของ Som (25 พ.ย. แอดเวนเจอร์ เวิลด์) แล้ว อัปเดตบทดิสนีย์: Som ไปคนเดียว เฉพาะแอดเวนเจอร์ เวิลด์ ตั้งแต่ราว 15–16 น. จนสวนปิด จอง Frecciarossa 8 ธ.ค. ฟลอเรนซ์→โรม (9587 13:14→14:49) แล้ว Vueling 3 ธ.ค. (VY6092 ที่นั่ง 9E・9F) จองแล้ว ปรับตารางกระเป๋าตามสิทธิ์กระเป๋าขึ้นเครื่องของทั้งสองคน เพิ่มบท "ไดอารียุโรปของ Yuzuha วัย 0 ขวบ" เผยแพร่บันทึกทีละวันเป็นภาษาญี่ปุ่น ไทย และอังกฤษที่ AI เกลาแล้ว. แต่ละวันในไดอารีแสดงไฮไลต์เดียว เพิ่มปุ่ม "ส่งออก (ดูตัวอย่าง)" และ "ให้ AI เกลาข้อความ" ปุ่มสารบัญกับไดอารีกว้างเท่ากัน ปุ่มเลื่อนบทรวมเป็นอันเดียว "แสดงทุกบทต่อกัน" ย้ายไปอยู่ในสารบัญ ปกเป็น Taniwaki Family’s Guidebook</td></tr><tr><td class="d">7 พ.ย.</td><td>ดูไบเป็นหนึ่งในจุดหมายของทริป ไม่ใช่แค่ต่อเครื่อง เปลี่ยน "✎ จด" เป็น "✎ ไดอารี" เพิ่มคำเตือนสำหรับครอบครัวเท่านั้นในบทบันทึก</td></tr><tr><td class="d">7 พ.ย.</td><td>บันทึกการเดินทางซิงก์อัตโนมัติ：Ryo และ Som ล็อกอินในไกด์บุ๊กครั้งเดียว บันทึกจะรวมเข้าด้วยกันเองเมื่อมีเน็ต (ไม่ต้องส่งหรือวาง)</td></tr><tr><td class="d">7 พ.ย.</td><td>บทใหม่：วิธีดูสถาปัตยกรรม ตลาดคริสต์มาส ขอคืนภาษี (VAT) บันทึกการเดินทาง เพิ่มปุ่ม "✎ จด" ที่แถบด้านบน (จดของ Yuzuha・พ่อ・แม่ ลงบันทึกของวันนั้นได้จากทุกหน้า แสดงจำนวนที่ยังไม่ส่ง) ใช้เป็นแอปแบบออฟไลน์บนมือถือได้</td></tr><tr><td class="d">7 พ.ย.</td><td>เวอร์ชัน GitHub เพิ่มไปยังหน้าจอโฮมแล้วอ่านออฟไลน์ได้ (มีไอคอนแอป) บรรทัดสถานะระหว่างทริปแสดงเวลาท้องถิ่นและ "ต่อไป ◯:◯◯ ◯◯" จากตารางเวลาวันนั้น (กดแล้วไปที่บรรทัดนั้น) ตัวเลข 4 ช่องอยู่บรรทัดเดียว ย่อหน้าปก：บรรทัดเดียวบอกจำนวนวันก่อนออกเดินทาง (ระหว่างทริปบอก "วันที่เท่าไร・อยู่ที่ไหน・ต่อไปไปไหน") ตัวเลข 4 ช่องเหลือแถวเดียวไม่มีกรอบ สารบัญเปิดด้วยปุ่ม "สารบัญ" (แยกตามเมือง ดิสนีย์กับโบกุสอยู่ใต้เมือง) แยกชีสและไวน์ออกจากบทอาหารไปอยู่ใน "บทอ่าน" บนมือถือ ตาราง 4 คอลัมน์ขึ้นไปเรียงแนวตั้ง หน้าปกเป็น 5 ประเทศ</td></tr><tr><td class="d">7 พ.ย.</td><td>เพิ่มบทใหม่ "พิพิธภัณฑ์และงานชิ้นเอก" (ลูฟวร์ โรแด็ง ออร์แซ ซากราดาฟามีเลีย พิพิธภัณฑ์ปีกัสโซ วังดอจ อัคคาเดเมีย อุฟฟีซี วาติกัน) แก้คำนำบทฝรั่งเศสให้ตรงกับปารีส 4 คืนและลียง 2 คืน</td></tr><tr><td class="d">6 พ.ย.</td><td>บ้านแอนน์ แฟรงก์จองแล้ว (24 พ.ย. รอบเข้า 9:00〜9:15 3 คน)</td></tr><tr><td class="d">6 พ.ย.</td><td>ปรับวันที่ 25 พ.ย.：โรงอุปรากรกับ Le Meurice กลับเป็น "ต้องจอง" Ladurée ถนนรัวยาลแค่ดูจากข้างนอก ลูฟวร์เริ่ม 17:00 (ร้านอุปกรณ์ครัวกับปตีบาโตย้ายไปตัวเลือก) ประตูชัยฝากรถเข็นไว้กับเจ้าหน้าที่ที่ทางเข้า</td></tr><tr><td class="d">6 พ.ย.</td><td>จัดปารีส 24〜28 พ.ย. ใหม่ 24 พ.ย. หอไอเฟล ประตูชัย ช็องเซลีเซยามค่ำ 25 พ.ย. มงมาร์ตยามเช้า → โรงอุปรากร → Le Meurice 13:45 → Som ไปดิสนีย์ตอนเย็น Ryo กับ Yuzuha ไปลูฟวร์ 26 พ.ย. แวร์ซาย → สุสานนโปเลียน → โรแด็ง → บงมาร์เช → Josselin → นอเทรอดามยามค่ำ 27 พ.ย. จากมาเรไปเขต 1 28 พ.ย. แพนธีออนแล้วขึ้น TGV ที่เอาออกทั้งหมดย้ายไปตาราง "ตัวเลือก" เพิ่มตารางรสชาติท้องถิ่นที่กินได้ในปารีส บทดิสนีย์เปลี่ยนเป็นแผน F (เย็น 25 พ.ย. Som คนเดียว)</td></tr><tr><td class="d">6 พ.ย.</td><td>อัมสเตอร์ดัมเหลือ 1 คืน ที่พักเปลี่ยนเป็น art'otel (ตรงข้ามสถานีกลาง) Eurostar เปลี่ยนเป็น 24 พ.ย. 13:10→16:40 (ตู้ 18 ที่นั่ง 85・86) โรงแรมปารีส 24〜28 พ.ย. 4 คืน จัดวันที่ 24 พ.ย. (ถึงปารีสตอนเย็น) และ 25 พ.ย. ใหม่ (ย่านละติน → เกาะซิเต → จิบชาที่ Le Meurice → ลูฟวร์รอบค่ำ 3 คน) หมู่บ้านกังหันลมย้ายไปเป็นตัวเลือก ตั๋ว TGV ปารีส→บาร์เซโลนาคืนเงินแล้ว</td></tr><tr><td class="d">6 พ.ย.</td><td>เพิ่มแผน E วันที่ 26 พ.ย. (Ryo เที่ยวปารีสช่วงเช้า ออร์แซ → Le Relais de l'Entrecôte → ออร็องเฌอรี → ประตูชัย แล้วไปสมทบที่ดิสนีย์ 16:00) เพิ่มร้านหลัก Bernachon ในวันอาทิตย์ที่ลียง</td></tr><tr><td class="d">5 พ.ย.</td><td>บ่ายวันอาทิตย์ที่ลียงเลือกสวนแตต-ดอร์ (สถาบันลูมีแยร์เป็นตัวเลือก) เพิ่มเดินเล่นเนินครัวรูสเช้าวันจันทร์ วิวกลางคืนฟูร์วิแยร์คืนวันเสาร์คงเดิม</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่ม "ภูมิภาคของสเปนกับอาหาร" และ "ภูมิภาคของอิตาลีกับอาหาร" ในบทอาหาร (แบ่งตามทิศเหมือนฝรั่งเศส พร้อมชื่อเมืองและทริปนี้)</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่มเรื่องทรัฟเฟิลขาว (ซานมีนีอาโต Savini Tartufi Procacci ราคาและการนำกลับ) และการดูแลหม้อทองแดงกับพิมพ์คาเนเลในบทอาหาร เพิ่มของที่ระลึกจากร้านในบทโบกุส</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่ม "ของที่ควรซื้อเพื่อเริ่มทำอาหาร" ในบทอาหาร (5 อย่างที่ไม่ควรพลาด ร้านอุปกรณ์และวัตถุดิบแต่ละเมือง ข้อควรระวังในการนำกลับ)</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่ม "ของหวานและขนม" (ประเภทร้านอย่างซาลง เดอ เต ของเด่นและร้านดังแต่ละเมือง) และ "ชีสของเมืองที่เราไป" (เช่นแซ็ง-มาร์แซล็งของลียง) ในบทอาหาร แบ่งภูมิภาคฝรั่งเศสเป็นเหนือ ตะวันตก ตะวันออก กลาง ตะวันออกเฉียงใต้ ตะวันตกเฉียงใต้ พร้อมชื่อเมือง ร้านดังของเชฟระดับตำนานทำเป็นการ์ดพร้อมคำอธิบายและวิธีสนุก</td></tr><tr><td class="d">5 พ.ย.</td><td>จัด 26 พ.ย. ใหม่โดยแยกกันเที่ยว (Ryo ไม่ไปดิสนีย์) ใส่ 4 แผน และแผนปารีสของ Ryo กับ Yuzuha และของ Ryo คนเดียวในบทดิสนีย์ เรียงบทอาหารเป็นฝรั่งเศส → สเปน → อิตาลี (ตามลำดับการเดินทาง)</td></tr><tr><td class="d">5 พ.ย.</td><td>ปรับบท "ชีสและไวน์" เป็น "ตำราอาหาร" เน้นฝรั่งเศส อิตาลี สเปน (ประวัติศาสตร์ อิทธิพลต่อกัน เชฟระดับตำนาน ร้านดังพร้อมแผนที่ ระดับของร้าน ลำดับมื้ออาหาร มารยาทสามประเทศ ภูมิภาคฝรั่งเศส) ย้าย "อาหารและเครื่องดื่ม" และมารยาทจากบทของแต่ละประเทศมารวมที่นี่</td></tr><tr><td class="d">4 พ.ย.</td><td>ปรับสีแผนที่เส้นทางตามประเทศ (เนเธอร์แลนด์สีส้ม ฝรั่งเศสสีน้ำเงิน สเปนสีแดง อิตาลีสีเขียว เครื่องบินและดูไบสีเทา) ใส่ธงชาติทุกเมืองในตารางกำหนดการ</td></tr><tr><td class="d">4 พ.ย.</td><td>เพิ่มข้อความตอบกลับจากฝ่ายจองของร้านโบกุส (ต้นฉบับและคำแปล) ในหัวข้อ "พาลูกเล็กไป" ของบทโบกุส เป็นตัวอย่างเซอร์วิสของอาหารฝรั่งเศส</td></tr><tr><td class="d">4 พ.ย.</td><td>จอง AVE INT 09742 (30 พ.ย. ลียง 14:35 → บาร์เซโลนา 19:23) วันจันทร์ที่ลียงมีเวลาว่างถึงบ่าย วันแรกที่บาร์เซโลนาจัดใหม่ตามเวลาถึงตอนค่ำ (เดินถนนกราเซียเป็นตัวเลือก) เพิ่มคำเตือนว่าใส่ Apple Wallet ไม่ได้</td></tr><tr><td class="d">4 พ.ย.</td><td>จอง TGV INOUI 6619 (28 พ.ย. 15:00 → 16:56 ชั้น 1) จัดวันที่ 28 พ.ย. ที่ปารีสใหม่ (ตลาดเช้าและมงมาร์ต → ไปสถานี 13:45) แผนช่วงบ่ายเก็บไว้เป็นตัวเลือก</td></tr><tr><td class="d">4 พ.ย.</td><td>จองโรงแรมที่ลียง (Mercure ปาร์-ดิเยอ 2 คืน) และบูชง Daniel et Denise Saint-Jean คืน 28 พ.ย. (19:00) คืนนั้นหลังมื้อเย็นนั่งรถรางขึ้นไปดูวิวกลางคืนบนเนินฟูร์วิแยร์ บ่าย 29 พ.ย. เลือกสวนสาธารณะหรือพิพิธภัณฑ์ 1 แห่งแล้วงีบกลางวัน</td></tr><tr><td class="d">4 พ.ย.</td><td>ลบส่วนที่เขียนว่าจะซื้อของฝากอะไรให้ใคร และหัวข้อ "แผนของฝาก" เพิ่มเรื่องหัวหน้าที่ EY และข้อความถึง Yuzuha ในบทโบกุส</td></tr><tr><td class="d">4 พ.ย.</td><td>เปลี่ยนเป็นแวะลียง (เย็น 28 พ.ย. ปารีส → ลียง 2 คืน 30 พ.ย. ไปบาร์เซโลนา) อัปเดตกำหนดการ รายการจอง การเดินทาง แผนที่เส้นทาง และใส่ 3 วันที่ลียงในบทโบกุส แผนปารีสวันที่ 29 พ.ย. เก็บไว้เป็นตัวเลือก</td></tr><tr><td class="d">4 พ.ย.</td><td>จองร้านปอล โบกุส สาขาแรก (29 พ.ย. 20:15) เพิ่มบท "โบกุส" แบบเดียวกับบทดิสนีย์ (การจอง การเดินทาง ตารางวันนั้น เมนูฤดูใบไม้ร่วง อาหารขึ้นชื่อ พาลูกน้อยไป ประวัติ ของฝาก)</td></tr><tr><td class="d">3 พ.ย.</td><td>ย้ายปิซาไปบ่ายวันที่ 7 ธ.ค. (จ.) ไปกลับด้วยรถไฟท้องถิ่น วันที่ 8 ธ.ค. เที่ยวฟลอเรนซ์ยามเช้า กินมื้อกลางวันแล้วนั่งรถไฟไปโรม</td></tr><tr><td class="d">3 พ.ย.</td><td>จอง Frecciarossa 9415 วันที่ 5 ธ.ค. (11:26 → 13:39 Business) เพิ่มเดินเล่นเวนิสยามเช้า วันแรกที่ฟลอเรนซ์เลื่อนอัคคาเดเมียเป็น 15:15 และย้ายพระอาทิตย์ตกที่ลานมีเกลันเจโลไปวันที่ 6 ธ.ค. เพิ่มฉบับภาษาอังกฤษ</td></tr><tr><td class="d">3 พ.ย.</td><td>จอง Eurostar (25 พ.ย. 09:10 → 12:37) ปรับตารางเช้าที่อัมสเตอร์ดัมและวันแรกที่ปารีสให้ตรงกัน</td></tr><tr><td class="d">2 พ.ย.</td><td>ลบรหัสจอง (เอมิเรตส์ ที่พักใน Booking) และเลขกรมธรรม์ประกันออกจากไกด์ (กันคนอื่นเข้าไปแก้หรือยกเลิกการจอง)</td></tr><tr><td class="d">2 พ.ย.</td><td>ดูไบ: ตัดสินใจออกไปในเมือง ซมขอวีซ่าทรานซิต 48 ชม. ผ่านเอมิเรตส์ (มีขั้นตอนในบทดูไบ)</td></tr><tr><td class="d">25 ต.ค.</td><td>ทำรายการของที่ต้องเอาไปใหม่จากรายการประจำ ให้เข้ากับทริปนี้ (มีป้ายบอกกระเป๋าที่ใส่)</td></tr><tr><td class="d">25 ต.ค.</td><td>ฉบับภาษาญี่ปุ่นเอาภาษาไทยที่เขียนคู่กันออก (ตัวเล็กข้างหัวข้อ คอลัมน์ภาษาไทยในตารางบทสนทนา ฯลฯ) ภาษาไทยอยู่ในฉบับภาษาไทย</td></tr><tr><td class="d">25 ต.ค.</td><td>เลือกดีไซน์ได้ 3 แบบ (กดปุ่มจานสีมุมขวาล่าง): Som (กระดาษสีอ่อน＋ลายเส้นของแต่ละประเทศ ค่าเริ่มต้น) Yuzuha (สีสดใส) Ryo (สีเข้ม) หรือใส่ ?theme=som / yuzuha / ryo ในลิงก์ก็ได้</td></tr><tr><td class="d">25 ต.ค.</td><td>สรุปประกันเหลือ 2 ตัว คือ Chubb และ Hilton Amex Premium เพิ่มขั้นตอนติดต่อเมื่อเกิดเหตุ (แยกสถานการณ์) และรายชื่อเบอร์ติดต่อ</td></tr><tr><td class="d">25 ต.ค.</td><td>อัปเดตข้อมูลจากใบยืนยันโรงแรม 6 แห่ง (เวลา วันสุดท้ายที่ยกเลิกฟรี ห้อง) เช็กความคุ้มครอง Amex จากเงื่อนไข (ของติดตัวถูกขโมยไม่คุ้มครอง) เพิ่มหัวข้อ Anytime Fitness</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อประกันการเดินทาง (รายละเอียดกรมธรรม์ Chubb การแบ่งหน้าที่กับ Amex กฎการเคลม)</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อจัดกระเป๋าและการขนย้าย (วิธีรับมือแต่ละสถานการณ์) เช็กสัมภาระและที่นั่งเอมิเรตส์จาก e-ticket อัปเดตรายการของและสิ่งที่ต้องทำ เพิ่มประวัติการแก้ไขนี้</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่ม "หนังที่ควรดูก่อนไป" ของแต่ละประเทศ</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มการแวะเปลี่ยนเครื่องที่ดูไบขาไป (3 ชม. 15 นาที) ในกำหนดการและแผนที่เส้นทาง</td></tr><tr><td class="d">18 ต.ค.</td><td>ปุ่มเปลี่ยนภาษาอยู่มุมขวาล่างตลอด (สลับญี่ปุ่น/ไทยได้โดยไม่เลื่อนหน้า)</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มลิสต์สถานที่โปรดใน Google Maps (แยกประเภท มีชื่อภาษาไทย) และลิงก์แผนที่ของโรงแรมและสถานที่สำคัญ เพิ่มการแวะดูไบ 17 ชม. ขากลับในแผนที่</td></tr><tr><td class="d">18 ต.ค.</td><td>เปลี่ยนที่พักปารีสเป็น Libertel Austerlitz และยืนยันที่พักทั้ง 6 แห่ง</td></tr><tr><td class="d">18 ต.ค.</td><td>เปิดเวอร์ชัน GitHub ตัวอักษรใหญ่ขึ้นสำหรับ iPhone ตารางกว้างเลื่อนด้านข้างได้ เปิดเป็นภาษาไทยด้วย ?lang=th</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>ทบทวนทั้งเล่ม (Yuzuha อายุ 10 เดือนตอนเดินทาง ขาไปออก 01:05 ตัดค่าประกันออก) ทำเป็น 2 ภาษา ญี่ปุ่นและไทย</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>เพิ่มวิธีรับมือวันประท้วง/นัดหยุดงาน การป้องกันล้วงกระเป๋า (แยกตามสถานการณ์) และคอลัมน์มารยาทบนโต๊ะอาหารของฝรั่งเศส</td></tr><tr><td class="d">ราว 16 ต.ค.</td><td>อัปเดตว่าซื้อตั๋วดิสนีย์แลนด์ปารีสแล้ว เพิ่ม "ดิสนีย์กับฝรั่งเศส" เวลาเข้าแวร์ซาย และตารางเวลาพระอาทิตย์ขึ้น-ตก</td></tr><tr><td class="d">15 ต.ค.</td><td>เวอร์ชันแรก</td></tr></tbody></table></div>
   </details>
 </footer>
 
@@ -11141,6 +11369,7 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
         <li><a href="#plan" data-ch="plan" data-now="Introduction"><span class="no">00</span><span class="nm">Introduction</span><span class="dot" aria-hidden="true"></span><span class="dt">Plan & bookings</span></a></li>
         <li><a href="#nl" data-ch="nl" data-now="Amsterdam"><span class="no">01</span><span class="nm"><span class="flag f-nl"></span>Amsterdam</span><span class="dot" aria-hidden="true"></span><span class="dt">11/23–24</span></a></li>
         <li><a href="#fr" data-ch="fr" data-now="Paris"><span class="no">02</span><span class="nm"><span class="flag f-fr"></span>Paris</span><span class="dot" aria-hidden="true"></span><span class="dt">11/24–28</span></a></li>
+        <li class="sub"><a href="#meurice" data-ch="meurice" data-now="Le Meurice"><span class="no"></span><span class="nm">Tea at Le Meurice</span><span class="dot" aria-hidden="true"></span><span class="dt">11/25</span></a></li>
         <li class="sub"><a href="#dlp" data-ch="dlp" data-now="Disney"><span class="no"></span><span class="nm">Disneyland Paris</span><span class="dot" aria-hidden="true"></span><span class="dt">11/25</span></a></li>
         <li><a href="#bocuse" data-ch="bocuse" data-now="Lyon"><span class="no">02</span><span class="nm"><span class="flag f-fr"></span>Lyon</span><span class="dot" aria-hidden="true"></span><span class="dt">11/28–30</span></a></li>
         <li class="sub"><a href="#bcs-basic" data-ch="bocuse" data-now="Lyon"><span class="no"></span><span class="nm">Paul Bocuse</span><span class="dot" aria-hidden="true"></span><span class="dt">11/29</span></a></li>
@@ -11838,7 +12067,7 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
         <li><span class="t">11:15</span><div>Round the back to <b>Galeries Lafayette</b>: the <b>Christmas tree</b> under the dome and the rooftop view (free)</div></li>
         <li><span class="t">12:00</span><div>South along Avenue de l'Opéra: <b>Cédric Grolet</b>'s shop (no. 35) → the Mille boutique → the original <b>Ladurée</b> on Rue Royale (no. 16, the oldest shop, since 1862), just from outside: save room for tea<span class="sub">Place Vendôme (the Ritz) is just by Grolet's shop; see it from outside on the way</span></div></li>
         <li><span class="t">12:45</span><div><b>Place de la Concorde</b> → an easy stroll through the <b>Tuileries</b>. Yuzuha naps in the stroller here</div></li>
-        <li><span class="t">13:45</span><div>Christmas Tea Time at <b>Le Meurice, Le Dalí</b> (Cédric Grolet), 228 Rue de Rivoli <span class="pill todo">To book</span><span class="sub">Smart casual (no caps, sportswear, shorts or flip-flops). About 1.5 hours</span></div></li>
+        <li><span class="t">13:45</span><div>Tea Time at <b>Le Meurice, Le Dalí</b> (Cédric Grolet), 228 Rue de Rivoli  (<a href="#meurice">special chapter</a>) <span class="pill todo">To book</span><span class="sub">Smart casual (no caps, sportswear, shorts or flip-flops). About 1.5 hours</span></div></li>
         <li><span class="t">15:15</span><div>Reset Yuzuha (nappy, milk). We split up here</div></li>
         <li><span class="t">15:30</span><div><span class="solo">Som</span> Metro 1 Tuileries → change to <b>RER A</b> at Châtelet → terminus Marne-la-Vallée–Chessy (about 50 min) → <b>Disney Adventure World</b> only (in by 16:00–16:30, stay until closing at 22:00) <span class="pill ok">Booked</span><span class="sub">Back at the hotel around 23:30. Recheck the closing time in the app a week before. Route and the way back are in the <a href="#dlp-split">Disney chapter</a></span></div></li>
         <li><span class="t">15:30</span><div><span class="solo">Ryo &amp; Yuzuha</span> East along Rue de Rivoli to the <b>Palais-Royal</b> courtyard (Buren's columns) and garden</div></li>
@@ -12226,6 +12455,117 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
         <tr><td>Help!</td><td>Au secours !</td><td>oh suh-KOOR</td></tr>
       </tbody>
     </table>
+    </div>
+  </div>
+</section>
+<!-- =================== SPECIAL: LE MEURICE TEA TIME =================== -->
+<section id="meurice" class="chapter mrc" data-chapter="meurice">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Special · Paris 11/25 (Wed) 13:45 · Le Meurice – Le Dalí</div>
+    <h2>Tea time at Le Meurice <span class="local">Tea Time by Cedric Grolet</span></h2>
+    <p class="lead">Afternoon tea by Cedric Grolet, once named the world's best pastry chef, in Le Dalí at Hôtel Le Meurice. Cakes shaped exactly like real fruit hang from a silver tree. An hour and a half in the surreal room of the hotel Salvador Dalí called home for nearly 30 years. Afterwards Som heads to Disney, and Ryo and Yuzuha to the Louvre.</p>
+  </div>
+  <div class="subnav"><a href="#mrc-basic">Booking</a><a href="#mrc-flow">How it's served</a><a href="#mrc-grolet">Cedric Grolet</a><a href="#mrc-dali">Dalí and Le Meurice</a><a href="#mrc-room">Things to spot</a><a href="#mrc-tips">Tips</a></div>
+
+  <div class="block" id="mrc-basic">
+    <h3>Booking and basics</h3>
+    <div class="stay">
+      <div class="name">Restaurant Le Dalí (Le Meurice)  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Le%20Meurice%20228%20rue%20de%20Rivoli%20Paris">Map</a><span class="pill todo">To book</span></div>
+      <dl class="kv">
+        <dt>When</dt><dd><b>11/25 (Wed) 13:45</b>, two adults and Yuzuha. About 1.5 hours</dd>
+        <dt>Where</dt><dd>228 rue de Rivoli, opposite the Tuileries garden, right by Metro 1 Tuileries</dd>
+        <dt>Hours</dt><dd>Tea time Mon–Sat 12:30–17:30 (Sunday 16:30–17:30 only)</dd>
+        <dt>Booking</dt><dd><span class="key">+33 1 44 58 10 44</span>　restaurantledali.lmp@dorchestercollection.com</dd>
+        <dt>Dress</dt><dd>Smart casual (no caps, sportswear, shorts or sandals)</dd>
+        <dt>Tell them</dt><dd>We're coming with a 10-month-old and a stroller; ask for a high chair if they have one</dd>
+      </dl>
+    </div>
+    <p class="note">In 1835 Le Meurice became the first Paris hotel to serve afternoon tea, a habit for its British guests.</p>
+  </div>
+
+  <div class="block" id="mrc-flow">
+    <h3>How it's served</h3>
+    <p class="note">The new format from spring 2026: no three-tier stand, the courses come one by one. Contents change with the season.</p>
+    <div class="tbl"><table><thead><tr><th>Course</th><th>What comes</th><th>Look out for</th></tr></thead><tbody>
+      <tr><td class="big">1. Savoury</td><td>Jambon-beurre with truffle-scented brown butter and black truffle, lobster roll on brioche, lemon-cured salmon with caviar</td><td>Bernardaud "Aux Oiseaux" porcelain</td></tr>
+      <tr><td class="big">2. The fruit tree</td><td>A handmade silver tree bearing <b>six seasonal "fruits"</b>: cakes that look exactly like the real thing</td><td>Cut one open and it's fruit all the way through. Grolet's signature</td></tr>
+      <tr><td class="big">3. Fresh from the oven</td><td>Pastry chefs bring warm scones, kouglof and sugar brioche to the table</td><td>The room fills with the smell of baking</td></tr>
+      <tr><td class="big">Drinks</td><td>Coffee, tea, or Alain Ducasse hot chocolate</td><td>Rosé champagne can be added</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="mrc-grolet">
+    <h3>Who is Cedric Grolet</h3>
+    <div class="grid2">
+      <div class="card"><h4>The man</h4><ul>
+        <li>Born 1985 in Firminy, in the Loire</li>
+        <li>Came to Paris at 21: six years at <b>Fauchon</b>, then trained under Christophe Adam</li>
+        <li>Joined Le Meurice in 2011; executive pastry chef since 2013 (the hotel of Alain Ducasse's restaurant)</li>
+        <li>Famous worldwide through social media, one of today's best-known pastry chefs</li>
+      </ul></div>
+      <div class="card"><h4>Main awards</h4><ul>
+        <li>2017 World's Best Pastry Chef (Les Grandes Tables du Monde)</li>
+        <li>2018 Best Pastry Chef, The World's 50 Best Restaurants</li>
+        <li>2018 Pastry Chef of the Year, Gault&amp;Millau</li>
+      </ul></div>
+      <div class="card"><h4>The fruit cakes (trompe-l'œil)</h4><ul>
+        <li>A thin white-chocolate shell moulded into a fruit and airbrushed, down to the stalk and leaf</li>
+        <li>Inside, a compote or cream of that fruit: lemon, apple, fig, hazelnut and more</li>
+        <li>Trompe-l'œil means "fool the eye": a perfect game for Dalí's hotel</li>
+      </ul></div>
+      <div class="card"><h4>Shops and books</h4><ul>
+        <li>Paris: Le Meurice (2018) and <b>Opéra</b> (35 avenue de l'Opéra; we pass it at noon on 11/25)</li>
+        <li>London (The Berkeley, 2022), Singapore (2023)</li>
+        <li>Books: <i>Fruits</i> (2017), <i>Opéra</i> (2020)</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="block" id="mrc-dali">
+    <h3>Salvador Dalí and Le Meurice</h3>
+    <p class="note">The surrealist painter made this hotel his Paris base for nearly 30 years. That's where the room name "Le Dalí" comes from.</p>
+    <div class="grid2">
+      <div class="card"><h4>Dalí stories</h4><ul>
+        <li>He always took the same suite, now called the Dalí Suite</li>
+        <li>He brought his pet ocelot; when it escaped, the staff had to chase it</li>
+        <li>He is said to have tipped staff with sketches and asked them to catch flies in the garden</li>
+        <li>A self-declared royalist, he loved the room once used by King Alfonso XIII of Spain: it made him feel like a king</li>
+      </ul></div>
+      <div class="card"><h4>Other artists</h4><ul>
+        <li>In 1918 <b>Picasso</b> married the ballerina Olga here, with Jean Cocteau as witness</li>
+        <li>Tchaikovsky stayed often</li>
+        <li>The murals in Bar 228 date from 1907 (a garden party at Fontainebleau)</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="block" id="mrc-room">
+    <h3>Things to spot in Le Dalí</h3>
+    <div class="tbl"><table><thead><tr><th>What</th><th>Where</th><th>Why look</th></tr></thead><tbody>
+      <tr><td class="big">The ceiling</td><td>Le Dalí</td><td>A 145 m² hand-painted canvas by Ara Starck, Philippe Starck's daughter: four triangles of dancers. Look up first</td></tr>
+      <tr><td class="big">Half-and-half piano</td><td>Between Bar 228 and Le Dalí</td><td>Half in the bar, half in the restaurant. A nod to Dalí</td></tr>
+      <tr><td class="big">Frozen mirror</td><td>Entrance</td><td>Refrozen every day, after Dalí's love of ice-cold water. You can draw in the frost</td></tr>
+      <tr><td class="big">Dalí's eye</td><td>Bar 228</td><td>Watching everyone who comes in</td></tr>
+      <tr><td class="big">Conversation chair</td><td>Lobby</td><td>A Louis XVI-style chair for two, back to back, after Dalí's "conversation pieces"</td></tr>
+    </tbody></table></div>
+    <p class="note">Interiors by Philippe Starck (2007, refreshed 2016): palace grandeur and Dalí's surreal jokes in one room.</p>
+  </div>
+
+  <div class="block" id="mrc-tips">
+    <h3>Tips</h3>
+    <div class="grid2">
+      <div class="card"><h4>How to enjoy it</h4><ul>
+        <li>Keep lunch light. Afterwards Som is at Disney until late, Ryo and Yuzuha at the Louvre</li>
+        <li>Photograph a fruit before and after you cut it</li>
+        <li>Ask if you can take leftover pastries with you ("Je peux emporter ?")</li>
+        <li>Around 15:15, nappy and milk for Yuzuha, then we split. Som takes the metro from Tuileries, right outside</li>
+      </ul></div>
+      <div class="card"><h4>Useful phrases</h4><ul>
+        <li>We have a booking: <b>Nous avons une réservation au nom de Taniwaki.</b></li>
+        <li>Do you have a high chair?: <b>Avez-vous une chaise haute ?</b></li>
+        <li>It was delicious: <b>C'était délicieux, merci beaucoup.</b></li>
+      </ul></div>
     </div>
   </div>
 </section>
@@ -16363,7 +16703,7 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
   <span>Sources for mission numbers: Japan's Ministry of Foreign Affairs list of overseas missions; Thailand's Ministry of Foreign Affairs "List of Royal Thai Embassy contact point".</span>
   <details id="changelog" style="margin-top:6px">
     <summary style="cursor:pointer;font-weight:700;color:var(--ink)">Change log</summary>
-    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/7</td><td>Som's Disney ticket (11/25, Adventure World) booked. Disney chapter updated: Som alone, Adventure World only, from about 15:00–16:00 until closing. 12/8 Florence → Rome Frecciarossa (9587, 13:14→14:49) booked. Vueling 12/3 (VY6092, seats 9E & 9F) booked; luggage table updated for the overhead bags. Added the chapter "Yuzuha's European Diary, Age 0": each day of the journal can be published in Japanese, Thai and English, tidied by AI. Diary days now show one highlight (e.g. Louvre etc.). Added "Export (preview)" and "Tidy the wording with AI". Contents and Diary buttons are the same width, chapter arrows merged into one pill, "Show all chapters" moved into the contents menu. Cover now reads Taniwaki Family’s Guidebook</td></tr><tr><td class="d">11/7</td><td>Dubai is now a destination, not a "transfer". "✎ Note" is now "✎ Diary". Family-only notice in the journal chapter</td></tr><tr><td class="d">11/7</td><td>Travel journal now syncs automatically: after Ryo and Som log in once in the guide, notes merge into the shared journal whenever online (no sending or pasting)</td></tr><tr><td class="d">11/7</td><td>New chapters: architecture, Christmas markets, VAT refund, travel journal. Added "✎ Note" to the top bar (add a line for Yuzuha, Papa or Mama to that day's journal from any page, with a count of notes not yet sent). Works offline as a phone app</td></tr><tr><td class="d">11/7</td><td>The GitHub version can be added to the Home Screen and read offline (with an app icon). During the trip the status line shows local time and "next HH:MM …" from the day's timetable (tap to jump to that line). The four figures now sit on one line. Slimmer cover: one line with days to go (during the trip: day number, where we are staying, where next), and the four figures as one frameless row. Contents now open from a "Contents" button (by city, with Disney and Bocuse under their cities). Cheese and wine split out of the food chapter into Reading. On phones, tables with 4+ columns stack vertically. Cover now says 5 countries</td></tr><tr><td class="d">11/7</td><td>Added a new chapter, "Museums and Masterpieces" (Louvre, Rodin, Orsay, Sagrada Família, Museu Picasso, Doge's Palace, Accademia, Uffizi, Vatican). Fixed the France chapter intro for 4 nights in Paris and 2 in Lyon</td></tr><tr><td class="d">11/6</td><td>Anne Frank House booked (11/24, 9:00–9:15 entry slot, 3 people)</td></tr><tr><td class="d">11/6</td><td>Adjusted 11/25: the Opéra and Le Meurice are back to "To book". The Rue Royale Ladurée is just from outside. The Louvre from 17:00 (kitchen shops and Petit Bateau moved to options). At the Arc de Triomphe, hand the stroller to the entrance staff</td></tr><tr><td class="d">11/6</td><td>Rebuilt Paris 11/24–28. 11/24: the Eiffel Tower, Arc de Triomphe and Champs-Élysées at night. 11/25: Montmartre in the morning → the Opéra → Le Meurice 13:45 → Som to Disney in the late afternoon, Ryo and Yuzuha to the Louvre. 11/26: Versailles → Napoleon's tomb → Rodin → Le Bon Marché → Josselin → Notre-Dame at night. 11/27: the Marais to the 1st. 11/28: the Panthéon, then the TGV. Everything taken out went into the Options table. Added a table of regional food to eat in Paris. Disney chapter switched to plan F (11/25 evening, Som alone)</td></tr><tr><td class="d">11/6</td><td>Amsterdam cut to one night: hotel changed to art'otel (opposite Centraal), Eurostar moved to 11/24 13:10→16:40 (coach 18, seats 85 &amp; 86). Paris hotel 11/24–28, 4 nights. Rebuilt 11/24 (evening arrival in Paris) and 11/25 (Latin Quarter → Île de la Cité → tea at Le Meurice → Louvre late opening, all three). Windmill village and others moved to options. Paris → Barcelona TGV refunded</td></tr><tr><td class="d">11/6</td><td>Added option E for 11/26 (Ryo in Paris in the morning: Orsay → Le Relais de l'Entrecôte → Orangerie → Arc de Triomphe, joining at Disney at 16:00). Added the Bernachon flagship to Sunday in Lyon</td></tr><tr><td class="d">11/5</td><td>Lyon: Sunday afternoon now Parc de la Tête d'Or (Institut Lumière as an option); a Croix-Rousse walk added on Monday morning. Saturday night at Fourvière unchanged</td></tr><tr><td class="d">11/5</td><td>Added "The regions of Spain" and "The regions of Italy" to the food chapter (by area like France, with cities and our trip)</td></tr><tr><td class="d">11/5</td><td>Added white truffles (San Miniato, Savini Tartufi, Procacci, prices, bringing them home) and care of copper pans and canelé moulds to the food chapter; keepsakes from the restaurant to the Bocuse chapter</td></tr><tr><td class="d">11/5</td><td>Added "Shopping to start cooking" to the food chapter (the five not to miss, tool and ingredient shops by city, notes on bringing things home)</td></tr><tr><td class="d">11/5</td><td>Added "Desserts and sweets" (salon de thé and other shop types, specialities and famous shops by city) and "Cheeses of the cities we visit" (such as Lyon's Saint-Marcellin) to the food chapter. French regions now grouped into north, west, east, centre, south-east and south-west with city names. The great chefs' restaurants are now cards with descriptions and tips</td></tr><tr><td class="d">11/5</td><td>Reworked 11/26 as a split day (Ryo is not going to Disney): four options plus Paris plans for Ryo with Yuzuha and for Ryo alone, in the Disney chapter. The food chapter now runs France → Spain → Italy, in travel order</td></tr><tr><td class="d">11/5</td><td>Rebuilt the "Cheese &amp; wine" chapter as a "Food primer" for France, Italy and Spain (history, how they influenced each other, great chefs, restaurants with maps, types of restaurant, how a meal runs, manners in three countries, French regions). Moved each country chapter's food and table-manners sections here</td></tr><tr><td class="d">11/4</td><td>Route map colours unified by country (Netherlands orange, France blue, Spain red, Italy green, flights and Dubai grey). Flags next to every city in the itinerary</td></tr><tr><td class="d">11/4</td><td>Added the reply from the Bocuse reservations team (French and translation) to "With a baby" in the Bocuse chapter, as an example of French service</td></tr><tr><td class="d">11/4</td><td>Booked AVE INT 09742 (11/30 Lyon 14:35 → Barcelona 19:23). Monday in Lyon is now free until early afternoon; the first Barcelona evening reworked for the late arrival (Passeig de Gràcia walk kept as an option). Added a note that the ticket cannot go into Apple Wallet</td></tr><tr><td class="d">11/4</td><td>Booked TGV INOUI 6619 (11/28 15:00 → 16:56, 1st class). Reworked Paris on 11/28 (morning market and Montmartre → to the station at 13:45). The afternoon plans are kept as options</td></tr><tr><td class="d">11/4</td><td>Booked the Lyon hotel (Mercure Part-Dieu, 2 nights) and the bouchon Daniel et Denise Saint-Jean for 11/28 at 19:00. After dinner that night, the funicular up to Fourvière for the night view. On 11/29 afternoon, one park or museum and a nap</td></tr><tr><td class="d">11/4</td><td>Removed who-gets-which-gift notes and the "Souvenir strategy" section. Added the story of Ryo's EY boss and a message for Yuzuha to the Bocuse chapter</td></tr><tr><td class="d">11/4</td><td>Now going via Lyon (Paris → Lyon on the evening of 11/28, 2 nights, to Barcelona on 11/30). Itinerary, bookings, transport and route map updated; the three Lyon days are in the Bocuse chapter. The Paris plan for 11/29 is kept as a candidate</td></tr><tr><td class="d">11/4</td><td>Restaurant Paul Bocuse booked (11/29 20:15). New "Paul Bocuse" chapter in the same style as Disneyland (booking, getting there, the day, autumn menu, signature dishes, with a baby, history, gifts)</td></tr><tr><td class="d">11/3</td><td>Pisa moved to the afternoon of 12/7 (Mon), a day trip by regional train. On 12/8, a Florence morning, then the train to Rome after lunch</td></tr><tr><td class="d">11/3</td><td>English edition added. Frecciarossa 9415 on 12/5 booked (11:26 → 13:39, Business); a morning walk in Venice; Florence day 1 re-timed (Accademia 15:15, Piazzale Michelangelo sunset moved to 12/6)</td></tr><tr><td class="d">11/3</td><td>Eurostar booked (11/25 09:10 → 12:37); Amsterdam morning and first day in Paris adjusted</td></tr><tr><td class="d">11/2</td><td>Booking references and insurance policy numbers removed from the guide (so no one else can change our bookings)</td></tr><tr><td class="d">11/2</td><td>Dubai: decided to go into the city; Som gets a 48-hour transit visa via Emirates</td></tr><tr><td class="d">10/25</td><td>Packing checklist rebuilt for this trip; three designs (Som, Yuzuha, Ryo) via the palette button; insurance section and step-by-step contacts; hotel details from the confirmations; luggage strategy</td></tr><tr><td class="d">10/18</td><td>Films to watch; Google Maps lists; Paris hotel changed to Libertel; GitHub version published</td></tr><tr><td class="d">10/17</td><td>Full review; Japanese and Thai editions; protests, pickpocket scenarios, French table manners</td></tr><tr><td class="d">10/15</td><td>First edition</td></tr></tbody></table></div>
+    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/7</td><td>Added the special chapter "Tea at Le Meurice" (Cedric Grolet, Dalí and the hotel) before Disney. Som's Disney ticket (11/25, Adventure World) booked. Disney chapter updated: Som alone, Adventure World only, from about 15:00–16:00 until closing. 12/8 Florence → Rome Frecciarossa (9587, 13:14→14:49) booked. Vueling 12/3 (VY6092, seats 9E & 9F) booked; luggage table updated for the overhead bags. Added the chapter "Yuzuha's European Diary, Age 0": each day of the journal can be published in Japanese, Thai and English, tidied by AI. Diary days now show one highlight (e.g. Louvre etc.). Added "Export (preview)" and "Tidy the wording with AI". Contents and Diary buttons are the same width, chapter arrows merged into one pill, "Show all chapters" moved into the contents menu. Cover now reads Taniwaki Family’s Guidebook</td></tr><tr><td class="d">11/7</td><td>Dubai is now a destination, not a "transfer". "✎ Note" is now "✎ Diary". Family-only notice in the journal chapter</td></tr><tr><td class="d">11/7</td><td>Travel journal now syncs automatically: after Ryo and Som log in once in the guide, notes merge into the shared journal whenever online (no sending or pasting)</td></tr><tr><td class="d">11/7</td><td>New chapters: architecture, Christmas markets, VAT refund, travel journal. Added "✎ Note" to the top bar (add a line for Yuzuha, Papa or Mama to that day's journal from any page, with a count of notes not yet sent). Works offline as a phone app</td></tr><tr><td class="d">11/7</td><td>The GitHub version can be added to the Home Screen and read offline (with an app icon). During the trip the status line shows local time and "next HH:MM …" from the day's timetable (tap to jump to that line). The four figures now sit on one line. Slimmer cover: one line with days to go (during the trip: day number, where we are staying, where next), and the four figures as one frameless row. Contents now open from a "Contents" button (by city, with Disney and Bocuse under their cities). Cheese and wine split out of the food chapter into Reading. On phones, tables with 4+ columns stack vertically. Cover now says 5 countries</td></tr><tr><td class="d">11/7</td><td>Added a new chapter, "Museums and Masterpieces" (Louvre, Rodin, Orsay, Sagrada Família, Museu Picasso, Doge's Palace, Accademia, Uffizi, Vatican). Fixed the France chapter intro for 4 nights in Paris and 2 in Lyon</td></tr><tr><td class="d">11/6</td><td>Anne Frank House booked (11/24, 9:00–9:15 entry slot, 3 people)</td></tr><tr><td class="d">11/6</td><td>Adjusted 11/25: the Opéra and Le Meurice are back to "To book". The Rue Royale Ladurée is just from outside. The Louvre from 17:00 (kitchen shops and Petit Bateau moved to options). At the Arc de Triomphe, hand the stroller to the entrance staff</td></tr><tr><td class="d">11/6</td><td>Rebuilt Paris 11/24–28. 11/24: the Eiffel Tower, Arc de Triomphe and Champs-Élysées at night. 11/25: Montmartre in the morning → the Opéra → Le Meurice 13:45 → Som to Disney in the late afternoon, Ryo and Yuzuha to the Louvre. 11/26: Versailles → Napoleon's tomb → Rodin → Le Bon Marché → Josselin → Notre-Dame at night. 11/27: the Marais to the 1st. 11/28: the Panthéon, then the TGV. Everything taken out went into the Options table. Added a table of regional food to eat in Paris. Disney chapter switched to plan F (11/25 evening, Som alone)</td></tr><tr><td class="d">11/6</td><td>Amsterdam cut to one night: hotel changed to art'otel (opposite Centraal), Eurostar moved to 11/24 13:10→16:40 (coach 18, seats 85 &amp; 86). Paris hotel 11/24–28, 4 nights. Rebuilt 11/24 (evening arrival in Paris) and 11/25 (Latin Quarter → Île de la Cité → tea at Le Meurice → Louvre late opening, all three). Windmill village and others moved to options. Paris → Barcelona TGV refunded</td></tr><tr><td class="d">11/6</td><td>Added option E for 11/26 (Ryo in Paris in the morning: Orsay → Le Relais de l'Entrecôte → Orangerie → Arc de Triomphe, joining at Disney at 16:00). Added the Bernachon flagship to Sunday in Lyon</td></tr><tr><td class="d">11/5</td><td>Lyon: Sunday afternoon now Parc de la Tête d'Or (Institut Lumière as an option); a Croix-Rousse walk added on Monday morning. Saturday night at Fourvière unchanged</td></tr><tr><td class="d">11/5</td><td>Added "The regions of Spain" and "The regions of Italy" to the food chapter (by area like France, with cities and our trip)</td></tr><tr><td class="d">11/5</td><td>Added white truffles (San Miniato, Savini Tartufi, Procacci, prices, bringing them home) and care of copper pans and canelé moulds to the food chapter; keepsakes from the restaurant to the Bocuse chapter</td></tr><tr><td class="d">11/5</td><td>Added "Shopping to start cooking" to the food chapter (the five not to miss, tool and ingredient shops by city, notes on bringing things home)</td></tr><tr><td class="d">11/5</td><td>Added "Desserts and sweets" (salon de thé and other shop types, specialities and famous shops by city) and "Cheeses of the cities we visit" (such as Lyon's Saint-Marcellin) to the food chapter. French regions now grouped into north, west, east, centre, south-east and south-west with city names. The great chefs' restaurants are now cards with descriptions and tips</td></tr><tr><td class="d">11/5</td><td>Reworked 11/26 as a split day (Ryo is not going to Disney): four options plus Paris plans for Ryo with Yuzuha and for Ryo alone, in the Disney chapter. The food chapter now runs France → Spain → Italy, in travel order</td></tr><tr><td class="d">11/5</td><td>Rebuilt the "Cheese &amp; wine" chapter as a "Food primer" for France, Italy and Spain (history, how they influenced each other, great chefs, restaurants with maps, types of restaurant, how a meal runs, manners in three countries, French regions). Moved each country chapter's food and table-manners sections here</td></tr><tr><td class="d">11/4</td><td>Route map colours unified by country (Netherlands orange, France blue, Spain red, Italy green, flights and Dubai grey). Flags next to every city in the itinerary</td></tr><tr><td class="d">11/4</td><td>Added the reply from the Bocuse reservations team (French and translation) to "With a baby" in the Bocuse chapter, as an example of French service</td></tr><tr><td class="d">11/4</td><td>Booked AVE INT 09742 (11/30 Lyon 14:35 → Barcelona 19:23). Monday in Lyon is now free until early afternoon; the first Barcelona evening reworked for the late arrival (Passeig de Gràcia walk kept as an option). Added a note that the ticket cannot go into Apple Wallet</td></tr><tr><td class="d">11/4</td><td>Booked TGV INOUI 6619 (11/28 15:00 → 16:56, 1st class). Reworked Paris on 11/28 (morning market and Montmartre → to the station at 13:45). The afternoon plans are kept as options</td></tr><tr><td class="d">11/4</td><td>Booked the Lyon hotel (Mercure Part-Dieu, 2 nights) and the bouchon Daniel et Denise Saint-Jean for 11/28 at 19:00. After dinner that night, the funicular up to Fourvière for the night view. On 11/29 afternoon, one park or museum and a nap</td></tr><tr><td class="d">11/4</td><td>Removed who-gets-which-gift notes and the "Souvenir strategy" section. Added the story of Ryo's EY boss and a message for Yuzuha to the Bocuse chapter</td></tr><tr><td class="d">11/4</td><td>Now going via Lyon (Paris → Lyon on the evening of 11/28, 2 nights, to Barcelona on 11/30). Itinerary, bookings, transport and route map updated; the three Lyon days are in the Bocuse chapter. The Paris plan for 11/29 is kept as a candidate</td></tr><tr><td class="d">11/4</td><td>Restaurant Paul Bocuse booked (11/29 20:15). New "Paul Bocuse" chapter in the same style as Disneyland (booking, getting there, the day, autumn menu, signature dishes, with a baby, history, gifts)</td></tr><tr><td class="d">11/3</td><td>Pisa moved to the afternoon of 12/7 (Mon), a day trip by regional train. On 12/8, a Florence morning, then the train to Rome after lunch</td></tr><tr><td class="d">11/3</td><td>English edition added. Frecciarossa 9415 on 12/5 booked (11:26 → 13:39, Business); a morning walk in Venice; Florence day 1 re-timed (Accademia 15:15, Piazzale Michelangelo sunset moved to 12/6)</td></tr><tr><td class="d">11/3</td><td>Eurostar booked (11/25 09:10 → 12:37); Amsterdam morning and first day in Paris adjusted</td></tr><tr><td class="d">11/2</td><td>Booking references and insurance policy numbers removed from the guide (so no one else can change our bookings)</td></tr><tr><td class="d">11/2</td><td>Dubai: decided to go into the city; Som gets a 48-hour transit visa via Emirates</td></tr><tr><td class="d">10/25</td><td>Packing checklist rebuilt for this trip; three designs (Som, Yuzuha, Ryo) via the palette button; insurance section and step-by-step contacts; hotel details from the confirmations; luggage strategy</td></tr><tr><td class="d">10/18</td><td>Films to watch; Google Maps lists; Paris hotel changed to Libertel; GitHub version published</td></tr><tr><td class="d">10/17</td><td>Full review; Japanese and Thai editions; protests, pickpocket scenarios, French table manners</td></tr><tr><td class="d">10/15</td><td>First edition</td></tr></tbody></table></div>
   </details>
 </footer>
 
