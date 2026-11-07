@@ -126,7 +126,7 @@ nav.toc .toc-group a.here .dot{border-color:color-mix(in srgb,var(--bg) 40%,tran
 .chapter{padding-block:26px 10px;scroll-margin-top:60px;--c1:var(--ink);--c2:var(--muted)}
 .chapter + .chapter{border-top:1px solid var(--line);margin-top:28px}
 .chapter.nl{--c1:var(--nl1);--c2:var(--nl2)} .chapter.fr{--c1:var(--fr1);--c2:var(--fr2)} .chapter.es{--c1:var(--es1);--c2:var(--es-ink)}
-.chapter.it{--c1:var(--it1);--c2:var(--it2)} .chapter.ae{--c1:var(--ae1);--c2:var(--ae2)} .chapter.food{--c1:var(--food);--c2:var(--food)} .chapter.art{--c1:var(--art);--c2:var(--art)} .chapter.cw{--c1:var(--wine);--c2:var(--wine)}
+.chapter.it{--c1:var(--it1);--c2:var(--it2)} .chapter.ae{--c1:var(--ae1);--c2:var(--ae2)} .chapter.food{--c1:var(--food);--c2:var(--food)} .chapter.art{--c1:var(--art);--c2:var(--art)} .chapter.cw{--c1:var(--wine);--c2:var(--wine)} .chapter.arch{--c1:var(--art);--c2:var(--art)} .chapter.xmas{--c1:var(--es1);--c2:var(--it1)} .chapter.vat{--c1:var(--muted);--c2:var(--muted)} .chapter.jr{--c1:var(--food);--c2:var(--food)}
 .chapter.base{--c1:var(--ink);--c2:var(--muted)}
 .chapter.dlp{--c1:#B9A2F2;--c2:#F2C25A}
 .dlp .band{background:linear-gradient(90deg,#6E5BC9,#B9A2F2 45%,#F2C25A)}
@@ -140,6 +140,10 @@ nav.toc .toc-group a.here .dot{border-color:color-mix(in srgb,var(--bg) 40%,tran
 .ae .band{background:linear-gradient(to right,var(--ae2) 0 16%,transparent 16%),linear-gradient(to bottom,var(--ae1) 0 33.3%,var(--flag-white) 33.3% 66.6%,var(--ae3) 66.6%)}
 .food .band{background:repeating-linear-gradient(90deg,var(--food) 0 14px,var(--memo) 14px 28px)}
 .cw .band{background:repeating-linear-gradient(90deg,var(--wine) 0 14px,var(--memo) 14px 28px)}
+.arch .band{background:repeating-linear-gradient(90deg,var(--art) 0 6px,var(--memo) 6px 12px)}
+.xmas .band{background:repeating-linear-gradient(90deg,var(--es1) 0 14px,var(--memo) 14px 20px,var(--it1) 20px 34px,var(--memo) 34px 40px)}
+.vat .band{background:var(--line)}
+.jr .band{background:repeating-linear-gradient(90deg,var(--food) 0 10px,var(--memo) 10px 20px)}
 .art .band{background:repeating-linear-gradient(90deg,var(--art) 0 14px,var(--memo) 14px 28px)}
 .base .band{background:linear-gradient(to right,var(--nl1),var(--fr1),var(--es2),var(--it1),var(--ae2))}
 .ch-head{display:grid;gap:6px;margin-bottom:6px}
@@ -390,10 +394,32 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   #plan-days td{overflow-wrap:anywhere}
   .tbl td+td{overflow-wrap:anywhere}
   .tbl td a{white-space:normal}
+  .tbl td .pill{white-space:normal}
+}
+@media (max-width:480px){
+  .tbl td,.tbl th{padding-inline:6px}
   .tbl td.big{min-width:4.5em}
   #plan-days td,#plan-days th{padding-inline:6px}
   #plan-days td:first-child{min-width:0}
 }
+
+/* travel journal */
+.jr-bar{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:10px 0 4px}
+.jr-send{font:inherit;font-weight:700;font-size:14px;padding:8px 16px;border-radius:999px;border:0;background:var(--ink);color:var(--bg);cursor:pointer}
+.jr-open{font-size:13px}.jr-st{font-size:12.5px;color:var(--muted)}
+.jr-out{width:100%;min-height:80px;font-size:12px;margin:6px 0}
+.jr-day{background:var(--paper);border:1px solid var(--line);border-radius:12px;margin:6px 0;overflow:hidden}
+.jr-day>summary{list-style:none;cursor:pointer;padding:9px 12px;display:flex;gap:10px;align-items:center}
+.jr-day>summary::-webkit-details-marker{display:none}
+.jr-day .dt{font-weight:700;min-width:6.5em}.jr-day .cy{color:var(--muted);font-size:13px;flex:1}
+.jr-day .dots{display:flex;gap:4px}.jr-day .dots i{width:8px;height:8px;border-radius:50%;background:var(--line)}.jr-day .dots i.on{background:var(--c1,var(--ink))}
+.jr-f{padding:2px 12px 12px;display:grid;gap:8px}
+.jr-f label{display:block;font-size:12.5px;font-weight:700;color:var(--muted)}
+.jr-f textarea{display:block;width:100%;min-height:54px;margin-top:3px;resize:vertical;font:inherit;font-size:15px;font-weight:400;color:var(--ink);padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg)}
+.jr-ph{display:flex;flex-wrap:wrap;gap:4px 14px;padding:4px 2px 8px}.jr-ph span{width:100%;font-size:12.5px;color:var(--muted)}
+.jr-ph label{display:flex;gap:6px;align-items:center;font-size:14px}
+
+.check label,.card li,.note,.lead{overflow-wrap:anywhere}
 </style>
 </head>
 <body>
@@ -451,12 +477,18 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
         <li><a href="#food" data-ch="food" data-now="料理"><span class="no">06</span><span class="nm">料理の教科書</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
         <li><a href="#cw" data-ch="cw" data-now="チーズとワイン"><span class="no">07</span><span class="nm">チーズとワイン</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
         <li><a href="#art" data-ch="art" data-now="美術"><span class="no">08</span><span class="nm">美術館と名作</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#arch" data-ch="arch" data-now="建築"><span class="no">09</span><span class="nm">建築の見方</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#xmas" data-ch="xmas" data-now="クリスマス"><span class="no">10</span><span class="nm">クリスマスマーケット</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
       </ol></div>
       <div class="toc-group"><h5><span>旅の支え</span><small>Support</small></h5><ol>
-        <li><a href="#baby" data-ch="baby" data-now="赤ちゃん連れ"><span class="no">09</span><span class="nm">赤ちゃん連れ</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
-        <li><a href="#safety" data-ch="safety" data-now="緊急・安全"><span class="no">10</span><span class="nm">緊急・安全</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
-        <li><a href="#prep" data-ch="prep" data-now="荷物・準備"><span class="no">11</span><span class="nm">荷物・お金・準備</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
-        <li><a href="#next" data-ch="next" data-now="次回の旅"><span class="no">12</span><span class="nm">次回の旅</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#baby" data-ch="baby" data-now="赤ちゃん連れ"><span class="no">11</span><span class="nm">赤ちゃん連れ</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#safety" data-ch="safety" data-now="緊急・安全"><span class="no">12</span><span class="nm">緊急・安全</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#prep" data-ch="prep" data-now="荷物・準備"><span class="no">13</span><span class="nm">荷物・お金・準備</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#vat" data-ch="vat" data-now="免税"><span class="no">14</span><span class="nm">免税の手続き</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#next" data-ch="next" data-now="次回の旅"><span class="no">15</span><span class="nm">次回の旅</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+      </ol></div>
+      <div class="toc-group"><h5><span>思い出</span><small>Journal</small></h5><ol>
+        <li><a href="#journal" data-ch="journal" data-now="旅の記録"><span class="no">16</span><span class="nm">旅の記録</span><span class="dot" aria-hidden="true"></span><span class="dt">Yuzuha・パパ・ママ</span></a></li>
       </ol></div>
     </div>
   </div>
@@ -4205,12 +4237,109 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     </div>
   </div>
 </section>
+<!-- =================== CHAPTER 9: ARCHITECTURE =================== -->
+<section id="arch" class="chapter arch" data-chapter="arch">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Chapter 9 · Architecture</div>
+    <h2>建築の見方 <span class="local">Gothique · Renacimiento · Barocco · Modernisme</span></h2>
+    <p class="lead">美術館の外にも名作があります。教会、宮殿、広場、街並み。様式の見分け方を知っておくと、歩いているだけで時代が読めるようになります。旅で見る建物を、古い順に並べました。</p>
+  </div>
+  <div class="subnav"><a href="#arch-styles">様式と場所</a><a href="#arch-words">用語</a><a href="#arch-tips">見るコツ</a></div>
+
+  <div class="block" id="arch-styles">
+    <h3>様式の見分け方と、旅で見る場所</h3>
+    <div class="tbl"><table><thead><tr><th>様式</th><th>見分け方</th><th>行く場所</th></tr></thead><tbody>
+      <tr><td class="big">古代ローマ<span class="tsub">前1〜2世紀</span></td><td>アーチとコンクリートで、大きな空間を支える。円形闘技場、神殿、浴場</td><td><span class="flag f-it"></span> ローマのパンテオン（12/10）：直径43mのドームの頂に穴（オクルス）。雨は床の小さな穴から抜ける／コロッセオ（12/10）</td></tr>
+      <tr><td class="big">ビザンティン<span class="tsub">11世紀〜</span></td><td>ドームが並び、内側は金のモザイク。東方（今のトルコ）とつながっていたヴェネツィアらしさ</td><td><span class="flag f-it"></span> サン・マルコ寺院（12/4）：5つのドームと、天井いっぱいの金のモザイク</td></tr>
+      <tr><td class="big">ゴシック<span class="tsub">12〜15世紀</span></td><td>尖ったアーチ、外から壁を支える「飛び梁」、大きなステンドグラスとバラ窓。上へ、光へ</td><td><span class="flag f-fr"></span> ノートルダム（11/26 夜）、サント・シャペル（11/25 夜は外観）／<span class="flag f-it"></span> ドゥカーレ宮殿の白とピンクの壁（ヴェネツィア・ゴシック）</td></tr>
+      <tr><td class="big">ルネサンス<span class="tsub">15〜16世紀</span></td><td>古代ローマの柱と比例を取り戻す。左右対称、半円アーチ、ドーム</td><td><span class="flag f-it"></span> フィレンツェのドゥオモ（12/5〜）：ブルネレスキのドーム（1436年完成）は足場なしで積んだ二重殻／<span class="flag f-fr"></span> リヨン旧市街の中庭と「トラブール」（抜け道）</td></tr>
+      <tr><td class="big">バロック<span class="tsub">17世紀</span></td><td>曲線、動き、光と影、劇場のような驚き。噴水と広場が舞台になる</td><td><span class="flag f-it"></span> ナヴォーナ広場のベルニーニ「四大河の噴水」、トレヴィの泉、サン・ピエトロ広場の列柱（両腕で抱くような形）</td></tr>
+      <tr><td class="big">オランダの運河の家<span class="tsub">17世紀</span></td><td>間口が狭く奥に長い（間口で税金がかかった）。屋根の妻の形がいろいろ、上に荷物を吊る梁。少し前に傾いているのはわざと</td><td><span class="flag f-nl"></span> アムステルダムのシンゲル運河、プリンセン運河（11/23〜24）</td></tr>
+      <tr><td class="big">新古典主義と第二帝政<span class="tsub">18〜19世紀</span></td><td>ギリシャ・ローマの神殿のような正面。パリの大通りは、高さと窓の線がそろったオスマン様式の建物</td><td><span class="flag f-fr"></span> パンテオン（11/28）、凱旋門（11/24 夜）、オペラ座ガルニエ（11/25）。オスマン様式は日本式の3階と6階に長いバルコニー</td></tr>
+      <tr><td class="big">鉄とガラス<span class="tsub">19世紀後半</span></td><td>産業の時代。鉄の骨組みを隠さず見せる</td><td><span class="flag f-fr"></span> エッフェル塔（1889年、11/24 夜）、オルセー美術館（元は1900年の駅）、ギャラリー・ラファイエットのドーム</td></tr>
+      <tr><td class="big">モデルニスモ<span class="tsub">1880〜1920年代</span></td><td>カタルーニャのアール・ヌーヴォー。植物や骨のような曲線、タイルのかけら（トレンカディス）のモザイク</td><td><span class="flag f-es"></span> サグラダ・ファミリア（12/1）、カサ・バトリョ、カサ・ミラ（グラシア通り）。サン・パウ病院とカタルーニャ音楽堂はドメネク・イ・モンタネール</td></tr>
+      <tr><td class="big">現代の超高層<span class="tsub">2010年</span></td><td>砂漠の花の形を元にした、段々に細くなる塔</td><td><span class="flag f-ae"></span> ブルジュ・ハリファ（828m、12/12 夕方に外から）</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="arch-words">
+    <h3>知っておくと楽しい用語</h3>
+    <div class="tbl"><table><thead><tr><th>用語</th><th>意味</th></tr></thead><tbody>
+      <tr><td class="big">飛び梁</td><td>外から壁を斜めに支える石の腕。そのおかげで壁を薄くし、窓を大きくできた</td></tr>
+      <tr><td class="big">バラ窓</td><td>正面や両袖にある丸いステンドグラス。ノートルダムには3つ</td></tr>
+      <tr><td class="big">身廊・翼廊</td><td>入口から祭壇へ続く中央の長い空間と、左右に張り出す腕。上から見ると十字架の形</td></tr>
+      <tr><td class="big">ドーム・ランタン</td><td>ドームの頂にのる小さな塔が「ランタン」。光を取り込み、重しにもなる</td></tr>
+      <tr><td class="big">ファサード</td><td>建物の正面。教会では物語の彫刻が並ぶ「本の表紙」</td></tr>
+      <tr><td class="big">トレンカディス</td><td>割ったタイルや皿のかけらで曲面を覆うモザイク。ガウディが多用</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="arch-tips">
+    <h3>見るコツ</h3>
+    <div class="grid2">
+      <div class="card"><h4>教会に入ったら</h4><ul><li>まず真上を見る。天井の高さと、柱が枝分かれしているか</li><li>ステンドグラスは晴れた日の午前（東）と午後（西）で色が変わる</li><li>ミサの時間は見学を控える。帽子をとる</li></ul></div>
+      <div class="card"><h4>街を歩くとき</h4><ul><li>1階ではなく、2階から上を見る。窓、バルコニー、屋根の形</li><li>広場の真ん中より、角から全体を見る</li><li>夜のライトアップで、昼と違う顔を</li></ul></div>
+    </div>
+  </div>
+
+</section>
+<!-- =================== CHAPTER 10: CHRISTMAS MARKETS =================== -->
+<section id="xmas" class="chapter xmas" data-chapter="xmas">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Chapter 10 · Christmas Markets</div>
+    <h2>クリスマスマーケット <span class="local">Marché de Noël · Fira de Nadal · Mercatino di Natale</span></h2>
+    <p class="lead">11月下旬から12月は、ヨーロッパの街にクリスマスの市が立つ季節です。行く街ごとに、期間と、私たちの滞在中に行けるかをまとめました。日付は2026年に発表されたもの、または例年の日程です。行く前に公式の案内で確認を。</p>
+  </div>
+  <div class="subnav"><a href="#xmas-list">街ごとの市</a><a href="#xmas-food">食べもの・飲みもの</a><a href="#xmas-baby">ベビーカーで</a></div>
+
+  <div class="block" id="xmas-list">
+    <h3>街ごとのマーケット</h3>
+    <div class="tbl"><table><thead><tr><th>マーケット</th><th>期間・行ける日</th><th>楽しみ・メモ</th></tr></thead><tbody>
+      <tr><td class="big"><span class="flag f-nl"></span> アムステルダム</td><td>ミュージアム広場のクリスマス村は12/3〜、光の祭典は11/26〜。11/23〜24 は開幕前 <span class="pill ng">滞在後に開幕</span></td><td>レンブラント広場のスケートリンク（例年11月中旬〜）が開いていればのぞく。街の飾り付けは始まっている</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> パリ：チュイルリー庭園</td><td>11/14〜1/3。11/25 のル・ムーリスの前後に <span class="pill ok">滞在中に開催</span></td><td>パリで一番大きなマーケットの一つ。観覧車と移動遊園地も。ル・ムーリスの目の前</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> パリ：シャンゼリゼ</td><td>11/22〜1/4。11/24 の夜、凱旋門からの散歩で <span class="pill ok">滞在中に開催</span></td><td>大通りの庭園側に小屋が並ぶ。イルミネーションと一緒に</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> パリ：ノートルダム</td><td>11/26〜12/27（ルネ・ヴィヴィアニ公園）。11/26 の夜、ノートルダムの前に <span class="pill ok">滞在中に開催</span></td><td>小さくて落ち着いた市。セーヌ越しに大聖堂が見える。宿から歩ける</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> パリ：サン・ジェルマン・デ・プレ</td><td>11/27〜1/6。11/27 の午後に寄れる <span class="pill ok">滞在中に開催</span></td><td>サン・ジェルマン大通り沿い。工芸品が中心</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> リヨン：カルノ広場</td><td>11/20〜12/24。土曜は22時、日曜は20時まで <span class="pill ok">滞在中に開催</span></td><td>ペラーシュ駅の前。光の祭典（12/5〜8）は旅程のあと</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> ディズニーランド・パリ</td><td>11/7〜1/6 のクリスマス期間。11/25 夕方（Som） <span class="pill ok">滞在中に開催</span></td><td>詳しくは<a href="#dlp-xmas">ディズニーの章</a></td></tr>
+      <tr><td class="big"><span class="flag f-es"></span> バルセロナ：サンタ・リュシア市</td><td>11/28〜12/23（予定）、10:30〜20:30ごろ。12/2 の旧市街の日に <span class="pill ok">滞在中に開催</span></td><td>1786年から続くカテドラル前の市。キリスト生誕の模型の人形、カガネル（しゃがんだ人形）、ティオ（丸太の人形）</td></tr>
+      <tr><td class="big"><span class="flag f-it"></span> ヴェネツィア：サント・ステファノ広場</td><td>例年11月末〜1月初め。12/3〜4 は開いている見込み <span class="pill maybe">要確認</span></td><td>アカデミア橋のたもと。サン・ポーロ広場のスケートリンクも</td></tr>
+      <tr><td class="big"><span class="flag f-it"></span> フィレンツェ：サンタ・クローチェ広場</td><td>例年11月中旬〜12/21ごろ、10〜23時。12/5〜7 に <span class="pill ok">滞在中に開催</span></td><td>ドイツ風の木の小屋。12/7〜8 はサンティッシマ・アンヌンツィアータ広場の手作り市（フィエルコラ）も（2025年の日程）</td></tr>
+      <tr><td class="big"><span class="flag f-it"></span> ローマ：ナヴォーナ広場</td><td>例年12/1〜1/6。12/8〜10 に <span class="pill ok">滞在中に開催</span></td><td>メリーゴーランドと、魔女ベファーナの人形。12/8 は祝日（無原罪の御宿り）で混む</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="xmas-food">
+    <h3>食べたいもの・飲みたいもの</h3>
+    <div class="tbl"><table><thead><tr><th>名前</th><th>どんなもの</th></tr></thead><tbody>
+      <tr><td class="big"><span class="flag f-fr"></span> ヴァン・ショー</td><td>温めた赤ワインにシナモンやオレンジ。イタリアでは「ヴィン・ブルレ」</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> 焼き栗</td><td>フランスは「マロン・ショー」、イタリアは「カルダッローステ」。紙の袋で</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> ショコラ・ショー</td><td>濃いホットチョコレート。子ども向けにお酒なし</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> タルティフレット・ラクレット</td><td>じゃがいもと山のチーズ。マーケットの定番の温かい一皿</td></tr>
+      <tr><td class="big"><span class="flag f-es"></span> チュロス・コン・チョコラテ</td><td>揚げた生地を、どろっとしたチョコに浸す</td></tr>
+      <tr><td class="big"><span class="flag f-es"></span> トゥロン</td><td>アーモンドと蜂蜜の、スペインのクリスマス菓子</td></tr>
+      <tr><td class="big"><span class="flag f-it"></span> パネットーネ・パンドーロ</td><td>ミラノとヴェローナ生まれのクリスマスの発酵菓子</td></tr>
+      <tr><td class="big"><span class="flag f-it"></span> パンフォルテ・リッチャレッリ</td><td>トスカーナ（シエナ）のナッツとはちみつの菓子、アーモンドの柔らかいクッキー</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="xmas-baby">
+    <h3>赤ちゃん連れで回るコツ</h3>
+    <div class="grid2">
+      <div class="card"><h4>時間帯</h4><ul><li>平日の昼か、点灯直後の夕方（16:30〜17:30）が回りやすい</li><li>週末の夜は混む。ベビーカーより抱っこ紐が楽なことも</li></ul></div>
+      <div class="card"><h4>気をつけること</h4><ul><li>熱い飲みものは Yuzuha の上で持たない。カップは返却で保証金が戻る店も</li><li>人混みはスリが多い。財布とスマホは前に</li><li>栗、ナッツ、はちみつの菓子は Yuzuha にはまだ。パパとママで</li></ul></div>
+    </div>
+  </div>
+
+</section>
 
 <!-- =================== CHAPTER 7: BABY =================== -->
 <section id="baby" class="chapter base" data-chapter="baby">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 9 · Traveling with a Baby</div>
+    <div class="eyebrow">Chapter 11 · Traveling with a Baby</div>
     <h2>赤ちゃん連れのコツ <span class="local">Yuzuhaと</span></h2>
     <p class="lead">Yuzuhaのリズムを予定の真ん中に置くのが、いちばんの成功のコツです。この本の日程は「午前に1つ、昼寝、夕方に1つ」の形でできています。</p>
   </div>
@@ -4332,7 +4461,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="safety" class="chapter base" data-chapter="safety">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 10 · Safety &amp; Emergency</div>
+    <div class="eyebrow">Chapter 12 · Safety &amp; Emergency</div>
     <h2>緊急・安全 <span class="local">困ったときはこのページ</span></h2>
   </div>
 
@@ -4870,7 +4999,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="prep" class="chapter base" data-chapter="prep">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 11 · Luggage, Money &amp; To-do</div>
+    <div class="eyebrow">Chapter 13 · Luggage, Money &amp; To-do</div>
     <h2>荷物・お金・準備 <span class="local">出発前に読むページ</span></h2>
   </div>
   <div class="subnav"><a href="#prep-bags">荷物の構成</a><a href="#prep-gym">ジム</a><a href="#prep-weight">重量の作戦</a><a href="#prep-weather">天気と服装</a><a href="#prep-pack">持ち物</a><a href="#prep-money">お金</a><a href="#prep-wise">Wise</a><a href="#prep-meals">食事のシナリオ</a><a href="#prep-todo">やること</a></div>
@@ -5385,7 +5514,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="next" class="chapter base" data-chapter="next">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 12 · Someday</div>
+    <div class="eyebrow">Chapter 15 · Someday</div>
     <h2>次回の旅の案 <span class="local">スイスとコモ湖</span></h2>
     <p class="lead">今回と重ならない土地で1週間。山の乗り物がすべて動く7月前後が向いています。チューリッヒに着いて、ミラノから帰る形です。</p>
   </div>
@@ -5414,6 +5543,184 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 
 </div>
 
+<!-- =================== CHAPTER 14: TAX REFUND =================== -->
+<section id="vat" class="chapter vat" data-chapter="vat">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Chapter 14 · Tax Refund</div>
+    <h2>免税（VAT還付）の手続き <span class="local">Détaxe · Tax Free · Rimborso IVA</span></h2>
+    <p class="lead">EU の外に住む旅行者は、買った品物の付加価値税の一部を取り戻せます。最後に EU を出るのは 12/11 のローマ空港なので、手続きはそこでまとめて。銅鍋や刃物など、まとまった金額の買い物をしたときのために。</p>
+  </div>
+  <div class="subnav"><a href="#vat-who">対象</a><a href="#vat-min">国ごとの最低額</a><a href="#vat-steps">流れ</a></div>
+
+  <div class="block" id="vat-who">
+    <h3>対象になる人と物</h3>
+    <div class="grid2">
+      <div class="card"><h4>人</h4><ul><li>EU の外に住んでいる人（Ryo と Som）。パスポートの原本が必要</li><li>フランスは16歳以上など、国ごとに条件がある</li></ul></div>
+      <div class="card"><h4>物</h4><ul><li>持ち帰る品物（調理道具、服、化粧品など）</li><li>レストラン、ホテル、交通、入場券などのサービスは対象外</li><li>戻ってくるのは税額の全部ではない。手数料を引いて、買った額の1割前後のことが多い</li></ul></div>
+    </div>
+  </div>
+
+  <div class="block" id="vat-min">
+    <h3>国ごとの税率と最低購入額</h3>
+    <div class="tbl"><table><thead><tr><th>国</th><th>税率</th><th>最低購入額</th></tr></thead><tbody>
+      <tr><td class="big"><span class="flag f-nl"></span> オランダ</td><td>21%</td><td>1店・1日で €50 以上が目安</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> フランス</td><td>20%（食品・本 5.5%）</td><td>同じ店で同じ日に €100.01 以上</td></tr>
+      <tr><td class="big"><span class="flag f-es"></span> スペイン</td><td>21%</td><td>最低額なし（2018年から）</td></tr>
+      <tr><td class="big"><span class="flag f-it"></span> イタリア</td><td>22%</td><td>同じ店で €70.01 以上（2024年2月から）</td></tr>
+    </tbody></table></div>
+    <p class="note">金額は2026年時点で調べたもの。店で最新の条件を確認する。</p>
+  </div>
+
+  <div class="block" id="vat-steps">
+    <h3>手続きの流れ</h3>
+    <ul class="tt"><li><span class="t">買うとき</span><div>レジで「タックスフリーで」と言い、パスポートの原本を見せる。免税書類（紙か電子）を作ってもらう。フランスは PABLO、スペインは DIVA、イタリアは OTELLO という電子の仕組み</div></li><li><span class="t">旅の間</span><div>買ったものは使わず、レシートと免税書類と一緒に保管。税関で中身を見せることがある</div></li><li><span class="t">12/11 ローマ空港（FCO）</span><div>EU を出る最後の空港がローマなので、フランス・スペイン・オランダの分もまとめてここで手続き。チェックインの前に税関（Customs / Dogana）へ</div></li><li><span class="t">税関</span><div>書類に確認（スタンプか電子の承認）をもらう。PABLO の端末はフランスにしかないので、フランスの書類はローマの税関でスタンプをもらう。スーツケースに入れる物は、預ける前に見せる</div></li><li><span class="t">払い戻し</span><div>空港の Global Blue や Planet の窓口で現金、またはカードに返金。カードの方がレートと手数料の面で有利なことが多い。窓口がなければ、書類を専用ポストへ</div></li></ul>
+    <p class="alert"><b>12/11 は早めに空港へ</b>　EK096 は 20:50 発。免税の手続きがあるなら、出発の3時間半前（17:20ごろ）には着いておく。刃物はスーツケースに入れる前に税関で見せる</p>
+  </div>
+
+</section>
+<!-- =================== CHAPTER 16: JOURNAL =================== -->
+<section id="journal" class="chapter jr" data-chapter="journal">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Chapter 16 · Journal</div>
+    <h2>旅の記録 <span class="local">Yuzuha · Papa · Mama</span></h2>
+    <p class="lead">主役は Yuzuha。その日の「はじめて」と、パパとママがどう見えたか、何を感じたかを一言ずつ。書いたものはこのスマホに保存されるので、電波がなくても書けます。ネットにつながったら「クラウドへ送る」で、家族の記録ページにまとめます。</p>
+  </div>
+  <p class="note"><b>使い方</b>　日付を押して開く → 書く（自動で保存）→ ネットがあるときに「クラウドへ送る」→ 開いたページの「しおりから取り込む」に貼り付けて「取り込む」。同じ欄は新しいほうが残ります</p>
+  <div class="jr-bar"><button type="button" class="jr-send" data-url="https://claude.ai/artifact/TzF4yzmTo81E2CzUpkdR4m">クラウドへ送る</button><a class="jr-open" href="https://claude.ai/artifact/TzF4yzmTo81E2CzUpkdR4m" target="_blank" rel="noopener">記録ページを開く</a><span class="jr-st" data-ok="この端末に保存済み"></span></div>
+  <textarea class="jr-out" readonly hidden></textarea>
+  <div class="block" id="jr-days">
+    <h3><span class="flag f-th"></span> バンコク</h3>
+    <details class="jr-day"><summary><span class="dt">11/22 日</span><span class="cy">バンコク → アムステルダム</span><span class="dots" data-md="1122"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1122.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1122.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1122.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+
+    <h3><span class="flag f-nl"></span> アムステルダム</h3>
+    <details class="jr-day"><summary><span class="dt">11/23 月</span><span class="cy">アムステルダム</span><span class="dots" data-md="1123"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1123.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1123.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1123.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">11/24 火</span><span class="cy">アムステルダム → パリ</span><span class="dots" data-md="1124"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1124.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1124.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1124.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>撮りたい写真</span><label><input type="checkbox" data-jr="ph.ams.0">アンネ・フランクの家の前の運河</label><label><input type="checkbox" data-jr="ph.ams.1">ベギン会院の中庭</label></div>
+    <h3><span class="flag f-fr"></span> パリ</h3>
+    <details class="jr-day"><summary><span class="dt">11/25 水</span><span class="cy">パリ</span><span class="dots" data-md="1125"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1125.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1125.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1125.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">11/26 木</span><span class="cy">パリ</span><span class="dots" data-md="1126"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1126.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1126.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1126.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">11/27 金</span><span class="cy">パリ</span><span class="dots" data-md="1127"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1127.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1127.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1127.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">11/28 土</span><span class="cy">パリ → リヨン</span><span class="dots" data-md="1128"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1128.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1128.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1128.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>撮りたい写真</span><label><input type="checkbox" data-jr="ph.par.0">夜のエッフェル塔（トロカデロから）</label><label><input type="checkbox" data-jr="ph.par.1">ルーヴルのピラミッド</label><label><input type="checkbox" data-jr="ph.par.2">ル・ムーリスのティータイム</label><label><input type="checkbox" data-jr="ph.par.3">モンマルトルの朝</label><label><input type="checkbox" data-jr="ph.par.4">ノートルダムの正面</label></div>
+    <h3><span class="flag f-fr"></span> リヨン</h3>
+    <details class="jr-day"><summary><span class="dt">11/29 日</span><span class="cy">リヨン</span><span class="dots" data-md="1129"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1129.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1129.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1129.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">11/30 月</span><span class="cy">リヨン → バルセロナ</span><span class="dots" data-md="1130"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1130.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1130.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1130.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>撮りたい写真</span><label><input type="checkbox" data-jr="ph.lyo.0">フルヴィエールの丘からの夜景</label><label><input type="checkbox" data-jr="ph.lyo.1">ポール・ボキューズ本店の前</label></div>
+    <h3><span class="flag f-es"></span> バルセロナ</h3>
+    <details class="jr-day"><summary><span class="dt">12/1 火</span><span class="cy">バルセロナ</span><span class="dots" data-md="1201"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1201.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1201.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1201.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">12/2 水</span><span class="cy">バルセロナ</span><span class="dots" data-md="1202"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1202.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1202.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1202.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">12/3 木</span><span class="cy">バルセロナ → ヴェネツィア</span><span class="dots" data-md="1203"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1203.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1203.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1203.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>撮りたい写真</span><label><input type="checkbox" data-jr="ph.bcn.0">サグラダ・ファミリアの光</label><label><input type="checkbox" data-jr="ph.bcn.1">カテドラル前のクリスマス市</label></div>
+    <h3><span class="flag f-it"></span> ヴェネツィア</h3>
+    <details class="jr-day"><summary><span class="dt">12/4 金</span><span class="cy">ヴェネツィア</span><span class="dots" data-md="1204"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1204.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1204.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1204.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">12/5 土</span><span class="cy">ヴェネツィア → フィレンツェ</span><span class="dots" data-md="1205"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1205.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1205.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1205.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>撮りたい写真</span><label><input type="checkbox" data-jr="ph.vce.0">ゴンドラと大運河</label><label><input type="checkbox" data-jr="ph.vce.1">リアルト橋</label></div>
+    <h3><span class="flag f-it"></span> フィレンツェ</h3>
+    <details class="jr-day"><summary><span class="dt">12/6 日</span><span class="cy">フィレンツェ</span><span class="dots" data-md="1206"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1206.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1206.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1206.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">12/7 月</span><span class="cy">フィレンツェ</span><span class="dots" data-md="1207"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1207.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1207.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1207.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">12/8 火</span><span class="cy">フィレンツェ → ローマ</span><span class="dots" data-md="1208"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1208.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1208.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1208.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>撮りたい写真</span><label><input type="checkbox" data-jr="ph.flr.0">ダビデ像</label><label><input type="checkbox" data-jr="ph.flr.1">ミケランジェロ広場の夕日</label><label><input type="checkbox" data-jr="ph.flr.2">ヴェッキオ橋</label></div>
+    <h3><span class="flag f-it"></span> ローマ</h3>
+    <details class="jr-day"><summary><span class="dt">12/9 水</span><span class="cy">ローマ</span><span class="dots" data-md="1209"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1209.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1209.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1209.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">12/10 木</span><span class="cy">ローマ</span><span class="dots" data-md="1210"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1210.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1210.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1210.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">12/11 金</span><span class="cy">ローマ → ドバイ</span><span class="dots" data-md="1211"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1211.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1211.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1211.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>撮りたい写真</span><label><input type="checkbox" data-jr="ph.rom.0">トレヴィの泉</label><label><input type="checkbox" data-jr="ph.rom.1">コロッセオ</label><label><input type="checkbox" data-jr="ph.rom.2">サン・ピエトロ広場</label></div>
+    <h3><span class="flag f-ae"></span> ドバイ</h3>
+    <details class="jr-day"><summary><span class="dt">12/12 土</span><span class="cy">ドバイ</span><span class="dots" data-md="1212"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1212.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1212.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1212.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">12/13 日</span><span class="cy">ドバイ → バンコク</span><span class="dots" data-md="1213"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha のはじめて・できたこと<textarea data-jr="d1213.yz" placeholder="初めて食べたもの、笑った瞬間、はじめて見たもの…"></textarea></label>
+      <label>パパのひとこと<textarea data-jr="d1213.papa" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+      <label>ママのひとこと<textarea data-jr="d1213.mama" placeholder="どんなふうに見えた？　何を感じた？"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>撮りたい写真</span><label><input type="checkbox" data-jr="ph.dxb.0">ブルジュ・ハリファ</label></div>
+  </div>
+</section>
 
 </div>
 <template id="tpl-th">
@@ -5467,12 +5774,18 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
         <li><a href="#food" data-ch="food" data-now="อาหาร"><span class="no">06</span><span class="nm">ตำราอาหาร</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
         <li><a href="#cw" data-ch="cw" data-now="ชีสและไวน์"><span class="no">07</span><span class="nm">ชีสและไวน์</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
         <li><a href="#art" data-ch="art" data-now="ศิลปะ"><span class="no">08</span><span class="nm">พิพิธภัณฑ์และงานชิ้นเอก</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#arch" data-ch="arch" data-now="สถาปัตยกรรม"><span class="no">09</span><span class="nm">วิธีดูสถาปัตยกรรม</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#xmas" data-ch="xmas" data-now="คริสต์มาส"><span class="no">10</span><span class="nm">ตลาดคริสต์มาส</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
       </ol></div>
       <div class="toc-group"><h5><span>ตัวช่วย</span><small>Support</small></h5><ol>
-        <li><a href="#baby" data-ch="baby" data-now="เที่ยวกับลูกน้อย"><span class="no">09</span><span class="nm">เที่ยวกับลูกน้อย</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
-        <li><a href="#safety" data-ch="safety" data-now="ฉุกเฉิน"><span class="no">10</span><span class="nm">ฉุกเฉิน・ความปลอดภัย</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
-        <li><a href="#prep" data-ch="prep" data-now="เตรียมตัว"><span class="no">11</span><span class="nm">กระเป๋า・เงิน・เตรียมตัว</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
-        <li><a href="#next" data-ch="next" data-now="ทริปหน้า"><span class="no">12</span><span class="nm">ทริปหน้า</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#baby" data-ch="baby" data-now="เที่ยวกับลูกน้อย"><span class="no">11</span><span class="nm">เที่ยวกับลูกน้อย</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#safety" data-ch="safety" data-now="ฉุกเฉิน"><span class="no">12</span><span class="nm">ฉุกเฉิน・ความปลอดภัย</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#prep" data-ch="prep" data-now="เตรียมตัว"><span class="no">13</span><span class="nm">กระเป๋า・เงิน・เตรียมตัว</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#vat" data-ch="vat" data-now="ขอคืนภาษี"><span class="no">14</span><span class="nm">ขอคืนภาษี</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#next" data-ch="next" data-now="ทริปหน้า"><span class="no">15</span><span class="nm">ทริปหน้า</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+      </ol></div>
+      <div class="toc-group"><h5><span>ความทรงจำ</span><small>Journal</small></h5><ol>
+        <li><a href="#journal" data-ch="journal" data-now="บันทึก"><span class="no">16</span><span class="nm">บันทึกการเดินทาง</span><span class="dot" aria-hidden="true"></span><span class="dt">Yuzuha・พ่อ・แม่</span></a></li>
       </ol></div>
     </div>
   </div>
@@ -9221,12 +9534,111 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     </div>
   </div>
 </section>
+<!-- =================== CHAPTER 9: ARCHITECTURE =================== -->
+<section id="arch" class="chapter arch" data-chapter="arch">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Chapter 9 · Architecture</div>
+    <h2>วิธีดูสถาปัตยกรรม <span class="local">Gothique · Renacimiento · Barocco · Modernisme</span></h2>
+    <div class="th">建築の見方</div>
+    <p class="lead">งานชิ้นเอกไม่ได้อยู่แค่ในพิพิธภัณฑ์ โบสถ์ วัง ลาน และทิวทัศน์ถนนก็ใช่ ถ้ารู้วิธีแยกรูปแบบ แค่เดินก็อ่านยุคสมัยได้ เรียงอาคารที่เราจะเห็นในทริปจากเก่าไปใหม่</p>
+  </div>
+  <div class="subnav"><a href="#arch-styles">รูปแบบและสถานที่</a><a href="#arch-words">คำศัพท์</a><a href="#arch-tips">เคล็ดลับ</a></div>
+
+  <div class="block" id="arch-styles">
+    <h3>วิธีแยกรูปแบบและที่ที่เราจะเห็น</h3>
+    <div class="tbl"><table><thead><tr><th>รูปแบบ</th><th>วิธีสังเกต</th><th>ที่ที่เราจะไป</th></tr></thead><tbody>
+      <tr><td class="big">โรมันโบราณ<span class="tsub">ศตวรรษที่ 1–2</span></td><td>ใช้ซุ้มโค้งและคอนกรีตค้ำพื้นที่ขนาดใหญ่ เช่น อัฒจันทร์ วิหาร โรงอาบน้ำ</td><td><span class="flag f-it"></span> แพนธีออนที่โรม (10 ธ.ค.)：โดมกว้าง 43 ม. มีช่องเปิดตรงยอด (โอคูลุส) น้ำฝนไหลออกทางรูเล็ก ๆ ที่พื้น／โคลอสเซียม (10 ธ.ค.)</td></tr>
+      <tr><td class="big">ไบแซนไทน์<span class="tsub">ศตวรรษที่ 11〜</span></td><td>โดมเรียงกัน ภายในเป็นโมเสกสีทอง ลักษณะของเวนิสที่เชื่อมกับตะวันออก (ตุรกีในปัจจุบัน)</td><td><span class="flag f-it"></span> มหาวิหารซานมาร์โก (4 ธ.ค.)：โดม 5 ลูก และโมเสกทองเต็มเพดาน</td></tr>
+      <tr><td class="big">กอทิก<span class="tsub">ศตวรรษที่ 12–15</span></td><td>ซุ้มโค้งแหลม "ค้ำยันลอย" ที่พยุงผนังจากด้านนอก กระจกสีบานใหญ่กับหน้าต่างกุหลาบ มุ่งขึ้นสูงและหาแสง</td><td><span class="flag f-fr"></span> นอเทรอดาม (ค่ำ 26 พ.ย.) แซ็งต์-ชาแปล (ค่ำ 25 พ.ย. ดูภายนอก)／<span class="flag f-it"></span> ผนังขาวชมพูของวังดอจ (กอทิกแบบเวนิส)</td></tr>
+      <tr><td class="big">เรอเนซองส์<span class="tsub">ศตวรรษที่ 15–16</span></td><td>ฟื้นเสาและสัดส่วนแบบโรมันโบราณ สมมาตรซ้ายขวา ซุ้มครึ่งวงกลม โดม</td><td><span class="flag f-it"></span> ดูโอโมฟลอเรนซ์ (5 ธ.ค.〜)：โดมของบรูเนลเลสกี (เสร็จ 1436) ก่อเป็นสองชั้นโดยไม่ใช้นั่งร้าน／<span class="flag f-fr"></span> ลานในและ "ทราบูล" (ทางลัด) ในเมืองเก่าลียง</td></tr>
+      <tr><td class="big">บาโรก<span class="tsub">ศตวรรษที่ 17</span></td><td>เส้นโค้ง การเคลื่อนไหว แสงและเงา ความตื่นตาเหมือนโรงละคร น้ำพุและลานกลายเป็นเวที</td><td><span class="flag f-it"></span> "น้ำพุสี่แม่น้ำ" ของแบร์นีนีที่ลานนาโวนา น้ำพุเทรวี เสาโค้งที่ลานเซนต์ปีเตอร์ (เหมือนแขนสองข้างโอบกอด)</td></tr>
+      <tr><td class="big">บ้านริมคลองดัตช์<span class="tsub">ศตวรรษที่ 17</span></td><td>หน้าแคบลึกยาว (ภาษีคิดตามความกว้างหน้าบ้าน) หน้าจั่วหลายแบบ มีคานสำหรับชักรอกของด้านบน เอียงไปข้างหน้านิดหน่อยโดยตั้งใจ</td><td><span class="flag f-nl"></span> คลองซิงเงลและคลองพรินเซนที่อัมสเตอร์ดัม (23–24 พ.ย.)</td></tr>
+      <tr><td class="big">นีโอคลาสสิกและจักรวรรดิที่สอง<span class="tsub">ศตวรรษที่ 18–19</span></td><td>ด้านหน้าเหมือนวิหารกรีกโรมัน ถนนใหญ่ในปารีสเป็นอาคารแบบโอสมันที่ความสูงและแนวหน้าต่างเรียงกัน</td><td><span class="flag f-fr"></span> แพนธีออน (28 พ.ย.) ประตูชัย (ค่ำ 24 พ.ย.) โรงอุปรากรการ์นิเย (25 พ.ย.) อาคารแบบโอสมันมีระเบียงยาวที่ชั้น 3 และชั้น 6 (นับชั้นล่างเป็นชั้น 1)</td></tr>
+      <tr><td class="big">เหล็กและกระจก<span class="tsub">ปลายศตวรรษที่ 19</span></td><td>ยุคอุตสาหกรรม โชว์โครงเหล็กโดยไม่ซ่อน</td><td><span class="flag f-fr"></span> หอไอเฟล (1889 ค่ำ 24 พ.ย.) พิพิธภัณฑ์ออร์แซ (เดิมเป็นสถานีปี 1900) โดมของห้างกาเลอรีลาฟาแยต</td></tr>
+      <tr><td class="big">โมเดอร์นิสโม<span class="tsub">ทศวรรษ 1880–1920</span></td><td>อาร์ตนูโวแบบกาตาลุญญา เส้นโค้งเหมือนพืชหรือกระดูก โมเสกจากเศษกระเบื้อง (เตรนกาดิส)</td><td><span class="flag f-es"></span> ซากราดาฟามีเลีย (1 ธ.ค.) กาซาบัตโย กาซามิลา (ถนนกราเซีย) โรงพยาบาลซันเปาและหอดนตรีกาตาลาเป็นผลงานของโดเมเนก อี มุนตาเนร์</td></tr>
+      <tr><td class="big">ตึกระฟ้าสมัยใหม่<span class="tsub">ค.ศ. 2010</span></td><td>หอที่ค่อย ๆ เรียวขึ้นเป็นชั้น ได้แรงบันดาลใจจากรูปดอกไม้ในทะเลทราย</td><td><span class="flag f-ae"></span> บุรจญ์เคาะลีฟะฮ์ (828 ม. ชมจากภายนอกเย็น 12 ธ.ค.)</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="arch-words">
+    <h3>คำศัพท์ที่รู้แล้วสนุกขึ้น</h3>
+    <div class="tbl"><table><thead><tr><th>คำ</th><th>ความหมาย</th></tr></thead><tbody>
+      <tr><td class="big">ค้ำยันลอย</td><td>แขนหินที่ค้ำผนังเฉียง ๆ จากด้านนอก ทำให้ผนังบางลงและหน้าต่างใหญ่ขึ้น</td></tr>
+      <tr><td class="big">หน้าต่างกุหลาบ</td><td>กระจกสีรูปวงกลมที่ด้านหน้าหรือแขนทั้งสองข้าง นอเทรอดามมี 3 บาน</td></tr>
+      <tr><td class="big">โถงกลาง・แขนกางเขน</td><td>พื้นที่ยาวตรงกลางจากประตูถึงแท่นบูชา กับแขนที่ยื่นออกซ้ายขวา มองจากบนเป็นรูปกางเขน</td></tr>
+      <tr><td class="big">โดม・โคมยอดโดม</td><td>หอเล็กบนยอดโดมเรียกว่า "โคม" รับแสงและช่วยถ่วงน้ำหนัก</td></tr>
+      <tr><td class="big">ฟาซาด</td><td>ด้านหน้าอาคาร ในโบสถ์เป็น "ปกหนังสือ" ที่เรียงประติมากรรมเล่าเรื่อง</td></tr>
+      <tr><td class="big">เตรนกาดิส</td><td>โมเสกปิดผิวโค้งด้วยเศษกระเบื้องหรือจาน เกาดีใช้บ่อย</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="arch-tips">
+    <h3>เคล็ดลับการดู</h3>
+    <div class="grid2">
+      <div class="card"><h4>เมื่อเข้าโบสถ์</h4><ul><li>มองขึ้นข้างบนก่อน ดูความสูงของเพดานและเสาแตกกิ่งหรือไม่</li><li>กระจกสีเปลี่ยนสีระหว่างเช้า (ตะวันออก) กับบ่าย (ตะวันตก) ในวันแดดดี</li><li>ช่วงมิสซางดเดินชม ถอดหมวก</li></ul></div>
+      <div class="card"><h4>เวลาเดินในเมือง</h4><ul><li>อย่าดูแค่ชั้นล่าง มองตั้งแต่ชั้น 2 ขึ้นไป หน้าต่าง ระเบียง รูปหลังคา</li><li>ดูภาพรวมจากมุมลาน ไม่ใช่กลางลาน</li><li>ไฟยามค่ำทำให้เห็นอีกมุมที่ต่างจากกลางวัน</li></ul></div>
+    </div>
+  </div>
+
+</section>
+<!-- =================== CHAPTER 10: CHRISTMAS MARKETS =================== -->
+<section id="xmas" class="chapter xmas" data-chapter="xmas">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Chapter 10 · Christmas Markets</div>
+    <h2>ตลาดคริสต์มาส <span class="local">Marché de Noël · Fira de Nadal · Mercatino di Natale</span></h2>
+    <div class="th">クリスマスマーケット</div>
+    <p class="lead">ช่วงปลายพฤศจิกายนถึงธันวาคมเป็นฤดูที่เมืองต่าง ๆ ในยุโรปมีตลาดคริสต์มาส รวมช่วงเวลาของแต่ละเมืองและบอกว่าไปได้ช่วงที่เราอยู่หรือไม่ วันที่เป็นของปี 2026 ที่ประกาศแล้วหรือกำหนดการปกติของทุกปี เช็กกับประกาศทางการก่อนไป</p>
+  </div>
+  <div class="subnav"><a href="#xmas-list">ตลาดแต่ละเมือง</a><a href="#xmas-food">ของกินของดื่ม</a><a href="#xmas-baby">กับรถเข็นเด็ก</a></div>
+
+  <div class="block" id="xmas-list">
+    <h3>ตลาดคริสต์มาสแต่ละเมือง</h3>
+    <div class="tbl"><table><thead><tr><th>ตลาด</th><th>ช่วงเวลา・วันที่ไปได้</th><th>สิ่งที่น่าสนใจ・บันทึก</th></tr></thead><tbody>
+      <tr><td class="big"><span class="flag f-nl"></span> อัมสเตอร์ดัม</td><td>หมู่บ้านคริสต์มาสที่ลานพิพิธภัณฑ์เริ่ม 3 ธ.ค. เทศกาลแสงไฟเริ่ม 26 พ.ย. ช่วง 23–24 พ.ย. ยังไม่เปิด <span class="pill ng">เปิดหลังเราไป</span></td><td>ถ้าลานสเกตที่จัตุรัสแรมบรันต์ (ปกติเปิดกลาง พ.ย.〜) เปิดแล้วลองแวะดู การประดับเมืองเริ่มแล้ว</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> ปารีส：สวนตุยเลอรี</td><td>14 พ.ย.–3 ม.ค. แวะก่อนหรือหลัง Le Meurice วันที่ 25 พ.ย. <span class="pill ok">เปิดช่วงที่เราอยู่</span></td><td>หนึ่งในตลาดที่ใหญ่ที่สุดในปารีส มีชิงช้าสวรรค์และสวนสนุกเคลื่อนที่ อยู่ตรงหน้า Le Meurice</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> ปารีส：ช็องเซลีเซ</td><td>22 พ.ย.–4 ม.ค. เดินจากประตูชัยค่ำ 24 พ.ย. <span class="pill ok">เปิดช่วงที่เราอยู่</span></td><td>ซุ้มเรียงริมสวนข้างถนนใหญ่ ดูพร้อมไฟประดับ</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> ปารีส：นอเทรอดาม</td><td>26 พ.ย.–27 ธ.ค. (สวนเรอเน วิวียานี) ค่ำ 26 พ.ย. ก่อนเข้านอเทรอดาม <span class="pill ok">เปิดช่วงที่เราอยู่</span></td><td>ตลาดเล็กและสงบ มองเห็นมหาวิหารข้ามแม่น้ำแซน เดินจากที่พักได้</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> ปารีส：แซ็ง-แฌร์แม็ง-เด-เพร</td><td>27 พ.ย.–6 ม.ค. แวะได้บ่าย 27 พ.ย. <span class="pill ok">เปิดช่วงที่เราอยู่</span></td><td>ริมถนนแซ็ง-แฌร์แม็ง เน้นงานหัตถกรรม</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> ลียง：ลานการ์โน</td><td>20 พ.ย.–24 ธ.ค. วันเสาร์ถึง 22:00 วันอาทิตย์ถึง 20:00 <span class="pill ok">เปิดช่วงที่เราอยู่</span></td><td>หน้าสถานีแปราช เทศกาลแสงไฟ (5–8 ธ.ค.) อยู่หลังเราไปแล้ว</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> ดิสนีย์แลนด์ปารีส</td><td>ช่วงคริสต์มาส 7 พ.ย.–6 ม.ค. เย็น 25 พ.ย. (Som) <span class="pill ok">เปิดช่วงที่เราอยู่</span></td><td>รายละเอียดใน<a href="#dlp-xmas">บทดิสนีย์</a></td></tr>
+      <tr><td class="big"><span class="flag f-es"></span> บาร์เซโลนา：ตลาดซันตาลูเซีย</td><td>28 พ.ย.–23 ธ.ค. (กำหนดการ) ราว 10:30–20:30 วันเที่ยวเมืองเก่า 2 ธ.ค. <span class="pill ok">เปิดช่วงที่เราอยู่</span></td><td>ตลาดหน้ามหาวิหารตั้งแต่ ค.ศ. 1786 ตุ๊กตาฉากประสูติ กากาเนร์ (ตุ๊กตานั่งยอง) ตีโอ (ตุ๊กตาท่อนไม้)</td></tr>
+      <tr><td class="big"><span class="flag f-it"></span> เวนิส：ลานซันโตสเตฟาโน</td><td>ปกติปลาย พ.ย.–ต้น ม.ค. 3–4 ธ.ค. น่าจะเปิด <span class="pill maybe">ต้องเช็ก</span></td><td>ใกล้สะพานอัคคาเดเมีย มีลานสเกตที่ลานซันโปโลด้วย</td></tr>
+      <tr><td class="big"><span class="flag f-it"></span> ฟลอเรนซ์：ลานซันตาโกรเช</td><td>ปกติกลาง พ.ย.–ราว 21 ธ.ค. 10–23 น. ช่วง 5–7 ธ.ค. <span class="pill ok">เปิดช่วงที่เราอยู่</span></td><td>ซุ้มไม้สไตล์เยอรมัน 7–8 ธ.ค. มีตลาดงานฝีมือ (ฟิเอรูโกลา) ที่ลานซันติสซิมาอันนุนซิอาตาด้วย (ตามกำหนดปี 2025)</td></tr>
+      <tr><td class="big"><span class="flag f-it"></span> โรม：ลานนาโวนา</td><td>ปกติ 1 ธ.ค.–6 ม.ค. ช่วง 8–10 ธ.ค. <span class="pill ok">เปิดช่วงที่เราอยู่</span></td><td>ม้าหมุนและตุ๊กตาแม่มดเบฟานา 8 ธ.ค. เป็นวันหยุด (พระแม่ปฏิสนธินิรมล) คนเยอะ</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="xmas-food">
+    <h3>ของที่อยากกินอยากดื่ม</h3>
+    <div class="tbl"><table><thead><tr><th>ชื่อ</th><th>คืออะไร</th></tr></thead><tbody>
+      <tr><td class="big"><span class="flag f-fr"></span> วินโช</td><td>ไวน์แดงอุ่นใส่อบเชยและส้ม ที่อิตาลีเรียก "วินบรูเล"</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> เกาลัดคั่ว</td><td>ฝรั่งเศสเรียก "มาร็องโช" อิตาลีเรียก "กัลดาร์โรสเต" ใส่ถุงกระดาษ</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> ช็อกโกแลตร้อน</td><td>ช็อกโกแลตร้อนเข้มข้น ไม่มีแอลกอฮอล์เหมาะกับเด็ก</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> ตาร์ติเฟลต・ราแกล็ต</td><td>มันฝรั่งกับชีสภูเขา อาหารร้อนจานยอดฮิตในตลาด</td></tr>
+      <tr><td class="big"><span class="flag f-es"></span> ชูโรสกับช็อกโกแลต</td><td>แป้งทอดจุ่มช็อกโกแลตข้น</td></tr>
+      <tr><td class="big"><span class="flag f-es"></span> ตูร็อน</td><td>ขนมคริสต์มาสของสเปนทำจากอัลมอนด์และน้ำผึ้ง</td></tr>
+      <tr><td class="big"><span class="flag f-it"></span> ปาเนตโตเน・ปันโดโร</td><td>ขนมปังหวานคริสต์มาสจากมิลานและเวโรนา</td></tr>
+      <tr><td class="big"><span class="flag f-it"></span> ปันฟอร์เต・ริชชาเรลลี</td><td>ขนมถั่วกับน้ำผึ้งของทัสคานี (เซียนา) และคุกกี้อัลมอนด์นุ่ม</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="xmas-baby">
+    <h3>เคล็ดลับเมื่อไปกับลูกน้อย</h3>
+    <div class="grid2">
+      <div class="card"><h4>ช่วงเวลา</h4><ul><li>กลางวันวันธรรมดา หรือช่วงเย็นหลังเปิดไฟ (16:30–17:30) เดินสะดวก</li><li>ค่ำวันสุดสัปดาห์คนแน่น บางครั้งเป้อุ้มสะดวกกว่ารถเข็น</li></ul></div>
+      <div class="card"><h4>ข้อควรระวัง</h4><ul><li>อย่าถือเครื่องดื่มร้อนเหนือ Yuzuha บางร้านคืนแก้วแล้วได้มัดจำคืน</li><li>ที่คนเยอะมีมิจฉาชีพล้วงกระเป๋า เก็บกระเป๋าเงินและมือถือไว้ด้านหน้า</li><li>เกาลัด ถั่ว ขนมน้ำผึ้งยังไม่เหมาะกับ Yuzuha ให้พ่อแม่กิน</li></ul></div>
+    </div>
+  </div>
+
+</section>
 
 <!-- =================== CHAPTER 7: BABY =================== -->
 <section id="baby" class="chapter base" data-chapter="baby">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 9 · Traveling with a Baby</div>
+    <div class="eyebrow">Chapter 11 · Traveling with a Baby</div>
     <h2>เที่ยวกับลูกน้อย <span class="local">ไปกับ Yuzuha</span></h2>
     <div class="th">赤ちゃん連れのコツ</div>
     <p class="lead">เคล็ดลับสำคัญที่สุดคือให้จังหวะของ Yuzuha เป็นศูนย์กลางของแผน กำหนดการในเล่มนี้จัดเป็นแบบ "ช่วงเช้า 1 ที่ งีบกลางวัน ช่วงเย็นอีก 1 ที่"</p>
@@ -9349,7 +9761,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="safety" class="chapter base" data-chapter="safety">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 10 · Safety &amp; Emergency</div>
+    <div class="eyebrow">Chapter 12 · Safety &amp; Emergency</div>
     <h2>ฉุกเฉินและความปลอดภัย <span class="local">มีปัญหาเมื่อไหร่ เปิดหน้านี้</span></h2>
     <div class="th">緊急・安全</div>
   </div>
@@ -9888,7 +10300,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="prep" class="chapter base" data-chapter="prep">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 11 · Luggage, Money &amp; To-do</div>
+    <div class="eyebrow">Chapter 13 · Luggage, Money &amp; To-do</div>
     <h2>กระเป๋า เงิน และสิ่งที่ต้องเตรียม <span class="local">อ่านก่อนออกเดินทาง</span></h2>
     <div class="th">荷物・お金・準備</div>
   </div>
@@ -10404,7 +10816,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="next" class="chapter base" data-chapter="next">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 12 · Someday</div>
+    <div class="eyebrow">Chapter 15 · Someday</div>
     <h2>ไอเดียทริปหน้า <span class="local">สวิตเซอร์แลนด์และทะเลสาบโคโม</span></h2>
     <div class="th">次回の旅の案 · スイスとコモ湖</div>
     <p class="lead">1 สัปดาห์ในที่ที่ไม่ซ้ำกับทริปนี้ ช่วงราวเดือนกรกฎาคมที่รถขึ้นเขาเปิดครบทุกสายเหมาะที่สุด บินเข้าซูริก แล้วกลับจากมิลาน</p>
@@ -10434,6 +10846,186 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 
 </div>
 
+<!-- =================== CHAPTER 14: TAX REFUND =================== -->
+<section id="vat" class="chapter vat" data-chapter="vat">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Chapter 14 · Tax Refund</div>
+    <h2>ขอคืนภาษี (VAT) <span class="local">Détaxe · Tax Free · Rimborso IVA</span></h2>
+    <div class="th">免税（VAT還付）の手続き</div>
+    <p class="lead">นักท่องเที่ยวที่อาศัยนอก EU ขอคืนภาษีมูลค่าเพิ่มของสินค้าที่ซื้อได้บางส่วน เราออกจาก EU ครั้งสุดท้ายที่สนามบินโรมวันที่ 11 ธ.ค. จึงทำเรื่องรวมกันที่นั่น สำหรับตอนซื้อของราคาสูง เช่น หม้อทองแดงหรือมีด</p>
+  </div>
+  <div class="subnav"><a href="#vat-who">ใครได้บ้าง</a><a href="#vat-min">ขั้นต่ำแต่ละประเทศ</a><a href="#vat-steps">ขั้นตอน</a></div>
+
+  <div class="block" id="vat-who">
+    <h3>ใครและอะไรที่ขอคืนได้</h3>
+    <div class="grid2">
+      <div class="card"><h4>คน</h4><ul><li>ผู้ที่อาศัยนอก EU (Ryo และ Som) ต้องใช้พาสปอร์ตตัวจริง</li><li>แต่ละประเทศมีเงื่อนไข เช่น ฝรั่งเศสต้องอายุ 16 ปีขึ้นไป</li></ul></div>
+      <div class="card"><h4>สิ่งของ</h4><ul><li>สินค้าที่นำกลับ (อุปกรณ์ครัว เสื้อผ้า เครื่องสำอาง ฯลฯ)</li><li>บริการอย่างร้านอาหาร โรงแรม การเดินทาง ตั๋วเข้าชม ขอคืนไม่ได้</li><li>ไม่ได้คืนภาษีเต็มจำนวน หักค่าธรรมเนียมแล้วมักเหลือราว 10% ของราคาที่ซื้อ</li></ul></div>
+    </div>
+  </div>
+
+  <div class="block" id="vat-min">
+    <h3>อัตราภาษีและยอดซื้อขั้นต่ำแต่ละประเทศ</h3>
+    <div class="tbl"><table><thead><tr><th>ประเทศ</th><th>อัตราภาษี</th><th>ยอดซื้อขั้นต่ำ</th></tr></thead><tbody>
+      <tr><td class="big"><span class="flag f-nl"></span> เนเธอร์แลนด์</td><td>21%</td><td>ประมาณ €50 ขึ้นไปต่อร้านต่อวัน</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> ฝรั่งเศส</td><td>20% (อาหาร・หนังสือ 5.5%)</td><td>€100.01 ขึ้นไป ร้านเดียวกันวันเดียวกัน</td></tr>
+      <tr><td class="big"><span class="flag f-es"></span> สเปน</td><td>21%</td><td>ไม่มีขั้นต่ำ (ตั้งแต่ ค.ศ. 2018)</td></tr>
+      <tr><td class="big"><span class="flag f-it"></span> อิตาลี</td><td>22%</td><td>€70.01 ขึ้นไปต่อร้าน (ตั้งแต่ ก.พ. 2024)</td></tr>
+    </tbody></table></div>
+    <p class="note">ตัวเลขตามที่ค้นไว้ปี 2026 ให้เช็กเงื่อนไขล่าสุดที่ร้าน</p>
+  </div>
+
+  <div class="block" id="vat-steps">
+    <h3>ขั้นตอน</h3>
+    <ul class="tt"><li><span class="t">ตอนซื้อ</span><div>บอกที่แคชเชียร์ว่า "ขอแท็กซ์ฟรี" แสดงพาสปอร์ตตัวจริง ให้ร้านออกเอกสาร (กระดาษหรืออิเล็กทรอนิกส์) ฝรั่งเศสใช้ระบบ PABLO สเปนใช้ DIVA อิตาลีใช้ OTELLO</div></li><li><span class="t">ระหว่างทริป</span><div>อย่าใช้ของที่ซื้อ เก็บไว้พร้อมใบเสร็จและเอกสาร ศุลกากรอาจขอดู</div></li><li><span class="t">11 ธ.ค. สนามบินโรม (FCO)</span><div>โรมเป็นสนามบินสุดท้ายที่ออกจาก EU จึงทำของฝรั่งเศส สเปน เนเธอร์แลนด์รวมกันที่นี่ ไปศุลกากร (Customs / Dogana) ก่อนเช็กอิน</div></li><li><span class="t">ศุลกากร</span><div>รับการยืนยันบนเอกสาร (ตราประทับหรืออนุมัติแบบอิเล็กทรอนิกส์) เครื่อง PABLO มีแค่ในฝรั่งเศส เอกสารฝรั่งเศสจึงให้ศุลกากรที่โรมประทับตรา ของที่จะใส่กระเป๋าโหลดให้แสดงก่อนโหลด</div></li><li><span class="t">รับเงินคืน</span><div>รับเงินสดที่เคาน์เตอร์ Global Blue หรือ Planet ในสนามบิน หรือคืนเข้าบัตร คืนเข้าบัตรมักได้อัตราและค่าธรรมเนียมดีกว่า ถ้าไม่มีเคาน์เตอร์ ส่งเอกสารลงตู้ไปรษณีย์เฉพาะ</div></li></ul>
+    <p class="alert"><b>11 ธ.ค. ไปสนามบินเร็วหน่อย</b>　EK096 ออก 20:50 ถ้ามีขอคืนภาษี ควรถึงก่อนออก 3 ชม. ครึ่ง (ราว 17:20) มีดต้องให้ศุลกากรดูก่อนใส่กระเป๋าโหลด</p>
+  </div>
+
+</section>
+<!-- =================== CHAPTER 16: JOURNAL =================== -->
+<section id="journal" class="chapter jr" data-chapter="journal">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Chapter 16 · Journal</div>
+    <h2>บันทึกการเดินทาง <span class="local">Yuzuha · Papa · Mama</span></h2>
+    <div class="th">旅の記録</div>
+    <p class="lead">ตัวเอกคือ Yuzuha บันทึก "สิ่งแรก" ของวันนั้น และให้พ่อกับแม่เขียนสั้น ๆ ว่าเห็นอย่างไร รู้สึกอย่างไร สิ่งที่เขียนเก็บไว้ในมือถือเครื่องนี้ จึงเขียนได้แม้ไม่มีสัญญาณ เมื่อต่อเน็ตได้ กด "ส่งขึ้นคลาวด์" เพื่อรวมไว้ในหน้าบันทึกของครอบครัว</p>
+  </div>
+  <p class="note"><b>วิธีใช้</b>　กดวันที่เพื่อเปิด → เขียน (บันทึกอัตโนมัติ) → เมื่อมีเน็ตกด "ส่งขึ้นคลาวด์" → ในหน้าที่เปิดขึ้น วางข้อความที่ "นำเข้าจากไกด์บุ๊ก" แล้วกด "นำเข้า" ช่องเดียวกันจะเก็บอันที่ใหม่กว่า</p>
+  <div class="jr-bar"><button type="button" class="jr-send" data-url="https://claude.ai/artifact/TzF4yzmTo81E2CzUpkdR4m">ส่งขึ้นคลาวด์</button><a class="jr-open" href="https://claude.ai/artifact/TzF4yzmTo81E2CzUpkdR4m" target="_blank" rel="noopener">เปิดหน้าบันทึก</a><span class="jr-st" data-ok="บันทึกในเครื่องนี้แล้ว"></span></div>
+  <textarea class="jr-out" readonly hidden></textarea>
+  <div class="block" id="jr-days">
+    <h3><span class="flag f-th"></span> กรุงเทพฯ</h3>
+    <details class="jr-day"><summary><span class="dt">22 พ.ย. อา.</span><span class="cy">กรุงเทพฯ → อัมสเตอร์ดัม</span><span class="dots" data-md="1122"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1122.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1122.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1122.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+
+    <h3><span class="flag f-nl"></span> อัมสเตอร์ดัม</h3>
+    <details class="jr-day"><summary><span class="dt">23 พ.ย. จ.</span><span class="cy">อัมสเตอร์ดัม</span><span class="dots" data-md="1123"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1123.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1123.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1123.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">24 พ.ย. อ.</span><span class="cy">อัมสเตอร์ดัม → ปารีส</span><span class="dots" data-md="1124"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1124.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1124.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1124.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>รูปที่อยากถ่าย</span><label><input type="checkbox" data-jr="ph.ams.0">คลองหน้าบ้านแอนน์ แฟรงก์</label><label><input type="checkbox" data-jr="ph.ams.1">ลานเบไคน์โฮฟ</label></div>
+    <h3><span class="flag f-fr"></span> ปารีส</h3>
+    <details class="jr-day"><summary><span class="dt">25 พ.ย. พ.</span><span class="cy">ปารีส</span><span class="dots" data-md="1125"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1125.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1125.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1125.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">26 พ.ย. พฤ.</span><span class="cy">ปารีส</span><span class="dots" data-md="1126"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1126.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1126.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1126.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">27 พ.ย. ศ.</span><span class="cy">ปารีส</span><span class="dots" data-md="1127"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1127.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1127.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1127.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">28 พ.ย. ส.</span><span class="cy">ปารีส → ลียง</span><span class="dots" data-md="1128"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1128.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1128.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1128.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>รูปที่อยากถ่าย</span><label><input type="checkbox" data-jr="ph.par.0">หอไอเฟลยามค่ำ (จากทรอกาเดโร)</label><label><input type="checkbox" data-jr="ph.par.1">พีระมิดลูฟวร์</label><label><input type="checkbox" data-jr="ph.par.2">ทีไทม์ที่ Le Meurice</label><label><input type="checkbox" data-jr="ph.par.3">เช้าที่มงมาร์ต</label><label><input type="checkbox" data-jr="ph.par.4">ด้านหน้านอเทรอดาม</label></div>
+    <h3><span class="flag f-fr"></span> ลียง</h3>
+    <details class="jr-day"><summary><span class="dt">29 พ.ย. อา.</span><span class="cy">ลียง</span><span class="dots" data-md="1129"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1129.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1129.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1129.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">30 พ.ย. จ.</span><span class="cy">ลียง → บาร์เซโลนา</span><span class="dots" data-md="1130"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1130.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1130.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1130.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>รูปที่อยากถ่าย</span><label><input type="checkbox" data-jr="ph.lyo.0">วิวกลางคืนจากเนินฟูร์วีแยร์</label><label><input type="checkbox" data-jr="ph.lyo.1">หน้าร้านปอล โบกุส</label></div>
+    <h3><span class="flag f-es"></span> บาร์เซโลนา</h3>
+    <details class="jr-day"><summary><span class="dt">1 ธ.ค. อ.</span><span class="cy">บาร์เซโลนา</span><span class="dots" data-md="1201"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1201.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1201.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1201.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">2 ธ.ค. พ.</span><span class="cy">บาร์เซโลนา</span><span class="dots" data-md="1202"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1202.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1202.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1202.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">3 ธ.ค. พฤ.</span><span class="cy">บาร์เซโลนา → เวนิส</span><span class="dots" data-md="1203"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1203.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1203.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1203.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>รูปที่อยากถ่าย</span><label><input type="checkbox" data-jr="ph.bcn.0">แสงในซากราดาฟามีเลีย</label><label><input type="checkbox" data-jr="ph.bcn.1">ตลาดคริสต์มาสหน้ามหาวิหาร</label></div>
+    <h3><span class="flag f-it"></span> เวนิส</h3>
+    <details class="jr-day"><summary><span class="dt">4 ธ.ค. ศ.</span><span class="cy">เวนิส</span><span class="dots" data-md="1204"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1204.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1204.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1204.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">5 ธ.ค. ส.</span><span class="cy">เวนิส → ฟลอเรนซ์</span><span class="dots" data-md="1205"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1205.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1205.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1205.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>รูปที่อยากถ่าย</span><label><input type="checkbox" data-jr="ph.vce.0">กอนโดลากับคลองใหญ่</label><label><input type="checkbox" data-jr="ph.vce.1">สะพานรีอัลโต</label></div>
+    <h3><span class="flag f-it"></span> ฟลอเรนซ์</h3>
+    <details class="jr-day"><summary><span class="dt">6 ธ.ค. อา.</span><span class="cy">ฟลอเรนซ์</span><span class="dots" data-md="1206"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1206.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1206.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1206.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">7 ธ.ค. จ.</span><span class="cy">ฟลอเรนซ์</span><span class="dots" data-md="1207"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1207.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1207.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1207.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">8 ธ.ค. อ.</span><span class="cy">ฟลอเรนซ์ → โรม</span><span class="dots" data-md="1208"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1208.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1208.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1208.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>รูปที่อยากถ่าย</span><label><input type="checkbox" data-jr="ph.flr.0">รูปปั้นเดวิด</label><label><input type="checkbox" data-jr="ph.flr.1">พระอาทิตย์ตกที่ลานมีเกลันเจโล</label><label><input type="checkbox" data-jr="ph.flr.2">สะพานเวคคิโอ</label></div>
+    <h3><span class="flag f-it"></span> โรม</h3>
+    <details class="jr-day"><summary><span class="dt">9 ธ.ค. พ.</span><span class="cy">โรม</span><span class="dots" data-md="1209"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1209.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1209.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1209.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">10 ธ.ค. พฤ.</span><span class="cy">โรม</span><span class="dots" data-md="1210"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1210.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1210.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1210.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">11 ธ.ค. ศ.</span><span class="cy">โรม → ดูไบ</span><span class="dots" data-md="1211"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1211.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1211.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1211.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>รูปที่อยากถ่าย</span><label><input type="checkbox" data-jr="ph.rom.0">น้ำพุเทรวี</label><label><input type="checkbox" data-jr="ph.rom.1">โคลอสเซียม</label><label><input type="checkbox" data-jr="ph.rom.2">ลานเซนต์ปีเตอร์</label></div>
+    <h3><span class="flag f-ae"></span> ดูไบ</h3>
+    <details class="jr-day"><summary><span class="dt">12 ธ.ค. ส.</span><span class="cy">ดูไบ</span><span class="dots" data-md="1212"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1212.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1212.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1212.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">13 ธ.ค. อา.</span><span class="cy">ดูไบ → กรุงเทพฯ</span><span class="dots" data-md="1213"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>สิ่งแรกของ Yuzuha・สิ่งที่ทำได้<textarea data-jr="d1213.yz" placeholder="อาหารที่ได้กินครั้งแรก ตอนที่หัวเราะ สิ่งที่เห็นครั้งแรก…"></textarea></label>
+      <label>บันทึกของพ่อ<textarea data-jr="d1213.papa" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+      <label>บันทึกของแม่<textarea data-jr="d1213.mama" placeholder="เห็นเป็นอย่างไร รู้สึกอย่างไร"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>รูปที่อยากถ่าย</span><label><input type="checkbox" data-jr="ph.dxb.0">บุรจญ์เคาะลีฟะฮ์</label></div>
+  </div>
+</section>
 
 </template>
 <template id="tpl-en">
@@ -10486,12 +11078,18 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
         <li><a href="#food" data-ch="food" data-now="Food"><span class="no">06</span><span class="nm">Food</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
         <li><a href="#cw" data-ch="cw" data-now="Cheese & wine"><span class="no">07</span><span class="nm">Cheese & wine</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
         <li><a href="#art" data-ch="art" data-now="Art"><span class="no">08</span><span class="nm">Museums & masterpieces</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#arch" data-ch="arch" data-now="Architecture"><span class="no">09</span><span class="nm">Reading the buildings</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#xmas" data-ch="xmas" data-now="Christmas"><span class="no">10</span><span class="nm">Christmas markets</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
       </ol></div>
       <div class="toc-group"><h5><span>Support</span><small>Support</small></h5><ol>
-        <li><a href="#baby" data-ch="baby" data-now="Baby"><span class="no">09</span><span class="nm">Travelling with a baby</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
-        <li><a href="#safety" data-ch="safety" data-now="Emergency"><span class="no">10</span><span class="nm">Emergency & safety</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
-        <li><a href="#prep" data-ch="prep" data-now="Prep"><span class="no">11</span><span class="nm">Luggage, money, prep</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
-        <li><a href="#next" data-ch="next" data-now="Next time"><span class="no">12</span><span class="nm">Next time</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#baby" data-ch="baby" data-now="Baby"><span class="no">11</span><span class="nm">Travelling with a baby</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#safety" data-ch="safety" data-now="Emergency"><span class="no">12</span><span class="nm">Emergency & safety</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#prep" data-ch="prep" data-now="Prep"><span class="no">13</span><span class="nm">Luggage, money, prep</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#vat" data-ch="vat" data-now="VAT refund"><span class="no">14</span><span class="nm">VAT refund</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#next" data-ch="next" data-now="Next time"><span class="no">15</span><span class="nm">Next time</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+      </ol></div>
+      <div class="toc-group"><h5><span>Memories</span><small>Journal</small></h5><ol>
+        <li><a href="#journal" data-ch="journal" data-now="Journal"><span class="no">16</span><span class="nm">Travel journal</span><span class="dot" aria-hidden="true"></span><span class="dt">Yuzuha, Papa, Mama</span></a></li>
       </ol></div>
     </div>
   </div>
@@ -14228,12 +14826,109 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     </div>
   </div>
 </section>
+<!-- =================== CHAPTER 9: ARCHITECTURE =================== -->
+<section id="arch" class="chapter arch" data-chapter="arch">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Chapter 9 · Architecture</div>
+    <h2>Reading the buildings <span class="local">Gothique · Renacimiento · Barocco · Modernisme</span></h2>
+    <p class="lead">Masterpieces stand outside museums too: churches, palaces, squares, whole streets. Knowing the styles lets you read the centuries as you walk. Here are the buildings on our route, oldest first.</p>
+  </div>
+  <div class="subnav"><a href="#arch-styles">Styles and places</a><a href="#arch-words">Terms</a><a href="#arch-tips">Tips</a></div>
+
+  <div class="block" id="arch-styles">
+    <h3>Styles, and where we see them</h3>
+    <div class="tbl"><table><thead><tr><th>Style</th><th>How to recognise it</th><th>Where we see it</th></tr></thead><tbody>
+      <tr><td class="big">Ancient Rome<span class="tsub">1st–2nd c.</span></td><td>Arches and concrete hold up huge spaces: arenas, temples, baths</td><td><span class="flag f-it"></span> Rome's Pantheon (12/10): a 43 m dome with an open oculus; rain drains through small holes in the floor / the Colosseum (12/10)</td></tr>
+      <tr><td class="big">Byzantine<span class="tsub">11th c.–</span></td><td>Clusters of domes, gold mosaics inside: Venice's link with the East (today's Turkey)</td><td><span class="flag f-it"></span> St Mark's Basilica (12/4): five domes and ceilings covered in gold mosaic</td></tr>
+      <tr><td class="big">Gothic<span class="tsub">12th–15th c.</span></td><td>Pointed arches, flying buttresses holding the walls from outside, huge stained glass and rose windows: upward, toward light</td><td><span class="flag f-fr"></span> Notre-Dame (11/26 evening), Sainte-Chapelle (outside on 11/25) / <span class="flag f-it"></span> the white and pink walls of the Doge's Palace (Venetian Gothic)</td></tr>
+      <tr><td class="big">Renaissance<span class="tsub">15th–16th c.</span></td><td>The columns and proportions of ancient Rome return: symmetry, round arches, domes</td><td><span class="flag f-it"></span> Florence Cathedral (from 12/5): Brunelleschi's double-shell dome (finished 1436), built without scaffolding from the ground / <span class="flag f-fr"></span> courtyards and traboules (passages) in old Lyon</td></tr>
+      <tr><td class="big">Baroque<span class="tsub">17th c.</span></td><td>Curves, movement, light and shadow, theatrical surprise. Fountains and squares become stages</td><td><span class="flag f-it"></span> Bernini's Fountain of the Four Rivers in Piazza Navona, the Trevi Fountain, the colonnade of St Peter's Square (like two embracing arms)</td></tr>
+      <tr><td class="big">Dutch canal houses<span class="tsub">17th c.</span></td><td>Narrow and deep (tax went by frontage). Gables of many shapes, a hoisting beam on top; the slight forward lean is on purpose</td><td><span class="flag f-nl"></span> Singel and Prinsengracht in Amsterdam (11/23–24)</td></tr>
+      <tr><td class="big">Neoclassical and Second Empire<span class="tsub">18th–19th c.</span></td><td>Temple-like fronts from Greece and Rome. Paris boulevards are lined with Haussmann buildings of matching height and window lines</td><td><span class="flag f-fr"></span> The Panthéon (11/28), Arc de Triomphe (11/24 evening), Palais Garnier (11/25). Haussmann buildings have long balconies on the 2nd and 5th floors (French counting)</td></tr>
+      <tr><td class="big">Iron and glass<span class="tsub">late 19th c.</span></td><td>The industrial age shows off its iron frame</td><td><span class="flag f-fr"></span> The Eiffel Tower (1889, 11/24 evening), Musée d'Orsay (a 1900 station), the Galeries Lafayette dome</td></tr>
+      <tr><td class="big">Modernisme<span class="tsub">1880s–1920s</span></td><td>Catalan Art Nouveau: curves like plants or bones, mosaics of broken tiles (trencadís)</td><td><span class="flag f-es"></span> Sagrada Família (12/1), Casa Batlló, Casa Milà (Passeig de Gràcia). Sant Pau hospital and the Palau de la Música are by Domènech i Montaner</td></tr>
+      <tr><td class="big">Modern supertall<span class="tsub">2010</span></td><td>A tower that tapers in steps, based on a desert flower</td><td><span class="flag f-ae"></span> Burj Khalifa (828 m, from outside on the evening of 12/12)</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="arch-words">
+    <h3>Useful terms</h3>
+    <div class="tbl"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody>
+      <tr><td class="big">Flying buttress</td><td>A stone arm propping the wall from outside, so walls could be thinner and windows larger</td></tr>
+      <tr><td class="big">Rose window</td><td>Round stained-glass windows on the front and transepts; Notre-Dame has three</td></tr>
+      <tr><td class="big">Nave, transept</td><td>The long central space from door to altar, and the arms to either side: a cross from above</td></tr>
+      <tr><td class="big">Dome, lantern</td><td>The small tower on top is the lantern: it lets in light and weighs the dome down</td></tr>
+      <tr><td class="big">Façade</td><td>The front. On a church, a "book cover" of sculpted stories</td></tr>
+      <tr><td class="big">Trencadís</td><td>Mosaic of broken tiles and plates over curved surfaces, a Gaudí favourite</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="arch-tips">
+    <h3>How to look</h3>
+    <div class="grid2">
+      <div class="card"><h4>Inside a church</h4><ul><li>Look straight up first: the height, and whether the columns branch</li><li>Stained glass changes between morning (east) and afternoon (west) on sunny days</li><li>Avoid sightseeing during Mass; hats off</li></ul></div>
+      <div class="card"><h4>Walking the streets</h4><ul><li>Look above the ground floor: windows, balconies, rooflines</li><li>See a square whole from a corner, not the middle</li><li>Night lighting shows another face</li></ul></div>
+    </div>
+  </div>
+
+</section>
+<!-- =================== CHAPTER 10: CHRISTMAS MARKETS =================== -->
+<section id="xmas" class="chapter xmas" data-chapter="xmas">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Chapter 10 · Christmas Markets</div>
+    <h2>Christmas markets <span class="local">Marché de Noël · Fira de Nadal · Mercatino di Natale</span></h2>
+    <p class="lead">Late November to December is Christmas market season in Europe. For each city: the dates, and whether we can go while we are there. Dates are those announced for 2026, or the usual pattern; check the official pages before going.</p>
+  </div>
+  <div class="subnav"><a href="#xmas-list">By city</a><a href="#xmas-food">Food and drink</a><a href="#xmas-baby">With a stroller</a></div>
+
+  <div class="block" id="xmas-list">
+    <h3>Markets by city</h3>
+    <div class="tbl"><table><thead><tr><th>Market</th><th>Dates and when we can go</th><th>Highlights and notes</th></tr></thead><tbody>
+      <tr><td class="big"><span class="flag f-nl"></span> Amsterdam</td><td>The Museumplein Christmas village opens 12/3 and the Light Festival 11/26; on 11/23–24 neither has started <span class="pill ng">Opens after we leave</span></td><td>Peek at the Rembrandtplein ice rink if it is open (usually from mid-November). The street decorations will be up</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> Paris: Tuileries</td><td>11/14–1/3. Before or after Le Meurice on 11/25 <span class="pill ok">Open while we're there</span></td><td>One of the biggest in Paris, with a Ferris wheel and funfair, right opposite Le Meurice</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> Paris: Champs-Élysées</td><td>11/22–1/4. On the walk from the Arc on 11/24 <span class="pill ok">Open while we're there</span></td><td>Chalets along the gardens of the avenue, with the lights</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> Paris: Notre-Dame</td><td>11/26–12/27 (Square René Viviani). On 11/26 evening, before Notre-Dame <span class="pill ok">Open while we're there</span></td><td>Small and calm, with the cathedral across the Seine. Walkable from the hotel</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> Paris: Saint-Germain-des-Prés</td><td>11/27–1/6. Possible on the afternoon of 11/27 <span class="pill ok">Open while we're there</span></td><td>On Boulevard Saint-Germain, mostly crafts</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> Lyon: Place Carnot</td><td>11/20–12/24. Saturday until 22:00, Sunday until 20:00 <span class="pill ok">Open while we're there</span></td><td>In front of Perrache station. The Festival of Lights (12/5–8) is after we leave</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> Disneyland Paris</td><td>Christmas season 11/7–1/6. 11/25 evening (Som) <span class="pill ok">Open while we're there</span></td><td>Details in the <a href="#dlp-xmas">Disney chapter</a></td></tr>
+      <tr><td class="big"><span class="flag f-es"></span> Barcelona: Fira de Santa Llúcia</td><td>11/28–12/23 (planned), about 10:30–20:30. On the old-town day, 12/2 <span class="pill ok">Open while we're there</span></td><td>In front of the cathedral since 1786: nativity figures, caganers (squatting figures) and the Tió log</td></tr>
+      <tr><td class="big"><span class="flag f-it"></span> Venice: Campo Santo Stefano</td><td>Usually late November to early January; likely open on 12/3–4 <span class="pill maybe">Check</span></td><td>By the Accademia bridge. There is also an ice rink in Campo San Polo</td></tr>
+      <tr><td class="big"><span class="flag f-it"></span> Florence: Piazza Santa Croce</td><td>Usually mid-November to about 12/21, 10:00–23:00. On 12/5–7 <span class="pill ok">Open while we're there</span></td><td>German-style wooden huts. On 12/7–8 there is also the Fierucola craft market in Piazza SS. Annunziata (2025 dates)</td></tr>
+      <tr><td class="big"><span class="flag f-it"></span> Rome: Piazza Navona</td><td>Usually 12/1–1/6. On 12/8–10 <span class="pill ok">Open while we're there</span></td><td>A carousel and Befana witch dolls. 12/8 is a holiday (Immaculate Conception) and busy</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="xmas-food">
+    <h3>What to eat and drink</h3>
+    <div class="tbl"><table><thead><tr><th>Name</th><th>What it is</th></tr></thead><tbody>
+      <tr><td class="big"><span class="flag f-fr"></span> Vin chaud</td><td>Hot red wine with cinnamon and orange; "vin brulé" in Italy</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> Roast chestnuts</td><td>"Marrons chauds" in France, "caldarroste" in Italy, in a paper cone</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> Chocolat chaud</td><td>Thick hot chocolate, alcohol-free for children</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> Tartiflette, raclette</td><td>Potatoes and mountain cheese: the classic hot plate at the markets</td></tr>
+      <tr><td class="big"><span class="flag f-es"></span> Churros con chocolate</td><td>Fried dough dipped in thick chocolate</td></tr>
+      <tr><td class="big"><span class="flag f-es"></span> Turrón</td><td>Spain's almond-and-honey Christmas sweet</td></tr>
+      <tr><td class="big"><span class="flag f-it"></span> Panettone, pandoro</td><td>Christmas sweet breads from Milan and Verona</td></tr>
+      <tr><td class="big"><span class="flag f-it"></span> Panforte, ricciarelli</td><td>Tuscan (Sienese) nut-and-honey cake and soft almond biscuits</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="xmas-baby">
+    <h3>Tips with a baby</h3>
+    <div class="grid2">
+      <div class="card"><h4>Timing</h4><ul><li>Weekday daytime, or just after the lights come on (16:30–17:30)</li><li>Weekend evenings are packed; the carrier can be easier than the stroller</li></ul></div>
+      <div class="card"><h4>Watch out for</h4><ul><li>Never hold hot drinks over Yuzuha. Some stalls refund a cup deposit</li><li>Crowds attract pickpockets: wallets and phones in front</li><li>Chestnuts, nuts and honey sweets are not for Yuzuha yet</li></ul></div>
+    </div>
+  </div>
+
+</section>
 
 <!-- =================== CHAPTER 7: BABY =================== -->
 <section id="baby" class="chapter base" data-chapter="baby">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 9 · Traveling with a Baby</div>
+    <div class="eyebrow">Chapter 11 · Traveling with a Baby</div>
     <h2>Travelling with a baby <span class="local">with Yuzuha</span></h2>
     <p class="lead">The key to success is putting Yuzuha's rhythm at the centre of the plan. Every day in this book follows the pattern "one thing in the morning, a nap, one thing late afternoon".</p>
   </div>
@@ -14354,7 +15049,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="safety" class="chapter base" data-chapter="safety">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 10 · Safety &amp; Emergency</div>
+    <div class="eyebrow">Chapter 12 · Safety &amp; Emergency</div>
     <h2>Emergency &amp; safety <span class="local">The page for when things go wrong</span></h2>
   </div>
 
@@ -14892,7 +15587,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="prep" class="chapter base" data-chapter="prep">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 11 · Luggage, Money &amp; To-do</div>
+    <div class="eyebrow">Chapter 13 · Luggage, Money &amp; To-do</div>
     <h2>Luggage, money, preparation <span class="local">Read before leaving</span></h2>
   </div>
   <div class="subnav"><a href="#prep-bags">Luggage set-up</a><a href="#prep-gym">Gyms</a><a href="#prep-weight">Weight plan</a><a href="#prep-weather">Weather &amp; clothes</a><a href="#prep-pack">Packing</a><a href="#prep-money">Money</a><a href="#prep-wise">Wise</a><a href="#prep-meals">Meal scenarios</a><a href="#prep-todo">To-do</a></div>
@@ -15406,7 +16101,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="next" class="chapter base" data-chapter="next">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 12 · Someday</div>
+    <div class="eyebrow">Chapter 15 · Someday</div>
     <h2>An idea for next time <span class="local">Switzerland and Lake Como</span></h2>
     <p class="lead">A week somewhere this trip doesn't touch. Best around July, when all the mountain transport runs. Fly into Zurich, home from Milan.</p>
   </div>
@@ -15435,6 +16130,184 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 
 </div>
 
+<!-- =================== CHAPTER 14: TAX REFUND =================== -->
+<section id="vat" class="chapter vat" data-chapter="vat">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Chapter 14 · Tax Refund</div>
+    <h2>VAT refund <span class="local">Détaxe · Tax Free · Rimborso IVA</span></h2>
+    <p class="lead">Travellers living outside the EU can get part of the VAT back on goods. Our last EU exit is Rome airport on 12/11, so everything is done there. For bigger purchases such as copper pans or knives.</p>
+  </div>
+  <div class="subnav"><a href="#vat-who">Who</a><a href="#vat-min">Minimums</a><a href="#vat-steps">Steps</a></div>
+
+  <div class="block" id="vat-who">
+    <h3>Who and what qualifies</h3>
+    <div class="grid2">
+      <div class="card"><h4>People</h4><ul><li>People living outside the EU (Ryo and Som). The original passport is needed</li><li>Each country has conditions, e.g. 16 or over in France</li></ul></div>
+      <div class="card"><h4>Goods</h4><ul><li>Goods you take home (kitchen tools, clothes, cosmetics…)</li><li>Services (restaurants, hotels, transport, tickets) do not qualify</li><li>You do not get all the tax back: after fees, often about a tenth of the price</li></ul></div>
+    </div>
+  </div>
+
+  <div class="block" id="vat-min">
+    <h3>VAT rates and minimum spend</h3>
+    <div class="tbl"><table><thead><tr><th>Country</th><th>VAT</th><th>Minimum spend</th></tr></thead><tbody>
+      <tr><td class="big"><span class="flag f-nl"></span> Netherlands</td><td>21%</td><td>About €50 per shop per day</td></tr>
+      <tr><td class="big"><span class="flag f-fr"></span> France</td><td>20% (food and books 5.5%)</td><td>€100.01 or more, same shop, same day</td></tr>
+      <tr><td class="big"><span class="flag f-es"></span> Spain</td><td>21%</td><td>No minimum (since 2018)</td></tr>
+      <tr><td class="big"><span class="flag f-it"></span> Italy</td><td>22%</td><td>€70.01 or more per shop (since February 2024)</td></tr>
+    </tbody></table></div>
+    <p class="note">Figures as checked in 2026; confirm the current rules in the shop.</p>
+  </div>
+
+  <div class="block" id="vat-steps">
+    <h3>Step by step</h3>
+    <ul class="tt"><li><span class="t">In the shop</span><div>Ask for "tax free" at the till and show the original passport. The shop issues the form (paper or digital): PABLO in France, DIVA in Spain, OTELLO in Italy</div></li><li><span class="t">During the trip</span><div>Keep the goods unused, with receipts and forms. Customs may ask to see them</div></li><li><span class="t">12/11 Rome airport (FCO)</span><div>Rome is our last EU airport, so the French, Spanish and Dutch forms are all done here too. Go to customs (Customs / Dogana) before check-in</div></li><li><span class="t">Customs</span><div>Get the forms validated (stamp or digital approval). PABLO kiosks exist only in France, so French forms get a stamp at Rome customs. Show anything going in checked bags before you check them in</div></li><li><span class="t">Refund</span><div>Cash at the Global Blue or Planet desk, or a refund to the card (often better on rate and fees). If no desk, drop the forms in the dedicated mailbox</div></li></ul>
+    <p class="alert"><b>Get to the airport early on 12/11</b>　EK096 leaves at 20:50. With tax refunds to do, arrive 3.5 hours before (around 17:20). Show knives to customs before they go into checked bags</p>
+  </div>
+
+</section>
+<!-- =================== CHAPTER 16: JOURNAL =================== -->
+<section id="journal" class="chapter jr" data-chapter="journal">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Chapter 16 · Journal</div>
+    <h2>Travel journal <span class="local">Yuzuha · Papa · Mama</span></h2>
+    <p class="lead">Yuzuha is the star: her "firsts" each day, and a line each from Papa and Mama on how it looked and felt. Entries are saved on this phone, so you can write without signal. When online, "Send to cloud" gathers them on the family journal page.</p>
+  </div>
+  <p class="note"><b>How</b>　Tap a date to open → write (saved automatically) → when online, tap "Send to cloud" → on the page that opens, paste into "Import from the guide" and tap Import. For the same box, the newer text wins</p>
+  <div class="jr-bar"><button type="button" class="jr-send" data-url="https://claude.ai/artifact/TzF4yzmTo81E2CzUpkdR4m">Send to cloud</button><a class="jr-open" href="https://claude.ai/artifact/TzF4yzmTo81E2CzUpkdR4m" target="_blank" rel="noopener">Open the journal page</a><span class="jr-st" data-ok="Saved on this device"></span></div>
+  <textarea class="jr-out" readonly hidden></textarea>
+  <div class="block" id="jr-days">
+    <h3><span class="flag f-th"></span> Bangkok</h3>
+    <details class="jr-day"><summary><span class="dt">11/22 Sun</span><span class="cy">Bangkok → Amsterdam</span><span class="dots" data-md="1122"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1122.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1122.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1122.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+
+    <h3><span class="flag f-nl"></span> Amsterdam</h3>
+    <details class="jr-day"><summary><span class="dt">11/23 Mon</span><span class="cy">Amsterdam</span><span class="dots" data-md="1123"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1123.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1123.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1123.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">11/24 Tue</span><span class="cy">Amsterdam → Paris</span><span class="dots" data-md="1124"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1124.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1124.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1124.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>Photos to take</span><label><input type="checkbox" data-jr="ph.ams.0">The canal by the Anne Frank House</label><label><input type="checkbox" data-jr="ph.ams.1">The Begijnhof courtyard</label></div>
+    <h3><span class="flag f-fr"></span> Paris</h3>
+    <details class="jr-day"><summary><span class="dt">11/25 Wed</span><span class="cy">Paris</span><span class="dots" data-md="1125"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1125.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1125.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1125.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">11/26 Thu</span><span class="cy">Paris</span><span class="dots" data-md="1126"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1126.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1126.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1126.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">11/27 Fri</span><span class="cy">Paris</span><span class="dots" data-md="1127"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1127.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1127.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1127.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">11/28 Sat</span><span class="cy">Paris → Lyon</span><span class="dots" data-md="1128"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1128.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1128.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1128.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>Photos to take</span><label><input type="checkbox" data-jr="ph.par.0">The Eiffel Tower at night (from Trocadéro)</label><label><input type="checkbox" data-jr="ph.par.1">The Louvre Pyramid</label><label><input type="checkbox" data-jr="ph.par.2">Tea at Le Meurice</label><label><input type="checkbox" data-jr="ph.par.3">Montmartre in the morning</label><label><input type="checkbox" data-jr="ph.par.4">The front of Notre-Dame</label></div>
+    <h3><span class="flag f-fr"></span> Lyon</h3>
+    <details class="jr-day"><summary><span class="dt">11/29 Sun</span><span class="cy">Lyon</span><span class="dots" data-md="1129"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1129.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1129.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1129.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">11/30 Mon</span><span class="cy">Lyon → Barcelona</span><span class="dots" data-md="1130"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1130.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1130.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1130.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>Photos to take</span><label><input type="checkbox" data-jr="ph.lyo.0">Night view from Fourvière</label><label><input type="checkbox" data-jr="ph.lyo.1">Outside Paul Bocuse</label></div>
+    <h3><span class="flag f-es"></span> Barcelona</h3>
+    <details class="jr-day"><summary><span class="dt">12/1 Tue</span><span class="cy">Barcelona</span><span class="dots" data-md="1201"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1201.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1201.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1201.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">12/2 Wed</span><span class="cy">Barcelona</span><span class="dots" data-md="1202"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1202.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1202.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1202.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">12/3 Thu</span><span class="cy">Barcelona → Venice</span><span class="dots" data-md="1203"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1203.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1203.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1203.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>Photos to take</span><label><input type="checkbox" data-jr="ph.bcn.0">The light inside the Sagrada Família</label><label><input type="checkbox" data-jr="ph.bcn.1">The Christmas market by the cathedral</label></div>
+    <h3><span class="flag f-it"></span> Venice</h3>
+    <details class="jr-day"><summary><span class="dt">12/4 Fri</span><span class="cy">Venice</span><span class="dots" data-md="1204"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1204.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1204.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1204.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">12/5 Sat</span><span class="cy">Venice → Florence</span><span class="dots" data-md="1205"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1205.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1205.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1205.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>Photos to take</span><label><input type="checkbox" data-jr="ph.vce.0">Gondolas and the Grand Canal</label><label><input type="checkbox" data-jr="ph.vce.1">The Rialto Bridge</label></div>
+    <h3><span class="flag f-it"></span> Florence</h3>
+    <details class="jr-day"><summary><span class="dt">12/6 Sun</span><span class="cy">Florence</span><span class="dots" data-md="1206"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1206.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1206.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1206.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">12/7 Mon</span><span class="cy">Florence</span><span class="dots" data-md="1207"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1207.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1207.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1207.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">12/8 Tue</span><span class="cy">Florence → Rome</span><span class="dots" data-md="1208"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1208.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1208.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1208.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>Photos to take</span><label><input type="checkbox" data-jr="ph.flr.0">David</label><label><input type="checkbox" data-jr="ph.flr.1">Sunset at Piazzale Michelangelo</label><label><input type="checkbox" data-jr="ph.flr.2">Ponte Vecchio</label></div>
+    <h3><span class="flag f-it"></span> Rome</h3>
+    <details class="jr-day"><summary><span class="dt">12/9 Wed</span><span class="cy">Rome</span><span class="dots" data-md="1209"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1209.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1209.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1209.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">12/10 Thu</span><span class="cy">Rome</span><span class="dots" data-md="1210"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1210.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1210.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1210.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">12/11 Fri</span><span class="cy">Rome → Dubai</span><span class="dots" data-md="1211"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1211.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1211.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1211.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>Photos to take</span><label><input type="checkbox" data-jr="ph.rom.0">The Trevi Fountain</label><label><input type="checkbox" data-jr="ph.rom.1">The Colosseum</label><label><input type="checkbox" data-jr="ph.rom.2">St Peter's Square</label></div>
+    <h3><span class="flag f-ae"></span> Dubai</h3>
+    <details class="jr-day"><summary><span class="dt">12/12 Sat</span><span class="cy">Dubai</span><span class="dots" data-md="1212"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1212.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1212.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1212.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <details class="jr-day"><summary><span class="dt">12/13 Sun</span><span class="cy">Dubai → Bangkok</span><span class="dots" data-md="1213"><i></i><i></i><i></i></span></summary><div class="jr-f">
+      <label>Yuzuha's firsts<textarea data-jr="d1213.yz" placeholder="First tastes, a laugh, something seen for the first time…"></textarea></label>
+      <label>Papa's note<textarea data-jr="d1213.papa" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+      <label>Mama's note<textarea data-jr="d1213.mama" placeholder="What did it look like to you? How did it feel?"></textarea></label>
+    </div></details>
+    <div class="jr-ph"><span>Photos to take</span><label><input type="checkbox" data-jr="ph.dxb.0">Burj Khalifa</label></div>
+  </div>
+</section>
 
 </template>
 <script>
@@ -15526,6 +16399,40 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     }
     txt.innerHTML = s;
   }
+  // ---- travel journal: saved on this device, sent to the family journal page on demand
+  var JR_KEY = 'guide-jr-v1';
+  function jrLoad(){ try{ return JSON.parse(localStorage.getItem(JR_KEY) || '{}'); }catch(e){ return {}; } }
+  function jrDots(){
+    var m = jrLoad();
+    Array.prototype.slice.call(book.querySelectorAll('.jr-day .dots')).forEach(function(d){
+      var md = d.dataset.md, i = d.querySelectorAll('i');
+      ['yz','papa','mama'].forEach(function(f, k){ var v = m['d' + md + '.' + f]; i[k].className = (v && v.t) ? 'on' : ''; });
+    });
+  }
+  function jrInit(){
+    var m = jrLoad();
+    Array.prototype.slice.call(book.querySelectorAll('[data-jr]')).forEach(function(el){
+      var v = m[el.dataset.jr]; if(!v) return;
+      if(el.type === 'checkbox') el.checked = !!v.v; else el.value = v.t || '';
+    });
+    jrDots();
+  }
+  var jrTimer = null;
+  book.addEventListener('input', function(e){
+    var el = e.target; if(!el.dataset || !el.dataset.jr) return;
+    var m = jrLoad(), now = Date.now();
+    m[el.dataset.jr] = el.type === 'checkbox' ? {v: el.checked ? 1 : 0, u: now} : {t: el.value, u: now};
+    try{ localStorage.setItem(JR_KEY, JSON.stringify(m)); }catch(err){}
+    clearTimeout(jrTimer); jrTimer = setTimeout(function(){ var s = book.querySelector('.jr-st'); if(s) s.textContent = s.dataset.ok; jrDots(); }, 400);
+  });
+  book.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('.jr-send') : null; if(!b) return;
+    var txt = 'EUJ1:' + JSON.stringify({v: 1, e: jrLoad()});
+    var out = book.querySelector('.jr-out');
+    var show = function(){ if(out){ out.hidden = false; out.value = txt; out.select(); } };
+    try{ if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).catch(show); } else { show(); } }catch(err){ show(); }
+    window.open(b.dataset.url, '_blank', 'noopener');
+  });
   function chapterOf(el){ while(el && !(el.dataset && el.dataset.chapter)) el = el.parentElement; return el; }
   function show(chId){
     chapters.forEach(function(c){ c.hidden = showingAll ? false : (c.dataset.chapter !== chId); });
@@ -15594,6 +16501,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
       cb.addEventListener('change', function(){ try{ localStorage.setItem('guide-ck-' + cb.id, cb.checked ? '1' : '0'); }catch(e){} });
     });
     renderStatus();
+    jrInit();
     if(window.__statusTimer) clearInterval(window.__statusTimer);
     window.__statusTimer = setInterval(renderStatus, 60000);
     go(location.hash, false);
