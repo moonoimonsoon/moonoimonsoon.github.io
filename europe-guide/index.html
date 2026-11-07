@@ -21,7 +21,7 @@
   --ok:#62D59E; --ok-bg:#163126; --warn:#F2C25A; --warn-bg:#352912; --idle:#A4A9B6; --idle-bg:#262A33; --bad:#FF8A80; --bad-bg:#3A1B19;
   --nl1:#E8606A; --nl2:#7FA2E6; --fr1:#6AA6EC; --fr2:#F37A70; --es1:#E85A5E; --es2:#F1BF00; --es-ink:#F3CE4E;
   --it1:#4CC487; --it2:#EE6670; --ae1:#4CB977; --ae2:#EE6670; --ae3:#ECEEF3; --th1:#E8667A; --th2:#9C97E0;
-  --food:#E2A36A; --flag-white:#F2F3F6; color-scheme:dark;
+  --food:#E2A36A; --art:#D98C8C; --flag-white:#F2F3F6; color-scheme:dark;
   --f-display:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",system-ui,sans-serif;
   --f-body:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP","Noto Sans Thai",system-ui,sans-serif;
   --f-hand:"Klee One","Hiragino Mincho ProN",serif;
@@ -91,7 +91,7 @@ nav.toc a[aria-current="true"]{background:var(--ink);color:var(--bg);border-colo
 .chapter{padding-block:26px 10px;scroll-margin-top:60px;--c1:var(--ink);--c2:var(--muted)}
 .chapter + .chapter{border-top:1px solid var(--line);margin-top:28px}
 .chapter.nl{--c1:var(--nl1);--c2:var(--nl2)} .chapter.fr{--c1:var(--fr1);--c2:var(--fr2)} .chapter.es{--c1:var(--es1);--c2:var(--es-ink)}
-.chapter.it{--c1:var(--it1);--c2:var(--it2)} .chapter.ae{--c1:var(--ae1);--c2:var(--ae2)} .chapter.food{--c1:var(--food);--c2:var(--food)}
+.chapter.it{--c1:var(--it1);--c2:var(--it2)} .chapter.ae{--c1:var(--ae1);--c2:var(--ae2)} .chapter.food{--c1:var(--food);--c2:var(--food)} .chapter.art{--c1:var(--art);--c2:var(--art)}
 .chapter.base{--c1:var(--ink);--c2:var(--muted)}
 .chapter.dlp{--c1:#B9A2F2;--c2:#F2C25A}
 .dlp .band{background:linear-gradient(90deg,#6E5BC9,#B9A2F2 45%,#F2C25A)}
@@ -104,6 +104,7 @@ nav.toc a[aria-current="true"]{background:var(--ink);color:var(--bg);border-colo
 .it .band{background:linear-gradient(to right,var(--it1) 0 33.3%,var(--flag-white) 33.3% 66.6%,var(--it2) 66.6%)}
 .ae .band{background:linear-gradient(to right,var(--ae2) 0 16%,transparent 16%),linear-gradient(to bottom,var(--ae1) 0 33.3%,var(--flag-white) 33.3% 66.6%,var(--ae3) 66.6%)}
 .food .band{background:repeating-linear-gradient(90deg,var(--food) 0 14px,var(--memo) 14px 28px)}
+.art .band{background:repeating-linear-gradient(90deg,var(--art) 0 14px,var(--memo) 14px 28px)}
 .base .band{background:linear-gradient(to right,var(--nl1),var(--fr1),var(--es2),var(--it1),var(--ae2))}
 .ch-head{display:grid;gap:6px;margin-bottom:6px}
 .ch-head .eyebrow{color:var(--c2)}
@@ -294,7 +295,7 @@ html[data-theme="som"]{
   --ok:#1E7A4C; --ok-bg:#DDF3E6; --warn:#8A5A00; --warn-bg:#FFEFC2; --idle:#5E6468; --idle-bg:#EEEAE2; --bad:#B23A2E; --bad-bg:#FBE1DD;
   --nl1:#C8414C; --nl2:#3B6FB6; --fr1:#2F6CB8; --fr2:#C24E3E; --es1:#C8383D; --es2:#E0A800; --es-ink:#9A6E00;
   --it1:#2E8A57; --it2:#C8414C; --ae1:#2E8A57; --ae2:#C8414C; --ae3:#2B2722; --th1:#C8414C; --th2:#4A4FA8;
-  --food:#B86A2B; --flag-white:#FFFFFF; color-scheme:light;
+  --food:#B86A2B; --art:#9E3B3B; --flag-white:#FFFFFF; color-scheme:light;
 }
 html[data-theme="yuzuha"]{
   --bg:#FFF6DC; --dot:#F1E3B8; --paper:#FFFFFF; --ink:#1E1B2E; --muted:#56506B; --line:#E6DCC0; --soft:#FFF0C2;
@@ -302,7 +303,7 @@ html[data-theme="yuzuha"]{
   --ok:#11683F; --ok-bg:#C9F0DA; --warn:#7A4E00; --warn-bg:#FFE7A6; --idle:#56506B; --idle-bg:#EFE7CF; --bad:#A8322A; --bad-bg:#FFD9D3;
   --nl1:#D63E4A; --nl2:#2E63C0; --fr1:#2E63C0; --fr2:#E2493A; --es1:#D63E4A; --es2:#FFD23F; --es-ink:#8A6400;
   --it1:#16804A; --it2:#D63E4A; --ae1:#16804A; --ae2:#D63E4A; --ae3:#1E1B2E; --th1:#D63E4A; --th2:#5A4FC0;
-  --food:#B5651D; --flag-white:#FFFFFF; color-scheme:light;
+  --food:#B5651D; --art:#9E3B3B; --flag-white:#FFFFFF; color-scheme:light;
   --f-display:"M PLUS Rounded 1c","Zen Maru Gothic","Hiragino Maru Gothic ProN",system-ui,sans-serif;
 }
 html[data-theme="som"] .chapter.dlp,html[data-theme="yuzuha"] .chapter.dlp{--c1:#6B4FC8;--c2:#9A6E00}
@@ -378,6 +379,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <li><a href="#it" data-ch="it"><span class="flag f-it"></span>イタリア</a></li>
     <li><a href="#ae" data-ch="ae"><span class="flag f-ae"></span>ドバイ</a></li>
     <li><a href="#food" data-ch="food">料理</a></li>
+    <li><a href="#art" data-ch="art">美術</a></li>
     <li><a href="#baby" data-ch="baby">赤ちゃん連れ</a></li>
     <li><a href="#safety" data-ch="safety">緊急・安全</a></li>
     <li><a href="#prep" data-ch="prep">荷物・お金・準備</a></li>
@@ -649,7 +651,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="nl" class="chapter nl" data-chapter="nl">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 1 · Netherlands · 11/23 – 11/25</div>
+    <div class="eyebrow">Chapter 1 · Netherlands · 11/23 – 11/24</div>
     <h2>オランダ <span class="local">Nederland</span></h2>
     <p class="lead">国土の約4分の1が海面より低く、「世界は神が造ったが、オランダはオランダ人が造った」と言われる国。江戸時代の日本が交易を続けた唯一の西洋の国で、アユタヤ王朝のタイとも深い縁があります。旅の始まりは、時差ぼけを抜きながらゆっくりと。</p>
   </div>
@@ -941,9 +943,9 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="fr" class="chapter fr" data-chapter="fr">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 2 · France · 11/25 – 11/30</div>
+    <div class="eyebrow">Chapter 2 · France · 11/24 – 11/30</div>
     <h2>フランス <span class="local">France</span></h2>
-    <p class="lead">旅でいちばん長い5泊の街。宿は5区の植物園のそば。カルチェ・ラタンとローマ時代のパリ（ルテティア）の跡が歩ける範囲です。朝は市場、昼は美術館、夕方は宿で休憩、夜は灯りの街。17世紀にはアユタヤのナーライ王の使節がヴェルサイユを訪ね、19世紀には日本の浮世絵がパリの画家たちを夢中にさせました。</p>
+    <p class="lead">旅でいちばん長い4泊の街（このあとリヨンで2泊）。宿は5区の植物園のそば。カルチェ・ラタンとローマ時代のパリ（ルテティア）の跡が歩ける範囲です。朝は市場、昼は美術館、夜は灯りの街。17世紀にはアユタヤのナーライ王の使節がヴェルサイユを訪ね、19世紀には日本の浮世絵がパリの画家たちを夢中にさせました。</p>
   </div>
   <div class="subnav"><a href="#fr-data">基本データ</a><a href="#fr-hist">歴史</a><a href="#fr-ties">日本・タイとの縁</a><a href="#paris">パリ</a><a href="#fr-food">食べる・飲む</a><a href="#fr-manners">テーブルマナー</a><a href="#fr-film">予習の映画</a><a href="#fr-map">地図</a><a href="#fr-sos">緊急</a><a href="#fr-phr">会話</a></div>
 
@@ -3926,12 +3928,203 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <p class="note">重いものを買う順番は「荷物と準備」の章の重量計画を参照。</p>
   </div>
 </section>
+<!-- =================== CHAPTER 7: ART (FR · ES · IT) =================== -->
+<section id="art" class="chapter art" data-chapter="art">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Chapter 7 · Art</div>
+    <h2>美術館と名作 <span class="local">Louvre · Sagrada Família · Vaticano</span></h2>
+    <p class="lead">行き先が決まっている美術館で、見ておきたい名作をまとめました。古代ギリシャ・ローマの彫刻から、ルネサンス、フランスの近代絵画、ガウディ、ピカソまで。旅の順番とは逆に、イタリアで生まれたものがフランスやスペインへ渡っていく流れも見えてきます。</p>
+  </div>
+  <div class="subnav"><a href="#art-flow">美術の流れ</a><a href="#art-ties">旅をつなぐ糸</a><a href="#art-louvre">ルーヴル</a><a href="#art-rodin">ロダン</a><a href="#art-orsay">オルセー</a><a href="#art-sagrada">サグラダ・ファミリア</a><a href="#art-picasso">ピカソ</a><a href="#art-doge">ドゥカーレ宮殿</a><a href="#art-accademia">アカデミア</a><a href="#art-uffizi">ウフィツィ</a><a href="#art-vatican">バチカン</a><a href="#art-tips">見方のコツ</a></div>
+
+  <p class="note">名作の写真は載せていません。展示室の場所は変わることがあるので、当日は美術館のアプリか館内の地図で確認してください。</p>
+
+  <div class="block" id="art-flow">
+    <h3>美術の流れ</h3>
+    <ol class="hist">
+      <li><span class="y">前2600年ごろ〜</span><div>古代エジプト、メソポタミア。ルーヴルの「書記座像」「ハンムラビ法典」</div></li>
+      <li><span class="y">前2〜前1世紀</span><div>ヘレニズムの彫刻。動きと感情のある体。「サモトラケのニケ」「ミロのヴィーナス」「ラオコーン」</div></li>
+      <li><span class="y">1300年ごろ</span><div>ジョット。平らな聖人の絵に、重さと感情が入る。ルネサンスの前触れ</div></li>
+      <li><span class="y">1400年代</span><div>フィレンツェの初期ルネサンス。遠近法、古代の神話の復活。ボッティチェリ「ヴィーナスの誕生」</div></li>
+      <li><span class="y">1500〜1520年ごろ</span><div>盛期ルネサンス。レオナルド「モナ・リザ」、ミケランジェロ「ダビデ」とシスティーナ礼拝堂、ラファエロ「アテネの学堂」</div></li>
+      <li><span class="y">1500年代</span><div>ヴェネツィア派。線より色。ティツィアーノ、ティントレット、ヴェロネーゼの巨大な画面</div></li>
+      <li><span class="y">1600年ごろ</span><div>バロック。カラヴァッジョの強い光と影</div></li>
+      <li><span class="y">1780〜1830年代</span><div>フランスの新古典主義とロマン主義。ダヴィッド「ナポレオンの戴冠式」、ドラクロワ「民衆を導く自由の女神」</div></li>
+      <li><span class="y">1850〜1890年代</span><div>写実主義から印象派、ポスト印象派へ。外の光、日常の場面。マネ、モネ、ルノワール、ゴッホ</div></li>
+      <li><span class="y">1880〜1917年</span><div>ロダン。彫刻に、未完成のような表面と内面の動きを持ち込む</div></li>
+      <li><span class="y">1882年〜</span><div>ガウディのサグラダ・ファミリア。自然の形と幾何学から建築をつくる（今も建設中）</div></li>
+      <li><span class="y">1900年代〜</span><div>ピカソ。バルセロナで学び、パリで青の時代、キュビスムへ</div></li>
+    </ol>
+  </div>
+
+  <div class="block" id="art-ties">
+    <h3>旅をつなぐ糸</h3>
+    <div class="grid2">
+      <div class="card"><h4>ミケランジェロを3都市で</h4><ul><li>ルーヴル（11/25）：「瀕死の奴隷」「反抗する奴隷」</li><li>アカデミア（12/5）：「ダビデ」と、同じ墓のために彫られた未完成の「囚われ人」</li><li>バチカン（12/9）：システィーナ礼拝堂の天井画と「最後の審判」、サン・ピエトロの「ピエタ」</li></ul></div>
+      <div class="card"><h4>レオナルドの3枚</h4><ul><li>ルーヴル：「モナ・リザ」。晩年、フランス王に招かれて持ってきた絵</li><li>ウフィツィ：若いころの「受胎告知」</li><li>バチカン絵画館：未完成の「聖ヒエロニムス」</li></ul></div>
+      <div class="card"><h4>ナポレオン</h4><ul><li>ルーヴル（11/25）：ダヴィッド「ナポレオンの戴冠式」</li><li>アンヴァリッド（11/26）：ナポレオンの墓</li><li>ヴェネツィア（12/4）：ナポレオンが1797年に共和国を終わらせ、サン・マルコの馬像をパリへ運んだ（のちに返還）</li></ul></div>
+      <div class="card"><h4>歩いた場所が絵の中に</h4><ul><li>モンマルトル（11/25 朝）→ オルセーのルノワール「ムーラン・ド・ラ・ギャレットの舞踏会」</li><li>ノートルダム（11/26）→ ルーヴルの「ナポレオンの戴冠式」の舞台</li><li>ヴェネツィアの運河 → ルーヴルの「カナの婚礼」（ヴェロネーゼ、ヴェネツィアの修道院から運ばれた）</li></ul></div>
+    </div>
+  </div>
+
+  <div class="block" id="art-louvre">
+    <h3><span class="flag f-fr"></span> ルーヴル美術館 <small>Musée du Louvre</small></h3>
+    <p class="rain"><b>行く日</b>：<a href="#d-1125">11/25（水）17:00〜21:00、Ryo と Yuzuha</a></p>
+    <p class="note">元は王の宮殿。1793年、革命のさなかに美術館になった。翼は3つ（ドゥノン、シュリー、リシュリュー）。4時間でも全部は見られないので、ドゥノン翼から回る。順番の例：サモトラケのニケ → イタリア絵画の大回廊 → モナ・リザとカナの婚礼 → フランスの大きな絵（戴冠式、メデューズ号、自由の女神）→ 1階のミケランジェロ → シュリー翼のミロのヴィーナス → エジプト。時間が残ればリシュリュー翼。エレベーターがあるのでベビーカーで回れる。</p>
+    <div class="tbl"><table class="wide"><thead><tr><th>作品</th><th>作者・年</th><th>見どころ</th><th>場所</th></tr></thead><tbody>
+      <tr><td class="big">サモトラケのニケ</td><td>作者不明、前190年ごろ</td><td>船の舳先に降り立つ勝利の女神。風を受ける衣のひだを、階段の下から見上げる</td><td>ドゥノン翼、ダリュの階段</td></tr>
+      <tr><td class="big">モナ・リザ</td><td>レオナルド・ダ・ヴィンチ、1503〜1519年ごろ</td><td>輪郭をぼかす「スフマート」。思ったより小さい（77×53cm）。1911年に盗まれ、2年後に戻った</td><td>ドゥノン翼、国家の間</td></tr>
+      <tr><td class="big">カナの婚礼</td><td>ヴェロネーゼ、1563年</td><td>ルーヴルでいちばん大きな絵。モナ・リザの真向かい。ナポレオン軍がヴェネツィアから運んだ</td><td>国家の間</td></tr>
+      <tr><td class="big">ナポレオンの戴冠式</td><td>ジャック＝ルイ・ダヴィッド、1805〜07年</td><td>ノートルダムでの戴冠。ナポレオンが妃ジョゼフィーヌに冠を授ける場面。来ていない母も描き込まれている</td><td>ドゥノン翼、フランス絵画の大展示室</td></tr>
+      <tr><td class="big">メデューズ号の筏</td><td>テオドール・ジェリコー、1818〜19年</td><td>実際の難破事件。遠くの船に手を振る人へ向かって、三角形に体が積み上がる</td><td>同上</td></tr>
+      <tr><td class="big">民衆を導く自由の女神</td><td>ウジェーヌ・ドラクロワ、1830年</td><td>1830年の七月革命。三色旗を掲げる女性。右奥にノートルダムの塔</td><td>同上</td></tr>
+      <tr><td class="big">グランド・オダリスク</td><td>アングル、1814年</td><td>背中が長すぎる（椎骨が多いと言われる）。美しさのための「うそ」</td><td>同上</td></tr>
+      <tr><td class="big">瀕死の奴隷・反抗する奴隷</td><td>ミケランジェロ、1513〜16年</td><td>教皇ユリウス2世の墓のための像。フィレンツェの「囚われ人」と同じ計画（12/5 に続きを見る）</td><td>ドゥノン翼1階、ミケランジェロの回廊</td></tr>
+      <tr><td class="big">ミロのヴィーナス</td><td>作者不明、前150〜前125年ごろ</td><td>1820年にミロス島で見つかった。腕がないからこそ、回り込むたびに形が変わって見える</td><td>シュリー翼1階</td></tr>
+      <tr><td class="big">書記座像</td><td>古代エジプト、前2600〜前2350年ごろ</td><td>水晶をはめた目が、どこから見てもこちらを見る</td><td>シュリー翼、エジプト美術</td></tr>
+      <tr><td class="big">ハンムラビ法典</td><td>バビロニア、前1750年ごろ</td><td>「目には目を」の法典が刻まれた黒い石柱。上に太陽神と王</td><td>リシュリュー翼、メソポタミア</td></tr>
+      <tr><td class="big">レースを編む女</td><td>フェルメール、1669〜70年ごろ</td><td>とても小さな絵（24×21cm）。オランダから始まった旅の、オランダの名作</td><td>リシュリュー翼2階、北方絵画</td></tr>
+      <tr><td class="big">ナポレオン3世の居室</td><td>1850年代〜60年代</td><td>金と赤のシャンデリアの大広間。19世紀の宮殿の暮らしがそのまま残る</td><td>リシュリュー翼1階</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-rodin">
+    <h3><span class="flag f-fr"></span> ロダン美術館 <small>Musée Rodin</small></h3>
+    <p class="rain"><b>行く日</b>：<a href="#d-1126">11/26（木）15:30ごろ</a></p>
+    <p class="note">ロダンが晩年にアトリエとして使った18世紀の邸宅（ビロン館）と、バラの庭。詩人リルケが秘書として働いた。大きなブロンズ像は庭にあるので、ベビーカーで回りやすい。館内には弟子で恋人だったカミーユ・クローデルの作品もある。</p>
+    <div class="tbl"><table class="wide"><thead><tr><th>作品</th><th>作者・年</th><th>見どころ</th><th>場所</th></tr></thead><tbody>
+      <tr><td class="big">考える人</td><td>1880年（構想）</td><td>もとは「地獄の門」の上でダンテが地獄を見下ろす姿。のちに独立して大きくなった</td><td>庭</td></tr>
+      <tr><td class="big">地獄の門</td><td>1880〜1917年</td><td>ダンテ『神曲』の地獄篇。約180の人体。ロダンが一生かけて手を入れ続けた</td><td>庭</td></tr>
+      <tr><td class="big">接吻</td><td>大理石、1882年構想</td><td>ダンテの恋人たち（パオロとフランチェスカ）。唇は触れる直前</td><td>館内</td></tr>
+      <tr><td class="big">カレーの市民</td><td>1884〜95年</td><td>英仏百年戦争で、町を救うため身を差し出した6人。英雄ではなく、迷う人として描いた</td><td>庭</td></tr>
+      <tr><td class="big">バルザック</td><td>1898年</td><td>ガウンをまとった作家。発表当時は「似ていない」と大不評だった</td><td>庭</td></tr>
+      <tr><td class="big">ワルツ／分別盛り</td><td>カミーユ・クローデル、1890年代</td><td>ロダンとの別れが重なる作品。手を伸ばす若い女性と、離れていく男</td><td>館内</td></tr>
+      <tr><td class="big">タンギー爺さん</td><td>ゴッホ、1887年</td><td>ロダン自身のコレクション。背景いっぱいに日本の浮世絵</td><td>館内</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-orsay">
+    <h3><span class="flag f-fr"></span> オルセー美術館 <small>Musée d'Orsay</small></h3>
+    <p class="rain"><b>行く日</b>：<a href="#d-1127">11/27（金）午後の候補（金曜は18時まで）</a></p>
+    <p class="note">1900年のパリ万博に合わせてつくられた駅を、1986年に美術館にした。1848〜1914年の作品が中心で、ルーヴルの続きにあたる。印象派は最上階の5階に集まっているので、先に上へ。5階の大時計の窓から、セーヌ越しにルーヴルが見える。所要2時間。時間指定券を。</p>
+    <div class="tbl"><table><thead><tr><th>作品</th><th>作者・年</th><th>見どころ</th></tr></thead><tbody>
+      <tr><td class="big">草上の昼食</td><td>マネ、1863年</td><td>服を着た男たちと裸の女性。官展に落ち、「落選展」で大騒ぎになった。近代絵画の出発点</td></tr>
+      <tr><td class="big">オランピア</td><td>マネ、1863年</td><td>神話の女神ではなく、こちらをまっすぐ見る当時のパリの女性</td></tr>
+      <tr><td class="big">ムーラン・ド・ラ・ギャレットの舞踏会</td><td>ルノワール、1876年</td><td>11/25 の朝に歩くモンマルトルの、日曜の野外ダンス。木漏れ日がまだらに落ちる</td></tr>
+      <tr><td class="big">サン＝ラザール駅</td><td>モネ、1877年</td><td>蒸気と光そのものを描いた。駅だった美術館で見る駅の絵</td></tr>
+      <tr><td class="big">ルーアン大聖堂の連作</td><td>モネ、1892〜94年</td><td>同じ正面を、時間と天気を変えて何枚も。並べて見比べる</td></tr>
+      <tr><td class="big">ダンス教室</td><td>ドガ、1873〜76年</td><td>練習の合間の踊り子たち。斜めから切り取る、写真のような構図</td></tr>
+      <tr><td class="big">落穂拾い</td><td>ミレー、1857年</td><td>刈り入れのあとに残った穂を拾う貧しい農婦たち</td></tr>
+      <tr><td class="big">自画像</td><td>ゴッホ、1889年</td><td>背景の渦巻きが、本人の不安のように揺れる</td></tr>
+      <tr><td class="big">ローヌ川の星月夜</td><td>ゴッホ、1888年</td><td>アルルの夜。ガス灯の光が水に映る。ニューヨークの「星月夜」の前の年</td></tr>
+      <tr><td class="big">画家の母（灰色と黒のアレンジメント）</td><td>ホイッスラー、1871年</td><td>横を向いて座る母。題は「色の配置」だが、アメリカで「母」の象徴になった</td></tr>
+      <tr><td class="big">トランプをする人々</td><td>セザンヌ、1890〜95年</td><td>動かない2人の農民。形を積み木のように組み立てる。キュビスムの前触れ</td></tr>
+      <tr><td class="big">タヒチの女たち</td><td>ゴーギャン、1891年</td><td>パリを離れて南の島へ。平らな色面と強い色</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-sagrada">
+    <h3><span class="flag f-es"></span> サグラダ・ファミリア <small>Basílica de la Sagrada Família</small></h3>
+    <p class="rain"><b>行く日</b>：<a href="#d-1201">12/1（火）15:30、音声ガイド付き</a></p>
+    <p class="note">1882年に着工し、翌年からガウディが引き継いだ。1926年に亡くなるまで、晩年はこの教会だけに打ち込んだ。2026年はガウディの没後100年。午後の枠なので、西側のステンドグラスの赤やオレンジの光が堂内に入る時間。</p>
+    <div class="tbl"><table><thead><tr><th>作品</th><th>作者・年</th><th>見どころ</th></tr></thead><tbody>
+      <tr><td class="big">生誕のファサード</td><td>ガウディの時代、1894〜1930年</td><td>東側。キリストの誕生を、植物や動物があふれる彫刻で。ガウディが生きている間にほぼ完成した唯一の面</td></tr>
+      <tr><td class="big">受難のファサード</td><td>スビラックス、1987年〜</td><td>西側。キリストの死を、骨のような柱と角ばった彫刻で。生誕の面と正反対の厳しさ</td></tr>
+      <tr><td class="big">森のような身廊</td><td>2010年に献堂</td><td>柱が枝分かれして天井を支える。木々の下にいるような空間</td></tr>
+      <tr><td class="big">ステンドグラス</td><td>ジュゼップ・ビラ＝グラウ</td><td>東は青と緑（朝）、西は赤とオレンジ（夕方）。午後の光で床の色が変わる</td></tr>
+      <tr><td class="big">イエスの塔</td><td>完成に向けて工事中</td><td>中央の最も高い塔（172.5m）。モンジュイックの丘より低くしたのは「神の作ったものを超えない」ため</td></tr>
+      <tr><td class="big">地下礼拝堂と博物館</td><td>—</td><td>ガウディの墓。博物館には石膏の模型と、重りを吊るして形を決めた実験の再現</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-picasso">
+    <h3><span class="flag f-es"></span> ピカソ美術館 <small>Museu Picasso</small></h3>
+    <p class="rain"><b>行く日</b>：<a href="#d-1202">12/2（水）昼の候補、雨の日にも</a></p>
+    <p class="note">ボルン地区のモンカダ通りに並ぶ中世の邸宅5軒。ピカソが10代を過ごしたバルセロナの美術館で、子ども時代の作品から晩年までを順に見られる。所要1時間半。</p>
+    <div class="tbl"><table><thead><tr><th>作品</th><th>作者・年</th><th>見どころ</th></tr></thead><tbody>
+      <tr><td class="big">初聖体拝領</td><td>1896年</td><td>14〜15歳の作品。すでに大人の画家と同じ技術</td></tr>
+      <tr><td class="big">科学と慈愛</td><td>1897年</td><td>15歳で描き、マドリードの展覧会で入選した病床の場面</td></tr>
+      <tr><td class="big">青の時代の作品</td><td>1901〜04年</td><td>友人の死のあと、青一色で貧しい人々を描いた時期</td></tr>
+      <tr><td class="big">アルルカン</td><td>1917年</td><td>バレエの仕事でバルセロナに戻った年。キュビスムのあとの、落ち着いた人物画</td></tr>
+      <tr><td class="big">ラス・メニーナス連作</td><td>1957年</td><td>ベラスケスの名画を58点で描き直した。白黒の大作から、はとの小品まで</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-doge">
+    <h3><span class="flag f-it"></span> ドゥカーレ宮殿 <small>Palazzo Ducale</small></h3>
+    <p class="rain"><b>行く日</b>：<a href="#d-1204">12/4（金）9:00、朝一の枠</a></p>
+    <p class="note">1000年以上続いたヴェネツィア共和国の政治の中心。元首（ドージェ）の住まいで、議会と裁判所と牢獄が一つの建物にあった。ヴェネツィア派の画家たちが、共和国の栄光を壁と天井いっぱいに描いた。</p>
+    <div class="tbl"><table><thead><tr><th>作品</th><th>作者・年</th><th>見どころ</th></tr></thead><tbody>
+      <tr><td class="big">巨人の階段</td><td>サンソヴィーノの像、1560年代</td><td>中庭の階段の上に、海の神ネプトゥヌスと戦いの神マルス。海と陸の力の象徴</td></tr>
+      <tr><td class="big">天国</td><td>ティントレット、1588〜92年ごろ</td><td>大評議会の間の正面。幅20mを超え、世界最大級の油彩画。数百人の聖人</td></tr>
+      <tr><td class="big">ヴェネツィアの勝利</td><td>ヴェロネーゼ、1580年ごろ</td><td>同じ間の天井。雲の上で冠を受けるヴェネツィアの女神</td></tr>
+      <tr><td class="big">元首たちの肖像と黒い布</td><td>16世紀</td><td>天井の下に歴代元首の肖像が並ぶ。反逆で処刑されたファリエロの場所だけ黒い布</td></tr>
+      <tr><td class="big">ため息橋と牢獄</td><td>1600年ごろ</td><td>裁判のあと牢へ渡る囚人が、小窓から最後の外の景色を見てため息をついた、という名前</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-accademia">
+    <h3><span class="flag f-it"></span> アカデミア美術館 <small>Galleria dell'Accademia</small></h3>
+    <p class="rain"><b>行く日</b>：<a href="#d-1205">12/5（土）15:15</a></p>
+    <p class="note">「ダビデ」を見るための美術館。シニョリーア広場にあった本物は、傷みを防ぐため1873年にここへ移され、広場には今、複製が立つ。所要1時間ほど。</p>
+    <div class="tbl"><table><thead><tr><th>作品</th><th>作者・年</th><th>見どころ</th></tr></thead><tbody>
+      <tr><td class="big">ダビデ</td><td>ミケランジェロ、1501〜04年</td><td>26歳で、他の彫刻家が放り出した大理石から彫った。投石の直前、ゴリアテをにらむ瞬間。高さ5m超</td></tr>
+      <tr><td class="big">囚われ人（4体）</td><td>ミケランジェロ、1520年代ごろ</td><td>ユリウス2世の墓のための未完成の像。石から体が抜け出そうとしているように見える。ルーヴルの2体と同じ計画</td></tr>
+      <tr><td class="big">聖マタイ</td><td>ミケランジェロ、1505〜06年</td><td>大聖堂のための12使徒のうち、唯一手をつけた1体。彫り方の順番がわかる</td></tr>
+      <tr><td class="big">石膏像の間</td><td>19世紀</td><td>壁いっぱいの石膏の胸像。黒い点は、大理石に写すための目印</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-uffizi">
+    <h3><span class="flag f-it"></span> ウフィツィ美術館 <small>Galleria degli Uffizi</small></h3>
+    <p class="rain"><b>行く日</b>：<a href="#d-1206">入るなら 12/6 か 12/8 の朝一（予約制）</a></p>
+    <p class="note">メディチ家の役所（ウフィツィ＝オフィス）だった建物。ルネサンス絵画の質と量は世界一と言われる。行列が長いので、入るなら朝一の時間指定。所要2〜3時間。</p>
+    <div class="tbl"><table><thead><tr><th>作品</th><th>作者・年</th><th>見どころ</th></tr></thead><tbody>
+      <tr><td class="big">荘厳の聖母</td><td>ジョット、1310年ごろ</td><td>金の背景の中で、聖母に重さと厚みが生まれた</td></tr>
+      <tr><td class="big">ウルビーノ公夫妻の肖像</td><td>ピエロ・デッラ・フランチェスカ、1470年代</td><td>向かい合う横顔。後ろに広がる風景</td></tr>
+      <tr><td class="big">春（プリマヴェーラ）</td><td>ボッティチェリ、1480年ごろ</td><td>オレンジの林に神々。足元に約190種類の花</td></tr>
+      <tr><td class="big">ヴィーナスの誕生</td><td>ボッティチェリ、1485年ごろ</td><td>貝に乗って岸へ着くヴィーナス。キリスト教の時代に、古代の女神が戻ってきた</td></tr>
+      <tr><td class="big">受胎告知</td><td>レオナルド・ダ・ヴィンチ、1472年ごろ</td><td>20歳ごろの作品。天使の翼は鳥を観察して描いた</td></tr>
+      <tr><td class="big">聖家族（ドーニ・トンド）</td><td>ミケランジェロ、1507年ごろ</td><td>フィレンツェにある、ミケランジェロの唯一の板絵。彫刻のようにねじれる体</td></tr>
+      <tr><td class="big">ひわの聖母</td><td>ラファエロ、1505〜06年</td><td>幼いキリストと洗礼者ヨハネが小鳥を囲む。やわらかな三角形の構図</td></tr>
+      <tr><td class="big">ウルビーノのヴィーナス</td><td>ティツィアーノ、1538年</td><td>ヴェネツィア派の色。のちにマネが「オランピア」で描き直した（オルセーとつながる）</td></tr>
+      <tr><td class="big">メドゥーサ</td><td>カラヴァッジョ、1597年ごろ</td><td>丸い盾に描いた、叫ぶ首。光と影のバロック</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-vatican">
+    <h3><span class="flag f-it"></span> バチカン美術館とサン・ピエトロ <small>Musei Vaticani</small></h3>
+    <p class="rain"><b>行く日</b>：<a href="#d-1209">12/9（水）8:00、朝一の枠</a></p>
+    <p class="note">歴代の教皇が集めた美術品。通路は長く、全部歩くと7kmとも言われる。順路の最後がシスティーナ礼拝堂。礼拝堂の中は撮影禁止で、静かに。肩と膝を隠す服で。</p>
+    <div class="tbl"><table><thead><tr><th>作品</th><th>作者・年</th><th>見どころ</th></tr></thead><tbody>
+      <tr><td class="big">ラオコーン</td><td>前1世紀ごろ</td><td>1506年にローマで掘り出され、ミケランジェロも見に駆けつけた。蛇に襲われる神官と息子たち</td></tr>
+      <tr><td class="big">ベルヴェデーレのトルソ</td><td>前1世紀ごろ</td><td>頭も腕もない胴体だけの像。ミケランジェロが手本にし、システィーナの人物に生きている</td></tr>
+      <tr><td class="big">地図のギャラリー</td><td>1580年代</td><td>長さ120mの廊下に、イタリア各地の大きな地図。ヴェネツィアやフィレンツェを探す</td></tr>
+      <tr><td class="big">アテネの学堂</td><td>ラファエロ、1509〜11年</td><td>ラファエロの間。中央にプラトンとアリストテレス。プラトンの顔はレオナルドがモデルと言われる</td></tr>
+      <tr><td class="big">システィーナ礼拝堂の天井画</td><td>ミケランジェロ、1508〜12年</td><td>旧約聖書の物語。「アダムの創造」で、神とアダムの指が触れる寸前</td></tr>
+      <tr><td class="big">最後の審判</td><td>ミケランジェロ、1536〜41年</td><td>祭壇の壁いっぱい。天井から約25年後、60代の作品。皮をはがれた聖人の顔は本人の自画像と言われる</td></tr>
+      <tr><td class="big">礼拝堂の壁画</td><td>ボッティチェリ、ペルジーノほか、1480年代</td><td>天井より前の世代。ウフィツィで見るボッティチェリとつながる</td></tr>
+      <tr><td class="big">キリストの変容</td><td>ラファエロ、1516〜20年</td><td>絵画館。ラファエロの最後の大作</td></tr>
+      <tr><td class="big">ピエタ</td><td>ミケランジェロ、1498〜99年</td><td>サン・ピエトロ大聖堂の右の礼拝堂。20代前半の作品で、彼が署名した唯一の像</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-tips">
+    <h3>見方のコツ</h3>
+    <div class="grid2">
+      <div class="card"><h4>ベビーカーと抱っこ紐</h4><ul><li>ルーヴル、オルセー、ロダン、バチカンはベビーカーで入れる（エレベーターあり）</li><li>ルーヴルではピラミッド下の案内所で、ベビーカーと抱っこ紐を借りられる</li><li>ドゥカーレ宮殿とサグラダ・ファミリアの塔は階段が多いので抱っこ紐で</li></ul></div>
+      <div class="card"><h4>見方</h4><ul><li>1つの美術館で「これだけは」を3つ決めて、先に見る</li><li>名作の前で1分立ち止まって、遠くと近くの両方から見る</li><li>公式アプリや音声ガイドを使う（ルーヴル、バチカン、サグラダ・ファミリア）</li></ul></div>
+      <div class="card"><h4>決まりごと</h4><ul><li>フラッシュ撮影は不可。システィーナ礼拝堂は撮影自体が禁止</li><li>教会とバチカンは肩と膝を隠す服で</li><li>大きなリュックは預ける。ナイフなどは持ち込めない</li></ul></div>
+    </div>
+  </div>
+</section>
 
 <!-- =================== CHAPTER 7: BABY =================== -->
 <section id="baby" class="chapter base" data-chapter="baby">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 7 · Traveling with a Baby</div>
+    <div class="eyebrow">Chapter 8 · Traveling with a Baby</div>
     <h2>赤ちゃん連れのコツ <span class="local">Yuzuhaと</span></h2>
     <p class="lead">Yuzuhaのリズムを予定の真ん中に置くのが、いちばんの成功のコツです。この本の日程は「午前に1つ、昼寝、夕方に1つ」の形でできています。</p>
   </div>
@@ -4053,7 +4246,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="safety" class="chapter base" data-chapter="safety">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 8 · Safety &amp; Emergency</div>
+    <div class="eyebrow">Chapter 9 · Safety &amp; Emergency</div>
     <h2>緊急・安全 <span class="local">困ったときはこのページ</span></h2>
   </div>
 
@@ -4591,7 +4784,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="prep" class="chapter base" data-chapter="prep">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 9 · Luggage, Money &amp; To-do</div>
+    <div class="eyebrow">Chapter 10 · Luggage, Money &amp; To-do</div>
     <h2>荷物・お金・準備 <span class="local">出発前に読むページ</span></h2>
   </div>
   <div class="subnav"><a href="#prep-bags">荷物の構成</a><a href="#prep-gym">ジム</a><a href="#prep-weight">重量の作戦</a><a href="#prep-weather">天気と服装</a><a href="#prep-pack">持ち物</a><a href="#prep-money">お金</a><a href="#prep-wise">Wise</a><a href="#prep-meals">食事のシナリオ</a><a href="#prep-todo">やること</a></div>
@@ -5105,7 +5298,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="next" class="chapter base" data-chapter="next">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 10 · Someday</div>
+    <div class="eyebrow">Chapter 11 · Someday</div>
     <h2>次回の旅の案 <span class="local">スイスとコモ湖</span></h2>
     <p class="lead">今回と重ならない土地で1週間。山の乗り物がすべて動く7月前後が向いています。チューリッヒに着いて、ミラノから帰る形です。</p>
   </div>
@@ -5128,7 +5321,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   <span>公館の番号の出典：外務省「在外公館リスト」、タイ外務省「List of Royal Thai Embassy contact point」。</span>
   <details id="changelog" style="margin-top:6px">
     <summary style="cursor:pointer;font-weight:700;color:var(--ink)">変更履歴</summary>
-    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/6</td><td>アンネ・フランクの家を予約済みに（11/24 9:00〜9:15 の入場枠、3名）</td></tr><tr><td class="d">11/6</td><td>11/25 を調整：オペラ座とル・ムーリスは「要予約」に戻した。ロワイヤル通りの Ladurée は外から見るだけ。ルーヴルは 17:00 から（キッチン道具屋とプチバトーはオプションへ）。凱旋門はベビーカーを入口の係員に預ける</td></tr><tr><td class="d">11/6</td><td>パリの 11/24〜28 を組み直し。11/24 は夜のエッフェル塔・凱旋門・シャンゼリゼ、11/25 は朝のモンマルトル → オペラ座 → ル・ムーリス 13:45 → Som は夕方からディズニー、Ryo と Yuzuha はルーヴル、11/26 はヴェルサイユ → ナポレオンの墓 → ロダン → ボン・マルシェ → Josselin → 夜のノートルダム、11/27 はマレから1区、11/28 はパンテオンのあと TGV。外したものはすべて「オプション」の表へ。パリで食べる地方の味の表を追加。ディズニーの章を案 F（11/25 の夕方、Som 1人）に</td></tr><tr><td class="d">11/6</td><td>アムステルダムを1泊に。宿を art'otel（中央駅の正面）に、Eurostar を 11/24 13:10→16:40（18号車 85・86番）に変更。パリの宿は 11/24〜28 の4泊。11/24 の夕方パリ着の日と、11/25 の一日（カルチエ・ラタン → シテ島 → ル・ムーリスのお茶 → 3人でルーヴル夜間）を組み直し。風車村などはオプションへ。パリ→バルセロナの TGV は払い戻し済み</td></tr><tr><td class="d">11/6</td><td>11/26 に案 E（Ryo は午前パリ、オルセー → Le Relais de l'Entrecôte → オランジュリー → 凱旋門、16:00 にディズニーで合流）を追加。リヨンの日曜にベルナション本店を追加</td></tr><tr><td class="d">11/5</td><td>リヨンの日曜の午後をテット・ドール公園に絞り（リュミエール研究所は候補）、月曜の午前にクロワ・ルースの丘の散歩を追加。土曜の夜のフルヴィエールの夜景はそのまま</td></tr><tr><td class="d">11/5</td><td>料理の章に「スペインの地方と食」「イタリアの地方と食」を追加（フランスと同じく方角ごと、都市名と今回の旅つき）</td></tr><tr><td class="d">11/5</td><td>料理の章に、白トリュフ（サン・ミニアート、Savini Tartufi、Procacci、値段と持ち帰りの注意）と、銅の鍋・カヌレ型の手入れを追加。ボキューズの章に本店で残す記念を追加</td></tr><tr><td class="d">11/5</td><td>料理の章に「料理を始めるための買い物」を追加（これだけは外さない5つ、街ごとの道具と食材の店、持ち帰りの注意）</td></tr><tr><td class="d">11/5</td><td>料理の章に「デザートと甘いもの」（サロン・ド・テなど店の種類、街ごとの名物と名店）と「訪れる街のチーズ」（リヨンのサン・マルスランなど）を追加。フランスの地方を北・西・東・中央・南東・南西に分けて都市名つきに。巨匠ゆかりの名店を、店ごとの説明と楽しみ方つきのカードに</td></tr><tr><td class="d">11/5</td><td>11/26 を別行動の前提で整理（Ryo はディズニーに行かない）。4つの案と、Ryo と Yuzuha のパリ、Ryo 1人のパリの流れをディズニーの章に。料理の章の並びをフランス → スペイン → イタリア（旅の順）に</td></tr><tr><td class="d">11/5</td><td>「チーズとワイン」の章を「料理の教科書」に作り直し、フランス・イタリア・スペインに絞った（歴史、影響し合った関係、巨匠、名店と地図、店の格式、食事の流れ、3か国のマナー、フランスの地方と食）。各国の章の「食べる・飲む」とテーブルマナーもここへ移動</td></tr><tr><td class="d">11/4</td><td>ルート図の色を国ごとに統一（オランダはオレンジ、フランスは青、スペインは赤、イタリアは緑、飛行機とドバイはグレー）。日程表の都市すべてに国旗</td></tr><tr><td class="d">11/4</td><td>ボキューズの章「赤ちゃん連れ」に、本店の予約係からの返信（原文と訳）を、フランス料理のサービスの一例として追加</td></tr><tr><td class="d">11/4</td><td>AVE INT 09742（11/30 リヨン 14:35 → バルセロナ 19:23）を予約。リヨンの月曜の昼を自由時間に、バルセロナ初日は夜の到着に合わせて組み直し（グラシア通りの散歩は候補に）。Apple Wallet に入らない注意を追加</td></tr><tr><td class="d">11/4</td><td>TGV INOUI 6619（11/28 15:00 → 16:56、1等）を予約。パリの 11/28 を組み直し（朝市とモンマルトル → 13:45 に駅へ）。午後の予定は候補として残す</td></tr><tr><td class="d">11/4</td><td>リヨンの宿（Mercure パールデュー、2泊）と、11/28 夜のブション Daniel et Denise Saint-Jean（19:00）を予約。11/28 の夜は食後にケーブルカーでフルヴィエールの丘の夜景へ。11/29 の午後は公園か博物館を1つと昼寝に</td></tr><tr><td class="d">11/4</td><td>お土産を誰に何を買うかの記載と「お土産の作戦」を削除。ボキューズの章に、EY の上司の話と Yuzuha へのメッセージを追加</td></tr><tr><td class="d">11/4</td><td>リヨン経由に変更（11/28 夕方にパリ → リヨン、2泊、11/30 にバルセロナへ）。日程表、予約一覧、移動一覧、ルート図を更新し、リヨンの3日間をボキューズの章に。パリの 11/29 の予定は候補として残す</td></tr><tr><td class="d">11/4</td><td>ポール・ボキューズ本店（11/29 20:15）を予約。ディズニーと同じ形で「ボキューズ」の章を追加（予約、行き方、当日の流れ、秋のメニュー、名物料理、赤ちゃん連れ、歴史、お土産）</td></tr><tr><td class="d">11/3</td><td>ピサを 12/7（月）の午後に移動（地方線で日帰り）。12/8 はフィレンツェの朝を楽しんで、昼食後の列車でローマへ</td></tr><tr><td class="d">11/3</td><td>12/5 の Frecciarossa 9415（11:26 → 13:39、Business）を予約。ヴェネツィアの朝に散歩を入れ、フィレンツェ初日はアカデミアを 15:15 に、ミケランジェロ広場の夕日は 12/6 に移動。英語版を追加</td></tr><tr><td class="d">11/3</td><td>Eurostar（11/25 09:10 → 12:37）を予約。アムステルダムの朝と、パリの初日の時間割を合わせて調整</td></tr><tr><td class="d">11/2</td><td>予約番号（エミレーツ、Booking の宿）と保険の証券番号をしおりから削除（第三者が予約を操作できないように）</td></tr><tr><td class="d">11/2</td><td>ドバイ：街に出ることに決定。Som はエミレーツ経由で48時間の乗継ビザ（手順をドバイの章に）</td></tr><tr><td class="d">10/25</td><td>持ち物チェックを、いつもの持ち物リストから今回の旅用に作り直し（入れるバッグの札つき）</td></tr><tr><td class="d">10/25</td><td>日本語版からタイ語の併記（見出しの小さい字、会話の表のタイ語の列など）を外した。タイ語はタイ語版に</td></tr><tr><td class="d">10/25</td><td>デザインを3つから選べるように（右下のパレットのボタンを押すと開く）：Som（明るい紙＋各国の線画、標準）、Yuzuha（ポップ）、Ryo（ダーク）。URL に ?theme=som / yuzuha / ryo でも指定できる</td></tr><tr><td class="d">10/25</td><td>保険は Chubb とヒルトン・アメックス・プレミアムの2本に整理。困ったときの連絡ステップ（場面別）と連絡先一覧を追加</td></tr><tr><td class="d">10/25</td><td>宿6軒の予約票を反映（時間、無料取消の期限、部屋）。アメックスの補償を規定で確認（持ち物の盗難は補償なし）。Anytime Fitness の節を追加</td></tr><tr><td class="d">10/25</td><td>保険の節を追加（Chubb の証券の内容、アメックスとの分担、請求のルール）</td></tr><tr><td class="d">10/25</td><td>荷物の構成と動かし方（場面ごとの対策）を追加。エミレーツの預け荷物と座席を eチケットで確認。持ち物・やることを更新。この変更履歴を追加</td></tr><tr><td class="d">10/18</td><td>各国の「予習の映画」を追加</td></tr><tr><td class="d">10/18</td><td>往路のドバイ乗継（3時間15分）を日程とルート図に追加</td></tr><tr><td class="d">10/18</td><td>言語の切り替えを画面の右下に固定（同じ場所のまま日本語・タイ語を切り替え）</td></tr><tr><td class="d">10/18</td><td>Google マップのお気に入りリスト（タイプ別、タイ語名つき）と、ホテル・主要な場所の地図リンクを追加。ルート図に帰路のドバイ17時間乗継</td></tr><tr><td class="d">10/18</td><td>パリの宿を Libertel Austerlitz に変更し、宿6軒を確定に</td></tr><tr><td class="d">10/18</td><td>GitHub 版を公開。iPhone 向けに文字を大きく、横長の表は横スクロールに。?lang=th でタイ語から開く</td></tr><tr><td class="d">10/17ごろ</td><td>全体の見直し（Yuzuha は旅行時に生後10か月、往路は01:05発、保険料を削除）。日本語・タイ語の2言語版に</td></tr><tr><td class="d">10/17ごろ</td><td>デモ・ストライキの日の動き方、スリ対策（場面別のシナリオ）、フランスのテーブルマナーのコラムを追加</td></tr><tr><td class="d">10/16ごろ</td><td>ディズニーランド・パリのチケット購入を反映。「ディズニーとフランス」、ヴェルサイユの入場時刻、日の出・日の入りの表を追加</td></tr><tr><td class="d">10/15</td><td>初版</td></tr></tbody></table></div>
+    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/7</td><td>「美術館と名作」の章を新しく追加（ルーヴル、ロダン、オルセー、サグラダ・ファミリア、ピカソ美術館、ドゥカーレ宮殿、アカデミア、ウフィツィ、バチカン）。フランスの章の冒頭を、パリ4泊とリヨン2泊に合わせて修正</td></tr><tr><td class="d">11/6</td><td>アンネ・フランクの家を予約済みに（11/24 9:00〜9:15 の入場枠、3名）</td></tr><tr><td class="d">11/6</td><td>11/25 を調整：オペラ座とル・ムーリスは「要予約」に戻した。ロワイヤル通りの Ladurée は外から見るだけ。ルーヴルは 17:00 から（キッチン道具屋とプチバトーはオプションへ）。凱旋門はベビーカーを入口の係員に預ける</td></tr><tr><td class="d">11/6</td><td>パリの 11/24〜28 を組み直し。11/24 は夜のエッフェル塔・凱旋門・シャンゼリゼ、11/25 は朝のモンマルトル → オペラ座 → ル・ムーリス 13:45 → Som は夕方からディズニー、Ryo と Yuzuha はルーヴル、11/26 はヴェルサイユ → ナポレオンの墓 → ロダン → ボン・マルシェ → Josselin → 夜のノートルダム、11/27 はマレから1区、11/28 はパンテオンのあと TGV。外したものはすべて「オプション」の表へ。パリで食べる地方の味の表を追加。ディズニーの章を案 F（11/25 の夕方、Som 1人）に</td></tr><tr><td class="d">11/6</td><td>アムステルダムを1泊に。宿を art'otel（中央駅の正面）に、Eurostar を 11/24 13:10→16:40（18号車 85・86番）に変更。パリの宿は 11/24〜28 の4泊。11/24 の夕方パリ着の日と、11/25 の一日（カルチエ・ラタン → シテ島 → ル・ムーリスのお茶 → 3人でルーヴル夜間）を組み直し。風車村などはオプションへ。パリ→バルセロナの TGV は払い戻し済み</td></tr><tr><td class="d">11/6</td><td>11/26 に案 E（Ryo は午前パリ、オルセー → Le Relais de l'Entrecôte → オランジュリー → 凱旋門、16:00 にディズニーで合流）を追加。リヨンの日曜にベルナション本店を追加</td></tr><tr><td class="d">11/5</td><td>リヨンの日曜の午後をテット・ドール公園に絞り（リュミエール研究所は候補）、月曜の午前にクロワ・ルースの丘の散歩を追加。土曜の夜のフルヴィエールの夜景はそのまま</td></tr><tr><td class="d">11/5</td><td>料理の章に「スペインの地方と食」「イタリアの地方と食」を追加（フランスと同じく方角ごと、都市名と今回の旅つき）</td></tr><tr><td class="d">11/5</td><td>料理の章に、白トリュフ（サン・ミニアート、Savini Tartufi、Procacci、値段と持ち帰りの注意）と、銅の鍋・カヌレ型の手入れを追加。ボキューズの章に本店で残す記念を追加</td></tr><tr><td class="d">11/5</td><td>料理の章に「料理を始めるための買い物」を追加（これだけは外さない5つ、街ごとの道具と食材の店、持ち帰りの注意）</td></tr><tr><td class="d">11/5</td><td>料理の章に「デザートと甘いもの」（サロン・ド・テなど店の種類、街ごとの名物と名店）と「訪れる街のチーズ」（リヨンのサン・マルスランなど）を追加。フランスの地方を北・西・東・中央・南東・南西に分けて都市名つきに。巨匠ゆかりの名店を、店ごとの説明と楽しみ方つきのカードに</td></tr><tr><td class="d">11/5</td><td>11/26 を別行動の前提で整理（Ryo はディズニーに行かない）。4つの案と、Ryo と Yuzuha のパリ、Ryo 1人のパリの流れをディズニーの章に。料理の章の並びをフランス → スペイン → イタリア（旅の順）に</td></tr><tr><td class="d">11/5</td><td>「チーズとワイン」の章を「料理の教科書」に作り直し、フランス・イタリア・スペインに絞った（歴史、影響し合った関係、巨匠、名店と地図、店の格式、食事の流れ、3か国のマナー、フランスの地方と食）。各国の章の「食べる・飲む」とテーブルマナーもここへ移動</td></tr><tr><td class="d">11/4</td><td>ルート図の色を国ごとに統一（オランダはオレンジ、フランスは青、スペインは赤、イタリアは緑、飛行機とドバイはグレー）。日程表の都市すべてに国旗</td></tr><tr><td class="d">11/4</td><td>ボキューズの章「赤ちゃん連れ」に、本店の予約係からの返信（原文と訳）を、フランス料理のサービスの一例として追加</td></tr><tr><td class="d">11/4</td><td>AVE INT 09742（11/30 リヨン 14:35 → バルセロナ 19:23）を予約。リヨンの月曜の昼を自由時間に、バルセロナ初日は夜の到着に合わせて組み直し（グラシア通りの散歩は候補に）。Apple Wallet に入らない注意を追加</td></tr><tr><td class="d">11/4</td><td>TGV INOUI 6619（11/28 15:00 → 16:56、1等）を予約。パリの 11/28 を組み直し（朝市とモンマルトル → 13:45 に駅へ）。午後の予定は候補として残す</td></tr><tr><td class="d">11/4</td><td>リヨンの宿（Mercure パールデュー、2泊）と、11/28 夜のブション Daniel et Denise Saint-Jean（19:00）を予約。11/28 の夜は食後にケーブルカーでフルヴィエールの丘の夜景へ。11/29 の午後は公園か博物館を1つと昼寝に</td></tr><tr><td class="d">11/4</td><td>お土産を誰に何を買うかの記載と「お土産の作戦」を削除。ボキューズの章に、EY の上司の話と Yuzuha へのメッセージを追加</td></tr><tr><td class="d">11/4</td><td>リヨン経由に変更（11/28 夕方にパリ → リヨン、2泊、11/30 にバルセロナへ）。日程表、予約一覧、移動一覧、ルート図を更新し、リヨンの3日間をボキューズの章に。パリの 11/29 の予定は候補として残す</td></tr><tr><td class="d">11/4</td><td>ポール・ボキューズ本店（11/29 20:15）を予約。ディズニーと同じ形で「ボキューズ」の章を追加（予約、行き方、当日の流れ、秋のメニュー、名物料理、赤ちゃん連れ、歴史、お土産）</td></tr><tr><td class="d">11/3</td><td>ピサを 12/7（月）の午後に移動（地方線で日帰り）。12/8 はフィレンツェの朝を楽しんで、昼食後の列車でローマへ</td></tr><tr><td class="d">11/3</td><td>12/5 の Frecciarossa 9415（11:26 → 13:39、Business）を予約。ヴェネツィアの朝に散歩を入れ、フィレンツェ初日はアカデミアを 15:15 に、ミケランジェロ広場の夕日は 12/6 に移動。英語版を追加</td></tr><tr><td class="d">11/3</td><td>Eurostar（11/25 09:10 → 12:37）を予約。アムステルダムの朝と、パリの初日の時間割を合わせて調整</td></tr><tr><td class="d">11/2</td><td>予約番号（エミレーツ、Booking の宿）と保険の証券番号をしおりから削除（第三者が予約を操作できないように）</td></tr><tr><td class="d">11/2</td><td>ドバイ：街に出ることに決定。Som はエミレーツ経由で48時間の乗継ビザ（手順をドバイの章に）</td></tr><tr><td class="d">10/25</td><td>持ち物チェックを、いつもの持ち物リストから今回の旅用に作り直し（入れるバッグの札つき）</td></tr><tr><td class="d">10/25</td><td>日本語版からタイ語の併記（見出しの小さい字、会話の表のタイ語の列など）を外した。タイ語はタイ語版に</td></tr><tr><td class="d">10/25</td><td>デザインを3つから選べるように（右下のパレットのボタンを押すと開く）：Som（明るい紙＋各国の線画、標準）、Yuzuha（ポップ）、Ryo（ダーク）。URL に ?theme=som / yuzuha / ryo でも指定できる</td></tr><tr><td class="d">10/25</td><td>保険は Chubb とヒルトン・アメックス・プレミアムの2本に整理。困ったときの連絡ステップ（場面別）と連絡先一覧を追加</td></tr><tr><td class="d">10/25</td><td>宿6軒の予約票を反映（時間、無料取消の期限、部屋）。アメックスの補償を規定で確認（持ち物の盗難は補償なし）。Anytime Fitness の節を追加</td></tr><tr><td class="d">10/25</td><td>保険の節を追加（Chubb の証券の内容、アメックスとの分担、請求のルール）</td></tr><tr><td class="d">10/25</td><td>荷物の構成と動かし方（場面ごとの対策）を追加。エミレーツの預け荷物と座席を eチケットで確認。持ち物・やることを更新。この変更履歴を追加</td></tr><tr><td class="d">10/18</td><td>各国の「予習の映画」を追加</td></tr><tr><td class="d">10/18</td><td>往路のドバイ乗継（3時間15分）を日程とルート図に追加</td></tr><tr><td class="d">10/18</td><td>言語の切り替えを画面の右下に固定（同じ場所のまま日本語・タイ語を切り替え）</td></tr><tr><td class="d">10/18</td><td>Google マップのお気に入りリスト（タイプ別、タイ語名つき）と、ホテル・主要な場所の地図リンクを追加。ルート図に帰路のドバイ17時間乗継</td></tr><tr><td class="d">10/18</td><td>パリの宿を Libertel Austerlitz に変更し、宿6軒を確定に</td></tr><tr><td class="d">10/18</td><td>GitHub 版を公開。iPhone 向けに文字を大きく、横長の表は横スクロールに。?lang=th でタイ語から開く</td></tr><tr><td class="d">10/17ごろ</td><td>全体の見直し（Yuzuha は旅行時に生後10か月、往路は01:05発、保険料を削除）。日本語・タイ語の2言語版に</td></tr><tr><td class="d">10/17ごろ</td><td>デモ・ストライキの日の動き方、スリ対策（場面別のシナリオ）、フランスのテーブルマナーのコラムを追加</td></tr><tr><td class="d">10/16ごろ</td><td>ディズニーランド・パリのチケット購入を反映。「ディズニーとフランス」、ヴェルサイユの入場時刻、日の出・日の入りの表を追加</td></tr><tr><td class="d">10/15</td><td>初版</td></tr></tbody></table></div>
   </details>
 </footer>
 
@@ -5172,6 +5365,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <li><a href="#it" data-ch="it"><span class="flag f-it"></span>อิตาลี</a></li>
     <li><a href="#ae" data-ch="ae"><span class="flag f-ae"></span>ดูไบ</a></li>
     <li><a href="#food" data-ch="food">อาหาร</a></li>
+    <li><a href="#art" data-ch="art">ศิลปะ</a></li>
     <li><a href="#baby" data-ch="baby">เที่ยวกับลูกน้อย</a></li>
     <li><a href="#safety" data-ch="safety">ฉุกเฉิน・ความปลอดภัย</a></li>
     <li><a href="#prep" data-ch="prep">กระเป๋า・เงิน・เตรียมตัว</a></li>
@@ -5435,7 +5629,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="nl" class="chapter nl" data-chapter="nl">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 1 · Netherlands · 23 – 25 พ.ย.</div>
+    <div class="eyebrow">Chapter 1 · Netherlands · 23 – 24 พ.ย.</div>
     <h2>เนเธอร์แลนด์ <span class="local">Nederland</span></h2>
     <div class="th">オランダ</div>
     <p class="lead">ประเทศที่พื้นดินราว 1 ใน 4 อยู่ต่ำกว่าระดับน้ำทะเล จนมีคำกล่าวว่า "พระเจ้าสร้างโลก แต่คนดัตช์สร้างเนเธอร์แลนด์" เป็นชาติตะวันตกชาติเดียวที่ค้าขายกับญี่ปุ่นต่อเนื่องในสมัยเอโดะ และยังมีความผูกพันลึกซึ้งกับไทยตั้งแต่สมัยกรุงศรีอยุธยา เริ่มต้นทริปแบบสบาย ๆ ค่อย ๆ ปรับเวลาให้หายเจ็ตแล็ก</p>
@@ -5728,10 +5922,10 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="fr" class="chapter fr" data-chapter="fr">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 2 · France · 25 – 30 พ.ย.</div>
+    <div class="eyebrow">Chapter 2 · France · 24 – 30 พ.ย.</div>
     <h2>ฝรั่งเศส <span class="local">France</span></h2>
     <div class="th">フランス</div>
-    <p class="lead">เมืองที่เราอยู่นานที่สุดในทริป 5 คืน ที่พักอยู่เขต 5 ข้างสวนพฤกษศาสตร์ เดินไปย่านกาเทียร์ลาแต็งและร่องรอยปารีสสมัยโรมัน (ลูเตเซีย) ได้ ตอนเช้าไปตลาด กลางวันไปพิพิธภัณฑ์ เย็นกลับมาพักที่โรงแรม กลางคืนชมเมืองแห่งแสงไฟ ในศตวรรษที่ 17 คณะราชทูตของสมเด็จพระนารายณ์แห่งอยุธยาเคยมาเยือนแวร์ซาย และในศตวรรษที่ 19 ภาพอุกิโยเอะของญี่ปุ่นทำให้จิตรกรปารีสหลงใหล</p>
+    <p class="lead">เมืองที่เราอยู่นานที่สุดในทริป 4 คืน (ต่อด้วยลียง 2 คืน) ที่พักอยู่เขต 5 ข้างสวนพฤกษศาสตร์ เดินไปย่านกาเทียร์ลาแต็งและร่องรอยปารีสสมัยโรมัน (ลูเตเซีย) ได้ ตอนเช้าไปตลาด กลางวันไปพิพิธภัณฑ์ กลางคืนชมเมืองแห่งแสงไฟ ในศตวรรษที่ 17 คณะราชทูตของสมเด็จพระนารายณ์แห่งอยุธยาเคยมาเยือนแวร์ซาย และในศตวรรษที่ 19 ภาพอุกิโยเอะของญี่ปุ่นทำให้จิตรกรปารีสหลงใหล</p>
   </div>
   <div class="subnav"><a href="#fr-data">ข้อมูลพื้นฐาน</a><a href="#fr-hist">ประวัติศาสตร์</a><a href="#fr-ties">ความสัมพันธ์กับญี่ปุ่นและไทย</a><a href="#paris">ปารีส</a><a href="#fr-food">อาหารและเครื่องดื่ม</a><a href="#fr-manners">มารยาทบนโต๊ะ</a><a href="#fr-film">ดูหนังก่อนไป</a><a href="#fr-map">แผนที่</a><a href="#fr-sos">ฉุกเฉิน</a><a href="#fr-phr">บทสนทนา</a></div>
 
@@ -8718,12 +8912,204 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <p class="note">ลำดับการซื้อของหนัก ดูแผนน้ำหนักกระเป๋าในบท "กระเป๋าและการเตรียมตัว"</p>
   </div>
 </section>
+<!-- =================== CHAPTER 7: ART (FR · ES · IT) =================== -->
+<section id="art" class="chapter art" data-chapter="art">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Chapter 7 · Art</div>
+    <h2>พิพิธภัณฑ์และงานชิ้นเอก <span class="local">Louvre · Sagrada Família · Vaticano</span></h2>
+    <div class="th">美術館と名作</div>
+    <p class="lead">รวมงานชิ้นเอกที่ควรดูในพิพิธภัณฑ์ที่เราจะไปแน่แล้ว ตั้งแต่ประติมากรรมกรีกและโรมันโบราณ เรอเนซองส์ จิตรกรรมสมัยใหม่ของฝรั่งเศส ไปจนถึงเกาดีและปีกัสโซ จะเห็นว่าสิ่งที่เกิดในอิตาลีเดินทางไปฝรั่งเศสและสเปน กลับทางกับลำดับการเดินทางของเรา</p>
+  </div>
+  <div class="subnav"><a href="#art-flow">ลำดับศิลปะ</a><a href="#art-ties">เส้นด้ายของทริป</a><a href="#art-louvre">ลูฟวร์</a><a href="#art-rodin">โรแด็ง</a><a href="#art-orsay">ออร์แซ</a><a href="#art-sagrada">ซากราดาฟามีเลีย</a><a href="#art-picasso">ปีกัสโซ</a><a href="#art-doge">วังดอจ</a><a href="#art-accademia">อัคคาเดเมีย</a><a href="#art-uffizi">อุฟฟีซี</a><a href="#art-vatican">วาติกัน</a><a href="#art-tips">เคล็ดลับการดู</a></div>
+
+  <p class="note">ในเล่มไม่ได้ใส่รูปผลงาน ตำแหน่งห้องจัดแสดงอาจเปลี่ยน วันนั้นให้เช็กในแอปหรือแผนที่ในพิพิธภัณฑ์</p>
+
+  <div class="block" id="art-flow">
+    <h3>ลำดับเวลาของศิลปะ</h3>
+    <ol class="hist">
+      <li><span class="y">ราว 2600 ปีก่อน ค.ศ.〜</span><div>อียิปต์และเมโสโปเตเมียโบราณ "รูปปั้นอาลักษณ์นั่ง" และ "ประมวลกฎหมายฮัมมูราบี" ที่ลูฟวร์</div></li>
+      <li><span class="y">ศตวรรษที่ 2–1 ก่อน ค.ศ.</span><div>ประติมากรรมยุคเฮลเลนิสติก ร่างกายที่มีทั้งการเคลื่อนไหวและอารมณ์ "นีเกแห่งซาโมเทรซ" "วีนัสแห่งมิโล" "เลาโคออน"</div></li>
+      <li><span class="y">ราว ค.ศ. 1300</span><div>จอตโต ภาพนักบุญแบน ๆ เริ่มมีน้ำหนักและอารมณ์ เป็นสัญญาณของเรอเนซองส์</div></li>
+      <li><span class="y">ศตวรรษที่ 15</span><div>เรอเนซองส์ตอนต้นที่ฟลอเรนซ์ ทัศนียภาพ การฟื้นตำนานโบราณ บอตติเชลลี "กำเนิดวีนัส"</div></li>
+      <li><span class="y">ราว ค.ศ. 1500–1520</span><div>เรอเนซองส์ตอนรุ่งเรือง เลโอนาร์โด "โมนาลิซา" มีเกลันเจโล "เดวิด" และโบสถ์น้อยซิสทีน ราฟาเอล "สำนักแห่งเอเธนส์"</div></li>
+      <li><span class="y">ศตวรรษที่ 16</span><div>สำนักเวนิส เน้นสีมากกว่าเส้น ภาพขนาดมหึมาของทิเชียน ทินโทเรตโต เวโรเนเซ</div></li>
+      <li><span class="y">ราว ค.ศ. 1600</span><div>บาโรก แสงและเงาที่เข้มของคาราวัจโจ</div></li>
+      <li><span class="y">ทศวรรษ 1780–1830</span><div>นีโอคลาสสิกและโรแมนติกของฝรั่งเศส ดาวีด "พิธีราชาภิเษกของนโปเลียน" เดอลากรัว "เสรีภาพนำประชาชน"</div></li>
+      <li><span class="y">ทศวรรษ 1850–1890</span><div>จากสัจนิยมสู่อิมเพรสชันนิสม์และโพสต์อิมเพรสชันนิสม์ แสงกลางแจ้งและฉากชีวิตประจำวัน มาเนต์ โมเน่ต์ เรอนัวร์ ฟาน ก็อกห์</div></li>
+      <li><span class="y">ค.ศ. 1880–1917</span><div>โรแด็ง นำผิวที่ดูเหมือนยังไม่เสร็จและการเคลื่อนไหวภายในมาสู่ประติมากรรม</div></li>
+      <li><span class="y">ค.ศ. 1882〜</span><div>ซากราดาฟามีเลียของเกาดี สร้างสถาปัตยกรรมจากรูปทรงธรรมชาติและเรขาคณิต (ยังสร้างอยู่)</div></li>
+      <li><span class="y">ศตวรรษที่ 20</span><div>ปีกัสโซ เรียนที่บาร์เซโลนา ยุคสีน้ำเงินที่ปารีส แล้วไปสู่คิวบิสม์</div></li>
+    </ol>
+  </div>
+
+  <div class="block" id="art-ties">
+    <h3>เส้นด้ายที่เชื่อมทริป</h3>
+    <div class="grid2">
+      <div class="card"><h4>มีเกลันเจโลใน 3 เมือง</h4><ul><li>ลูฟวร์ (25 พ.ย.)："ทาสที่กำลังจะตาย" "ทาสผู้ขัดขืน"</li><li>อัคคาเดเมีย (5 ธ.ค.)："เดวิด" และ "นักโทษ" ที่ยังไม่เสร็จ ซึ่งแกะสลักสำหรับสุสานเดียวกัน</li><li>วาติกัน (9 ธ.ค.)：จิตรกรรมเพดานโบสถ์น้อยซิสทีนกับ "การพิพากษาครั้งสุดท้าย" และ "ปีเอตา" ที่มหาวิหารเซนต์ปีเตอร์</li></ul></div>
+      <div class="card"><h4>ภาพของเลโอนาร์โด 3 ภาพ</h4><ul><li>ลูฟวร์："โมนาลิซา" ภาพที่ท่านนำติดตัวมาเมื่อกษัตริย์ฝรั่งเศสเชิญมาในบั้นปลายชีวิต</li><li>อุฟฟีซี："การประกาศของเทวทูต" สมัยหนุ่ม</li><li>หอศิลป์วาติกัน："นักบุญเจอโรม" ที่ยังไม่เสร็จ</li></ul></div>
+      <div class="card"><h4>นโปเลียน</h4><ul><li>ลูฟวร์ (25 พ.ย.)：ดาวีด "พิธีราชาภิเษกของนโปเลียน"</li><li>แล็งวาลีด (26 พ.ย.)：สุสานนโปเลียน</li><li>เวนิส (4 ธ.ค.)：นโปเลียนยุติสาธารณรัฐเมื่อ ค.ศ. 1797 และขนรูปม้าของซานมาร์โกไปปารีส (ภายหลังคืน)</li></ul></div>
+      <div class="card"><h4>ที่ที่เราเดินอยู่ในภาพ</h4><ul><li>มงมาร์ต (เช้า 25 พ.ย.) → เรอนัวร์ "งานเต้นรำที่มูแลงเดอลากาแลต" ที่ออร์แซ</li><li>นอเทรอดาม (26 พ.ย.) → ฉากของ "พิธีราชาภิเษกของนโปเลียน" ที่ลูฟวร์</li><li>คลองเวนิส → "งานแต่งงานที่คานา" ที่ลูฟวร์ (เวโรเนเซ ขนมาจากอารามในเวนิส)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="block" id="art-louvre">
+    <h3><span class="flag f-fr"></span> พิพิธภัณฑ์ลูฟวร์ <small>Musée du Louvre</small></h3>
+    <p class="rain"><b>วันที่ไป</b>：<a href="#d-1125">25 พ.ย. (พ.) 17:00–21:00 Ryo กับ Yuzuha</a></p>
+    <p class="note">เดิมเป็นพระราชวัง กลายเป็นพิพิธภัณฑ์เมื่อ ค.ศ. 1793 ระหว่างการปฏิวัติ มี 3 ปีก (เดอนง ซุลลี ริเชอลิเยอ) 4 ชั่วโมงก็ดูไม่หมด ให้เริ่มจากปีกเดอนง ลำดับตัวอย่าง：นีเกแห่งซาโมเทรซ → ระเบียงใหญ่จิตรกรรมอิตาลี → โมนาลิซากับงานแต่งงานที่คานา → ภาพใหญ่ของฝรั่งเศส (ราชาภิเษก แพเมดูซา เสรีภาพ) → มีเกลันเจโลชั้นล่าง → วีนัสแห่งมิโลปีกซุลลี → อียิปต์ ถ้ามีเวลาเหลือไปปีกริเชอลิเยอ มีลิฟต์ เข็นรถเข็นเด็กได้</p>
+    <div class="tbl"><table class="wide"><thead><tr><th>ผลงาน</th><th>ผู้สร้าง・ปี</th><th>จุดที่ควรดู</th><th>ตำแหน่ง</th></tr></thead><tbody>
+      <tr><td class="big">นีเกแห่งซาโมเทรซ</td><td>ไม่ทราบผู้สร้าง ราว 190 ปีก่อน ค.ศ.</td><td>เทพีแห่งชัยชนะที่ร่อนลงบนหัวเรือ มองขึ้นจากเชิงบันไดเห็นรอยจีบของผ้าที่ต้องลม</td><td>ปีกเดอนง บันไดดารู</td></tr>
+      <tr><td class="big">โมนาลิซา</td><td>เลโอนาร์โด ดา วินชี ราว ค.ศ. 1503–1519</td><td>เทคนิค "สฟูมาโต" ที่ทำให้เส้นขอบเลือน ภาพเล็กกว่าที่คิด (77×53 ซม.) ถูกขโมยเมื่อ ค.ศ. 1911 และได้คืนอีก 2 ปีต่อมา</td><td>ปีกเดอนง ห้องแห่งรัฐ</td></tr>
+      <tr><td class="big">งานแต่งงานที่คานา</td><td>เวโรเนเซ ค.ศ. 1563</td><td>ภาพที่ใหญ่ที่สุดในลูฟวร์ อยู่ตรงข้ามโมนาลิซา กองทัพนโปเลียนขนมาจากเวนิส</td><td>ห้องแห่งรัฐ</td></tr>
+      <tr><td class="big">พิธีราชาภิเษกของนโปเลียน</td><td>ฌัก-หลุยส์ ดาวีด ค.ศ. 1805–07</td><td>พิธีที่นอเทรอดาม ฉากนโปเลียนสวมมงกุฎให้จักรพรรดินีโฌเซฟีน มีพระมารดาที่ไม่ได้มาร่วมงานวาดไว้ด้วย</td><td>ปีกเดอนง ห้องจิตรกรรมฝรั่งเศสขนาดใหญ่</td></tr>
+      <tr><td class="big">แพเมดูซา</td><td>เตโอดอร์ เฌรีโก ค.ศ. 1818–19</td><td>เหตุการณ์เรือแตกที่เกิดขึ้นจริง ร่างคนซ้อนกันเป็นรูปสามเหลี่ยมไปหาคนที่โบกมือให้เรือที่อยู่ไกล</td><td>เหมือนข้างบน</td></tr>
+      <tr><td class="big">เสรีภาพนำประชาชน</td><td>เออแฌน เดอลากรัว ค.ศ. 1830</td><td>การปฏิวัติเดือนกรกฎาคม 1830 หญิงชูธงสามสี ด้านขวาไกล ๆ มีหอของนอเทรอดาม</td><td>เหมือนข้างบน</td></tr>
+      <tr><td class="big">กร็องโอดาลิสก์</td><td>แองกร์ ค.ศ. 1814</td><td>หลังยาวเกินจริง (มีคนว่ากระดูกสันหลังเกิน) "การโกหก" เพื่อความงาม</td><td>เหมือนข้างบน</td></tr>
+      <tr><td class="big">ทาสที่กำลังจะตาย・ทาสผู้ขัดขืน</td><td>มีเกลันเจโล ค.ศ. 1513–16</td><td>รูปปั้นสำหรับสุสานของพระสันตะปาปายูลิอุสที่ 2 โครงการเดียวกับ "นักโทษ" ที่ฟลอเรนซ์ (ไปดูต่อ 5 ธ.ค.)</td><td>ปีกเดอนงชั้นล่าง ระเบียงมีเกลันเจโล</td></tr>
+      <tr><td class="big">วีนัสแห่งมิโล</td><td>ไม่ทราบผู้สร้าง ราว 150–125 ปีก่อน ค.ศ.</td><td>พบที่เกาะมิโลสเมื่อ ค.ศ. 1820 เพราะไม่มีแขน เดินรอบแต่ละมุมจึงเห็นรูปทรงเปลี่ยนไป</td><td>ปีกซุลลีชั้นล่าง</td></tr>
+      <tr><td class="big">รูปปั้นอาลักษณ์นั่ง</td><td>อียิปต์โบราณ ราว 2600–2350 ปีก่อน ค.ศ.</td><td>ดวงตาฝังหินคริสตัลที่มองตามเราไม่ว่าจะยืนตรงไหน</td><td>ปีกซุลลี ศิลปะอียิปต์</td></tr>
+      <tr><td class="big">ประมวลกฎหมายฮัมมูราบี</td><td>บาบิโลเนีย ราว 1750 ปีก่อน ค.ศ.</td><td>เสาหินสีดำสลักประมวลกฎหมาย "ตาต่อตา" ด้านบนเป็นเทพสุริยะกับกษัตริย์</td><td>ปีกริเชอลิเยอ เมโสโปเตเมีย</td></tr>
+      <tr><td class="big">หญิงถักลูกไม้</td><td>แวร์เมร์ ราว ค.ศ. 1669–70</td><td>ภาพเล็กมาก (24×21 ซม.) งานชิ้นเอกของเนเธอร์แลนด์ ประเทศที่เราเริ่มทริป</td><td>ปีกริเชอลิเยอชั้น 2 จิตรกรรมยุโรปเหนือ</td></tr>
+      <tr><td class="big">ห้องชุดของนโปเลียนที่ 3</td><td>ทศวรรษ 1850–60</td><td>ห้องโถงใหญ่ทองและแดงกับโคมระย้า ชีวิตในวังศตวรรษที่ 19 ยังอยู่ครบ</td><td>ปีกริเชอลิเยอชั้น 1</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-rodin">
+    <h3><span class="flag f-fr"></span> พิพิธภัณฑ์โรแด็ง <small>Musée Rodin</small></h3>
+    <p class="rain"><b>วันที่ไป</b>：<a href="#d-1126">26 พ.ย. (พฤ.) ราว 15:30</a></p>
+    <p class="note">คฤหาสน์ศตวรรษที่ 18 (Hôtel Biron) ที่โรแด็งใช้เป็นสตูดิโอในบั้นปลาย กับสวนกุหลาบ กวีริลเคอเคยเป็นเลขานุการที่นี่ รูปปั้นสำริดใหญ่ ๆ อยู่ในสวน เข็นรถเข็นเด็กเดินง่าย ในอาคารมีผลงานของกามีย์ โกลแดล ลูกศิษย์และคนรักของเขาด้วย</p>
+    <div class="tbl"><table class="wide"><thead><tr><th>ผลงาน</th><th>ผู้สร้าง・ปี</th><th>จุดที่ควรดู</th><th>ตำแหน่ง</th></tr></thead><tbody>
+      <tr><td class="big">นักคิด</td><td>ค.ศ. 1880 (แนวคิด)</td><td>เดิมเป็นดันเตนั่งมองนรกจากด้านบน "ประตูนรก" ภายหลังแยกออกมาและขยายใหญ่</td><td>สวน</td></tr>
+      <tr><td class="big">ประตูนรก</td><td>ค.ศ. 1880–1917</td><td>นรกภูมิจาก "ดีไวน์คอเมดี" ของดันเต ร่างคนราว 180 ร่าง โรแด็งแก้ไขอยู่ตลอดชีวิต</td><td>สวน</td></tr>
+      <tr><td class="big">จุมพิต</td><td>หินอ่อน แนวคิด ค.ศ. 1882</td><td>คู่รักจากดันเต (เปาโลกับฟรันเชสกา) ริมฝีปากยังไม่แตะกัน</td><td>ในอาคาร</td></tr>
+      <tr><td class="big">ชาวเมืองกาเลส์</td><td>ค.ศ. 1884–95</td><td>6 คนที่ยอมมอบตัวเพื่อช่วยเมืองในสงครามร้อยปี ไม่ได้ปั้นเป็นวีรบุรุษ แต่เป็นคนที่ลังเล</td><td>สวน</td></tr>
+      <tr><td class="big">บัลซัก</td><td>ค.ศ. 1898</td><td>นักเขียนในเสื้อคลุม ตอนเปิดตัวถูกวิจารณ์หนักว่า "ไม่เหมือน"</td><td>สวน</td></tr>
+      <tr><td class="big">วอลซ์ ／ วัยแห่งความสุขุม</td><td>กามีย์ โกลแดล ทศวรรษ 1890</td><td>งานที่สะท้อนการแยกทางกับโรแด็ง หญิงสาวที่ยื่นมือ กับชายที่จากไป</td><td>ในอาคาร</td></tr>
+      <tr><td class="big">ป๊ะตองกี</td><td>ฟาน ก็อกห์ ค.ศ. 1887</td><td>จากคอลเลกชันส่วนตัวของโรแด็ง พื้นหลังเต็มไปด้วยภาพอุกิโยเอะของญี่ปุ่น</td><td>ในอาคาร</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-orsay">
+    <h3><span class="flag f-fr"></span> พิพิธภัณฑ์ออร์แซ <small>Musée d'Orsay</small></h3>
+    <p class="rain"><b>วันที่ไป</b>：<a href="#d-1127">ตัวเลือกบ่าย 27 พ.ย. (ศ.) (วันศุกร์เปิดถึง 18:00)</a></p>
+    <p class="note">สถานีรถไฟที่สร้างให้ทันงานเอ็กซ์โปปารีส ค.ศ. 1900 กลายเป็นพิพิธภัณฑ์เมื่อ ค.ศ. 1986 เน้นงานช่วง ค.ศ. 1848–1914 ต่อจากลูฟวร์ อิมเพรสชันนิสม์รวมอยู่ชั้นบนสุด (ชั้น 5) ขึ้นไปก่อน จากหน้าต่างนาฬิกาใหญ่ชั้น 5 มองเห็นลูฟวร์ข้ามแม่น้ำแซน ใช้เวลาราว 2 ชม. ซื้อตั๋วระบุเวลา</p>
+    <div class="tbl"><table><thead><tr><th>ผลงาน</th><th>ผู้สร้าง・ปี</th><th>จุดที่ควรดู</th></tr></thead><tbody>
+      <tr><td class="big">อาหารกลางวันบนสนามหญ้า</td><td>มาเนต์ ค.ศ. 1863</td><td>ชายแต่งตัวกับหญิงเปลือย ตกรอบซาลอนแล้วไปสร้างเรื่องใหญ่ที่ "ซาลอนของผู้ถูกปฏิเสธ" จุดเริ่มต้นของจิตรกรรมสมัยใหม่</td></tr>
+      <tr><td class="big">โอแล็งปียา</td><td>มาเนต์ ค.ศ. 1863</td><td>ไม่ใช่เทพีในตำนาน แต่เป็นหญิงปารีสร่วมสมัยที่มองตรงมาที่เรา</td></tr>
+      <tr><td class="big">งานเต้นรำที่มูแลงเดอลากาแลต</td><td>เรอนัวร์ ค.ศ. 1876</td><td>งานเต้นรำกลางแจ้งวันอาทิตย์ที่มงมาร์ต ที่เราจะเดินเช้า 25 พ.ย. แสงลอดใบไม้ตกเป็นจุด ๆ</td></tr>
+      <tr><td class="big">สถานีแซ็ง-ลาซาร์</td><td>โมเน่ต์ ค.ศ. 1877</td><td>วาดไอน้ำและแสงนั้นเอง ภาพสถานีรถไฟในพิพิธภัณฑ์ที่เคยเป็นสถานี</td></tr>
+      <tr><td class="big">ชุดมหาวิหารรูอ็อง</td><td>โมเน่ต์ ค.ศ. 1892–94</td><td>ด้านหน้าเดียวกัน วาดหลายภาพในเวลาและอากาศต่างกัน ดูเทียบกัน</td></tr>
+      <tr><td class="big">ห้องเรียนบัลเลต์</td><td>เดอกา ค.ศ. 1873–76</td><td>นักบัลเลต์ระหว่างซ้อม องค์ประกอบมุมเฉียงที่ตัดภาพเหมือนภาพถ่าย</td></tr>
+      <tr><td class="big">คนเก็บรวงข้าว</td><td>มีเยต์ ค.ศ. 1857</td><td>หญิงชาวนายากจนเก็บรวงข้าวที่เหลือหลังเกี่ยว</td></tr>
+      <tr><td class="big">ภาพเหมือนตนเอง</td><td>ฟาน ก็อกห์ ค.ศ. 1889</td><td>ลายก้นหอยด้านหลังสั่นไหวเหมือนความกังวลของเขา</td></tr>
+      <tr><td class="big">ราตรีประดับดาวเหนือแม่น้ำโรน</td><td>ฟาน ก็อกห์ ค.ศ. 1888</td><td>ค่ำคืนที่อาร์ล แสงตะเกียงแก๊สสะท้อนน้ำ หนึ่งปีก่อน "ราตรีประดับดาว" ที่นิวยอร์ก</td></tr>
+      <tr><td class="big">แม่ของศิลปิน (การจัดสีเทาและดำ)</td><td>วิสต์เลอร์ ค.ศ. 1871</td><td>แม่นั่งหันข้าง ชื่อภาพคือ "การจัดสี" แต่กลายเป็นสัญลักษณ์ของ "แม่" ในอเมริกา</td></tr>
+      <tr><td class="big">คนเล่นไพ่</td><td>เซซาน ค.ศ. 1890–95</td><td>ชาวนา 2 คนที่นิ่งสนิท สร้างรูปทรงเหมือนต่อบล็อก สัญญาณของคิวบิสม์</td></tr>
+      <tr><td class="big">หญิงตาฮีตี</td><td>โกแกง ค.ศ. 1891</td><td>ละทิ้งปารีสไปเกาะทางใต้ พื้นสีแบนและสีที่จัดจ้าน</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-sagrada">
+    <h3><span class="flag f-es"></span> ซากราดาฟามีเลีย <small>Basílica de la Sagrada Família</small></h3>
+    <p class="rain"><b>วันที่ไป</b>：<a href="#d-1201">1 ธ.ค. (อ.) 15:30 พร้อมออดิโอไกด์</a></p>
+    <p class="note">เริ่มสร้าง ค.ศ. 1882 เกาดีรับช่วงต่อในปีถัดมา บั้นปลายชีวิตทุ่มเทให้โบสถ์นี้แห่งเดียวจนเสียชีวิต ค.ศ. 1926 ปี 2026 ครบ 100 ปีการเสียชีวิตของเกาดี เราไปรอบบ่าย เป็นเวลาที่แสงสีแดงและส้มจากกระจกสีฝั่งตะวันตกส่องเข้าโบสถ์</p>
+    <div class="tbl"><table><thead><tr><th>ผลงาน</th><th>ผู้สร้าง・ปี</th><th>จุดที่ควรดู</th></tr></thead><tbody>
+      <tr><td class="big">ด้านหน้าการประสูติ</td><td>สมัยเกาดี ค.ศ. 1894–1930</td><td>ฝั่งตะวันออก การประสูติของพระคริสต์ด้วยประติมากรรมที่เต็มไปด้วยพืชและสัตว์ เป็นด้านเดียวที่เกือบเสร็จขณะเกาดียังมีชีวิต</td></tr>
+      <tr><td class="big">ด้านหน้าทุกขทรมาน</td><td>ซูบีรักส์ ค.ศ. 1987〜</td><td>ฝั่งตะวันตก ความตายของพระคริสต์ด้วยเสาเหมือนกระดูกและประติมากรรมเหลี่ยม ๆ เคร่งขรึมตรงข้ามกับด้านการประสูติ</td></tr>
+      <tr><td class="big">โถงกลางเหมือนป่า</td><td>ถวายเป็นโบสถ์ ค.ศ. 2010</td><td>เสาแตกกิ่งขึ้นไปค้ำเพดาน เหมือนยืนอยู่ใต้ต้นไม้</td></tr>
+      <tr><td class="big">กระจกสี</td><td>โจเซป วิลา-เกรา</td><td>ฝั่งตะวันออกสีน้ำเงินและเขียว (เช้า) ฝั่งตะวันตกสีแดงและส้ม (เย็น) แสงบ่ายเปลี่ยนสีบนพื้น</td></tr>
+      <tr><td class="big">หอพระเยซู</td><td>กำลังก่อสร้างให้เสร็จ</td><td>หอกลางที่สูงที่สุด (172.5 ม.) ตั้งใจให้ต่ำกว่าเนินมงต์จูอิก เพราะ "ไม่ควรสูงเกินสิ่งที่พระเจ้าสร้าง"</td></tr>
+      <tr><td class="big">ห้องใต้ดินและพิพิธภัณฑ์</td><td>—</td><td>สุสานของเกาดี พิพิธภัณฑ์มีโมเดลปูนปลาสเตอร์ และการจำลองการทดลองแขวนตุ้มน้ำหนักเพื่อหารูปทรง</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-picasso">
+    <h3><span class="flag f-es"></span> พิพิธภัณฑ์ปีกัสโซ <small>Museu Picasso</small></h3>
+    <p class="rain"><b>วันที่ไป</b>：<a href="#d-1202">ตัวเลือกกลางวัน 2 ธ.ค. (พ.) หรือวันฝนตก</a></p>
+    <p class="note">คฤหาสน์ยุคกลาง 5 หลังบนถนนมงกาดา ย่านบอร์น พิพิธภัณฑ์ในบาร์เซโลนาที่ปีกัสโซใช้ชีวิตวัยรุ่น ดูได้ตั้งแต่งานสมัยเด็กไปจนถึงบั้นปลาย ใช้เวลาราว 1 ชม. ครึ่ง</p>
+    <div class="tbl"><table><thead><tr><th>ผลงาน</th><th>ผู้สร้าง・ปี</th><th>จุดที่ควรดู</th></tr></thead><tbody>
+      <tr><td class="big">พิธีรับศีลมหาสนิทครั้งแรก</td><td>ค.ศ. 1896</td><td>ผลงานตอนอายุ 14–15 ปี มีฝีมือเท่าจิตรกรผู้ใหญ่แล้ว</td></tr>
+      <tr><td class="big">วิทยาศาสตร์กับเมตตา</td><td>ค.ศ. 1897</td><td>ฉากข้างเตียงคนป่วยที่วาดตอนอายุ 15 ปี ได้รับคัดเลือกในนิทรรศการที่มาดริด</td></tr>
+      <tr><td class="big">ผลงานยุคสีน้ำเงิน</td><td>ค.ศ. 1901–04</td><td>ช่วงหลังเพื่อนเสียชีวิต วาดคนยากจนด้วยสีน้ำเงินล้วน</td></tr>
+      <tr><td class="big">อาร์เลอแก็ง</td><td>ค.ศ. 1917</td><td>ปีที่กลับบาร์เซโลนาเพราะงานบัลเลต์ ภาพบุคคลที่สงบหลังคิวบิสม์</td></tr>
+      <tr><td class="big">ชุดลัสเมนีนัส</td><td>ค.ศ. 1957</td><td>วาดภาพชิ้นเอกของเบลัซเกซใหม่ 58 ภาพ ตั้งแต่ภาพใหญ่ขาวดำไปจนถึงภาพนกพิราบเล็ก ๆ</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-doge">
+    <h3><span class="flag f-it"></span> วังดอจ <small>Palazzo Ducale</small></h3>
+    <p class="rain"><b>วันที่ไป</b>：<a href="#d-1204">4 ธ.ค. (ศ.) 9:00 รอบแรก</a></p>
+    <p class="note">ศูนย์กลางการปกครองของสาธารณรัฐเวนิสที่อยู่มากว่า 1000 ปี เป็นที่ประทับของดอจ (ผู้นำ) รัฐสภา ศาล และคุกอยู่ในอาคารเดียวกัน จิตรกรสำนักเวนิสวาดความรุ่งเรืองของสาธารณรัฐไว้เต็มผนังและเพดาน</p>
+    <div class="tbl"><table><thead><tr><th>ผลงาน</th><th>ผู้สร้าง・ปี</th><th>จุดที่ควรดู</th></tr></thead><tbody>
+      <tr><td class="big">บันไดยักษ์</td><td>รูปปั้นของซันโซวีโน ทศวรรษ 1560</td><td>บนบันไดในลานมีเทพเนปจูนแห่งทะเลกับเทพมาร์สแห่งสงคราม สัญลักษณ์ของอำนาจทางทะเลและทางบก</td></tr>
+      <tr><td class="big">สวรรค์</td><td>ทินโทเรตโต ราว ค.ศ. 1588–92</td><td>ผนังหลักของห้องสภาใหญ่ กว้างกว่า 20 ม. หนึ่งในภาพสีน้ำมันที่ใหญ่ที่สุดในโลก มีนักบุญหลายร้อยองค์</td></tr>
+      <tr><td class="big">ชัยชนะของเวนิส</td><td>เวโรเนเซ ราว ค.ศ. 1580</td><td>เพดานของห้องเดียวกัน เทพีเวนิสรับมงกุฎบนก้อนเมฆ</td></tr>
+      <tr><td class="big">ภาพเหมือนดอจและผ้าสีดำ</td><td>ศตวรรษที่ 16</td><td>ใต้เพดานเรียงภาพเหมือนดอจทุกสมัย เฉพาะตำแหน่งของฟาลิเอโรที่ถูกประหารฐานกบฏเป็นผ้าสีดำ</td></tr>
+      <tr><td class="big">สะพานถอนหายใจและคุก</td><td>ราว ค.ศ. 1600</td><td>ชื่อมาจากนักโทษที่ข้ามสะพานไปคุกหลังพิพากษา แล้วถอนหายใจเมื่อเห็นวิวข้างนอกครั้งสุดท้ายจากหน้าต่างเล็ก</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-accademia">
+    <h3><span class="flag f-it"></span> หอศิลป์อัคคาเดเมีย <small>Galleria dell'Accademia</small></h3>
+    <p class="rain"><b>วันที่ไป</b>：<a href="#d-1205">5 ธ.ค. (ส.) 15:15</a></p>
+    <p class="note">พิพิธภัณฑ์สำหรับดู "เดวิด" ของจริงที่เคยตั้งอยู่ที่ลานซินญอเรีย ถูกย้ายมาที่นี่เมื่อ ค.ศ. 1873 เพื่อกันเสียหาย ที่ลานตอนนี้เป็นของจำลอง ใช้เวลาราว 1 ชม.</p>
+    <div class="tbl"><table><thead><tr><th>ผลงาน</th><th>ผู้สร้าง・ปี</th><th>จุดที่ควรดู</th></tr></thead><tbody>
+      <tr><td class="big">เดวิด</td><td>มีเกลันเจโล ค.ศ. 1501–04</td><td>แกะตอนอายุ 26 จากหินอ่อนก้อนที่ช่างคนอื่นทิ้งไว้ จังหวะก่อนเหวี่ยงหิน กำลังจ้องโกไลแอท สูงกว่า 5 ม.</td></tr>
+      <tr><td class="big">นักโทษ (4 รูป)</td><td>มีเกลันเจโล ราวทศวรรษ 1520</td><td>รูปปั้นที่ยังไม่เสร็จสำหรับสุสานยูลิอุสที่ 2 ดูเหมือนร่างกายกำลังดิ้นออกจากหิน โครงการเดียวกับ 2 รูปที่ลูฟวร์</td></tr>
+      <tr><td class="big">นักบุญแมทธิว</td><td>มีเกลันเจโล ค.ศ. 1505–06</td><td>ใน 12 อัครสาวกสำหรับมหาวิหาร เป็นรูปเดียวที่ลงมือ เห็นลำดับการแกะสลัก</td></tr>
+      <tr><td class="big">ห้องรูปปูนปลาสเตอร์</td><td>ศตวรรษที่ 19</td><td>รูปครึ่งตัวปูนปลาสเตอร์เต็มผนัง จุดสีดำเป็นเครื่องหมายสำหรับถ่ายแบบลงหินอ่อน</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-uffizi">
+    <h3><span class="flag f-it"></span> หอศิลป์อุฟฟีซี <small>Galleria degli Uffizi</small></h3>
+    <p class="rain"><b>วันที่ไป</b>：<a href="#d-1206">ถ้าจะเข้า รอบแรกเช้า 6 หรือ 8 ธ.ค. (ต้องจอง)</a></p>
+    <p class="note">อาคารที่เคยเป็นสำนักงานของตระกูลเมดีชี (อุฟฟีซี＝ออฟฟิศ) ได้ชื่อว่ามีจิตรกรรมเรอเนซองส์ดีที่สุดและมากที่สุดในโลก คิวยาว ถ้าจะเข้าให้จองรอบแรกตอนเช้า ใช้เวลา 2–3 ชม.</p>
+    <div class="tbl"><table><thead><tr><th>ผลงาน</th><th>ผู้สร้าง・ปี</th><th>จุดที่ควรดู</th></tr></thead><tbody>
+      <tr><td class="big">พระแม่ทรงพระสิริ</td><td>จอตโต ราว ค.ศ. 1310</td><td>บนพื้นทอง พระแม่เริ่มมีน้ำหนักและความหนา</td></tr>
+      <tr><td class="big">ภาพเหมือนดยุกและดัชเชสแห่งอูร์บีโน</td><td>ปีเอโร เดลลา ฟรันเชสกา ทศวรรษ 1470</td><td>ภาพด้านข้างหันหน้าเข้าหากัน มีทิวทัศน์กว้างอยู่ด้านหลัง</td></tr>
+      <tr><td class="big">ฤดูใบไม้ผลิ (ปรีมาเวรา)</td><td>บอตติเชลลี ราว ค.ศ. 1480</td><td>เทพในสวนส้ม ใต้เท้ามีดอกไม้ราว 190 ชนิด</td></tr>
+      <tr><td class="big">กำเนิดวีนัส</td><td>บอตติเชลลี ราว ค.ศ. 1485</td><td>วีนัสบนเปลือกหอยมาถึงฝั่ง เทพีโบราณกลับมาในยุคคริสต์ศาสนา</td></tr>
+      <tr><td class="big">การประกาศของเทวทูต</td><td>เลโอนาร์โด ดา วินชี ราว ค.ศ. 1472</td><td>งานตอนอายุราว 20 ปี ปีกเทวดาวาดจากการสังเกตนก</td></tr>
+      <tr><td class="big">ครอบครัวศักดิ์สิทธิ์ (โดนีตอนโด)</td><td>มีเกลันเจโล ราว ค.ศ. 1507</td><td>จิตรกรรมบนแผ่นไม้ชิ้นเดียวของมีเกลันเจโลในฟลอเรนซ์ ร่างบิดตัวเหมือนประติมากรรม</td></tr>
+      <tr><td class="big">พระแม่กับนกโกลด์ฟินช์</td><td>ราฟาเอล ค.ศ. 1505–06</td><td>พระกุมารกับนักบุญยอห์นล้อมนกตัวเล็ก องค์ประกอบสามเหลี่ยมที่นุ่มนวล</td></tr>
+      <tr><td class="big">วีนัสแห่งอูร์บีโน</td><td>ทิเชียน ค.ศ. 1538</td><td>สีของสำนักเวนิส ภายหลังมาเนต์วาดใหม่เป็น "โอแล็งปียา" (เชื่อมกับออร์แซ)</td></tr>
+      <tr><td class="big">เมดูซา</td><td>คาราวัจโจ ราว ค.ศ. 1597</td><td>ศีรษะที่กรีดร้องบนโล่กลม บาโรกแห่งแสงและเงา</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-vatican">
+    <h3><span class="flag f-it"></span> พิพิธภัณฑ์วาติกันและเซนต์ปีเตอร์ <small>Musei Vaticani</small></h3>
+    <p class="rain"><b>วันที่ไป</b>：<a href="#d-1209">9 ธ.ค. (พ.) 8:00 รอบแรก</a></p>
+    <p class="note">งานศิลปะที่พระสันตะปาปาหลายสมัยสะสมไว้ ทางเดินยาวมาก ว่ากันว่าเดินทั้งหมดราว 7 กม. ปลายเส้นทางคือโบสถ์น้อยซิสทีน ในโบสถ์ห้ามถ่ายรูปและต้องเงียบ แต่งกายปิดไหล่และเข่า</p>
+    <div class="tbl"><table><thead><tr><th>ผลงาน</th><th>ผู้สร้าง・ปี</th><th>จุดที่ควรดู</th></tr></thead><tbody>
+      <tr><td class="big">เลาโคออน</td><td>ราวศตวรรษที่ 1 ก่อน ค.ศ.</td><td>ขุดพบที่โรมเมื่อ ค.ศ. 1506 มีเกลันเจโลรีบมาดู นักบวชกับลูกชายถูกงูรัด</td></tr>
+      <tr><td class="big">ทอร์โซเบลเวเดเร</td><td>ราวศตวรรษที่ 1 ก่อน ค.ศ.</td><td>รูปปั้นมีแต่ลำตัว ไม่มีหัวไม่มีแขน มีเกลันเจโลใช้เป็นแบบ เห็นได้ในร่างคนที่ซิสทีน</td></tr>
+      <tr><td class="big">ระเบียงแผนที่</td><td>ทศวรรษ 1580</td><td>ทางเดินยาว 120 ม. มีแผนที่ขนาดใหญ่ของแคว้นต่าง ๆ ในอิตาลี ลองหาเวนิสกับฟลอเรนซ์</td></tr>
+      <tr><td class="big">สำนักแห่งเอเธนส์</td><td>ราฟาเอล ค.ศ. 1509–11</td><td>ห้องราฟาเอล ตรงกลางคือเพลโตกับอริสโตเติล ว่ากันว่าใบหน้าเพลโตมีเลโอนาร์โดเป็นแบบ</td></tr>
+      <tr><td class="big">จิตรกรรมเพดานโบสถ์น้อยซิสทีน</td><td>มีเกลันเจโล ค.ศ. 1508–12</td><td>เรื่องจากพันธสัญญาเดิม ใน "การสร้างอาดัม" นิ้วของพระเจ้ากับอาดัมใกล้จะแตะกัน</td></tr>
+      <tr><td class="big">การพิพากษาครั้งสุดท้าย</td><td>มีเกลันเจโล ค.ศ. 1536–41</td><td>เต็มผนังแท่นบูชา งานตอนอายุ 60 กว่า ราว 25 ปีหลังเพดาน ว่ากันว่าใบหน้าบนหนังนักบุญที่ถูกถลกคือภาพเหมือนตนเอง</td></tr>
+      <tr><td class="big">จิตรกรรมผนังข้างโบสถ์</td><td>บอตติเชลลี เปรูจีโน และคนอื่น ทศวรรษ 1480</td><td>รุ่นก่อนเพดาน เชื่อมกับบอตติเชลลีที่อุฟฟีซี</td></tr>
+      <tr><td class="big">การจำแลงพระกาย</td><td>ราฟาเอล ค.ศ. 1516–20</td><td>หอศิลป์ งานใหญ่ชิ้นสุดท้ายของราฟาเอล</td></tr>
+      <tr><td class="big">ปีเอตา</td><td>มีเกลันเจโล ค.ศ. 1498–99</td><td>โบสถ์น้อยด้านขวาในมหาวิหารเซนต์ปีเตอร์ งานตอนอายุ 20 ต้น ๆ และเป็นรูปปั้นเดียวที่เขาลงชื่อ</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-tips">
+    <h3>เคล็ดลับการดู</h3>
+    <div class="grid2">
+      <div class="card"><h4>รถเข็นเด็กและเป้อุ้ม</h4><ul><li>ลูฟวร์ ออร์แซ โรแด็ง วาติกัน เข็นรถเข็นเด็กเข้าได้ (มีลิฟต์)</li><li>ที่ลูฟวร์ยืมรถเข็นและเป้อุ้มได้ที่จุดบริการใต้พีระมิด</li><li>วังดอจและหอของซากราดาฟามีเลียมีบันไดเยอะ ใช้เป้อุ้ม</li></ul></div>
+      <div class="card"><h4>วิธีดู</h4><ul><li>ในแต่ละพิพิธภัณฑ์เลือก "ต้องดู" 3 ชิ้น แล้วไปดูก่อน</li><li>หยุดหน้างานชิ้นเอกสัก 1 นาที ดูทั้งจากไกลและใกล้</li><li>ใช้แอปทางการหรือออดิโอไกด์ (ลูฟวร์ วาติกัน ซากราดาฟามีเลีย)</li></ul></div>
+      <div class="card"><h4>กฎ</h4><ul><li>ห้ามใช้แฟลช ในโบสถ์น้อยซิสทีนห้ามถ่ายรูปเลย</li><li>โบสถ์และวาติกันต้องแต่งกายปิดไหล่และเข่า</li><li>กระเป๋าเป้ใบใหญ่ต้องฝาก ห้ามนำมีดเข้า</li></ul></div>
+    </div>
+  </div>
+</section>
 
 <!-- =================== CHAPTER 7: BABY =================== -->
 <section id="baby" class="chapter base" data-chapter="baby">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 7 · Traveling with a Baby</div>
+    <div class="eyebrow">Chapter 8 · Traveling with a Baby</div>
     <h2>เที่ยวกับลูกน้อย <span class="local">ไปกับ Yuzuha</span></h2>
     <div class="th">赤ちゃん連れのコツ</div>
     <p class="lead">เคล็ดลับสำคัญที่สุดคือให้จังหวะของ Yuzuha เป็นศูนย์กลางของแผน กำหนดการในเล่มนี้จัดเป็นแบบ "ช่วงเช้า 1 ที่ งีบกลางวัน ช่วงเย็นอีก 1 ที่"</p>
@@ -8846,7 +9232,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="safety" class="chapter base" data-chapter="safety">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 8 · Safety &amp; Emergency</div>
+    <div class="eyebrow">Chapter 9 · Safety &amp; Emergency</div>
     <h2>ฉุกเฉินและความปลอดภัย <span class="local">มีปัญหาเมื่อไหร่ เปิดหน้านี้</span></h2>
     <div class="th">緊急・安全</div>
   </div>
@@ -9385,7 +9771,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="prep" class="chapter base" data-chapter="prep">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 9 · Luggage, Money &amp; To-do</div>
+    <div class="eyebrow">Chapter 10 · Luggage, Money &amp; To-do</div>
     <h2>กระเป๋า เงิน และสิ่งที่ต้องเตรียม <span class="local">อ่านก่อนออกเดินทาง</span></h2>
     <div class="th">荷物・お金・準備</div>
   </div>
@@ -9900,7 +10286,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="next" class="chapter base" data-chapter="next">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 10 · Someday</div>
+    <div class="eyebrow">Chapter 11 · Someday</div>
     <h2>ไอเดียทริปหน้า <span class="local">สวิตเซอร์แลนด์และทะเลสาบโคโม</span></h2>
     <div class="th">次回の旅の案 · スイスとコモ湖</div>
     <p class="lead">1 สัปดาห์ในที่ที่ไม่ซ้ำกับทริปนี้ ช่วงราวเดือนกรกฎาคมที่รถขึ้นเขาเปิดครบทุกสายเหมาะที่สุด บินเข้าซูริก แล้วกลับจากมิลาน</p>
@@ -9924,7 +10310,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   <span>ที่มาของเบอร์สถานทูต/กงสุล: "รายชื่อสถานทูตและสถานกงสุลในต่างประเทศ" ของกระทรวงการต่างประเทศญี่ปุ่น และ "List of Royal Thai Embassy contact point" ของกระทรวงการต่างประเทศไทย</span>
   <details id="changelog" style="margin-top:6px">
     <summary style="cursor:pointer;font-weight:700;color:var(--ink)">ประวัติการแก้ไข</summary>
-    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">6 พ.ย.</td><td>บ้านแอนน์ แฟรงก์จองแล้ว (24 พ.ย. รอบเข้า 9:00〜9:15 3 คน)</td></tr><tr><td class="d">6 พ.ย.</td><td>ปรับวันที่ 25 พ.ย.：โรงอุปรากรกับ Le Meurice กลับเป็น "ต้องจอง" Ladurée ถนนรัวยาลแค่ดูจากข้างนอก ลูฟวร์เริ่ม 17:00 (ร้านอุปกรณ์ครัวกับปตีบาโตย้ายไปตัวเลือก) ประตูชัยฝากรถเข็นไว้กับเจ้าหน้าที่ที่ทางเข้า</td></tr><tr><td class="d">6 พ.ย.</td><td>จัดปารีส 24〜28 พ.ย. ใหม่ 24 พ.ย. หอไอเฟล ประตูชัย ช็องเซลีเซยามค่ำ 25 พ.ย. มงมาร์ตยามเช้า → โรงอุปรากร → Le Meurice 13:45 → Som ไปดิสนีย์ตอนเย็น Ryo กับ Yuzuha ไปลูฟวร์ 26 พ.ย. แวร์ซาย → สุสานนโปเลียน → โรแด็ง → บงมาร์เช → Josselin → นอเทรอดามยามค่ำ 27 พ.ย. จากมาเรไปเขต 1 28 พ.ย. แพนธีออนแล้วขึ้น TGV ที่เอาออกทั้งหมดย้ายไปตาราง "ตัวเลือก" เพิ่มตารางรสชาติท้องถิ่นที่กินได้ในปารีส บทดิสนีย์เปลี่ยนเป็นแผน F (เย็น 25 พ.ย. Som คนเดียว)</td></tr><tr><td class="d">6 พ.ย.</td><td>อัมสเตอร์ดัมเหลือ 1 คืน ที่พักเปลี่ยนเป็น art'otel (ตรงข้ามสถานีกลาง) Eurostar เปลี่ยนเป็น 24 พ.ย. 13:10→16:40 (ตู้ 18 ที่นั่ง 85・86) โรงแรมปารีส 24〜28 พ.ย. 4 คืน จัดวันที่ 24 พ.ย. (ถึงปารีสตอนเย็น) และ 25 พ.ย. ใหม่ (ย่านละติน → เกาะซิเต → จิบชาที่ Le Meurice → ลูฟวร์รอบค่ำ 3 คน) หมู่บ้านกังหันลมย้ายไปเป็นตัวเลือก ตั๋ว TGV ปารีส→บาร์เซโลนาคืนเงินแล้ว</td></tr><tr><td class="d">6 พ.ย.</td><td>เพิ่มแผน E วันที่ 26 พ.ย. (Ryo เที่ยวปารีสช่วงเช้า ออร์แซ → Le Relais de l'Entrecôte → ออร็องเฌอรี → ประตูชัย แล้วไปสมทบที่ดิสนีย์ 16:00) เพิ่มร้านหลัก Bernachon ในวันอาทิตย์ที่ลียง</td></tr><tr><td class="d">5 พ.ย.</td><td>บ่ายวันอาทิตย์ที่ลียงเลือกสวนแตต-ดอร์ (สถาบันลูมีแยร์เป็นตัวเลือก) เพิ่มเดินเล่นเนินครัวรูสเช้าวันจันทร์ วิวกลางคืนฟูร์วิแยร์คืนวันเสาร์คงเดิม</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่ม "ภูมิภาคของสเปนกับอาหาร" และ "ภูมิภาคของอิตาลีกับอาหาร" ในบทอาหาร (แบ่งตามทิศเหมือนฝรั่งเศส พร้อมชื่อเมืองและทริปนี้)</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่มเรื่องทรัฟเฟิลขาว (ซานมีนีอาโต Savini Tartufi Procacci ราคาและการนำกลับ) และการดูแลหม้อทองแดงกับพิมพ์คาเนเลในบทอาหาร เพิ่มของที่ระลึกจากร้านในบทโบกุส</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่ม "ของที่ควรซื้อเพื่อเริ่มทำอาหาร" ในบทอาหาร (5 อย่างที่ไม่ควรพลาด ร้านอุปกรณ์และวัตถุดิบแต่ละเมือง ข้อควรระวังในการนำกลับ)</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่ม "ของหวานและขนม" (ประเภทร้านอย่างซาลง เดอ เต ของเด่นและร้านดังแต่ละเมือง) และ "ชีสของเมืองที่เราไป" (เช่นแซ็ง-มาร์แซล็งของลียง) ในบทอาหาร แบ่งภูมิภาคฝรั่งเศสเป็นเหนือ ตะวันตก ตะวันออก กลาง ตะวันออกเฉียงใต้ ตะวันตกเฉียงใต้ พร้อมชื่อเมือง ร้านดังของเชฟระดับตำนานทำเป็นการ์ดพร้อมคำอธิบายและวิธีสนุก</td></tr><tr><td class="d">5 พ.ย.</td><td>จัด 26 พ.ย. ใหม่โดยแยกกันเที่ยว (Ryo ไม่ไปดิสนีย์) ใส่ 4 แผน และแผนปารีสของ Ryo กับ Yuzuha และของ Ryo คนเดียวในบทดิสนีย์ เรียงบทอาหารเป็นฝรั่งเศส → สเปน → อิตาลี (ตามลำดับการเดินทาง)</td></tr><tr><td class="d">5 พ.ย.</td><td>ปรับบท "ชีสและไวน์" เป็น "ตำราอาหาร" เน้นฝรั่งเศส อิตาลี สเปน (ประวัติศาสตร์ อิทธิพลต่อกัน เชฟระดับตำนาน ร้านดังพร้อมแผนที่ ระดับของร้าน ลำดับมื้ออาหาร มารยาทสามประเทศ ภูมิภาคฝรั่งเศส) ย้าย "อาหารและเครื่องดื่ม" และมารยาทจากบทของแต่ละประเทศมารวมที่นี่</td></tr><tr><td class="d">4 พ.ย.</td><td>ปรับสีแผนที่เส้นทางตามประเทศ (เนเธอร์แลนด์สีส้ม ฝรั่งเศสสีน้ำเงิน สเปนสีแดง อิตาลีสีเขียว เครื่องบินและดูไบสีเทา) ใส่ธงชาติทุกเมืองในตารางกำหนดการ</td></tr><tr><td class="d">4 พ.ย.</td><td>เพิ่มข้อความตอบกลับจากฝ่ายจองของร้านโบกุส (ต้นฉบับและคำแปล) ในหัวข้อ "พาลูกเล็กไป" ของบทโบกุส เป็นตัวอย่างเซอร์วิสของอาหารฝรั่งเศส</td></tr><tr><td class="d">4 พ.ย.</td><td>จอง AVE INT 09742 (30 พ.ย. ลียง 14:35 → บาร์เซโลนา 19:23) วันจันทร์ที่ลียงมีเวลาว่างถึงบ่าย วันแรกที่บาร์เซโลนาจัดใหม่ตามเวลาถึงตอนค่ำ (เดินถนนกราเซียเป็นตัวเลือก) เพิ่มคำเตือนว่าใส่ Apple Wallet ไม่ได้</td></tr><tr><td class="d">4 พ.ย.</td><td>จอง TGV INOUI 6619 (28 พ.ย. 15:00 → 16:56 ชั้น 1) จัดวันที่ 28 พ.ย. ที่ปารีสใหม่ (ตลาดเช้าและมงมาร์ต → ไปสถานี 13:45) แผนช่วงบ่ายเก็บไว้เป็นตัวเลือก</td></tr><tr><td class="d">4 พ.ย.</td><td>จองโรงแรมที่ลียง (Mercure ปาร์-ดิเยอ 2 คืน) และบูชง Daniel et Denise Saint-Jean คืน 28 พ.ย. (19:00) คืนนั้นหลังมื้อเย็นนั่งรถรางขึ้นไปดูวิวกลางคืนบนเนินฟูร์วิแยร์ บ่าย 29 พ.ย. เลือกสวนสาธารณะหรือพิพิธภัณฑ์ 1 แห่งแล้วงีบกลางวัน</td></tr><tr><td class="d">4 พ.ย.</td><td>ลบส่วนที่เขียนว่าจะซื้อของฝากอะไรให้ใคร และหัวข้อ "แผนของฝาก" เพิ่มเรื่องหัวหน้าที่ EY และข้อความถึง Yuzuha ในบทโบกุส</td></tr><tr><td class="d">4 พ.ย.</td><td>เปลี่ยนเป็นแวะลียง (เย็น 28 พ.ย. ปารีส → ลียง 2 คืน 30 พ.ย. ไปบาร์เซโลนา) อัปเดตกำหนดการ รายการจอง การเดินทาง แผนที่เส้นทาง และใส่ 3 วันที่ลียงในบทโบกุส แผนปารีสวันที่ 29 พ.ย. เก็บไว้เป็นตัวเลือก</td></tr><tr><td class="d">4 พ.ย.</td><td>จองร้านปอล โบกุส สาขาแรก (29 พ.ย. 20:15) เพิ่มบท "โบกุส" แบบเดียวกับบทดิสนีย์ (การจอง การเดินทาง ตารางวันนั้น เมนูฤดูใบไม้ร่วง อาหารขึ้นชื่อ พาลูกน้อยไป ประวัติ ของฝาก)</td></tr><tr><td class="d">3 พ.ย.</td><td>ย้ายปิซาไปบ่ายวันที่ 7 ธ.ค. (จ.) ไปกลับด้วยรถไฟท้องถิ่น วันที่ 8 ธ.ค. เที่ยวฟลอเรนซ์ยามเช้า กินมื้อกลางวันแล้วนั่งรถไฟไปโรม</td></tr><tr><td class="d">3 พ.ย.</td><td>จอง Frecciarossa 9415 วันที่ 5 ธ.ค. (11:26 → 13:39 Business) เพิ่มเดินเล่นเวนิสยามเช้า วันแรกที่ฟลอเรนซ์เลื่อนอัคคาเดเมียเป็น 15:15 และย้ายพระอาทิตย์ตกที่ลานมีเกลันเจโลไปวันที่ 6 ธ.ค. เพิ่มฉบับภาษาอังกฤษ</td></tr><tr><td class="d">3 พ.ย.</td><td>จอง Eurostar (25 พ.ย. 09:10 → 12:37) ปรับตารางเช้าที่อัมสเตอร์ดัมและวันแรกที่ปารีสให้ตรงกัน</td></tr><tr><td class="d">2 พ.ย.</td><td>ลบรหัสจอง (เอมิเรตส์ ที่พักใน Booking) และเลขกรมธรรม์ประกันออกจากไกด์ (กันคนอื่นเข้าไปแก้หรือยกเลิกการจอง)</td></tr><tr><td class="d">2 พ.ย.</td><td>ดูไบ: ตัดสินใจออกไปในเมือง ซมขอวีซ่าทรานซิต 48 ชม. ผ่านเอมิเรตส์ (มีขั้นตอนในบทดูไบ)</td></tr><tr><td class="d">25 ต.ค.</td><td>ทำรายการของที่ต้องเอาไปใหม่จากรายการประจำ ให้เข้ากับทริปนี้ (มีป้ายบอกกระเป๋าที่ใส่)</td></tr><tr><td class="d">25 ต.ค.</td><td>ฉบับภาษาญี่ปุ่นเอาภาษาไทยที่เขียนคู่กันออก (ตัวเล็กข้างหัวข้อ คอลัมน์ภาษาไทยในตารางบทสนทนา ฯลฯ) ภาษาไทยอยู่ในฉบับภาษาไทย</td></tr><tr><td class="d">25 ต.ค.</td><td>เลือกดีไซน์ได้ 3 แบบ (กดปุ่มจานสีมุมขวาล่าง): Som (กระดาษสีอ่อน＋ลายเส้นของแต่ละประเทศ ค่าเริ่มต้น) Yuzuha (สีสดใส) Ryo (สีเข้ม) หรือใส่ ?theme=som / yuzuha / ryo ในลิงก์ก็ได้</td></tr><tr><td class="d">25 ต.ค.</td><td>สรุปประกันเหลือ 2 ตัว คือ Chubb และ Hilton Amex Premium เพิ่มขั้นตอนติดต่อเมื่อเกิดเหตุ (แยกสถานการณ์) และรายชื่อเบอร์ติดต่อ</td></tr><tr><td class="d">25 ต.ค.</td><td>อัปเดตข้อมูลจากใบยืนยันโรงแรม 6 แห่ง (เวลา วันสุดท้ายที่ยกเลิกฟรี ห้อง) เช็กความคุ้มครอง Amex จากเงื่อนไข (ของติดตัวถูกขโมยไม่คุ้มครอง) เพิ่มหัวข้อ Anytime Fitness</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อประกันการเดินทาง (รายละเอียดกรมธรรม์ Chubb การแบ่งหน้าที่กับ Amex กฎการเคลม)</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อจัดกระเป๋าและการขนย้าย (วิธีรับมือแต่ละสถานการณ์) เช็กสัมภาระและที่นั่งเอมิเรตส์จาก e-ticket อัปเดตรายการของและสิ่งที่ต้องทำ เพิ่มประวัติการแก้ไขนี้</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่ม "หนังที่ควรดูก่อนไป" ของแต่ละประเทศ</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มการแวะเปลี่ยนเครื่องที่ดูไบขาไป (3 ชม. 15 นาที) ในกำหนดการและแผนที่เส้นทาง</td></tr><tr><td class="d">18 ต.ค.</td><td>ปุ่มเปลี่ยนภาษาอยู่มุมขวาล่างตลอด (สลับญี่ปุ่น/ไทยได้โดยไม่เลื่อนหน้า)</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มลิสต์สถานที่โปรดใน Google Maps (แยกประเภท มีชื่อภาษาไทย) และลิงก์แผนที่ของโรงแรมและสถานที่สำคัญ เพิ่มการแวะดูไบ 17 ชม. ขากลับในแผนที่</td></tr><tr><td class="d">18 ต.ค.</td><td>เปลี่ยนที่พักปารีสเป็น Libertel Austerlitz และยืนยันที่พักทั้ง 6 แห่ง</td></tr><tr><td class="d">18 ต.ค.</td><td>เปิดเวอร์ชัน GitHub ตัวอักษรใหญ่ขึ้นสำหรับ iPhone ตารางกว้างเลื่อนด้านข้างได้ เปิดเป็นภาษาไทยด้วย ?lang=th</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>ทบทวนทั้งเล่ม (Yuzuha อายุ 10 เดือนตอนเดินทาง ขาไปออก 01:05 ตัดค่าประกันออก) ทำเป็น 2 ภาษา ญี่ปุ่นและไทย</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>เพิ่มวิธีรับมือวันประท้วง/นัดหยุดงาน การป้องกันล้วงกระเป๋า (แยกตามสถานการณ์) และคอลัมน์มารยาทบนโต๊ะอาหารของฝรั่งเศส</td></tr><tr><td class="d">ราว 16 ต.ค.</td><td>อัปเดตว่าซื้อตั๋วดิสนีย์แลนด์ปารีสแล้ว เพิ่ม "ดิสนีย์กับฝรั่งเศส" เวลาเข้าแวร์ซาย และตารางเวลาพระอาทิตย์ขึ้น-ตก</td></tr><tr><td class="d">15 ต.ค.</td><td>เวอร์ชันแรก</td></tr></tbody></table></div>
+    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">7 พ.ย.</td><td>เพิ่มบทใหม่ "พิพิธภัณฑ์และงานชิ้นเอก" (ลูฟวร์ โรแด็ง ออร์แซ ซากราดาฟามีเลีย พิพิธภัณฑ์ปีกัสโซ วังดอจ อัคคาเดเมีย อุฟฟีซี วาติกัน) แก้คำนำบทฝรั่งเศสให้ตรงกับปารีส 4 คืนและลียง 2 คืน</td></tr><tr><td class="d">6 พ.ย.</td><td>บ้านแอนน์ แฟรงก์จองแล้ว (24 พ.ย. รอบเข้า 9:00〜9:15 3 คน)</td></tr><tr><td class="d">6 พ.ย.</td><td>ปรับวันที่ 25 พ.ย.：โรงอุปรากรกับ Le Meurice กลับเป็น "ต้องจอง" Ladurée ถนนรัวยาลแค่ดูจากข้างนอก ลูฟวร์เริ่ม 17:00 (ร้านอุปกรณ์ครัวกับปตีบาโตย้ายไปตัวเลือก) ประตูชัยฝากรถเข็นไว้กับเจ้าหน้าที่ที่ทางเข้า</td></tr><tr><td class="d">6 พ.ย.</td><td>จัดปารีส 24〜28 พ.ย. ใหม่ 24 พ.ย. หอไอเฟล ประตูชัย ช็องเซลีเซยามค่ำ 25 พ.ย. มงมาร์ตยามเช้า → โรงอุปรากร → Le Meurice 13:45 → Som ไปดิสนีย์ตอนเย็น Ryo กับ Yuzuha ไปลูฟวร์ 26 พ.ย. แวร์ซาย → สุสานนโปเลียน → โรแด็ง → บงมาร์เช → Josselin → นอเทรอดามยามค่ำ 27 พ.ย. จากมาเรไปเขต 1 28 พ.ย. แพนธีออนแล้วขึ้น TGV ที่เอาออกทั้งหมดย้ายไปตาราง "ตัวเลือก" เพิ่มตารางรสชาติท้องถิ่นที่กินได้ในปารีส บทดิสนีย์เปลี่ยนเป็นแผน F (เย็น 25 พ.ย. Som คนเดียว)</td></tr><tr><td class="d">6 พ.ย.</td><td>อัมสเตอร์ดัมเหลือ 1 คืน ที่พักเปลี่ยนเป็น art'otel (ตรงข้ามสถานีกลาง) Eurostar เปลี่ยนเป็น 24 พ.ย. 13:10→16:40 (ตู้ 18 ที่นั่ง 85・86) โรงแรมปารีส 24〜28 พ.ย. 4 คืน จัดวันที่ 24 พ.ย. (ถึงปารีสตอนเย็น) และ 25 พ.ย. ใหม่ (ย่านละติน → เกาะซิเต → จิบชาที่ Le Meurice → ลูฟวร์รอบค่ำ 3 คน) หมู่บ้านกังหันลมย้ายไปเป็นตัวเลือก ตั๋ว TGV ปารีส→บาร์เซโลนาคืนเงินแล้ว</td></tr><tr><td class="d">6 พ.ย.</td><td>เพิ่มแผน E วันที่ 26 พ.ย. (Ryo เที่ยวปารีสช่วงเช้า ออร์แซ → Le Relais de l'Entrecôte → ออร็องเฌอรี → ประตูชัย แล้วไปสมทบที่ดิสนีย์ 16:00) เพิ่มร้านหลัก Bernachon ในวันอาทิตย์ที่ลียง</td></tr><tr><td class="d">5 พ.ย.</td><td>บ่ายวันอาทิตย์ที่ลียงเลือกสวนแตต-ดอร์ (สถาบันลูมีแยร์เป็นตัวเลือก) เพิ่มเดินเล่นเนินครัวรูสเช้าวันจันทร์ วิวกลางคืนฟูร์วิแยร์คืนวันเสาร์คงเดิม</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่ม "ภูมิภาคของสเปนกับอาหาร" และ "ภูมิภาคของอิตาลีกับอาหาร" ในบทอาหาร (แบ่งตามทิศเหมือนฝรั่งเศส พร้อมชื่อเมืองและทริปนี้)</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่มเรื่องทรัฟเฟิลขาว (ซานมีนีอาโต Savini Tartufi Procacci ราคาและการนำกลับ) และการดูแลหม้อทองแดงกับพิมพ์คาเนเลในบทอาหาร เพิ่มของที่ระลึกจากร้านในบทโบกุส</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่ม "ของที่ควรซื้อเพื่อเริ่มทำอาหาร" ในบทอาหาร (5 อย่างที่ไม่ควรพลาด ร้านอุปกรณ์และวัตถุดิบแต่ละเมือง ข้อควรระวังในการนำกลับ)</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่ม "ของหวานและขนม" (ประเภทร้านอย่างซาลง เดอ เต ของเด่นและร้านดังแต่ละเมือง) และ "ชีสของเมืองที่เราไป" (เช่นแซ็ง-มาร์แซล็งของลียง) ในบทอาหาร แบ่งภูมิภาคฝรั่งเศสเป็นเหนือ ตะวันตก ตะวันออก กลาง ตะวันออกเฉียงใต้ ตะวันตกเฉียงใต้ พร้อมชื่อเมือง ร้านดังของเชฟระดับตำนานทำเป็นการ์ดพร้อมคำอธิบายและวิธีสนุก</td></tr><tr><td class="d">5 พ.ย.</td><td>จัด 26 พ.ย. ใหม่โดยแยกกันเที่ยว (Ryo ไม่ไปดิสนีย์) ใส่ 4 แผน และแผนปารีสของ Ryo กับ Yuzuha และของ Ryo คนเดียวในบทดิสนีย์ เรียงบทอาหารเป็นฝรั่งเศส → สเปน → อิตาลี (ตามลำดับการเดินทาง)</td></tr><tr><td class="d">5 พ.ย.</td><td>ปรับบท "ชีสและไวน์" เป็น "ตำราอาหาร" เน้นฝรั่งเศส อิตาลี สเปน (ประวัติศาสตร์ อิทธิพลต่อกัน เชฟระดับตำนาน ร้านดังพร้อมแผนที่ ระดับของร้าน ลำดับมื้ออาหาร มารยาทสามประเทศ ภูมิภาคฝรั่งเศส) ย้าย "อาหารและเครื่องดื่ม" และมารยาทจากบทของแต่ละประเทศมารวมที่นี่</td></tr><tr><td class="d">4 พ.ย.</td><td>ปรับสีแผนที่เส้นทางตามประเทศ (เนเธอร์แลนด์สีส้ม ฝรั่งเศสสีน้ำเงิน สเปนสีแดง อิตาลีสีเขียว เครื่องบินและดูไบสีเทา) ใส่ธงชาติทุกเมืองในตารางกำหนดการ</td></tr><tr><td class="d">4 พ.ย.</td><td>เพิ่มข้อความตอบกลับจากฝ่ายจองของร้านโบกุส (ต้นฉบับและคำแปล) ในหัวข้อ "พาลูกเล็กไป" ของบทโบกุส เป็นตัวอย่างเซอร์วิสของอาหารฝรั่งเศส</td></tr><tr><td class="d">4 พ.ย.</td><td>จอง AVE INT 09742 (30 พ.ย. ลียง 14:35 → บาร์เซโลนา 19:23) วันจันทร์ที่ลียงมีเวลาว่างถึงบ่าย วันแรกที่บาร์เซโลนาจัดใหม่ตามเวลาถึงตอนค่ำ (เดินถนนกราเซียเป็นตัวเลือก) เพิ่มคำเตือนว่าใส่ Apple Wallet ไม่ได้</td></tr><tr><td class="d">4 พ.ย.</td><td>จอง TGV INOUI 6619 (28 พ.ย. 15:00 → 16:56 ชั้น 1) จัดวันที่ 28 พ.ย. ที่ปารีสใหม่ (ตลาดเช้าและมงมาร์ต → ไปสถานี 13:45) แผนช่วงบ่ายเก็บไว้เป็นตัวเลือก</td></tr><tr><td class="d">4 พ.ย.</td><td>จองโรงแรมที่ลียง (Mercure ปาร์-ดิเยอ 2 คืน) และบูชง Daniel et Denise Saint-Jean คืน 28 พ.ย. (19:00) คืนนั้นหลังมื้อเย็นนั่งรถรางขึ้นไปดูวิวกลางคืนบนเนินฟูร์วิแยร์ บ่าย 29 พ.ย. เลือกสวนสาธารณะหรือพิพิธภัณฑ์ 1 แห่งแล้วงีบกลางวัน</td></tr><tr><td class="d">4 พ.ย.</td><td>ลบส่วนที่เขียนว่าจะซื้อของฝากอะไรให้ใคร และหัวข้อ "แผนของฝาก" เพิ่มเรื่องหัวหน้าที่ EY และข้อความถึง Yuzuha ในบทโบกุส</td></tr><tr><td class="d">4 พ.ย.</td><td>เปลี่ยนเป็นแวะลียง (เย็น 28 พ.ย. ปารีส → ลียง 2 คืน 30 พ.ย. ไปบาร์เซโลนา) อัปเดตกำหนดการ รายการจอง การเดินทาง แผนที่เส้นทาง และใส่ 3 วันที่ลียงในบทโบกุส แผนปารีสวันที่ 29 พ.ย. เก็บไว้เป็นตัวเลือก</td></tr><tr><td class="d">4 พ.ย.</td><td>จองร้านปอล โบกุส สาขาแรก (29 พ.ย. 20:15) เพิ่มบท "โบกุส" แบบเดียวกับบทดิสนีย์ (การจอง การเดินทาง ตารางวันนั้น เมนูฤดูใบไม้ร่วง อาหารขึ้นชื่อ พาลูกน้อยไป ประวัติ ของฝาก)</td></tr><tr><td class="d">3 พ.ย.</td><td>ย้ายปิซาไปบ่ายวันที่ 7 ธ.ค. (จ.) ไปกลับด้วยรถไฟท้องถิ่น วันที่ 8 ธ.ค. เที่ยวฟลอเรนซ์ยามเช้า กินมื้อกลางวันแล้วนั่งรถไฟไปโรม</td></tr><tr><td class="d">3 พ.ย.</td><td>จอง Frecciarossa 9415 วันที่ 5 ธ.ค. (11:26 → 13:39 Business) เพิ่มเดินเล่นเวนิสยามเช้า วันแรกที่ฟลอเรนซ์เลื่อนอัคคาเดเมียเป็น 15:15 และย้ายพระอาทิตย์ตกที่ลานมีเกลันเจโลไปวันที่ 6 ธ.ค. เพิ่มฉบับภาษาอังกฤษ</td></tr><tr><td class="d">3 พ.ย.</td><td>จอง Eurostar (25 พ.ย. 09:10 → 12:37) ปรับตารางเช้าที่อัมสเตอร์ดัมและวันแรกที่ปารีสให้ตรงกัน</td></tr><tr><td class="d">2 พ.ย.</td><td>ลบรหัสจอง (เอมิเรตส์ ที่พักใน Booking) และเลขกรมธรรม์ประกันออกจากไกด์ (กันคนอื่นเข้าไปแก้หรือยกเลิกการจอง)</td></tr><tr><td class="d">2 พ.ย.</td><td>ดูไบ: ตัดสินใจออกไปในเมือง ซมขอวีซ่าทรานซิต 48 ชม. ผ่านเอมิเรตส์ (มีขั้นตอนในบทดูไบ)</td></tr><tr><td class="d">25 ต.ค.</td><td>ทำรายการของที่ต้องเอาไปใหม่จากรายการประจำ ให้เข้ากับทริปนี้ (มีป้ายบอกกระเป๋าที่ใส่)</td></tr><tr><td class="d">25 ต.ค.</td><td>ฉบับภาษาญี่ปุ่นเอาภาษาไทยที่เขียนคู่กันออก (ตัวเล็กข้างหัวข้อ คอลัมน์ภาษาไทยในตารางบทสนทนา ฯลฯ) ภาษาไทยอยู่ในฉบับภาษาไทย</td></tr><tr><td class="d">25 ต.ค.</td><td>เลือกดีไซน์ได้ 3 แบบ (กดปุ่มจานสีมุมขวาล่าง): Som (กระดาษสีอ่อน＋ลายเส้นของแต่ละประเทศ ค่าเริ่มต้น) Yuzuha (สีสดใส) Ryo (สีเข้ม) หรือใส่ ?theme=som / yuzuha / ryo ในลิงก์ก็ได้</td></tr><tr><td class="d">25 ต.ค.</td><td>สรุปประกันเหลือ 2 ตัว คือ Chubb และ Hilton Amex Premium เพิ่มขั้นตอนติดต่อเมื่อเกิดเหตุ (แยกสถานการณ์) และรายชื่อเบอร์ติดต่อ</td></tr><tr><td class="d">25 ต.ค.</td><td>อัปเดตข้อมูลจากใบยืนยันโรงแรม 6 แห่ง (เวลา วันสุดท้ายที่ยกเลิกฟรี ห้อง) เช็กความคุ้มครอง Amex จากเงื่อนไข (ของติดตัวถูกขโมยไม่คุ้มครอง) เพิ่มหัวข้อ Anytime Fitness</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อประกันการเดินทาง (รายละเอียดกรมธรรม์ Chubb การแบ่งหน้าที่กับ Amex กฎการเคลม)</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อจัดกระเป๋าและการขนย้าย (วิธีรับมือแต่ละสถานการณ์) เช็กสัมภาระและที่นั่งเอมิเรตส์จาก e-ticket อัปเดตรายการของและสิ่งที่ต้องทำ เพิ่มประวัติการแก้ไขนี้</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่ม "หนังที่ควรดูก่อนไป" ของแต่ละประเทศ</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มการแวะเปลี่ยนเครื่องที่ดูไบขาไป (3 ชม. 15 นาที) ในกำหนดการและแผนที่เส้นทาง</td></tr><tr><td class="d">18 ต.ค.</td><td>ปุ่มเปลี่ยนภาษาอยู่มุมขวาล่างตลอด (สลับญี่ปุ่น/ไทยได้โดยไม่เลื่อนหน้า)</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มลิสต์สถานที่โปรดใน Google Maps (แยกประเภท มีชื่อภาษาไทย) และลิงก์แผนที่ของโรงแรมและสถานที่สำคัญ เพิ่มการแวะดูไบ 17 ชม. ขากลับในแผนที่</td></tr><tr><td class="d">18 ต.ค.</td><td>เปลี่ยนที่พักปารีสเป็น Libertel Austerlitz และยืนยันที่พักทั้ง 6 แห่ง</td></tr><tr><td class="d">18 ต.ค.</td><td>เปิดเวอร์ชัน GitHub ตัวอักษรใหญ่ขึ้นสำหรับ iPhone ตารางกว้างเลื่อนด้านข้างได้ เปิดเป็นภาษาไทยด้วย ?lang=th</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>ทบทวนทั้งเล่ม (Yuzuha อายุ 10 เดือนตอนเดินทาง ขาไปออก 01:05 ตัดค่าประกันออก) ทำเป็น 2 ภาษา ญี่ปุ่นและไทย</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>เพิ่มวิธีรับมือวันประท้วง/นัดหยุดงาน การป้องกันล้วงกระเป๋า (แยกตามสถานการณ์) และคอลัมน์มารยาทบนโต๊ะอาหารของฝรั่งเศส</td></tr><tr><td class="d">ราว 16 ต.ค.</td><td>อัปเดตว่าซื้อตั๋วดิสนีย์แลนด์ปารีสแล้ว เพิ่ม "ดิสนีย์กับฝรั่งเศส" เวลาเข้าแวร์ซาย และตารางเวลาพระอาทิตย์ขึ้น-ตก</td></tr><tr><td class="d">15 ต.ค.</td><td>เวอร์ชันแรก</td></tr></tbody></table></div>
   </details>
 </footer>
 
@@ -9967,6 +10353,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <li><a href="#it" data-ch="it"><span class="flag f-it"></span>Italy</a></li>
     <li><a href="#ae" data-ch="ae"><span class="flag f-ae"></span>Dubai</a></li>
     <li><a href="#food" data-ch="food">Food</a></li>
+    <li><a href="#art" data-ch="art">Art</a></li>
     <li><a href="#baby" data-ch="baby">With a baby</a></li>
     <li><a href="#safety" data-ch="safety">Emergency &amp; safety</a></li>
     <li><a href="#prep" data-ch="prep">Luggage, money, prep</a></li>
@@ -10229,7 +10616,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="nl" class="chapter nl" data-chapter="nl">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 1 · Netherlands · 11/23 – 11/25</div>
+    <div class="eyebrow">Chapter 1 · Netherlands · 11/23 – 11/24</div>
     <h2>Netherlands <span class="local">Nederland</span></h2>
     <p class="lead">About a quarter of the country lies below sea level; people say "God made the world, but the Dutch made the Netherlands." It was the only Western country that kept trading with Edo-period Japan, and it has deep ties with Ayutthaya-era Thailand too. We start the trip slowly, shaking off jet lag.</p>
   </div>
@@ -10520,9 +10907,9 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="fr" class="chapter fr" data-chapter="fr">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 2 · France · 11/25 – 11/30</div>
+    <div class="eyebrow">Chapter 2 · France · 11/24 – 11/30</div>
     <h2>France <span class="local">France</span></h2>
-    <p class="lead">Five nights, our longest stay. The hotel is in the 5th arrondissement by the Jardin des Plantes, within walking distance of the Latin Quarter and the remains of Roman Paris (Lutetia). Markets in the morning, museums at midday, a rest at the hotel late afternoon, the city of lights at night. In the 17th century envoys of King Narai of Ayutthaya visited Versailles; in the 19th, Japanese woodblock prints captivated the painters of Paris.</p>
+    <p class="lead">Four nights, our longest stay (then two in Lyon). The hotel is in the 5th arrondissement by the Jardin des Plantes, within walking distance of the Latin Quarter and the remains of Roman Paris (Lutetia). Markets in the morning, museums at midday, the city of lights at night. In the 17th century envoys of King Narai of Ayutthaya visited Versailles; in the 19th, Japanese woodblock prints captivated the painters of Paris.</p>
   </div>
   <div class="subnav"><a href="#fr-data">Basics</a><a href="#fr-hist">History</a><a href="#fr-ties">Ties with Japan &amp; Thailand</a><a href="#paris">Paris</a><a href="#fr-food">Food &amp; drink</a><a href="#fr-manners">Table manners</a><a href="#fr-film">Films</a><a href="#fr-map">Map</a><a href="#fr-sos">Emergency</a><a href="#fr-phr">Phrases</a></div>
 
@@ -13503,12 +13890,203 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <p class="note">For the order in which to buy heavy items, see the weight plan in the luggage and preparation chapter.</p>
   </div>
 </section>
+<!-- =================== CHAPTER 7: ART (FR · ES · IT) =================== -->
+<section id="art" class="chapter art" data-chapter="art">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Chapter 7 · Art</div>
+    <h2>Museums and Masterpieces <span class="local">Louvre · Sagrada Família · Vaticano</span></h2>
+    <p class="lead">The masterpieces worth seeing in the museums already on our route: from ancient Greek and Roman sculpture through the Renaissance and modern French painting to Gaudí and Picasso. You can also see how ideas born in Italy travelled to France and Spain, the reverse of our route.</p>
+  </div>
+  <div class="subnav"><a href="#art-flow">Timeline</a><a href="#art-ties">Threads</a><a href="#art-louvre">Louvre</a><a href="#art-rodin">Rodin</a><a href="#art-orsay">Orsay</a><a href="#art-sagrada">Sagrada Família</a><a href="#art-picasso">Picasso</a><a href="#art-doge">Doge's Palace</a><a href="#art-accademia">Accademia</a><a href="#art-uffizi">Uffizi</a><a href="#art-vatican">Vatican</a><a href="#art-tips">Tips</a></div>
+
+  <p class="note">No pictures of the works are included. Rooms can change, so check the museum app or floor plan on the day.</p>
+
+  <div class="block" id="art-flow">
+    <h3>A short timeline</h3>
+    <ol class="hist">
+      <li><span class="y">c. 2600 BC–</span><div>Ancient Egypt and Mesopotamia: the Louvre's Seated Scribe and the Code of Hammurabi</div></li>
+      <li><span class="y">2nd–1st c. BC</span><div>Hellenistic sculpture: bodies with movement and emotion. Winged Victory, Venus de Milo, Laocoön</div></li>
+      <li><span class="y">c. 1300</span><div>Giotto gives flat images of saints weight and feeling: the prelude to the Renaissance</div></li>
+      <li><span class="y">1400s</span><div>Early Renaissance in Florence: perspective and the revival of ancient myth. Botticelli's Birth of Venus</div></li>
+      <li><span class="y">c. 1500–1520</span><div>High Renaissance: Leonardo's Mona Lisa, Michelangelo's David and the Sistine Chapel, Raphael's School of Athens</div></li>
+      <li><span class="y">1500s</span><div>The Venetian school: colour over line. The huge canvases of Titian, Tintoretto and Veronese</div></li>
+      <li><span class="y">c. 1600</span><div>Baroque: Caravaggio's hard light and shadow</div></li>
+      <li><span class="y">1780s–1830s</span><div>French Neoclassicism and Romanticism: David's Coronation of Napoleon, Delacroix's Liberty Leading the People</div></li>
+      <li><span class="y">1850s–1890s</span><div>From Realism to Impressionism and beyond: outdoor light and everyday scenes. Manet, Monet, Renoir, Van Gogh</div></li>
+      <li><span class="y">1880–1917</span><div>Rodin brings unfinished-looking surfaces and inner movement to sculpture</div></li>
+      <li><span class="y">1882–</span><div>Gaudí's Sagrada Família: architecture built from natural forms and geometry (still under construction)</div></li>
+      <li><span class="y">1900s–</span><div>Picasso: trained in Barcelona, Blue Period in Paris, then Cubism</div></li>
+    </ol>
+  </div>
+
+  <div class="block" id="art-ties">
+    <h3>Threads across the trip</h3>
+    <div class="grid2">
+      <div class="card"><h4>Michelangelo in three cities</h4><ul><li>Louvre (11/25): the Dying Slave and the Rebellious Slave</li><li>Accademia (12/5): David, and the unfinished Prisoners carved for the same tomb</li><li>Vatican (12/9): the Sistine ceiling and Last Judgment, and the Pietà in St Peter's</li></ul></div>
+      <div class="card"><h4>Three Leonardos</h4><ul><li>Louvre: the Mona Lisa, which he brought with him when the French king invited him late in life</li><li>Uffizi: the early Annunciation</li><li>Vatican Pinacoteca: the unfinished St Jerome</li></ul></div>
+      <div class="card"><h4>Napoleon</h4><ul><li>Louvre (11/25): David's Coronation of Napoleon</li><li>Invalides (11/26): Napoleon's tomb</li><li>Venice (12/4): Napoleon ended the Republic in 1797 and took the horses of San Marco to Paris (later returned)</li></ul></div>
+      <div class="card"><h4>Places we walk, in the paintings</h4><ul><li>Montmartre (11/25 morning) → Renoir's Bal du moulin de la Galette at Orsay</li><li>Notre-Dame (11/26) → the setting of the Coronation at the Louvre</li><li>The canals of Venice → the Wedding at Cana at the Louvre (Veronese, taken from a Venetian monastery)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="block" id="art-louvre">
+    <h3><span class="flag f-fr"></span> The Louvre <small>Musée du Louvre</small></h3>
+    <p class="rain"><b>When</b>：<a href="#d-1125">11/25 (Wed) 17:00–21:00, Ryo and Yuzuha</a></p>
+    <p class="note">Once the royal palace; it became a museum in 1793, during the Revolution. Three wings (Denon, Sully, Richelieu). Four hours is not enough for everything, so start with Denon. A sample order: Winged Victory → the Grande Galerie of Italian painting → the Mona Lisa and the Wedding at Cana → the big French paintings (Coronation, Medusa, Liberty) → Michelangelo on the ground floor → Venus de Milo in Sully → Egypt. Richelieu if time remains. There are lifts, so it works with a stroller.</p>
+    <div class="tbl"><table class="wide"><thead><tr><th>Work</th><th>Artist, date</th><th>What to look for</th><th>Where</th></tr></thead><tbody>
+      <tr><td class="big">Winged Victory of Samothrace</td><td>Unknown, c. 190 BC</td><td>The goddess of victory landing on a ship's prow. Look up from the foot of the stairs at the wind-blown drapery</td><td>Denon, Daru staircase</td></tr>
+      <tr><td class="big">Mona Lisa</td><td>Leonardo da Vinci, c. 1503–1519</td><td>"Sfumato" blurring of outlines. Smaller than you expect (77×53 cm). Stolen in 1911 and recovered two years later</td><td>Denon, Salle des États</td></tr>
+      <tr><td class="big">The Wedding at Cana</td><td>Veronese, 1563</td><td>The largest painting in the Louvre, opposite the Mona Lisa. Taken from Venice by Napoleon's army</td><td>Salle des États</td></tr>
+      <tr><td class="big">The Coronation of Napoleon</td><td>Jacques-Louis David, 1805–07</td><td>The coronation in Notre-Dame: Napoleon crowning Josephine. His mother, who did not attend, is painted in</td><td>Denon, large French paintings</td></tr>
+      <tr><td class="big">The Raft of the Medusa</td><td>Théodore Géricault, 1818–19</td><td>A real shipwreck. Bodies pile up in a triangle toward the man waving at a distant ship</td><td>Same rooms</td></tr>
+      <tr><td class="big">Liberty Leading the People</td><td>Eugène Delacroix, 1830</td><td>The July Revolution of 1830: a woman raising the tricolour. Notre-Dame's towers in the right background</td><td>Same rooms</td></tr>
+      <tr><td class="big">La Grande Odalisque</td><td>Ingres, 1814</td><td>The back is too long (said to have extra vertebrae): a "lie" for the sake of beauty</td><td>Same rooms</td></tr>
+      <tr><td class="big">Dying Slave and Rebellious Slave</td><td>Michelangelo, 1513–16</td><td>Figures for Pope Julius II's tomb, the same project as the Prisoners in Florence (continued on 12/5)</td><td>Denon ground floor, Michelangelo gallery</td></tr>
+      <tr><td class="big">Venus de Milo</td><td>Unknown, c. 150–125 BC</td><td>Found on Milos in 1820. Because the arms are missing, the shape changes as you walk around it</td><td>Sully, ground floor</td></tr>
+      <tr><td class="big">The Seated Scribe</td><td>Ancient Egypt, c. 2600–2350 BC</td><td>Eyes inlaid with rock crystal follow you from every angle</td><td>Sully, Egyptian antiquities</td></tr>
+      <tr><td class="big">Code of Hammurabi</td><td>Babylonia, c. 1750 BC</td><td>The black stele carved with the "eye for an eye" laws; the sun god and the king at the top</td><td>Richelieu, Mesopotamia</td></tr>
+      <tr><td class="big">The Lacemaker</td><td>Vermeer, c. 1669–70</td><td>A tiny painting (24×21 cm): a Dutch masterpiece for a trip that began in the Netherlands</td><td>Richelieu, 2nd floor, Northern painting</td></tr>
+      <tr><td class="big">Napoleon III Apartments</td><td>1850s–60s</td><td>Gold-and-red salons with chandeliers: 19th-century palace life preserved</td><td>Richelieu, 1st floor</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-rodin">
+    <h3><span class="flag f-fr"></span> Musée Rodin <small>Musée Rodin</small></h3>
+    <p class="rain"><b>When</b>：<a href="#d-1126">11/26 (Thu), around 15:30</a></p>
+    <p class="note">The 18th-century mansion (Hôtel Biron) Rodin used as his studio late in life, with its rose garden. The poet Rilke worked here as his secretary. The large bronzes stand in the garden, easy with a stroller. Inside are works by Camille Claudel, his pupil and lover.</p>
+    <div class="tbl"><table class="wide"><thead><tr><th>Work</th><th>Artist, date</th><th>What to look for</th><th>Where</th></tr></thead><tbody>
+      <tr><td class="big">The Thinker</td><td>1880 (conceived)</td><td>Originally Dante looking down on hell from the top of the Gates of Hell; later enlarged on its own</td><td>Garden</td></tr>
+      <tr><td class="big">The Gates of Hell</td><td>1880–1917</td><td>Dante's Inferno in about 180 figures. Rodin kept working on it all his life</td><td>Garden</td></tr>
+      <tr><td class="big">The Kiss</td><td>Marble, conceived 1882</td><td>Dante's lovers Paolo and Francesca. Their lips have not quite touched</td><td>Inside</td></tr>
+      <tr><td class="big">The Burghers of Calais</td><td>1884–95</td><td>Six men who gave themselves up to save their town in the Hundred Years' War, shown not as heroes but as people in doubt</td><td>Garden</td></tr>
+      <tr><td class="big">Balzac</td><td>1898</td><td>The writer wrapped in a robe; savaged as "unlike him" when first shown</td><td>Garden</td></tr>
+      <tr><td class="big">The Waltz / The Age of Maturity</td><td>Camille Claudel, 1890s</td><td>Works that echo her break with Rodin: a young woman reaching out, a man moving away</td><td>Inside</td></tr>
+      <tr><td class="big">Père Tanguy</td><td>Van Gogh, 1887</td><td>From Rodin's own collection; the background is full of Japanese woodblock prints</td><td>Inside</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-orsay">
+    <h3><span class="flag f-fr"></span> Musée d'Orsay <small>Musée d'Orsay</small></h3>
+    <p class="rain"><b>When</b>：<a href="#d-1127">11/27 (Fri) afternoon option (Friday until 18:00)</a></p>
+    <p class="note">A railway station built for the 1900 Paris Exposition, turned into a museum in 1986. It covers 1848–1914, picking up where the Louvre leaves off. The Impressionists are together on the top (5th) floor, so go up first. From the great clock window on the 5th floor you see the Louvre across the Seine. About 2 hours; get a timed ticket.</p>
+    <div class="tbl"><table><thead><tr><th>Work</th><th>Artist, date</th><th>What to look for</th></tr></thead><tbody>
+      <tr><td class="big">Le Déjeuner sur l'herbe</td><td>Manet, 1863</td><td>Clothed men and a naked woman. Rejected by the Salon, it caused a scandal at the Salon des Refusés: the start of modern painting</td></tr>
+      <tr><td class="big">Olympia</td><td>Manet, 1863</td><td>Not a mythical goddess but a contemporary Parisian woman staring straight at us</td></tr>
+      <tr><td class="big">Bal du moulin de la Galette</td><td>Renoir, 1876</td><td>Sunday open-air dancing in Montmartre, where we walk on the morning of 11/25. Dappled light through the leaves</td></tr>
+      <tr><td class="big">La Gare Saint-Lazare</td><td>Monet, 1877</td><td>He painted the steam and light themselves: a station painting in a former station</td></tr>
+      <tr><td class="big">Rouen Cathedral series</td><td>Monet, 1892–94</td><td>The same façade painted many times in different light and weather. Compare them side by side</td></tr>
+      <tr><td class="big">The Dance Class</td><td>Degas, 1873–76</td><td>Dancers between exercises, cropped at an angle like a photograph</td></tr>
+      <tr><td class="big">The Gleaners</td><td>Millet, 1857</td><td>Poor peasant women picking up the ears left after the harvest</td></tr>
+      <tr><td class="big">Self-Portrait</td><td>Van Gogh, 1889</td><td>The swirling background trembles like his own anxiety</td></tr>
+      <tr><td class="big">Starry Night over the Rhône</td><td>Van Gogh, 1888</td><td>Night at Arles, gaslight reflected in the water, a year before the New York Starry Night</td></tr>
+      <tr><td class="big">Whistler's Mother</td><td>Whistler, 1871</td><td>His mother seated in profile. Titled as an arrangement of colours, it became an American icon of motherhood</td></tr>
+      <tr><td class="big">The Card Players</td><td>Cézanne, 1890–95</td><td>Two motionless peasants, forms built like blocks: a forerunner of Cubism</td></tr>
+      <tr><td class="big">Tahitian Women</td><td>Gauguin, 1891</td><td>Leaving Paris for the South Seas: flat areas of strong colour</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-sagrada">
+    <h3><span class="flag f-es"></span> Sagrada Família <small>Basílica de la Sagrada Família</small></h3>
+    <p class="rain"><b>When</b>：<a href="#d-1201">12/1 (Tue) 15:30, with audio guide</a></p>
+    <p class="note">Begun in 1882; Gaudí took over the next year and in his last years worked on nothing else until his death in 1926. 2026 marks 100 years since his death. Our slot is in the afternoon, when the red and orange light of the west windows fills the nave.</p>
+    <div class="tbl"><table><thead><tr><th>Work</th><th>Artist, date</th><th>What to look for</th></tr></thead><tbody>
+      <tr><td class="big">Nativity Façade</td><td>Gaudí's time, 1894–1930</td><td>East side: the birth of Christ in sculpture teeming with plants and animals. The only façade almost finished in Gaudí's lifetime</td></tr>
+      <tr><td class="big">Passion Façade</td><td>Subirachs, from 1987</td><td>West side: Christ's death in bone-like columns and angular figures, as stark as the Nativity is lush</td></tr>
+      <tr><td class="big">The forest nave</td><td>Consecrated 2010</td><td>Columns branch like trees to hold up the vault; you stand as if under a canopy</td></tr>
+      <tr><td class="big">The stained glass</td><td>Joan Vila-Grau</td><td>Blue and green to the east (morning), red and orange to the west (evening). Afternoon light colours the floor</td></tr>
+      <tr><td class="big">Tower of Jesus Christ</td><td>Nearing completion</td><td>The tallest, central tower (172.5 m), kept lower than Montjuïc hill so as "not to surpass God's work"</td></tr>
+      <tr><td class="big">Crypt and museum</td><td>—</td><td>Gaudí's tomb. The museum has plaster models and a reconstruction of his hanging-weight experiments</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-picasso">
+    <h3><span class="flag f-es"></span> Museu Picasso <small>Museu Picasso</small></h3>
+    <p class="rain"><b>When</b>：<a href="#d-1202">12/2 (Wed) midday option, or a rainy day</a></p>
+    <p class="note">Five medieval mansions on Carrer de Montcada in the Born. Picasso spent his teenage years in Barcelona; the museum runs from his childhood work to his last years. About 1.5 hours.</p>
+    <div class="tbl"><table><thead><tr><th>Work</th><th>Artist, date</th><th>What to look for</th></tr></thead><tbody>
+      <tr><td class="big">First Communion</td><td>1896</td><td>Painted at 14 or 15, already with an adult painter's skill</td></tr>
+      <tr><td class="big">Science and Charity</td><td>1897</td><td>A sickbed scene painted at 15 and accepted at a Madrid exhibition</td></tr>
+      <tr><td class="big">Blue Period works</td><td>1901–04</td><td>After a friend's death, he painted the poor almost entirely in blue</td></tr>
+      <tr><td class="big">Harlequin</td><td>1917</td><td>Painted the year ballet work brought him back to Barcelona: a calm figure after Cubism</td></tr>
+      <tr><td class="big">Las Meninas series</td><td>1957</td><td>Velázquez's masterpiece reworked in 58 canvases, from a large black-and-white version to small pigeon pictures</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-doge">
+    <h3><span class="flag f-it"></span> Doge's Palace <small>Palazzo Ducale</small></h3>
+    <p class="rain"><b>When</b>：<a href="#d-1204">12/4 (Fri) 9:00, first slot</a></p>
+    <p class="note">The seat of government of the Venetian Republic for over a thousand years: the Doge's residence, with council halls, courts and prisons in one building. Venetian painters covered walls and ceilings with the Republic's glory.</p>
+    <div class="tbl"><table><thead><tr><th>Work</th><th>Artist, date</th><th>What to look for</th></tr></thead><tbody>
+      <tr><td class="big">Scala dei Giganti</td><td>Sansovino's statues, 1560s</td><td>Neptune and Mars at the top of the courtyard stairs: power at sea and on land</td></tr>
+      <tr><td class="big">Paradise</td><td>Tintoretto, c. 1588–92</td><td>On the end wall of the Great Council Hall: over 20 m wide, one of the largest oil paintings in the world, with hundreds of saints</td></tr>
+      <tr><td class="big">Apotheosis of Venice</td><td>Veronese, c. 1580</td><td>The ceiling of the same hall: Venice crowned on the clouds</td></tr>
+      <tr><td class="big">Doges' portraits and the black veil</td><td>16th century</td><td>A frieze of every doge under the ceiling; only Faliero, executed for treason, is a black veil</td></tr>
+      <tr><td class="big">Bridge of Sighs and prisons</td><td>c. 1600</td><td>Named for prisoners crossing to the cells after sentencing, sighing at their last view of the outside through the small windows</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-accademia">
+    <h3><span class="flag f-it"></span> Galleria dell'Accademia <small>Galleria dell'Accademia</small></h3>
+    <p class="rain"><b>When</b>：<a href="#d-1205">12/5 (Sat) 15:15</a></p>
+    <p class="note">The museum for David. The original stood in Piazza della Signoria until 1873, when it was moved here to protect it; a copy stands in the square now. About an hour.</p>
+    <div class="tbl"><table><thead><tr><th>Work</th><th>Artist, date</th><th>What to look for</th></tr></thead><tbody>
+      <tr><td class="big">David</td><td>Michelangelo, 1501–04</td><td>Carved at 26 from a block other sculptors had abandoned. The moment before the throw, glaring at Goliath. Over 5 m tall</td></tr>
+      <tr><td class="big">The Prisoners (four)</td><td>Michelangelo, c. 1520s</td><td>Unfinished figures for Julius II's tomb that seem to struggle out of the stone; the same project as the two at the Louvre</td></tr>
+      <tr><td class="big">St Matthew</td><td>Michelangelo, 1505–06</td><td>The only one of twelve apostles for the cathedral he began; you can see how he worked into the block</td></tr>
+      <tr><td class="big">Gipsoteca</td><td>19th century</td><td>Walls of plaster busts. The black dots are marks for copying into marble</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-uffizi">
+    <h3><span class="flag f-it"></span> Uffizi Gallery <small>Galleria degli Uffizi</small></h3>
+    <p class="rain"><b>When</b>：<a href="#d-1206">If we go in: first slot on 12/6 or 12/8 (booking needed)</a></p>
+    <p class="note">Once the Medici family's offices (uffizi = offices). Said to hold the world's finest Renaissance painting collection. Queues are long, so book the first timed slot if we go. 2–3 hours.</p>
+    <div class="tbl"><table><thead><tr><th>Work</th><th>Artist, date</th><th>What to look for</th></tr></thead><tbody>
+      <tr><td class="big">Ognissanti Madonna</td><td>Giotto, c. 1310</td><td>Against the gold ground, the Madonna gains weight and volume</td></tr>
+      <tr><td class="big">Duke and Duchess of Urbino</td><td>Piero della Francesca, 1470s</td><td>Facing profiles before a wide landscape</td></tr>
+      <tr><td class="big">Primavera</td><td>Botticelli, c. 1480</td><td>Gods in an orange grove, with about 190 kinds of flowers underfoot</td></tr>
+      <tr><td class="big">The Birth of Venus</td><td>Botticelli, c. 1485</td><td>Venus arrives on a shell: an ancient goddess returns in a Christian age</td></tr>
+      <tr><td class="big">The Annunciation</td><td>Leonardo da Vinci, c. 1472</td><td>Painted around age 20; the angel's wings were studied from real birds</td></tr>
+      <tr><td class="big">Doni Tondo</td><td>Michelangelo, c. 1507</td><td>His only panel painting in Florence; the bodies twist like sculpture</td></tr>
+      <tr><td class="big">Madonna of the Goldfinch</td><td>Raphael, 1505–06</td><td>The Christ Child and young John around a small bird, in a gentle triangle</td></tr>
+      <tr><td class="big">Venus of Urbino</td><td>Titian, 1538</td><td>Venetian colour; Manet later reworked it as Olympia (a link to Orsay)</td></tr>
+      <tr><td class="big">Medusa</td><td>Caravaggio, c. 1597</td><td>A screaming head painted on a round shield: Baroque light and shadow</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-vatican">
+    <h3><span class="flag f-it"></span> Vatican Museums and St Peter's <small>Musei Vaticani</small></h3>
+    <p class="rain"><b>When</b>：<a href="#d-1209">12/9 (Wed) 8:00, first slot</a></p>
+    <p class="note">Art collected by the popes. The galleries are long; walking them all is said to be about 7 km. The route ends at the Sistine Chapel, where photos are not allowed and silence is asked. Cover shoulders and knees.</p>
+    <div class="tbl"><table><thead><tr><th>Work</th><th>Artist, date</th><th>What to look for</th></tr></thead><tbody>
+      <tr><td class="big">Laocoön</td><td>c. 1st century BC</td><td>Dug up in Rome in 1506; Michelangelo hurried to see it. A priest and his sons attacked by serpents</td></tr>
+      <tr><td class="big">Belvedere Torso</td><td>c. 1st century BC</td><td>A torso without head or arms. Michelangelo studied it, and it lives on in his Sistine figures</td></tr>
+      <tr><td class="big">Gallery of Maps</td><td>1580s</td><td>A 120 m corridor of large maps of Italy's regions. Look for Venice and Florence</td></tr>
+      <tr><td class="big">The School of Athens</td><td>Raphael, 1509–11</td><td>In the Raphael Rooms: Plato and Aristotle at the centre. Plato's face is said to be modelled on Leonardo</td></tr>
+      <tr><td class="big">Sistine Chapel ceiling</td><td>Michelangelo, 1508–12</td><td>Old Testament stories. In the Creation of Adam, God's and Adam's fingers are about to touch</td></tr>
+      <tr><td class="big">The Last Judgment</td><td>Michelangelo, 1536–41</td><td>Filling the altar wall, painted in his sixties, about 25 years after the ceiling. The face on the flayed saint's skin is said to be his self-portrait</td></tr>
+      <tr><td class="big">Sistine side walls</td><td>Botticelli, Perugino and others, 1480s</td><td>The generation before the ceiling, linking to the Botticellis in the Uffizi</td></tr>
+      <tr><td class="big">The Transfiguration</td><td>Raphael, 1516–20</td><td>In the Pinacoteca: Raphael's last great work</td></tr>
+      <tr><td class="big">Pietà</td><td>Michelangelo, 1498–99</td><td>In the first chapel on the right in St Peter's. Made in his early twenties; the only work he signed</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" id="art-tips">
+    <h3>Tips for the visits</h3>
+    <div class="grid2">
+      <div class="card"><h4>Stroller and carrier</h4><ul><li>Louvre, Orsay, Rodin and the Vatican take strollers (with lifts)</li><li>At the Louvre, strollers and carriers can be borrowed under the Pyramid</li><li>Doge's Palace and the Sagrada Família towers have many stairs; use the carrier</li></ul></div>
+      <div class="card"><h4>How to look</h4><ul><li>Pick three must-sees per museum and see them first</li><li>Stand a minute before each masterpiece; look from far and near</li><li>Use the official apps or audio guides (Louvre, Vatican, Sagrada Família)</li></ul></div>
+      <div class="card"><h4>Rules</h4><ul><li>No flash; no photos at all in the Sistine Chapel</li><li>Cover shoulders and knees in churches and the Vatican</li><li>Large backpacks go to the cloakroom; no knives</li></ul></div>
+    </div>
+  </div>
+</section>
 
 <!-- =================== CHAPTER 7: BABY =================== -->
 <section id="baby" class="chapter base" data-chapter="baby">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 7 · Traveling with a Baby</div>
+    <div class="eyebrow">Chapter 8 · Traveling with a Baby</div>
     <h2>Travelling with a baby <span class="local">with Yuzuha</span></h2>
     <p class="lead">The key to success is putting Yuzuha's rhythm at the centre of the plan. Every day in this book follows the pattern "one thing in the morning, a nap, one thing late afternoon".</p>
   </div>
@@ -13629,7 +14207,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="safety" class="chapter base" data-chapter="safety">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 8 · Safety &amp; Emergency</div>
+    <div class="eyebrow">Chapter 9 · Safety &amp; Emergency</div>
     <h2>Emergency &amp; safety <span class="local">The page for when things go wrong</span></h2>
   </div>
 
@@ -14167,7 +14745,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="prep" class="chapter base" data-chapter="prep">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 9 · Luggage, Money &amp; To-do</div>
+    <div class="eyebrow">Chapter 10 · Luggage, Money &amp; To-do</div>
     <h2>Luggage, money, preparation <span class="local">Read before leaving</span></h2>
   </div>
   <div class="subnav"><a href="#prep-bags">Luggage set-up</a><a href="#prep-gym">Gyms</a><a href="#prep-weight">Weight plan</a><a href="#prep-weather">Weather &amp; clothes</a><a href="#prep-pack">Packing</a><a href="#prep-money">Money</a><a href="#prep-wise">Wise</a><a href="#prep-meals">Meal scenarios</a><a href="#prep-todo">To-do</a></div>
@@ -14680,7 +15258,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="next" class="chapter base" data-chapter="next">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 10 · Someday</div>
+    <div class="eyebrow">Chapter 11 · Someday</div>
     <h2>An idea for next time <span class="local">Switzerland and Lake Como</span></h2>
     <p class="lead">A week somewhere this trip doesn't touch. Best around July, when all the mountain transport runs. Fly into Zurich, home from Milan.</p>
   </div>
@@ -14703,7 +15281,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   <span>Sources for mission numbers: Japan's Ministry of Foreign Affairs list of overseas missions; Thailand's Ministry of Foreign Affairs "List of Royal Thai Embassy contact point".</span>
   <details id="changelog" style="margin-top:6px">
     <summary style="cursor:pointer;font-weight:700;color:var(--ink)">Change log</summary>
-    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/6</td><td>Anne Frank House booked (11/24, 9:00–9:15 entry slot, 3 people)</td></tr><tr><td class="d">11/6</td><td>Adjusted 11/25: the Opéra and Le Meurice are back to "To book". The Rue Royale Ladurée is just from outside. The Louvre from 17:00 (kitchen shops and Petit Bateau moved to options). At the Arc de Triomphe, hand the stroller to the entrance staff</td></tr><tr><td class="d">11/6</td><td>Rebuilt Paris 11/24–28. 11/24: the Eiffel Tower, Arc de Triomphe and Champs-Élysées at night. 11/25: Montmartre in the morning → the Opéra → Le Meurice 13:45 → Som to Disney in the late afternoon, Ryo and Yuzuha to the Louvre. 11/26: Versailles → Napoleon's tomb → Rodin → Le Bon Marché → Josselin → Notre-Dame at night. 11/27: the Marais to the 1st. 11/28: the Panthéon, then the TGV. Everything taken out went into the Options table. Added a table of regional food to eat in Paris. Disney chapter switched to plan F (11/25 evening, Som alone)</td></tr><tr><td class="d">11/6</td><td>Amsterdam cut to one night: hotel changed to art'otel (opposite Centraal), Eurostar moved to 11/24 13:10→16:40 (coach 18, seats 85 &amp; 86). Paris hotel 11/24–28, 4 nights. Rebuilt 11/24 (evening arrival in Paris) and 11/25 (Latin Quarter → Île de la Cité → tea at Le Meurice → Louvre late opening, all three). Windmill village and others moved to options. Paris → Barcelona TGV refunded</td></tr><tr><td class="d">11/6</td><td>Added option E for 11/26 (Ryo in Paris in the morning: Orsay → Le Relais de l'Entrecôte → Orangerie → Arc de Triomphe, joining at Disney at 16:00). Added the Bernachon flagship to Sunday in Lyon</td></tr><tr><td class="d">11/5</td><td>Lyon: Sunday afternoon now Parc de la Tête d'Or (Institut Lumière as an option); a Croix-Rousse walk added on Monday morning. Saturday night at Fourvière unchanged</td></tr><tr><td class="d">11/5</td><td>Added "The regions of Spain" and "The regions of Italy" to the food chapter (by area like France, with cities and our trip)</td></tr><tr><td class="d">11/5</td><td>Added white truffles (San Miniato, Savini Tartufi, Procacci, prices, bringing them home) and care of copper pans and canelé moulds to the food chapter; keepsakes from the restaurant to the Bocuse chapter</td></tr><tr><td class="d">11/5</td><td>Added "Shopping to start cooking" to the food chapter (the five not to miss, tool and ingredient shops by city, notes on bringing things home)</td></tr><tr><td class="d">11/5</td><td>Added "Desserts and sweets" (salon de thé and other shop types, specialities and famous shops by city) and "Cheeses of the cities we visit" (such as Lyon's Saint-Marcellin) to the food chapter. French regions now grouped into north, west, east, centre, south-east and south-west with city names. The great chefs' restaurants are now cards with descriptions and tips</td></tr><tr><td class="d">11/5</td><td>Reworked 11/26 as a split day (Ryo is not going to Disney): four options plus Paris plans for Ryo with Yuzuha and for Ryo alone, in the Disney chapter. The food chapter now runs France → Spain → Italy, in travel order</td></tr><tr><td class="d">11/5</td><td>Rebuilt the "Cheese &amp; wine" chapter as a "Food primer" for France, Italy and Spain (history, how they influenced each other, great chefs, restaurants with maps, types of restaurant, how a meal runs, manners in three countries, French regions). Moved each country chapter's food and table-manners sections here</td></tr><tr><td class="d">11/4</td><td>Route map colours unified by country (Netherlands orange, France blue, Spain red, Italy green, flights and Dubai grey). Flags next to every city in the itinerary</td></tr><tr><td class="d">11/4</td><td>Added the reply from the Bocuse reservations team (French and translation) to "With a baby" in the Bocuse chapter, as an example of French service</td></tr><tr><td class="d">11/4</td><td>Booked AVE INT 09742 (11/30 Lyon 14:35 → Barcelona 19:23). Monday in Lyon is now free until early afternoon; the first Barcelona evening reworked for the late arrival (Passeig de Gràcia walk kept as an option). Added a note that the ticket cannot go into Apple Wallet</td></tr><tr><td class="d">11/4</td><td>Booked TGV INOUI 6619 (11/28 15:00 → 16:56, 1st class). Reworked Paris on 11/28 (morning market and Montmartre → to the station at 13:45). The afternoon plans are kept as options</td></tr><tr><td class="d">11/4</td><td>Booked the Lyon hotel (Mercure Part-Dieu, 2 nights) and the bouchon Daniel et Denise Saint-Jean for 11/28 at 19:00. After dinner that night, the funicular up to Fourvière for the night view. On 11/29 afternoon, one park or museum and a nap</td></tr><tr><td class="d">11/4</td><td>Removed who-gets-which-gift notes and the "Souvenir strategy" section. Added the story of Ryo's EY boss and a message for Yuzuha to the Bocuse chapter</td></tr><tr><td class="d">11/4</td><td>Now going via Lyon (Paris → Lyon on the evening of 11/28, 2 nights, to Barcelona on 11/30). Itinerary, bookings, transport and route map updated; the three Lyon days are in the Bocuse chapter. The Paris plan for 11/29 is kept as a candidate</td></tr><tr><td class="d">11/4</td><td>Restaurant Paul Bocuse booked (11/29 20:15). New "Paul Bocuse" chapter in the same style as Disneyland (booking, getting there, the day, autumn menu, signature dishes, with a baby, history, gifts)</td></tr><tr><td class="d">11/3</td><td>Pisa moved to the afternoon of 12/7 (Mon), a day trip by regional train. On 12/8, a Florence morning, then the train to Rome after lunch</td></tr><tr><td class="d">11/3</td><td>English edition added. Frecciarossa 9415 on 12/5 booked (11:26 → 13:39, Business); a morning walk in Venice; Florence day 1 re-timed (Accademia 15:15, Piazzale Michelangelo sunset moved to 12/6)</td></tr><tr><td class="d">11/3</td><td>Eurostar booked (11/25 09:10 → 12:37); Amsterdam morning and first day in Paris adjusted</td></tr><tr><td class="d">11/2</td><td>Booking references and insurance policy numbers removed from the guide (so no one else can change our bookings)</td></tr><tr><td class="d">11/2</td><td>Dubai: decided to go into the city; Som gets a 48-hour transit visa via Emirates</td></tr><tr><td class="d">10/25</td><td>Packing checklist rebuilt for this trip; three designs (Som, Yuzuha, Ryo) via the palette button; insurance section and step-by-step contacts; hotel details from the confirmations; luggage strategy</td></tr><tr><td class="d">10/18</td><td>Films to watch; Google Maps lists; Paris hotel changed to Libertel; GitHub version published</td></tr><tr><td class="d">10/17</td><td>Full review; Japanese and Thai editions; protests, pickpocket scenarios, French table manners</td></tr><tr><td class="d">10/15</td><td>First edition</td></tr></tbody></table></div>
+    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/7</td><td>Added a new chapter, "Museums and Masterpieces" (Louvre, Rodin, Orsay, Sagrada Família, Museu Picasso, Doge's Palace, Accademia, Uffizi, Vatican). Fixed the France chapter intro for 4 nights in Paris and 2 in Lyon</td></tr><tr><td class="d">11/6</td><td>Anne Frank House booked (11/24, 9:00–9:15 entry slot, 3 people)</td></tr><tr><td class="d">11/6</td><td>Adjusted 11/25: the Opéra and Le Meurice are back to "To book". The Rue Royale Ladurée is just from outside. The Louvre from 17:00 (kitchen shops and Petit Bateau moved to options). At the Arc de Triomphe, hand the stroller to the entrance staff</td></tr><tr><td class="d">11/6</td><td>Rebuilt Paris 11/24–28. 11/24: the Eiffel Tower, Arc de Triomphe and Champs-Élysées at night. 11/25: Montmartre in the morning → the Opéra → Le Meurice 13:45 → Som to Disney in the late afternoon, Ryo and Yuzuha to the Louvre. 11/26: Versailles → Napoleon's tomb → Rodin → Le Bon Marché → Josselin → Notre-Dame at night. 11/27: the Marais to the 1st. 11/28: the Panthéon, then the TGV. Everything taken out went into the Options table. Added a table of regional food to eat in Paris. Disney chapter switched to plan F (11/25 evening, Som alone)</td></tr><tr><td class="d">11/6</td><td>Amsterdam cut to one night: hotel changed to art'otel (opposite Centraal), Eurostar moved to 11/24 13:10→16:40 (coach 18, seats 85 &amp; 86). Paris hotel 11/24–28, 4 nights. Rebuilt 11/24 (evening arrival in Paris) and 11/25 (Latin Quarter → Île de la Cité → tea at Le Meurice → Louvre late opening, all three). Windmill village and others moved to options. Paris → Barcelona TGV refunded</td></tr><tr><td class="d">11/6</td><td>Added option E for 11/26 (Ryo in Paris in the morning: Orsay → Le Relais de l'Entrecôte → Orangerie → Arc de Triomphe, joining at Disney at 16:00). Added the Bernachon flagship to Sunday in Lyon</td></tr><tr><td class="d">11/5</td><td>Lyon: Sunday afternoon now Parc de la Tête d'Or (Institut Lumière as an option); a Croix-Rousse walk added on Monday morning. Saturday night at Fourvière unchanged</td></tr><tr><td class="d">11/5</td><td>Added "The regions of Spain" and "The regions of Italy" to the food chapter (by area like France, with cities and our trip)</td></tr><tr><td class="d">11/5</td><td>Added white truffles (San Miniato, Savini Tartufi, Procacci, prices, bringing them home) and care of copper pans and canelé moulds to the food chapter; keepsakes from the restaurant to the Bocuse chapter</td></tr><tr><td class="d">11/5</td><td>Added "Shopping to start cooking" to the food chapter (the five not to miss, tool and ingredient shops by city, notes on bringing things home)</td></tr><tr><td class="d">11/5</td><td>Added "Desserts and sweets" (salon de thé and other shop types, specialities and famous shops by city) and "Cheeses of the cities we visit" (such as Lyon's Saint-Marcellin) to the food chapter. French regions now grouped into north, west, east, centre, south-east and south-west with city names. The great chefs' restaurants are now cards with descriptions and tips</td></tr><tr><td class="d">11/5</td><td>Reworked 11/26 as a split day (Ryo is not going to Disney): four options plus Paris plans for Ryo with Yuzuha and for Ryo alone, in the Disney chapter. The food chapter now runs France → Spain → Italy, in travel order</td></tr><tr><td class="d">11/5</td><td>Rebuilt the "Cheese &amp; wine" chapter as a "Food primer" for France, Italy and Spain (history, how they influenced each other, great chefs, restaurants with maps, types of restaurant, how a meal runs, manners in three countries, French regions). Moved each country chapter's food and table-manners sections here</td></tr><tr><td class="d">11/4</td><td>Route map colours unified by country (Netherlands orange, France blue, Spain red, Italy green, flights and Dubai grey). Flags next to every city in the itinerary</td></tr><tr><td class="d">11/4</td><td>Added the reply from the Bocuse reservations team (French and translation) to "With a baby" in the Bocuse chapter, as an example of French service</td></tr><tr><td class="d">11/4</td><td>Booked AVE INT 09742 (11/30 Lyon 14:35 → Barcelona 19:23). Monday in Lyon is now free until early afternoon; the first Barcelona evening reworked for the late arrival (Passeig de Gràcia walk kept as an option). Added a note that the ticket cannot go into Apple Wallet</td></tr><tr><td class="d">11/4</td><td>Booked TGV INOUI 6619 (11/28 15:00 → 16:56, 1st class). Reworked Paris on 11/28 (morning market and Montmartre → to the station at 13:45). The afternoon plans are kept as options</td></tr><tr><td class="d">11/4</td><td>Booked the Lyon hotel (Mercure Part-Dieu, 2 nights) and the bouchon Daniel et Denise Saint-Jean for 11/28 at 19:00. After dinner that night, the funicular up to Fourvière for the night view. On 11/29 afternoon, one park or museum and a nap</td></tr><tr><td class="d">11/4</td><td>Removed who-gets-which-gift notes and the "Souvenir strategy" section. Added the story of Ryo's EY boss and a message for Yuzuha to the Bocuse chapter</td></tr><tr><td class="d">11/4</td><td>Now going via Lyon (Paris → Lyon on the evening of 11/28, 2 nights, to Barcelona on 11/30). Itinerary, bookings, transport and route map updated; the three Lyon days are in the Bocuse chapter. The Paris plan for 11/29 is kept as a candidate</td></tr><tr><td class="d">11/4</td><td>Restaurant Paul Bocuse booked (11/29 20:15). New "Paul Bocuse" chapter in the same style as Disneyland (booking, getting there, the day, autumn menu, signature dishes, with a baby, history, gifts)</td></tr><tr><td class="d">11/3</td><td>Pisa moved to the afternoon of 12/7 (Mon), a day trip by regional train. On 12/8, a Florence morning, then the train to Rome after lunch</td></tr><tr><td class="d">11/3</td><td>English edition added. Frecciarossa 9415 on 12/5 booked (11:26 → 13:39, Business); a morning walk in Venice; Florence day 1 re-timed (Accademia 15:15, Piazzale Michelangelo sunset moved to 12/6)</td></tr><tr><td class="d">11/3</td><td>Eurostar booked (11/25 09:10 → 12:37); Amsterdam morning and first day in Paris adjusted</td></tr><tr><td class="d">11/2</td><td>Booking references and insurance policy numbers removed from the guide (so no one else can change our bookings)</td></tr><tr><td class="d">11/2</td><td>Dubai: decided to go into the city; Som gets a 48-hour transit visa via Emirates</td></tr><tr><td class="d">10/25</td><td>Packing checklist rebuilt for this trip; three designs (Som, Yuzuha, Ryo) via the palette button; insurance section and step-by-step contacts; hotel details from the confirmations; luggage strategy</td></tr><tr><td class="d">10/18</td><td>Films to watch; Google Maps lists; Paris hotel changed to Libertel; GitHub version published</td></tr><tr><td class="d">10/17</td><td>Full review; Japanese and Thai editions; protests, pickpocket scenarios, French table manners</td></tr><tr><td class="d">10/15</td><td>First edition</td></tr></tbody></table></div>
   </details>
 </footer>
 
