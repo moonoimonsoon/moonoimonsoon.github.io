@@ -21,7 +21,7 @@
   --ok:#62D59E; --ok-bg:#163126; --warn:#F2C25A; --warn-bg:#352912; --idle:#A4A9B6; --idle-bg:#262A33; --bad:#FF8A80; --bad-bg:#3A1B19;
   --nl1:#E8606A; --nl2:#7FA2E6; --fr1:#6AA6EC; --fr2:#F37A70; --es1:#E85A5E; --es2:#F1BF00; --es-ink:#F3CE4E;
   --it1:#4CC487; --it2:#EE6670; --ae1:#4CB977; --ae2:#EE6670; --ae3:#ECEEF3; --th1:#E8667A; --th2:#9C97E0;
-  --food:#E2A36A; --art:#D98C8C; --flag-white:#F2F3F6; color-scheme:dark;
+  --food:#E2A36A; --art:#D98C8C; --wine:#C98AA6; --flag-white:#F2F3F6; color-scheme:dark;
   --f-display:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",system-ui,sans-serif;
   --f-body:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP","Noto Sans Thai",system-ui,sans-serif;
   --f-hand:"Klee One","Hiragino Mincho ProN",serif;
@@ -89,25 +89,28 @@ nav.toc .toc-now .no{font-family:var(--mono,ui-monospace,monospace);font-size:11
 nav.toc .toc-step{display:flex;gap:4px}
 nav.toc .toc-step button{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;padding:0}
 nav.toc .toc-step button:disabled{opacity:.3;cursor:default}
-nav.toc .toc-panel{position:absolute;left:0;right:0;top:100%;padding:8px 0 16px}
-nav.toc .toc-paper{background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 40px rgba(0,0,0,.18);padding:16px 16px 10px;max-height:calc(100vh - 120px);max-height:calc(100dvh - 120px);overflow:auto;background:radial-gradient(color-mix(in srgb,var(--ink) 9%,transparent) 1px,transparent 1px) 0 0/16px 16px,linear-gradient(var(--paper),var(--paper)),var(--bg)}
-nav.toc .toc-title{display:flex;align-items:baseline;gap:10px;border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:6px}
+nav.toc .toc-panel{position:absolute;left:0;right:0;top:100%;padding:6px 0 12px}
+nav.toc .toc-paper{background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.18);padding:10px 12px 8px;max-height:calc(100vh - 120px);max-height:calc(100dvh - 120px);overflow:auto;background:radial-gradient(color-mix(in srgb,var(--ink) 9%,transparent) 1px,transparent 1px) 0 0/16px 16px,linear-gradient(var(--paper),var(--paper)),var(--bg)}
+nav.toc .toc-title{display:flex;align-items:center;gap:10px;border-bottom:2px solid var(--ink);padding-bottom:6px;margin-bottom:2px}
 nav.toc .toc-title span{font-family:var(--mono,ui-monospace,monospace);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-nav.toc .toc-title b{font-size:22px;letter-spacing:.06em;margin-left:auto;order:-1}
-nav.toc .toc-close{margin-left:auto;width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:18px;cursor:pointer;padding:0}
-nav.toc .toc-group h5{display:flex;align-items:baseline;gap:8px;margin:14px 0 2px;font-size:12.5px;letter-spacing:.08em;color:var(--ink)}
-nav.toc .toc-group h5 small{font-family:var(--mono,ui-monospace,monospace);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:400}
+nav.toc .toc-title b{font-size:17px;letter-spacing:.08em}
+nav.toc .toc-close{margin-left:auto;width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:18px;cursor:pointer;padding:0}
+nav.toc .toc-group h5{display:flex;align-items:baseline;gap:8px;margin:10px 0 1px;font-size:12px;letter-spacing:.08em;color:var(--ink)}
+nav.toc .toc-group h5 small{font-family:var(--mono,ui-monospace,monospace);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:400}
 nav.toc .toc-group ol{list-style:none;margin:0;padding:0}
-nav.toc .toc-group a{display:grid;grid-template-columns:2.4em auto 1fr;grid-template-areas:"no nm dot" "no dt dt";align-items:center;column-gap:8px;padding:9px 6px;border-radius:10px;text-decoration:none;color:var(--ink);border-bottom:1px dashed var(--line)}
-nav.toc .toc-group li:last-child a{border-bottom:0}
-nav.toc .toc-group .no{grid-area:no;align-self:start;margin-top:2px;font-family:var(--mono,ui-monospace,monospace);font-size:12px;letter-spacing:.08em;color:var(--muted)}
-nav.toc .toc-group .nm{grid-area:nm;display:inline-flex;align-items:center;gap:7px;font-size:16px;font-weight:700}
-nav.toc .toc-group .dot{grid-area:dot;height:0;border-bottom:2px dotted color-mix(in srgb,var(--ink) 25%,transparent);align-self:center}
-nav.toc .toc-group .dt{grid-area:dt;font-size:12.5px;color:var(--muted);margin-top:1px}
+nav.toc .toc-group a{display:grid;grid-template-columns:1.9em auto 1fr auto;align-items:center;column-gap:7px;padding:5px 6px;border-radius:8px;text-decoration:none;color:var(--ink);line-height:1.3}
+nav.toc .toc-group .no{font-family:var(--mono,ui-monospace,monospace);font-size:11px;letter-spacing:.06em;color:var(--muted)}
+nav.toc .toc-group .nm{display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:700;white-space:nowrap}
+nav.toc .toc-group .dot{height:0;border-bottom:2px dotted color-mix(in srgb,var(--ink) 22%,transparent);min-width:10px}
+nav.toc .toc-group .dt{font-size:12px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+nav.toc .toc-group li.sub a{padding-block:2px 4px}
+nav.toc .toc-group li.sub .nm{font-size:13px;font-weight:600;color:color-mix(in srgb,var(--ink) 80%,transparent)}
+nav.toc .toc-group li.sub .nm::before{content:"└";color:var(--muted);font-weight:400;margin-left:.15em}
 nav.toc .toc-group a:hover{background:color-mix(in srgb,var(--ink) 5%,transparent)}
-nav.toc .toc-group a[aria-current="true"]{background:var(--ink);color:var(--bg);border-bottom-color:transparent}
-nav.toc .toc-group a[aria-current="true"] .no,nav.toc .toc-group a[aria-current="true"] .dt{color:color-mix(in srgb,var(--bg) 75%,transparent)}
-nav.toc .toc-group a[aria-current="true"] .dot{border-color:color-mix(in srgb,var(--bg) 40%,transparent)}
+nav.toc .toc-group a[aria-current="true"]{background:color-mix(in srgb,var(--ink) 9%,transparent)}
+nav.toc .toc-group a.here{background:var(--ink);color:var(--bg)}
+nav.toc .toc-group a.here .no,nav.toc .toc-group a.here .dt,nav.toc .toc-group a.here .nm{color:var(--bg)}
+nav.toc .toc-group a.here .dot{border-color:color-mix(in srgb,var(--bg) 40%,transparent)}
 .showall{display:flex;justify-content:flex-end;padding-top:8px}
 .showall button{font:inherit;font-size:12px;color:var(--muted);background:none;border:1px solid var(--line);border-radius:999px;padding:3px 10px;cursor:pointer}
 
@@ -115,7 +118,7 @@ nav.toc .toc-group a[aria-current="true"] .dot{border-color:color-mix(in srgb,va
 .chapter{padding-block:26px 10px;scroll-margin-top:60px;--c1:var(--ink);--c2:var(--muted)}
 .chapter + .chapter{border-top:1px solid var(--line);margin-top:28px}
 .chapter.nl{--c1:var(--nl1);--c2:var(--nl2)} .chapter.fr{--c1:var(--fr1);--c2:var(--fr2)} .chapter.es{--c1:var(--es1);--c2:var(--es-ink)}
-.chapter.it{--c1:var(--it1);--c2:var(--it2)} .chapter.ae{--c1:var(--ae1);--c2:var(--ae2)} .chapter.food{--c1:var(--food);--c2:var(--food)} .chapter.art{--c1:var(--art);--c2:var(--art)}
+.chapter.it{--c1:var(--it1);--c2:var(--it2)} .chapter.ae{--c1:var(--ae1);--c2:var(--ae2)} .chapter.food{--c1:var(--food);--c2:var(--food)} .chapter.art{--c1:var(--art);--c2:var(--art)} .chapter.cw{--c1:var(--wine);--c2:var(--wine)}
 .chapter.base{--c1:var(--ink);--c2:var(--muted)}
 .chapter.dlp{--c1:#B9A2F2;--c2:#F2C25A}
 .dlp .band{background:linear-gradient(90deg,#6E5BC9,#B9A2F2 45%,#F2C25A)}
@@ -128,6 +131,7 @@ nav.toc .toc-group a[aria-current="true"] .dot{border-color:color-mix(in srgb,va
 .it .band{background:linear-gradient(to right,var(--it1) 0 33.3%,var(--flag-white) 33.3% 66.6%,var(--it2) 66.6%)}
 .ae .band{background:linear-gradient(to right,var(--ae2) 0 16%,transparent 16%),linear-gradient(to bottom,var(--ae1) 0 33.3%,var(--flag-white) 33.3% 66.6%,var(--ae3) 66.6%)}
 .food .band{background:repeating-linear-gradient(90deg,var(--food) 0 14px,var(--memo) 14px 28px)}
+.cw .band{background:repeating-linear-gradient(90deg,var(--wine) 0 14px,var(--memo) 14px 28px)}
 .art .band{background:repeating-linear-gradient(90deg,var(--art) 0 14px,var(--memo) 14px 28px)}
 .base .band{background:linear-gradient(to right,var(--nl1),var(--fr1),var(--es2),var(--it1),var(--ae2))}
 .ch-head{display:grid;gap:6px;margin-bottom:6px}
@@ -319,7 +323,7 @@ html[data-theme="som"]{
   --ok:#1E7A4C; --ok-bg:#DDF3E6; --warn:#8A5A00; --warn-bg:#FFEFC2; --idle:#5E6468; --idle-bg:#EEEAE2; --bad:#B23A2E; --bad-bg:#FBE1DD;
   --nl1:#C8414C; --nl2:#3B6FB6; --fr1:#2F6CB8; --fr2:#C24E3E; --es1:#C8383D; --es2:#E0A800; --es-ink:#9A6E00;
   --it1:#2E8A57; --it2:#C8414C; --ae1:#2E8A57; --ae2:#C8414C; --ae3:#2B2722; --th1:#C8414C; --th2:#4A4FA8;
-  --food:#B86A2B; --art:#9E3B3B; --flag-white:#FFFFFF; color-scheme:light;
+  --food:#B86A2B; --art:#9E3B3B; --wine:#7A2E4F; --flag-white:#FFFFFF; color-scheme:light;
 }
 html[data-theme="yuzuha"]{
   --bg:#FFF6DC; --dot:#F1E3B8; --paper:#FFFFFF; --ink:#1E1B2E; --muted:#56506B; --line:#E6DCC0; --soft:#FFF0C2;
@@ -327,7 +331,7 @@ html[data-theme="yuzuha"]{
   --ok:#11683F; --ok-bg:#C9F0DA; --warn:#7A4E00; --warn-bg:#FFE7A6; --idle:#56506B; --idle-bg:#EFE7CF; --bad:#A8322A; --bad-bg:#FFD9D3;
   --nl1:#D63E4A; --nl2:#2E63C0; --fr1:#2E63C0; --fr2:#E2493A; --es1:#D63E4A; --es2:#FFD23F; --es-ink:#8A6400;
   --it1:#16804A; --it2:#D63E4A; --ae1:#16804A; --ae2:#D63E4A; --ae3:#1E1B2E; --th1:#D63E4A; --th2:#5A4FC0;
-  --food:#B5651D; --art:#9E3B3B; --flag-white:#FFFFFF; color-scheme:light;
+  --food:#B5651D; --art:#9E3B3B; --wine:#7A2E4F; --flag-white:#FFFFFF; color-scheme:light;
   --f-display:"M PLUS Rounded 1c","Zen Maru Gothic","Hiragino Maru Gothic ProN",system-ui,sans-serif;
 }
 html[data-theme="som"] .chapter.dlp,html[data-theme="yuzuha"] .chapter.dlp{--c1:#6B4FC8;--c2:#9A6E00}
@@ -421,26 +425,30 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   </div>
   <div class="toc-panel" id="toc-panel" hidden>
     <div class="toc-paper">
-      <div class="toc-title"><span>Our Own Guidebook</span><b>目次</b><button type="button" class="toc-close" aria-label="閉じる">×</button></div>
+      <div class="toc-title"><b>目次</b><span>Our Own Guidebook</span><button type="button" class="toc-close" aria-label="閉じる">×</button></div>
       <div class="toc-group"><h5><span>旅の行程</span><small>Itinerary</small></h5><ol>
-        <li><a href="#plan" data-ch="plan"><span class="no">00</span><span class="nm">はじめに</span><span class="dot" aria-hidden="true"></span><span class="dt">全体の計画と予約</span></a></li>
-        <li><a href="#nl" data-ch="nl"><span class="no">01</span><span class="nm"><span class="flag f-nl"></span>オランダ</span><span class="dot" aria-hidden="true"></span><span class="dt">11/23–24 · アムステルダム</span></a></li>
-        <li><a href="#fr" data-ch="fr"><span class="no">02</span><span class="nm"><span class="flag f-fr"></span>フランス</span><span class="dot" aria-hidden="true"></span><span class="dt">11/24–28 · パリ</span></a></li>
-        <li><a href="#dlp" data-ch="dlp"><span class="no">SP</span><span class="nm">ディズニー</span><span class="dot" aria-hidden="true"></span><span class="dt">11/25 夕方 · Som</span></a></li>
-        <li><a href="#bocuse" data-ch="bocuse"><span class="no">SP</span><span class="nm">リヨン・ボキューズ</span><span class="dot" aria-hidden="true"></span><span class="dt">11/28–30 · リヨン</span></a></li>
-        <li><a href="#es" data-ch="es"><span class="no">03</span><span class="nm"><span class="flag f-es"></span>スペイン</span><span class="dot" aria-hidden="true"></span><span class="dt">11/30–12/3 · バルセロナ</span></a></li>
-        <li><a href="#it" data-ch="it"><span class="no">04</span><span class="nm"><span class="flag f-it"></span>イタリア</span><span class="dot" aria-hidden="true"></span><span class="dt">12/3–11 · ヴェネツィア、フィレンツェ、ローマ</span></a></li>
-        <li><a href="#ae" data-ch="ae"><span class="no">05</span><span class="nm"><span class="flag f-ae"></span>ドバイ</span><span class="dot" aria-hidden="true"></span><span class="dt">12/12 · 乗り継ぎ</span></a></li>
+        <li><a href="#plan" data-ch="plan" data-now="はじめに"><span class="no">00</span><span class="nm">はじめに</span><span class="dot" aria-hidden="true"></span><span class="dt">計画と予約</span></a></li>
+        <li><a href="#nl" data-ch="nl" data-now="アムステルダム"><span class="no">01</span><span class="nm"><span class="flag f-nl"></span>アムステルダム</span><span class="dot" aria-hidden="true"></span><span class="dt">11/23–24</span></a></li>
+        <li><a href="#fr" data-ch="fr" data-now="パリ"><span class="no">02</span><span class="nm"><span class="flag f-fr"></span>パリ</span><span class="dot" aria-hidden="true"></span><span class="dt">11/24–28</span></a></li>
+        <li class="sub"><a href="#dlp" data-ch="dlp" data-now="ディズニー"><span class="no"></span><span class="nm">ディズニーランド・パリ</span><span class="dot" aria-hidden="true"></span><span class="dt">11/25 夕方</span></a></li>
+        <li><a href="#bocuse" data-ch="bocuse" data-now="リヨン"><span class="no">02</span><span class="nm"><span class="flag f-fr"></span>リヨン</span><span class="dot" aria-hidden="true"></span><span class="dt">11/28–30</span></a></li>
+        <li class="sub"><a href="#bcs-basic" data-ch="bocuse" data-now="リヨン"><span class="no"></span><span class="nm">ポール・ボキューズ本店</span><span class="dot" aria-hidden="true"></span><span class="dt">11/29</span></a></li>
+        <li><a href="#es" data-ch="es" data-now="バルセロナ"><span class="no">03</span><span class="nm"><span class="flag f-es"></span>バルセロナ</span><span class="dot" aria-hidden="true"></span><span class="dt">11/30–12/3</span></a></li>
+        <li><a href="#it" data-ch="it" data-now="イタリア"><span class="no">04</span><span class="nm"><span class="flag f-it"></span>ヴェネツィア</span><span class="dot" aria-hidden="true"></span><span class="dt">12/3–5</span></a></li>
+        <li><a href="#flr" data-ch="it" data-now="イタリア"><span class="no">04</span><span class="nm"><span class="flag f-it"></span>フィレンツェ</span><span class="dot" aria-hidden="true"></span><span class="dt">12/5–8</span></a></li>
+        <li><a href="#rom" data-ch="it" data-now="イタリア"><span class="no">04</span><span class="nm"><span class="flag f-it"></span>ローマ</span><span class="dot" aria-hidden="true"></span><span class="dt">12/8–11</span></a></li>
+        <li><a href="#ae" data-ch="ae" data-now="ドバイ"><span class="no">05</span><span class="nm"><span class="flag f-ae"></span>ドバイ</span><span class="dot" aria-hidden="true"></span><span class="dt">12/12 乗り継ぎ</span></a></li>
       </ol></div>
       <div class="toc-group"><h5><span>読みもの</span><small>Reading</small></h5><ol>
-        <li><a href="#food" data-ch="food"><span class="no">06</span><span class="nm">料理の教科書</span><span class="dot" aria-hidden="true"></span><span class="dt">フランス、スペイン、イタリア</span></a></li>
-        <li><a href="#art" data-ch="art"><span class="no">07</span><span class="nm">美術館と名作</span><span class="dot" aria-hidden="true"></span><span class="dt">ルーヴルからバチカンまで</span></a></li>
+        <li><a href="#food" data-ch="food" data-now="料理"><span class="no">06</span><span class="nm">料理の教科書</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#cw" data-ch="cw" data-now="チーズとワイン"><span class="no">07</span><span class="nm">チーズとワイン</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#art" data-ch="art" data-now="美術"><span class="no">08</span><span class="nm">美術館と名作</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
       </ol></div>
       <div class="toc-group"><h5><span>旅の支え</span><small>Support</small></h5><ol>
-        <li><a href="#baby" data-ch="baby"><span class="no">08</span><span class="nm">赤ちゃん連れ</span><span class="dot" aria-hidden="true"></span><span class="dt">ミルク、おむつ、移動</span></a></li>
-        <li><a href="#safety" data-ch="safety"><span class="no">09</span><span class="nm">緊急・安全</span><span class="dot" aria-hidden="true"></span><span class="dt">病院、盗難、保険</span></a></li>
-        <li><a href="#prep" data-ch="prep"><span class="no">10</span><span class="nm">荷物・お金・準備</span><span class="dot" aria-hidden="true"></span><span class="dt">持ち物とやることリスト</span></a></li>
-        <li><a href="#next" data-ch="next"><span class="no">11</span><span class="nm">次回の旅</span><span class="dot" aria-hidden="true"></span><span class="dt">いつか行きたいところ</span></a></li>
+        <li><a href="#baby" data-ch="baby" data-now="赤ちゃん連れ"><span class="no">09</span><span class="nm">赤ちゃん連れ</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#safety" data-ch="safety" data-now="緊急・安全"><span class="no">10</span><span class="nm">緊急・安全</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#prep" data-ch="prep" data-now="荷物・準備"><span class="no">11</span><span class="nm">荷物・お金・準備</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#next" data-ch="next" data-now="次回の旅"><span class="no">12</span><span class="nm">次回の旅</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
       </ol></div>
     </div>
   </div>
@@ -3206,9 +3214,9 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   <div class="ch-head">
     <div class="eyebrow">Chapter 6 · Food</div>
     <h2>料理の教科書 <span class="local">Cuisine · Cocina · Cucina</span></h2>
-    <p class="lead">フランス、スペイン、イタリア。隣り合う3つの国の料理は、何百年もお互いに影響し合って今の形になりました。歴史、巨匠と名店、店の格式、食事の流れ、マナー、名物、チーズとワインを、この章にまとめて置いておきます。</p>
+    <p class="lead">フランス、スペイン、イタリア。隣り合う3つの国の料理は、何百年もお互いに影響し合って今の形になりました。歴史、巨匠と名店、店の格式、食事の流れ、マナー、名物、買い物を、この章にまとめて置いておきます。チーズとワインは次の章に。</p>
   </div>
-  <div class="subnav"><a href="#food-flow">歴史</a><a href="#food-ties">影響し合った関係</a><a href="#food-masters">巨匠</a><a href="#food-places">名店</a><a href="#food-types">店の格式</a><a href="#food-course">食事の流れ</a><a href="#food-manners">マナー</a><a href="#fr-regions">フランスの地方</a><a href="#es-regions">スペインの地方</a><a href="#it-regions">イタリアの地方</a><a href="#fr-food">名物（仏）</a><a href="#es-food">名物（西）</a><a href="#it-food">名物（伊）</a><a href="#food-sweets">デザート</a><a href="#cheese-basic">チーズ</a><a href="#cheese-city">街のチーズ</a><a href="#wine-basic">ワイン</a><a href="#food-shop">料理の買い物</a><a href="#bring">持ち帰り</a></div>
+  <div class="subnav"><a href="#food-flow">歴史</a><a href="#food-ties">影響し合った関係</a><a href="#food-masters">巨匠</a><a href="#food-places">名店</a><a href="#food-types">店の格式</a><a href="#food-course">食事の流れ</a><a href="#food-manners">マナー</a><a href="#fr-regions">フランスの地方</a><a href="#es-regions">スペインの地方</a><a href="#it-regions">イタリアの地方</a><a href="#fr-food">名物（仏）</a><a href="#es-food">名物（西）</a><a href="#it-food">名物（伊）</a><a href="#food-sweets">デザート</a><a href="#cw">チーズとワイン（別の章）</a><a href="#food-shop">料理の買い物</a><a href="#bring">持ち帰り</a></div>
 
   <div class="block" id="food-flow">
     <h3>3か国の料理の歴史</h3>
@@ -3681,6 +3689,126 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <p class="memo"><span class="who">FOR THE BABY</span>Yuzuha には、生クリームや卵をたっぷり使った菓子、はちみつ（1歳未満は禁止）、ナッツの粒は避ける。ジェラートのひと舐めも、まだ控えめに。</p>
   </div>
 
+  <div class="block" id="food-shop">
+    <h3>料理を始めるための買い物</h3>
+    <p class="note">帰ったらフレンチ、スペイン料理、イタリア料理を作るときのために、道中で手に入れておきたい道具と食材。<b>重い道具は旅の後半ほど荷物の負担が少ない</b>ので、パリで買うものは本当に欲しいものだけに。</p>
+    <div class="column" style="margin:4px 0 12px">
+      <div class="lab">MUST</div>
+      <h4>これだけは外さない5つ（全部で1kg ほど）</h4>
+      <ol>
+        <li><b>サフラン</b>（バルセロナ）：数グラムで軽く、日本よりずっと安くて質がいい。パエリャにもブイヤベースにもリゾットにも</li>
+        <li><b>ピメントン・デ・ラ・ベラ</b>（バルセロナ）：燻製パプリカの小さな缶。スペイン料理の香りの決め手</li>
+        <li><b>乾燥モリーユ茸か乾燥ポルチーニ</b>（パリかフィレンツェ）：軽くて香りが強い。ボキューズのクリームソースもリゾットもこれで</li>
+        <li><b>プラリーヌ・ローズ</b>（リヨン）：リヨンのタルト用。日本ではまず手に入らない</li>
+        <li><b>ゲランドの塩</b>（パリ）：仕上げの塩。小袋で十分</li>
+      </ol>
+      <p class="muted" style="margin:0;font-size:13px">オイル、酢、乾燥パスタ、パエリャ鍋、一般的な調理道具は、重いかかさばるうえ、日本でも通販や合羽橋で手に入るので後回しに。道具は「どうしても」の1つだけ（E. Dehillerin のこし器など）。</p>
+    </div>
+    <h4 style="margin:12px 0 8px">道具</h4>
+    <div class="tbl"><table class="wide">
+      <thead><tr><th>街</th><th>店・品</th><th>何を買うか</th><th>地図</th></tr></thead>
+      <tbody>
+        <tr><td data-label="街"><span class="flag f-fr"></span> パリ</td><td class="big" data-label="店・品">E. Dehillerin</td><td data-label="何を買うか">1820年創業のプロ用調理道具店。銅鍋、こし器（シノワ）、カヌレやタルトの型、木べら。ジュリア・チャイルドも通った</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=E.+Dehillerin+Paris">開く</a></td></tr>
+        <tr><td data-label="街"><span class="flag f-fr"></span> パリ</td><td class="big" data-label="店・品">A. Simon</td><td data-label="何を買うか">Dehillerin の近く。ソースパン、皿、製菓道具。店員が親切で見やすい</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=A.+Simon+Paris">開く</a></td></tr>
+        <tr><td data-label="街"><span class="flag f-fr"></span> リヨン</td><td class="big" data-label="店・品">ボキューズ本店のショップ</td><td data-label="何を買うか">ボキューズの料理書（『La cuisine du marché』英語版あり）、エプロン、銅製の小鍋</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Paul+Bocuse+Collonges-au-Mont-d%27Or">開く</a></td></tr>
+        <tr><td data-label="街"><span class="flag f-es"></span> バルセロナ</td><td class="big" data-label="店・品">Ganiveteria Roca</td><td data-label="何を買うか">1911年創業の刃物店（ピ広場）。料理用ナイフ、ハモン用ナイフ、はさみ</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Ganiveteria+Roca+Barcelona">開く</a></td></tr>
+        <tr><td data-label="街"><span class="flag f-es"></span> バルセロナ</td><td class="big" data-label="店・品">パエリャ鍋（paella）</td><td data-label="何を買うか">市場の金物屋や台所用品店で。2〜3人用は直径30〜34cm。カタルーニャ語ではパエリャ</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Mercat+de+Santa+Caterina+Barcelona">開く</a></td></tr>
+        <tr><td data-label="街"><span class="flag f-it"></span> フィレンツェ／ローマ</td><td class="big" data-label="店・品">パスタの道具</td><td data-label="何を買うか">キタッラ（四角い手打ちパスタの道具）、ラビオリの型、ニョッキ板、ビアレッティのモカポット</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">開く</a></td></tr>
+        <tr><td data-label="街"><span class="flag f-it"></span> ローマ</td><td class="big" data-label="店・品">c.u.c.i.n.a.</td><td data-label="何を買うか">おしゃれな台所用品店。パスタの道具やパルミジャーノ用ナイフ</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=c.u.c.i.n.a.+Roma">開く</a></td></tr>
+      </tbody>
+    </table></div>
+    <h4 style="margin:16px 0 8px">食材</h4>
+    <div class="tbl"><table class="wide">
+      <thead><tr><th>街</th><th>店・品</th><th>何を買うか</th><th>地図</th></tr></thead>
+      <tbody>
+        <tr><td data-label="街"><span class="flag f-fr"></span> パリ</td><td class="big" data-label="店・品">Maille（マドレーヌ広場）</td><td data-label="何を買うか">量り売りの生のマスタード、ワインビネガー</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Maille+Madeleine+Paris">開く</a></td></tr>
+        <tr><td data-label="街"><span class="flag f-fr"></span> パリ</td><td class="big" data-label="店・品">ラ・グランド・エピスリー</td><td data-label="何を買うか">ゲランドの塩（フルール・ド・セル）、乾燥モリーユ茸、エスペレットの唐辛子、エルブ・ド・プロヴァンス、ヴィネガー、オリーブオイル</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=La+Grande+%C3%89picerie+de+Paris+Rive+Gauche">開く</a></td></tr>
+        <tr><td data-label="街"><span class="flag f-fr"></span> リヨン</td><td class="big" data-label="店・品">ポール・ボキューズ市場</td><td data-label="何を買うか"><b>プラリーヌ・ローズ</b>（タルト・オ・プラリーヌ用のピンクのアーモンド。リヨン以外ではまず手に入らない）、乾燥きのこ</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Les+Halles+de+Lyon+Paul+Bocuse">開く</a></td></tr>
+        <tr><td data-label="街"><span class="flag f-es"></span> バルセロナ</td><td class="big" data-label="店・品">ボケリア市場／サンタ・カテリーナ市場</td><td data-label="何を買うか"><b>サフラン</b>（ラ・マンチャ産 DOP）、<b>ピメントン</b>（燻製パプリカ、ラ・ベラ産 DOP）、<b>パエリャ用の米</b>（ボンバ米）、シェリービネガー</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Boqueria+Barcelona">開く</a></td></tr>
+        <tr><td data-label="街"><span class="flag f-es"></span> バルセロナ</td><td class="big" data-label="店・品">缶詰の店</td><td data-label="何を買うか">アンチョビ、ムール貝、イワシなどの高級缶詰（コンセルバ）。軽くて日持ちし、お土産にも</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Conservas+Barcelona">開く</a></td></tr>
+        <tr><td data-label="街"><span class="flag f-es"></span> バルセロナ</td><td class="big" data-label="店・品">オリーブオイル</td><td data-label="何を買うか">カタルーニャのアルベキーナ種。まろやかで料理に使いやすい</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Boqueria+Barcelona">開く</a></td></tr>
+        <tr><td data-label="街"><span class="flag f-it"></span> フィレンツェ</td><td class="big" data-label="店・品">中央市場／サンタンブロージョ市場</td><td data-label="何を買うか">トスカーナのエキストラバージン・オリーブオイル、<b>乾燥ポルチーニ</b>、ファッロ（古代小麦）、トリュフのペーストや塩</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">開く</a></td></tr>
+        <tr><td data-label="街"><span class="flag f-it"></span> フィレンツェ</td><td class="big" data-label="店・品">パスタ</td><td data-label="何を買うか">ブロンズ型で押し出した乾燥パスタ（ソースがよく絡む）。グラニャーノ産やマルテッリなど</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">開く</a></td></tr>
+        <tr><td data-label="街"><span class="flag f-it"></span> ローマ</td><td class="big" data-label="店・品">Castroni</td><td data-label="何を買うか">1932年からの輸入食材店。バルサミコ酢（モデナ産）、ボッタルガ（からすみ）、コーヒー豆</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Castroni+Roma+Via+Cola+di+Rienzo">開く</a></td></tr>
+        <tr><td data-label="街"><span class="flag f-it"></span> フィレンツェ</td><td class="big" data-label="店・品">トリュフの加工品</td><td data-label="何を買うか"><b>トリュフはイタリアで</b>。12月初めのトスカーナは白トリュフの季節（サン・ミニアート産）。生のトリュフは1週間ほどしかもたないので食べるのは現地で、持ち帰りは瓶詰め（薄切りのカルパッチョ、ペースト、トリュフ塩）に。フランスの黒トリュフ製品はパリのマドレーヌ広場の Maison de la Truffe で</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">開く</a></td></tr>
+      </tbody>
+    </table></div>
+    <div class="column" style="margin-top:12px">
+      <div class="lab">TARTUFO</div>
+      <h4>白トリュフ（フィレンツェとピサのあたり）</h4>
+      <ul>
+        <li><b>産地はサン・ミニアート</b>：フィレンツェとピサのちょうど中間の丘の町。ピサへの地方線の San Miniato–Fucecchio 駅から、バスかタクシーで丘の上へ</li>
+        <li><b>白トリュフ市は 11/14–15、21–22、28–29 の週末だけ</b>。12/5 に着く今回は終わったあと。市以外は町の専門店で</li>
+        <li><b>フィレンツェで気軽に</b>：中央市場の <b>Savini Tartufi</b>（ピサ県の老舗トリュフ商の店）。トリュフ料理を手ごろに食べられ、瓶詰めも買える。生のトリュフは店で聞く</li>
+        <li><b>Procacci</b>（トルナブオーニ通り、12/8 の予定）：トリュフのパニーノの老舗。季節には生のトリュフも扱う</li>
+        <li><b>値段の目安</b>：その年の出来で大きく変わる。レストランで削ってもらうと1グラムあたり十数ユーロのこともある。買うなら「何グラムで、いくら」をその場で確認</li>
+        <li><b>生は持ち帰れない</b>：1週間ほどで香りが抜ける。宿で食べるならキッチンが要る。持ち帰りは瓶詰めやトリュフ塩に</li>
+      </ul>
+    </div>
+    <div class="column" style="margin-top:12px">
+      <div class="lab">FRENCH</div>
+      <h4>フレンチに絞るなら、少し重くても持ち帰る価値があるもの</h4>
+      <ul>
+        <li><b>銅のカヌレ型</b>（E. Dehillerin）：カヌレを焼くなら、本場の銅型。日本で買うよりずっと手に入れやすい</li>
+        <li><b>銅のソースパン 1つ</b>（E. Dehillerin、Mauviel 製など）：フランス料理のソース用。直径14〜16cm で約1kg。日本ではかなり高い</li>
+        <li><b>マスタード</b>（Maille）：量り売りの生のマスタードを陶器の壺で。ディジョン・マスタードの本物の味</li>
+        <li><b>ワインビネガー</b>：オルレアンの Martin Pouret など、昔ながらの製法のもの。ヴィネグレットとソースの味が変わる</li>
+        <li><b>くるみ油・ヘーゼルナッツ油</b>（Leblanc など）：フランスならではのナッツの油。サラダ・リヨネーズに</li>
+        <li><b>料理用ナイフ</b>（ラギオール、オピネル）：必ず預け荷物に</li>
+        <li><b>銅は錆びにくいが、色が変わる</b>：鉄のように赤く錆びることはないが、空気や水で黒っぽくくすみ、湿ったままだと緑青が出る。洗ったらすぐ拭いて乾かす。食洗機は不可</li>
+        <li><b>内側の加工で手入れが違う</b>：ソースパンは<b>内側がステンレス</b>のもの（Mauviel の M'Héritage など）が扱いやすい。内側が錫（すず）のものは、空焚きと金属のへらを避け、何年かに一度張り直す</li>
+        <li><b>カヌレ型</b>は内側が錫引き。使う前に蜜蝋とバターを塗る（カヌレの伝統の「白い蝋」）。洗剤でこすらず、拭いて乾かして保管</li>
+        <li>くすみはレモン汁と塩、または銅用のクリーナーで落ちる</li>
+      </ul>
+      <p class="muted" style="margin:0;font-size:13px">ストウブやル・クルーゼの鍋は日本でも同じくらいの値段で買えるので、持ち帰らなくてよい。</p>
+    </div>
+    <div class="column" style="margin-top:12px">
+      <div class="lab">CHECK</div>
+      <h4>持ち帰りの注意</h4>
+      <ul>
+        <li><b>肉製品は日本に持ち込めない</b>：ハモン、プロシュット、サラミ、グアンチャーレ、ソーセージ、フォアグラの缶詰も。お店の「日本へ持ち帰れます」の表示も、日本の検疫では通らないことが多い</li>
+        <li><b>チーズは国ごとに規則が違う</b>：持ち帰るなら固いもの（パルミジャーノなど）を真空パックで少しだけ。帰りはタイ経由で1月に日本なので、日持ちも考える</li>
+        <li><b>液体（オイル、酢、ワイン）は預け荷物へ</b>。緩衝袋で包み、スーツケースの真ん中に</li>
+        <li><b>刃物は必ず預け荷物</b>。機内持ち込みはできない</li>
+        <li><b>重い道具は日本へ送る手もある</b>：フランスの郵便局（La Poste）の Colissimo で</li>
+        <li><b>サフランや乾物は軽くて高価値</b>。迷ったら乾物を優先</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block" id="bring">
+    <h3>持ち帰りのルール</h3>
+    <div class="grid2">
+      <div class="card">
+        <h4>機内には持ち込めない</h4>
+        <ul>
+          <li>ワイン、オイル、柔らかいチーズ、ジャムは液体扱い。100ml を超えるものは預け荷物へ</li>
+          <li>ワインは服で巻くか、専用の緩衝袋（wine skin）に入れてスーツケースの真ん中に</li>
+          <li>免税店で買った酒は封をした袋のまま。ドバイの乗継でも開けない</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>タイに入るとき</h4>
+        <ul>
+          <li>酒は1人1リットルまで免税（大人のみ）。ワインなら1本ちょっと</li>
+          <li>超える分は申告して課税。2人なら合計2リットルまで</li>
+          <li>チーズとハムは個人で食べる量なら一般的には問題ないが、肉製品は検疫の対象になりうるので量は控えめに</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">重いものを買う順番は「荷物と準備」の章の重量計画を参照。</p>
+  </div>
+</section>
+<!-- =================== CHAPTER 7: CHEESE & WINE =================== -->
+<section id="cw" class="chapter cw" data-chapter="cw">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Chapter 7 · Cheese &amp; Wine</div>
+    <h2>チーズとワイン <span class="local">Fromage · Queso · Formaggio · Vin · Vino</span></h2>
+    <p class="lead">チーズとワインは、その土地の気候と、牛・羊・山羊やぶどうの種類で味が決まります。基本の分け方、行く街で食べたいもの、店での頼み方と買い方をまとめました。</p>
+  </div>
+  <div class="subnav"><a href="#cheese-basic">チーズの基本</a><a href="#cheese-list">代表的なチーズ</a><a href="#cheese-city">街のチーズ</a><a href="#cheese-buy">買い方</a><a href="#wine-basic">ワインの基本</a><a href="#wine-list">代表的なワイン</a><a href="#wine-order">頼み方</a></div>
+
   <div class="block" id="cheese-basic">
     <h3>チーズの基礎</h3>
     <div class="grid2">
@@ -3877,121 +4005,12 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     </div>
   </div>
 
-  <div class="block" id="food-shop">
-    <h3>料理を始めるための買い物</h3>
-    <p class="note">帰ったらフレンチ、スペイン料理、イタリア料理を作るときのために、道中で手に入れておきたい道具と食材。<b>重い道具は旅の後半ほど荷物の負担が少ない</b>ので、パリで買うものは本当に欲しいものだけに。</p>
-    <div class="column" style="margin:4px 0 12px">
-      <div class="lab">MUST</div>
-      <h4>これだけは外さない5つ（全部で1kg ほど）</h4>
-      <ol>
-        <li><b>サフラン</b>（バルセロナ）：数グラムで軽く、日本よりずっと安くて質がいい。パエリャにもブイヤベースにもリゾットにも</li>
-        <li><b>ピメントン・デ・ラ・ベラ</b>（バルセロナ）：燻製パプリカの小さな缶。スペイン料理の香りの決め手</li>
-        <li><b>乾燥モリーユ茸か乾燥ポルチーニ</b>（パリかフィレンツェ）：軽くて香りが強い。ボキューズのクリームソースもリゾットもこれで</li>
-        <li><b>プラリーヌ・ローズ</b>（リヨン）：リヨンのタルト用。日本ではまず手に入らない</li>
-        <li><b>ゲランドの塩</b>（パリ）：仕上げの塩。小袋で十分</li>
-      </ol>
-      <p class="muted" style="margin:0;font-size:13px">オイル、酢、乾燥パスタ、パエリャ鍋、一般的な調理道具は、重いかかさばるうえ、日本でも通販や合羽橋で手に入るので後回しに。道具は「どうしても」の1つだけ（E. Dehillerin のこし器など）。</p>
-    </div>
-    <h4 style="margin:12px 0 8px">道具</h4>
-    <div class="tbl"><table class="wide">
-      <thead><tr><th>街</th><th>店・品</th><th>何を買うか</th><th>地図</th></tr></thead>
-      <tbody>
-        <tr><td data-label="街"><span class="flag f-fr"></span> パリ</td><td class="big" data-label="店・品">E. Dehillerin</td><td data-label="何を買うか">1820年創業のプロ用調理道具店。銅鍋、こし器（シノワ）、カヌレやタルトの型、木べら。ジュリア・チャイルドも通った</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=E.+Dehillerin+Paris">開く</a></td></tr>
-        <tr><td data-label="街"><span class="flag f-fr"></span> パリ</td><td class="big" data-label="店・品">A. Simon</td><td data-label="何を買うか">Dehillerin の近く。ソースパン、皿、製菓道具。店員が親切で見やすい</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=A.+Simon+Paris">開く</a></td></tr>
-        <tr><td data-label="街"><span class="flag f-fr"></span> リヨン</td><td class="big" data-label="店・品">ボキューズ本店のショップ</td><td data-label="何を買うか">ボキューズの料理書（『La cuisine du marché』英語版あり）、エプロン、銅製の小鍋</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Paul+Bocuse+Collonges-au-Mont-d%27Or">開く</a></td></tr>
-        <tr><td data-label="街"><span class="flag f-es"></span> バルセロナ</td><td class="big" data-label="店・品">Ganiveteria Roca</td><td data-label="何を買うか">1911年創業の刃物店（ピ広場）。料理用ナイフ、ハモン用ナイフ、はさみ</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Ganiveteria+Roca+Barcelona">開く</a></td></tr>
-        <tr><td data-label="街"><span class="flag f-es"></span> バルセロナ</td><td class="big" data-label="店・品">パエリャ鍋（paella）</td><td data-label="何を買うか">市場の金物屋や台所用品店で。2〜3人用は直径30〜34cm。カタルーニャ語ではパエリャ</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Mercat+de+Santa+Caterina+Barcelona">開く</a></td></tr>
-        <tr><td data-label="街"><span class="flag f-it"></span> フィレンツェ／ローマ</td><td class="big" data-label="店・品">パスタの道具</td><td data-label="何を買うか">キタッラ（四角い手打ちパスタの道具）、ラビオリの型、ニョッキ板、ビアレッティのモカポット</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">開く</a></td></tr>
-        <tr><td data-label="街"><span class="flag f-it"></span> ローマ</td><td class="big" data-label="店・品">c.u.c.i.n.a.</td><td data-label="何を買うか">おしゃれな台所用品店。パスタの道具やパルミジャーノ用ナイフ</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=c.u.c.i.n.a.+Roma">開く</a></td></tr>
-      </tbody>
-    </table></div>
-    <h4 style="margin:16px 0 8px">食材</h4>
-    <div class="tbl"><table class="wide">
-      <thead><tr><th>街</th><th>店・品</th><th>何を買うか</th><th>地図</th></tr></thead>
-      <tbody>
-        <tr><td data-label="街"><span class="flag f-fr"></span> パリ</td><td class="big" data-label="店・品">Maille（マドレーヌ広場）</td><td data-label="何を買うか">量り売りの生のマスタード、ワインビネガー</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Maille+Madeleine+Paris">開く</a></td></tr>
-        <tr><td data-label="街"><span class="flag f-fr"></span> パリ</td><td class="big" data-label="店・品">ラ・グランド・エピスリー</td><td data-label="何を買うか">ゲランドの塩（フルール・ド・セル）、乾燥モリーユ茸、エスペレットの唐辛子、エルブ・ド・プロヴァンス、ヴィネガー、オリーブオイル</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=La+Grande+%C3%89picerie+de+Paris+Rive+Gauche">開く</a></td></tr>
-        <tr><td data-label="街"><span class="flag f-fr"></span> リヨン</td><td class="big" data-label="店・品">ポール・ボキューズ市場</td><td data-label="何を買うか"><b>プラリーヌ・ローズ</b>（タルト・オ・プラリーヌ用のピンクのアーモンド。リヨン以外ではまず手に入らない）、乾燥きのこ</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Les+Halles+de+Lyon+Paul+Bocuse">開く</a></td></tr>
-        <tr><td data-label="街"><span class="flag f-es"></span> バルセロナ</td><td class="big" data-label="店・品">ボケリア市場／サンタ・カテリーナ市場</td><td data-label="何を買うか"><b>サフラン</b>（ラ・マンチャ産 DOP）、<b>ピメントン</b>（燻製パプリカ、ラ・ベラ産 DOP）、<b>パエリャ用の米</b>（ボンバ米）、シェリービネガー</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Boqueria+Barcelona">開く</a></td></tr>
-        <tr><td data-label="街"><span class="flag f-es"></span> バルセロナ</td><td class="big" data-label="店・品">缶詰の店</td><td data-label="何を買うか">アンチョビ、ムール貝、イワシなどの高級缶詰（コンセルバ）。軽くて日持ちし、お土産にも</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Conservas+Barcelona">開く</a></td></tr>
-        <tr><td data-label="街"><span class="flag f-es"></span> バルセロナ</td><td class="big" data-label="店・品">オリーブオイル</td><td data-label="何を買うか">カタルーニャのアルベキーナ種。まろやかで料理に使いやすい</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Boqueria+Barcelona">開く</a></td></tr>
-        <tr><td data-label="街"><span class="flag f-it"></span> フィレンツェ</td><td class="big" data-label="店・品">中央市場／サンタンブロージョ市場</td><td data-label="何を買うか">トスカーナのエキストラバージン・オリーブオイル、<b>乾燥ポルチーニ</b>、ファッロ（古代小麦）、トリュフのペーストや塩</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">開く</a></td></tr>
-        <tr><td data-label="街"><span class="flag f-it"></span> フィレンツェ</td><td class="big" data-label="店・品">パスタ</td><td data-label="何を買うか">ブロンズ型で押し出した乾燥パスタ（ソースがよく絡む）。グラニャーノ産やマルテッリなど</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">開く</a></td></tr>
-        <tr><td data-label="街"><span class="flag f-it"></span> ローマ</td><td class="big" data-label="店・品">Castroni</td><td data-label="何を買うか">1932年からの輸入食材店。バルサミコ酢（モデナ産）、ボッタルガ（からすみ）、コーヒー豆</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Castroni+Roma+Via+Cola+di+Rienzo">開く</a></td></tr>
-        <tr><td data-label="街"><span class="flag f-it"></span> フィレンツェ</td><td class="big" data-label="店・品">トリュフの加工品</td><td data-label="何を買うか"><b>トリュフはイタリアで</b>。12月初めのトスカーナは白トリュフの季節（サン・ミニアート産）。生のトリュフは1週間ほどしかもたないので食べるのは現地で、持ち帰りは瓶詰め（薄切りのカルパッチョ、ペースト、トリュフ塩）に。フランスの黒トリュフ製品はパリのマドレーヌ広場の Maison de la Truffe で</td><td data-label="地図"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">開く</a></td></tr>
-      </tbody>
-    </table></div>
-    <div class="column" style="margin-top:12px">
-      <div class="lab">TARTUFO</div>
-      <h4>白トリュフ（フィレンツェとピサのあたり）</h4>
-      <ul>
-        <li><b>産地はサン・ミニアート</b>：フィレンツェとピサのちょうど中間の丘の町。ピサへの地方線の San Miniato–Fucecchio 駅から、バスかタクシーで丘の上へ</li>
-        <li><b>白トリュフ市は 11/14–15、21–22、28–29 の週末だけ</b>。12/5 に着く今回は終わったあと。市以外は町の専門店で</li>
-        <li><b>フィレンツェで気軽に</b>：中央市場の <b>Savini Tartufi</b>（ピサ県の老舗トリュフ商の店）。トリュフ料理を手ごろに食べられ、瓶詰めも買える。生のトリュフは店で聞く</li>
-        <li><b>Procacci</b>（トルナブオーニ通り、12/8 の予定）：トリュフのパニーノの老舗。季節には生のトリュフも扱う</li>
-        <li><b>値段の目安</b>：その年の出来で大きく変わる。レストランで削ってもらうと1グラムあたり十数ユーロのこともある。買うなら「何グラムで、いくら」をその場で確認</li>
-        <li><b>生は持ち帰れない</b>：1週間ほどで香りが抜ける。宿で食べるならキッチンが要る。持ち帰りは瓶詰めやトリュフ塩に</li>
-      </ul>
-    </div>
-    <div class="column" style="margin-top:12px">
-      <div class="lab">FRENCH</div>
-      <h4>フレンチに絞るなら、少し重くても持ち帰る価値があるもの</h4>
-      <ul>
-        <li><b>銅のカヌレ型</b>（E. Dehillerin）：カヌレを焼くなら、本場の銅型。日本で買うよりずっと手に入れやすい</li>
-        <li><b>銅のソースパン 1つ</b>（E. Dehillerin、Mauviel 製など）：フランス料理のソース用。直径14〜16cm で約1kg。日本ではかなり高い</li>
-        <li><b>マスタード</b>（Maille）：量り売りの生のマスタードを陶器の壺で。ディジョン・マスタードの本物の味</li>
-        <li><b>ワインビネガー</b>：オルレアンの Martin Pouret など、昔ながらの製法のもの。ヴィネグレットとソースの味が変わる</li>
-        <li><b>くるみ油・ヘーゼルナッツ油</b>（Leblanc など）：フランスならではのナッツの油。サラダ・リヨネーズに</li>
-        <li><b>料理用ナイフ</b>（ラギオール、オピネル）：必ず預け荷物に</li>
-        <li><b>銅は錆びにくいが、色が変わる</b>：鉄のように赤く錆びることはないが、空気や水で黒っぽくくすみ、湿ったままだと緑青が出る。洗ったらすぐ拭いて乾かす。食洗機は不可</li>
-        <li><b>内側の加工で手入れが違う</b>：ソースパンは<b>内側がステンレス</b>のもの（Mauviel の M'Héritage など）が扱いやすい。内側が錫（すず）のものは、空焚きと金属のへらを避け、何年かに一度張り直す</li>
-        <li><b>カヌレ型</b>は内側が錫引き。使う前に蜜蝋とバターを塗る（カヌレの伝統の「白い蝋」）。洗剤でこすらず、拭いて乾かして保管</li>
-        <li>くすみはレモン汁と塩、または銅用のクリーナーで落ちる</li>
-      </ul>
-      <p class="muted" style="margin:0;font-size:13px">ストウブやル・クルーゼの鍋は日本でも同じくらいの値段で買えるので、持ち帰らなくてよい。</p>
-    </div>
-    <div class="column" style="margin-top:12px">
-      <div class="lab">CHECK</div>
-      <h4>持ち帰りの注意</h4>
-      <ul>
-        <li><b>肉製品は日本に持ち込めない</b>：ハモン、プロシュット、サラミ、グアンチャーレ、ソーセージ、フォアグラの缶詰も。お店の「日本へ持ち帰れます」の表示も、日本の検疫では通らないことが多い</li>
-        <li><b>チーズは国ごとに規則が違う</b>：持ち帰るなら固いもの（パルミジャーノなど）を真空パックで少しだけ。帰りはタイ経由で1月に日本なので、日持ちも考える</li>
-        <li><b>液体（オイル、酢、ワイン）は預け荷物へ</b>。緩衝袋で包み、スーツケースの真ん中に</li>
-        <li><b>刃物は必ず預け荷物</b>。機内持ち込みはできない</li>
-        <li><b>重い道具は日本へ送る手もある</b>：フランスの郵便局（La Poste）の Colissimo で</li>
-        <li><b>サフランや乾物は軽くて高価値</b>。迷ったら乾物を優先</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="block" id="bring">
-    <h3>持ち帰りのルール</h3>
-    <div class="grid2">
-      <div class="card">
-        <h4>機内には持ち込めない</h4>
-        <ul>
-          <li>ワイン、オイル、柔らかいチーズ、ジャムは液体扱い。100ml を超えるものは預け荷物へ</li>
-          <li>ワインは服で巻くか、専用の緩衝袋（wine skin）に入れてスーツケースの真ん中に</li>
-          <li>免税店で買った酒は封をした袋のまま。ドバイの乗継でも開けない</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h4>タイに入るとき</h4>
-        <ul>
-          <li>酒は1人1リットルまで免税（大人のみ）。ワインなら1本ちょっと</li>
-          <li>超える分は申告して課税。2人なら合計2リットルまで</li>
-          <li>チーズとハムは個人で食べる量なら一般的には問題ないが、肉製品は検疫の対象になりうるので量は控えめに</li>
-        </ul>
-      </div>
-    </div>
-    <p class="note">重いものを買う順番は「荷物と準備」の章の重量計画を参照。</p>
-  </div>
 </section>
-<!-- =================== CHAPTER 7: ART (FR · ES · IT) =================== -->
+<!-- =================== CHAPTER 8: ART (FR · ES · IT) =================== -->
 <section id="art" class="chapter art" data-chapter="art">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 7 · Art</div>
+    <div class="eyebrow">Chapter 8 · Art</div>
     <h2>美術館と名作 <span class="local">Louvre · Sagrada Família · Vaticano</span></h2>
     <p class="lead">行き先が決まっている美術館で、見ておきたい名作をまとめました。古代ギリシャ・ローマの彫刻から、ルネサンス、フランスの近代絵画、ガウディ、ピカソまで。旅の順番とは逆に、イタリアで生まれたものがフランスやスペインへ渡っていく流れも見えてきます。</p>
   </div>
@@ -4183,7 +4202,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="baby" class="chapter base" data-chapter="baby">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 8 · Traveling with a Baby</div>
+    <div class="eyebrow">Chapter 9 · Traveling with a Baby</div>
     <h2>赤ちゃん連れのコツ <span class="local">Yuzuhaと</span></h2>
     <p class="lead">Yuzuhaのリズムを予定の真ん中に置くのが、いちばんの成功のコツです。この本の日程は「午前に1つ、昼寝、夕方に1つ」の形でできています。</p>
   </div>
@@ -4305,7 +4324,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="safety" class="chapter base" data-chapter="safety">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 9 · Safety &amp; Emergency</div>
+    <div class="eyebrow">Chapter 10 · Safety &amp; Emergency</div>
     <h2>緊急・安全 <span class="local">困ったときはこのページ</span></h2>
   </div>
 
@@ -4843,7 +4862,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="prep" class="chapter base" data-chapter="prep">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 10 · Luggage, Money &amp; To-do</div>
+    <div class="eyebrow">Chapter 11 · Luggage, Money &amp; To-do</div>
     <h2>荷物・お金・準備 <span class="local">出発前に読むページ</span></h2>
   </div>
   <div class="subnav"><a href="#prep-bags">荷物の構成</a><a href="#prep-gym">ジム</a><a href="#prep-weight">重量の作戦</a><a href="#prep-weather">天気と服装</a><a href="#prep-pack">持ち物</a><a href="#prep-money">お金</a><a href="#prep-wise">Wise</a><a href="#prep-meals">食事のシナリオ</a><a href="#prep-todo">やること</a></div>
@@ -5357,7 +5376,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="next" class="chapter base" data-chapter="next">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 11 · Someday</div>
+    <div class="eyebrow">Chapter 12 · Someday</div>
     <h2>次回の旅の案 <span class="local">スイスとコモ湖</span></h2>
     <p class="lead">今回と重ならない土地で1週間。山の乗り物がすべて動く7月前後が向いています。チューリッヒに着いて、ミラノから帰る形です。</p>
   </div>
@@ -5380,7 +5399,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   <span>公館の番号の出典：外務省「在外公館リスト」、タイ外務省「List of Royal Thai Embassy contact point」。</span>
   <details id="changelog" style="margin-top:6px">
     <summary style="cursor:pointer;font-weight:700;color:var(--ink)">変更履歴</summary>
-    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/7</td><td>「美術館と名作」の章を新しく追加（ルーヴル、ロダン、オルセー、サグラダ・ファミリア、ピカソ美術館、ドゥカーレ宮殿、アカデミア、ウフィツィ、バチカン）。フランスの章の冒頭を、パリ4泊とリヨン2泊に合わせて修正</td></tr><tr><td class="d">11/6</td><td>アンネ・フランクの家を予約済みに（11/24 9:00〜9:15 の入場枠、3名）</td></tr><tr><td class="d">11/6</td><td>11/25 を調整：オペラ座とル・ムーリスは「要予約」に戻した。ロワイヤル通りの Ladurée は外から見るだけ。ルーヴルは 17:00 から（キッチン道具屋とプチバトーはオプションへ）。凱旋門はベビーカーを入口の係員に預ける</td></tr><tr><td class="d">11/6</td><td>パリの 11/24〜28 を組み直し。11/24 は夜のエッフェル塔・凱旋門・シャンゼリゼ、11/25 は朝のモンマルトル → オペラ座 → ル・ムーリス 13:45 → Som は夕方からディズニー、Ryo と Yuzuha はルーヴル、11/26 はヴェルサイユ → ナポレオンの墓 → ロダン → ボン・マルシェ → Josselin → 夜のノートルダム、11/27 はマレから1区、11/28 はパンテオンのあと TGV。外したものはすべて「オプション」の表へ。パリで食べる地方の味の表を追加。ディズニーの章を案 F（11/25 の夕方、Som 1人）に</td></tr><tr><td class="d">11/6</td><td>アムステルダムを1泊に。宿を art'otel（中央駅の正面）に、Eurostar を 11/24 13:10→16:40（18号車 85・86番）に変更。パリの宿は 11/24〜28 の4泊。11/24 の夕方パリ着の日と、11/25 の一日（カルチエ・ラタン → シテ島 → ル・ムーリスのお茶 → 3人でルーヴル夜間）を組み直し。風車村などはオプションへ。パリ→バルセロナの TGV は払い戻し済み</td></tr><tr><td class="d">11/6</td><td>11/26 に案 E（Ryo は午前パリ、オルセー → Le Relais de l'Entrecôte → オランジュリー → 凱旋門、16:00 にディズニーで合流）を追加。リヨンの日曜にベルナション本店を追加</td></tr><tr><td class="d">11/5</td><td>リヨンの日曜の午後をテット・ドール公園に絞り（リュミエール研究所は候補）、月曜の午前にクロワ・ルースの丘の散歩を追加。土曜の夜のフルヴィエールの夜景はそのまま</td></tr><tr><td class="d">11/5</td><td>料理の章に「スペインの地方と食」「イタリアの地方と食」を追加（フランスと同じく方角ごと、都市名と今回の旅つき）</td></tr><tr><td class="d">11/5</td><td>料理の章に、白トリュフ（サン・ミニアート、Savini Tartufi、Procacci、値段と持ち帰りの注意）と、銅の鍋・カヌレ型の手入れを追加。ボキューズの章に本店で残す記念を追加</td></tr><tr><td class="d">11/5</td><td>料理の章に「料理を始めるための買い物」を追加（これだけは外さない5つ、街ごとの道具と食材の店、持ち帰りの注意）</td></tr><tr><td class="d">11/5</td><td>料理の章に「デザートと甘いもの」（サロン・ド・テなど店の種類、街ごとの名物と名店）と「訪れる街のチーズ」（リヨンのサン・マルスランなど）を追加。フランスの地方を北・西・東・中央・南東・南西に分けて都市名つきに。巨匠ゆかりの名店を、店ごとの説明と楽しみ方つきのカードに</td></tr><tr><td class="d">11/5</td><td>11/26 を別行動の前提で整理（Ryo はディズニーに行かない）。4つの案と、Ryo と Yuzuha のパリ、Ryo 1人のパリの流れをディズニーの章に。料理の章の並びをフランス → スペイン → イタリア（旅の順）に</td></tr><tr><td class="d">11/5</td><td>「チーズとワイン」の章を「料理の教科書」に作り直し、フランス・イタリア・スペインに絞った（歴史、影響し合った関係、巨匠、名店と地図、店の格式、食事の流れ、3か国のマナー、フランスの地方と食）。各国の章の「食べる・飲む」とテーブルマナーもここへ移動</td></tr><tr><td class="d">11/4</td><td>ルート図の色を国ごとに統一（オランダはオレンジ、フランスは青、スペインは赤、イタリアは緑、飛行機とドバイはグレー）。日程表の都市すべてに国旗</td></tr><tr><td class="d">11/4</td><td>ボキューズの章「赤ちゃん連れ」に、本店の予約係からの返信（原文と訳）を、フランス料理のサービスの一例として追加</td></tr><tr><td class="d">11/4</td><td>AVE INT 09742（11/30 リヨン 14:35 → バルセロナ 19:23）を予約。リヨンの月曜の昼を自由時間に、バルセロナ初日は夜の到着に合わせて組み直し（グラシア通りの散歩は候補に）。Apple Wallet に入らない注意を追加</td></tr><tr><td class="d">11/4</td><td>TGV INOUI 6619（11/28 15:00 → 16:56、1等）を予約。パリの 11/28 を組み直し（朝市とモンマルトル → 13:45 に駅へ）。午後の予定は候補として残す</td></tr><tr><td class="d">11/4</td><td>リヨンの宿（Mercure パールデュー、2泊）と、11/28 夜のブション Daniel et Denise Saint-Jean（19:00）を予約。11/28 の夜は食後にケーブルカーでフルヴィエールの丘の夜景へ。11/29 の午後は公園か博物館を1つと昼寝に</td></tr><tr><td class="d">11/4</td><td>お土産を誰に何を買うかの記載と「お土産の作戦」を削除。ボキューズの章に、EY の上司の話と Yuzuha へのメッセージを追加</td></tr><tr><td class="d">11/4</td><td>リヨン経由に変更（11/28 夕方にパリ → リヨン、2泊、11/30 にバルセロナへ）。日程表、予約一覧、移動一覧、ルート図を更新し、リヨンの3日間をボキューズの章に。パリの 11/29 の予定は候補として残す</td></tr><tr><td class="d">11/4</td><td>ポール・ボキューズ本店（11/29 20:15）を予約。ディズニーと同じ形で「ボキューズ」の章を追加（予約、行き方、当日の流れ、秋のメニュー、名物料理、赤ちゃん連れ、歴史、お土産）</td></tr><tr><td class="d">11/3</td><td>ピサを 12/7（月）の午後に移動（地方線で日帰り）。12/8 はフィレンツェの朝を楽しんで、昼食後の列車でローマへ</td></tr><tr><td class="d">11/3</td><td>12/5 の Frecciarossa 9415（11:26 → 13:39、Business）を予約。ヴェネツィアの朝に散歩を入れ、フィレンツェ初日はアカデミアを 15:15 に、ミケランジェロ広場の夕日は 12/6 に移動。英語版を追加</td></tr><tr><td class="d">11/3</td><td>Eurostar（11/25 09:10 → 12:37）を予約。アムステルダムの朝と、パリの初日の時間割を合わせて調整</td></tr><tr><td class="d">11/2</td><td>予約番号（エミレーツ、Booking の宿）と保険の証券番号をしおりから削除（第三者が予約を操作できないように）</td></tr><tr><td class="d">11/2</td><td>ドバイ：街に出ることに決定。Som はエミレーツ経由で48時間の乗継ビザ（手順をドバイの章に）</td></tr><tr><td class="d">10/25</td><td>持ち物チェックを、いつもの持ち物リストから今回の旅用に作り直し（入れるバッグの札つき）</td></tr><tr><td class="d">10/25</td><td>日本語版からタイ語の併記（見出しの小さい字、会話の表のタイ語の列など）を外した。タイ語はタイ語版に</td></tr><tr><td class="d">10/25</td><td>デザインを3つから選べるように（右下のパレットのボタンを押すと開く）：Som（明るい紙＋各国の線画、標準）、Yuzuha（ポップ）、Ryo（ダーク）。URL に ?theme=som / yuzuha / ryo でも指定できる</td></tr><tr><td class="d">10/25</td><td>保険は Chubb とヒルトン・アメックス・プレミアムの2本に整理。困ったときの連絡ステップ（場面別）と連絡先一覧を追加</td></tr><tr><td class="d">10/25</td><td>宿6軒の予約票を反映（時間、無料取消の期限、部屋）。アメックスの補償を規定で確認（持ち物の盗難は補償なし）。Anytime Fitness の節を追加</td></tr><tr><td class="d">10/25</td><td>保険の節を追加（Chubb の証券の内容、アメックスとの分担、請求のルール）</td></tr><tr><td class="d">10/25</td><td>荷物の構成と動かし方（場面ごとの対策）を追加。エミレーツの預け荷物と座席を eチケットで確認。持ち物・やることを更新。この変更履歴を追加</td></tr><tr><td class="d">10/18</td><td>各国の「予習の映画」を追加</td></tr><tr><td class="d">10/18</td><td>往路のドバイ乗継（3時間15分）を日程とルート図に追加</td></tr><tr><td class="d">10/18</td><td>言語の切り替えを画面の右下に固定（同じ場所のまま日本語・タイ語を切り替え）</td></tr><tr><td class="d">10/18</td><td>Google マップのお気に入りリスト（タイプ別、タイ語名つき）と、ホテル・主要な場所の地図リンクを追加。ルート図に帰路のドバイ17時間乗継</td></tr><tr><td class="d">10/18</td><td>パリの宿を Libertel Austerlitz に変更し、宿6軒を確定に</td></tr><tr><td class="d">10/18</td><td>GitHub 版を公開。iPhone 向けに文字を大きく、横長の表は横スクロールに。?lang=th でタイ語から開く</td></tr><tr><td class="d">10/17ごろ</td><td>全体の見直し（Yuzuha は旅行時に生後10か月、往路は01:05発、保険料を削除）。日本語・タイ語の2言語版に</td></tr><tr><td class="d">10/17ごろ</td><td>デモ・ストライキの日の動き方、スリ対策（場面別のシナリオ）、フランスのテーブルマナーのコラムを追加</td></tr><tr><td class="d">10/16ごろ</td><td>ディズニーランド・パリのチケット購入を反映。「ディズニーとフランス」、ヴェルサイユの入場時刻、日の出・日の入りの表を追加</td></tr><tr><td class="d">10/15</td><td>初版</td></tr></tbody></table></div>
+    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/7</td><td>目次を「目次」ボタンで開く形に（都市ごと、ディズニーとボキューズは都市の下）。チーズとワインを料理の章から独立させて「読みもの」へ。スマホでは4列以上の表を縦並びに。表紙を5か国に</td></tr><tr><td class="d">11/7</td><td>「美術館と名作」の章を新しく追加（ルーヴル、ロダン、オルセー、サグラダ・ファミリア、ピカソ美術館、ドゥカーレ宮殿、アカデミア、ウフィツィ、バチカン）。フランスの章の冒頭を、パリ4泊とリヨン2泊に合わせて修正</td></tr><tr><td class="d">11/6</td><td>アンネ・フランクの家を予約済みに（11/24 9:00〜9:15 の入場枠、3名）</td></tr><tr><td class="d">11/6</td><td>11/25 を調整：オペラ座とル・ムーリスは「要予約」に戻した。ロワイヤル通りの Ladurée は外から見るだけ。ルーヴルは 17:00 から（キッチン道具屋とプチバトーはオプションへ）。凱旋門はベビーカーを入口の係員に預ける</td></tr><tr><td class="d">11/6</td><td>パリの 11/24〜28 を組み直し。11/24 は夜のエッフェル塔・凱旋門・シャンゼリゼ、11/25 は朝のモンマルトル → オペラ座 → ル・ムーリス 13:45 → Som は夕方からディズニー、Ryo と Yuzuha はルーヴル、11/26 はヴェルサイユ → ナポレオンの墓 → ロダン → ボン・マルシェ → Josselin → 夜のノートルダム、11/27 はマレから1区、11/28 はパンテオンのあと TGV。外したものはすべて「オプション」の表へ。パリで食べる地方の味の表を追加。ディズニーの章を案 F（11/25 の夕方、Som 1人）に</td></tr><tr><td class="d">11/6</td><td>アムステルダムを1泊に。宿を art'otel（中央駅の正面）に、Eurostar を 11/24 13:10→16:40（18号車 85・86番）に変更。パリの宿は 11/24〜28 の4泊。11/24 の夕方パリ着の日と、11/25 の一日（カルチエ・ラタン → シテ島 → ル・ムーリスのお茶 → 3人でルーヴル夜間）を組み直し。風車村などはオプションへ。パリ→バルセロナの TGV は払い戻し済み</td></tr><tr><td class="d">11/6</td><td>11/26 に案 E（Ryo は午前パリ、オルセー → Le Relais de l'Entrecôte → オランジュリー → 凱旋門、16:00 にディズニーで合流）を追加。リヨンの日曜にベルナション本店を追加</td></tr><tr><td class="d">11/5</td><td>リヨンの日曜の午後をテット・ドール公園に絞り（リュミエール研究所は候補）、月曜の午前にクロワ・ルースの丘の散歩を追加。土曜の夜のフルヴィエールの夜景はそのまま</td></tr><tr><td class="d">11/5</td><td>料理の章に「スペインの地方と食」「イタリアの地方と食」を追加（フランスと同じく方角ごと、都市名と今回の旅つき）</td></tr><tr><td class="d">11/5</td><td>料理の章に、白トリュフ（サン・ミニアート、Savini Tartufi、Procacci、値段と持ち帰りの注意）と、銅の鍋・カヌレ型の手入れを追加。ボキューズの章に本店で残す記念を追加</td></tr><tr><td class="d">11/5</td><td>料理の章に「料理を始めるための買い物」を追加（これだけは外さない5つ、街ごとの道具と食材の店、持ち帰りの注意）</td></tr><tr><td class="d">11/5</td><td>料理の章に「デザートと甘いもの」（サロン・ド・テなど店の種類、街ごとの名物と名店）と「訪れる街のチーズ」（リヨンのサン・マルスランなど）を追加。フランスの地方を北・西・東・中央・南東・南西に分けて都市名つきに。巨匠ゆかりの名店を、店ごとの説明と楽しみ方つきのカードに</td></tr><tr><td class="d">11/5</td><td>11/26 を別行動の前提で整理（Ryo はディズニーに行かない）。4つの案と、Ryo と Yuzuha のパリ、Ryo 1人のパリの流れをディズニーの章に。料理の章の並びをフランス → スペイン → イタリア（旅の順）に</td></tr><tr><td class="d">11/5</td><td>「チーズとワイン」の章を「料理の教科書」に作り直し、フランス・イタリア・スペインに絞った（歴史、影響し合った関係、巨匠、名店と地図、店の格式、食事の流れ、3か国のマナー、フランスの地方と食）。各国の章の「食べる・飲む」とテーブルマナーもここへ移動</td></tr><tr><td class="d">11/4</td><td>ルート図の色を国ごとに統一（オランダはオレンジ、フランスは青、スペインは赤、イタリアは緑、飛行機とドバイはグレー）。日程表の都市すべてに国旗</td></tr><tr><td class="d">11/4</td><td>ボキューズの章「赤ちゃん連れ」に、本店の予約係からの返信（原文と訳）を、フランス料理のサービスの一例として追加</td></tr><tr><td class="d">11/4</td><td>AVE INT 09742（11/30 リヨン 14:35 → バルセロナ 19:23）を予約。リヨンの月曜の昼を自由時間に、バルセロナ初日は夜の到着に合わせて組み直し（グラシア通りの散歩は候補に）。Apple Wallet に入らない注意を追加</td></tr><tr><td class="d">11/4</td><td>TGV INOUI 6619（11/28 15:00 → 16:56、1等）を予約。パリの 11/28 を組み直し（朝市とモンマルトル → 13:45 に駅へ）。午後の予定は候補として残す</td></tr><tr><td class="d">11/4</td><td>リヨンの宿（Mercure パールデュー、2泊）と、11/28 夜のブション Daniel et Denise Saint-Jean（19:00）を予約。11/28 の夜は食後にケーブルカーでフルヴィエールの丘の夜景へ。11/29 の午後は公園か博物館を1つと昼寝に</td></tr><tr><td class="d">11/4</td><td>お土産を誰に何を買うかの記載と「お土産の作戦」を削除。ボキューズの章に、EY の上司の話と Yuzuha へのメッセージを追加</td></tr><tr><td class="d">11/4</td><td>リヨン経由に変更（11/28 夕方にパリ → リヨン、2泊、11/30 にバルセロナへ）。日程表、予約一覧、移動一覧、ルート図を更新し、リヨンの3日間をボキューズの章に。パリの 11/29 の予定は候補として残す</td></tr><tr><td class="d">11/4</td><td>ポール・ボキューズ本店（11/29 20:15）を予約。ディズニーと同じ形で「ボキューズ」の章を追加（予約、行き方、当日の流れ、秋のメニュー、名物料理、赤ちゃん連れ、歴史、お土産）</td></tr><tr><td class="d">11/3</td><td>ピサを 12/7（月）の午後に移動（地方線で日帰り）。12/8 はフィレンツェの朝を楽しんで、昼食後の列車でローマへ</td></tr><tr><td class="d">11/3</td><td>12/5 の Frecciarossa 9415（11:26 → 13:39、Business）を予約。ヴェネツィアの朝に散歩を入れ、フィレンツェ初日はアカデミアを 15:15 に、ミケランジェロ広場の夕日は 12/6 に移動。英語版を追加</td></tr><tr><td class="d">11/3</td><td>Eurostar（11/25 09:10 → 12:37）を予約。アムステルダムの朝と、パリの初日の時間割を合わせて調整</td></tr><tr><td class="d">11/2</td><td>予約番号（エミレーツ、Booking の宿）と保険の証券番号をしおりから削除（第三者が予約を操作できないように）</td></tr><tr><td class="d">11/2</td><td>ドバイ：街に出ることに決定。Som はエミレーツ経由で48時間の乗継ビザ（手順をドバイの章に）</td></tr><tr><td class="d">10/25</td><td>持ち物チェックを、いつもの持ち物リストから今回の旅用に作り直し（入れるバッグの札つき）</td></tr><tr><td class="d">10/25</td><td>日本語版からタイ語の併記（見出しの小さい字、会話の表のタイ語の列など）を外した。タイ語はタイ語版に</td></tr><tr><td class="d">10/25</td><td>デザインを3つから選べるように（右下のパレットのボタンを押すと開く）：Som（明るい紙＋各国の線画、標準）、Yuzuha（ポップ）、Ryo（ダーク）。URL に ?theme=som / yuzuha / ryo でも指定できる</td></tr><tr><td class="d">10/25</td><td>保険は Chubb とヒルトン・アメックス・プレミアムの2本に整理。困ったときの連絡ステップ（場面別）と連絡先一覧を追加</td></tr><tr><td class="d">10/25</td><td>宿6軒の予約票を反映（時間、無料取消の期限、部屋）。アメックスの補償を規定で確認（持ち物の盗難は補償なし）。Anytime Fitness の節を追加</td></tr><tr><td class="d">10/25</td><td>保険の節を追加（Chubb の証券の内容、アメックスとの分担、請求のルール）</td></tr><tr><td class="d">10/25</td><td>荷物の構成と動かし方（場面ごとの対策）を追加。エミレーツの預け荷物と座席を eチケットで確認。持ち物・やることを更新。この変更履歴を追加</td></tr><tr><td class="d">10/18</td><td>各国の「予習の映画」を追加</td></tr><tr><td class="d">10/18</td><td>往路のドバイ乗継（3時間15分）を日程とルート図に追加</td></tr><tr><td class="d">10/18</td><td>言語の切り替えを画面の右下に固定（同じ場所のまま日本語・タイ語を切り替え）</td></tr><tr><td class="d">10/18</td><td>Google マップのお気に入りリスト（タイプ別、タイ語名つき）と、ホテル・主要な場所の地図リンクを追加。ルート図に帰路のドバイ17時間乗継</td></tr><tr><td class="d">10/18</td><td>パリの宿を Libertel Austerlitz に変更し、宿6軒を確定に</td></tr><tr><td class="d">10/18</td><td>GitHub 版を公開。iPhone 向けに文字を大きく、横長の表は横スクロールに。?lang=th でタイ語から開く</td></tr><tr><td class="d">10/17ごろ</td><td>全体の見直し（Yuzuha は旅行時に生後10か月、往路は01:05発、保険料を削除）。日本語・タイ語の2言語版に</td></tr><tr><td class="d">10/17ごろ</td><td>デモ・ストライキの日の動き方、スリ対策（場面別のシナリオ）、フランスのテーブルマナーのコラムを追加</td></tr><tr><td class="d">10/16ごろ</td><td>ディズニーランド・パリのチケット購入を反映。「ディズニーとフランス」、ヴェルサイユの入場時刻、日の出・日の入りの表を追加</td></tr><tr><td class="d">10/15</td><td>初版</td></tr></tbody></table></div>
   </details>
 </footer>
 
@@ -5421,26 +5440,30 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   </div>
   <div class="toc-panel" id="toc-panel" hidden>
     <div class="toc-paper">
-      <div class="toc-title"><span>Our Own Guidebook</span><b>สารบัญ</b><button type="button" class="toc-close" aria-label="ปิด">×</button></div>
-      <div class="toc-group"><h5><span>เส้นทางการเดินทาง</span><small>Itinerary</small></h5><ol>
-        <li><a href="#plan" data-ch="plan"><span class="no">00</span><span class="nm">เริ่มต้น</span><span class="dot" aria-hidden="true"></span><span class="dt">แผนทั้งหมดและการจอง</span></a></li>
-        <li><a href="#nl" data-ch="nl"><span class="no">01</span><span class="nm"><span class="flag f-nl"></span>เนเธอร์แลนด์</span><span class="dot" aria-hidden="true"></span><span class="dt">23–24 พ.ย. · อัมสเตอร์ดัม</span></a></li>
-        <li><a href="#fr" data-ch="fr"><span class="no">02</span><span class="nm"><span class="flag f-fr"></span>ฝรั่งเศส</span><span class="dot" aria-hidden="true"></span><span class="dt">24–28 พ.ย. · ปารีส</span></a></li>
-        <li><a href="#dlp" data-ch="dlp"><span class="no">SP</span><span class="nm">ดิสนีย์</span><span class="dot" aria-hidden="true"></span><span class="dt">เย็น 25 พ.ย. · Som</span></a></li>
-        <li><a href="#bocuse" data-ch="bocuse"><span class="no">SP</span><span class="nm">ลียง・โบกุส</span><span class="dot" aria-hidden="true"></span><span class="dt">28–30 พ.ย. · ลียง</span></a></li>
-        <li><a href="#es" data-ch="es"><span class="no">03</span><span class="nm"><span class="flag f-es"></span>สเปน</span><span class="dot" aria-hidden="true"></span><span class="dt">30 พ.ย.–3 ธ.ค. · บาร์เซโลนา</span></a></li>
-        <li><a href="#it" data-ch="it"><span class="no">04</span><span class="nm"><span class="flag f-it"></span>อิตาลี</span><span class="dot" aria-hidden="true"></span><span class="dt">3–11 ธ.ค. · เวนิส ฟลอเรนซ์ โรม</span></a></li>
-        <li><a href="#ae" data-ch="ae"><span class="no">05</span><span class="nm"><span class="flag f-ae"></span>ดูไบ</span><span class="dot" aria-hidden="true"></span><span class="dt">12 ธ.ค. · ต่อเครื่อง</span></a></li>
+      <div class="toc-title"><b>สารบัญ</b><span>Our Own Guidebook</span><button type="button" class="toc-close" aria-label="ปิด">×</button></div>
+      <div class="toc-group"><h5><span>เส้นทาง</span><small>Itinerary</small></h5><ol>
+        <li><a href="#plan" data-ch="plan" data-now="เริ่มต้น"><span class="no">00</span><span class="nm">เริ่มต้น</span><span class="dot" aria-hidden="true"></span><span class="dt">แผนและการจอง</span></a></li>
+        <li><a href="#nl" data-ch="nl" data-now="อัมสเตอร์ดัม"><span class="no">01</span><span class="nm"><span class="flag f-nl"></span>อัมสเตอร์ดัม</span><span class="dot" aria-hidden="true"></span><span class="dt">23–24 พ.ย.</span></a></li>
+        <li><a href="#fr" data-ch="fr" data-now="ปารีส"><span class="no">02</span><span class="nm"><span class="flag f-fr"></span>ปารีส</span><span class="dot" aria-hidden="true"></span><span class="dt">24–28 พ.ย.</span></a></li>
+        <li class="sub"><a href="#dlp" data-ch="dlp" data-now="ดิสนีย์"><span class="no"></span><span class="nm">ดิสนีย์แลนด์ปารีส</span><span class="dot" aria-hidden="true"></span><span class="dt">เย็น 25 พ.ย.</span></a></li>
+        <li><a href="#bocuse" data-ch="bocuse" data-now="ลียง"><span class="no">02</span><span class="nm"><span class="flag f-fr"></span>ลียง</span><span class="dot" aria-hidden="true"></span><span class="dt">28–30 พ.ย.</span></a></li>
+        <li class="sub"><a href="#bcs-basic" data-ch="bocuse" data-now="ลียง"><span class="no"></span><span class="nm">ร้านปอล โบกุส</span><span class="dot" aria-hidden="true"></span><span class="dt">29 พ.ย.</span></a></li>
+        <li><a href="#es" data-ch="es" data-now="บาร์เซโลนา"><span class="no">03</span><span class="nm"><span class="flag f-es"></span>บาร์เซโลนา</span><span class="dot" aria-hidden="true"></span><span class="dt">30 พ.ย.–3 ธ.ค.</span></a></li>
+        <li><a href="#it" data-ch="it" data-now="อิตาลี"><span class="no">04</span><span class="nm"><span class="flag f-it"></span>เวนิส</span><span class="dot" aria-hidden="true"></span><span class="dt">3–5 ธ.ค.</span></a></li>
+        <li><a href="#flr" data-ch="it" data-now="อิตาลี"><span class="no">04</span><span class="nm"><span class="flag f-it"></span>ฟลอเรนซ์</span><span class="dot" aria-hidden="true"></span><span class="dt">5–8 ธ.ค.</span></a></li>
+        <li><a href="#rom" data-ch="it" data-now="อิตาลี"><span class="no">04</span><span class="nm"><span class="flag f-it"></span>โรม</span><span class="dot" aria-hidden="true"></span><span class="dt">8–11 ธ.ค.</span></a></li>
+        <li><a href="#ae" data-ch="ae" data-now="ดูไบ"><span class="no">05</span><span class="nm"><span class="flag f-ae"></span>ดูไบ</span><span class="dot" aria-hidden="true"></span><span class="dt">12 ธ.ค. ต่อเครื่อง</span></a></li>
       </ol></div>
       <div class="toc-group"><h5><span>บทอ่าน</span><small>Reading</small></h5><ol>
-        <li><a href="#food" data-ch="food"><span class="no">06</span><span class="nm">ตำราอาหาร</span><span class="dot" aria-hidden="true"></span><span class="dt">ฝรั่งเศส สเปน อิตาลี</span></a></li>
-        <li><a href="#art" data-ch="art"><span class="no">07</span><span class="nm">พิพิธภัณฑ์และงานชิ้นเอก</span><span class="dot" aria-hidden="true"></span><span class="dt">ตั้งแต่ลูฟวร์ถึงวาติกัน</span></a></li>
+        <li><a href="#food" data-ch="food" data-now="อาหาร"><span class="no">06</span><span class="nm">ตำราอาหาร</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#cw" data-ch="cw" data-now="ชีสและไวน์"><span class="no">07</span><span class="nm">ชีสและไวน์</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#art" data-ch="art" data-now="ศิลปะ"><span class="no">08</span><span class="nm">พิพิธภัณฑ์และงานชิ้นเอก</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
       </ol></div>
-      <div class="toc-group"><h5><span>ตัวช่วยระหว่างทาง</span><small>Support</small></h5><ol>
-        <li><a href="#baby" data-ch="baby"><span class="no">08</span><span class="nm">เที่ยวกับลูกน้อย</span><span class="dot" aria-hidden="true"></span><span class="dt">นม ผ้าอ้อม การเดินทาง</span></a></li>
-        <li><a href="#safety" data-ch="safety"><span class="no">09</span><span class="nm">ฉุกเฉิน・ความปลอดภัย</span><span class="dot" aria-hidden="true"></span><span class="dt">โรงพยาบาล ของหาย ประกัน</span></a></li>
-        <li><a href="#prep" data-ch="prep"><span class="no">10</span><span class="nm">กระเป๋า・เงิน・เตรียมตัว</span><span class="dot" aria-hidden="true"></span><span class="dt">ของที่ต้องเอาไปและรายการที่ต้องทำ</span></a></li>
-        <li><a href="#next" data-ch="next"><span class="no">11</span><span class="nm">ทริปหน้า</span><span class="dot" aria-hidden="true"></span><span class="dt">ที่อยากไปสักวัน</span></a></li>
+      <div class="toc-group"><h5><span>ตัวช่วย</span><small>Support</small></h5><ol>
+        <li><a href="#baby" data-ch="baby" data-now="เที่ยวกับลูกน้อย"><span class="no">09</span><span class="nm">เที่ยวกับลูกน้อย</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#safety" data-ch="safety" data-now="ฉุกเฉิน"><span class="no">10</span><span class="nm">ฉุกเฉิน・ความปลอดภัย</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#prep" data-ch="prep" data-now="เตรียมตัว"><span class="no">11</span><span class="nm">กระเป๋า・เงิน・เตรียมตัว</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#next" data-ch="next" data-now="ทริปหน้า"><span class="no">12</span><span class="nm">ทริปหน้า</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
       </ol></div>
     </div>
   </div>
@@ -8205,9 +8228,9 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <div class="eyebrow">Chapter 6 · Food</div>
     <h2>ตำราอาหาร <span class="local">Cuisine · Cocina · Cucina</span></h2>
     <div class="th">料理の教科書</div>
-    <p class="lead">ฝรั่งเศส สเปน อิตาลี อาหารของสามประเทศเพื่อนบ้านนี้ส่งอิทธิพลถึงกันมาหลายร้อยปีจนเป็นอย่างทุกวันนี้ บทนี้รวมทั้งประวัติศาสตร์ เชฟระดับตำนานและร้านดัง ระดับของร้าน ลำดับมื้ออาหาร มารยาท อาหารขึ้นชื่อ ชีสและไวน์ ไว้ในที่เดียว</p>
+    <p class="lead">ฝรั่งเศส สเปน อิตาลี อาหารของสามประเทศเพื่อนบ้านนี้ส่งอิทธิพลถึงกันมาหลายร้อยปีจนเป็นอย่างทุกวันนี้ บทนี้รวมทั้งประวัติศาสตร์ เชฟระดับตำนานและร้านดัง ระดับของร้าน ลำดับมื้ออาหาร มารยาท อาหารขึ้นชื่อ และการช็อปปิ้ง ไว้ในที่เดียว ส่วนชีสและไวน์แยกไปบทถัดไป</p>
   </div>
-  <div class="subnav"><a href="#food-flow">ประวัติศาสตร์</a><a href="#food-ties">อิทธิพลต่อกัน</a><a href="#food-masters">เชฟระดับตำนาน</a><a href="#food-places">ร้านดัง</a><a href="#food-types">ระดับของร้าน</a><a href="#food-course">ลำดับมื้ออาหาร</a><a href="#food-manners">มารยาท</a><a href="#fr-regions">ภูมิภาคฝรั่งเศส</a><a href="#es-regions">ภูมิภาคสเปน</a><a href="#it-regions">ภูมิภาคอิตาลี</a><a href="#fr-food">ของขึ้นชื่อ (ฝรั่งเศส)</a><a href="#es-food">ของขึ้นชื่อ (สเปน)</a><a href="#it-food">ของขึ้นชื่อ (อิตาลี)</a><a href="#food-sweets">ของหวาน</a><a href="#cheese-basic">ชีส</a><a href="#cheese-city">ชีสของแต่ละเมือง</a><a href="#wine-basic">ไวน์</a><a href="#food-shop">ของที่ควรซื้อ</a><a href="#bring">นำกลับบ้าน</a></div>
+  <div class="subnav"><a href="#food-flow">ประวัติศาสตร์</a><a href="#food-ties">อิทธิพลต่อกัน</a><a href="#food-masters">เชฟระดับตำนาน</a><a href="#food-places">ร้านดัง</a><a href="#food-types">ระดับของร้าน</a><a href="#food-course">ลำดับมื้ออาหาร</a><a href="#food-manners">มารยาท</a><a href="#fr-regions">ภูมิภาคฝรั่งเศส</a><a href="#es-regions">ภูมิภาคสเปน</a><a href="#it-regions">ภูมิภาคอิตาลี</a><a href="#fr-food">ของขึ้นชื่อ (ฝรั่งเศส)</a><a href="#es-food">ของขึ้นชื่อ (สเปน)</a><a href="#it-food">ของขึ้นชื่อ (อิตาลี)</a><a href="#food-sweets">ของหวาน</a><a href="#cw">ชีสและไวน์ (บทแยก)</a><a href="#food-shop">ของที่ควรซื้อ</a><a href="#bring">นำกลับบ้าน</a></div>
 
   <div class="block" id="food-flow">
     <h3>ประวัติศาสตร์อาหารของสามประเทศ <small>History</small></h3>
@@ -8679,6 +8702,127 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <p class="memo"><span class="who">FOR THE BABY</span>สำหรับ Yuzuha เลี่ยงขนมที่ใส่ครีมหรือไข่เยอะ น้ำผึ้ง (ห้ามก่อน 1 ขวบ) และถั่วทั้งเม็ด เจลาโตแค่เลียนิดเดียวก็ยังควรระวัง</p>
   </div>
 
+  <div class="block" id="food-shop">
+    <h3>ของที่ควรซื้อเพื่อเริ่มทำอาหาร <small>Kitchen shopping</small></h3>
+    <p class="note">อุปกรณ์และวัตถุดิบที่ควรซื้อระหว่างทาง ไว้ทำอาหารฝรั่งเศส สเปน และอิตาลีเมื่อกลับบ้าน <b>ของหนักซื้อช่วงท้ายทริปจะไม่หนักกระเป๋านาน</b> ที่ปารีสซื้อเฉพาะของที่อยากได้จริง ๆ</p>
+    <div class="column" style="margin:4px 0 12px">
+      <div class="lab">MUST</div>
+      <h4>5 อย่างที่ไม่ควรพลาด (รวมราว 1 กก.)</h4>
+      <ol>
+        <li><b>หญ้าฝรั่น</b> (บาร์เซโลนา)：ไม่กี่กรัม เบา ถูกกว่าและคุณภาพดีกว่าที่ญี่ปุ่นมาก ใช้ทำปาเอยา บุยยาเบส และริซอตโต</li>
+        <li><b>ปิเมนตอน เด ลา เบรา</b> (บาร์เซโลนา)：ปาปริการมควันกระป๋องเล็ก กลิ่นหัวใจของอาหารสเปน</li>
+        <li><b>เห็ดมอแรลแห้งหรือเห็ดปอร์ชีนีแห้ง</b> (ปารีสหรือฟลอเรนซ์)：เบาและหอมมาก ใช้ทำซอสครีมแบบโบกุสหรือริซอตโต</li>
+        <li><b>ปราลีนสีชมพู</b> (ลียง)：ไว้ทำทาร์ตของลียง แทบหาไม่ได้ในญี่ปุ่น</li>
+        <li><b>เกลือเกร็งด์</b> (ปารีส)：เกลือโรยหน้า ถุงเล็กก็พอ</li>
+      </ol>
+      <p class="muted" style="margin:0;font-size:13px">น้ำมัน น้ำส้มสายชู พาสต้าแห้ง กระทะปาเอยา และอุปกรณ์ครัวทั่วไป หนักหรือเปลืองที่ และหาซื้อออนไลน์หรือที่คัปปาบาชิในญี่ปุ่นได้ จึงไว้ทีหลัง อุปกรณ์ซื้อแค่ชิ้นเดียวที่อยากได้จริง ๆ (เช่นกระชอนจาก E. Dehillerin)</p>
+    </div>
+    <h4 style="margin:12px 0 8px">อุปกรณ์</h4>
+    <div class="tbl"><table class="wide">
+      <thead><tr><th>เมือง</th><th>ร้าน・ของ</th><th>ซื้ออะไร</th><th>แผนที่</th></tr></thead>
+      <tbody>
+        <tr><td data-label="เมือง"><span class="flag f-fr"></span> ปารีส</td><td class="big" data-label="ร้าน・ของ">E. Dehillerin</td><td data-label="ซื้ออะไร">ร้านอุปกรณ์ครัวมืออาชีพตั้งแต่ปี 1820 หม้อทองแดง กระชอน (ชีนัว) พิมพ์คาเนเลและทาร์ต ไม้พาย จูเลีย ไชลด์ก็เคยมาที่นี่</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=E.+Dehillerin+Paris">เปิด</a></td></tr>
+        <tr><td data-label="เมือง"><span class="flag f-fr"></span> ปารีส</td><td class="big" data-label="ร้าน・ของ">A. Simon</td><td data-label="ซื้ออะไร">ใกล้ Dehillerin หม้อซอส จาน อุปกรณ์ทำขนม พนักงานใจดี เดินดูง่าย</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=A.+Simon+Paris">เปิด</a></td></tr>
+        <tr><td data-label="เมือง"><span class="flag f-fr"></span> ลียง</td><td class="big" data-label="ร้าน・ของ">ร้านค้าของร้านโบกุส</td><td data-label="ซื้ออะไร">ตำราอาหารของโบกุส ("La cuisine du marché" มีฉบับภาษาอังกฤษ) ผ้ากันเปื้อน หม้อทองแดงใบเล็ก</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Paul+Bocuse+Collonges-au-Mont-d%27Or">เปิด</a></td></tr>
+        <tr><td data-label="เมือง"><span class="flag f-es"></span> บาร์เซโลนา</td><td class="big" data-label="ร้าน・ของ">Ganiveteria Roca</td><td data-label="ซื้ออะไร">ร้านมีดตั้งแต่ปี 1911 (จัตุรัสปี) มีดทำครัว มีดหั่นแฮม กรรไกร</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Ganiveteria+Roca+Barcelona">เปิด</a></td></tr>
+        <tr><td data-label="เมือง"><span class="flag f-es"></span> บาร์เซโลนา</td><td class="big" data-label="ร้าน・ของ">กระทะปาเอยา (paella)</td><td data-label="ซื้ออะไร">ร้านเครื่องครัวในตลาด ขนาด 2〜3 คนเส้นผ่านศูนย์กลาง 30〜34 ซม.</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Mercat+de+Santa+Caterina+Barcelona">เปิด</a></td></tr>
+        <tr><td data-label="เมือง"><span class="flag f-it"></span> ฟลอเรนซ์／โรม</td><td class="big" data-label="ร้าน・ของ">อุปกรณ์ทำพาสต้า</td><td data-label="ซื้ออะไร">กีตาร์รา (เครื่องตัดพาสต้าเส้นสี่เหลี่ยม) พิมพ์ราวีโอลี ไม้ทำญอกกี หม้อต้มกาแฟโมกาของบิอาเล็ตตี</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">เปิด</a></td></tr>
+        <tr><td data-label="เมือง"><span class="flag f-it"></span> โรม</td><td class="big" data-label="ร้าน・ของ">c.u.c.i.n.a.</td><td data-label="ซื้ออะไร">ร้านเครื่องครัวสวย ๆ อุปกรณ์ทำพาสต้าและมีดตัดพาร์มิจาโน</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=c.u.c.i.n.a.+Roma">เปิด</a></td></tr>
+      </tbody>
+    </table></div>
+    <h4 style="margin:16px 0 8px">วัตถุดิบ</h4>
+    <div class="tbl"><table class="wide">
+      <thead><tr><th>เมือง</th><th>ร้าน・ของ</th><th>ซื้ออะไร</th><th>แผนที่</th></tr></thead>
+      <tbody>
+        <tr><td data-label="เมือง"><span class="flag f-fr"></span> ปารีส</td><td class="big" data-label="ร้าน・ของ">Maille (จัตุรัสมาเดอแลน)</td><td data-label="ซื้ออะไร">มัสตาร์ดสดตักขาย น้ำส้มสายชูไวน์</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Maille+Madeleine+Paris">เปิด</a></td></tr>
+        <tr><td data-label="เมือง"><span class="flag f-fr"></span> ปารีส</td><td class="big" data-label="ร้าน・ของ">ลา กร็องด์ เอปิเซอรี</td><td data-label="ซื้ออะไร">เกลือเกร็งด์ (ฟลัวร์ เดอ แซล) เห็ดมอแรลแห้ง พริกแอสแปแล็ต แอร์บ เดอ โพรว็องซ์ น้ำส้มสายชู น้ำมันมะกอก</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=La+Grande+%C3%89picerie+de+Paris+Rive+Gauche">เปิด</a></td></tr>
+        <tr><td data-label="เมือง"><span class="flag f-fr"></span> ลียง</td><td class="big" data-label="ร้าน・ของ">ตลาดปอล โบกุส</td><td data-label="ซื้ออะไร"><b>ปราลีนสีชมพู</b> (อัลมอนด์เคลือบน้ำตาลไว้ทำทาร์ตปราลีน หาที่อื่นนอกลียงแทบไม่ได้) เห็ดแห้ง</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Les+Halles+de+Lyon+Paul+Bocuse">เปิด</a></td></tr>
+        <tr><td data-label="เมือง"><span class="flag f-es"></span> บาร์เซโลนา</td><td class="big" data-label="ร้าน・ของ">ตลาดโบเกเรีย／ซานตา กาเตรีนา</td><td data-label="ซื้ออะไร"><b>หญ้าฝรั่น</b> (ลามันชา DOP) <b>ปิเมนตอน</b> (ปาปริการมควัน ลาเบรา DOP) <b>ข้าวปาเอยา</b> (ข้าวบอมบา) น้ำส้มสายชูเชอร์รี</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Boqueria+Barcelona">เปิด</a></td></tr>
+        <tr><td data-label="เมือง"><span class="flag f-es"></span> บาร์เซโลนา</td><td class="big" data-label="ร้าน・ของ">ร้านอาหารกระป๋อง</td><td data-label="ซื้ออะไร">แอนโชวี่ หอยแมลงภู่ ปลาซาร์ดีนกระป๋องอย่างดี (กอนแซร์บา) เบา เก็บได้นาน เป็นของฝากได้</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Conservas+Barcelona">เปิด</a></td></tr>
+        <tr><td data-label="เมือง"><span class="flag f-es"></span> บาร์เซโลนา</td><td class="big" data-label="ร้าน・ของ">น้ำมันมะกอก</td><td data-label="ซื้ออะไร">พันธุ์อาร์เบกีนาของกาตาลุญญา รสนุ่ม ใช้ทำอาหารง่าย</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Boqueria+Barcelona">เปิด</a></td></tr>
+        <tr><td data-label="เมือง"><span class="flag f-it"></span> ฟลอเรนซ์</td><td class="big" data-label="ร้าน・ของ">ตลาดกลาง／ตลาดซานตัมโบรโจ</td><td data-label="ซื้ออะไร">น้ำมันมะกอกเอ็กซ์ตราเวอร์จินทัสคานี <b>เห็ดปอร์ชีนีแห้ง</b> ฟาร์โร (ข้าวสาลีโบราณ) ซอสหรือเกลือทรัฟเฟิล</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">เปิด</a></td></tr>
+        <tr><td data-label="เมือง"><span class="flag f-it"></span> ฟลอเรนซ์</td><td class="big" data-label="ร้าน・ของ">พาสต้า</td><td data-label="ซื้ออะไร">พาสต้าแห้งรีดด้วยแม่พิมพ์ทองเหลือง (ซอสเกาะดี) จากกรัญญาโนหรือมาร์เตลลี</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">เปิด</a></td></tr>
+        <tr><td data-label="เมือง"><span class="flag f-it"></span> โรม</td><td class="big" data-label="ร้าน・ของ">Castroni</td><td data-label="ซื้ออะไร">ร้านวัตถุดิบนำเข้าตั้งแต่ปี 1932 น้ำส้มบัลซามิก (โมเดนา) บอตตาร์กา (ไข่ปลาแห้ง) เมล็ดกาแฟ</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Castroni+Roma+Via+Cola+di+Rienzo">เปิด</a></td></tr>
+        <tr><td data-label="เมือง"><span class="flag f-it"></span> ฟลอเรนซ์</td><td class="big" data-label="ร้าน・ของ">ผลิตภัณฑ์ทรัฟเฟิล</td><td data-label="ซื้ออะไร"><b>ทรัฟเฟิลซื้อที่อิตาลี</b> ต้นเดือนธันวาคมทัสคานีเป็นฤดูทรัฟเฟิลขาว (ซานมีนีอาโต) ทรัฟเฟิลสดอยู่ได้ราว 1 สัปดาห์ จึงกินที่นั่น ส่วนที่นำกลับให้เป็นแบบขวด (สไลซ์บาง ซอส เกลือทรัฟเฟิล) ผลิตภัณฑ์ทรัฟเฟิลดำของฝรั่งเศสซื้อได้ที่ Maison de la Truffe จัตุรัสมาเดอแลนในปารีส</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">เปิด</a></td></tr>
+      </tbody>
+    </table></div>
+    <div class="column" style="margin-top:12px">
+      <div class="lab">TARTUFO</div>
+      <h4>ทรัฟเฟิลขาว (แถวฟลอเรนซ์และปิซา)</h4>
+      <ul>
+        <li><b>แหล่งผลิตคือซานมีนีอาโต</b>：เมืองบนเนินกึ่งกลางระหว่างฟลอเรนซ์กับปิซา จากสถานี San Miniato–Fucecchio บนสายรถไฟท้องถิ่นไปปิซา ต่อรถบัสหรือแท็กซี่ขึ้นเนิน</li>
+        <li><b>ตลาดทรัฟเฟิลขาวมีแค่เสาร์อาทิตย์ 14–15, 21–22, 28–29 พ.ย.</b> ทริปนี้ถึง 5 ธ.ค. จึงหมดแล้ว นอกช่วงตลาดซื้อได้ที่ร้านในเมือง</li>
+        <li><b>ที่ฟลอเรนซ์แบบง่าย ๆ</b>：<b>Savini Tartufi</b> ในตลาดกลาง (ร้านของพ่อค้าทรัฟเฟิลเก่าแก่จากจังหวัดปิซา) กินอาหารทรัฟเฟิลราคาไม่แพง และซื้อแบบขวดได้ ทรัฟเฟิลสดให้ถามที่ร้าน</li>
+        <li><b>Procacci</b> (ถนนตอร์นาบูโอนี แผนวันที่ 8 ธ.ค.)：ร้านเก่าแก่ของพานีโนทรัฟเฟิล ในฤดูมีทรัฟเฟิลสดด้วย</li>
+        <li><b>ราคาโดยประมาณ</b>：เปลี่ยนมากตามผลผลิตแต่ละปี ที่ร้านอาหารให้ฝานให้อาจราวกรัมละสิบกว่ายูโร ถ้าซื้อให้ถาม "กี่กรัม เท่าไร" ตรงนั้น</li>
+        <li><b>ทรัฟเฟิลสดนำกลับไม่ได้</b>：กลิ่นหายในราว 1 สัปดาห์ ถ้าจะกินที่ที่พักต้องมีครัว นำกลับเป็นแบบขวดหรือเกลือทรัฟเฟิล</li>
+      </ul>
+    </div>
+    <div class="column" style="margin-top:12px">
+      <div class="lab">FRENCH</div>
+      <h4>ถ้าเน้นอาหารฝรั่งเศส ของที่หนักหน่อยแต่คุ้มที่จะนำกลับ</h4>
+      <ul>
+        <li><b>พิมพ์คาเนเลทองแดง</b> (E. Dehillerin)：ถ้าอบคาเนเล พิมพ์ทองแดงของแท้ หาง่ายกว่าที่ญี่ปุ่นมาก</li>
+        <li><b>หม้อซอสทองแดง 1 ใบ</b> (E. Dehillerin ยี่ห้อ Mauviel ฯลฯ)：ไว้ทำซอสฝรั่งเศส ขนาด 14〜16 ซม. หนักราว 1 กก. ที่ญี่ปุ่นแพงมาก</li>
+        <li><b>มัสตาร์ด</b> (Maille)：มัสตาร์ดสดตักขายใส่โถเซรามิก รสดิฌงของแท้</li>
+        <li><b>น้ำส้มสายชูไวน์</b>：แบบทำตามวิธีดั้งเดิม เช่น Martin Pouret ของออร์เลอ็อง รสน้ำสลัดและซอสจะเปลี่ยนไป</li>
+        <li><b>น้ำมันวอลนัต・น้ำมันเฮเซลนัต</b> (Leblanc ฯลฯ)：น้ำมันถั่วแบบฝรั่งเศส ใช้กับสลัดลียง</li>
+        <li><b>มีดทำครัว</b> (ลาจิโอล โอปิเนล)：ต้องใส่กระเป๋าโหลด</li>
+        <li><b>ทองแดงไม่ค่อยเป็นสนิมแต่สีเปลี่ยน</b>：ไม่ขึ้นสนิมแดงแบบเหล็ก แต่จะหมองคล้ำจากอากาศและน้ำ ถ้าทิ้งไว้เปียกจะขึ้นสนิมเขียว ล้างแล้วเช็ดให้แห้งทันที ห้ามใช้เครื่องล้างจาน</li>
+        <li><b>การดูแลต่างกันตามวัสดุด้านใน</b>：หม้อซอสแบบ<b>ด้านในเป็นสเตนเลส</b> (เช่น M'Héritage ของ Mauviel) ดูแลง่าย แบบด้านในเคลือบดีบุก ห้ามตั้งไฟเปล่าและห้ามใช้ตะหลิวโลหะ ต้องเคลือบใหม่ทุกไม่กี่ปี</li>
+        <li><b>พิมพ์คาเนเล</b>ด้านในเคลือบดีบุก ก่อนใช้ทาไขผึ้งผสมเนย ("ไขขาว" แบบดั้งเดิมของคาเนเล) ไม่ขัดด้วยน้ำยา เช็ดให้แห้งแล้วเก็บ</li>
+        <li>ความหมองล้างออกได้ด้วยน้ำมะนาวกับเกลือ หรือน้ำยาทำความสะอาดทองแดง</li>
+      </ul>
+      <p class="muted" style="margin:0;font-size:13px">หม้อ Staub หรือ Le Creuset ที่ญี่ปุ่นราคาใกล้เคียงกัน ไม่ต้องหิ้วกลับ</p>
+    </div>
+    <div class="column" style="margin-top:12px">
+      <div class="lab">CHECK</div>
+      <h4>ข้อควรระวังในการนำกลับ</h4>
+      <ul>
+        <li><b>ผลิตภัณฑ์เนื้อสัตว์นำเข้าญี่ปุ่นไม่ได้</b>：แฮม โปรชุตโต ซาลามี กวนชาเล ไส้กรอก แม้แต่ฟัวกรากระป๋อง ป้ายในร้านที่บอกว่า "นำไปญี่ปุ่นได้" ก็มักไม่ผ่านด่านกักกันของญี่ปุ่น</li>
+        <li><b>ชีสแต่ละประเทศมีกฎต่างกัน</b>：ถ้าจะนำกลับ เลือกชีสแข็ง (เช่นพาร์มิจาโน) แพ็กสุญญากาศนิดหน่อย ขากลับผ่านไทยและไปญี่ปุ่นเดือนมกราคม ต้องคิดเรื่องอายุของด้วย</li>
+        <li><b>ของเหลว (น้ำมัน น้ำส้มสายชู ไวน์) ใส่กระเป๋าโหลด</b> ห่อด้วยถุงกันกระแทก วางกลางกระเป๋า</li>
+        <li><b>มีดต้องใส่กระเป๋าโหลดเท่านั้น</b> ถือขึ้นเครื่องไม่ได้</li>
+        <li><b>อุปกรณ์หนัก ๆ ส่งไปญี่ปุ่นได้</b>：ด้วย Colissimo ของไปรษณีย์ฝรั่งเศส (La Poste)</li>
+        <li><b>หญ้าฝรั่นและของแห้งเบาแต่มีค่า</b> ถ้าลังเลให้เลือกของแห้งก่อน</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block" id="bring">
+    <h3>กฎการนำกลับบ้าน <small>Bringing it home</small></h3>
+    <div class="grid2">
+      <div class="card">
+        <h4>ถือขึ้นเครื่องไม่ได้</h4>
+        <ul>
+          <li>ไวน์ น้ำมัน ชีสนิ่ม และแยม นับเป็นของเหลว ถ้าเกิน 100ml ต้องใส่กระเป๋าโหลด</li>
+          <li>ห่อไวน์ด้วยเสื้อผ้า หรือใส่ถุงกันกระแทกสำหรับไวน์ (wine skin) แล้ววางไว้ตรงกลางกระเป๋าเดินทาง</li>
+          <li>เหล้าที่ซื้อจากร้านปลอดภาษีให้เก็บไว้ในถุงที่ปิดผนึก ตอนต่อเครื่องที่ดูไบก็ห้ามเปิด</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>ตอนเข้าประเทศไทย</h4>
+        <ul>
+          <li>เหล้าได้รับยกเว้นภาษีคนละ 1 ลิตร (เฉพาะผู้ใหญ่) ถ้าเป็นไวน์ก็ราวขวดกว่า ๆ</li>
+          <li>ส่วนที่เกินต้องสำแดงและเสียภาษี 2 คนรวมกันได้ถึง 2 ลิตร</li>
+          <li>ชีสและแฮมในปริมาณที่กินเองโดยทั่วไปไม่มีปัญหา แต่ผลิตภัณฑ์จากเนื้อสัตว์อาจต้องผ่านด่านกักกัน จึงควรซื้อแต่พอดี</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">ลำดับการซื้อของหนัก ดูแผนน้ำหนักกระเป๋าในบท "กระเป๋าและการเตรียมตัว"</p>
+  </div>
+</section>
+<!-- =================== CHAPTER 7: CHEESE & WINE (TH) =================== -->
+<section id="cw" class="chapter cw" data-chapter="cw">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Chapter 7 · Cheese &amp; Wine</div>
+    <h2>ชีสและไวน์ <span class="local">Fromage · Queso · Formaggio · Vin · Vino</span></h2>
+    <div class="th">チーズとワイン</div>
+    <p class="lead">รสชาติของชีสและไวน์ขึ้นอยู่กับอากาศของท้องถิ่น และชนิดของวัว แกะ แพะ หรือองุ่น รวมวิธีแบ่งประเภทพื้นฐาน ของที่อยากกินในเมืองที่เราไป และวิธีสั่งกับวิธีซื้อไว้ที่นี่</p>
+  </div>
+  <div class="subnav"><a href="#cheese-basic">พื้นฐานชีส</a><a href="#cheese-list">ชีสขึ้นชื่อ</a><a href="#cheese-city">ชีสของแต่ละเมือง</a><a href="#cheese-buy">วิธีซื้อ</a><a href="#wine-basic">พื้นฐานไวน์</a><a href="#wine-list">ไวน์ขึ้นชื่อ</a><a href="#wine-order">วิธีสั่ง</a></div>
+
   <div class="block" id="cheese-basic">
     <h3>พื้นฐานชีส <small>Cheese basics</small></h3>
     <div class="grid2">
@@ -8875,121 +9019,12 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     </div>
   </div>
 
-  <div class="block" id="food-shop">
-    <h3>ของที่ควรซื้อเพื่อเริ่มทำอาหาร <small>Kitchen shopping</small></h3>
-    <p class="note">อุปกรณ์และวัตถุดิบที่ควรซื้อระหว่างทาง ไว้ทำอาหารฝรั่งเศส สเปน และอิตาลีเมื่อกลับบ้าน <b>ของหนักซื้อช่วงท้ายทริปจะไม่หนักกระเป๋านาน</b> ที่ปารีสซื้อเฉพาะของที่อยากได้จริง ๆ</p>
-    <div class="column" style="margin:4px 0 12px">
-      <div class="lab">MUST</div>
-      <h4>5 อย่างที่ไม่ควรพลาด (รวมราว 1 กก.)</h4>
-      <ol>
-        <li><b>หญ้าฝรั่น</b> (บาร์เซโลนา)：ไม่กี่กรัม เบา ถูกกว่าและคุณภาพดีกว่าที่ญี่ปุ่นมาก ใช้ทำปาเอยา บุยยาเบส และริซอตโต</li>
-        <li><b>ปิเมนตอน เด ลา เบรา</b> (บาร์เซโลนา)：ปาปริการมควันกระป๋องเล็ก กลิ่นหัวใจของอาหารสเปน</li>
-        <li><b>เห็ดมอแรลแห้งหรือเห็ดปอร์ชีนีแห้ง</b> (ปารีสหรือฟลอเรนซ์)：เบาและหอมมาก ใช้ทำซอสครีมแบบโบกุสหรือริซอตโต</li>
-        <li><b>ปราลีนสีชมพู</b> (ลียง)：ไว้ทำทาร์ตของลียง แทบหาไม่ได้ในญี่ปุ่น</li>
-        <li><b>เกลือเกร็งด์</b> (ปารีส)：เกลือโรยหน้า ถุงเล็กก็พอ</li>
-      </ol>
-      <p class="muted" style="margin:0;font-size:13px">น้ำมัน น้ำส้มสายชู พาสต้าแห้ง กระทะปาเอยา และอุปกรณ์ครัวทั่วไป หนักหรือเปลืองที่ และหาซื้อออนไลน์หรือที่คัปปาบาชิในญี่ปุ่นได้ จึงไว้ทีหลัง อุปกรณ์ซื้อแค่ชิ้นเดียวที่อยากได้จริง ๆ (เช่นกระชอนจาก E. Dehillerin)</p>
-    </div>
-    <h4 style="margin:12px 0 8px">อุปกรณ์</h4>
-    <div class="tbl"><table class="wide">
-      <thead><tr><th>เมือง</th><th>ร้าน・ของ</th><th>ซื้ออะไร</th><th>แผนที่</th></tr></thead>
-      <tbody>
-        <tr><td data-label="เมือง"><span class="flag f-fr"></span> ปารีส</td><td class="big" data-label="ร้าน・ของ">E. Dehillerin</td><td data-label="ซื้ออะไร">ร้านอุปกรณ์ครัวมืออาชีพตั้งแต่ปี 1820 หม้อทองแดง กระชอน (ชีนัว) พิมพ์คาเนเลและทาร์ต ไม้พาย จูเลีย ไชลด์ก็เคยมาที่นี่</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=E.+Dehillerin+Paris">เปิด</a></td></tr>
-        <tr><td data-label="เมือง"><span class="flag f-fr"></span> ปารีส</td><td class="big" data-label="ร้าน・ของ">A. Simon</td><td data-label="ซื้ออะไร">ใกล้ Dehillerin หม้อซอส จาน อุปกรณ์ทำขนม พนักงานใจดี เดินดูง่าย</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=A.+Simon+Paris">เปิด</a></td></tr>
-        <tr><td data-label="เมือง"><span class="flag f-fr"></span> ลียง</td><td class="big" data-label="ร้าน・ของ">ร้านค้าของร้านโบกุส</td><td data-label="ซื้ออะไร">ตำราอาหารของโบกุส ("La cuisine du marché" มีฉบับภาษาอังกฤษ) ผ้ากันเปื้อน หม้อทองแดงใบเล็ก</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Paul+Bocuse+Collonges-au-Mont-d%27Or">เปิด</a></td></tr>
-        <tr><td data-label="เมือง"><span class="flag f-es"></span> บาร์เซโลนา</td><td class="big" data-label="ร้าน・ของ">Ganiveteria Roca</td><td data-label="ซื้ออะไร">ร้านมีดตั้งแต่ปี 1911 (จัตุรัสปี) มีดทำครัว มีดหั่นแฮม กรรไกร</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Ganiveteria+Roca+Barcelona">เปิด</a></td></tr>
-        <tr><td data-label="เมือง"><span class="flag f-es"></span> บาร์เซโลนา</td><td class="big" data-label="ร้าน・ของ">กระทะปาเอยา (paella)</td><td data-label="ซื้ออะไร">ร้านเครื่องครัวในตลาด ขนาด 2〜3 คนเส้นผ่านศูนย์กลาง 30〜34 ซม.</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Mercat+de+Santa+Caterina+Barcelona">เปิด</a></td></tr>
-        <tr><td data-label="เมือง"><span class="flag f-it"></span> ฟลอเรนซ์／โรม</td><td class="big" data-label="ร้าน・ของ">อุปกรณ์ทำพาสต้า</td><td data-label="ซื้ออะไร">กีตาร์รา (เครื่องตัดพาสต้าเส้นสี่เหลี่ยม) พิมพ์ราวีโอลี ไม้ทำญอกกี หม้อต้มกาแฟโมกาของบิอาเล็ตตี</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">เปิด</a></td></tr>
-        <tr><td data-label="เมือง"><span class="flag f-it"></span> โรม</td><td class="big" data-label="ร้าน・ของ">c.u.c.i.n.a.</td><td data-label="ซื้ออะไร">ร้านเครื่องครัวสวย ๆ อุปกรณ์ทำพาสต้าและมีดตัดพาร์มิจาโน</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=c.u.c.i.n.a.+Roma">เปิด</a></td></tr>
-      </tbody>
-    </table></div>
-    <h4 style="margin:16px 0 8px">วัตถุดิบ</h4>
-    <div class="tbl"><table class="wide">
-      <thead><tr><th>เมือง</th><th>ร้าน・ของ</th><th>ซื้ออะไร</th><th>แผนที่</th></tr></thead>
-      <tbody>
-        <tr><td data-label="เมือง"><span class="flag f-fr"></span> ปารีส</td><td class="big" data-label="ร้าน・ของ">Maille (จัตุรัสมาเดอแลน)</td><td data-label="ซื้ออะไร">มัสตาร์ดสดตักขาย น้ำส้มสายชูไวน์</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Maille+Madeleine+Paris">เปิด</a></td></tr>
-        <tr><td data-label="เมือง"><span class="flag f-fr"></span> ปารีส</td><td class="big" data-label="ร้าน・ของ">ลา กร็องด์ เอปิเซอรี</td><td data-label="ซื้ออะไร">เกลือเกร็งด์ (ฟลัวร์ เดอ แซล) เห็ดมอแรลแห้ง พริกแอสแปแล็ต แอร์บ เดอ โพรว็องซ์ น้ำส้มสายชู น้ำมันมะกอก</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=La+Grande+%C3%89picerie+de+Paris+Rive+Gauche">เปิด</a></td></tr>
-        <tr><td data-label="เมือง"><span class="flag f-fr"></span> ลียง</td><td class="big" data-label="ร้าน・ของ">ตลาดปอล โบกุส</td><td data-label="ซื้ออะไร"><b>ปราลีนสีชมพู</b> (อัลมอนด์เคลือบน้ำตาลไว้ทำทาร์ตปราลีน หาที่อื่นนอกลียงแทบไม่ได้) เห็ดแห้ง</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Les+Halles+de+Lyon+Paul+Bocuse">เปิด</a></td></tr>
-        <tr><td data-label="เมือง"><span class="flag f-es"></span> บาร์เซโลนา</td><td class="big" data-label="ร้าน・ของ">ตลาดโบเกเรีย／ซานตา กาเตรีนา</td><td data-label="ซื้ออะไร"><b>หญ้าฝรั่น</b> (ลามันชา DOP) <b>ปิเมนตอน</b> (ปาปริการมควัน ลาเบรา DOP) <b>ข้าวปาเอยา</b> (ข้าวบอมบา) น้ำส้มสายชูเชอร์รี</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Boqueria+Barcelona">เปิด</a></td></tr>
-        <tr><td data-label="เมือง"><span class="flag f-es"></span> บาร์เซโลนา</td><td class="big" data-label="ร้าน・ของ">ร้านอาหารกระป๋อง</td><td data-label="ซื้ออะไร">แอนโชวี่ หอยแมลงภู่ ปลาซาร์ดีนกระป๋องอย่างดี (กอนแซร์บา) เบา เก็บได้นาน เป็นของฝากได้</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Conservas+Barcelona">เปิด</a></td></tr>
-        <tr><td data-label="เมือง"><span class="flag f-es"></span> บาร์เซโลนา</td><td class="big" data-label="ร้าน・ของ">น้ำมันมะกอก</td><td data-label="ซื้ออะไร">พันธุ์อาร์เบกีนาของกาตาลุญญา รสนุ่ม ใช้ทำอาหารง่าย</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Boqueria+Barcelona">เปิด</a></td></tr>
-        <tr><td data-label="เมือง"><span class="flag f-it"></span> ฟลอเรนซ์</td><td class="big" data-label="ร้าน・ของ">ตลาดกลาง／ตลาดซานตัมโบรโจ</td><td data-label="ซื้ออะไร">น้ำมันมะกอกเอ็กซ์ตราเวอร์จินทัสคานี <b>เห็ดปอร์ชีนีแห้ง</b> ฟาร์โร (ข้าวสาลีโบราณ) ซอสหรือเกลือทรัฟเฟิล</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">เปิด</a></td></tr>
-        <tr><td data-label="เมือง"><span class="flag f-it"></span> ฟลอเรนซ์</td><td class="big" data-label="ร้าน・ของ">พาสต้า</td><td data-label="ซื้ออะไร">พาสต้าแห้งรีดด้วยแม่พิมพ์ทองเหลือง (ซอสเกาะดี) จากกรัญญาโนหรือมาร์เตลลี</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">เปิด</a></td></tr>
-        <tr><td data-label="เมือง"><span class="flag f-it"></span> โรม</td><td class="big" data-label="ร้าน・ของ">Castroni</td><td data-label="ซื้ออะไร">ร้านวัตถุดิบนำเข้าตั้งแต่ปี 1932 น้ำส้มบัลซามิก (โมเดนา) บอตตาร์กา (ไข่ปลาแห้ง) เมล็ดกาแฟ</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Castroni+Roma+Via+Cola+di+Rienzo">เปิด</a></td></tr>
-        <tr><td data-label="เมือง"><span class="flag f-it"></span> ฟลอเรนซ์</td><td class="big" data-label="ร้าน・ของ">ผลิตภัณฑ์ทรัฟเฟิล</td><td data-label="ซื้ออะไร"><b>ทรัฟเฟิลซื้อที่อิตาลี</b> ต้นเดือนธันวาคมทัสคานีเป็นฤดูทรัฟเฟิลขาว (ซานมีนีอาโต) ทรัฟเฟิลสดอยู่ได้ราว 1 สัปดาห์ จึงกินที่นั่น ส่วนที่นำกลับให้เป็นแบบขวด (สไลซ์บาง ซอส เกลือทรัฟเฟิล) ผลิตภัณฑ์ทรัฟเฟิลดำของฝรั่งเศสซื้อได้ที่ Maison de la Truffe จัตุรัสมาเดอแลนในปารีส</td><td data-label="แผนที่"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">เปิด</a></td></tr>
-      </tbody>
-    </table></div>
-    <div class="column" style="margin-top:12px">
-      <div class="lab">TARTUFO</div>
-      <h4>ทรัฟเฟิลขาว (แถวฟลอเรนซ์และปิซา)</h4>
-      <ul>
-        <li><b>แหล่งผลิตคือซานมีนีอาโต</b>：เมืองบนเนินกึ่งกลางระหว่างฟลอเรนซ์กับปิซา จากสถานี San Miniato–Fucecchio บนสายรถไฟท้องถิ่นไปปิซา ต่อรถบัสหรือแท็กซี่ขึ้นเนิน</li>
-        <li><b>ตลาดทรัฟเฟิลขาวมีแค่เสาร์อาทิตย์ 14–15, 21–22, 28–29 พ.ย.</b> ทริปนี้ถึง 5 ธ.ค. จึงหมดแล้ว นอกช่วงตลาดซื้อได้ที่ร้านในเมือง</li>
-        <li><b>ที่ฟลอเรนซ์แบบง่าย ๆ</b>：<b>Savini Tartufi</b> ในตลาดกลาง (ร้านของพ่อค้าทรัฟเฟิลเก่าแก่จากจังหวัดปิซา) กินอาหารทรัฟเฟิลราคาไม่แพง และซื้อแบบขวดได้ ทรัฟเฟิลสดให้ถามที่ร้าน</li>
-        <li><b>Procacci</b> (ถนนตอร์นาบูโอนี แผนวันที่ 8 ธ.ค.)：ร้านเก่าแก่ของพานีโนทรัฟเฟิล ในฤดูมีทรัฟเฟิลสดด้วย</li>
-        <li><b>ราคาโดยประมาณ</b>：เปลี่ยนมากตามผลผลิตแต่ละปี ที่ร้านอาหารให้ฝานให้อาจราวกรัมละสิบกว่ายูโร ถ้าซื้อให้ถาม "กี่กรัม เท่าไร" ตรงนั้น</li>
-        <li><b>ทรัฟเฟิลสดนำกลับไม่ได้</b>：กลิ่นหายในราว 1 สัปดาห์ ถ้าจะกินที่ที่พักต้องมีครัว นำกลับเป็นแบบขวดหรือเกลือทรัฟเฟิล</li>
-      </ul>
-    </div>
-    <div class="column" style="margin-top:12px">
-      <div class="lab">FRENCH</div>
-      <h4>ถ้าเน้นอาหารฝรั่งเศส ของที่หนักหน่อยแต่คุ้มที่จะนำกลับ</h4>
-      <ul>
-        <li><b>พิมพ์คาเนเลทองแดง</b> (E. Dehillerin)：ถ้าอบคาเนเล พิมพ์ทองแดงของแท้ หาง่ายกว่าที่ญี่ปุ่นมาก</li>
-        <li><b>หม้อซอสทองแดง 1 ใบ</b> (E. Dehillerin ยี่ห้อ Mauviel ฯลฯ)：ไว้ทำซอสฝรั่งเศส ขนาด 14〜16 ซม. หนักราว 1 กก. ที่ญี่ปุ่นแพงมาก</li>
-        <li><b>มัสตาร์ด</b> (Maille)：มัสตาร์ดสดตักขายใส่โถเซรามิก รสดิฌงของแท้</li>
-        <li><b>น้ำส้มสายชูไวน์</b>：แบบทำตามวิธีดั้งเดิม เช่น Martin Pouret ของออร์เลอ็อง รสน้ำสลัดและซอสจะเปลี่ยนไป</li>
-        <li><b>น้ำมันวอลนัต・น้ำมันเฮเซลนัต</b> (Leblanc ฯลฯ)：น้ำมันถั่วแบบฝรั่งเศส ใช้กับสลัดลียง</li>
-        <li><b>มีดทำครัว</b> (ลาจิโอล โอปิเนล)：ต้องใส่กระเป๋าโหลด</li>
-        <li><b>ทองแดงไม่ค่อยเป็นสนิมแต่สีเปลี่ยน</b>：ไม่ขึ้นสนิมแดงแบบเหล็ก แต่จะหมองคล้ำจากอากาศและน้ำ ถ้าทิ้งไว้เปียกจะขึ้นสนิมเขียว ล้างแล้วเช็ดให้แห้งทันที ห้ามใช้เครื่องล้างจาน</li>
-        <li><b>การดูแลต่างกันตามวัสดุด้านใน</b>：หม้อซอสแบบ<b>ด้านในเป็นสเตนเลส</b> (เช่น M'Héritage ของ Mauviel) ดูแลง่าย แบบด้านในเคลือบดีบุก ห้ามตั้งไฟเปล่าและห้ามใช้ตะหลิวโลหะ ต้องเคลือบใหม่ทุกไม่กี่ปี</li>
-        <li><b>พิมพ์คาเนเล</b>ด้านในเคลือบดีบุก ก่อนใช้ทาไขผึ้งผสมเนย ("ไขขาว" แบบดั้งเดิมของคาเนเล) ไม่ขัดด้วยน้ำยา เช็ดให้แห้งแล้วเก็บ</li>
-        <li>ความหมองล้างออกได้ด้วยน้ำมะนาวกับเกลือ หรือน้ำยาทำความสะอาดทองแดง</li>
-      </ul>
-      <p class="muted" style="margin:0;font-size:13px">หม้อ Staub หรือ Le Creuset ที่ญี่ปุ่นราคาใกล้เคียงกัน ไม่ต้องหิ้วกลับ</p>
-    </div>
-    <div class="column" style="margin-top:12px">
-      <div class="lab">CHECK</div>
-      <h4>ข้อควรระวังในการนำกลับ</h4>
-      <ul>
-        <li><b>ผลิตภัณฑ์เนื้อสัตว์นำเข้าญี่ปุ่นไม่ได้</b>：แฮม โปรชุตโต ซาลามี กวนชาเล ไส้กรอก แม้แต่ฟัวกรากระป๋อง ป้ายในร้านที่บอกว่า "นำไปญี่ปุ่นได้" ก็มักไม่ผ่านด่านกักกันของญี่ปุ่น</li>
-        <li><b>ชีสแต่ละประเทศมีกฎต่างกัน</b>：ถ้าจะนำกลับ เลือกชีสแข็ง (เช่นพาร์มิจาโน) แพ็กสุญญากาศนิดหน่อย ขากลับผ่านไทยและไปญี่ปุ่นเดือนมกราคม ต้องคิดเรื่องอายุของด้วย</li>
-        <li><b>ของเหลว (น้ำมัน น้ำส้มสายชู ไวน์) ใส่กระเป๋าโหลด</b> ห่อด้วยถุงกันกระแทก วางกลางกระเป๋า</li>
-        <li><b>มีดต้องใส่กระเป๋าโหลดเท่านั้น</b> ถือขึ้นเครื่องไม่ได้</li>
-        <li><b>อุปกรณ์หนัก ๆ ส่งไปญี่ปุ่นได้</b>：ด้วย Colissimo ของไปรษณีย์ฝรั่งเศส (La Poste)</li>
-        <li><b>หญ้าฝรั่นและของแห้งเบาแต่มีค่า</b> ถ้าลังเลให้เลือกของแห้งก่อน</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="block" id="bring">
-    <h3>กฎการนำกลับบ้าน <small>Bringing it home</small></h3>
-    <div class="grid2">
-      <div class="card">
-        <h4>ถือขึ้นเครื่องไม่ได้</h4>
-        <ul>
-          <li>ไวน์ น้ำมัน ชีสนิ่ม และแยม นับเป็นของเหลว ถ้าเกิน 100ml ต้องใส่กระเป๋าโหลด</li>
-          <li>ห่อไวน์ด้วยเสื้อผ้า หรือใส่ถุงกันกระแทกสำหรับไวน์ (wine skin) แล้ววางไว้ตรงกลางกระเป๋าเดินทาง</li>
-          <li>เหล้าที่ซื้อจากร้านปลอดภาษีให้เก็บไว้ในถุงที่ปิดผนึก ตอนต่อเครื่องที่ดูไบก็ห้ามเปิด</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h4>ตอนเข้าประเทศไทย</h4>
-        <ul>
-          <li>เหล้าได้รับยกเว้นภาษีคนละ 1 ลิตร (เฉพาะผู้ใหญ่) ถ้าเป็นไวน์ก็ราวขวดกว่า ๆ</li>
-          <li>ส่วนที่เกินต้องสำแดงและเสียภาษี 2 คนรวมกันได้ถึง 2 ลิตร</li>
-          <li>ชีสและแฮมในปริมาณที่กินเองโดยทั่วไปไม่มีปัญหา แต่ผลิตภัณฑ์จากเนื้อสัตว์อาจต้องผ่านด่านกักกัน จึงควรซื้อแต่พอดี</li>
-        </ul>
-      </div>
-    </div>
-    <p class="note">ลำดับการซื้อของหนัก ดูแผนน้ำหนักกระเป๋าในบท "กระเป๋าและการเตรียมตัว"</p>
-  </div>
 </section>
-<!-- =================== CHAPTER 7: ART (FR · ES · IT) =================== -->
+<!-- =================== CHAPTER 8: ART (FR · ES · IT) =================== -->
 <section id="art" class="chapter art" data-chapter="art">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 7 · Art</div>
+    <div class="eyebrow">Chapter 8 · Art</div>
     <h2>พิพิธภัณฑ์และงานชิ้นเอก <span class="local">Louvre · Sagrada Família · Vaticano</span></h2>
     <div class="th">美術館と名作</div>
     <p class="lead">รวมงานชิ้นเอกที่ควรดูในพิพิธภัณฑ์ที่เราจะไปแน่แล้ว ตั้งแต่ประติมากรรมกรีกและโรมันโบราณ เรอเนซองส์ จิตรกรรมสมัยใหม่ของฝรั่งเศส ไปจนถึงเกาดีและปีกัสโซ จะเห็นว่าสิ่งที่เกิดในอิตาลีเดินทางไปฝรั่งเศสและสเปน กลับทางกับลำดับการเดินทางของเรา</p>
@@ -9182,7 +9217,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="baby" class="chapter base" data-chapter="baby">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 8 · Traveling with a Baby</div>
+    <div class="eyebrow">Chapter 9 · Traveling with a Baby</div>
     <h2>เที่ยวกับลูกน้อย <span class="local">ไปกับ Yuzuha</span></h2>
     <div class="th">赤ちゃん連れのコツ</div>
     <p class="lead">เคล็ดลับสำคัญที่สุดคือให้จังหวะของ Yuzuha เป็นศูนย์กลางของแผน กำหนดการในเล่มนี้จัดเป็นแบบ "ช่วงเช้า 1 ที่ งีบกลางวัน ช่วงเย็นอีก 1 ที่"</p>
@@ -9305,7 +9340,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="safety" class="chapter base" data-chapter="safety">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 9 · Safety &amp; Emergency</div>
+    <div class="eyebrow">Chapter 10 · Safety &amp; Emergency</div>
     <h2>ฉุกเฉินและความปลอดภัย <span class="local">มีปัญหาเมื่อไหร่ เปิดหน้านี้</span></h2>
     <div class="th">緊急・安全</div>
   </div>
@@ -9844,7 +9879,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="prep" class="chapter base" data-chapter="prep">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 10 · Luggage, Money &amp; To-do</div>
+    <div class="eyebrow">Chapter 11 · Luggage, Money &amp; To-do</div>
     <h2>กระเป๋า เงิน และสิ่งที่ต้องเตรียม <span class="local">อ่านก่อนออกเดินทาง</span></h2>
     <div class="th">荷物・お金・準備</div>
   </div>
@@ -10359,7 +10394,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="next" class="chapter base" data-chapter="next">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 11 · Someday</div>
+    <div class="eyebrow">Chapter 12 · Someday</div>
     <h2>ไอเดียทริปหน้า <span class="local">สวิตเซอร์แลนด์และทะเลสาบโคโม</span></h2>
     <div class="th">次回の旅の案 · スイスとコモ湖</div>
     <p class="lead">1 สัปดาห์ในที่ที่ไม่ซ้ำกับทริปนี้ ช่วงราวเดือนกรกฎาคมที่รถขึ้นเขาเปิดครบทุกสายเหมาะที่สุด บินเข้าซูริก แล้วกลับจากมิลาน</p>
@@ -10383,7 +10418,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   <span>ที่มาของเบอร์สถานทูต/กงสุล: "รายชื่อสถานทูตและสถานกงสุลในต่างประเทศ" ของกระทรวงการต่างประเทศญี่ปุ่น และ "List of Royal Thai Embassy contact point" ของกระทรวงการต่างประเทศไทย</span>
   <details id="changelog" style="margin-top:6px">
     <summary style="cursor:pointer;font-weight:700;color:var(--ink)">ประวัติการแก้ไข</summary>
-    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">7 พ.ย.</td><td>เพิ่มบทใหม่ "พิพิธภัณฑ์และงานชิ้นเอก" (ลูฟวร์ โรแด็ง ออร์แซ ซากราดาฟามีเลีย พิพิธภัณฑ์ปีกัสโซ วังดอจ อัคคาเดเมีย อุฟฟีซี วาติกัน) แก้คำนำบทฝรั่งเศสให้ตรงกับปารีส 4 คืนและลียง 2 คืน</td></tr><tr><td class="d">6 พ.ย.</td><td>บ้านแอนน์ แฟรงก์จองแล้ว (24 พ.ย. รอบเข้า 9:00〜9:15 3 คน)</td></tr><tr><td class="d">6 พ.ย.</td><td>ปรับวันที่ 25 พ.ย.：โรงอุปรากรกับ Le Meurice กลับเป็น "ต้องจอง" Ladurée ถนนรัวยาลแค่ดูจากข้างนอก ลูฟวร์เริ่ม 17:00 (ร้านอุปกรณ์ครัวกับปตีบาโตย้ายไปตัวเลือก) ประตูชัยฝากรถเข็นไว้กับเจ้าหน้าที่ที่ทางเข้า</td></tr><tr><td class="d">6 พ.ย.</td><td>จัดปารีส 24〜28 พ.ย. ใหม่ 24 พ.ย. หอไอเฟล ประตูชัย ช็องเซลีเซยามค่ำ 25 พ.ย. มงมาร์ตยามเช้า → โรงอุปรากร → Le Meurice 13:45 → Som ไปดิสนีย์ตอนเย็น Ryo กับ Yuzuha ไปลูฟวร์ 26 พ.ย. แวร์ซาย → สุสานนโปเลียน → โรแด็ง → บงมาร์เช → Josselin → นอเทรอดามยามค่ำ 27 พ.ย. จากมาเรไปเขต 1 28 พ.ย. แพนธีออนแล้วขึ้น TGV ที่เอาออกทั้งหมดย้ายไปตาราง "ตัวเลือก" เพิ่มตารางรสชาติท้องถิ่นที่กินได้ในปารีส บทดิสนีย์เปลี่ยนเป็นแผน F (เย็น 25 พ.ย. Som คนเดียว)</td></tr><tr><td class="d">6 พ.ย.</td><td>อัมสเตอร์ดัมเหลือ 1 คืน ที่พักเปลี่ยนเป็น art'otel (ตรงข้ามสถานีกลาง) Eurostar เปลี่ยนเป็น 24 พ.ย. 13:10→16:40 (ตู้ 18 ที่นั่ง 85・86) โรงแรมปารีส 24〜28 พ.ย. 4 คืน จัดวันที่ 24 พ.ย. (ถึงปารีสตอนเย็น) และ 25 พ.ย. ใหม่ (ย่านละติน → เกาะซิเต → จิบชาที่ Le Meurice → ลูฟวร์รอบค่ำ 3 คน) หมู่บ้านกังหันลมย้ายไปเป็นตัวเลือก ตั๋ว TGV ปารีส→บาร์เซโลนาคืนเงินแล้ว</td></tr><tr><td class="d">6 พ.ย.</td><td>เพิ่มแผน E วันที่ 26 พ.ย. (Ryo เที่ยวปารีสช่วงเช้า ออร์แซ → Le Relais de l'Entrecôte → ออร็องเฌอรี → ประตูชัย แล้วไปสมทบที่ดิสนีย์ 16:00) เพิ่มร้านหลัก Bernachon ในวันอาทิตย์ที่ลียง</td></tr><tr><td class="d">5 พ.ย.</td><td>บ่ายวันอาทิตย์ที่ลียงเลือกสวนแตต-ดอร์ (สถาบันลูมีแยร์เป็นตัวเลือก) เพิ่มเดินเล่นเนินครัวรูสเช้าวันจันทร์ วิวกลางคืนฟูร์วิแยร์คืนวันเสาร์คงเดิม</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่ม "ภูมิภาคของสเปนกับอาหาร" และ "ภูมิภาคของอิตาลีกับอาหาร" ในบทอาหาร (แบ่งตามทิศเหมือนฝรั่งเศส พร้อมชื่อเมืองและทริปนี้)</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่มเรื่องทรัฟเฟิลขาว (ซานมีนีอาโต Savini Tartufi Procacci ราคาและการนำกลับ) และการดูแลหม้อทองแดงกับพิมพ์คาเนเลในบทอาหาร เพิ่มของที่ระลึกจากร้านในบทโบกุส</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่ม "ของที่ควรซื้อเพื่อเริ่มทำอาหาร" ในบทอาหาร (5 อย่างที่ไม่ควรพลาด ร้านอุปกรณ์และวัตถุดิบแต่ละเมือง ข้อควรระวังในการนำกลับ)</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่ม "ของหวานและขนม" (ประเภทร้านอย่างซาลง เดอ เต ของเด่นและร้านดังแต่ละเมือง) และ "ชีสของเมืองที่เราไป" (เช่นแซ็ง-มาร์แซล็งของลียง) ในบทอาหาร แบ่งภูมิภาคฝรั่งเศสเป็นเหนือ ตะวันตก ตะวันออก กลาง ตะวันออกเฉียงใต้ ตะวันตกเฉียงใต้ พร้อมชื่อเมือง ร้านดังของเชฟระดับตำนานทำเป็นการ์ดพร้อมคำอธิบายและวิธีสนุก</td></tr><tr><td class="d">5 พ.ย.</td><td>จัด 26 พ.ย. ใหม่โดยแยกกันเที่ยว (Ryo ไม่ไปดิสนีย์) ใส่ 4 แผน และแผนปารีสของ Ryo กับ Yuzuha และของ Ryo คนเดียวในบทดิสนีย์ เรียงบทอาหารเป็นฝรั่งเศส → สเปน → อิตาลี (ตามลำดับการเดินทาง)</td></tr><tr><td class="d">5 พ.ย.</td><td>ปรับบท "ชีสและไวน์" เป็น "ตำราอาหาร" เน้นฝรั่งเศส อิตาลี สเปน (ประวัติศาสตร์ อิทธิพลต่อกัน เชฟระดับตำนาน ร้านดังพร้อมแผนที่ ระดับของร้าน ลำดับมื้ออาหาร มารยาทสามประเทศ ภูมิภาคฝรั่งเศส) ย้าย "อาหารและเครื่องดื่ม" และมารยาทจากบทของแต่ละประเทศมารวมที่นี่</td></tr><tr><td class="d">4 พ.ย.</td><td>ปรับสีแผนที่เส้นทางตามประเทศ (เนเธอร์แลนด์สีส้ม ฝรั่งเศสสีน้ำเงิน สเปนสีแดง อิตาลีสีเขียว เครื่องบินและดูไบสีเทา) ใส่ธงชาติทุกเมืองในตารางกำหนดการ</td></tr><tr><td class="d">4 พ.ย.</td><td>เพิ่มข้อความตอบกลับจากฝ่ายจองของร้านโบกุส (ต้นฉบับและคำแปล) ในหัวข้อ "พาลูกเล็กไป" ของบทโบกุส เป็นตัวอย่างเซอร์วิสของอาหารฝรั่งเศส</td></tr><tr><td class="d">4 พ.ย.</td><td>จอง AVE INT 09742 (30 พ.ย. ลียง 14:35 → บาร์เซโลนา 19:23) วันจันทร์ที่ลียงมีเวลาว่างถึงบ่าย วันแรกที่บาร์เซโลนาจัดใหม่ตามเวลาถึงตอนค่ำ (เดินถนนกราเซียเป็นตัวเลือก) เพิ่มคำเตือนว่าใส่ Apple Wallet ไม่ได้</td></tr><tr><td class="d">4 พ.ย.</td><td>จอง TGV INOUI 6619 (28 พ.ย. 15:00 → 16:56 ชั้น 1) จัดวันที่ 28 พ.ย. ที่ปารีสใหม่ (ตลาดเช้าและมงมาร์ต → ไปสถานี 13:45) แผนช่วงบ่ายเก็บไว้เป็นตัวเลือก</td></tr><tr><td class="d">4 พ.ย.</td><td>จองโรงแรมที่ลียง (Mercure ปาร์-ดิเยอ 2 คืน) และบูชง Daniel et Denise Saint-Jean คืน 28 พ.ย. (19:00) คืนนั้นหลังมื้อเย็นนั่งรถรางขึ้นไปดูวิวกลางคืนบนเนินฟูร์วิแยร์ บ่าย 29 พ.ย. เลือกสวนสาธารณะหรือพิพิธภัณฑ์ 1 แห่งแล้วงีบกลางวัน</td></tr><tr><td class="d">4 พ.ย.</td><td>ลบส่วนที่เขียนว่าจะซื้อของฝากอะไรให้ใคร และหัวข้อ "แผนของฝาก" เพิ่มเรื่องหัวหน้าที่ EY และข้อความถึง Yuzuha ในบทโบกุส</td></tr><tr><td class="d">4 พ.ย.</td><td>เปลี่ยนเป็นแวะลียง (เย็น 28 พ.ย. ปารีส → ลียง 2 คืน 30 พ.ย. ไปบาร์เซโลนา) อัปเดตกำหนดการ รายการจอง การเดินทาง แผนที่เส้นทาง และใส่ 3 วันที่ลียงในบทโบกุส แผนปารีสวันที่ 29 พ.ย. เก็บไว้เป็นตัวเลือก</td></tr><tr><td class="d">4 พ.ย.</td><td>จองร้านปอล โบกุส สาขาแรก (29 พ.ย. 20:15) เพิ่มบท "โบกุส" แบบเดียวกับบทดิสนีย์ (การจอง การเดินทาง ตารางวันนั้น เมนูฤดูใบไม้ร่วง อาหารขึ้นชื่อ พาลูกน้อยไป ประวัติ ของฝาก)</td></tr><tr><td class="d">3 พ.ย.</td><td>ย้ายปิซาไปบ่ายวันที่ 7 ธ.ค. (จ.) ไปกลับด้วยรถไฟท้องถิ่น วันที่ 8 ธ.ค. เที่ยวฟลอเรนซ์ยามเช้า กินมื้อกลางวันแล้วนั่งรถไฟไปโรม</td></tr><tr><td class="d">3 พ.ย.</td><td>จอง Frecciarossa 9415 วันที่ 5 ธ.ค. (11:26 → 13:39 Business) เพิ่มเดินเล่นเวนิสยามเช้า วันแรกที่ฟลอเรนซ์เลื่อนอัคคาเดเมียเป็น 15:15 และย้ายพระอาทิตย์ตกที่ลานมีเกลันเจโลไปวันที่ 6 ธ.ค. เพิ่มฉบับภาษาอังกฤษ</td></tr><tr><td class="d">3 พ.ย.</td><td>จอง Eurostar (25 พ.ย. 09:10 → 12:37) ปรับตารางเช้าที่อัมสเตอร์ดัมและวันแรกที่ปารีสให้ตรงกัน</td></tr><tr><td class="d">2 พ.ย.</td><td>ลบรหัสจอง (เอมิเรตส์ ที่พักใน Booking) และเลขกรมธรรม์ประกันออกจากไกด์ (กันคนอื่นเข้าไปแก้หรือยกเลิกการจอง)</td></tr><tr><td class="d">2 พ.ย.</td><td>ดูไบ: ตัดสินใจออกไปในเมือง ซมขอวีซ่าทรานซิต 48 ชม. ผ่านเอมิเรตส์ (มีขั้นตอนในบทดูไบ)</td></tr><tr><td class="d">25 ต.ค.</td><td>ทำรายการของที่ต้องเอาไปใหม่จากรายการประจำ ให้เข้ากับทริปนี้ (มีป้ายบอกกระเป๋าที่ใส่)</td></tr><tr><td class="d">25 ต.ค.</td><td>ฉบับภาษาญี่ปุ่นเอาภาษาไทยที่เขียนคู่กันออก (ตัวเล็กข้างหัวข้อ คอลัมน์ภาษาไทยในตารางบทสนทนา ฯลฯ) ภาษาไทยอยู่ในฉบับภาษาไทย</td></tr><tr><td class="d">25 ต.ค.</td><td>เลือกดีไซน์ได้ 3 แบบ (กดปุ่มจานสีมุมขวาล่าง): Som (กระดาษสีอ่อน＋ลายเส้นของแต่ละประเทศ ค่าเริ่มต้น) Yuzuha (สีสดใส) Ryo (สีเข้ม) หรือใส่ ?theme=som / yuzuha / ryo ในลิงก์ก็ได้</td></tr><tr><td class="d">25 ต.ค.</td><td>สรุปประกันเหลือ 2 ตัว คือ Chubb และ Hilton Amex Premium เพิ่มขั้นตอนติดต่อเมื่อเกิดเหตุ (แยกสถานการณ์) และรายชื่อเบอร์ติดต่อ</td></tr><tr><td class="d">25 ต.ค.</td><td>อัปเดตข้อมูลจากใบยืนยันโรงแรม 6 แห่ง (เวลา วันสุดท้ายที่ยกเลิกฟรี ห้อง) เช็กความคุ้มครอง Amex จากเงื่อนไข (ของติดตัวถูกขโมยไม่คุ้มครอง) เพิ่มหัวข้อ Anytime Fitness</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อประกันการเดินทาง (รายละเอียดกรมธรรม์ Chubb การแบ่งหน้าที่กับ Amex กฎการเคลม)</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อจัดกระเป๋าและการขนย้าย (วิธีรับมือแต่ละสถานการณ์) เช็กสัมภาระและที่นั่งเอมิเรตส์จาก e-ticket อัปเดตรายการของและสิ่งที่ต้องทำ เพิ่มประวัติการแก้ไขนี้</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่ม "หนังที่ควรดูก่อนไป" ของแต่ละประเทศ</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มการแวะเปลี่ยนเครื่องที่ดูไบขาไป (3 ชม. 15 นาที) ในกำหนดการและแผนที่เส้นทาง</td></tr><tr><td class="d">18 ต.ค.</td><td>ปุ่มเปลี่ยนภาษาอยู่มุมขวาล่างตลอด (สลับญี่ปุ่น/ไทยได้โดยไม่เลื่อนหน้า)</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มลิสต์สถานที่โปรดใน Google Maps (แยกประเภท มีชื่อภาษาไทย) และลิงก์แผนที่ของโรงแรมและสถานที่สำคัญ เพิ่มการแวะดูไบ 17 ชม. ขากลับในแผนที่</td></tr><tr><td class="d">18 ต.ค.</td><td>เปลี่ยนที่พักปารีสเป็น Libertel Austerlitz และยืนยันที่พักทั้ง 6 แห่ง</td></tr><tr><td class="d">18 ต.ค.</td><td>เปิดเวอร์ชัน GitHub ตัวอักษรใหญ่ขึ้นสำหรับ iPhone ตารางกว้างเลื่อนด้านข้างได้ เปิดเป็นภาษาไทยด้วย ?lang=th</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>ทบทวนทั้งเล่ม (Yuzuha อายุ 10 เดือนตอนเดินทาง ขาไปออก 01:05 ตัดค่าประกันออก) ทำเป็น 2 ภาษา ญี่ปุ่นและไทย</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>เพิ่มวิธีรับมือวันประท้วง/นัดหยุดงาน การป้องกันล้วงกระเป๋า (แยกตามสถานการณ์) และคอลัมน์มารยาทบนโต๊ะอาหารของฝรั่งเศส</td></tr><tr><td class="d">ราว 16 ต.ค.</td><td>อัปเดตว่าซื้อตั๋วดิสนีย์แลนด์ปารีสแล้ว เพิ่ม "ดิสนีย์กับฝรั่งเศส" เวลาเข้าแวร์ซาย และตารางเวลาพระอาทิตย์ขึ้น-ตก</td></tr><tr><td class="d">15 ต.ค.</td><td>เวอร์ชันแรก</td></tr></tbody></table></div>
+    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">7 พ.ย.</td><td>สารบัญเปิดด้วยปุ่ม "สารบัญ" (แยกตามเมือง ดิสนีย์กับโบกุสอยู่ใต้เมือง) แยกชีสและไวน์ออกจากบทอาหารไปอยู่ใน "บทอ่าน" บนมือถือ ตาราง 4 คอลัมน์ขึ้นไปเรียงแนวตั้ง หน้าปกเป็น 5 ประเทศ</td></tr><tr><td class="d">7 พ.ย.</td><td>เพิ่มบทใหม่ "พิพิธภัณฑ์และงานชิ้นเอก" (ลูฟวร์ โรแด็ง ออร์แซ ซากราดาฟามีเลีย พิพิธภัณฑ์ปีกัสโซ วังดอจ อัคคาเดเมีย อุฟฟีซี วาติกัน) แก้คำนำบทฝรั่งเศสให้ตรงกับปารีส 4 คืนและลียง 2 คืน</td></tr><tr><td class="d">6 พ.ย.</td><td>บ้านแอนน์ แฟรงก์จองแล้ว (24 พ.ย. รอบเข้า 9:00〜9:15 3 คน)</td></tr><tr><td class="d">6 พ.ย.</td><td>ปรับวันที่ 25 พ.ย.：โรงอุปรากรกับ Le Meurice กลับเป็น "ต้องจอง" Ladurée ถนนรัวยาลแค่ดูจากข้างนอก ลูฟวร์เริ่ม 17:00 (ร้านอุปกรณ์ครัวกับปตีบาโตย้ายไปตัวเลือก) ประตูชัยฝากรถเข็นไว้กับเจ้าหน้าที่ที่ทางเข้า</td></tr><tr><td class="d">6 พ.ย.</td><td>จัดปารีส 24〜28 พ.ย. ใหม่ 24 พ.ย. หอไอเฟล ประตูชัย ช็องเซลีเซยามค่ำ 25 พ.ย. มงมาร์ตยามเช้า → โรงอุปรากร → Le Meurice 13:45 → Som ไปดิสนีย์ตอนเย็น Ryo กับ Yuzuha ไปลูฟวร์ 26 พ.ย. แวร์ซาย → สุสานนโปเลียน → โรแด็ง → บงมาร์เช → Josselin → นอเทรอดามยามค่ำ 27 พ.ย. จากมาเรไปเขต 1 28 พ.ย. แพนธีออนแล้วขึ้น TGV ที่เอาออกทั้งหมดย้ายไปตาราง "ตัวเลือก" เพิ่มตารางรสชาติท้องถิ่นที่กินได้ในปารีส บทดิสนีย์เปลี่ยนเป็นแผน F (เย็น 25 พ.ย. Som คนเดียว)</td></tr><tr><td class="d">6 พ.ย.</td><td>อัมสเตอร์ดัมเหลือ 1 คืน ที่พักเปลี่ยนเป็น art'otel (ตรงข้ามสถานีกลาง) Eurostar เปลี่ยนเป็น 24 พ.ย. 13:10→16:40 (ตู้ 18 ที่นั่ง 85・86) โรงแรมปารีส 24〜28 พ.ย. 4 คืน จัดวันที่ 24 พ.ย. (ถึงปารีสตอนเย็น) และ 25 พ.ย. ใหม่ (ย่านละติน → เกาะซิเต → จิบชาที่ Le Meurice → ลูฟวร์รอบค่ำ 3 คน) หมู่บ้านกังหันลมย้ายไปเป็นตัวเลือก ตั๋ว TGV ปารีส→บาร์เซโลนาคืนเงินแล้ว</td></tr><tr><td class="d">6 พ.ย.</td><td>เพิ่มแผน E วันที่ 26 พ.ย. (Ryo เที่ยวปารีสช่วงเช้า ออร์แซ → Le Relais de l'Entrecôte → ออร็องเฌอรี → ประตูชัย แล้วไปสมทบที่ดิสนีย์ 16:00) เพิ่มร้านหลัก Bernachon ในวันอาทิตย์ที่ลียง</td></tr><tr><td class="d">5 พ.ย.</td><td>บ่ายวันอาทิตย์ที่ลียงเลือกสวนแตต-ดอร์ (สถาบันลูมีแยร์เป็นตัวเลือก) เพิ่มเดินเล่นเนินครัวรูสเช้าวันจันทร์ วิวกลางคืนฟูร์วิแยร์คืนวันเสาร์คงเดิม</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่ม "ภูมิภาคของสเปนกับอาหาร" และ "ภูมิภาคของอิตาลีกับอาหาร" ในบทอาหาร (แบ่งตามทิศเหมือนฝรั่งเศส พร้อมชื่อเมืองและทริปนี้)</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่มเรื่องทรัฟเฟิลขาว (ซานมีนีอาโต Savini Tartufi Procacci ราคาและการนำกลับ) และการดูแลหม้อทองแดงกับพิมพ์คาเนเลในบทอาหาร เพิ่มของที่ระลึกจากร้านในบทโบกุส</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่ม "ของที่ควรซื้อเพื่อเริ่มทำอาหาร" ในบทอาหาร (5 อย่างที่ไม่ควรพลาด ร้านอุปกรณ์และวัตถุดิบแต่ละเมือง ข้อควรระวังในการนำกลับ)</td></tr><tr><td class="d">5 พ.ย.</td><td>เพิ่ม "ของหวานและขนม" (ประเภทร้านอย่างซาลง เดอ เต ของเด่นและร้านดังแต่ละเมือง) และ "ชีสของเมืองที่เราไป" (เช่นแซ็ง-มาร์แซล็งของลียง) ในบทอาหาร แบ่งภูมิภาคฝรั่งเศสเป็นเหนือ ตะวันตก ตะวันออก กลาง ตะวันออกเฉียงใต้ ตะวันตกเฉียงใต้ พร้อมชื่อเมือง ร้านดังของเชฟระดับตำนานทำเป็นการ์ดพร้อมคำอธิบายและวิธีสนุก</td></tr><tr><td class="d">5 พ.ย.</td><td>จัด 26 พ.ย. ใหม่โดยแยกกันเที่ยว (Ryo ไม่ไปดิสนีย์) ใส่ 4 แผน และแผนปารีสของ Ryo กับ Yuzuha และของ Ryo คนเดียวในบทดิสนีย์ เรียงบทอาหารเป็นฝรั่งเศส → สเปน → อิตาลี (ตามลำดับการเดินทาง)</td></tr><tr><td class="d">5 พ.ย.</td><td>ปรับบท "ชีสและไวน์" เป็น "ตำราอาหาร" เน้นฝรั่งเศส อิตาลี สเปน (ประวัติศาสตร์ อิทธิพลต่อกัน เชฟระดับตำนาน ร้านดังพร้อมแผนที่ ระดับของร้าน ลำดับมื้ออาหาร มารยาทสามประเทศ ภูมิภาคฝรั่งเศส) ย้าย "อาหารและเครื่องดื่ม" และมารยาทจากบทของแต่ละประเทศมารวมที่นี่</td></tr><tr><td class="d">4 พ.ย.</td><td>ปรับสีแผนที่เส้นทางตามประเทศ (เนเธอร์แลนด์สีส้ม ฝรั่งเศสสีน้ำเงิน สเปนสีแดง อิตาลีสีเขียว เครื่องบินและดูไบสีเทา) ใส่ธงชาติทุกเมืองในตารางกำหนดการ</td></tr><tr><td class="d">4 พ.ย.</td><td>เพิ่มข้อความตอบกลับจากฝ่ายจองของร้านโบกุส (ต้นฉบับและคำแปล) ในหัวข้อ "พาลูกเล็กไป" ของบทโบกุส เป็นตัวอย่างเซอร์วิสของอาหารฝรั่งเศส</td></tr><tr><td class="d">4 พ.ย.</td><td>จอง AVE INT 09742 (30 พ.ย. ลียง 14:35 → บาร์เซโลนา 19:23) วันจันทร์ที่ลียงมีเวลาว่างถึงบ่าย วันแรกที่บาร์เซโลนาจัดใหม่ตามเวลาถึงตอนค่ำ (เดินถนนกราเซียเป็นตัวเลือก) เพิ่มคำเตือนว่าใส่ Apple Wallet ไม่ได้</td></tr><tr><td class="d">4 พ.ย.</td><td>จอง TGV INOUI 6619 (28 พ.ย. 15:00 → 16:56 ชั้น 1) จัดวันที่ 28 พ.ย. ที่ปารีสใหม่ (ตลาดเช้าและมงมาร์ต → ไปสถานี 13:45) แผนช่วงบ่ายเก็บไว้เป็นตัวเลือก</td></tr><tr><td class="d">4 พ.ย.</td><td>จองโรงแรมที่ลียง (Mercure ปาร์-ดิเยอ 2 คืน) และบูชง Daniel et Denise Saint-Jean คืน 28 พ.ย. (19:00) คืนนั้นหลังมื้อเย็นนั่งรถรางขึ้นไปดูวิวกลางคืนบนเนินฟูร์วิแยร์ บ่าย 29 พ.ย. เลือกสวนสาธารณะหรือพิพิธภัณฑ์ 1 แห่งแล้วงีบกลางวัน</td></tr><tr><td class="d">4 พ.ย.</td><td>ลบส่วนที่เขียนว่าจะซื้อของฝากอะไรให้ใคร และหัวข้อ "แผนของฝาก" เพิ่มเรื่องหัวหน้าที่ EY และข้อความถึง Yuzuha ในบทโบกุส</td></tr><tr><td class="d">4 พ.ย.</td><td>เปลี่ยนเป็นแวะลียง (เย็น 28 พ.ย. ปารีส → ลียง 2 คืน 30 พ.ย. ไปบาร์เซโลนา) อัปเดตกำหนดการ รายการจอง การเดินทาง แผนที่เส้นทาง และใส่ 3 วันที่ลียงในบทโบกุส แผนปารีสวันที่ 29 พ.ย. เก็บไว้เป็นตัวเลือก</td></tr><tr><td class="d">4 พ.ย.</td><td>จองร้านปอล โบกุส สาขาแรก (29 พ.ย. 20:15) เพิ่มบท "โบกุส" แบบเดียวกับบทดิสนีย์ (การจอง การเดินทาง ตารางวันนั้น เมนูฤดูใบไม้ร่วง อาหารขึ้นชื่อ พาลูกน้อยไป ประวัติ ของฝาก)</td></tr><tr><td class="d">3 พ.ย.</td><td>ย้ายปิซาไปบ่ายวันที่ 7 ธ.ค. (จ.) ไปกลับด้วยรถไฟท้องถิ่น วันที่ 8 ธ.ค. เที่ยวฟลอเรนซ์ยามเช้า กินมื้อกลางวันแล้วนั่งรถไฟไปโรม</td></tr><tr><td class="d">3 พ.ย.</td><td>จอง Frecciarossa 9415 วันที่ 5 ธ.ค. (11:26 → 13:39 Business) เพิ่มเดินเล่นเวนิสยามเช้า วันแรกที่ฟลอเรนซ์เลื่อนอัคคาเดเมียเป็น 15:15 และย้ายพระอาทิตย์ตกที่ลานมีเกลันเจโลไปวันที่ 6 ธ.ค. เพิ่มฉบับภาษาอังกฤษ</td></tr><tr><td class="d">3 พ.ย.</td><td>จอง Eurostar (25 พ.ย. 09:10 → 12:37) ปรับตารางเช้าที่อัมสเตอร์ดัมและวันแรกที่ปารีสให้ตรงกัน</td></tr><tr><td class="d">2 พ.ย.</td><td>ลบรหัสจอง (เอมิเรตส์ ที่พักใน Booking) และเลขกรมธรรม์ประกันออกจากไกด์ (กันคนอื่นเข้าไปแก้หรือยกเลิกการจอง)</td></tr><tr><td class="d">2 พ.ย.</td><td>ดูไบ: ตัดสินใจออกไปในเมือง ซมขอวีซ่าทรานซิต 48 ชม. ผ่านเอมิเรตส์ (มีขั้นตอนในบทดูไบ)</td></tr><tr><td class="d">25 ต.ค.</td><td>ทำรายการของที่ต้องเอาไปใหม่จากรายการประจำ ให้เข้ากับทริปนี้ (มีป้ายบอกกระเป๋าที่ใส่)</td></tr><tr><td class="d">25 ต.ค.</td><td>ฉบับภาษาญี่ปุ่นเอาภาษาไทยที่เขียนคู่กันออก (ตัวเล็กข้างหัวข้อ คอลัมน์ภาษาไทยในตารางบทสนทนา ฯลฯ) ภาษาไทยอยู่ในฉบับภาษาไทย</td></tr><tr><td class="d">25 ต.ค.</td><td>เลือกดีไซน์ได้ 3 แบบ (กดปุ่มจานสีมุมขวาล่าง): Som (กระดาษสีอ่อน＋ลายเส้นของแต่ละประเทศ ค่าเริ่มต้น) Yuzuha (สีสดใส) Ryo (สีเข้ม) หรือใส่ ?theme=som / yuzuha / ryo ในลิงก์ก็ได้</td></tr><tr><td class="d">25 ต.ค.</td><td>สรุปประกันเหลือ 2 ตัว คือ Chubb และ Hilton Amex Premium เพิ่มขั้นตอนติดต่อเมื่อเกิดเหตุ (แยกสถานการณ์) และรายชื่อเบอร์ติดต่อ</td></tr><tr><td class="d">25 ต.ค.</td><td>อัปเดตข้อมูลจากใบยืนยันโรงแรม 6 แห่ง (เวลา วันสุดท้ายที่ยกเลิกฟรี ห้อง) เช็กความคุ้มครอง Amex จากเงื่อนไข (ของติดตัวถูกขโมยไม่คุ้มครอง) เพิ่มหัวข้อ Anytime Fitness</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อประกันการเดินทาง (รายละเอียดกรมธรรม์ Chubb การแบ่งหน้าที่กับ Amex กฎการเคลม)</td></tr><tr><td class="d">25 ต.ค.</td><td>เพิ่มหัวข้อจัดกระเป๋าและการขนย้าย (วิธีรับมือแต่ละสถานการณ์) เช็กสัมภาระและที่นั่งเอมิเรตส์จาก e-ticket อัปเดตรายการของและสิ่งที่ต้องทำ เพิ่มประวัติการแก้ไขนี้</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่ม "หนังที่ควรดูก่อนไป" ของแต่ละประเทศ</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มการแวะเปลี่ยนเครื่องที่ดูไบขาไป (3 ชม. 15 นาที) ในกำหนดการและแผนที่เส้นทาง</td></tr><tr><td class="d">18 ต.ค.</td><td>ปุ่มเปลี่ยนภาษาอยู่มุมขวาล่างตลอด (สลับญี่ปุ่น/ไทยได้โดยไม่เลื่อนหน้า)</td></tr><tr><td class="d">18 ต.ค.</td><td>เพิ่มลิสต์สถานที่โปรดใน Google Maps (แยกประเภท มีชื่อภาษาไทย) และลิงก์แผนที่ของโรงแรมและสถานที่สำคัญ เพิ่มการแวะดูไบ 17 ชม. ขากลับในแผนที่</td></tr><tr><td class="d">18 ต.ค.</td><td>เปลี่ยนที่พักปารีสเป็น Libertel Austerlitz และยืนยันที่พักทั้ง 6 แห่ง</td></tr><tr><td class="d">18 ต.ค.</td><td>เปิดเวอร์ชัน GitHub ตัวอักษรใหญ่ขึ้นสำหรับ iPhone ตารางกว้างเลื่อนด้านข้างได้ เปิดเป็นภาษาไทยด้วย ?lang=th</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>ทบทวนทั้งเล่ม (Yuzuha อายุ 10 เดือนตอนเดินทาง ขาไปออก 01:05 ตัดค่าประกันออก) ทำเป็น 2 ภาษา ญี่ปุ่นและไทย</td></tr><tr><td class="d">ราว 17 ต.ค.</td><td>เพิ่มวิธีรับมือวันประท้วง/นัดหยุดงาน การป้องกันล้วงกระเป๋า (แยกตามสถานการณ์) และคอลัมน์มารยาทบนโต๊ะอาหารของฝรั่งเศส</td></tr><tr><td class="d">ราว 16 ต.ค.</td><td>อัปเดตว่าซื้อตั๋วดิสนีย์แลนด์ปารีสแล้ว เพิ่ม "ดิสนีย์กับฝรั่งเศส" เวลาเข้าแวร์ซาย และตารางเวลาพระอาทิตย์ขึ้น-ตก</td></tr><tr><td class="d">15 ต.ค.</td><td>เวอร์ชันแรก</td></tr></tbody></table></div>
   </details>
 </footer>
 
@@ -10423,26 +10458,30 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   </div>
   <div class="toc-panel" id="toc-panel" hidden>
     <div class="toc-paper">
-      <div class="toc-title"><span>Our Own Guidebook</span><b>Contents</b><button type="button" class="toc-close" aria-label="Close">×</button></div>
-      <div class="toc-group"><h5><span>The journey</span><small>Itinerary</small></h5><ol>
-        <li><a href="#plan" data-ch="plan"><span class="no">00</span><span class="nm">Introduction</span><span class="dot" aria-hidden="true"></span><span class="dt">The plan and bookings</span></a></li>
-        <li><a href="#nl" data-ch="nl"><span class="no">01</span><span class="nm"><span class="flag f-nl"></span>Netherlands</span><span class="dot" aria-hidden="true"></span><span class="dt">11/23–24 · Amsterdam</span></a></li>
-        <li><a href="#fr" data-ch="fr"><span class="no">02</span><span class="nm"><span class="flag f-fr"></span>France</span><span class="dot" aria-hidden="true"></span><span class="dt">11/24–28 · Paris</span></a></li>
-        <li><a href="#dlp" data-ch="dlp"><span class="no">SP</span><span class="nm">Disney</span><span class="dot" aria-hidden="true"></span><span class="dt">11/25 evening · Som</span></a></li>
-        <li><a href="#bocuse" data-ch="bocuse"><span class="no">SP</span><span class="nm">Lyon · Bocuse</span><span class="dot" aria-hidden="true"></span><span class="dt">11/28–30 · Lyon</span></a></li>
-        <li><a href="#es" data-ch="es"><span class="no">03</span><span class="nm"><span class="flag f-es"></span>Spain</span><span class="dot" aria-hidden="true"></span><span class="dt">11/30–12/3 · Barcelona</span></a></li>
-        <li><a href="#it" data-ch="it"><span class="no">04</span><span class="nm"><span class="flag f-it"></span>Italy</span><span class="dot" aria-hidden="true"></span><span class="dt">12/3–11 · Venice, Florence, Rome</span></a></li>
-        <li><a href="#ae" data-ch="ae"><span class="no">05</span><span class="nm"><span class="flag f-ae"></span>Dubai</span><span class="dot" aria-hidden="true"></span><span class="dt">12/12 · transfer</span></a></li>
+      <div class="toc-title"><b>Contents</b><span>Our Own Guidebook</span><button type="button" class="toc-close" aria-label="Close">×</button></div>
+      <div class="toc-group"><h5><span>Journey</span><small>Itinerary</small></h5><ol>
+        <li><a href="#plan" data-ch="plan" data-now="Introduction"><span class="no">00</span><span class="nm">Introduction</span><span class="dot" aria-hidden="true"></span><span class="dt">Plan & bookings</span></a></li>
+        <li><a href="#nl" data-ch="nl" data-now="Amsterdam"><span class="no">01</span><span class="nm"><span class="flag f-nl"></span>Amsterdam</span><span class="dot" aria-hidden="true"></span><span class="dt">11/23–24</span></a></li>
+        <li><a href="#fr" data-ch="fr" data-now="Paris"><span class="no">02</span><span class="nm"><span class="flag f-fr"></span>Paris</span><span class="dot" aria-hidden="true"></span><span class="dt">11/24–28</span></a></li>
+        <li class="sub"><a href="#dlp" data-ch="dlp" data-now="Disney"><span class="no"></span><span class="nm">Disneyland Paris</span><span class="dot" aria-hidden="true"></span><span class="dt">11/25 evening</span></a></li>
+        <li><a href="#bocuse" data-ch="bocuse" data-now="Lyon"><span class="no">02</span><span class="nm"><span class="flag f-fr"></span>Lyon</span><span class="dot" aria-hidden="true"></span><span class="dt">11/28–30</span></a></li>
+        <li class="sub"><a href="#bcs-basic" data-ch="bocuse" data-now="Lyon"><span class="no"></span><span class="nm">Paul Bocuse</span><span class="dot" aria-hidden="true"></span><span class="dt">11/29</span></a></li>
+        <li><a href="#es" data-ch="es" data-now="Barcelona"><span class="no">03</span><span class="nm"><span class="flag f-es"></span>Barcelona</span><span class="dot" aria-hidden="true"></span><span class="dt">11/30–12/3</span></a></li>
+        <li><a href="#it" data-ch="it" data-now="Italy"><span class="no">04</span><span class="nm"><span class="flag f-it"></span>Venice</span><span class="dot" aria-hidden="true"></span><span class="dt">12/3–5</span></a></li>
+        <li><a href="#flr" data-ch="it" data-now="Italy"><span class="no">04</span><span class="nm"><span class="flag f-it"></span>Florence</span><span class="dot" aria-hidden="true"></span><span class="dt">12/5–8</span></a></li>
+        <li><a href="#rom" data-ch="it" data-now="Italy"><span class="no">04</span><span class="nm"><span class="flag f-it"></span>Rome</span><span class="dot" aria-hidden="true"></span><span class="dt">12/8–11</span></a></li>
+        <li><a href="#ae" data-ch="ae" data-now="Dubai"><span class="no">05</span><span class="nm"><span class="flag f-ae"></span>Dubai</span><span class="dot" aria-hidden="true"></span><span class="dt">12/12 transfer</span></a></li>
       </ol></div>
-      <div class="toc-group"><h5><span>To read</span><small>Reading</small></h5><ol>
-        <li><a href="#food" data-ch="food"><span class="no">06</span><span class="nm">Food</span><span class="dot" aria-hidden="true"></span><span class="dt">France, Spain, Italy</span></a></li>
-        <li><a href="#art" data-ch="art"><span class="no">07</span><span class="nm">Museums and masterpieces</span><span class="dot" aria-hidden="true"></span><span class="dt">From the Louvre to the Vatican</span></a></li>
+      <div class="toc-group"><h5><span>Reading</span><small>Reading</small></h5><ol>
+        <li><a href="#food" data-ch="food" data-now="Food"><span class="no">06</span><span class="nm">Food</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#cw" data-ch="cw" data-now="Cheese & wine"><span class="no">07</span><span class="nm">Cheese & wine</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#art" data-ch="art" data-now="Art"><span class="no">08</span><span class="nm">Museums & masterpieces</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
       </ol></div>
       <div class="toc-group"><h5><span>Support</span><small>Support</small></h5><ol>
-        <li><a href="#baby" data-ch="baby"><span class="no">08</span><span class="nm">Travelling with a baby</span><span class="dot" aria-hidden="true"></span><span class="dt">Milk, nappies, getting around</span></a></li>
-        <li><a href="#safety" data-ch="safety"><span class="no">09</span><span class="nm">Emergency & safety</span><span class="dot" aria-hidden="true"></span><span class="dt">Hospitals, theft, insurance</span></a></li>
-        <li><a href="#prep" data-ch="prep"><span class="no">10</span><span class="nm">Luggage, money, prep</span><span class="dot" aria-hidden="true"></span><span class="dt">Packing and to-do lists</span></a></li>
-        <li><a href="#next" data-ch="next"><span class="no">11</span><span class="nm">Next time</span><span class="dot" aria-hidden="true"></span><span class="dt">Places for someday</span></a></li>
+        <li><a href="#baby" data-ch="baby" data-now="Baby"><span class="no">09</span><span class="nm">Travelling with a baby</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#safety" data-ch="safety" data-now="Emergency"><span class="no">10</span><span class="nm">Emergency & safety</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#prep" data-ch="prep" data-now="Prep"><span class="no">11</span><span class="nm">Luggage, money, prep</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
+        <li><a href="#next" data-ch="next" data-now="Next time"><span class="no">12</span><span class="nm">Next time</span><span class="dot" aria-hidden="true"></span><span class="dt"></span></a></li>
       </ol></div>
     </div>
   </div>
@@ -13198,9 +13237,9 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   <div class="ch-head">
     <div class="eyebrow">Chapter 6 · Food</div>
     <h2>A food primer <span class="local">Cuisine · Cocina · Cucina</span></h2>
-    <p class="lead">France, Spain and Italy: three neighbours whose cooking has shaped each other for centuries. History, the great chefs and their restaurants, types of restaurant, how a meal runs, table manners, local dishes, cheese and wine, all in one chapter.</p>
+    <p class="lead">France, Spain and Italy: three neighbours whose cooking has shaped each other for centuries. History, the great chefs and their restaurants, types of restaurant, how a meal runs, table manners, local dishes and shopping, all in one chapter. Cheese and wine have their own chapter next.</p>
   </div>
-  <div class="subnav"><a href="#food-flow">History</a><a href="#food-ties">How they influenced each other</a><a href="#food-masters">Great chefs</a><a href="#food-places">Restaurants</a><a href="#food-types">Types of restaurant</a><a href="#food-course">How a meal runs</a><a href="#food-manners">Manners</a><a href="#fr-regions">French regions</a><a href="#es-regions">Spanish regions</a><a href="#it-regions">Italian regions</a><a href="#fr-food">Dishes (FR)</a><a href="#es-food">Dishes (ES)</a><a href="#it-food">Dishes (IT)</a><a href="#food-sweets">Desserts</a><a href="#cheese-basic">Cheese</a><a href="#cheese-city">City cheeses</a><a href="#wine-basic">Wine</a><a href="#food-shop">Kitchen shopping</a><a href="#bring">Taking it home</a></div>
+  <div class="subnav"><a href="#food-flow">History</a><a href="#food-ties">How they influenced each other</a><a href="#food-masters">Great chefs</a><a href="#food-places">Restaurants</a><a href="#food-types">Types of restaurant</a><a href="#food-course">How a meal runs</a><a href="#food-manners">Manners</a><a href="#fr-regions">French regions</a><a href="#es-regions">Spanish regions</a><a href="#it-regions">Italian regions</a><a href="#fr-food">Dishes (FR)</a><a href="#es-food">Dishes (ES)</a><a href="#it-food">Dishes (IT)</a><a href="#food-sweets">Desserts</a><a href="#cw">Cheese &amp; wine (own chapter)</a><a href="#food-shop">Kitchen shopping</a><a href="#bring">Taking it home</a></div>
 
   <div class="block" id="food-flow">
     <h3>A short history of three cuisines</h3>
@@ -13671,6 +13710,126 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     <p class="memo"><span class="who">FOR THE BABY</span>For Yuzuha, avoid sweets heavy in cream and egg, honey (not before age 1) and whole nuts. Even a lick of gelato, go easy for now.</p>
   </div>
 
+  <div class="block" id="food-shop">
+    <h3>Shopping to start cooking</h3>
+    <p class="note">Tools and ingredients worth picking up on the way, for cooking French, Spanish and Italian food back home. <b>Heavy things are less of a burden the later in the trip you buy them</b>, so in Paris buy only what you really want.</p>
+    <div class="column" style="margin:4px 0 12px">
+      <div class="lab">MUST</div>
+      <h4>The five not to miss (about 1 kg in all)</h4>
+      <ol>
+        <li><b>Saffron</b> (Barcelona): a few grams, light, far cheaper and better than in Japan. For paella, bouillabaisse and risotto</li>
+        <li><b>Pimentón de la Vera</b> (Barcelona): a small tin of smoked paprika, the signature aroma of Spanish cooking</li>
+        <li><b>Dried morels or dried porcini</b> (Paris or Florence): light and intensely fragrant, for a Bocuse-style cream sauce or a risotto</li>
+        <li><b>Pralines roses</b> (Lyon): for Lyon's tart; almost impossible to find in Japan</li>
+        <li><b>Guérande salt</b> (Paris): a finishing salt; a small bag is enough</li>
+      </ol>
+      <p class="muted" style="margin:0;font-size:13px">Oil, vinegar, dried pasta, a paella pan and ordinary kitchen tools are heavy or bulky and can be bought online or in Kappabashi in Japan, so leave them for later. Tools: only the one you really want (a chinois from E. Dehillerin, say).</p>
+    </div>
+    <h4 style="margin:12px 0 8px">Tools</h4>
+    <div class="tbl"><table class="wide">
+      <thead><tr><th>City</th><th>Shop / item</th><th>What to buy</th><th>Map</th></tr></thead>
+      <tbody>
+        <tr><td data-label="City"><span class="flag f-fr"></span> Paris</td><td class="big" data-label="Shop / item">E. Dehillerin</td><td data-label="What to buy">Professional kitchenware since 1820: copper pans, chinois, canelé and tart moulds, wooden spoons. Julia Child shopped here</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=E.+Dehillerin+Paris">Open</a></td></tr>
+        <tr><td data-label="City"><span class="flag f-fr"></span> Paris</td><td class="big" data-label="Shop / item">A. Simon</td><td data-label="What to buy">Near Dehillerin: saucepans, plates, baking tools. Friendly staff, easy to browse</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=A.+Simon+Paris">Open</a></td></tr>
+        <tr><td data-label="City"><span class="flag f-fr"></span> Lyon</td><td class="big" data-label="Shop / item">The Bocuse restaurant shop</td><td data-label="What to buy">Bocuse's cookbook ("La cuisine du marché", also in English), aprons, small copper pans</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Paul+Bocuse+Collonges-au-Mont-d%27Or">Open</a></td></tr>
+        <tr><td data-label="City"><span class="flag f-es"></span> Barcelona</td><td class="big" data-label="Shop / item">Ganiveteria Roca</td><td data-label="What to buy">A cutler since 1911 on Plaça del Pi: kitchen knives, ham knives, scissors</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Ganiveteria+Roca+Barcelona">Open</a></td></tr>
+        <tr><td data-label="City"><span class="flag f-es"></span> Barcelona</td><td class="big" data-label="Shop / item">Paella pan (paella)</td><td data-label="What to buy">From market hardware stalls or kitchen shops; 30–34 cm across for 2–3 people</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Mercat+de+Santa+Caterina+Barcelona">Open</a></td></tr>
+        <tr><td data-label="City"><span class="flag f-it"></span> Florence / Rome</td><td class="big" data-label="Shop / item">Pasta tools</td><td data-label="What to buy">A chitarra (for square-cut pasta), ravioli stamps, a gnocchi board, a Bialetti moka pot</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">Open</a></td></tr>
+        <tr><td data-label="City"><span class="flag f-it"></span> Rome</td><td class="big" data-label="Shop / item">c.u.c.i.n.a.</td><td data-label="What to buy">A stylish kitchen shop: pasta tools and Parmigiano knives</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=c.u.c.i.n.a.+Roma">Open</a></td></tr>
+      </tbody>
+    </table></div>
+    <h4 style="margin:16px 0 8px">Ingredients</h4>
+    <div class="tbl"><table class="wide">
+      <thead><tr><th>City</th><th>Shop / item</th><th>What to buy</th><th>Map</th></tr></thead>
+      <tbody>
+        <tr><td data-label="City"><span class="flag f-fr"></span> Paris</td><td class="big" data-label="Shop / item">Maille (Place de la Madeleine)</td><td data-label="What to buy">Fresh mustard on tap, wine vinegars</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Maille+Madeleine+Paris">Open</a></td></tr>
+        <tr><td data-label="City"><span class="flag f-fr"></span> Paris</td><td class="big" data-label="Shop / item">La Grande Épicerie</td><td data-label="What to buy">Guérande salt (fleur de sel), dried morels, Espelette pepper, herbes de Provence, vinegars, olive oil</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=La+Grande+%C3%89picerie+de+Paris+Rive+Gauche">Open</a></td></tr>
+        <tr><td data-label="City"><span class="flag f-fr"></span> Lyon</td><td class="big" data-label="Shop / item">Les Halles Paul Bocuse</td><td data-label="What to buy"><b>Pralines roses</b> (pink sugared almonds for tarte aux pralines, hard to find outside Lyon), dried mushrooms</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Les+Halles+de+Lyon+Paul+Bocuse">Open</a></td></tr>
+        <tr><td data-label="City"><span class="flag f-es"></span> Barcelona</td><td class="big" data-label="Shop / item">La Boqueria / Santa Caterina markets</td><td data-label="What to buy"><b>Saffron</b> (La Mancha DOP), <b>pimentón</b> (smoked paprika, La Vera DOP), <b>paella rice</b> (bomba), sherry vinegar</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Boqueria+Barcelona">Open</a></td></tr>
+        <tr><td data-label="City"><span class="flag f-es"></span> Barcelona</td><td class="big" data-label="Shop / item">Tinned-food shops</td><td data-label="What to buy">Premium tinned anchovies, mussels and sardines (conservas). Light, long-lasting, good gifts</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Conservas+Barcelona">Open</a></td></tr>
+        <tr><td data-label="City"><span class="flag f-es"></span> Barcelona</td><td class="big" data-label="Shop / item">Olive oil</td><td data-label="What to buy">Catalan arbequina: mellow and easy to cook with</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Boqueria+Barcelona">Open</a></td></tr>
+        <tr><td data-label="City"><span class="flag f-it"></span> Florence</td><td class="big" data-label="Shop / item">Mercato Centrale / Sant'Ambrogio</td><td data-label="What to buy">Tuscan extra-virgin olive oil, <b>dried porcini</b>, farro, truffle paste or truffle salt</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">Open</a></td></tr>
+        <tr><td data-label="City"><span class="flag f-it"></span> Florence</td><td class="big" data-label="Shop / item">Pasta</td><td data-label="What to buy">Bronze-die dried pasta (sauce clings better), from Gragnano or Martelli</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">Open</a></td></tr>
+        <tr><td data-label="City"><span class="flag f-it"></span> Rome</td><td class="big" data-label="Shop / item">Castroni</td><td data-label="What to buy">An import food shop since 1932: balsamic vinegar (Modena), bottarga, coffee beans</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Castroni+Roma+Via+Cola+di+Rienzo">Open</a></td></tr>
+        <tr><td data-label="City"><span class="flag f-it"></span> Florence</td><td class="big" data-label="Shop / item">Truffle products</td><td data-label="What to buy"><b>Buy truffles in Italy</b>. Early December is white-truffle season in Tuscany (San Miniato). Fresh truffles last only about a week, so eat them there and take home jars (thin slices, paste, truffle salt). For French black-truffle products, Maison de la Truffe on Place de la Madeleine in Paris</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">Open</a></td></tr>
+      </tbody>
+    </table></div>
+    <div class="column" style="margin-top:12px">
+      <div class="lab">TARTUFO</div>
+      <h4>White truffles (around Florence and Pisa)</h4>
+      <ul>
+        <li><b>The source is San Miniato</b>: a hill town halfway between Florence and Pisa. From San Miniato–Fucecchio station on the Pisa regional line, a bus or taxi up the hill</li>
+        <li><b>The white-truffle fair runs only on the weekends of 11/14–15, 21–22 and 28–29</b>, so it will be over when we arrive on 12/5. Outside the fair, buy from shops in town</li>
+        <li><b>The easy way in Florence</b>: <b>Savini Tartufi</b> in the Mercato Centrale (from an old truffle family in Pisa province). Truffle dishes at fair prices and jarred products; ask about fresh truffles</li>
+        <li><b>Procacci</b> (Via de' Tornabuoni, on the 12/8 plan): the classic truffle-panino bar, with fresh truffles in season</li>
+        <li><b>Price</b>: varies a lot with each year's harvest. Shaved over a dish in a restaurant it can be over €10 a gram. If buying, confirm "how many grams, how much" on the spot</li>
+        <li><b>Fresh truffles can't come home</b>: the aroma fades within about a week, and eating them at the hotel needs a kitchen. Take home jars or truffle salt</li>
+      </ul>
+    </div>
+    <div class="column" style="margin-top:12px">
+      <div class="lab">FRENCH</div>
+      <h4>Focusing on French cooking: worth carrying even if heavy</h4>
+      <ul>
+        <li><b>Copper canelé moulds</b> (E. Dehillerin): if you bake canelés, the real copper moulds, far easier to find than in Japan</li>
+        <li><b>One copper saucepan</b> (E. Dehillerin, by Mauviel and others): for French sauces. 14–16 cm, about 1 kg; very expensive in Japan</li>
+        <li><b>Mustard</b> (Maille): fresh mustard on tap in a stoneware pot, the real Dijon taste</li>
+        <li><b>Wine vinegar</b>: traditionally made, such as Martin Pouret of Orléans. It changes your vinaigrettes and sauces</li>
+        <li><b>Walnut and hazelnut oil</b> (Leblanc and others): very French nut oils, for salade lyonnaise</li>
+        <li><b>A kitchen knife</b> (Laguiole, Opinel): checked bags only</li>
+        <li><b>Copper doesn't rust, but it darkens</b>: no red rust like iron, but air and water dull it, and left wet it can form green verdigris. Dry straight after washing; no dishwasher</li>
+        <li><b>Care depends on the lining</b>: for a saucepan, a <b>stainless-steel lining</b> (such as Mauviel M'Héritage) is easiest. Tin-lined pans must never be heated empty or used with metal utensils, and need re-tinning every few years</li>
+        <li><b>Canelé moulds</b> are tin-lined. Before use, coat with beeswax and butter (the traditional "white wax" for canelés). No scrubbing with detergent; wipe, dry and store</li>
+        <li>Tarnish comes off with lemon juice and salt, or a copper cleaner</li>
+      </ul>
+      <p class="muted" style="margin:0;font-size:13px">Staub and Le Creuset pots cost about the same in Japan, so no need to carry one.</p>
+    </div>
+    <div class="column" style="margin-top:12px">
+      <div class="lab">CHECK</div>
+      <h4>Bringing it home</h4>
+      <ul>
+        <li><b>Meat products cannot be taken into Japan</b>: jamón, prosciutto, salami, guanciale, sausages, even tinned foie gras. A shop's "OK for Japan" sign often does not get through Japanese quarantine</li>
+        <li><b>Cheese rules differ by country</b>: if you bring any, a little hard cheese (such as Parmigiano) vacuum-packed. We return via Thailand and reach Japan in January, so think about shelf life too</li>
+        <li><b>Liquids (oil, vinegar, wine) go in checked bags</b>, wrapped in padded bags in the middle of the suitcase</li>
+        <li><b>Knives must go in checked bags</b>; never in the cabin</li>
+        <li><b>Heavy tools can be shipped to Japan</b> with La Poste's Colissimo from France</li>
+        <li><b>Saffron and dried goods are light and valuable</b>. When in doubt, choose dried goods</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block" id="bring">
+    <h3>Taking it home</h3>
+    <div class="grid2">
+      <div class="card">
+        <h4>Not in the cabin</h4>
+        <ul>
+          <li>Wine, oil, soft cheese and jam count as liquids. Anything over 100 ml goes in checked baggage</li>
+          <li>Wrap wine in clothes or a padded wine bag (wine skin), in the middle of the suitcase</li>
+          <li>Duty-free alcohol stays in its sealed bag; don't open it during the Dubai stopover</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Entering Thailand</h4>
+        <ul>
+          <li>Alcohol: 1 litre per adult duty-free. A little more than one bottle of wine</li>
+          <li>Declare and pay tax on anything more. For two adults, 2 litres in total</li>
+          <li>Cheese and ham for personal use are generally fine, but meat products can be subject to quarantine, so keep amounts modest</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">For the order in which to buy heavy items, see the weight plan in the luggage and preparation chapter.</p>
+  </div>
+</section>
+<!-- =================== CHAPTER 7: CHEESE & WINE (EN) =================== -->
+<section id="cw" class="chapter cw" data-chapter="cw">
+  <div class="band"></div>
+  <div class="ch-head">
+    <div class="eyebrow">Chapter 7 · Cheese &amp; Wine</div>
+    <h2>Cheese and wine <span class="local">Fromage · Queso · Formaggio · Vin · Vino</span></h2>
+    <p class="lead">Cheese and wine take their taste from the local climate and from the cows, sheep, goats or grapes. The basic types, what to try in the cities we visit, and how to order and buy.</p>
+  </div>
+  <div class="subnav"><a href="#cheese-basic">Cheese basics</a><a href="#cheese-list">Key cheeses</a><a href="#cheese-city">City cheeses</a><a href="#cheese-buy">Buying</a><a href="#wine-basic">Wine basics</a><a href="#wine-list">Key wines</a><a href="#wine-order">Ordering</a></div>
+
   <div class="block" id="cheese-basic">
     <h3>Cheese basics</h3>
     <div class="grid2">
@@ -13867,121 +14026,12 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
     </div>
   </div>
 
-  <div class="block" id="food-shop">
-    <h3>Shopping to start cooking</h3>
-    <p class="note">Tools and ingredients worth picking up on the way, for cooking French, Spanish and Italian food back home. <b>Heavy things are less of a burden the later in the trip you buy them</b>, so in Paris buy only what you really want.</p>
-    <div class="column" style="margin:4px 0 12px">
-      <div class="lab">MUST</div>
-      <h4>The five not to miss (about 1 kg in all)</h4>
-      <ol>
-        <li><b>Saffron</b> (Barcelona): a few grams, light, far cheaper and better than in Japan. For paella, bouillabaisse and risotto</li>
-        <li><b>Pimentón de la Vera</b> (Barcelona): a small tin of smoked paprika, the signature aroma of Spanish cooking</li>
-        <li><b>Dried morels or dried porcini</b> (Paris or Florence): light and intensely fragrant, for a Bocuse-style cream sauce or a risotto</li>
-        <li><b>Pralines roses</b> (Lyon): for Lyon's tart; almost impossible to find in Japan</li>
-        <li><b>Guérande salt</b> (Paris): a finishing salt; a small bag is enough</li>
-      </ol>
-      <p class="muted" style="margin:0;font-size:13px">Oil, vinegar, dried pasta, a paella pan and ordinary kitchen tools are heavy or bulky and can be bought online or in Kappabashi in Japan, so leave them for later. Tools: only the one you really want (a chinois from E. Dehillerin, say).</p>
-    </div>
-    <h4 style="margin:12px 0 8px">Tools</h4>
-    <div class="tbl"><table class="wide">
-      <thead><tr><th>City</th><th>Shop / item</th><th>What to buy</th><th>Map</th></tr></thead>
-      <tbody>
-        <tr><td data-label="City"><span class="flag f-fr"></span> Paris</td><td class="big" data-label="Shop / item">E. Dehillerin</td><td data-label="What to buy">Professional kitchenware since 1820: copper pans, chinois, canelé and tart moulds, wooden spoons. Julia Child shopped here</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=E.+Dehillerin+Paris">Open</a></td></tr>
-        <tr><td data-label="City"><span class="flag f-fr"></span> Paris</td><td class="big" data-label="Shop / item">A. Simon</td><td data-label="What to buy">Near Dehillerin: saucepans, plates, baking tools. Friendly staff, easy to browse</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=A.+Simon+Paris">Open</a></td></tr>
-        <tr><td data-label="City"><span class="flag f-fr"></span> Lyon</td><td class="big" data-label="Shop / item">The Bocuse restaurant shop</td><td data-label="What to buy">Bocuse's cookbook ("La cuisine du marché", also in English), aprons, small copper pans</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Paul+Bocuse+Collonges-au-Mont-d%27Or">Open</a></td></tr>
-        <tr><td data-label="City"><span class="flag f-es"></span> Barcelona</td><td class="big" data-label="Shop / item">Ganiveteria Roca</td><td data-label="What to buy">A cutler since 1911 on Plaça del Pi: kitchen knives, ham knives, scissors</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Ganiveteria+Roca+Barcelona">Open</a></td></tr>
-        <tr><td data-label="City"><span class="flag f-es"></span> Barcelona</td><td class="big" data-label="Shop / item">Paella pan (paella)</td><td data-label="What to buy">From market hardware stalls or kitchen shops; 30–34 cm across for 2–3 people</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Mercat+de+Santa+Caterina+Barcelona">Open</a></td></tr>
-        <tr><td data-label="City"><span class="flag f-it"></span> Florence / Rome</td><td class="big" data-label="Shop / item">Pasta tools</td><td data-label="What to buy">A chitarra (for square-cut pasta), ravioli stamps, a gnocchi board, a Bialetti moka pot</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">Open</a></td></tr>
-        <tr><td data-label="City"><span class="flag f-it"></span> Rome</td><td class="big" data-label="Shop / item">c.u.c.i.n.a.</td><td data-label="What to buy">A stylish kitchen shop: pasta tools and Parmigiano knives</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=c.u.c.i.n.a.+Roma">Open</a></td></tr>
-      </tbody>
-    </table></div>
-    <h4 style="margin:16px 0 8px">Ingredients</h4>
-    <div class="tbl"><table class="wide">
-      <thead><tr><th>City</th><th>Shop / item</th><th>What to buy</th><th>Map</th></tr></thead>
-      <tbody>
-        <tr><td data-label="City"><span class="flag f-fr"></span> Paris</td><td class="big" data-label="Shop / item">Maille (Place de la Madeleine)</td><td data-label="What to buy">Fresh mustard on tap, wine vinegars</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Maille+Madeleine+Paris">Open</a></td></tr>
-        <tr><td data-label="City"><span class="flag f-fr"></span> Paris</td><td class="big" data-label="Shop / item">La Grande Épicerie</td><td data-label="What to buy">Guérande salt (fleur de sel), dried morels, Espelette pepper, herbes de Provence, vinegars, olive oil</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=La+Grande+%C3%89picerie+de+Paris+Rive+Gauche">Open</a></td></tr>
-        <tr><td data-label="City"><span class="flag f-fr"></span> Lyon</td><td class="big" data-label="Shop / item">Les Halles Paul Bocuse</td><td data-label="What to buy"><b>Pralines roses</b> (pink sugared almonds for tarte aux pralines, hard to find outside Lyon), dried mushrooms</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Les+Halles+de+Lyon+Paul+Bocuse">Open</a></td></tr>
-        <tr><td data-label="City"><span class="flag f-es"></span> Barcelona</td><td class="big" data-label="Shop / item">La Boqueria / Santa Caterina markets</td><td data-label="What to buy"><b>Saffron</b> (La Mancha DOP), <b>pimentón</b> (smoked paprika, La Vera DOP), <b>paella rice</b> (bomba), sherry vinegar</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Boqueria+Barcelona">Open</a></td></tr>
-        <tr><td data-label="City"><span class="flag f-es"></span> Barcelona</td><td class="big" data-label="Shop / item">Tinned-food shops</td><td data-label="What to buy">Premium tinned anchovies, mussels and sardines (conservas). Light, long-lasting, good gifts</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Conservas+Barcelona">Open</a></td></tr>
-        <tr><td data-label="City"><span class="flag f-es"></span> Barcelona</td><td class="big" data-label="Shop / item">Olive oil</td><td data-label="What to buy">Catalan arbequina: mellow and easy to cook with</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Boqueria+Barcelona">Open</a></td></tr>
-        <tr><td data-label="City"><span class="flag f-it"></span> Florence</td><td class="big" data-label="Shop / item">Mercato Centrale / Sant'Ambrogio</td><td data-label="What to buy">Tuscan extra-virgin olive oil, <b>dried porcini</b>, farro, truffle paste or truffle salt</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">Open</a></td></tr>
-        <tr><td data-label="City"><span class="flag f-it"></span> Florence</td><td class="big" data-label="Shop / item">Pasta</td><td data-label="What to buy">Bronze-die dried pasta (sauce clings better), from Gragnano or Martelli</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">Open</a></td></tr>
-        <tr><td data-label="City"><span class="flag f-it"></span> Rome</td><td class="big" data-label="Shop / item">Castroni</td><td data-label="What to buy">An import food shop since 1932: balsamic vinegar (Modena), bottarga, coffee beans</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Castroni+Roma+Via+Cola+di+Rienzo">Open</a></td></tr>
-        <tr><td data-label="City"><span class="flag f-it"></span> Florence</td><td class="big" data-label="Shop / item">Truffle products</td><td data-label="What to buy"><b>Buy truffles in Italy</b>. Early December is white-truffle season in Tuscany (San Miniato). Fresh truffles last only about a week, so eat them there and take home jars (thin slices, paste, truffle salt). For French black-truffle products, Maison de la Truffe on Place de la Madeleine in Paris</td><td data-label="Map"><a href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Firenze">Open</a></td></tr>
-      </tbody>
-    </table></div>
-    <div class="column" style="margin-top:12px">
-      <div class="lab">TARTUFO</div>
-      <h4>White truffles (around Florence and Pisa)</h4>
-      <ul>
-        <li><b>The source is San Miniato</b>: a hill town halfway between Florence and Pisa. From San Miniato–Fucecchio station on the Pisa regional line, a bus or taxi up the hill</li>
-        <li><b>The white-truffle fair runs only on the weekends of 11/14–15, 21–22 and 28–29</b>, so it will be over when we arrive on 12/5. Outside the fair, buy from shops in town</li>
-        <li><b>The easy way in Florence</b>: <b>Savini Tartufi</b> in the Mercato Centrale (from an old truffle family in Pisa province). Truffle dishes at fair prices and jarred products; ask about fresh truffles</li>
-        <li><b>Procacci</b> (Via de' Tornabuoni, on the 12/8 plan): the classic truffle-panino bar, with fresh truffles in season</li>
-        <li><b>Price</b>: varies a lot with each year's harvest. Shaved over a dish in a restaurant it can be over €10 a gram. If buying, confirm "how many grams, how much" on the spot</li>
-        <li><b>Fresh truffles can't come home</b>: the aroma fades within about a week, and eating them at the hotel needs a kitchen. Take home jars or truffle salt</li>
-      </ul>
-    </div>
-    <div class="column" style="margin-top:12px">
-      <div class="lab">FRENCH</div>
-      <h4>Focusing on French cooking: worth carrying even if heavy</h4>
-      <ul>
-        <li><b>Copper canelé moulds</b> (E. Dehillerin): if you bake canelés, the real copper moulds, far easier to find than in Japan</li>
-        <li><b>One copper saucepan</b> (E. Dehillerin, by Mauviel and others): for French sauces. 14–16 cm, about 1 kg; very expensive in Japan</li>
-        <li><b>Mustard</b> (Maille): fresh mustard on tap in a stoneware pot, the real Dijon taste</li>
-        <li><b>Wine vinegar</b>: traditionally made, such as Martin Pouret of Orléans. It changes your vinaigrettes and sauces</li>
-        <li><b>Walnut and hazelnut oil</b> (Leblanc and others): very French nut oils, for salade lyonnaise</li>
-        <li><b>A kitchen knife</b> (Laguiole, Opinel): checked bags only</li>
-        <li><b>Copper doesn't rust, but it darkens</b>: no red rust like iron, but air and water dull it, and left wet it can form green verdigris. Dry straight after washing; no dishwasher</li>
-        <li><b>Care depends on the lining</b>: for a saucepan, a <b>stainless-steel lining</b> (such as Mauviel M'Héritage) is easiest. Tin-lined pans must never be heated empty or used with metal utensils, and need re-tinning every few years</li>
-        <li><b>Canelé moulds</b> are tin-lined. Before use, coat with beeswax and butter (the traditional "white wax" for canelés). No scrubbing with detergent; wipe, dry and store</li>
-        <li>Tarnish comes off with lemon juice and salt, or a copper cleaner</li>
-      </ul>
-      <p class="muted" style="margin:0;font-size:13px">Staub and Le Creuset pots cost about the same in Japan, so no need to carry one.</p>
-    </div>
-    <div class="column" style="margin-top:12px">
-      <div class="lab">CHECK</div>
-      <h4>Bringing it home</h4>
-      <ul>
-        <li><b>Meat products cannot be taken into Japan</b>: jamón, prosciutto, salami, guanciale, sausages, even tinned foie gras. A shop's "OK for Japan" sign often does not get through Japanese quarantine</li>
-        <li><b>Cheese rules differ by country</b>: if you bring any, a little hard cheese (such as Parmigiano) vacuum-packed. We return via Thailand and reach Japan in January, so think about shelf life too</li>
-        <li><b>Liquids (oil, vinegar, wine) go in checked bags</b>, wrapped in padded bags in the middle of the suitcase</li>
-        <li><b>Knives must go in checked bags</b>; never in the cabin</li>
-        <li><b>Heavy tools can be shipped to Japan</b> with La Poste's Colissimo from France</li>
-        <li><b>Saffron and dried goods are light and valuable</b>. When in doubt, choose dried goods</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="block" id="bring">
-    <h3>Taking it home</h3>
-    <div class="grid2">
-      <div class="card">
-        <h4>Not in the cabin</h4>
-        <ul>
-          <li>Wine, oil, soft cheese and jam count as liquids. Anything over 100 ml goes in checked baggage</li>
-          <li>Wrap wine in clothes or a padded wine bag (wine skin), in the middle of the suitcase</li>
-          <li>Duty-free alcohol stays in its sealed bag; don't open it during the Dubai stopover</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h4>Entering Thailand</h4>
-        <ul>
-          <li>Alcohol: 1 litre per adult duty-free. A little more than one bottle of wine</li>
-          <li>Declare and pay tax on anything more. For two adults, 2 litres in total</li>
-          <li>Cheese and ham for personal use are generally fine, but meat products can be subject to quarantine, so keep amounts modest</li>
-        </ul>
-      </div>
-    </div>
-    <p class="note">For the order in which to buy heavy items, see the weight plan in the luggage and preparation chapter.</p>
-  </div>
 </section>
-<!-- =================== CHAPTER 7: ART (FR · ES · IT) =================== -->
+<!-- =================== CHAPTER 8: ART (FR · ES · IT) =================== -->
 <section id="art" class="chapter art" data-chapter="art">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 7 · Art</div>
+    <div class="eyebrow">Chapter 8 · Art</div>
     <h2>Museums and Masterpieces <span class="local">Louvre · Sagrada Família · Vaticano</span></h2>
     <p class="lead">The masterpieces worth seeing in the museums already on our route: from ancient Greek and Roman sculpture through the Renaissance and modern French painting to Gaudí and Picasso. You can also see how ideas born in Italy travelled to France and Spain, the reverse of our route.</p>
   </div>
@@ -14173,7 +14223,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="baby" class="chapter base" data-chapter="baby">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 8 · Traveling with a Baby</div>
+    <div class="eyebrow">Chapter 9 · Traveling with a Baby</div>
     <h2>Travelling with a baby <span class="local">with Yuzuha</span></h2>
     <p class="lead">The key to success is putting Yuzuha's rhythm at the centre of the plan. Every day in this book follows the pattern "one thing in the morning, a nap, one thing late afternoon".</p>
   </div>
@@ -14294,7 +14344,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="safety" class="chapter base" data-chapter="safety">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 9 · Safety &amp; Emergency</div>
+    <div class="eyebrow">Chapter 10 · Safety &amp; Emergency</div>
     <h2>Emergency &amp; safety <span class="local">The page for when things go wrong</span></h2>
   </div>
 
@@ -14832,7 +14882,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="prep" class="chapter base" data-chapter="prep">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 10 · Luggage, Money &amp; To-do</div>
+    <div class="eyebrow">Chapter 11 · Luggage, Money &amp; To-do</div>
     <h2>Luggage, money, preparation <span class="local">Read before leaving</span></h2>
   </div>
   <div class="subnav"><a href="#prep-bags">Luggage set-up</a><a href="#prep-gym">Gyms</a><a href="#prep-weight">Weight plan</a><a href="#prep-weather">Weather &amp; clothes</a><a href="#prep-pack">Packing</a><a href="#prep-money">Money</a><a href="#prep-wise">Wise</a><a href="#prep-meals">Meal scenarios</a><a href="#prep-todo">To-do</a></div>
@@ -15345,7 +15395,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 <section id="next" class="chapter base" data-chapter="next">
   <div class="band"></div>
   <div class="ch-head">
-    <div class="eyebrow">Chapter 11 · Someday</div>
+    <div class="eyebrow">Chapter 12 · Someday</div>
     <h2>An idea for next time <span class="local">Switzerland and Lake Como</span></h2>
     <p class="lead">A week somewhere this trip doesn't touch. Best around July, when all the mountain transport runs. Fly into Zurich, home from Milan.</p>
   </div>
@@ -15368,7 +15418,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   <span>Sources for mission numbers: Japan's Ministry of Foreign Affairs list of overseas missions; Thailand's Ministry of Foreign Affairs "List of Royal Thai Embassy contact point".</span>
   <details id="changelog" style="margin-top:6px">
     <summary style="cursor:pointer;font-weight:700;color:var(--ink)">Change log</summary>
-    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/7</td><td>Added a new chapter, "Museums and Masterpieces" (Louvre, Rodin, Orsay, Sagrada Família, Museu Picasso, Doge's Palace, Accademia, Uffizi, Vatican). Fixed the France chapter intro for 4 nights in Paris and 2 in Lyon</td></tr><tr><td class="d">11/6</td><td>Anne Frank House booked (11/24, 9:00–9:15 entry slot, 3 people)</td></tr><tr><td class="d">11/6</td><td>Adjusted 11/25: the Opéra and Le Meurice are back to "To book". The Rue Royale Ladurée is just from outside. The Louvre from 17:00 (kitchen shops and Petit Bateau moved to options). At the Arc de Triomphe, hand the stroller to the entrance staff</td></tr><tr><td class="d">11/6</td><td>Rebuilt Paris 11/24–28. 11/24: the Eiffel Tower, Arc de Triomphe and Champs-Élysées at night. 11/25: Montmartre in the morning → the Opéra → Le Meurice 13:45 → Som to Disney in the late afternoon, Ryo and Yuzuha to the Louvre. 11/26: Versailles → Napoleon's tomb → Rodin → Le Bon Marché → Josselin → Notre-Dame at night. 11/27: the Marais to the 1st. 11/28: the Panthéon, then the TGV. Everything taken out went into the Options table. Added a table of regional food to eat in Paris. Disney chapter switched to plan F (11/25 evening, Som alone)</td></tr><tr><td class="d">11/6</td><td>Amsterdam cut to one night: hotel changed to art'otel (opposite Centraal), Eurostar moved to 11/24 13:10→16:40 (coach 18, seats 85 &amp; 86). Paris hotel 11/24–28, 4 nights. Rebuilt 11/24 (evening arrival in Paris) and 11/25 (Latin Quarter → Île de la Cité → tea at Le Meurice → Louvre late opening, all three). Windmill village and others moved to options. Paris → Barcelona TGV refunded</td></tr><tr><td class="d">11/6</td><td>Added option E for 11/26 (Ryo in Paris in the morning: Orsay → Le Relais de l'Entrecôte → Orangerie → Arc de Triomphe, joining at Disney at 16:00). Added the Bernachon flagship to Sunday in Lyon</td></tr><tr><td class="d">11/5</td><td>Lyon: Sunday afternoon now Parc de la Tête d'Or (Institut Lumière as an option); a Croix-Rousse walk added on Monday morning. Saturday night at Fourvière unchanged</td></tr><tr><td class="d">11/5</td><td>Added "The regions of Spain" and "The regions of Italy" to the food chapter (by area like France, with cities and our trip)</td></tr><tr><td class="d">11/5</td><td>Added white truffles (San Miniato, Savini Tartufi, Procacci, prices, bringing them home) and care of copper pans and canelé moulds to the food chapter; keepsakes from the restaurant to the Bocuse chapter</td></tr><tr><td class="d">11/5</td><td>Added "Shopping to start cooking" to the food chapter (the five not to miss, tool and ingredient shops by city, notes on bringing things home)</td></tr><tr><td class="d">11/5</td><td>Added "Desserts and sweets" (salon de thé and other shop types, specialities and famous shops by city) and "Cheeses of the cities we visit" (such as Lyon's Saint-Marcellin) to the food chapter. French regions now grouped into north, west, east, centre, south-east and south-west with city names. The great chefs' restaurants are now cards with descriptions and tips</td></tr><tr><td class="d">11/5</td><td>Reworked 11/26 as a split day (Ryo is not going to Disney): four options plus Paris plans for Ryo with Yuzuha and for Ryo alone, in the Disney chapter. The food chapter now runs France → Spain → Italy, in travel order</td></tr><tr><td class="d">11/5</td><td>Rebuilt the "Cheese &amp; wine" chapter as a "Food primer" for France, Italy and Spain (history, how they influenced each other, great chefs, restaurants with maps, types of restaurant, how a meal runs, manners in three countries, French regions). Moved each country chapter's food and table-manners sections here</td></tr><tr><td class="d">11/4</td><td>Route map colours unified by country (Netherlands orange, France blue, Spain red, Italy green, flights and Dubai grey). Flags next to every city in the itinerary</td></tr><tr><td class="d">11/4</td><td>Added the reply from the Bocuse reservations team (French and translation) to "With a baby" in the Bocuse chapter, as an example of French service</td></tr><tr><td class="d">11/4</td><td>Booked AVE INT 09742 (11/30 Lyon 14:35 → Barcelona 19:23). Monday in Lyon is now free until early afternoon; the first Barcelona evening reworked for the late arrival (Passeig de Gràcia walk kept as an option). Added a note that the ticket cannot go into Apple Wallet</td></tr><tr><td class="d">11/4</td><td>Booked TGV INOUI 6619 (11/28 15:00 → 16:56, 1st class). Reworked Paris on 11/28 (morning market and Montmartre → to the station at 13:45). The afternoon plans are kept as options</td></tr><tr><td class="d">11/4</td><td>Booked the Lyon hotel (Mercure Part-Dieu, 2 nights) and the bouchon Daniel et Denise Saint-Jean for 11/28 at 19:00. After dinner that night, the funicular up to Fourvière for the night view. On 11/29 afternoon, one park or museum and a nap</td></tr><tr><td class="d">11/4</td><td>Removed who-gets-which-gift notes and the "Souvenir strategy" section. Added the story of Ryo's EY boss and a message for Yuzuha to the Bocuse chapter</td></tr><tr><td class="d">11/4</td><td>Now going via Lyon (Paris → Lyon on the evening of 11/28, 2 nights, to Barcelona on 11/30). Itinerary, bookings, transport and route map updated; the three Lyon days are in the Bocuse chapter. The Paris plan for 11/29 is kept as a candidate</td></tr><tr><td class="d">11/4</td><td>Restaurant Paul Bocuse booked (11/29 20:15). New "Paul Bocuse" chapter in the same style as Disneyland (booking, getting there, the day, autumn menu, signature dishes, with a baby, history, gifts)</td></tr><tr><td class="d">11/3</td><td>Pisa moved to the afternoon of 12/7 (Mon), a day trip by regional train. On 12/8, a Florence morning, then the train to Rome after lunch</td></tr><tr><td class="d">11/3</td><td>English edition added. Frecciarossa 9415 on 12/5 booked (11:26 → 13:39, Business); a morning walk in Venice; Florence day 1 re-timed (Accademia 15:15, Piazzale Michelangelo sunset moved to 12/6)</td></tr><tr><td class="d">11/3</td><td>Eurostar booked (11/25 09:10 → 12:37); Amsterdam morning and first day in Paris adjusted</td></tr><tr><td class="d">11/2</td><td>Booking references and insurance policy numbers removed from the guide (so no one else can change our bookings)</td></tr><tr><td class="d">11/2</td><td>Dubai: decided to go into the city; Som gets a 48-hour transit visa via Emirates</td></tr><tr><td class="d">10/25</td><td>Packing checklist rebuilt for this trip; three designs (Som, Yuzuha, Ryo) via the palette button; insurance section and step-by-step contacts; hotel details from the confirmations; luggage strategy</td></tr><tr><td class="d">10/18</td><td>Films to watch; Google Maps lists; Paris hotel changed to Libertel; GitHub version published</td></tr><tr><td class="d">10/17</td><td>Full review; Japanese and Thai editions; protests, pickpocket scenarios, French table manners</td></tr><tr><td class="d">10/15</td><td>First edition</td></tr></tbody></table></div>
+    <div class="tbl" style="margin-top:8px"><table><tbody><tr><td class="d">11/7</td><td>Contents now open from a "Contents" button (by city, with Disney and Bocuse under their cities). Cheese and wine split out of the food chapter into Reading. On phones, tables with 4+ columns stack vertically. Cover now says 5 countries</td></tr><tr><td class="d">11/7</td><td>Added a new chapter, "Museums and Masterpieces" (Louvre, Rodin, Orsay, Sagrada Família, Museu Picasso, Doge's Palace, Accademia, Uffizi, Vatican). Fixed the France chapter intro for 4 nights in Paris and 2 in Lyon</td></tr><tr><td class="d">11/6</td><td>Anne Frank House booked (11/24, 9:00–9:15 entry slot, 3 people)</td></tr><tr><td class="d">11/6</td><td>Adjusted 11/25: the Opéra and Le Meurice are back to "To book". The Rue Royale Ladurée is just from outside. The Louvre from 17:00 (kitchen shops and Petit Bateau moved to options). At the Arc de Triomphe, hand the stroller to the entrance staff</td></tr><tr><td class="d">11/6</td><td>Rebuilt Paris 11/24–28. 11/24: the Eiffel Tower, Arc de Triomphe and Champs-Élysées at night. 11/25: Montmartre in the morning → the Opéra → Le Meurice 13:45 → Som to Disney in the late afternoon, Ryo and Yuzuha to the Louvre. 11/26: Versailles → Napoleon's tomb → Rodin → Le Bon Marché → Josselin → Notre-Dame at night. 11/27: the Marais to the 1st. 11/28: the Panthéon, then the TGV. Everything taken out went into the Options table. Added a table of regional food to eat in Paris. Disney chapter switched to plan F (11/25 evening, Som alone)</td></tr><tr><td class="d">11/6</td><td>Amsterdam cut to one night: hotel changed to art'otel (opposite Centraal), Eurostar moved to 11/24 13:10→16:40 (coach 18, seats 85 &amp; 86). Paris hotel 11/24–28, 4 nights. Rebuilt 11/24 (evening arrival in Paris) and 11/25 (Latin Quarter → Île de la Cité → tea at Le Meurice → Louvre late opening, all three). Windmill village and others moved to options. Paris → Barcelona TGV refunded</td></tr><tr><td class="d">11/6</td><td>Added option E for 11/26 (Ryo in Paris in the morning: Orsay → Le Relais de l'Entrecôte → Orangerie → Arc de Triomphe, joining at Disney at 16:00). Added the Bernachon flagship to Sunday in Lyon</td></tr><tr><td class="d">11/5</td><td>Lyon: Sunday afternoon now Parc de la Tête d'Or (Institut Lumière as an option); a Croix-Rousse walk added on Monday morning. Saturday night at Fourvière unchanged</td></tr><tr><td class="d">11/5</td><td>Added "The regions of Spain" and "The regions of Italy" to the food chapter (by area like France, with cities and our trip)</td></tr><tr><td class="d">11/5</td><td>Added white truffles (San Miniato, Savini Tartufi, Procacci, prices, bringing them home) and care of copper pans and canelé moulds to the food chapter; keepsakes from the restaurant to the Bocuse chapter</td></tr><tr><td class="d">11/5</td><td>Added "Shopping to start cooking" to the food chapter (the five not to miss, tool and ingredient shops by city, notes on bringing things home)</td></tr><tr><td class="d">11/5</td><td>Added "Desserts and sweets" (salon de thé and other shop types, specialities and famous shops by city) and "Cheeses of the cities we visit" (such as Lyon's Saint-Marcellin) to the food chapter. French regions now grouped into north, west, east, centre, south-east and south-west with city names. The great chefs' restaurants are now cards with descriptions and tips</td></tr><tr><td class="d">11/5</td><td>Reworked 11/26 as a split day (Ryo is not going to Disney): four options plus Paris plans for Ryo with Yuzuha and for Ryo alone, in the Disney chapter. The food chapter now runs France → Spain → Italy, in travel order</td></tr><tr><td class="d">11/5</td><td>Rebuilt the "Cheese &amp; wine" chapter as a "Food primer" for France, Italy and Spain (history, how they influenced each other, great chefs, restaurants with maps, types of restaurant, how a meal runs, manners in three countries, French regions). Moved each country chapter's food and table-manners sections here</td></tr><tr><td class="d">11/4</td><td>Route map colours unified by country (Netherlands orange, France blue, Spain red, Italy green, flights and Dubai grey). Flags next to every city in the itinerary</td></tr><tr><td class="d">11/4</td><td>Added the reply from the Bocuse reservations team (French and translation) to "With a baby" in the Bocuse chapter, as an example of French service</td></tr><tr><td class="d">11/4</td><td>Booked AVE INT 09742 (11/30 Lyon 14:35 → Barcelona 19:23). Monday in Lyon is now free until early afternoon; the first Barcelona evening reworked for the late arrival (Passeig de Gràcia walk kept as an option). Added a note that the ticket cannot go into Apple Wallet</td></tr><tr><td class="d">11/4</td><td>Booked TGV INOUI 6619 (11/28 15:00 → 16:56, 1st class). Reworked Paris on 11/28 (morning market and Montmartre → to the station at 13:45). The afternoon plans are kept as options</td></tr><tr><td class="d">11/4</td><td>Booked the Lyon hotel (Mercure Part-Dieu, 2 nights) and the bouchon Daniel et Denise Saint-Jean for 11/28 at 19:00. After dinner that night, the funicular up to Fourvière for the night view. On 11/29 afternoon, one park or museum and a nap</td></tr><tr><td class="d">11/4</td><td>Removed who-gets-which-gift notes and the "Souvenir strategy" section. Added the story of Ryo's EY boss and a message for Yuzuha to the Bocuse chapter</td></tr><tr><td class="d">11/4</td><td>Now going via Lyon (Paris → Lyon on the evening of 11/28, 2 nights, to Barcelona on 11/30). Itinerary, bookings, transport and route map updated; the three Lyon days are in the Bocuse chapter. The Paris plan for 11/29 is kept as a candidate</td></tr><tr><td class="d">11/4</td><td>Restaurant Paul Bocuse booked (11/29 20:15). New "Paul Bocuse" chapter in the same style as Disneyland (booking, getting there, the day, autumn menu, signature dishes, with a baby, history, gifts)</td></tr><tr><td class="d">11/3</td><td>Pisa moved to the afternoon of 12/7 (Mon), a day trip by regional train. On 12/8, a Florence morning, then the train to Rome after lunch</td></tr><tr><td class="d">11/3</td><td>English edition added. Frecciarossa 9415 on 12/5 booked (11:26 → 13:39, Business); a morning walk in Venice; Florence day 1 re-timed (Accademia 15:15, Piazzale Michelangelo sunset moved to 12/6)</td></tr><tr><td class="d">11/3</td><td>Eurostar booked (11/25 09:10 → 12:37); Amsterdam morning and first day in Paris adjusted</td></tr><tr><td class="d">11/2</td><td>Booking references and insurance policy numbers removed from the guide (so no one else can change our bookings)</td></tr><tr><td class="d">11/2</td><td>Dubai: decided to go into the city; Som gets a 48-hour transit visa via Emirates</td></tr><tr><td class="d">10/25</td><td>Packing checklist rebuilt for this trip; three designs (Som, Yuzuha, Ryo) via the palette button; insurance section and step-by-step contacts; hotel details from the confirmations; luggage strategy</td></tr><tr><td class="d">10/18</td><td>Films to watch; Google Maps lists; Paris hotel changed to Libertel; GitHub version published</td></tr><tr><td class="d">10/17</td><td>Full review; Japanese and Thai editions; protests, pickpocket scenarios, French table manners</td></tr><tr><td class="d">10/15</td><td>First edition</td></tr></tbody></table></div>
   </details>
 </footer>
 
@@ -15415,12 +15465,18 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
   }
   function tocSync(chId){
     var now = book.querySelector('nav.toc .toc-now'); if(!now) return;
-    var i = -1; navLinks.forEach(function(a, k){ if(a.dataset.ch === chId) i = k; });
-    var a = navLinks[i];
-    now.innerHTML = a ? '<span class="no">' + a.querySelector('.no').textContent + '</span>' + a.querySelector('.nm').innerHTML : '';
+    var order = []; navLinks.forEach(function(a){ if(order.indexOf(a.dataset.ch) < 0) order.push(a.dataset.ch); });
+    var first = {}; navLinks.forEach(function(a){ if(!first[a.dataset.ch]) first[a.dataset.ch] = a; });
+    var i = order.indexOf(chId), a = first[chId];
+    var h = (location.hash || '').replace(/^#/, '');
+    navLinks.forEach(function(l){ l.classList.toggle('here', false); });
+    var exact = null, el = h ? document.getElementById(h) : null;
+    while(el && !exact){ if(el.id){ exact = navLinks.filter(function(l){ return l.getAttribute('href') === '#' + el.id && l.dataset.ch === chId; })[0] || null; } el = el.parentElement; }
+    (exact && exact.dataset.ch === chId ? exact : a) && (exact && exact.dataset.ch === chId ? exact : a).classList.add('here');
+    if(a){ var fl = a.querySelector('.flag'); now.innerHTML = '<span class="no">' + (a.querySelector('.no').textContent || 'SP') + '</span>' + (fl ? fl.outerHTML : '') + a.dataset.now; }
     var pv = book.querySelector('nav.toc .toc-prev'), nx = book.querySelector('nav.toc .toc-next');
-    if(pv){ pv.disabled = (i <= 0) || showingAll; pv.dataset.go = i > 0 ? navLinks[i-1].getAttribute('href') : ''; }
-    if(nx){ nx.disabled = (i < 0 || i >= navLinks.length - 1) || showingAll; nx.dataset.go = (i >= 0 && i < navLinks.length - 1) ? navLinks[i+1].getAttribute('href') : ''; }
+    if(pv){ pv.disabled = (i <= 0) || showingAll; pv.dataset.go = i > 0 ? first[order[i-1]].getAttribute('href') : ''; }
+    if(nx){ nx.disabled = (i < 0 || i >= order.length - 1) || showingAll; nx.dataset.go = (i >= 0 && i < order.length - 1) ? first[order[i+1]].getAttribute('href') : ''; }
   }
   function tocOpen(o){
     var p = book.querySelector('nav.toc .toc-panel'), b = book.querySelector('nav.toc .toc-open'); if(!p || !b) return;
