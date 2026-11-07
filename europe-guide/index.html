@@ -518,6 +518,11 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
 .jr-pubgo .go{font:inherit;font-weight:700;font-size:13.5px;padding:7px 14px;border-radius:999px;border:0;background:var(--ink);color:var(--bg);cursor:pointer}
 .jr-pubgo .go:disabled{opacity:.5}
 .jr-pubgo .pm{font-size:12px;color:var(--muted)}
+.jr-key{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:8px;font-size:13px}
+.jr-key[hidden]{display:none!important}
+.jr-key input{flex:1;min-width:0;font:inherit;font-size:13px;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.jr-key button{font:inherit;font-size:12.5px;font-weight:700;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.jr-key .km{flex-basis:100%;font-size:12px;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -16658,6 +16663,7 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
       F.onSnapshot(F.collection(db, 'public'), function(snap){ var p = {}; snap.docs.forEach(function(d){ p[d.id] = d.data(); }); pubSave(p); dyRender(); pubFill(); }, function(err){ if(err && /permission/.test(err.code || '')){ pubSave({}); dyRender(); pubFill(); } });
       U.onAuthStateChanged(auth, function(u){
         fbUser = u; fbState = 'ready'; if(fbUnsub){ fbUnsub(); fbUnsub = null; } fbFirst = false;
+        fb.key = null; if(u){ F.onSnapshot(F.doc(db, 'config', 'ai'), function(s){ var d = s.data(); fb.key = d && d.key || null; keyUI(); }, function(){ keyUI(); }); }
         if(u){ fbUnsub = F.onSnapshot(F.collection(db, 'journal'), {includeMetadataChanges: true}, fbApply, function(){ fbStatus(); }); }
         fbStatus(); pubShow();
       });
@@ -16673,13 +16679,13 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
   // ---- public diary: family turn a day's notes into a polished JA/TH/EN version and publish it; everyone reads it in the Diary chapter
   var PB = {ja:{sel:'公開する', on:'公開中', off:'未公開', go:'選んだ日を公開（AIで整形）', un:'非公開に戻す', edit:'公開中の文章を見る・直す', save:'この文章で更新',
               none:'公開する日にチェックを入れてください', empty:'{d}：日記がまだありません', ai:'AIで整えています… {i}/{n}', done:'{n}日分を公開しました', undone:'非公開にしました', sending:'送信中…', saved:'更新しました',
-              deny:'送れませんでした：書き込みの許可がありません。Firestore のルールに public の行が入っているか確認してください', fail:'送れませんでした。つながってからもう一度', other:'うまくいきませんでした：', aiNg:'AIの整形に失敗しました（Firebase の AI Logic がオンになっているか確認してください）：'},
+              deny:'送れませんでした：書き込みの許可がありません。Firestore のルールに public の行が入っているか確認してください', fail:'送れませんでした。つながってからもう一度', other:'うまくいきませんでした：', aiNg:'AIの整形に失敗しました：'},
             th:{sel:'เผยแพร่', on:'เผยแพร่แล้ว', off:'ยังไม่เผยแพร่', go:'เผยแพร่วันที่เลือก (AI เกลาให้)', un:'เลิกเผยแพร่', edit:'ดู/แก้ข้อความที่เผยแพร่', save:'อัปเดตด้วยข้อความนี้',
               none:'ติ๊กเลือกวันที่จะเผยแพร่ก่อน', empty:'{d}：ยังไม่มีไดอารี', ai:'AI กำลังเกลา… {i}/{n}', done:'เผยแพร่แล้ว {n} วัน', undone:'เลิกเผยแพร่แล้ว', sending:'กำลังส่ง…', saved:'อัปเดตแล้ว',
-              deny:'ส่งไม่สำเร็จ：ไม่มีสิทธิ์เขียน ตรวจว่ากฎ Firestore มีบรรทัด public แล้ว', fail:'ส่งไม่สำเร็จ ลองใหม่เมื่อมีเน็ต', other:'ไม่สำเร็จ：', aiNg:'AI เกลาไม่สำเร็จ (ตรวจว่าเปิด AI Logic ใน Firebase แล้ว)：'},
+              deny:'ส่งไม่สำเร็จ：ไม่มีสิทธิ์เขียน ตรวจว่ากฎ Firestore มีบรรทัด public แล้ว', fail:'ส่งไม่สำเร็จ ลองใหม่เมื่อมีเน็ต', other:'ไม่สำเร็จ：', aiNg:'AI เกลาไม่สำเร็จ：'},
             en:{sel:'Publish', on:'Published', off:'Not published', go:'Publish selected days (AI tidies)', un:'Unpublish', edit:'View / edit the published text', save:'Update with this text',
               none:'Tick the days to publish first', empty:'{d}: no diary yet', ai:'AI is tidying… {i}/{n}', done:'Published {n} day(s)', undone:'Unpublished', sending:'Sending…', saved:'Updated',
-              deny:'Could not send: no write permission. Check that the Firestore rules include the public line', fail:'Could not send. Try again when online', other:'Something went wrong: ', aiNg:'AI tidy failed (check that AI Logic is enabled in Firebase): '}};
+              deny:'Could not send: no write permission. Check that the Firestore rules include the public line', fail:'Could not send. Try again when online', other:'Something went wrong: ', aiNg:'AI tidy failed: '}};
   var AI_PROMPT = 'これは家族旅行の日記です（{d}）。次の3つを作ってください。\n' +
     'ja：誤字脱字を直して読みやすく整えた日本語。内容は足したり削ったりせず、書いた人の口調はそのまま。タイ語や英語で書かれた部分は日本語に訳す。\n' +
     'th：ja の自然なタイ語訳。\nen：ja の自然な英語訳。\n' +
@@ -16692,11 +16698,20 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
     WHO.forEach(function(w, k){ var v = m['d' + md + '.' + w]; if(v && v.t && v.t.trim()) raw += MT.ja.who[k] + '：' + v.t.trim().replace(/\n+/g, ' / ') + '\n'; });
     if(!raw) return Promise.reject({empty: true, d: d[1][{ja:0, th:1, en:2}[lang]]});
     var prompt = AI_PROMPT.replace('{d}', d[1][0] + ' ' + d[3][0] + ' · ' + d[2][0]) + raw;
-    function tryModel(i){
-      var model = fb.getModel(fb.ai, {model: AI_MODELS[i], generationConfig: {responseMimeType: 'application/json', temperature: 0.3}});
-      return model.generateContent(prompt).then(function(r){ var s = r.response.text().replace(/^\s*```(json)?|```\s*$/g, ''), o = JSON.parse(s); if(!o.ja || !o.th || !o.en) throw new Error('bad output'); return o; })
-        .catch(function(err){ if(i + 1 < AI_MODELS.length && /not.?found|404|unsupported|is not supported|model/i.test(String(err && err.message))) return tryModel(i + 1); throw err; });
+    function parse(s){ s = String(s || '').replace(/^\s*```(json)?|```\s*$/g, ''); var o = JSON.parse(s); if(!o.ja || !o.th || !o.en) throw new Error('bad output'); return o; }
+    function viaKey(i){
+      return fetch('https://generativelanguage.googleapis.com/v1beta/models/' + AI_MODELS[i] + ':generateContent?key=' + encodeURIComponent(fb.key), {method: 'POST', headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({contents: [{role: 'user', parts: [{text: prompt}]}], generationConfig: {responseMimeType: 'application/json', temperature: 0.3}})})
+        .then(function(r){ return r.json().then(function(j){ if(!r.ok){ var e = new Error('[' + r.status + '] ' + (j.error && j.error.message || '')); e.status = r.status; throw e; } return parse(j.candidates[0].content.parts.map(function(p){ return p.text || ''; }).join('')); }); })
+        .catch(function(err){ if(i + 1 < AI_MODELS.length && (err.status === 404 || /not found|not supported/i.test(err.message))) return viaKey(i + 1); throw err; });
     }
+    function tryModel(i){
+      if(!fb.getModel) return Promise.reject(new Error('AI not available'));
+      var model = fb.getModel(fb.ai, {model: AI_MODELS[i], generationConfig: {responseMimeType: 'application/json', temperature: 0.3}});
+      return model.generateContent(prompt).then(function(r){ return parse(r.response.text()); })
+        .catch(function(err){ if(i + 1 < AI_MODELS.length && /\[404|is not found for|not supported/i.test(String(err && err.message)) && !/genai config/i.test(String(err && err.message))) return tryModel(i + 1); throw err; });
+    }
+    if(fb.key) return viaKey(0);
     return tryModel(0);
   }
   var DY = {ja:{none:'旅が始まったら、ここに1日ずつ載っていきます。', na:'この日記は Web 版のしおりで読めます：', link:'0歳柚葉のヨーロッパ日記を開く'},
@@ -16720,7 +16735,24 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
   }
   function pubErr(err){ var t = PB[lang], c = err && err.code || ''; if(/permission/.test(c)) return t.deny; if(/unavailable|offline|network/.test(c)) return t.fail; return t.other + (c || (err && err.message) || ''); }
   function pubErr(err){ var t = PB[lang], c = err && err.code || ''; if(/permission/.test(c)) return t.deny; if(/unavailable|offline|network/.test(c)) return t.fail; return t.other + (c || (err && err.message) || ''); }
-  function pubShow(){ Array.prototype.slice.call(book.querySelectorAll('.jr-pub, .jr-pubgo')).forEach(function(el){ el.hidden = !fbUser; }); pubFill(); }
+  var KT = {ja:{ph:'Gemini の API キーを貼り付け', save:'AIキーを登録', ok:'AIキー登録済み', chg:'変更', done:'登録しました（Som の端末にも共有されます）'},
+            th:{ph:'วาง API key ของ Gemini', save:'บันทึก AI key', ok:'บันทึก AI key แล้ว', chg:'เปลี่ยน', done:'บันทึกแล้ว (แชร์ไปเครื่องของอีกคนด้วย)'},
+            en:{ph:'Paste the Gemini API key', save:'Save AI key', ok:'AI key saved', chg:'Change', done:'Saved (shared with the other device too)'}};
+  function keyUI(){
+    var box = book.querySelector('#journal .jr-sync'); if(!box) return; var k = box.querySelector('.jr-key'), t = KT[lang];
+    if(!k){ k = document.createElement('div'); k.className = 'jr-key'; box.appendChild(k); }
+    if(!fbUser){ k.hidden = true; return; } k.hidden = false;
+    if(fb.key && !k.dataset.edit){ k.innerHTML = '<span>✓ ' + t.ok + '</span> <button type="button" class="kchg">' + t.chg + '</button>'; return; }
+    k.innerHTML = '<input type="password" class="kin" autocomplete="off" placeholder="' + t.ph + '"><button type="button" class="ksv">' + t.save + '</button><span class="km"></span>';
+  }
+  book.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.jr-key button'); if(!b || !fb || !fbUser) return; var k = b.closest('.jr-key');
+    if(b.classList.contains('kchg')){ k.dataset.edit = '1'; keyUI(); return; }
+    var v = k.querySelector('.kin').value.trim(); if(!v) return; b.disabled = true;
+    fb.setDoc(fb.doc(fb.db, 'config', 'ai'), {key: v, u: Date.now(), by: fbUser.email || ''}).then(function(){ delete k.dataset.edit; fb.key = v; keyUI(); var m = k.querySelector('span'); if(m) m.textContent = '✓ ' + KT[lang].done; })
+      .catch(function(err){ b.disabled = false; k.querySelector('.km').textContent = pubErr(err); });
+  });
+  function pubShow(){ keyUI(); Array.prototype.slice.call(book.querySelectorAll('.jr-pub, .jr-pubgo')).forEach(function(el){ el.hidden = !fbUser; }); pubFill(); }
   function pubFill(){ var p = pubLoad(), t = PB[lang];
     Array.prototype.slice.call(book.querySelectorAll('.jr-pub')).forEach(function(el){ var r = p['day-' + el.dataset.md], pill = el.querySelector('.pill'), ta = el.querySelector('textarea'), ed = el.querySelector('details');
       pill.textContent = r ? t.on : t.off; pill.className = 'pill ' + (r ? 'ok' : ''); ed.hidden = !r;
