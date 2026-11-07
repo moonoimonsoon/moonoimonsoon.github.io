@@ -16685,7 +16685,8 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
     'th：ja の自然なタイ語訳。\nen：ja の自然な英語訳。\n' +
     '書いた人ごとに1行、「書いた人：本文」の形にしてください。書いた人の表記は ja では 柚葉／パパ／ママ、th では Yuzuha／พ่อ／แม่、en では Yuzuha／Papa／Mama。\n' +
     '{"ja":"…","th":"…","en":"…"} の JSON だけを返してください。\n\n日記：\n';
-  var AI_MODELS = ['gemini-3.8-flash', 'gemini-2.5-flash'];
+  var AI_MODELS = ['gemini-3.8-flash', 'gemini-2.5-flash', 'gemini-2.5-flash-lite'];
+  function aiMsg(err){ var s = String(err && (err.message || err.code) || err || ''); s = s.replace(/^AI:\s*/,''); return s.length > 260 ? s.slice(0, 260) + '…' : s; }
   function aiTidy(md){
     var d = MD.filter(function(x){ return x[0] === md; })[0], m = jrLoad(), raw = '';
     WHO.forEach(function(w, k){ var v = m['d' + md + '.' + w]; if(v && v.t && v.t.trim()) raw += MT.ja.who[k] + '：' + v.t.trim().replace(/\n+/g, ' / ') + '\n'; });
@@ -16694,7 +16695,7 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
     function tryModel(i){
       var model = fb.getModel(fb.ai, {model: AI_MODELS[i], generationConfig: {responseMimeType: 'application/json', temperature: 0.3}});
       return model.generateContent(prompt).then(function(r){ var s = r.response.text().replace(/^\s*```(json)?|```\s*$/g, ''), o = JSON.parse(s); if(!o.ja || !o.th || !o.en) throw new Error('bad output'); return o; })
-        .catch(function(err){ if(i + 1 < AI_MODELS.length && /not.?found|404|unsupported|model/i.test(String(err && (err.message || err.code)))) return tryModel(i + 1); throw err; });
+        .catch(function(err){ if(i + 1 < AI_MODELS.length && /not.?found|404|unsupported|is not supported|model/i.test(String(err && err.message))) return tryModel(i + 1); throw err; });
     }
     return tryModel(0);
   }
@@ -16746,7 +16747,7 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
         var md = sel[i]; msg.textContent = t.ai.replace('{i}', i + 1).replace('{n}', sel.length);
         aiTidy(md).then(function(o){ return pubWrite(md, {ja: o.ja.trim(), th: o.th.trim(), en: o.en.trim(), u: Date.now(), by: fbUser.email || ''}); })
           .then(function(){ n++; var c = book.querySelector('.jr-pub[data-md="' + md + '"] .pchk'); if(c) c.checked = false; i++; next(); })
-          .catch(function(err){ b.disabled = false; msg.textContent = err && err.empty ? t.empty.replace('{d}', err.d) : (err && err.code && /permission|unavailable|offline|network/.test(err.code) && !/ai\//.test(err.code) ? pubErr(err) : t.aiNg + (err && (err.code || err.message) || '')); });
+          .catch(function(err){ b.disabled = false; msg.textContent = err && err.empty ? t.empty.replace('{d}', err.d) : (err && err.code && /permission|unavailable|offline|network/.test(err.code) && !/ai\//.test(err.code) ? pubErr(err) : t.aiNg + aiMsg(err)); });
       })();
       return;
     }
