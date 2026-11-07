@@ -60,7 +60,7 @@ html:lang(th) .memo,html:lang(en) .memo{font-family:var(--f-body);font-weight:50
 .cover h1 .hl{background:linear-gradient(transparent 62%,var(--memo) 62%)}
 .cover .th{color:var(--muted);font-size:15px}
 .route{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px}
-.route .stop{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 6px;border:1px solid var(--line);border-radius:999px;background:var(--paper)}
+.route .stop{display:inline-flex;align-items:center;gap:6px;padding:2px 2px 2px 0;border:0;background:transparent;font-weight:600}
 .route .arrow{color:var(--muted)}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
 .fact{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
@@ -82,7 +82,13 @@ html:lang(th) .memo,html:lang(en) .memo{font-family:var(--f-body);font-weight:50
 /* ---------- nav ---------- */
 nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line)}
 nav.toc ul{list-style:none;margin:0;padding:0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
-nav.toc a{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;text-decoration:none;font-size:13px;font-weight:500;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:var(--paper)}
+nav.toc a{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;text-decoration:none;font-size:13.5px;font-weight:650;padding:8px 14px;border-radius:999px;border:1.5px solid color-mix(in srgb,var(--ink) 30%,transparent);background:var(--paper);box-shadow:0 2px 0 color-mix(in srgb,var(--ink) 12%,transparent)}
+nav.toc{--fade:var(--bg)}
+nav.toc::after{content:"";position:absolute;right:0;bottom:11px;height:44px;width:36px;background:linear-gradient(90deg,transparent,var(--fade));pointer-events:none}
+nav.toc .toc-label{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 0 7px;font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--ink)}
+nav.toc .toc-label b{display:inline-flex;align-items:center;gap:6px}
+nav.toc .toc-label b::before{content:"";width:14px;height:10px;background:linear-gradient(var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 6px,transparent 6px 8px,var(--ink) 8px 10px)}
+nav.toc .toc-hint{font-weight:500;color:var(--muted);letter-spacing:0}
 nav.toc a[aria-current="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .showall{display:flex;justify-content:flex-end;padding-top:8px}
 .showall button{font:inherit;font-size:12px;color:var(--muted);background:none;border:1px solid var(--line);border-radius:999px;padding:3px 10px;cursor:pointer}
@@ -312,7 +318,7 @@ html[data-theme="som"] .card,html[data-theme="som"] .spot,html[data-theme="som"]
 html[data-theme="som"] .langbar-in{box-shadow:0 6px 20px rgba(120,90,40,.16)}
 html[data-theme="som"] .cover h1 .hl{background:linear-gradient(transparent 62%,#FFE08A 62%)}
 html[data-theme="yuzuha"] .card,html[data-theme="yuzuha"] .spot,html[data-theme="yuzuha"] .tie,html[data-theme="yuzuha"] .stay,html[data-theme="yuzuha"] .fact,html[data-theme="yuzuha"] .tt,html[data-theme="yuzuha"] .tbl,html[data-theme="yuzuha"] .data,html[data-theme="yuzuha"] .hist,html[data-theme="yuzuha"] .column,html[data-theme="yuzuha"] .today{border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);border-radius:18px}
-html[data-theme="yuzuha"] nav.toc a,html[data-theme="yuzuha"] .route .stop{border:2px solid var(--ink)}
+html[data-theme="yuzuha"] nav.toc a{border:2px solid var(--ink)}
 html[data-theme="yuzuha"] .langbar-in{border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink)}
 html[data-theme="yuzuha"] .pill{border:1.5px solid currentColor}
 html[data-theme="yuzuha"] .cover h1 .hl{background:none;color:#E2493A}
@@ -369,6 +375,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 </header>
 
 <nav class="toc" aria-label="章の目次">
+  <div class="toc-label"><b>目次　章を選ぶ</b><span class="toc-hint">横にスクロール →</span></div>
   <ul>
     <li><a href="#plan" data-ch="plan">はじめに</a></li>
     <li><a href="#nl" data-ch="nl"><span class="flag f-nl"></span>オランダ</a></li>
@@ -5355,6 +5362,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 </header>
 
 <nav class="toc" aria-label="สารบัญ">
+  <div class="toc-label"><b>สารบัญ · เลือกบท</b><span class="toc-hint">เลื่อนไปทางขวา →</span></div>
   <ul>
     <li><a href="#plan" data-ch="plan">เริ่มต้น</a></li>
     <li><a href="#nl" data-ch="nl"><span class="flag f-nl"></span>เนเธอร์แลนด์</a></li>
@@ -10343,6 +10351,7 @@ html:lang(ja) .phr td:nth-child(3),html:lang(en) .phr td:nth-child(3){font-weigh
 </header>
 
 <nav class="toc" aria-label="Chapters">
+  <div class="toc-label"><b>Contents · choose a chapter</b><span class="toc-hint">Swipe for more →</span></div>
   <ul>
     <li><a href="#plan" data-ch="plan">Introduction</a></li>
     <li><a href="#nl" data-ch="nl"><span class="flag f-nl"></span>Netherlands</a></li>
