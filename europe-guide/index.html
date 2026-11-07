@@ -16645,7 +16645,7 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
       var app = A.initializeApp(FB_CFG), auth = U.getAuth(app), db;
       try{ db = F.initializeFirestore(app, {localCache: F.persistentLocalCache({tabManager: F.persistentMultipleTabManager()})}); }catch(e){ db = F.getFirestore(app); }
       fb = {auth: auth, db: db, doc: F.doc, setDoc: F.setDoc, deleteDoc: F.deleteDoc, collection: F.collection, onSnapshot: F.onSnapshot, signIn: U.signInWithEmailAndPassword, signOut: U.signOut};
-      F.onSnapshot(F.collection(db, 'public'), function(snap){ var p = {}; snap.docs.forEach(function(d){ p[d.id] = d.data(); }); pubSave(p); dyRender(); pubFill(); }, function(){});
+      F.onSnapshot(F.collection(db, 'public'), function(snap){ var p = {}; snap.docs.forEach(function(d){ p[d.id] = d.data(); }); pubSave(p); dyRender(); pubFill(); }, function(err){ if(err && /permission/.test(err.code || '')){ pubSave({}); dyRender(); pubFill(); } });
       U.onAuthStateChanged(auth, function(u){
         fbUser = u; fbState = 'ready'; if(fbUnsub){ fbUnsub(); fbUnsub = null; } fbFirst = false;
         if(u){ fbUnsub = F.onSnapshot(F.collection(db, 'journal'), {includeMetadataChanges: true}, fbApply, function(){ fbStatus(); }); }
@@ -16661,11 +16661,11 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
   book.addEventListener('click', function(e){ if(e.target.closest && e.target.closest('.jr-logout') && fb){ fb.signOut(fb.auth); } });
   window.addEventListener('online', fbStatus); window.addEventListener('offline', fbStatus);
   // ---- public diary: family turn a day's notes into a polished JA/TH/EN version and publish it; everyone reads it in the Diary chapter
-  var PB = {ja:{h:'公開版（0歳柚葉のヨーロッパ日記へ）', on:'公開中', off:'未公開', ai:'AIで整えて3言語に', go:'この日を公開', un:'非公開に戻す', ph:'Claude の答えをそのまま貼り付け', done:'公開しました', undone:'非公開にしました', bad:'===JA=== ===TH=== ===EN=== の3つがそろっていません', empty:'この日の日記がまだありません', fail:'送れませんでした。つながってからもう一度',
+  var PB = {ja:{h:'公開版（0歳柚葉のヨーロッパ日記へ）', on:'公開中', off:'未公開', ai:'AIで整えて3言語に', go:'この日を公開', un:'非公開に戻す', ph:'Claude の答えをそのまま貼り付け', done:'公開しました', undone:'非公開にしました', bad:'===JA=== ===TH=== ===EN=== の3つがそろっていません', empty:'この日の日記がまだありません', fail:'送れませんでした。つながってからもう一度', sending:'送信中…', deny:'送れませんでした：書き込みの許可がありません。Firestore のルールに public の行が入っているか確認してください', other:'送れませんでした：',
               prompt:'これは家族旅行の日記（{d}）です。次の3つを作ってください。\n1. 日本語版：誤字脱字を直して読みやすく。内容は足したり削ったりせず、書いた人の口調はそのまま。タイ語や英語で書かれた部分は日本語に訳す\n2. 1のタイ語訳\n3. 1の英語訳\n各行は「書いた人：本文」の形にしてください。書いた人は、日本語では 柚葉／パパ／ママ、タイ語では Yuzuha／พ่อ／แม่、英語では Yuzuha／Papa／Mama。\n答えは次の形だけを、全体で1つのコードブロックに入れてください。説明は書かないでください。\n===JA===\n…\n===TH===\n…\n===EN===\n…'},
-            th:{h:'ฉบับเผยแพร่ (ไปที่ไดอารียุโรปของ Yuzuha วัย 0 ขวบ)', on:'เผยแพร่แล้ว', off:'ยังไม่เผยแพร่', ai:'ให้ AI เกลาและแปล 3 ภาษา', go:'เผยแพร่วันนี้', un:'เลิกเผยแพร่', ph:'วางคำตอบของ Claude ทั้งหมดที่นี่', done:'เผยแพร่แล้ว', undone:'เลิกเผยแพร่แล้ว', bad:'ยังไม่ครบ ===JA=== ===TH=== ===EN===', empty:'วันนี้ยังไม่มีไดอารี', fail:'ส่งไม่สำเร็จ ลองใหม่เมื่อมีเน็ต',
+            th:{h:'ฉบับเผยแพร่ (ไปที่ไดอารียุโรปของ Yuzuha วัย 0 ขวบ)', on:'เผยแพร่แล้ว', off:'ยังไม่เผยแพร่', ai:'ให้ AI เกลาและแปล 3 ภาษา', go:'เผยแพร่วันนี้', un:'เลิกเผยแพร่', ph:'วางคำตอบของ Claude ทั้งหมดที่นี่', done:'เผยแพร่แล้ว', undone:'เลิกเผยแพร่แล้ว', bad:'ยังไม่ครบ ===JA=== ===TH=== ===EN===', empty:'วันนี้ยังไม่มีไดอารี', fail:'ส่งไม่สำเร็จ ลองใหม่เมื่อมีเน็ต', sending:'กำลังส่ง…', deny:'ส่งไม่สำเร็จ：ไม่มีสิทธิ์เขียน ตรวจว่ากฎ Firestore มีบรรทัด public แล้ว', other:'ส่งไม่สำเร็จ：',
               prompt:'นี่คือไดอารีการเดินทางของครอบครัว ({d}) ช่วยทำ 3 อย่าง\n1. ฉบับภาษาญี่ปุ่น: แก้คำผิดให้อ่านง่าย ห้ามเพิ่มหรือตัดเนื้อหา คงน้ำเสียงของคนเขียน ส่วนที่เขียนเป็นภาษาไทยหรืออังกฤษให้แปลเป็นญี่ปุ่น\n2. แปลข้อ 1 เป็นภาษาไทย\n3. แปลข้อ 1 เป็นภาษาอังกฤษ\nแต่ละบรรทัดให้เป็นรูป "คนเขียน：ข้อความ" คนเขียนภาษาญี่ปุ่นคือ 柚葉／パパ／ママ ภาษาไทยคือ Yuzuha／พ่อ／แม่ ภาษาอังกฤษคือ Yuzuha／Papa／Mama\nตอบเฉพาะรูปแบบนี้ ใส่ทั้งหมดในโค้ดบล็อกเดียว ไม่ต้องอธิบาย\n===JA===\n…\n===TH===\n…\n===EN===\n…'},
-            en:{h:'Public version (goes to Yuzuha\'s European Diary)', on:'Published', off:'Not published', ai:'Tidy and translate with AI', go:'Publish this day', un:'Unpublish', ph:'Paste Claude\'s whole answer here', done:'Published', undone:'Unpublished', bad:'Needs all three: ===JA=== ===TH=== ===EN===', empty:'No diary for this day yet', fail:'Could not send. Try again when online',
+            en:{h:'Public version (goes to Yuzuha\'s European Diary)', on:'Published', off:'Not published', ai:'Tidy and translate with AI', go:'Publish this day', un:'Unpublish', ph:'Paste Claude\'s whole answer here', done:'Published', undone:'Unpublished', bad:'Needs all three: ===JA=== ===TH=== ===EN===', empty:'No diary for this day yet', fail:'Could not send. Try again when online', sending:'Sending…', deny:'Could not send: no write permission. Check that the Firestore rules include the public line', other:'Could not send: ',
               prompt:'This is a family travel diary ({d}). Please make three versions.\n1. Japanese: fix typos and make it read smoothly. Do not add or remove content and keep each writer\'s voice. Translate any Thai or English parts into Japanese\n2. A Thai translation of 1\n3. An English translation of 1\nWrite each line as "writer：text". Writers are 柚葉／パパ／ママ in Japanese, Yuzuha／พ่อ／แม่ in Thai, Yuzuha／Papa／Mama in English.\nAnswer only in this form, all inside one code block, with no explanation.\n===JA===\n…\n===TH===\n…\n===EN===\n…'}};
   var DY = {ja:{none:'旅が始まったら、ここに1日ずつ載っていきます。', na:'この日記は Web 版のしおりで読めます：', link:'0歳柚葉のヨーロッパ日記を開く'},
             th:{none:'เมื่อทริปเริ่ม ไดอารีจะค่อย ๆ ลงที่นี่ทีละวัน', na:'อ่านไดอารีนี้ได้ในไกด์ฉบับเว็บ：', link:'เปิดไดอารียุโรปของ Yuzuha'},
@@ -16686,6 +16686,7 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
     if(!h) h = fbState === 'na' ? '<p class="dy-empty">' + t.na + '<a href="' + WEB + '">' + t.link + '</a></p>' : '<p class="dy-empty">' + t.none + '</p>';
     box.innerHTML = h;
   }
+  function pubErr(err){ var t = PB[lang], c = err && err.code || ''; if(/permission/.test(c)) return t.deny; if(/unavailable|offline|network/.test(c)) return t.fail; return t.other + (c || (err && err.message) || ''); }
   function pubShow(){ Array.prototype.slice.call(book.querySelectorAll('.jr-pub')).forEach(function(el){ el.hidden = !fbUser; }); pubFill(); }
   function pubFill(){ var p = pubLoad(), t = PB[lang];
     Array.prototype.slice.call(book.querySelectorAll('.jr-pub')).forEach(function(el){ var r = p['day-' + el.dataset.md], pill = el.querySelector('.pill'), ta = el.querySelector('textarea');
@@ -16712,10 +16713,12 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
     if(b.classList.contains('go')){
       var r = pubParse(el.querySelector('textarea').value); if(!r.ja || !r.th || !r.en){ msg.textContent = t.bad; return; }
       var data = {ja: r.ja, th: r.th, en: r.en, u: Date.now(), by: fbUser.email || ''};
-      p['day-' + md] = data; pubSave(p); pubFill(); dyRender(); msg.textContent = t.done;
-      fb.setDoc(ref, data).catch(function(){ msg.textContent = t.fail; }); return; }
-    if(b.classList.contains('un')){ delete p['day-' + md]; pubSave(p); el.querySelector('textarea').value = ''; pubFill(); dyRender(); msg.textContent = t.undone;
-      fb.deleteDoc(ref).catch(function(){ msg.textContent = t.fail; }); }
+      var prev = p['day-' + md]; msg.textContent = t.sending; b.disabled = true;
+      fb.setDoc(ref, data).then(function(){ var q = pubLoad(); q['day-' + md] = data; pubSave(q); pubFill(); dyRender(); msg.textContent = t.done; })
+        .catch(function(err){ msg.textContent = pubErr(err); }).then(function(){ b.disabled = false; }); return; }
+    if(b.classList.contains('un')){ msg.textContent = t.sending; b.disabled = true;
+      fb.deleteDoc(ref).then(function(){ var q = pubLoad(); delete q['day-' + md]; pubSave(q); el.querySelector('textarea').value = ''; pubFill(); dyRender(); msg.textContent = t.undone; })
+        .catch(function(err){ msg.textContent = pubErr(err); }).then(function(){ b.disabled = false; }); }
   });
   // ---- export: preview the diary as a reading page, copy it, or open Claude to tidy the wording
   var EX = {ja:{title:'0歳柚葉のヨーロッパ日記', all:'すべての日', ai:'AIで文章を整える', copy:'文章をコピー', close:'閉じる', copied:'コピーしました', none:'まだ日記がありません',
