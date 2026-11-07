@@ -509,6 +509,15 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
 .jr-pub .pb button.go{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .jr-pub .pm{font-size:12px;color:var(--muted);flex-basis:100%}
 .chapter.dy{--c1:var(--food);--c2:var(--food)} .dy .band{background:repeating-linear-gradient(90deg,var(--memo) 0 10px,var(--food) 10px 20px)}
+.jr-pub .psel{display:inline-flex;align-items:center;gap:6px;font-weight:700;cursor:pointer}
+.jr-pub .psel input{width:18px;height:18px}
+.jr-pub details summary{font-size:12.5px;color:var(--muted);cursor:pointer;margin:2px 0 6px}
+.jr-pub details[hidden]{display:none}
+.jr-pubgo{display:inline-flex;flex-wrap:wrap;gap:6px;align-items:center}
+.jr-pubgo[hidden]{display:none!important}
+.jr-pubgo .go{font:inherit;font-weight:700;font-size:13.5px;padding:7px 14px;border-radius:999px;border:0;background:var(--ink);color:var(--bg);cursor:pointer}
+.jr-pubgo .go:disabled{opacity:.5}
+.jr-pubgo .pm{font-size:12px;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -5668,7 +5677,7 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
     <p class="lead">主役は柚葉。その日の「はじめて」と、パパとママがどう見えたか、何を感じたかを一言ずつ。書いたものはこのスマホに保存されるので、電波がなくても書けます。ネットにつながると、自動で家族の記録にまとまります。</p>
   </div>
   <p class="note"><b>使い方</b>　最初に一度だけ、下でログインする（Ryo と Som だけ）。あとは「✎ 日記」かここの欄に書くだけ。電波がなくてもスマホに保存され、ネットにつながると自動で二人の記録にまとまります。ログインしていない人が書いたものは、その端末の中にだけ残ります</p>
-  <p class="note"><b>公開のしかた</b>　ログイン中は各日の下に「公開版」欄が出ます。「AIで整えて3言語に」→ Claude の答えを貼り付け →「この日を公開」。確定した日から、次の章「0歳柚葉のヨーロッパ日記」に日本語・タイ語・英語で載ります</p>
+  <p class="note"><b>公開のしかた</b>　ログイン中は各日の下に「公開する」のチェックが出ます。公開したい日にチェック →上の「選んだ日を公開（AIで整形）」を押すだけ。AI が誤字を直して日本語・タイ語・英語にそろえ、「0歳柚葉のヨーロッパ日記」に載ります</p>
   <p class="alert jr-family"><b>家族専用</b>　ログインできるのは Ryo と Som だけです。ほかの方が書いた日記は、その方の端末の中にだけ残り、家族の記録には入りません</p>
   <div class="jr-sync"><div class="jr-sync-st"></div><form class="jr-login" hidden><input type="email" name="email" autocomplete="username" inputmode="email"><input type="password" name="pw" autocomplete="current-password"><button type="submit"></button></form><button type="button" class="jr-logout" hidden></button></div>
   <div class="jr-bar"><button type="button" class="jr-export">書き出す（プレビュー）</button><span class="jr-unsent"></span><span class="jr-st" data-ok="この端末に保存済み"></span></div>
@@ -10980,7 +10989,7 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
     <p class="lead">ตัวเอกคือ Yuzuha บันทึก "สิ่งแรก" ของวันนั้น และให้พ่อกับแม่เขียนสั้น ๆ ว่าเห็นอย่างไร รู้สึกอย่างไร สิ่งที่เขียนเก็บไว้ในมือถือเครื่องนี้ จึงเขียนได้แม้ไม่มีสัญญาณ เมื่อมีเน็ต จะรวมเข้าบันทึกของครอบครัวโดยอัตโนมัติ</p>
   </div>
   <p class="note"><b>วิธีใช้</b>　ครั้งแรกให้ล็อกอินด้านล่างครั้งเดียว (เฉพาะ Ryo และ Som) จากนั้นแค่เขียนด้วย "✎ ไดอารี" หรือในช่องนี้ แม้ไม่มีสัญญาณก็บันทึกในมือถือ และเมื่อมีเน็ตจะรวมเข้าบันทึกของเราสองคนโดยอัตโนมัติ คนที่ไม่ได้ล็อกอินจะบันทึกได้แค่ในเครื่องของตัวเอง</p>
-  <p class="note"><b>วิธีเผยแพร่</b>　เมื่อล็อกอิน ใต้แต่ละวันจะมีช่อง "ฉบับเผยแพร่" กด "ให้ AI เกลาและแปล 3 ภาษา" → วางคำตอบของ Claude → "เผยแพร่วันนี้" วันที่เสร็จแล้วจะไปอยู่ในบทถัดไป "ไดอารียุโรปของ Yuzuha วัย 0 ขวบ" ทั้งภาษาญี่ปุ่น ไทย และอังกฤษ</p>
+  <p class="note"><b>วิธีเผยแพร่</b>　เมื่อล็อกอิน ใต้แต่ละวันจะมีช่องติ๊ก "เผยแพร่" ติ๊กวันที่ต้องการ แล้วกด "เผยแพร่วันที่เลือก (AI เกลาให้)" ด้านบน AI จะแก้คำผิดและทำเป็นภาษาญี่ปุ่น ไทย อังกฤษ แล้วลงใน "ไดอารียุโรปของ Yuzuha วัย 0 ขวบ"</p>
   <p class="alert jr-family"><b>สำหรับครอบครัวเท่านั้น</b>　ล็อกอินได้เฉพาะ Ryo และ Som ไดอารีที่คนอื่นเขียนจะอยู่แค่ในเครื่องของคนนั้น และไม่เข้าไปในบันทึกของครอบครัว</p>
   <div class="jr-sync"><div class="jr-sync-st"></div><form class="jr-login" hidden><input type="email" name="email" autocomplete="username" inputmode="email"><input type="password" name="pw" autocomplete="current-password"><button type="submit"></button></form><button type="button" class="jr-logout" hidden></button></div>
   <div class="jr-bar"><button type="button" class="jr-export">ส่งออก (ดูตัวอย่าง)</button><span class="jr-unsent"></span><span class="jr-st" data-ok="บันทึกในเครื่องนี้แล้ว"></span></div>
@@ -16269,7 +16278,7 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
     <p class="lead">Yuzuha is the star: her "firsts" each day, and a line each from Papa and Mama on how it looked and felt. Entries are saved on this phone, so you can write without signal. When online, they join the family journal automatically.</p>
   </div>
   <p class="note"><b>How</b>　Log in once below (Ryo and Som only). After that just write with "✎ Diary" or in these boxes. Notes are saved on the phone even without signal, and go into our shared journal automatically when online. Anyone not logged in only saves on their own device</p>
-  <p class="note"><b>Publishing</b>　When logged in, each day gets a "Public version" box. Tap "Tidy and translate with AI", paste Claude's answer, then "Publish this day". Finished days appear in the next chapter, "Yuzuha's European Diary, Age 0", in Japanese, Thai and English</p>
+  <p class="note"><b>Publishing</b>　When logged in, each day gets a "Publish" tick box. Tick the days you want, then tap "Publish selected days (AI tidies)" above. AI fixes typos, makes Japanese, Thai and English versions, and adds them to "Yuzuha's European Diary, Age 0"</p>
   <p class="alert jr-family"><b>Family only</b>　Only Ryo and Som can log in. Diary entries written by anyone else stay on their own device and never reach the family journal</p>
   <div class="jr-sync"><div class="jr-sync-st"></div><form class="jr-login" hidden><input type="email" name="email" autocomplete="username" inputmode="email"><input type="password" name="pw" autocomplete="current-password"><button type="submit"></button></form><button type="button" class="jr-logout" hidden></button></div>
   <div class="jr-bar"><button type="button" class="jr-export">Export (preview)</button><span class="jr-unsent"></span><span class="jr-st" data-ok="Saved on this device"></span></div>
@@ -16590,7 +16599,7 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
   });
   // ---- cloud sync (Firebase). Only the two family accounts can read or write; others keep notes on their own device.
   var FB_CFG = {apiKey:"AIzaSyAQRzHb2CITalZHisPk77t-wsyrvwhYyn8", authDomain:"europe-journal-9fedb.firebaseapp.com", projectId:"europe-journal-9fedb", storageBucket:"europe-journal-9fedb.firebasestorage.app", messagingSenderId:"488248393141", appId:"1:488248393141:web:21cb8a483ef7af05fbedfc"};
-  var FBU = 'https://www.gstatic.com/firebasejs/10.14.1/';
+  var FBU = 'https://www.gstatic.com/firebasejs/12.19.0/';
   var FS = {ja:{login:'ログイン', email:'メールアドレス', pw:'パスワード', out:'ログアウト', offAcc:'未ログイン：書いた日記はこの端末だけに保存されます。Ryo と Som はログインすると自動で同期', on:'同期中：{e}', ok:'二人の記録と同期済み', wait:'オフライン：つながったら自動で送ります', bad:'ログインできませんでした。メールとパスワードを確認してください', na:'このページでは同期できません（ホーム画面のアプリ版で同期します）', load:'接続中…'},
             th:{login:'ล็อกอิน', email:'อีเมล', pw:'รหัสผ่าน', out:'ออกจากระบบ', offAcc:'ยังไม่ได้ล็อกอิน：บันทึกได้แค่ในเครื่องนี้ Ryo และ Som ล็อกอินแล้วจะซิงก์อัตโนมัติ', on:'กำลังซิงก์：{e}', ok:'ซิงก์กับบันทึกของเราสองคนแล้ว', wait:'ออฟไลน์：จะส่งอัตโนมัติเมื่อมีเน็ต', bad:'ล็อกอินไม่สำเร็จ ตรวจอีเมลและรหัสผ่าน', na:'หน้านี้ซิงก์ไม่ได้ (ซิงก์ได้ในแอปบนหน้าจอโฮม)', load:'กำลังเชื่อมต่อ…'},
             en:{login:'Log in', email:'Email', pw:'Password', out:'Log out', offAcc:'Not logged in: notes stay on this device. Ryo and Som sync automatically after logging in', on:'Syncing: {e}', ok:'In sync with our shared journal', wait:'Offline: notes go automatically when online', bad:'Could not log in. Check the email and password', na:'Sync is not available on this page (use the home-screen app)', load:'Connecting…'}};
@@ -16640,11 +16649,12 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
   function fbStart(){
     if(fbStarted) { fbStatus(); return; } fbStarted = true;
     if(!/^https:$/.test(location.protocol) || /claude\.ai|claudeusercontent/.test(location.host)){ fbState = 'na'; fbStatus(); return; }
-    Promise.all([import(FBU + 'firebase-app.js'), import(FBU + 'firebase-auth.js'), import(FBU + 'firebase-firestore.js')]).then(function(mods){
+    Promise.all([import(FBU + 'firebase-app.js'), import(FBU + 'firebase-auth.js'), import(FBU + 'firebase-firestore.js'), import(FBU + 'firebase-ai.js').catch(function(){ return null; })]).then(function(mods){
       var A = mods[0], U = mods[1], F = mods[2];
       var app = A.initializeApp(FB_CFG), auth = U.getAuth(app), db;
       try{ db = F.initializeFirestore(app, {localCache: F.persistentLocalCache({tabManager: F.persistentMultipleTabManager()})}); }catch(e){ db = F.getFirestore(app); }
       fb = {auth: auth, db: db, doc: F.doc, setDoc: F.setDoc, deleteDoc: F.deleteDoc, collection: F.collection, onSnapshot: F.onSnapshot, signIn: U.signInWithEmailAndPassword, signOut: U.signOut};
+      if(mods[3]){ try{ fb.ai = mods[3].getAI(app, {backend: new mods[3].GoogleAIBackend()}); fb.getModel = mods[3].getGenerativeModel; }catch(e){} }
       F.onSnapshot(F.collection(db, 'public'), function(snap){ var p = {}; snap.docs.forEach(function(d){ p[d.id] = d.data(); }); pubSave(p); dyRender(); pubFill(); }, function(err){ if(err && /permission/.test(err.code || '')){ pubSave({}); dyRender(); pubFill(); } });
       U.onAuthStateChanged(auth, function(u){
         fbUser = u; fbState = 'ready'; if(fbUnsub){ fbUnsub(); fbUnsub = null; } fbFirst = false;
@@ -16661,12 +16671,33 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
   book.addEventListener('click', function(e){ if(e.target.closest && e.target.closest('.jr-logout') && fb){ fb.signOut(fb.auth); } });
   window.addEventListener('online', fbStatus); window.addEventListener('offline', fbStatus);
   // ---- public diary: family turn a day's notes into a polished JA/TH/EN version and publish it; everyone reads it in the Diary chapter
-  var PB = {ja:{h:'公開版（0歳柚葉のヨーロッパ日記へ）', on:'公開中', off:'未公開', ai:'AIで整えて3言語に', go:'この日を公開', un:'非公開に戻す', ph:'Claude の答えをそのまま貼り付け', done:'公開しました', undone:'非公開にしました', bad:'===JA=== ===TH=== ===EN=== の3つがそろっていません', empty:'この日の日記がまだありません', fail:'送れませんでした。つながってからもう一度', sending:'送信中…', deny:'送れませんでした：書き込みの許可がありません。Firestore のルールに public の行が入っているか確認してください', other:'送れませんでした：',
-              prompt:'これは家族旅行の日記（{d}）です。次の3つを作ってください。\n1. 日本語版：誤字脱字を直して読みやすく。内容は足したり削ったりせず、書いた人の口調はそのまま。タイ語や英語で書かれた部分は日本語に訳す\n2. 1のタイ語訳\n3. 1の英語訳\n各行は「書いた人：本文」の形にしてください。書いた人は、日本語では 柚葉／パパ／ママ、タイ語では Yuzuha／พ่อ／แม่、英語では Yuzuha／Papa／Mama。\n答えは次の形だけを、全体で1つのコードブロックに入れてください。説明は書かないでください。\n===JA===\n…\n===TH===\n…\n===EN===\n…'},
-            th:{h:'ฉบับเผยแพร่ (ไปที่ไดอารียุโรปของ Yuzuha วัย 0 ขวบ)', on:'เผยแพร่แล้ว', off:'ยังไม่เผยแพร่', ai:'ให้ AI เกลาและแปล 3 ภาษา', go:'เผยแพร่วันนี้', un:'เลิกเผยแพร่', ph:'วางคำตอบของ Claude ทั้งหมดที่นี่', done:'เผยแพร่แล้ว', undone:'เลิกเผยแพร่แล้ว', bad:'ยังไม่ครบ ===JA=== ===TH=== ===EN===', empty:'วันนี้ยังไม่มีไดอารี', fail:'ส่งไม่สำเร็จ ลองใหม่เมื่อมีเน็ต', sending:'กำลังส่ง…', deny:'ส่งไม่สำเร็จ：ไม่มีสิทธิ์เขียน ตรวจว่ากฎ Firestore มีบรรทัด public แล้ว', other:'ส่งไม่สำเร็จ：',
-              prompt:'นี่คือไดอารีการเดินทางของครอบครัว ({d}) ช่วยทำ 3 อย่าง\n1. ฉบับภาษาญี่ปุ่น: แก้คำผิดให้อ่านง่าย ห้ามเพิ่มหรือตัดเนื้อหา คงน้ำเสียงของคนเขียน ส่วนที่เขียนเป็นภาษาไทยหรืออังกฤษให้แปลเป็นญี่ปุ่น\n2. แปลข้อ 1 เป็นภาษาไทย\n3. แปลข้อ 1 เป็นภาษาอังกฤษ\nแต่ละบรรทัดให้เป็นรูป "คนเขียน：ข้อความ" คนเขียนภาษาญี่ปุ่นคือ 柚葉／パパ／ママ ภาษาไทยคือ Yuzuha／พ่อ／แม่ ภาษาอังกฤษคือ Yuzuha／Papa／Mama\nตอบเฉพาะรูปแบบนี้ ใส่ทั้งหมดในโค้ดบล็อกเดียว ไม่ต้องอธิบาย\n===JA===\n…\n===TH===\n…\n===EN===\n…'},
-            en:{h:'Public version (goes to Yuzuha\'s European Diary)', on:'Published', off:'Not published', ai:'Tidy and translate with AI', go:'Publish this day', un:'Unpublish', ph:'Paste Claude\'s whole answer here', done:'Published', undone:'Unpublished', bad:'Needs all three: ===JA=== ===TH=== ===EN===', empty:'No diary for this day yet', fail:'Could not send. Try again when online', sending:'Sending…', deny:'Could not send: no write permission. Check that the Firestore rules include the public line', other:'Could not send: ',
-              prompt:'This is a family travel diary ({d}). Please make three versions.\n1. Japanese: fix typos and make it read smoothly. Do not add or remove content and keep each writer\'s voice. Translate any Thai or English parts into Japanese\n2. A Thai translation of 1\n3. An English translation of 1\nWrite each line as "writer：text". Writers are 柚葉／パパ／ママ in Japanese, Yuzuha／พ่อ／แม่ in Thai, Yuzuha／Papa／Mama in English.\nAnswer only in this form, all inside one code block, with no explanation.\n===JA===\n…\n===TH===\n…\n===EN===\n…'}};
+  var PB = {ja:{sel:'公開する', on:'公開中', off:'未公開', go:'選んだ日を公開（AIで整形）', un:'非公開に戻す', edit:'公開中の文章を見る・直す', save:'この文章で更新',
+              none:'公開する日にチェックを入れてください', empty:'{d}：日記がまだありません', ai:'AIで整えています… {i}/{n}', done:'{n}日分を公開しました', undone:'非公開にしました', sending:'送信中…', saved:'更新しました',
+              deny:'送れませんでした：書き込みの許可がありません。Firestore のルールに public の行が入っているか確認してください', fail:'送れませんでした。つながってからもう一度', other:'うまくいきませんでした：', aiNg:'AIの整形に失敗しました（Firebase の AI Logic がオンになっているか確認してください）：'},
+            th:{sel:'เผยแพร่', on:'เผยแพร่แล้ว', off:'ยังไม่เผยแพร่', go:'เผยแพร่วันที่เลือก (AI เกลาให้)', un:'เลิกเผยแพร่', edit:'ดู/แก้ข้อความที่เผยแพร่', save:'อัปเดตด้วยข้อความนี้',
+              none:'ติ๊กเลือกวันที่จะเผยแพร่ก่อน', empty:'{d}：ยังไม่มีไดอารี', ai:'AI กำลังเกลา… {i}/{n}', done:'เผยแพร่แล้ว {n} วัน', undone:'เลิกเผยแพร่แล้ว', sending:'กำลังส่ง…', saved:'อัปเดตแล้ว',
+              deny:'ส่งไม่สำเร็จ：ไม่มีสิทธิ์เขียน ตรวจว่ากฎ Firestore มีบรรทัด public แล้ว', fail:'ส่งไม่สำเร็จ ลองใหม่เมื่อมีเน็ต', other:'ไม่สำเร็จ：', aiNg:'AI เกลาไม่สำเร็จ (ตรวจว่าเปิด AI Logic ใน Firebase แล้ว)：'},
+            en:{sel:'Publish', on:'Published', off:'Not published', go:'Publish selected days (AI tidies)', un:'Unpublish', edit:'View / edit the published text', save:'Update with this text',
+              none:'Tick the days to publish first', empty:'{d}: no diary yet', ai:'AI is tidying… {i}/{n}', done:'Published {n} day(s)', undone:'Unpublished', sending:'Sending…', saved:'Updated',
+              deny:'Could not send: no write permission. Check that the Firestore rules include the public line', fail:'Could not send. Try again when online', other:'Something went wrong: ', aiNg:'AI tidy failed (check that AI Logic is enabled in Firebase): '}};
+  var AI_PROMPT = 'これは家族旅行の日記です（{d}）。次の3つを作ってください。\n' +
+    'ja：誤字脱字を直して読みやすく整えた日本語。内容は足したり削ったりせず、書いた人の口調はそのまま。タイ語や英語で書かれた部分は日本語に訳す。\n' +
+    'th：ja の自然なタイ語訳。\nen：ja の自然な英語訳。\n' +
+    '書いた人ごとに1行、「書いた人：本文」の形にしてください。書いた人の表記は ja では 柚葉／パパ／ママ、th では Yuzuha／พ่อ／แม่、en では Yuzuha／Papa／Mama。\n' +
+    '{"ja":"…","th":"…","en":"…"} の JSON だけを返してください。\n\n日記：\n';
+  var AI_MODELS = ['gemini-3.8-flash', 'gemini-2.5-flash'];
+  function aiTidy(md){
+    var d = MD.filter(function(x){ return x[0] === md; })[0], m = jrLoad(), raw = '';
+    WHO.forEach(function(w, k){ var v = m['d' + md + '.' + w]; if(v && v.t && v.t.trim()) raw += MT.ja.who[k] + '：' + v.t.trim().replace(/\n+/g, ' / ') + '\n'; });
+    if(!raw) return Promise.reject({empty: true, d: d[1][{ja:0, th:1, en:2}[lang]]});
+    var prompt = AI_PROMPT.replace('{d}', d[1][0] + ' ' + d[3][0] + ' · ' + d[2][0]) + raw;
+    function tryModel(i){
+      var model = fb.getModel(fb.ai, {model: AI_MODELS[i], generationConfig: {responseMimeType: 'application/json', temperature: 0.3}});
+      return model.generateContent(prompt).then(function(r){ var s = r.response.text().replace(/^\s*```(json)?|```\s*$/g, ''), o = JSON.parse(s); if(!o.ja || !o.th || !o.en) throw new Error('bad output'); return o; })
+        .catch(function(err){ if(i + 1 < AI_MODELS.length && /not.?found|404|unsupported|model/i.test(String(err && (err.message || err.code)))) return tryModel(i + 1); throw err; });
+    }
+    return tryModel(0);
+  }
   var DY = {ja:{none:'旅が始まったら、ここに1日ずつ載っていきます。', na:'この日記は Web 版のしおりで読めます：', link:'0歳柚葉のヨーロッパ日記を開く'},
             th:{none:'เมื่อทริปเริ่ม ไดอารีจะค่อย ๆ ลงที่นี่ทีละวัน', na:'อ่านไดอารีนี้ได้ในไกด์ฉบับเว็บ：', link:'เปิดไดอารียุโรปของ Yuzuha'},
             en:{none:'Once the trip starts, the diary appears here one day at a time.', na:'This diary can be read in the web version of the guide: ', link:'Open Yuzuha\'s European Diary'}};
@@ -16687,38 +16718,44 @@ html:not([data-all]) .chapter{margin-top:0;border-top:0;padding-top:12px}
     box.innerHTML = h;
   }
   function pubErr(err){ var t = PB[lang], c = err && err.code || ''; if(/permission/.test(c)) return t.deny; if(/unavailable|offline|network/.test(c)) return t.fail; return t.other + (c || (err && err.message) || ''); }
-  function pubShow(){ Array.prototype.slice.call(book.querySelectorAll('.jr-pub')).forEach(function(el){ el.hidden = !fbUser; }); pubFill(); }
+  function pubErr(err){ var t = PB[lang], c = err && err.code || ''; if(/permission/.test(c)) return t.deny; if(/unavailable|offline|network/.test(c)) return t.fail; return t.other + (c || (err && err.message) || ''); }
+  function pubShow(){ Array.prototype.slice.call(book.querySelectorAll('.jr-pub, .jr-pubgo')).forEach(function(el){ el.hidden = !fbUser; }); pubFill(); }
   function pubFill(){ var p = pubLoad(), t = PB[lang];
-    Array.prototype.slice.call(book.querySelectorAll('.jr-pub')).forEach(function(el){ var r = p['day-' + el.dataset.md], pill = el.querySelector('.pill'), ta = el.querySelector('textarea');
-      pill.textContent = r ? t.on : t.off; pill.className = 'pill ' + (r ? 'ok' : ''); el.querySelector('.un').hidden = !r;
-      if(r && !ta.value && ta !== document.activeElement) ta.value = pubJoin(r); }); }
+    Array.prototype.slice.call(book.querySelectorAll('.jr-pub')).forEach(function(el){ var r = p['day-' + el.dataset.md], pill = el.querySelector('.pill'), ta = el.querySelector('textarea'), ed = el.querySelector('details');
+      pill.textContent = r ? t.on : t.off; pill.className = 'pill ' + (r ? 'ok' : ''); ed.hidden = !r;
+      if(r && ta !== document.activeElement) ta.value = pubJoin(r); }); }
   function pubInit(){ var t = PB[lang];
     Array.prototype.slice.call(book.querySelectorAll('#journal .jr-day')).forEach(function(dd){ var dots = dd.querySelector('.dots'), f = dd.querySelector('.jr-f'); if(!dots || !f || f.querySelector('.jr-pub')) return;
       var el = document.createElement('div'); el.className = 'jr-pub'; el.dataset.md = dots.dataset.md; el.hidden = true;
-      el.innerHTML = '<div class="ph">' + t.h + ' <span class="pill"></span></div><textarea placeholder="' + esc(t.ph) + '"></textarea><div class="pb"><button type="button" class="ai">' + t.ai + '</button><button type="button" class="go">' + t.go + '</button><button type="button" class="un" hidden>' + t.un + '</button><span class="pm"></span></div>';
+      el.innerHTML = '<div class="ph"><label class="psel"><input type="checkbox" class="pchk"> ' + t.sel + '</label><span class="pill"></span></div>' +
+        '<details hidden><summary>' + t.edit + '</summary><textarea></textarea><div class="pb"><button type="button" class="sv">' + t.save + '</button><button type="button" class="un">' + t.un + '</button><span class="pm"></span></div></details>';
       f.appendChild(el); });
+    var bar = book.querySelector('#journal .jr-bar');
+    if(bar && !bar.querySelector('.jr-pubgo')){ var g = document.createElement('span'); g.className = 'jr-pubgo'; g.hidden = true; g.innerHTML = '<button type="button" class="go">' + t.go + '</button><span class="pm"></span>'; bar.insertBefore(g, bar.children[1] || null); }
     pubFill(); dyRender();
   }
+  function pubWrite(md, data){ return fb.setDoc(fb.doc(fb.db, 'public', 'day-' + md), data).then(function(){ var q = pubLoad(); q['day-' + md] = data; pubSave(q); pubFill(); dyRender(); }); }
   book.addEventListener('click', function(e){
-    var b = e.target.closest && e.target.closest('.jr-pub button'); if(!b) return; var el = b.closest('.jr-pub'), md = el.dataset.md, t = PB[lang], msg = el.querySelector('.pm'), m = jrLoad(), li = {ja:0, th:1, en:2}[lang];
-    var d = MD.filter(function(x){ return x[0] === md; })[0];
-    if(b.classList.contains('ai')){
-      var raw = ''; WHO.forEach(function(w, k){ var v = m['d' + md + '.' + w]; if(v && v.t && v.t.trim()) raw += MT[lang].who[k] + '：' + v.t.trim().replace(/\n/g, ' / ') + '\n'; });
-      if(!raw){ msg.textContent = t.empty; return; }
-      var full = t.prompt.replace('{d}', d[1][li] + ' ' + d[2][li]) + '\n\n' + raw, url = 'https://claude.ai/new?q=' + encodeURIComponent(full);
-      if(url.length > 7000){ try{ navigator.clipboard.writeText(full); }catch(err){} msg.textContent = EX[lang].long; url = 'https://claude.ai/new'; }
-      window.open(url, '_blank', 'noopener'); return; }
-    if(!fb || !fbUser) return;
-    var ref = fb.doc(fb.db, 'public', 'day-' + md), p = pubLoad();
+    var b = e.target.closest && e.target.closest('.jr-pubgo .go, .jr-pub button'); if(!b || !fb || !fbUser) return; var t = PB[lang];
     if(b.classList.contains('go')){
-      var r = pubParse(el.querySelector('textarea').value); if(!r.ja || !r.th || !r.en){ msg.textContent = t.bad; return; }
-      var data = {ja: r.ja, th: r.th, en: r.en, u: Date.now(), by: fbUser.email || ''};
-      var prev = p['day-' + md]; msg.textContent = t.sending; b.disabled = true;
-      fb.setDoc(ref, data).then(function(){ var q = pubLoad(); q['day-' + md] = data; pubSave(q); pubFill(); dyRender(); msg.textContent = t.done; })
-        .catch(function(err){ msg.textContent = pubErr(err); }).then(function(){ b.disabled = false; }); return; }
-    if(b.classList.contains('un')){ msg.textContent = t.sending; b.disabled = true;
-      fb.deleteDoc(ref).then(function(){ var q = pubLoad(); delete q['day-' + md]; pubSave(q); el.querySelector('textarea').value = ''; pubFill(); dyRender(); msg.textContent = t.undone; })
-        .catch(function(err){ msg.textContent = pubErr(err); }).then(function(){ b.disabled = false; }); }
+      var msg = b.parentNode.querySelector('.pm'), sel = Array.prototype.slice.call(book.querySelectorAll('.jr-pub .pchk:checked')).map(function(c){ return c.closest('.jr-pub').dataset.md; });
+      if(!sel.length){ msg.textContent = t.none; return; }
+      b.disabled = true; var n = 0, i = 0;
+      (function next(){
+        if(i >= sel.length){ b.disabled = false; msg.textContent = t.done.replace('{n}', n); return; }
+        var md = sel[i]; msg.textContent = t.ai.replace('{i}', i + 1).replace('{n}', sel.length);
+        aiTidy(md).then(function(o){ return pubWrite(md, {ja: o.ja.trim(), th: o.th.trim(), en: o.en.trim(), u: Date.now(), by: fbUser.email || ''}); })
+          .then(function(){ n++; var c = book.querySelector('.jr-pub[data-md="' + md + '"] .pchk'); if(c) c.checked = false; i++; next(); })
+          .catch(function(err){ b.disabled = false; msg.textContent = err && err.empty ? t.empty.replace('{d}', err.d) : (err && err.code && /permission|unavailable|offline|network/.test(err.code) && !/ai\//.test(err.code) ? pubErr(err) : t.aiNg + (err && (err.code || err.message) || '')); });
+      })();
+      return;
+    }
+    var el = b.closest('.jr-pub'), md = el.dataset.md, pm = el.querySelector('.pm');
+    if(b.classList.contains('sv')){ var r = pubParse(el.querySelector('textarea').value); if(!r.ja || !r.th || !r.en) return; pm.textContent = t.sending; b.disabled = true;
+      pubWrite(md, {ja: r.ja, th: r.th, en: r.en, u: Date.now(), by: fbUser.email || ''}).then(function(){ pm.textContent = t.saved; }).catch(function(err){ pm.textContent = pubErr(err); }).then(function(){ b.disabled = false; }); return; }
+    if(b.classList.contains('un')){ pm.textContent = t.sending; b.disabled = true;
+      fb.deleteDoc(fb.doc(fb.db, 'public', 'day-' + md)).then(function(){ var q = pubLoad(); delete q['day-' + md]; pubSave(q); pubFill(); dyRender(); pm.textContent = t.undone; })
+        .catch(function(err){ pm.textContent = pubErr(err); }).then(function(){ b.disabled = false; }); }
   });
   // ---- export: preview the diary as a reading page, copy it, or open Claude to tidy the wording
   var EX = {ja:{title:'0歳柚葉のヨーロッパ日記', all:'すべての日', ai:'AIで文章を整える', copy:'文章をコピー', close:'閉じる', copied:'コピーしました', none:'まだ日記がありません',

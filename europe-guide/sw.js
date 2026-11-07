@@ -1,5 +1,5 @@
 // Offline cache for the family guide. VERSION changes on every build, so a new guide replaces the old one.
-const VERSION = '6af148f37a';
+const VERSION = '19e8f702da';
 const CACHE = 'europe-guide-' + VERSION;
 const CORE = ['./', './index.html', './manifest.webmanifest', './icon-180.png', './icon-192.png', './icon-512.png'];
 const FONT_CSS = 'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=M+PLUS+Rounded+1c:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Klee+One:wght@600&family=Noto+Sans+Thai:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap';
@@ -7,7 +7,7 @@ self.addEventListener('install', (e) => {
   e.waitUntil((async () => {
     const c = await caches.open(CACHE);
     await c.addAll(CORE);
-    await Promise.all(['firebase-app.js','firebase-auth.js','firebase-firestore.js'].map(f => fetch('https://www.gstatic.com/firebasejs/10.14.1/' + f, {mode: 'cors'}).then(r => r.ok && c.put('https://www.gstatic.com/firebasejs/10.14.1/' + f, r)).catch(() => {})));
+    await Promise.all(['firebase-app.js','firebase-auth.js','firebase-firestore.js','firebase-ai.js'].map(f => fetch('https://www.gstatic.com/firebasejs/12.19.0/' + f, {mode: 'cors'}).then(r => r.ok && c.put('https://www.gstatic.com/firebasejs/12.19.0/' + f, r)).catch(() => {})));
     try { // fonts: cache the stylesheet and every font file it points to
       const r = await fetch(FONT_CSS, {mode: 'cors'});
       if (r.ok) {
