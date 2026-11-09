@@ -1,5 +1,5 @@
 // Offline cache for the family guide. VERSION changes on every build, so a new guide replaces the old one.
-const VERSION = '10e6a6f025';
+const VERSION = '063a4203d6';
 const CACHE = 'europe-guide-' + VERSION;
 const CORE = ['./', './index.html', './manifest.webmanifest', './icon-180.png', './icon-192.png', './icon-512.png'];
 const FONT_CSS = 'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=M+PLUS+Rounded+1c:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Klee+One:wght@600&family=Noto+Sans+Thai:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap';
