@@ -9,7 +9,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#111318">
+<meta name="theme-color" content="#06060C">
 <title>Bike Notes</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -717,12 +717,46 @@ nav.toc .toc-group li.sub .nm .flag{width:15px;height:10px;margin:0 .3em 0 .35em
 .chapter.bk1{--c1:var(--fr1);--c2:var(--fr2)} .chapter.bk2{--c1:var(--it1);--c2:var(--it2)}
 .bk1 .band{background:repeating-linear-gradient(90deg,var(--fr1) 0 14px,var(--memo) 14px 28px)} .bk2 .band{background:repeating-linear-gradient(90deg,var(--it1) 0 14px,var(--memo) 14px 28px)}
 .gl-th{font-family:var(--f-thai),var(--f-body)} .gl-rd{color:var(--muted);font-size:13px}
+/* three themes: Deep Snow (Finnish midwinter), Turquoise (Mediterranean summer), Cosmic Black (galaxy) */
+html[data-theme="snow"]{
+  --bg:#F3F6FA; --dot:#D5DEE8; --paper:rgba(255,255,255,.94); --ink:#1D2835; --muted:#566475; --line:#D6DFE9; --soft:#E8EEF5;
+  --memo:#E1ECF7; --memo-ink:#1F3F5E; --tape:#A9C4DD;
+  --ok:#1F6F5A; --ok-bg:#DCEFE9; --warn:#7A5A14; --warn-bg:#F6EBCB; --idle:#566475; --idle-bg:#E6EBF1; --bad:#A7403A; --bad-bg:#F6DEDB;
+  --nl1:#A7403A; --nl2:#2F5F8F; --fr1:#2F5F8F; --fr2:#A7403A; --es1:#A7403A; --es2:#C9A227; --es-ink:#7A5A14;
+  --it1:#2F7566; --it2:#A7403A; --ae1:#2F7566; --ae2:#7C8FA6; --ae3:#1D2835; --th1:#A7403A; --th2:#2F5F8F;
+  --food:#8A6A3A; --art:#7C5A6E; --wine:#6E3550; --flag-white:#FFFFFF; color-scheme:light;
+}
+html[data-theme="turquoise"]{
+  --bg:#E2F6F4; --dot:#B4E4E0; --paper:rgba(255,255,255,.93); --ink:#0B3640; --muted:#3D6B73; --line:#B9E2DE; --soft:#CFEFEC;
+  --memo:#FFF1C4; --memo-ink:#5A4410; --tape:#F2B84B;
+  --ok:#0C7A5B; --ok-bg:#CFF1E4; --warn:#8A5A00; --warn-bg:#FFEDBD; --idle:#3D6B73; --idle-bg:#D5ECEA; --bad:#C0452F; --bad-bg:#FBE0D8;
+  --nl1:#E0563C; --nl2:#0E7FA0; --fr1:#078C99; --fr2:#E0563C; --es1:#E0563C; --es2:#F2B84B; --es-ink:#8A5A00;
+  --it1:#0C7A5B; --it2:#E0563C; --ae1:#0C7A5B; --ae2:#1F5FA8; --ae3:#0B3640; --th1:#E0563C; --th2:#1F5FA8;
+  --food:#C2772B; --art:#B0503F; --wine:#8A3A5A; --flag-white:#FFFFFF; color-scheme:light;
+}
+html[data-theme="cosmic"]{
+  --bg:#06060C; --dot:#23233B; --paper:#0F0F1B; --ink:#EDEBFF; --muted:#A5A1C6; --line:#25253D; --soft:#161627;
+  --memo:#231A45; --memo-ink:#DCCFFF; --tape:#6B4FC8;
+  --ok:#6FE0B0; --ok-bg:#11302A; --warn:#F2C25A; --warn-bg:#33270F; --idle:#A5A1C6; --idle-bg:#1E1E33; --bad:#FF8FA3; --bad-bg:#3A1826;
+  --nl1:#FF8FB8; --nl2:#8FA8FF; --fr1:#8FA8FF; --fr2:#FF8FB8; --es1:#FF8FB8; --es2:#F2C25A; --es-ink:#F2C25A;
+  --it1:#7CE0D0; --it2:#FF8FB8; --ae1:#7CE0D0; --ae2:#B79CFF; --ae3:#EDEBFF; --th1:#FF8FB8; --th2:#B79CFF;
+  --food:#E2A36A; --art:#D9A0C8; --wine:#C98AD6; --flag-white:#EDEBFF; color-scheme:dark;
+}
+html[data-theme="cosmic"] body{background-image:radial-gradient(var(--dot) 1px,transparent 1.2px),radial-gradient(ellipse 90% 60% at 85% -5%,rgba(107,79,200,.30),transparent 60%),radial-gradient(ellipse 70% 50% at 0% 35%,rgba(40,90,190,.20),transparent 60%),radial-gradient(ellipse 80% 50% at 100% 85%,rgba(200,80,150,.14),transparent 60%);background-size:18px 18px,100% 100%,100% 100%,100% 100%;background-attachment:scroll,fixed,fixed,fixed}
+html[data-theme="snow"] .card,html[data-theme="snow"] .tbl,html[data-theme="snow"] .data,html[data-theme="snow"] .hist{box-shadow:0 1px 0 var(--line),0 8px 22px rgba(60,90,130,.07)}
+html[data-theme="turquoise"] .card,html[data-theme="turquoise"] .tbl,html[data-theme="turquoise"] .data,html[data-theme="turquoise"] .hist{box-shadow:0 1px 0 var(--line),0 8px 22px rgba(10,110,120,.08)}
+html[data-theme="snow"] .langbar-in,html[data-theme="snow"] .themetoggle,html[data-theme="snow"] .themepop{box-shadow:0 6px 20px rgba(60,90,130,.18);background:#FFFFFF}
+html[data-theme="turquoise"] .langbar-in,html[data-theme="turquoise"] .themetoggle,html[data-theme="turquoise"] .themepop{box-shadow:0 6px 20px rgba(10,110,120,.20);background:#FFFFFF}
+html[data-theme="snow"] .cover h1 .hl{background:linear-gradient(transparent 62%,#C7DCF0 62%)}
+html[data-theme="turquoise"] .cover h1 .hl{background:linear-gradient(transparent 62%,#8FE3DC 62%)}
+html[data-theme="cosmic"] .cover h1 .hl{background:linear-gradient(transparent 62%,#4A3A96 62%)}
+.sw-snow{background:radial-gradient(circle at 35% 35%,#FFFFFF 0 45%,#A9C4DD 46%)} .sw-turquoise{background:linear-gradient(135deg,#19C2BD 0 60%,#FFE39A 60%)} .sw-cosmic{background:radial-gradient(circle at 30% 30%,#6B4FC8 0 22%,#06060C 60%)}
 </style>
 </head>
 <body>
 
-<script>(function(){var t='ryo';try{t=localStorage.getItem('bike-theme')||t}catch(e){}try{var q=new URLSearchParams(location.search).get('theme');if(q)t=q}catch(e){}if(['som','yuzuha','ryo'].indexOf(t)<0)t='ryo';document.documentElement.setAttribute('data-theme',t);document.documentElement.setAttribute('data-ch','intro')})();</script>
-<div class="langbar"><div class="themepop themebar" id="themepop" role="group" aria-label="Design" hidden><button type="button" data-theme-btn="som" aria-pressed="true"><span class="sw sw-som"></span>Som</button><button type="button" data-theme-btn="yuzuha" aria-pressed="false"><span class="sw sw-yuzuha"></span>Yuzuha</button><button type="button" data-theme-btn="ryo" aria-pressed="false"><span class="sw sw-ryo"></span>Ryo</button></div><div class="langrow"><button type="button" class="themetoggle" id="themetoggle" aria-expanded="false" aria-controls="themepop" aria-label="デザインを選ぶ / เลือกดีไซน์ / Design"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.2 0 1.8-.8 1.8-1.7 0-1.1-.9-1.6-.9-2.6 0-1 .8-1.7 1.9-1.7H17a4 4 0 0 0 4-4C21 6.5 17 3 12 3Z"/><circle cx="7.5" cy="11" r="1.2" fill="currentColor"/><circle cx="10" cy="7" r="1.2" fill="currentColor"/><circle cx="15" cy="7.5" r="1.2" fill="currentColor"/></svg></button><div class="langbar-in" role="group" aria-label="Language"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="th" aria-pressed="false">ไทย</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div></div></div>
+<script>(function(){var t='cosmic';try{t=localStorage.getItem('bike-theme')||t}catch(e){}try{var q=new URLSearchParams(location.search).get('theme');if(q)t=q}catch(e){}if(['snow','turquoise','cosmic'].indexOf(t)<0)t='cosmic';document.documentElement.setAttribute('data-theme',t);document.documentElement.setAttribute('data-ch','intro')})();</script>
+<div class="langbar"><div class="themepop themebar" id="themepop" role="group" aria-label="Design" hidden><button type="button" data-theme-btn="snow" aria-pressed="false"><span class="sw sw-snow"></span>Deep Snow</button><button type="button" data-theme-btn="turquoise" aria-pressed="false"><span class="sw sw-turquoise"></span>Turquoise</button><button type="button" data-theme-btn="cosmic" aria-pressed="true"><span class="sw sw-cosmic"></span>Cosmic Black</button></div><div class="langrow"><button type="button" class="themetoggle" id="themetoggle" aria-expanded="false" aria-controls="themepop" aria-label="デザインを選ぶ / เลือกดีไซน์ / Design"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.2 0 1.8-.8 1.8-1.7 0-1.1-.9-1.6-.9-2.6 0-1 .8-1.7 1.9-1.7H17a4 4 0 0 0 4-4C21 6.5 17 3 12 3Z"/><circle cx="7.5" cy="11" r="1.2" fill="currentColor"/><circle cx="10" cy="7" r="1.2" fill="currentColor"/><circle cx="15" cy="7.5" r="1.2" fill="currentColor"/></svg></button><div class="langbar-in" role="group" aria-label="Language"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="th" aria-pressed="false">ไทย</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div></div></div>
 <div id="book">
 <div class="wrap">
 
@@ -1161,7 +1195,7 @@ nav.toc .toc-group li.sub .nm .flag{width:15px;height:10px;margin:0 .3em 0 .35em
 
   <div class="block" id="cl-list">
     <h3>更新履歴</h3>
-    <div class="tbl"><table class="wide"><thead><tr><th>日付</th><th>内容</th></tr></thead><tbody><tr><td class="big">2026/11/20</td><td data-label="内容">公開。11/19 のスカイレーンの記録、バイクの候補と比較、ブランド、装備、乗り方、店とスポット、自転車の文化、用語集を載せた</td></tr></tbody></table></div>
+    <div class="tbl"><table class="wide"><thead><tr><th>日付</th><th>内容</th></tr></thead><tbody><tr><td class="big">2026/11/20</td><td data-label="内容">デザインを3種類に変更：Deep Snow（真冬のフィンランドの深い雪）、Turquoise（夏の地中海）、Cosmic Black（銀河）。車に積むときは前輪を外すのを基本に、と追記</td></tr><tr><td class="big">2026/11/20</td><td data-label="内容">公開。11/19 のスカイレーンの記録、バイクの候補と比較、ブランド、装備、乗り方、店とスポット、自転車の文化、用語集を載せた</td></tr></tbody></table></div>
   </div>
 
 
@@ -1611,7 +1645,7 @@ nav.toc .toc-group li.sub .nm .flag{width:15px;height:10px;margin:0 .3em 0 .35em
 
   <div class="block" id="cl-list">
     <h3>ประวัติการแก้ไข</h3>
-    <div class="tbl"><table class="wide"><thead><tr><th>วันที่</th><th>รายละเอียด</th></tr></thead><tbody><tr><td class="big">2026/11/20</td><td data-label="รายละเอียด">เผยแพร่ครั้งแรก ลงบันทึกสกายเลนวันที่ 19/11 ตัวเลือกจักรยานและการเทียบ แบรนด์ อุปกรณ์ วิธีปั่น ร้านและสถานที่ วัฒนธรรมจักรยาน และคำศัพท์</td></tr></tbody></table></div>
+    <div class="tbl"><table class="wide"><thead><tr><th>วันที่</th><th>รายละเอียด</th></tr></thead><tbody><tr><td class="big">2026/11/20</td><td data-label="รายละเอียด">เปลี่ยนดีไซน์เป็น 3 แบบ: Deep Snow (หิมะหนากลางฤดูหนาวของฟินแลนด์), Turquoise (เมดิเตอร์เรเนียนหน้าร้อน), Cosmic Black (กาแล็กซี) และเพิ่มหลักว่าเวลาใส่รถให้ถอดล้อหน้า</td></tr><tr><td class="big">2026/11/20</td><td data-label="รายละเอียด">เผยแพร่ครั้งแรก ลงบันทึกสกายเลนวันที่ 19/11 ตัวเลือกจักรยานและการเทียบ แบรนด์ อุปกรณ์ วิธีปั่น ร้านและสถานที่ วัฒนธรรมจักรยาน และคำศัพท์</td></tr></tbody></table></div>
   </div>
 
 
@@ -1786,7 +1820,7 @@ nav.toc .toc-group li.sub .nm .flag{width:15px;height:10px;margin:0 .3em 0 .35em
   <div class="block" id="bi-cmp">
     <h3>Comparing the candidates</h3>
     <p class="note">As researched in November 2026. Prices and specs change, so confirm at a shop before buying</p>
-    <div class="tbl"><table class="wide"><thead><tr><th>Model</th><th>Type</th><th>Gears</th><th>Wheels</th><th>Max tyre</th><th>Price in Japan</th><th>Note</th></tr></thead><tbody><tr><td class="big">Pinarello X5 <span class="pill maybe">Front-runner</span></td><td data-label="Type">Endurance</td><td data-label="Gears">105 Di2</td><td data-label="Wheels">Carbon</td><td data-label="Max tyre">40mm</td><td data-label="Price in Japan">¥850,000</td><td data-label="Note">Easy position with room for gravel</td></tr><tr><td class="big">Pinarello F5</td><td data-label="Type">Race</td><td data-label="Gears">105 Di2</td><td data-label="Wheels">Alloy (Fulcrum Racing 800)</td><td data-label="Max tyre">32mm</td><td data-label="Price in Japan">¥720,000</td><td data-label="Note">Close to the DOGMA in shape, with a lower position</td></tr><tr><td class="big">Cannondale Synapse Carbon 4</td><td data-label="Type">Endurance</td><td data-label="Gears">105 Di2</td><td data-label="Wheels">Ask the shop</td><td data-label="Max tyre">42mm</td><td data-label="Price in Japan">¥670,000</td><td data-label="Note">Storage in the frame, and the lowest price</td></tr><tr><td class="big">Cannondale SuperX 3</td><td data-label="Type">Gravel race</td><td data-label="Gears">GRX 820 (mechanical, 2×12)</td><td data-label="Wheels">Ask the shop</td><td data-label="Max tyre">48 mm rear, 51 mm front</td><td data-label="Price in Japan">Ask the shop</td><td data-label="Note">The one for serious unpaved riding</td></tr></tbody></table></div>
+    <div class="tbl"><table class="wide"><thead><tr><th>Model</th><th>Type</th><th>Gears</th><th>Wheels</th><th>Max tyre</th><th>Price (JP)</th><th>Note</th></tr></thead><tbody><tr><td class="big">Pinarello X5 <span class="pill maybe">Front-runner</span></td><td data-label="Type">Endurance</td><td data-label="Gears">105 Di2</td><td data-label="Wheels">Carbon</td><td data-label="Max tyre">40mm</td><td data-label="Price (JP)">¥850,000</td><td data-label="Note">Easy position with room for gravel</td></tr><tr><td class="big">Pinarello F5</td><td data-label="Type">Race</td><td data-label="Gears">105 Di2</td><td data-label="Wheels">Alloy (Fulcrum Racing 800)</td><td data-label="Max tyre">32mm</td><td data-label="Price (JP)">¥720,000</td><td data-label="Note">Close to the DOGMA in shape, with a lower position</td></tr><tr><td class="big">Cannondale Synapse Carbon 4</td><td data-label="Type">Endurance</td><td data-label="Gears">105 Di2</td><td data-label="Wheels">Ask the shop</td><td data-label="Max tyre">42mm</td><td data-label="Price (JP)">¥670,000</td><td data-label="Note">Storage in the frame, and the lowest price</td></tr><tr><td class="big">Cannondale SuperX 3</td><td data-label="Type">Gravel race</td><td data-label="Gears">GRX 820 (mechanical, 2×12)</td><td data-label="Wheels">Ask the shop</td><td data-label="Max tyre">48 mm rear, 51 mm front</td><td data-label="Price (JP)">Ask the shop</td><td data-label="Note">The one for serious unpaved riding</td></tr></tbody></table></div>
   </div>
 
   <div class="block" id="bi-pina">
@@ -2061,7 +2095,7 @@ nav.toc .toc-group li.sub .nm .flag{width:15px;height:10px;margin:0 .3em 0 .35em
 
   <div class="block" id="cl-list">
     <h3>Change log</h3>
-    <div class="tbl"><table class="wide"><thead><tr><th>Date</th><th>What changed</th></tr></thead><tbody><tr><td class="big">2026/11/20</td><td data-label="What changed">First published, with the 19 November Sky Lane ride, bike candidates and comparison, brands, kit, riding notes, shops and places, cycling culture and the glossary</td></tr></tbody></table></div>
+    <div class="tbl"><table class="wide"><thead><tr><th>Date</th><th>What changed</th></tr></thead><tbody><tr><td class="big">2026/11/20</td><td data-label="What changed">Changed to three designs: Deep Snow (deep Finnish midwinter snow), Turquoise (the Mediterranean in summer) and Cosmic Black (the galaxy). Added the rule to take the front wheel off when loading the car</td></tr><tr><td class="big">2026/11/20</td><td data-label="What changed">First published, with the 19 November Sky Lane ride, bike candidates and comparison, brands, kit, riding notes, shops and places, cycling culture and the glossary</td></tr></tbody></table></div>
   </div>
 
 
@@ -2086,9 +2120,9 @@ nav.toc .toc-group li.sub .nm .flag{width:15px;height:10px;margin:0 .3em 0 .35em
   var lang = 'ja', showingAll = false, chapters = [], navLinks = [];
   var langBtns = Array.prototype.slice.call(document.querySelectorAll('.langbar button[data-lang]'));
   var themeBtns = Array.prototype.slice.call(document.querySelectorAll('.langbar button[data-theme-btn]'));
-  var THEMES = {som:'#FFFBF3', yuzuha:'#FFF6DC', ryo:'#111318'};
+  var THEMES = {snow:'#F3F6FA', turquoise:'#E2F6F4', cosmic:'#06060C'};
   function setTheme(t){
-    if(!THEMES[t]) t = 'ryo';
+    if(!THEMES[t]) t = 'cosmic';
     document.documentElement.setAttribute('data-theme', t);
     themeBtns.forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.themeBtn === t ? 'true' : 'false'); });
     var m = document.querySelector('meta[name="theme-color"]'); if(m) m.setAttribute('content', THEMES[t]);
@@ -2100,7 +2134,7 @@ nav.toc .toc-group li.sub .nm .flag{width:15px;height:10px;margin:0 .3em 0 .35em
   document.addEventListener('click', function(e){ if(pop && !pop.hidden && !pop.contains(e.target) && e.target !== tgl) openPop(false); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') openPop(false); });
   themeBtns.forEach(function(b){ b.addEventListener('click', function(){ setTheme(b.dataset.themeBtn); openPop(false); }); });
-  setTheme(document.documentElement.getAttribute('data-theme') || 'ryo');
+  setTheme(document.documentElement.getAttribute('data-theme') || 'cosmic');
 
   function chapterOf(el){ while(el && !(el.dataset && el.dataset.chapter)) el = el.parentElement; return el; }
   function show(chId){
