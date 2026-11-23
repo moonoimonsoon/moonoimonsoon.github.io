@@ -17750,7 +17750,23 @@ html[data-theme="cosmic"] .cover h1 .hl{background:linear-gradient(transparent 6
     else if(d >= 43){ tz = 'Asia/Bangkok'; p = localParts(tz); d = dnum(p); }
     var dfmt = function(n){ return lang === 'th' ? (n > 30 ? (n - 30) + ' ธ.ค.' : n + ' พ.ย.') : (n > 30 ? '12/' + (n - 30) : '11/' + n); };
     var s = '';
-    if(d < 22){
+    var U = NOWDATE().getTime(), tr = null, TRX = [
+      [Date.UTC(2026,10,22,18,5), Date.UTC(2026,10,23,1,0), 'Asia/Dubai', ['機内（ドバイへ）','บนเครื่อง (ไปดูไบ)','on the plane to Dubai'], ['ドバイ着','ถึงดูไบ','Land in Dubai']],
+      [Date.UTC(2026,10,23,1,0), Date.UTC(2026,10,23,4,15), 'Asia/Dubai', ['ドバイで乗り継ぎ中','ต่อเครื่องที่ดูไบ','changing planes in Dubai'], ['EK147 アムステルダム行き出発','EK147 ออกไปอัมสเตอร์ดัม','EK147 to Amsterdam departs']],
+      [Date.UTC(2026,10,23,4,15), Date.UTC(2026,10,23,11,45), 'Europe/Amsterdam', ['機内（アムステルダムへ）','บนเครื่อง (ไปอัมสเตอร์ดัม)','on the plane to Amsterdam'], ['スキポール着','ถึงสคิปโฮล','Land at Schiphol']],
+      [Date.UTC(2026,11,11,19,50), Date.UTC(2026,11,12,1,25), 'Asia/Dubai', ['機内（ドバイへ）','บนเครื่อง (ไปดูไบ)','on the plane to Dubai'], ['ドバイ着','ถึงดูไบ','Land in Dubai']],
+      [Date.UTC(2026,11,12,18,30), Date.UTC(2026,11,13,0,30), 'Asia/Bangkok', ['機内（バンコクへ）','บนเครื่อง (ไปกรุงเทพฯ)','on the plane to Bangkok'], ['バンコク着','ถึงกรุงเทพฯ','Land in Bangkok']]];
+    for(var ti = 0; ti < TRX.length; ti++){ if(U >= TRX[ti][0] && U < TRX[ti][1]) tr = TRX[ti]; }
+    if(tr){
+      var li2 = {ja:0, th:1, en:2}[lang], lp = localParts(tr[2]), ep = new Intl.DateTimeFormat('en-GB', {timeZone: tr[2], hour:'2-digit', minute:'2-digit', hour12:false}).format(new Date(tr[1])).replace(/^24/, '00');
+      var rm = Math.max(0, Math.round((tr[1] - U) / 60000)), rh = Math.floor(rm / 60), rr = rm % 60;
+      var hd = lang === 'ja' ? '現地 <b>' + lp.hm + '</b>' : lang === 'th' ? 'เวลาท้องถิ่น <b>' + lp.hm + '</b>' : 'Local time <b>' + lp.hm + '</b>';
+      var wh = lang === 'ja' ? '<b>' + tr[3][0] + '</b>' : lang === 'th' ? '<b>' + tr[3][1] + '</b>' : '<b>' + tr[3][2] + '</b>';
+      var nx = lang === 'ja' ? 'あと<b>' + (rh ? rh + '時間' + (rr ? rr + '分' : '') : rr + '分') + '</b>で ' + tr[4][0] + '（' + ep + '）'
+             : lang === 'th' ? '<b>อีก ' + (rh ? rh + ' ชม.' + (rr ? ' ' + rr + ' นาที' : '') : rr + ' นาที') + '</b> ' + tr[4][1] + ' (' + ep + ')'
+             : '<b>in ' + (rh ? rh + ' h' + (rr ? ' ' + rr + ' min' : '') : rr + ' min') + '</b>: ' + tr[4][2] + ' (' + ep + ')';
+      s = [hd, wh, nx].join(' · ');
+    } else if(d < 22){
       var left = Math.round((Date.UTC(2026, 10, 22) - Date.UTC(p.y, p.m - 1, p.d)) / 86400000);
       s = lang === 'ja' ? '出発まで あと <b>' + left + '日</b>' : lang === 'th' ? 'อีก <b>' + left + ' วัน</b> จะออกเดินทาง' : '<b>' + left + ' days</b> to go';
     } else if(d > 43){
